@@ -1,0 +1,54 @@
+<app-header></app-header>
+<section class="subcrip-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form  [formGroup]="angForm" (ngSubmit)="subscribe(angForm.value)" >
+                <div class="subcrip-bx">  
+                    <h2>Subscription for <span class="sub-titl">Netwood</span></h2>
+                    <div class="sub-logo">
+                        <img src="assets/images/netwood-logo.png" class="img-fluid">       
+                    </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Email : </label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" formControlName="netwood_email" id="" name="netwood_email" >
+                            </div>
+                          </div>
+                </div>
+                
+                <!-- </form> -->
+                <div class="subcrip-bx gm-background">
+                    <h2>Subscription for <span class="sub-titl">Newo Games</span></h2>
+                    <div class="sub-logo">
+                        <img src="assets/images/netwood-games-logo.png" class="img-fluid">       
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Email :</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="" formControlName="newogames_email" name="newogames_email" >
+                        </div>
+                    </div>
+                </div>
+                <div class="subcrip-bx star-background">
+                    <h2>Subscription for <span class="sub-titl">Stars Hunt</span></h2>
+                    <div class="sub-logo">
+                        <img src="assets/images/StarLogo.png" class="img-fluid">       
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Email :</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="" name="starhunt_email" formControlName="starhunt_email">
+                        </div>
+                    </div>
+                </div>
+                <button class="sign-in-btn">Save</button>
+                     <!--<button type="submit" class="sign-in-btn">Submit</button> -->
+                <br>
+
+                </form>
+            </div>
+        </div>  
+    </div>
+  </section>
+<!-- <app-footer></app-footer> -->
