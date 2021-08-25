@@ -1,7 +1,7 @@
 <?php 
 include_once("database.php");
 $postdata = file_get_contents("php://input");
-//echo $postdata; die();
+
 
 if(isset($postdata) && !empty($postdata))
 {
@@ -63,7 +63,7 @@ if(isset($postdata) && !empty($postdata))
 		}
 	}	
 
-    //print_r($authdata_all); die();
+
     echo json_encode($authdata_all);
 }
 

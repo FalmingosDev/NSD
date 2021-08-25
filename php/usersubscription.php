@@ -66,9 +66,9 @@ $authdata_all=[
        'status'=>'success',
        'code'=>1,
        'username'=>$primary
-        // 'last_id'=>$last_id
+        
     ];
-    //print_r($authdata_all); die();
+  
     echo json_encode($authdata_all);
 }
 
