@@ -1,7 +1,7 @@
 <?php 
 include_once("database.php");
 $postdata = file_get_contents("php://input");
-//echo $postdata; die();
+
 if(isset($postdata) && !empty($postdata))
 {
 	$request = json_decode($postdata);
