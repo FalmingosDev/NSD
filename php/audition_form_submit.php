@@ -3,7 +3,6 @@ include_once("dbaudition.php");
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 // echo $postdata;
-// $authdata_all=[];
 if(isset($postdata) && !empty($postdata)){
  $request = json_decode($postdata); 
 
