@@ -46,7 +46,7 @@ if(isset($postdata) && !empty($postdata))
 	}	
 	
 	if($type == 'star'){
-		$chkOtt = "SELECT COUNT(1) cnt,ss.starhunt_username, IFNULL(us.subscription_end_date, '') subscription_end_date FROM starhunt_subscription ss LEFT JOIN user_subscription us ON ss.newo_user_id = us.id AND us.subscription_end_date > NOW() WHERE ss.starhunt_username = '".$logged_no."'";
+		$chkOtt = "SELECT COUNT(1) cnt,ss.starhunt_username, IFNULL(us.subscription_end_date, '') subscription_end_date FROM starhunt_subscription ss LEFT JOIN user_subscription us ON ss.newo_user_id = us.newo_user_id AND us.subscription_end_date > NOW() WHERE ss.starhunt_username = '".$logged_no."'";
 		$resOtt = $mysqli->query($chkOtt);
 		$rowOtt = $resOtt -> fetch_assoc();
 		
