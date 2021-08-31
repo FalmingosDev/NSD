@@ -109,10 +109,16 @@ export class ApiService {
 
 
     //rohit
+    public cheak_email(email,action){
+      let check_email:string=email;
+      let action_type:string=action;
+      return this.httpClient.get<any>(this.baseUrl+'/audition_phase.php',{params:{check_email,action_type}});
+    
+    }
     public getApplyfor(applicantage,action){
       // alert(applicantage);
-      var applicant_age:string = applicantage;
-      var action_type:string=action;
+      let applicant_age:string = applicantage;
+      let action_type:string=action;
       // alert(applicant_age);
       return this.httpClient.get<any>(this.baseUrl +'/audition_phase.php', {params:{applicant_age,action_type}});
 
@@ -145,7 +151,7 @@ export class ApiService {
  
 
 
-     return this.httpClient.post<any>(this.baseUrl+'/audition_form_submit.php',{action,name,phone1,whatsapp_no,email,gender,dob,years,pin,address,state,guardian,guardian_relation,guardian_mobile,aud_type,applyFor,applyValue,phase,venuename,venuDate})
+    return this.httpClient.post<any>(this.baseUrl+'/audition_form_submit.php',{action,name,phone1,whatsapp_no,email,gender,dob,years,pin,address,state,guardian,guardian_relation,guardian_mobile,aud_type,applyFor,applyValue,phase,venuename,venuDate})
 
     // return this.httpClient.post<any>(this.baseUrl+'/audition_form_submit.php',{action:Text,name:Text,phone1:Text,whatsapp_no:Text,email:Text,gender:Text,dob:Text,years:Text,pin:Text,address:Text,state:Text,guardian:Text,guardian_relation:Text,guardian_mobile:Text,applyFor:Text,applyValue:Text,phase:Text,venuename:Text,venuDate:Text})
     }
