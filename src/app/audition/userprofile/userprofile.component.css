@@ -1,0 +1,71 @@
+.user-body {
+    margin: 0;
+    padding: 0;
+    background: #19242e !important;
+    background-image: linear-gradient(#19242ed9, #19242ed9);/*,url('App-Logo.png') !important;*/
+    background-repeat: no-repeat;
+    margin-bottom: 75px;  
+    height: inherit !important;
+}
+.user-img-round{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+.user-img-round img{
+    border-radius: 50%;
+}
+.ad-nm h2{  
+    color: #d5dd25;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+.ad-nm h2 span{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.user-nm{
+    padding: 20px 0px;
+}
+.animated-icon{
+    width: 30%;
+    float: right;
+    display: block;
+}
+.season2{
+    background-color: #2d3a47;
+    border-radius: 10px;
+    padding: 10px 7px;
+    margin-bottom: 15px;  
+}
+.season-text img{
+    margin: 7px 0px 0px;
+}
+.season-perform p{
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0;
+}
+.season-perform p span{
+    display: block;
+}
+.detail-info-table td{
+    text-align: left; 
+    color: #fff;
+}
+.strip-div{
+    border: 2px dashed #516a80;
+    border-radius: 15px;
+    padding: 18px;
+    margin-top: 39px;
+}
+.strip-div h4{
+    color: #d5dd25;
+    font-size: 14px;
+    font-weight: 600;
+}

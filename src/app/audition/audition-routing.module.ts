@@ -8,6 +8,10 @@ import { AuditionjudgesComponent } from './auditionjudges/auditionjudges.compone
 import { AuditiontcComponent } from './auditiontc/auditiontc.component';
 import { UpcomingauditionComponent } from './upcomingaudition/upcomingaudition.component';
 
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UsersubbmissionComponent } from './usersubbmission/usersubbmission.component';
+
 // import { AuthguardGuard } from '../authguard.guard';
 
 const routes: Routes = [
@@ -17,6 +21,9 @@ const routes: Routes = [
   {path:'auditionjudges', component:AuditionjudgesComponent},
   {path:'upcomingaudition', component:UpcomingauditionComponent},
   {path:'auditiontermsandconditions', component:AuditiontcComponent},
+  {path:'userhome', component:UserhomeComponent},
+  {path:'userprofile', component:UserprofileComponent},
+  {path:'usersubbmission', component:UsersubbmissionComponent}
 ];
 
 @NgModule({

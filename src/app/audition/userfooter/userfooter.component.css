@@ -1,0 +1,14 @@
+.user-footer {
+    padding: 11px 0px;
+    background: #19242e;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+}
+.user-footer img {
+    text-align: center;
+    width: 33%;
+    display: block;
+    margin: 0 auto;
+}

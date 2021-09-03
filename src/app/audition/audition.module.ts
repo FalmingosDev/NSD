@@ -15,6 +15,11 @@ import { UpcomingauditionComponent } from './upcomingaudition/upcomingaudition.c
 import { AuditiontcComponent } from './auditiontc/auditiontc.component';
 import { AuditionheaderComponent } from './auditionheader/auditionheader.component';
 import { AuditionfooterComponent } from './auditionfooter/auditionfooter.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UsersubbmissionComponent } from './usersubbmission/usersubbmission.component';
+import { UserheaderComponent } from './userheader/userheader.component';
+import { UserfooterComponent } from './userfooter/userfooter.component';
  
 
 @NgModule({
@@ -27,7 +32,12 @@ import { AuditionfooterComponent } from './auditionfooter/auditionfooter.compone
     UpcomingauditionComponent,
     AuditiontcComponent,
     AuditionheaderComponent,
-    AuditionfooterComponent
+    AuditionfooterComponent,
+    UserprofileComponent,
+    UserhomeComponent,
+    UsersubbmissionComponent,
+    UserheaderComponent,
+    UserfooterComponent
   ],
   imports: [
     CommonModule,

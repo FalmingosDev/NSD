@@ -1,0 +1,61 @@
+.user-body {
+    margin: 0;
+    padding: 0;
+    background: #19242e !important;
+    background-image: linear-gradient(#19242ed9, #19242ed9);/*,url('App-Logo.png') !important;*/
+    background-repeat: no-repeat;
+    margin-bottom: 75px;  
+    height: inherit !important;
+}
+.ad-nm h2{  
+    color: #d5dd25;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+.ad-nm h2 span{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.user-nm{
+    padding: 20px 0px;
+}
+.season2{
+    background-color: #2d3a47;
+    border-radius: 10px;
+    padding: 10px 7px;
+    margin-bottom: 15px;  
+}
+.user-img-round{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+.user-img-round img{
+    border-radius: 50%;
+}
+.season-sub-text h2{
+    color: #d5dd25;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+}
+.season-sub-text h2 span{
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.season-sub-text p{
+    font-size: 12px;
+    color: #fff;
+    text-align: left;
+}
+.season-sub-text p span{
+    color: #d5dd25;
+}
+.season-sub-text{
+    padding-top: 30px;
+}

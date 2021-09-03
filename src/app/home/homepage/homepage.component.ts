@@ -113,7 +113,9 @@ export class HomepageComponent implements OnInit {
 				let action="check_email";
 				this.dataService.cheak_email(local_email,action).subscribe((result)=>{
 					if(result.starReg==1){
-						window.location.href = 'http://3.0.255.31/newo-street/audition/audition-user-home.html';
+						//window.location.href = 'http://3.0.255.31/newo-street/audition/audition-user-home.html';
+						const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'userhome';
+				    	this.router.navigate([redirect]);
 					}
 					else{
 						const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'auditionform';
