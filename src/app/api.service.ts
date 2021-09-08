@@ -1,7 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Users } from './users';
+
 
 @Injectable({
   providedIn: 'root'
@@ -168,21 +168,21 @@ export class ApiService {
 
     public sendData(data){
       this.user_data=data;
-      console.log("data from service");
-      console.log(this.user_data);
+      // console.log(this.user_data);
     }
     public acceptData(){
       return this.user_data;
     }
 
     public uploadUserImage(file){
-       console.log("hbgjg");
-      // console.log(file);
+      
       const formData: FormData = new FormData();
       formData.append('file',file, file.name);
       formData.append('action_type',"profile_pic");
+      formData.append('user_email',this.user_data.email);
+      formData.append('user_reg_id',this.user_data.reg_id);
       return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',formData).subscribe((res)=>{
-        console.log();
+        // console.log(res.status);
       });
       
         

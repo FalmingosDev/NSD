@@ -16,14 +16,13 @@ export class UserhomeComponent implements OnInit {
   imagePath:File;
   // selectedFile=new FormControl();
   selectedFile:File;
-  file_data:any=''
+  file_data:any='';
+  success_img_upload:any;
   
   
   url:any="assets/images/defaul-profile-image.png";
 
-  constructor(private dataservice:ApiService,
-               private router:Router,
-              ) { }
+  constructor(private dataservice:ApiService,private router:Router) { }
 
   ngOnInit(): void {
     let local_email=localStorage.getItem('token');
@@ -31,8 +30,14 @@ export class UserhomeComponent implements OnInit {
      this.user_id=response.data.id;
      this.user_name=response.data.name;
      this.user_field=response.data.apply_name;
-    //  this.user_arr.push(this.user_id,this.user_name,this.user_field);
-     console.log(response.data);
+
+
+     console.log(response.data.picture);
+     if(response.data.picture!=null){
+       this.url="http://localhost/NSD/image/userprofile_img/"+response.data.picture;
+     }
+
+
      this.dataservice.sendData(response.data);
      });
 
@@ -40,6 +45,7 @@ export class UserhomeComponent implements OnInit {
       $(".file-upload").click();
    });
   }
+  
   onFileChanged(event){
   const files = event.target.files;
   if (files.length === 0)
@@ -64,17 +70,8 @@ export class UserhomeComponent implements OnInit {
   //  let formData = new FormData();
   // formData.append('image',this.selectedFile.name);
   // this.file_data=formData;
-   this.dataservice.uploadUserImage(this.selectedFile);
-
-
-
-
-
-  
-
-
-
-
+   this.success_img_upload=this.dataservice.uploadUserImage(this.selectedFile);
+   console.log(this.success_img_upload);
 
   }
 

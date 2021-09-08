@@ -8,7 +8,7 @@ $action_type= $request->action_type;
 if($action_type=="fetch_user_data"){
     $email=$request->email;
 //    $fetch="SELECT id,name,apply_for FROM audition_db.tbl_application_detail WHERE email='".$email."' "; 
-    $fetch="SELECT ad.id,ad.name,ad.apply_for,ad.email,ad.phone1,
+    $fetch="SELECT ad.id,ad.name,ad.reg_id,ad.picture,ad.apply_for,ad.email,ad.phone1,
                    ad.state,ad.address,ad.gender,ad.occupation,ad.age,
                   af.apply_name
             FROM audition_db.tbl_application_detail as ad
@@ -19,7 +19,5 @@ if($action_type=="fetch_user_data"){
     $user_data=mysqli_fetch_assoc($mysqli);
     echo json_encode(['data'=>$user_data]);
 }
-elseif($action_type=="profile_pic"){
-    echo json_encode(['data'=>"hus"]);
-}
+
 ?>
