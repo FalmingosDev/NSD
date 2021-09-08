@@ -7,8 +7,10 @@ import { AuditioncategoriesComponent } from './auditioncategories/auditioncatego
 import { AuditionjudgesComponent } from './auditionjudges/auditionjudges.component';
 import { AuditiontcComponent } from './auditiontc/auditiontc.component';
 import { UpcomingauditionComponent } from './upcomingaudition/upcomingaudition.component';
+import { UserComponent } from './user/user.component';
 
 import { UserhomeComponent } from './userhome/userhome.component';
+import { UserpreviewComponent } from './userpreview/userpreview.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UsersubbmissionComponent } from './usersubbmission/usersubbmission.component';
 
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:'auditiontermsandconditions', component:AuditiontcComponent},
   {path:'userhome', component:UserhomeComponent},
   {path:'userprofile', component:UserprofileComponent},
-  {path:'usersubbmission', component:UsersubbmissionComponent}
+  {path:'usersubbmission', component:UsersubbmissionComponent},
+  {path:'user', component:UserComponent},
+  {path:'userpreview', component:UserpreviewComponent}
 ];
 
 @NgModule({

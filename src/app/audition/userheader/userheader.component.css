@@ -1,6 +1,15 @@
+body{
+    margin-bottom: 1px !important;
+}
 .user-top-header{
     padding: 10px 0px !important;
     border-bottom: 1px solid #d5dd25 !important;
+}
+.pro-h1 {
+    color: #fff;
+    font-size: 24px;
+    text-align: left;
+    margin: 2px 0px;
 }
 .dropdown-div .dropdown-toggle::after {
     display: inline-block;

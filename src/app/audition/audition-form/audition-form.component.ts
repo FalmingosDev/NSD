@@ -47,8 +47,8 @@ export class AuditionFormComponent implements OnInit {
 
 
   //validation checking
-
-  constructor(private http: HttpClient, private dataService: ApiService, private applyService: ApiService, private router: Router) {//private fb: FormBuilder,private dataService: ApiService,private router:Router
+  // private applyService: ApiService,
+  constructor(private http: HttpClient, private dataService: ApiService, private router: Router) {//private fb: FormBuilder,private dataService: ApiService,private router:Router
     this.datepickerConfig = Object.assign({}, {
       containerClass: 'theme-dark-blue',//for datepicker
       dateInputFormat: 'DD/MM/YYYY'
