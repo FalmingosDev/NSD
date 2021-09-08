@@ -10,6 +10,7 @@ export class ApiService {
   redirectUrl: string;
   baseUrl:string = "http://localhost/NSD/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
+  user_data:any;
 
   constructor(private httpClient : HttpClient) { }
 
@@ -157,5 +158,34 @@ export class ApiService {
     }
 
    
-    //
+    // user profile
+    public userprofile(local_email){
+      let action_type:string="fetch_user_data";
+      let email:any=local_email;
+      return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
+      
+    }
+
+    public sendData(data){
+      this.user_data=data;
+      console.log("data from service");
+      console.log(this.user_data);
+    }
+    public acceptData(){
+      return this.user_data;
+    }
+
+    public uploadUserImage(file){
+       console.log("hbgjg");
+      // console.log(file);
+      const formData: FormData = new FormData();
+      formData.append('file',file, file.name);
+      formData.append('action_type',"profile_pic");
+      return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',formData).subscribe((res)=>{
+        console.log();
+      });
+      
+        
+
+    }
 }

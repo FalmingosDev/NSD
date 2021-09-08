@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -8,16 +9,78 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./userhome.component.css']
 })
 export class UserhomeComponent implements OnInit {
-  email:string;
+  user_id:string;
+  user_name:string;
+  user_field:string;
+  message:string;
+  imagePath:File;
+  // selectedFile=new FormControl();
+  selectedFile:File;
+  file_data:any=''
+  
+  
+  url:any="assets/images/defaul-profile-image.png";
 
-  constructor(private applyservice:ApiService,
-               private router:Router) { }
+  constructor(private dataservice:ApiService,
+               private router:Router,
+              ) { }
 
   ngOnInit(): void {
-    let local_email = localStorage.getItem('token');
-    this.email=local_email;
-    // console.log(this.router.url); // get current route
+    let local_email=localStorage.getItem('token');
+    this.dataservice.userprofile(local_email).subscribe((response) => {
+     this.user_id=response.data.id;
+     this.user_name=response.data.name;
+     this.user_field=response.data.apply_name;
+    //  this.user_arr.push(this.user_id,this.user_name,this.user_field);
+     console.log(response.data);
+     this.dataservice.sendData(response.data);
+     });
+
+     $(".upload-button").on('click', function() {
+      $(".file-upload").click();
+   });
+  }
+  onFileChanged(event){
+  const files = event.target.files;
+  if (files.length === 0)
+      return;
+  const mimeType = files[0].type;
+  if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+  }
+  const reader = new FileReader();
+  this.imagePath = files;
+  reader.readAsDataURL(files[0]); 
+  reader.onload = (_event) => { 
+      this.url = reader.result; 
+      // console.log(this.url);
+  }
+
+  
+   this.selectedFile=<File>event.target.files[0];
+  //  const selectedFile=event.target.files[0];
+  //console.log(this.selectedFile);
+  //  let formData = new FormData();
+  // formData.append('image',this.selectedFile.name);
+  // this.file_data=formData;
+   this.dataservice.uploadUserImage(this.selectedFile);
+
+
+
+
+
+  
+
+
+
+
 
   }
+
+ 
+
+
+
 
 }

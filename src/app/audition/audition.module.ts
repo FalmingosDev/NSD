@@ -20,6 +20,8 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UsersubbmissionComponent } from './usersubbmission/usersubbmission.component';
 import { UserheaderComponent } from './userheader/userheader.component';
 import { UserfooterComponent } from './userfooter/userfooter.component';
+import { UserComponent } from './user/user.component';
+import { UserpreviewComponent } from './userpreview/userpreview.component';
  
 
 @NgModule({
@@ -37,7 +39,9 @@ import { UserfooterComponent } from './userfooter/userfooter.component';
     UserhomeComponent,
     UsersubbmissionComponent,
     UserheaderComponent,
-    UserfooterComponent
+    UserfooterComponent,
+    UserComponent,
+    UserpreviewComponent
   ],
   imports: [
     CommonModule,
