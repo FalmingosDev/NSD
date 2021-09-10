@@ -36,14 +36,12 @@ export class UserhomeComponent implements OnInit {
      if(response.data.picture!=null){
        this.url="http://localhost/NSD/image/userprofile_img/"+response.data.picture;
      }
-
-
      this.dataservice.sendData(response.data);
      });
 
      $(".upload-button").on('click', function() {
       $(".file-upload").click();
-   });
+     });
   }
   
   onFileChanged(event){

@@ -94,7 +94,7 @@ export class HomepageComponent implements OnInit {
 		if (chkMsg == true) {
 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
 			this.router.navigate([redirect]);
-		} else {
+		} else{
 			return false;
 		}
 		

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="user-img-round">
-                    <img src="assets/images/user-home-img.jpg" class="img-fluid">
+                    <img src={{profie_pic_src}} class="img-fluid">
                 </div>
             </div>
         </div>  
@@ -53,35 +53,35 @@
                                     <tbody>
                                     <tr>
                                     <td><p>City/District : </p></td>
-                                    <td>Berhampur murshidabad</td>
+                                    <td>{{ user_data.address }}</td>
                                     </tr>
                                     <tr>
                                     <td><p>State : </p></td>
-                                    <td>West Bengal</td>
+                                    <td>{{ user_data.state }}</td>
                                     </tr>
                                     <tr>
                                     <td><p>Pincode : </p></td>
-                                    <td>742168</td>
+                                    <td>{{ user_data.pin }}</td>
                                     </tr>
                                     <tr>
                                     <td><p>DOB : </p></td>
-                                    <td>02/09/2014</td>
+                                    <td>{{ user_data.dob }}</td>
                                     </tr>
                                     <tr>
                                     <td><p>Gender : </p></td>
-                                    <td>Female</td>
+                                    <td>{{ user_data.gender}}</td>
                                     </tr>
                                     <tr>
                                     <td><p>Occupation : </p></td>
-                                    <td></td>
+                                    <td>{{ user_data.occupation }}</td>
                                     </tr>
                                     <tr>
                                     <td><p>Age : </p></td>
-                                    <td>6</td>
+                                    <td>{{ user_data.age}}</td>
                                     </tr>
                                     <tr>
                                     <td><p>Registration Category : </p></td>
-                                    <td>Singer (Jr)</td>
+                                    <td>{{ user_data.apply_name }}</td>
                                     </tr>
                                     <tr>
                                     <td>
@@ -106,87 +106,83 @@
                         </div>
                     </div>
                 </div>
-                <div class="strip-div">
+                <div class="container">
+                   
+                  </div>
+                <div class="strip-div" *ngIf="isShown">
                     <h4>Select Your Photo ID Type</h4>
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label for="html">HTML</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label for="css">CSS</label><br>
-                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                    <label for="javascript">JavaScript</label> 
+                    <div class="row" >
+                        <div class="col-sm">
+                            <input type="radio" id="vote" name="photo_id" value="voter-card"  (change)="changePhotoIdType($event)">
+                            <label for="vote">Voter ID</label><br>
+                            <input type="radio" id="driving" name="photo_id" value="driving-Licence" (change)="changePhotoIdType($event)">
+                            <label for="driving">Driving Licence</label><br>
+                            <input type="radio" id="pan" name="photo_id" value="pan-card"  (change)="changePhotoIdType($event)">
+                            <label for="pan">Pan Card</label>   
+                        </div>
+                        <div class="col-sm">
+                            <input type="radio" id="passport" name="photo_id" value="passport" (change)="changePhotoIdType($event)">
+                            <label for="passport">Passport</label><br>
+                            <input type="radio" id="aadhaar" name="photo_id" value="aadhaar-card" (change)="changePhotoIdType($event)">
+                            <label for="aadhaar">Aadhaar Card</label><br>
+                            <input type="radio" id="other" name="photo_id" value="other" (change)="changePhotoIdType($event)">
+                            <label for="other">Any other Govt. Issued Document</label> 
+                        </div>
+                    </div>
                 </div>
+
                 <div class="strip-div">
                     <h4>Your Photo ID</h4>
                     <div class="ph-sm">
                         <div class="circle">
-                          <img class="profile-pic" src="/assets/images/defaul-profile-image.png">
+                            <img class="profile-pic" id="img"  src={{photoProofurl}}> 
                         </div>
-                        <div class="p-image">
-                          <i class="fa fa-camera upload-button"></i>
-                           <input class="file-upload" type="file" accept="image/*"/>
+                        <div class="p-image" id="photoCamera">
+                            <i class="upload-button fa fa-camera"></i>
+                            <input class="file-upload" type="file" id="file" (change)="onPhotoTypeChanged($event)" accept="image/*"/>
                         </div>
-                     </div>
+                    </div>
+
                 </div>
+              
+                <div class="strip-div" *ngIf="isVisible">
+                    <h4>Select Your Age Proof Type</h4>
+                    <div class="row" >
+                        <div class="col-sm">
+                            <input type="radio" id="birth2" name="age_proof" value="birth-certificate" (change)="changeAgeIdType($event)">
+                            <label for="birth2">Birth Certificate</label><br>
+                            <input type="radio" id="driving2" name="age_proof" value="driving-licence" (change)="changeAgeIdType($event)">
+                            <label for="driving2">Driving Licence</label><br>
+                            <input type="radio" id="pan2" name="age_proof" value="pan-card" (change)="changeAgeIdType($event)">
+                            <label for="pan2">PAN Card</label>   
+                        </div> 
+                        <div class="col-sm">
+                            <input type="radio" id="passport2" name="age_proof" value="passport" (change)="changeAgeIdType($event)">
+                            <label for="passport2">Passport</label><br>
+                            <input type="radio" id="aadhaar2" name="age_proof" value="aadhaar-card" (change)="changeAgeIdType($event)">
+                            <label for="aadhaar2">Aadhaar Card</label><br>
+                            <input type="radio" id="school2" name="age_proof" value="school-certificate" (change)="changeAgeIdType($event)">
+                            <label for="school2">School Certificate</label> 
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="strip-div">
                     <h4>Your Age Proof</h4>
                     <div class="ph-sm">
                         <div class="circle">
-                          <img class="profile-pic2" src="/assets/images/defaul-profile-image.png">
+                          <img class="profile-pic2" src={{ageProofurl}}>
                         </div>
-                        <div class="p-image">
-                          <i class="fa fa-camera upload-button2"></i>
-                           <input class="file-upload2" type="file" accept="image/*"/>
+                        <div class="p-image" id="ageCamera">
+                          <i class="upload-button2 fa fa-camera"></i>
+                           <input class="file-upload2" type="file" (change)="onAgeTypeChanged($event)" accept="image/*"/>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
   </section>
-  <script>
-    $(document).ready(function() {
-        var readURL = function(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('.profile-pic').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
-        $(".file-upload").on('change', function(){
-            readURL(this);
-        });
-
-        $(".upload-button").on('click', function() {
-           $(".file-upload").click();
-        });
-    });  
-      $(document).ready(function() {
-        var readURL = function(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('.profile-pic2').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
-        $(".file-upload2").on('change', function(){
-            readURL(this);
-        });
-
-        $(".upload-button2").on('click', function() {
-           $(".file-upload2").click();
-        });
-    });
-</script>
+ 
 <app-userfooter></app-userfooter>

@@ -175,7 +175,6 @@ export class ApiService {
     }
 
     public uploadUserImage(file){
-      
       const formData: FormData = new FormData();
       formData.append('file',file, file.name);
       formData.append('action_type',"profile_pic");
@@ -184,8 +183,30 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',formData).subscribe((res)=>{
         // console.log(res.status);
       });
+    }
+    public photoIndentityProof(file,photoidType){
+      const docformData:FormData=new FormData();
+      docformData.append('file',file, file.name);
+      docformData.append('photoidType',photoidType);
+      docformData.append('user_email',this.user_data.email);
+      docformData.append('user_reg_id',this.user_data.reg_id);
+      docformData.append('action_type',"upload_photo_id");
+      return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',docformData).subscribe((res)=>{
+        console.log(res.status);
+      })
+    }
+
+    public ageIndentityProof(file,ageidType){
+      const ageformData:FormData=new FormData();
+      ageformData.append('file',file, file.name);
+      ageformData.append('ageidType',ageidType);
+      ageformData.append('user_email',this.user_data.email);
+      ageformData.append('user_reg_id',this.user_data.reg_id);
+      ageformData.append('action_type',"upload_age_id");
+      return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',ageformData).subscribe((res)=>{
+        console.log(res.status);
+      })
       
-        
 
     }
 }
