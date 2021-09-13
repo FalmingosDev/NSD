@@ -209,4 +209,68 @@ export class ApiService {
       
 
     }
+    public submitKnockoutFile(file){
+      const email=localStorage.getItem('token');
+      const knockoutForm:FormData=new FormData();
+      knockoutForm.append('file',file, file.name);
+      knockoutForm.append('action_type','submit_knockoutfile');
+      knockoutForm.append('user_email',email);
+      // knockoutForm.append('user_reg_id',this.user_data.reg_id);
+      console.log(knockoutForm);
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',knockoutForm).subscribe((res)=>{
+        // console.log(res.status);
+        if(res.status=="successfull"){
+          alert("You Successfully Submitted your file for knockout round");
+        }
+      });
+    }
+    public submitSemiFinalFile(file){
+      const email=localStorage.getItem('token');
+      const semiFinalForm:FormData=new FormData();
+      semiFinalForm.append('file',file, file.name);
+      semiFinalForm.append('user_email',email);
+      semiFinalForm.append('action_type','submit_semifinalfile');
+      console.log("from api");
+      console.log(semiFinalForm);
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',semiFinalForm).subscribe((res)=>{
+        console.log(res.status);
+        if(res.status=="successfull"){
+          alert("You Successfully Submitted your file for Semifinal round");
+        }else{
+          alert("Submission Unsuccessfull");
+        }
+      });
+
+    }
+    public submitFinalFile(file){
+      const email=localStorage.getItem('token');
+      const finalForm:FormData=new FormData();
+      finalForm.append('file',file, file.name);
+      finalForm.append('user_email',email);
+      finalForm.append('action_type','submit_finalfile');
+      console.log("from api");
+      console.log(finalForm);
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm).subscribe((res)=>{
+        console.log(res.status);
+        if(res.status=="successfull"){
+          alert("You Successfully Submitted your file for Semifinal round");
+        }
+        else{
+          alert("Submission Unsuccessfull");
+        }
+      });
+    }
+    public fromRounds(id,action_type){
+      console.log("from api");
+      console.log(id);
+      console.log(action_type);
+      const fetchdata=new FormData();
+      fetchdata.append('id',id);
+      fetchdata.append('action_type',action_type);
+      return this.httpClient.post<any>(this.baseUrl+'/user_submitted_file.php',fetchdata).subscribe((res)=>{
+        
+      });
+
+    }
+    
 }

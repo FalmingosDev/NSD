@@ -68,16 +68,7 @@ export class AuditionFormComponent implements OnInit {
     const email = localStorage.getItem('token');
     this.local_email=email;
     
-    
-    // this.dataService.cheak_email(this.local_email,action).subscribe((result)=>{
-    //   let count=(JSON.stringify(result.data[0].email));
-    //   console.log(count);
-    //   this.email_count=count;
-    //   if(count=="0"){
-    //     console.log("mathched");
-    //   }
-
-    // });
+  
     //form validator
     this.angForm = new FormGroup({
       name: new FormControl('', Validators.required),

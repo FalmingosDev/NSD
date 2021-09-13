@@ -11,8 +11,8 @@ if($action_type=="fetch_user_data"){
     $fetch="SELECT ad.id,ad.name,ad.reg_id,ad.dob,ad.picture,ad.apply_for,ad.email,
             ad.phone1,ad.state,ad.address,ad.pin,ad.gender,ad.occupation,ad.age,ad.photo_proof,ad.photo_proof_type,ad.age_proof,ad.age_proof_type,
             af.apply_name
-            FROM audition_db.tbl_application_detail as ad
-            INNER JOIN  audition_db.tbl_apply_for as af
+            FROM tbl_application_detail as ad
+            INNER JOIN  tbl_apply_for as af
             ON ad.apply_for=af.id WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$fetch);
     

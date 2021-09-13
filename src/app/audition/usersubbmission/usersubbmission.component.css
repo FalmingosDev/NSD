@@ -161,18 +161,18 @@
     text-align: left;
     margin-bottom: 0;
 }
-.season-perform p span{
+/* .season-perform p span{
     display: block;
-}
+} */
 .season2{
     background-color: #2d3a47;
     border-radius: 10px;
     padding: 10px 7px;
     margin-bottom: 15px;  
 }
-.season-text img{
+/* .season-text img{
     margin: 7px 0px 0px;
-}
+} */
 .detail-info-table td{
     text-align: left; 
     color: #fff;
@@ -298,3 +298,25 @@
     margin-bottom: 0;
 }
 /*user*/
+/*audition-user-submision*/
+.ad-sm .element {
+    /*display: inline-flex;*/
+    align-items: center;
+  }
+  .ad-sm i {
+      cursor: pointer;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      display: block;
+  }
+  .name-fl{
+      color: #fff;
+  }
+  i:hover {
+    opacity: 0.6;
+  }
+  .ad-sm input {
+    display: none;
+  }
+  /*audition-user-submision*/
