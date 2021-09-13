@@ -41,12 +41,12 @@ export class SubcriptionComponent implements OnInit {
     {
       this.dataService.usersubscribe(angForm1.netwood_email,angForm1.newogames_email,angForm1.starhunt_email).subscribe((result)=>{
       if(result.code==1){
-		alert('User Subscription Successfully Completed!');
-		const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+		    alert('User Subscription Successfully Completed!');
+		    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
         this.router.navigate([redirect]);
       }
       else{
-		alert('User Subscription Failed!');
+		    alert('User Subscription Failed!');
         const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/subcription/'+result.username;
         this.router.navigate([redirect]);
       }
