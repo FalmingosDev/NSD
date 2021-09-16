@@ -9,7 +9,7 @@ if($action_type=="fetch_user_data"){
     $email=$request->email;
 //    $fetch="SELECT id,name,apply_for FROM audition_db.tbl_application_detail WHERE email='".$email."' "; 
     $fetch="SELECT ad.id,ad.name,ad.reg_id,ad.dob,ad.picture,ad.apply_for,ad.email,
-            ad.phone1,ad.state,ad.address,ad.pin,ad.gender,ad.occupation,ad.age,ad.photo_proof,ad.photo_proof_type,ad.age_proof,ad.age_proof_type,
+            ad.phone1,ad.state,ad.address,ad.pin,ad.gender,ad.occupation,ad.age,ad.photo_proof,ad.photo_proof_type,ad.age_proof,ad.age_proof_type,ad.phase,ad.aud_type,ad.submission1,ad.submission2,ad.submission3,
             af.apply_name
             FROM tbl_application_detail as ad
             INNER JOIN  tbl_apply_for as af
@@ -18,6 +18,9 @@ if($action_type=="fetch_user_data"){
     
     $user_data=mysqli_fetch_assoc($mysqli);
     echo json_encode(['data'=>$user_data]);
+}
+else if($action_type=="fetch_sub_data"){
+
 }
 
 ?>

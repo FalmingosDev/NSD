@@ -51,6 +51,8 @@ export class UserprofileComponent implements OnInit {
       $('#ageCamera').hide();
     }
 
+    
+
     $(".upload-button").on('click', function () {
       $(".file-upload").click();
     });

@@ -1,6 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,8 +12,9 @@ export class ApiService {
   baseUrl:string = "http://localhost/NSD/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   user_data:any;
+  previewData:object;  //knockout file
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient,private route:Router) { }
 
   public userlogin(email, password) {
      //alert(mobile);
@@ -165,6 +167,12 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
       
     }
+    public fetch_submission_data(local_email){
+      let action_type:string="fetch_sub_data";
+      let email:any=local_email;
+      return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
+      
+    }
 
     public sendData(data){
       this.user_data=data;
@@ -217,12 +225,7 @@ export class ApiService {
       knockoutForm.append('user_email',email);
       // knockoutForm.append('user_reg_id',this.user_data.reg_id);
       console.log(knockoutForm);
-      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',knockoutForm).subscribe((res)=>{
-        // console.log(res.status);
-        if(res.status=="successfull"){
-          alert("You Successfully Submitted your file for knockout round");
-        }
-      });
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',knockoutForm)
     }
     public submitSemiFinalFile(file){
       const email=localStorage.getItem('token');
@@ -232,14 +235,7 @@ export class ApiService {
       semiFinalForm.append('action_type','submit_semifinalfile');
       console.log("from api");
       console.log(semiFinalForm);
-      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',semiFinalForm).subscribe((res)=>{
-        console.log(res.status);
-        if(res.status=="successfull"){
-          alert("You Successfully Submitted your file for Semifinal round");
-        }else{
-          alert("Submission Unsuccessfull");
-        }
-      });
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',semiFinalForm)
 
     }
     public submitFinalFile(file){
@@ -250,15 +246,7 @@ export class ApiService {
       finalForm.append('action_type','submit_finalfile');
       console.log("from api");
       console.log(finalForm);
-      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm).subscribe((res)=>{
-        console.log(res.status);
-        if(res.status=="successfull"){
-          alert("You Successfully Submitted your file for Semifinal round");
-        }
-        else{
-          alert("Submission Unsuccessfull");
-        }
-      });
+      return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm)
     }
     public fromRounds(id,action_type){
       console.log("from api");
@@ -268,9 +256,13 @@ export class ApiService {
       fetchdata.append('id',id);
       fetchdata.append('action_type',action_type);
       return this.httpClient.post<any>(this.baseUrl+'/user_submitted_file.php',fetchdata).subscribe((res)=>{
-        
+        this.previewData=res;
+        this.route.navigate(['/userpreview']);
       });
 
+    }
+    public getValueForPreview(){
+      return this.previewData;
     }
     
 }

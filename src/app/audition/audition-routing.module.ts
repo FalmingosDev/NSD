@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'auditiontermsandconditions', component:AuditiontcComponent},
   {path:'userhome', component:UserhomeComponent},
   {path:'userprofile', component:UserprofileComponent},
-  {path:'usersubbmission', component:UsersubbmissionComponent},
+  {path:'usersubmission', component:UsersubbmissionComponent},
   {path:'user', component:UserComponent},
   {path:'userpreview', component:UserpreviewComponent}
 ];
