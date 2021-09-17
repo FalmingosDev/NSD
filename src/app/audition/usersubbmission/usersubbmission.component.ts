@@ -26,10 +26,31 @@ export class UsersubbmissionComponent implements OnInit {
   isSemiFinal_play: boolean = false;
   isFinal_play: boolean = false;
 
+  isknockout_box:boolean=true;
+  issemiFinal_box:boolean=false;
+  isfinal_box:boolean=false;
+  
+  knockOutMsg:string;
+  semiFinalMsg:string;
+  finalMsg:string;
+
+  cmt_1:string="Congratulations! You have been selected for the next round";
+  jury_dislike_cmt:string=" oeeeeeeeeeeeeeeeWe regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online. However, you will be informed when Netwood Stars Hunt Season 2 starts. You have the opportunity to participate in next Season without any additional charges.";
+  judge_dislike_cmt:string="We regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online. However, you will be informed when Netwood Stars Hunt Season 2 starts. You have the opportunity to participate in next Season without any additional charges.";
+  judge_like_cmt:string="Awesome! You have been selected for Semifinals.";
+  semi_dislike_cmt:string="We regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online.\n You will be provided one year subscription of Netwood OTT  soon which you can login using your registered mobile number" ;
+   semi_like_cmt:string="Congratulations! You have been selected for the Final round.";    
+   final_dislike_cmt:string="We regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online Final. You will be provided one year subscription of Netwood OTT soon which you can login using your registered mobile number";
+   final_like_cmt="Congratulations! You are the winner for Netwood Stars Hunt Season 1 ";
+   
+  
+               
+
   constructor(private dataService: ApiService) { }
 
   ngOnInit(): void {
     this.user_data = this.dataService.acceptData();
+
     const local_email = localStorage.getItem('token');
     this.dataService.userprofile(local_email)
       .subscribe((res) => {
@@ -55,29 +76,71 @@ export class UsersubbmissionComponent implements OnInit {
         }
       });
 
-    
 
+      //for audition result
+      this.dataService.checkKnockoutResult("check_juryallocation_result").subscribe((res)=>{
+        if(res.jury_allocation.react)
+        {
+          if(res.jury_allocation.react=="Dislike")
+          {
+            this.knockOutMsg=this.jury_dislike_cmt;
+          }
+          else if(res.jury_allocation.react=="Like")
+          {
+            
+            this.dataService.checkKnockoutResult("check_judgeallocation_result").subscribe((res)=>{
+              if(res.judge_allocation.react)
+              {
+                if(res.judge_allocation.react=="Dislike")
+                {
+                  this.knockOutMsg=this.judge_dislike_cmt;
+                }else if(res.judge_allocation.react=="Like")
+                {
+                  this.issemiFinal_box=true;
+                  this.knockOutMsg=this.judge_like_cmt;
+                  this.dataService.checkSemiFinalResult("check_semi_mentor_result").subscribe((res)=>{
+                    if(res.semi_allocation.react)
+                    {
+                      if(res.semi_allocation.react=="Dislike"){
+                        this.semiFinalMsg=this.semi_dislike_cmt;
 
+                      }
+                      else if(res.semi_allocation.react=="Like")
+                      {
+                        this.isfinal_box=true; 
+                        this.semiFinalMsg=this.semi_like_cmt;
+                        this.dataService.checkFinalResult("check_final_mentor_result").subscribe((res)=>{
+                          if(res.final_allocation.react)
+                          {
+                              if(res.final_allocation.react=="Dislike")
+                              {
+                                this.finalMsg=this.final_dislike_cmt;
+                              }
+                              else if(res.final_allocation.react=="Like"){
+                                this.finalMsg=this.final_like_cmt+" Phase "+this.user_data.phase+" "+this.user_data.aud_type;
+                              
+                              }
+                          }
+                          
+                                           
+                        });
 
-
-
-
-    // if(this.user_data.submission1=="1"){
-    //   this.isKnockout_btn=false;
-    //   this.isKnockout_play=true;
-
-    // }
-
-    // if(this.user_data.submission2=="1"){
-    //   this.isSemiFinal_btn=false;
-    //   this.isSemiFinal_play=true;
-    // }
-    // if(this.user_data.submission3=="1"){
-    //   this.isFinal_btn=false;
-    //   this.isFinal_play=true;
-    // }
-
-
+                      }
+                    }
+                  })
+                }
+              }
+            })
+  
+  
+          }
+          else
+          {
+             this.knockOutMsg="Jury Unchecked";
+          }
+        }
+      });
+//We regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online. However, you will be informed when Netwood Stars Hunt Season 2 starts. You have the opportunity to participate in next Season without any additional charges
   }
 
 
@@ -138,9 +201,8 @@ export class UsersubbmissionComponent implements OnInit {
     e.preventDefault();
     this.dataService.fromRounds(this.user_data.id, 'from_knockout');
   }
-  fromSemiFinal(e) {
+  fromSemiFinal(e){
     e.preventDefault();
-    console.log(" semi click");
     this.dataService.fromRounds(this.user_data.id, 'from_semifinal');
   }
   fromFinal(e) {

@@ -57,12 +57,12 @@
                     
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="kn-p">Congratulations! You have been selected for the next round.</p>
+                            <p class="kn-p">{{ knockOutMsg }}</p>
                         </div>
                     </div>
                     
                 </div> 
-                <div class="season2">
+                <div class="season2" *ngIf="issemiFinal_box">
                         <div class="row">
                             <div class="col-10"> 
                                 <div class="season-perform">  
@@ -92,8 +92,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="kn-p">{{ semiFinalMsg }}</p>
+                            </div>
+                        </div>
                 </div>
-                <div class="season2">
+                <div class="season2" *ngIf="isfinal_box">
                     <div class="row">
                         <div class="col-10"> 
                             <div class="season-perform">  
@@ -130,7 +135,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="kn-p">Congratulations! You are the winner for Netwood Stars Hunt Season 1 Phase 3 Online. </p>
+                            <p class="kn-p">{{ finalMsg }} </p>
                         </div>
                     </div>
                 </div>

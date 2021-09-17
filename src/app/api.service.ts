@@ -167,6 +167,7 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
       
     }
+    
     public fetch_submission_data(local_email){
       let action_type:string="fetch_sub_data";
       let email:any=local_email;
@@ -249,9 +250,6 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm)
     }
     public fromRounds(id,action_type){
-      console.log("from api");
-      console.log(id);
-      console.log(action_type);
       const fetchdata=new FormData();
       fetchdata.append('id',id);
       fetchdata.append('action_type',action_type);
@@ -263,6 +261,20 @@ export class ApiService {
     }
     public getValueForPreview(){
       return this.previewData;
+    }
+
+
+    public checkKnockoutResult(action_type){
+      const local_email=localStorage.getItem('token');
+      return this.httpClient.post<any>(this.baseUrl+'/candidate_aud_result.php',{local_email,action_type});
+    }
+    public checkSemiFinalResult(action_type){
+      const local_email=localStorage.getItem('token');
+      return this.httpClient.post<any>(this.baseUrl+'/candidate_aud_result.php',{local_email,action_type});
+    }
+    public checkFinalResult(action_type){
+      const local_email=localStorage.getItem('token');
+      return this.httpClient.post<any>(this.baseUrl+'/candidate_aud_result.php',{local_email,action_type});
     }
     
 }
