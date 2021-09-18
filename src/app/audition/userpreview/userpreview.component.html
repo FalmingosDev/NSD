@@ -34,19 +34,25 @@
                         <div class="col-8">
                             <div class="row">
                                 <div class="col-6 pl-0 jury-mn">
-                                    <h4>Jury</h4>
-                                    <h5>Meghdut</h5>
-                                    <span>Dislike<span>Comment :</span></span>
+                                    <h4>{{ commenter_type}}</h4>
+                                    <h5>{{ commenter_name }}</h5>
+                                    <span>{{commenter_react}}<span>Comment :</span></span>
                                 </div> 
                                 <div class="col-6 p-0 jury-nm-2">
-                                    <p>21-08-2021 12:00 AM</p>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <p>{{ commenter_star }}</p>
+                                    <p>{{ commenter_date }}</p>
+                                    <!-- <div *ngFor=`let in of counter({{commenter_star}}) ;let i = index`></div> -->
+                                    
+                                         <!-- <i class="fa fa-star" aria-hidden="true" *ngFor="let in of commenter_star_arr ;let i = index"></i>  -->
+                                        <!-- <i class="fa fa-star" aria-hidden="true" *ngFor="let n of item.rank | range"></i> -->
+                                
+                                    
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
-                                <p class="nm-p">Sorry, you are not selected for the Semifinal!</p>
+                                <p class="nm-p">{{ comment }}</p>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ if($action_type=="check_juryallocation_result"){
 
 
 
-    $select_res="SELECT td.id,td.submission1,ja.app_id,ja.react,ja.status,ja.approve,ja.comment,ja.jury_id,ja.approved_by
+    $select_res="SELECT td.id,td.submission1,ja.app_id,ja.react,ja.status,ja.approve,ja.jury_id,ja.approved_by
                 FROM tbl_application_detail as td
                 INNER JOIN tbl_jury_allocation as ja
                 ON td.id = ja.app_id WHERE td.id='".$can_id."' ";
@@ -32,7 +32,7 @@ elseif ($action_type=="check_judgeallocation_result")
     $result=mysqli_fetch_assoc($mysqli_id);
     $can_id=$result['id'];
 
-    $select_res="SELECT td.id,td.submission2,ja.app_id,ja.react,ja.status,ja.approve,ja.comment,ja.judge_id,ja.approved_by
+    $select_res="SELECT td.id,td.submission2,ja.app_id,ja.react,ja.status,ja.approve,ja.judge_id,ja.approved_by
                 FROM tbl_application_detail as td
                 INNER JOIN tbl_judge_allocation as ja
                 ON td.id = ja.app_id WHERE td.id='".$can_id."' ";
@@ -49,7 +49,7 @@ elseif($action_type=="check_semi_mentor_result")
     $result=mysqli_fetch_assoc($mysqli_id);
     $can_id=$result['id'];
     // echo $can_id;
-    $select_res="SELECT td.id,td.submission2,sa.app_id,sa.react,sa.status,sa.approve,sa.comment,sa.judge_id,sa.approved_by
+    $select_res="SELECT td.id,td.submission2,sa.app_id,sa.react,sa.status,sa.approve,sa.judge_id,sa.approved_by
                 FROM tbl_application_detail as td
                 INNER JOIN tbl_semi_final_allocation as sa
                 ON td.id = sa.app_id WHERE td.id='".$can_id."' ";
@@ -64,7 +64,7 @@ elseif($action_type=="check_final_mentor_result") {
     $mysqli_id=mysqli_query($conn,$select_id);
     $result=mysqli_fetch_assoc($mysqli_id);
     $can_id=$result['id'];
-    $select_res="SELECT td.id,td.submission2,fa.app_id,fa.react,fa.status,fa.approve,fa.comment,fa.judge_id,fa.approved_by
+    $select_res="SELECT td.id,td.submission2,fa.app_id,fa.react,fa.status,fa.approve,fa.judge_id,fa.approved_by
                 FROM tbl_application_detail as td
                 INNER JOIN tbl_final_allocation as fa
                 ON td.id = fa.app_id WHERE td.id='".$can_id."' ";

@@ -34,6 +34,12 @@ export class UsersubbmissionComponent implements OnInit {
   semiFinalMsg:string;
   finalMsg:string;
 
+
+  k_judge_data:string;
+  k_action_type_data:string;
+  semiFinal_data:string;
+  final_data:any;
+
   cmt_1:string="Congratulations! You have been selected for the next round";
   jury_dislike_cmt:string=" oeeeeeeeeeeeeeeeWe regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online. However, you will be informed when Netwood Stars Hunt Season 2 starts. You have the opportunity to participate in next Season without any additional charges.";
   judge_dislike_cmt:string="We regret to inform you that you have not been selected this time for the Netwood Stars Hunt, Season 1 : Online. However, you will be informed when Netwood Stars Hunt Season 2 starts. You have the opportunity to participate in next Season without any additional charges.";
@@ -79,16 +85,21 @@ export class UsersubbmissionComponent implements OnInit {
 
       //for audition result
       this.dataService.checkKnockoutResult("check_juryallocation_result").subscribe((res)=>{
+       
         if(res.jury_allocation.react)
         {
           if(res.jury_allocation.react=="Dislike")
           {
+            this.k_judge_data=res.jury_allocation.jury_id;
+            this.k_action_type_data="from_knockout_jury";
             this.knockOutMsg=this.jury_dislike_cmt;
           }
           else if(res.jury_allocation.react=="Like")
           {
             
             this.dataService.checkKnockoutResult("check_judgeallocation_result").subscribe((res)=>{
+              this.k_judge_data=res.judge_allocation.judge_id;
+              this.k_action_type_data="from_knockout_mentor";
               if(res.judge_allocation.react)
               {
                 if(res.judge_allocation.react=="Dislike")
@@ -99,6 +110,7 @@ export class UsersubbmissionComponent implements OnInit {
                   this.issemiFinal_box=true;
                   this.knockOutMsg=this.judge_like_cmt;
                   this.dataService.checkSemiFinalResult("check_semi_mentor_result").subscribe((res)=>{
+                    this.semiFinal_data=res.semi_allocation.judge_id;
                     if(res.semi_allocation.react)
                     {
                       if(res.semi_allocation.react=="Dislike"){
@@ -110,6 +122,7 @@ export class UsersubbmissionComponent implements OnInit {
                         this.isfinal_box=true; 
                         this.semiFinalMsg=this.semi_like_cmt;
                         this.dataService.checkFinalResult("check_final_mentor_result").subscribe((res)=>{
+                          this.final_data=res.final_allocation.judge_id;
                           if(res.final_allocation.react)
                           {
                               if(res.final_allocation.react=="Dislike")
@@ -120,17 +133,15 @@ export class UsersubbmissionComponent implements OnInit {
                                 this.finalMsg=this.final_like_cmt+" Phase "+this.user_data.phase+" "+this.user_data.aud_type;
                               
                               }
-                          }
-                          
-                                           
+                          }                 
                         });
 
                       }
                     }
-                  })
+                  });
                 }
               }
-            })
+            });
   
   
           }
@@ -199,16 +210,17 @@ export class UsersubbmissionComponent implements OnInit {
   }
   fromKnonkout(e) {
     e.preventDefault();
-    this.dataService.fromRounds(this.user_data.id, 'from_knockout');
+    console.log(this.k_judge_data);
+    console.log(this.k_action_type_data);
+     this.dataService.fromRounds(this.user_data.id,this.k_judge_data,this.k_action_type_data);
   }
   fromSemiFinal(e){
     e.preventDefault();
-    this.dataService.fromRounds(this.user_data.id, 'from_semifinal');
+    this.dataService.fromRounds(this.user_data.id,this.semiFinal_data, 'from_semifinal');
   }
   fromFinal(e) {
     e.preventDefault();
-    console.log("final click");
-    this.dataService.fromRounds(this.user_data.id, 'from_final');
+    this.dataService.fromRounds(this.user_data.id,this.final_data, 'from_final');
   }
 
 

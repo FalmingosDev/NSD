@@ -249,9 +249,11 @@ export class ApiService {
       console.log(finalForm);
       return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm)
     }
-    public fromRounds(id,action_type){
+    public fromRounds(id,judge_id,action_type){
+      console.log("JUdge id:"+judge_id);
       const fetchdata=new FormData();
       fetchdata.append('id',id);
+      fetchdata.append('judge_id',judge_id);
       fetchdata.append('action_type',action_type);
       return this.httpClient.post<any>(this.baseUrl+'/user_submitted_file.php',fetchdata).subscribe((res)=>{
         this.previewData=res;
