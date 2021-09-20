@@ -25,10 +25,6 @@ export class UserhomeComponent implements OnInit {
   constructor(private dataservice:ApiService,private router:Router) { }
 
   ngOnInit(): void {
-    console.log("hello from user home");
-
-   
-
     let local_email=localStorage.getItem('token');
     this.dataservice.userprofile(local_email).subscribe((response) => {
      this.user_id=response.data.id;
