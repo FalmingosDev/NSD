@@ -66,21 +66,30 @@ export class ApiService {
   
   
   public checkOtt(ott){
-	var loggedNo:string=this.getToken();
+	var loggedEmail:string=this.getToken();
 	var type:string = ott;
-	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedNo }); 
+	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
   
   public checkGame(game){
-	var loggedNo:string=this.getToken();
+	var loggedEmail:string=this.getToken();
 	var type:string = game;
-	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedNo }); 
+	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
   
   public checkStarhunt(star){
-	var loggedNo:string=this.getToken();
+	var loggedEmail:string=this.getToken();
 	var type:string = star;
-	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedNo }); 
+	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
+  }
+
+  public ott_sso_register(ott_username){
+    var type:string = 'register';
+    return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { type,ott_username }); 
+  }
+
+  public ott_sso_login(ott_username){
+    return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { ott_username }); 
   }
 
 	

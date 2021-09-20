@@ -28,12 +28,19 @@ export class PriceComponent implements OnInit {
     this.dataService.payment_ott(angform1).subscribe((result)=>{
 	  //alert(JSON.stringify(result));
       if(result.id==1){
+        this.dataService.ott_sso_register(result.username).subscribe((result)=>{
+          alert('Your Subscription Successfully Completed!');
+        });
+        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
+        this.router.navigate([redirect]);
+      }
+      else if(result.id==2 || result.id==3){
         const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/subcription/'+result.username;
         this.router.navigate([redirect]);
-
-      }
+      } 
       else{
-        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
+        alert('Sorry! Your Subscription Failed!');
+        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
         this.router.navigate([redirect]);
       }
     })
