@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-userheader',
   templateUrl: './userheader.component.html',
-  styleUrls: ['./userheader.component.css']
+  styleUrls: ['./userheader.component.css'] 
 })
 export class UserheaderComponent implements OnInit {
   current_url:string=""
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private dataservice:ApiService) { }
   
   ngOnInit(): void {
-    console.log(this.router.url);
+   
     if(this.router.url=='/userhome'){
       this.current_url='Dashboard';
     }
@@ -22,6 +23,8 @@ export class UserheaderComponent implements OnInit {
     else if(this.router.url=='/userprofile'){
       this.current_url="Profile";
     }
+
+
   }
 
 }

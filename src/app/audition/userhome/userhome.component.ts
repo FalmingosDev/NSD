@@ -25,20 +25,20 @@ export class UserhomeComponent implements OnInit {
   constructor(private dataservice:ApiService,private router:Router) { }
 
   ngOnInit(): void {
+    console.log("hello from user home");
+
+   
+
     let local_email=localStorage.getItem('token');
     this.dataservice.userprofile(local_email).subscribe((response) => {
      this.user_id=response.data.id;
      this.user_name=response.data.name;
      this.user_field=response.data.apply_name;
-
-
-     console.log(response.data.picture);
      if(response.data.picture!=null){
        this.url="http://localhost/NSD/image/userprofile_img/"+response.data.picture;
      }
      this.dataservice.sendData(response.data);
      });
-
      $(".upload-button").on('click', function() {
       $(".file-upload").click();
      });
@@ -58,18 +58,11 @@ export class UserhomeComponent implements OnInit {
   reader.readAsDataURL(files[0]); 
   reader.onload = (_event) => { 
       this.url = reader.result; 
-      // console.log(this.url);
   }
 
   
    this.selectedFile=<File>event.target.files[0];
-  //  const selectedFile=event.target.files[0];
-  //console.log(this.selectedFile);
-  //  let formData = new FormData();
-  // formData.append('image',this.selectedFile.name);
-  // this.file_data=formData;
    this.success_img_upload=this.dataservice.uploadUserImage(this.selectedFile);
-   console.log(this.success_img_upload);
 
   }
 

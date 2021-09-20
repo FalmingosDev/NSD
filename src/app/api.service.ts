@@ -129,9 +129,7 @@ export class ApiService {
 
     //audition form data
     public postAuditionForm(action,name,phone1,whatsapp_no,email,gender,dob,years,pin,address,state,guardian,guardian_relation,guardian_mobile,aud_type,applyFor,applyValue,phase,venuename,venuDate){
-      // console.log(venueadd);
-      
-      // console.log(venuDate);
+ 
       var name:any=name;
       var phone1:any=phone1;
       var whatsapp_no:any=whatsapp_no;
@@ -177,7 +175,6 @@ export class ApiService {
 
     public sendData(data){
       this.user_data=data;
-      // console.log(this.user_data);
     }
     public acceptData(){
       return this.user_data;
@@ -201,7 +198,7 @@ export class ApiService {
       docformData.append('user_reg_id',this.user_data.reg_id);
       docformData.append('action_type',"upload_photo_id");
       return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',docformData).subscribe((res)=>{
-        console.log(res.status);
+        // console.log(res.status);
       })
     }
 
@@ -213,7 +210,7 @@ export class ApiService {
       ageformData.append('user_reg_id',this.user_data.reg_id);
       ageformData.append('action_type',"upload_age_id");
       return this.httpClient.post<any>(this.baseUrl+'/userprofile_pic.php',ageformData).subscribe((res)=>{
-        console.log(res.status);
+        // console.log(res.status);
       })
       
 
@@ -224,8 +221,6 @@ export class ApiService {
       knockoutForm.append('file',file, file.name);
       knockoutForm.append('action_type','submit_knockoutfile');
       knockoutForm.append('user_email',email);
-      // knockoutForm.append('user_reg_id',this.user_data.reg_id);
-      console.log(knockoutForm);
       return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',knockoutForm)
     }
     public submitSemiFinalFile(file){
@@ -234,8 +229,6 @@ export class ApiService {
       semiFinalForm.append('file',file, file.name);
       semiFinalForm.append('user_email',email);
       semiFinalForm.append('action_type','submit_semifinalfile');
-      console.log("from api");
-      console.log(semiFinalForm);
       return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',semiFinalForm)
 
     }
@@ -245,12 +238,9 @@ export class ApiService {
       finalForm.append('file',file, file.name);
       finalForm.append('user_email',email);
       finalForm.append('action_type','submit_finalfile');
-      console.log("from api");
-      console.log(finalForm);
       return this.httpClient.post<any>(this.baseUrl+'/userfile_submit.php',finalForm)
     }
     public fromRounds(id,judge_id,action_type){
-      console.log("JUdge id:"+judge_id);
       const fetchdata=new FormData();
       fetchdata.append('id',id);
       fetchdata.append('judge_id',judge_id);
