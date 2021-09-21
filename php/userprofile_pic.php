@@ -11,7 +11,7 @@ if($action_type=="profile_pic"){
     $img_tmp_name = $_FILES['file']['tmp_name'];  //original photo
     $extension = pathinfo($img_name,PATHINFO_EXTENSION);
     $img_file_name = $reg_id.'.'.$extension;  // database photo name
-    $path = "../image/userprofile_img/".$img_file_name;
+    $path = "../uploads/userprofile_img/".$img_file_name;
     
     $insert="UPDATE `tbl_application_detail` SET `picture`='".$img_file_name."' WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$insert);
@@ -34,7 +34,7 @@ elseif($action_type=="upload_photo_id"){
     $file_tmp_name = $_FILES['file']['tmp_name'];  //original photo
     $extension = pathinfo($file_name,PATHINFO_EXTENSION);
     $new_file_name = $reg_id.'photo.'.$extension;  // database photo name
-    $path = "../image/user_idendity_proof/".$new_file_name;
+    $path = "../uploads/user_idendity_proof/".$new_file_name;
 
     $insert="UPDATE `tbl_application_detail` SET `photo_proof`='".$new_file_name."' ,`photo_proof_type`='".$photo_id_type."' WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$insert);
@@ -55,7 +55,7 @@ elseif($action_type=="upload_age_id"){
     $file_tmp_name = $_FILES['file']['tmp_name'];  //original photo
     $extension = pathinfo($file_name,PATHINFO_EXTENSION);
     $new_file_name = $reg_id.'age.'.$extension;  // database photo name
-    $path = "../image/user_idendity_proof/".$new_file_name;
+    $path = "../uploads/user_idendity_proof/".$new_file_name;
 
     $insert="UPDATE `tbl_application_detail` SET `age_proof`='".$new_file_name."',`age_proof_type`='".$age_id_type."' WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$insert);

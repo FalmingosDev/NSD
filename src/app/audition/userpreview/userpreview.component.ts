@@ -13,6 +13,7 @@ export class UserpreviewComponent implements OnInit{
   user_data:any;
   fileSrc:string="";
   user_pic:string="../assets/images/user-home-img.jpg";
+  base_file_root:string="http://localhost/NSD/uploads/";
 
 
   commenter_type:string;
@@ -41,7 +42,7 @@ export class UserpreviewComponent implements OnInit{
       this.commenter_date=previewData.data.reaction_date;
       this.commenter_star=Number(previewData.data.star);
       this.comment=previewData.data.comment;
-      this.fileSrc="http://localhost/NSD/image/user_submission/submission1/"+(k_fileName);
+      this.fileSrc=this.base_file_root+"user_submission/submission1/"+(k_fileName);
     }
     else if(previewData['stage']=="knockout_mentor"){
       console.log(previewData.data);
@@ -53,7 +54,7 @@ export class UserpreviewComponent implements OnInit{
       this.commenter_date=previewData.data.reaction_date;
       this.commenter_star=Number(previewData.data.star);
       this.comment=previewData.data.comment;
-      this.fileSrc="http://localhost/NSD/image/user_submission/submission1/"+(k_fileName);
+      this.fileSrc=this.base_file_root+"user_submission/submission1/"+(k_fileName);
     }
     else if(previewData['stage']=="semifinal"){
       let s_fileName=previewData.data.submission2_file;
@@ -64,7 +65,7 @@ export class UserpreviewComponent implements OnInit{
       this.commenter_date=previewData.data.reaction_date;
       this.commenter_star=Number(previewData.data.star);
       this.comment=previewData.data.comment;
-      this.fileSrc="http://localhost/NSD/image/user_submission/submission2/"+(s_fileName);
+      this.fileSrc=this.base_file_root+"user_submission/submission2/"+(s_fileName);
     }
     else if(previewData['stage']=="final"){
       let f_fileName=previewData.data.submission3_file;
@@ -75,13 +76,13 @@ export class UserpreviewComponent implements OnInit{
       this.commenter_date=previewData.data.reaction_date;
       this.commenter_star=(previewData.data.star);
       this.comment=previewData.data.comment;
-      this.fileSrc="http://localhost/NSD/image/user_submission/submission3/"+(f_fileName);
+      this.fileSrc=this.base_file_root+"user_submission/submission3/"+(f_fileName);
     }
 
     
     this.user_data=this.dataService.acceptData();
     if(this.user_data.picture!=null){
-    this.user_pic="http://localhost/NSD/image/userprofile_img/"+(this.user_data.picture);
+    this.user_pic=this.base_file_root+"userprofile_img/"+(this.user_data.picture);
     } 
 
     

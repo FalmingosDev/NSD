@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
+  base_file_url:string="http://localhost/NSD/uploads/";
   user_data: any;
   profie_pic_src:string="assets/images/user-home-img.jpg";
   //photo & age proof
@@ -36,16 +37,16 @@ export class UserprofileComponent implements OnInit {
   ngOnInit(): void {
     this.user_data = this.dataService.acceptData();
     if(this.user_data.picture!=null){
-      this.profie_pic_src="http://localhost/NSD/image/userprofile_img/"+(this.user_data.picture);
+      this.profie_pic_src=this.base_file_url+"userprofile_img/"+(this.user_data.picture);
     }
     if(this.user_data.photo_proof!=null){
-      this.photoProofurl="http://localhost/NSD/image/user_idendity_proof/"+(this.user_data.photo_proof);
+      this.photoProofurl=this.base_file_url+"user_idendity_proof/"+(this.user_data.photo_proof);
       this.isShown=false;
       // this.isShownCamera=false;
       $('#photoCamera').hide();
     }
     if(this.user_data.age_proof!=null){
-      this.ageProofurl="http://localhost/NSD/image/user_idendity_proof/"+(this.user_data.age_proof);
+      this.ageProofurl=this.base_file_url+"user_idendity_proof/"+(this.user_data.age_proof);
       this.isVisible=false;
       // this.isVisibleCamera=false;
       $('#ageCamera').hide();

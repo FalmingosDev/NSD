@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./usersubbmission.component.css']
 })
 export class UsersubbmissionComponent implements OnInit {
+  base_file_url:string="http://localhost/NSD/uploads/"
   user_data: any;
   user_data2: any;
   profie_pic_src: string = "assets/images/defaul-profile-image.png";
@@ -63,7 +64,7 @@ export class UsersubbmissionComponent implements OnInit {
         this.user_data2 = res.data;
         console.log(this.user_data2.picture);
         if (this.user_data2.picture != null) {
-          this.profie_pic_src = "http://localhost/NSD/image/userprofile_img/" + (this.user_data2.picture);
+          this.profie_pic_src = this.base_file_url+"userprofile_img/" + (this.user_data2.picture);
         }
 
         if (this.user_data2.submission1 == "1") {

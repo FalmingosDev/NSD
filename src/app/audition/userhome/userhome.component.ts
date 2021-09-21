@@ -31,7 +31,7 @@ export class UserhomeComponent implements OnInit {
      this.user_name=response.data.name;
      this.user_field=response.data.apply_name;
      if(response.data.picture!=null){
-       this.url="http://localhost/NSD/image/userprofile_img/"+response.data.picture;
+       this.url="http://localhost/NSD/uploads/userprofile_img/"+response.data.picture;
      }
      this.dataservice.sendData(response.data);
      });

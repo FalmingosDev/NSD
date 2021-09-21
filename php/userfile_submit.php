@@ -20,7 +20,7 @@ if($action_type=="submit_knockoutfile"){
     $extension = pathinfo($file_name,PATHINFO_EXTENSION);
     $new_file_name = $user_id.'.'.$extension;  // database photo name
     // echo json_encode($new_file_name);
-    $path = "../image/user_submission/submission1/".$new_file_name;
+    $path = "../uploads/user_submission/submission1/".$new_file_name;
 
 
     $insert="UPDATE `tbl_application_detail` SET `submission1_file`='".$new_file_name."',`submission1`='1' WHERE email='".$email."'";
@@ -48,7 +48,7 @@ elseif($action_type=="submit_semifinalfile"){
     $extension = pathinfo($file_name,PATHINFO_EXTENSION);
     $new_file_name = $user_id.'.'.$extension;  // database photo name
     // echo json_encode($new_file_name);
-    $path = "../image/user_submission/submission2/".$new_file_name;
+    $path = "../uploads/user_submission/submission2/".$new_file_name;
 
     $insert="UPDATE `tbl_application_detail` SET `submission2_file`='".$new_file_name."',`submission2`='1' WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$insert);
@@ -73,7 +73,7 @@ elseif($action_type=="submit_finalfile"){
     $extension = pathinfo($file_name,PATHINFO_EXTENSION);
     $new_file_name = $user_id.'.'.$extension;  // database photo name
     // echo json_encode($new_file_name);
-    $path = "../image/user_submission/submission3/".$new_file_name;
+    $path = "../uploads/user_submission/submission3/".$new_file_name;
 
     $insert="UPDATE `tbl_application_detail` SET `submission3_file`='".$new_file_name."',`submission3`='1' WHERE email='".$email."'";
     $mysqli=mysqli_query($conn,$insert);
