@@ -277,5 +277,10 @@ export class ApiService {
       const local_email=localStorage.getItem('token');
       return this.httpClient.post<any>(this.baseUrl+'/candidate_aud_result.php',{local_email,action_type});
     }
+    public fetchCreatorsDetails(){
+      // const action_type="fetch_creators_details"
+      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{action_type:"fetch_creators_details"});
+      
+    }
     
 }
