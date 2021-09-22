@@ -2,7 +2,6 @@
 include_once("dbaudition.php");
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata); 
-//$action_type= $_REQUEST['action_type'];
 $action_type= $request->action_type; 
 
 if($action_type=="fetch_user_data"){

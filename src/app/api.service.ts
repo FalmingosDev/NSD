@@ -282,5 +282,109 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{action_type:"fetch_creators_details"});
       
     }
+
+
+    /*----------- Service Durba Start ------------ */
+
+    public postCreatorForm(creator_user_name,email,creator_dob,creator_topic,creator_desc,creator_profile_pic){
+     
+      // var creator_user_name:any=creator_user_name;
+      // var creator_topic:any=creator_topic;
+      // var email:any=email;
+      // var creator_desc:any=creator_desc;
+      // var creator_dob:any=creator_dob;
+      // var creator_profile_pic:any=creator_profile_pic;
+
+      // console.log(email);
+
+      const formData: FormData = new FormData();
+      formData.append('creator_user_name',creator_user_name);
+      formData.append('creator_topic',creator_topic);
+      formData.append('creator_desc',creator_desc);
+      formData.append('creator_dob',creator_dob);
+      formData.append('email',email);
+      formData.append('file',creator_profile_pic, creator_profile_pic.name);
+      
+ 
+
+
+    return this.httpClient.post<any>(this.baseUrl+'/creator_form_submit.php',formData).subscribe((res)=>{
+      alert(res.msg);
+    })
+
+    }
+
+    public checkCreator(email){
+      // alert (email);
+      const action_type="check_creator";
+      return this.httpClient.post<any>(this.baseUrl+'/creator_check.php',{email,action_type}).subscribe((res)=>{
+        if(res.status ==="user_exists"){
+          alert("You have already joined as creator");
+          this.route.navigate(['/creatorcontent']);
+        }
+        else{
+          alert("Welcome to creator page");
+          this.route.navigate(['/joinascreator']);
+        }
+      })
+  
+
+    }
+
+
+    public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+     
+      // var video_title:any=video_title;
+      // var year:any=year;
+      // var email:any=email;
+      // var cast:any=cast;
+      // var video_desc:any=video_desc;
+      // var creator_profile_pic:any=creator_profile_pic;
+
+      // creatorformData.append('uploadThumb',uploadThumb);
+      // console.log(uploadThumb);
+      const email = localStorage.getItem('token');
+      const creatorformData: FormData = new FormData();
+
+      creatorformData.append('email',email);
+
+      creatorformData.append('action_type',"creatorVideoSubmit");
+      creatorformData.append('file',video);
+      creatorformData.append('video_title',video_title);
+      creatorformData.append('video_desc',video_desc);
+      creatorformData.append('img',image);
+      creatorformData.append('genreList',genreList);
+      creatorformData.append('languageList',languageList);
+      creatorformData.append('year',year);
+      creatorformData.append('cast',cast);
+      creatorformData.append('director',director);
+      creatorformData.append('writer',writer);
+      creatorformData.append('photo',photo);
+      creatorformData.append('camera',camera);
+      creatorformData.append('runtime',runtime);
+      creatorformData.append('audiance',audiance);
+      
+      
+ 
+        // console.log(creatorformData);
+
+      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData).subscribe((res)=>{
+      alert(res.msg);
+      });
+
+     }
+
+    public getGenreList(action_type){
+      return this.httpClient.get<any>(this.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
+    }
+    
+    public getLanguageList(action_type){
+      return this.httpClient.get<any>(this.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
+    }
+
+    public creatorList(action_type){
+      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{action_type}});
+    }
+ /* ---------------- Service Durba End --------------------*/
     
 }

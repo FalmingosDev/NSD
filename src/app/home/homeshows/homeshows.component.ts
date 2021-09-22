@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-homeshows',
@@ -28,9 +29,16 @@ export class HomeshowsComponent implements OnInit {
    nav: false
   };
 
-  constructor() { };
+  constructor(private dataService:ApiService) { };
 
   ngOnInit(): void {
   };
+
+  checkingCreator(){
+    const email = localStorage.getItem('token');
+    this.dataService.checkCreator(email);
+    // routerLink="/joinascreator" routerLinkActive="active"
+
+  }
 
 }

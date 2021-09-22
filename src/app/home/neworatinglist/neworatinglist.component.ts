@@ -12,12 +12,7 @@ export class NeworatinglistComponent implements OnInit {
   constructor(private dataService:ApiService) { }
 
   ngOnInit(): void {
-    this.dataService.fetchCreatorsDetails().subscribe((res)=>{
-      console.log(res);
-      console.log(typeof res);
-      this.creatots_details=res;
-      console.log(this.creatots_details)
-    })
+    
   }
 
 }

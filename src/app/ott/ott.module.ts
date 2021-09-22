@@ -10,6 +10,7 @@ import { AboutottComponent } from './aboutott/aboutott.component';
 import { OttprivecyComponent } from './ottprivecy/ottprivecy.component';
 import { OtttermsComponent } from './ottterms/ottterms.component';
 import { OttcontactsComponent } from './ottcontacts/ottcontacts.component';
+import { OttmovieComponent } from './ottmovie/ottmovie.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { OttcontactsComponent } from './ottcontacts/ottcontacts.component';
     AboutottComponent,
     OttprivecyComponent,
     OtttermsComponent,
-    OttcontactsComponent 
+    OttcontactsComponent,
+    OttmovieComponent 
   ],
   imports: [
     CommonModule,

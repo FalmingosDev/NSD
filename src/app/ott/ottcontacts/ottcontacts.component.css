@@ -1,0 +1,59 @@
+/***********************cafe-netwood-episode***********************/
+.brow-child-section{
+    padding: 15px 0px;
+    margin-top: -70px;
+}
+.cf-h2 {
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 0;
+    line-height: inherit;
+}
+.cf-h2 span a{
+    color: #fff;
+}
+.mp-p{
+    color: #fff;
+    font-size: 21px;
+    margin-bottom: 0;
+}
+.mt-p-row{
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.cf-img{
+    margin: 0px 0px 0px 10px;
+}
+.cf-img img{
+    border-radius: 6px;
+}
+.cf-txt-a-tag{    
+    color: #ffc107;
+    font-size: 14px;
+    line-height: 16px;
+    display: inline-block;
+    margin: 6px 0px 0px;
+    }
+/***********************cafe-netwood-episode***********************/
+/***********************netwood-about***********************/
+.net-ab-div{
+    margin-top: 10px;
+}
+.net-ab-div h3, .net-ab-div p{
+    color: #fff;
+}
+.ab-border{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 6px;
+}
+/***********************netwood-about***********************/
+/***********************netwood-privacy-policy***********************/
+.text-link{
+    color: #50bec3;
+}
+/***********************netwood-privacy-policy***********************/
+
+.ter-ol li{
+    list-style-type: lower-roman;
+    color: #fff;
+}
