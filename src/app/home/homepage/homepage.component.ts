@@ -94,7 +94,7 @@ export class HomepageComponent implements OnInit {
 		if (chkMsg == true) {
 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
 			this.router.navigate([redirect]);
-		} else {
+		} else{
 			return false;
 		}
 		
@@ -108,9 +108,21 @@ export class HomepageComponent implements OnInit {
 		this.dataService.checkStarhunt(star).subscribe((result)=>{
 			if(result.code==1){
 				// alert('User Subscription Successfully Completed!');
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'auditionform';
-				this.router.navigate([redirect]);
-				//window.location.href = 'https://www.netwood.tv/audition/';
+				// window.location.href = 'https://www.netwood.tv/audition/';
+				const local_email = localStorage.getItem('token');
+				let action="check_email";
+				this.dataService.cheak_email(local_email,action).subscribe((result)=>{
+					if(result.starReg==1){
+						//window.location.href = 'http://3.0.255.31/newo-street/audition/audition-user-home.html';
+						const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'userhome';
+				    	this.router.navigate([redirect]);
+					}
+					else{
+						const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'auditionform';
+				    	this.router.navigate([redirect]);
+					}
+				  });
+
 			}
 			else{
 				alert(result.msg);

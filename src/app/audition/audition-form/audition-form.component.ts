@@ -25,17 +25,12 @@ import * as $ from 'jquery';
 
 })
 export class AuditionFormComponent implements OnInit {
+ local_email:string="";
+
   angForm: FormGroup;
-
-
-  // apply:Applyfor[] = [];
   apply = [];
   error = "";
   success = "";
-
-  //private applicant_age: any;
-
-  // name = 'Angular';
   optn: string[] = [];
   optn_id: string[] = [];
   gendervalue = '';
@@ -51,16 +46,9 @@ export class AuditionFormComponent implements OnInit {
   datepickerConfig: Partial<BsDatepickerConfig>  //for datepicker
 
 
-
-
-
   //validation checking
-
-
-
-
-
-  constructor(private http: HttpClient, private dataService: ApiService, private applyService: ApiService, private router: Router) {//private fb: FormBuilder,private dataService: ApiService,private router:Router
+  // private applyService: ApiService,
+  constructor(private http: HttpClient, private dataService: ApiService, private router: Router) {//private fb: FormBuilder,private dataService: ApiService,private router:Router
     this.datepickerConfig = Object.assign({}, {
       containerClass: 'theme-dark-blue',//for datepicker
       dateInputFormat: 'DD/MM/YYYY'
@@ -70,48 +58,43 @@ export class AuditionFormComponent implements OnInit {
       $("#applyCustom .select-items").html('<div>Please enter Date of Birth first</div>');
       $("#venueDateShow .select-items").html('<div>Please select Venue first</div>');
     });
-
+    
 
   }
 
 
   ngOnInit(): void {
-
+    //set login user email in form
+    const email = localStorage.getItem('token');
+    this.local_email=email;
+    
+  
+    //form validator
     this.angForm = new FormGroup({
       name: new FormControl('', Validators.required),
       phone1: new FormControl('', Validators.required),
       whatsapp_no: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
       gender: new FormControl('', Validators.required),
-
-
       pin: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
       state: new FormControl('', Validators.required),
       dob: new FormControl('', Validators.required),
-
       guardian: new FormControl('', Validators.required),
       guardian_relation: new FormControl('', Validators.required),
       guardian_mobile: new FormControl('', Validators.required),
-
       aud_type: new FormControl('', Validators.required),
-
       years: new FormControl('', Validators.required),
-
       applyFor: new FormControl('', Validators.required),
       applyValue: new FormControl('', Validators.required),
       phase: new FormControl('', Validators.required),
       venuename: new FormControl('', Validators.required),
       venuAdd: new FormControl('', Validators.required),
       venuDate: new FormControl('', Validators.required),
-
-
-
-
-
     })
 
   }
+ 
   get name() { return this.angForm.get('name') }
   get phone1() { return this.angForm.get('phone1') }
   get whatsapp_no() { return this.angForm.get('whatsapp_no') }
@@ -138,6 +121,9 @@ export class AuditionFormComponent implements OnInit {
   //minAge = 6;
   //minorAge = 13;
   //maxAge = 55;
+ 
+  
+  
 
   findAge(event) {
     console.log(event);

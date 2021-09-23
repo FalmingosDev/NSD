@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="../assets/css/main-index-style.css"> 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap4.min.css"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+
+  <title>Creator</title>
+  <style>
+    body {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body class="">
+<section class="sign-home">
+  <div class="container">
+    <div class="row">
+      <div class="sign-sec">
+        <a href="javascript:void(0)" routerLink="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+        <form class="form" [formGroup]="crtForm" (ngSubmit)="creatordata(crtForm.value)">
+           <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                  <div class="small-12 medium-2 large-2 columns">
+                    <div class="circle">
+                      <img class="profile-pic" src={{url}}> 
+                    </div>
+
+                    <div class="p-image">
+                        <i class="fa fa-camera upload-button"></i>
+                        <input class="file-upload" type="file" id="creator_profile_pic" accept="image/*" (change)="onFileChanged($event)"/>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+            <div class="justify-content-center form_container">
+    
+              <label>Username:</label>
+              <div class="input-group mb-3">
+                <input type="text" name="creator_user_name" id="creator_user_name" class="form-control input_user" formControlName="creator_user_name" value="" placeholder="Username">
+              </div>
+
+              <label>Email:</label>
+              <div class="input-group mb-2">
+                <input type="email" class="form-control input_pass" id="email" name="email" [(ngModel)]="local_email" formControlName="email" required autocomplete="off" readonly>
+              </div>
+
+              <label>DOB:</label>
+              <div class="input-group mb-2">
+                <input type="date" name="creator_dob" id="creator_dob" class="form-control input_pass" formControlName="creator_dob" value="" placeholder="DOB">
+              </div>
+
+              <label>Your topics:</label>
+              <div class="input-group mb-2">
+                <input type="text" name="creator_dob" id="creator_topic" class="form-control input_pass" formControlName="creator_topic" value="" placeholder="Your Topics">
+              </div>
+
+              <label>why you want to become a creator:</label>
+              <div class="input-group mb-2">
+                <textarea class="form-control input_pass" id="creator_desc" formControlName="creator_desc" value="creator_desc" placeholder="why you want to become a creator"></textarea> 
+              </div>
+
+              <div class="d-flex justify-content-center mt-3 login_container">
+                <button type="submit" class="btn login_btn">Submit</button>   
+              </div>
+            </div>
+        </form>
+		  </div>
+	  </div>
+  </div>
+</section>  
+<section class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="social-icon">
+                  <ul>
+                      <li>
+                          <a href="#" class="facebook-a">
+                              <i class="fa fa-facebook" aria-hidden="true"></i>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="instagram-a">
+                              <i class="fa fa-instagram" aria-hidden="true"></i>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="youtube-a">
+                              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="twitter-a">
+                              <i class="fa fa-twitter" aria-hidden="true"></i>
+                          </a>
+                      </li>
+                  </ul>
+                  <p class="copyright-p"><span class="block">Copyright© 2020 <a href="#"></a> All rights reserved.</span></p>  
+              </div>
+          </div>
+      </div>  
+  </div>
+</section>
+       <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
+      <script src="../assets/js/main.js"></script> -->
+      <script>
+        $(document).ready(function() {
+
+    
+            
+        });
+      </script>
+  </body>
+</html>
+

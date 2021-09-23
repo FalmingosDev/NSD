@@ -1,0 +1,66 @@
+<app-userheader></app-userheader>
+<section class="user-nm">
+    <div class="container">
+        <div class="season2"> 
+            <div class="row">
+                <div class="col-md-6 col-6">
+                    <div class="ad-nm">
+                        <h2>{{user_data.name}}<span>@ {{user_data.id}}</span><span>{{user_data.apply_name}}</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="user-img-round" style="float: right;">
+                        <img src={{user_pic}} class="img-fluid">
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="season-sub-text">
+                    <h2>Season #1 : <span>(Phase {{user_data.phase}})</span></h2>
+                    <p>Appearance Type : <span>{{user_data.aud_type}}</span></p>
+                </div>
+                <div class="mb-3">
+                    <video width="100%" height="100%" controls="">
+                        <source src={{fileSrc}} type="video/mp4">
+                    </video>
+                </div>
+                <div class="season2">
+                    <div class="row">
+                        <div class="col-4"> 
+                            <img src="../assets/images/prv-im.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-6 pl-0 jury-mn">
+                                    <h4>{{ commenter_type}}</h4>
+                                    <h5>{{ commenter_name }}</h5>
+                                    <span>{{commenter_react}}<span>Comment :</span></span>
+                                </div> 
+                                <div class="col-6 p-0 jury-nm-2">
+                                    <p>{{ commenter_star }} starts</p>
+                                    <p>{{ commenter_date }}</p>
+                                    <!-- <div *ngFor=`let in of counter({{commenter_star}}) ;let i = index`></div> -->
+                                    
+                                         <!-- <i class="fa fa-star" aria-hidden="true" *ngFor="let in of commenter_star_arr ;let i = index"></i>  -->
+                                        <!-- <i class="fa fa-star" aria-hidden="true" *ngFor="let n of item.rank | range"></i> -->
+                                
+                                    
+                                    <!-- <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                                </div>
+                                <p class="nm-p">{{ comment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+<app-userfooter></app-userfooter>
+ 

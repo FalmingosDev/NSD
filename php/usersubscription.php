@@ -1,7 +1,7 @@
 <?php 
 include_once("database.php");
 $postdata = file_get_contents("php://input");
-//echo $postdata; die();
+
 if(isset($postdata) && !empty($postdata))
 {
 	$request = json_decode($postdata);
@@ -66,9 +66,9 @@ $authdata_all=[
        'status'=>'success',
        'code'=>1,
        'username'=>$primary
-        // 'last_id'=>$last_id
+        
     ];
-    //print_r($authdata_all); die();
+  
     echo json_encode($authdata_all);
 }
 

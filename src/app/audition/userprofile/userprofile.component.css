@@ -1,0 +1,145 @@
+.user-body {
+    margin: 0;
+    padding: 0;
+    background: #19242e !important;
+    background-image: linear-gradient(#19242ed9, #19242ed9);/*,url('App-Logo.png') !important;*/
+    background-repeat: no-repeat;
+    margin-bottom: 75px;  
+    height: inherit !important;
+}
+.user-img-round{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.user-img-round img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+}
+.ad-nm h2{  
+    color: #d5dd25;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+.ad-nm h2 span{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.user-nm{
+    padding: 20px 0px;
+}
+.animated-icon{
+    width: 30%;
+    float: right;
+    display: block;
+}
+.season2{
+    background-color: #2d3a47;
+    border-radius: 10px;
+    padding: 10px 7px;
+    margin-bottom: 15px;  
+}
+.season-text img{
+    margin: 7px 0px 0px;
+}
+.season-perform p{
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0;
+}
+.season-perform p span{
+    display: block;
+}
+.detail-info-table td{
+    text-align: left; 
+    color: #fff;
+}
+.strip-div{
+    border: 2px dashed #516a80;
+    border-radius: 15px;
+    padding: 18px;
+    margin-top: 39px;
+}
+.strip-div h4{
+    color: #d5dd25;
+    font-size: 14px;
+    font-weight: 600;
+}
+/*---*/
+.sm-2 .profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-upload, .file-upload2 {
+    display: none;
+}
+.sm-2 .circle {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    top: 72px;
+    text-align: center;
+}
+
+.sm-2 .p-image {
+    position: absolute;
+    top: 288px;
+    right: 14px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button, .upload-button2 {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+.sm-2{
+    display: block;
+    margin: 0 auto;
+}
+.ph-sm{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+.ph-sm .circle {
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    top: 0 !important;
+    text-align: center;
+    position: relative !important;
+    border-radius: 0 !important;
+}
+.ph-sm .profile-pic, .ph-sm .profile-pic2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ph-sm .p-image {
+    position: absolute;
+    right: -3px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    font-size: 20px;
+    top: 181px !important;
+}
+/*---*/

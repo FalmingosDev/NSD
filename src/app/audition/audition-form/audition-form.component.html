@@ -199,17 +199,9 @@
 
                                                 
                                                  <div class="form-registration">
-                                                    <!-- enctype="multipart/form-data"  autocomplete="nofill" -->
+                                                    
                                                 <form  class="form"   [formGroup]="angForm" (ngSubmit)="postauditiondata(angForm.value)">
-                                                        <!-- <input class="input--style-2" type="hidden" name="key" value=""> 
-                                                         <input class="" type="hidden" name="modal_name" id="modal_id" value=""> 
-                                                      -->
-     
-     
-                                                          
-    
-     
-                                                         
+                                                   
                                                         <div class="row" id="fist-div-registration">
                                                           <div class="col-md-12">    
                                                                 <div class="row">
@@ -232,7 +224,7 @@
      
                                                                          <div class="col-md-6">
                                                                              <label class="registration-label">Email ID *</label>
-                                                                             <input type="email" class="label-box-registration" id="email" name="email" formControlName="email"  placeholder=" " required autocomplete="off">  
+                                                                             <input type="email" class="label-box-registration" id="email" name="email" [(ngModel)]="local_email" formControlName="email"  placeholder=" " required autocomplete="off" readonly>  
                                                                          </div>
      
                                                                         <div class="col-md-6">
@@ -347,7 +339,7 @@
                                                                          </div>
                                                                      </div>
                                                                  </div>
-     
+      
                                                       
      
      

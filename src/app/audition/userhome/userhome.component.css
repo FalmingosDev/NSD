@@ -1,0 +1,149 @@
+.user-body {
+    margin: 0;
+    padding: 0;
+    background: #19242e !important;
+    background-image: linear-gradient(#19242ed9, #19242ed9);/*,url('App-Logo.png') !important;*/
+    background-repeat: no-repeat;
+    margin-bottom: 75px;  
+    height: inherit !important;
+}
+.ad-nm h2{  
+    color: #d5dd25;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+.ad-nm h2 span{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+}
+.user-nm{
+    padding: 20px 0px;
+}
+.animated-icon{
+    width: 30%;
+    float: right;
+    display: block; 
+}
+.get-nic {
+    padding: 15px 10px;
+    display: inline-block;
+    background: #d5dd25;
+    color: #19242e;
+    width: 100%;
+    border-radius: 9px;
+    font-weight: 600;
+    margin: 20px 0px;
+}
+.season{
+    margin: 20px 0 40px 0;
+    box-shadow: 0px 0px 25px 0px rgba(184,184,184,0.5);
+    background-color: #19242e;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+}
+.season-text h2{
+    font-size: 18px;
+    color: #d5dd25;
+    text-align: left;
+    margin-bottom: 0;
+}
+.season-text h2 span{
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+}
+.online-span{
+    color: #d5dd25 !important;
+}
+.perform-btn {
+    padding: 11px 0px;
+    display: inline-block;
+    background: #d5dd25;
+    color: #19242e;
+    width: 100%;
+    border-radius: 9px;
+    font-weight: 700;
+    margin: 12px 0px 0px;
+    font-size: 13px;
+    text-align: center;
+}
+.user-img img{
+    width: 100%;
+}
+/*---*/
+.sm-2 .profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-upload, .file-upload2 {
+    display: none;
+}
+.sm-2 .circle {
+    overflow: hidden;
+    width: 100%;
+    height: 334px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    top: 72px;
+    text-align: center;
+    border-radius: 0 !important;
+    position: inherit !important;  
+}
+
+.sm-2 .p-image {
+    position: absolute;
+    top: 315px;
+    right: 14px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    font-size: 21px;
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button, .upload-button2 {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+.sm-2{
+    display: block;
+    margin: 0 auto;
+}
+.ph-sm{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+} 
+.ph-sm .circle {
+    overflow: hidden;
+    width: 250px;
+    height: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    top: 72px;
+    text-align: center;
+}
+.ph-sm .profile-pic, .ph-sm .profile-pic2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ph-sm .p-image {
+    position: absolute;
+    bottom: -10px;
+    right: -3px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+/*---*/
+

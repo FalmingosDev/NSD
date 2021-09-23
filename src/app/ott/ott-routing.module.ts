@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import{ OtthomeComponent } from './otthome/otthome.component';
-import{ AboutottComponent } from './aboutott/aboutott.component';
-import{ OttprivecyComponent } from './ottprivecy/ottprivecy.component';
-import{ OtttermsComponent } from './ottterms/ottterms.component'
+import { OtthomeComponent } from './otthome/otthome.component';
+import { AboutottComponent } from './aboutott/aboutott.component';
+import { OttprivecyComponent } from './ottprivecy/ottprivecy.component';
+import { OtttermsComponent } from './ottterms/ottterms.component'
 import { OttcontactsComponent } from './ottcontacts/ottcontacts.component';
+import { OttmovieComponent } from './ottmovie/ottmovie.component';
 
 const routes: Routes = [
   {path:'otthome', component:OtthomeComponent },
   {path:'aboutott', component:AboutottComponent },
   {path:'ottprivecy', component:OttprivecyComponent},
   {path:'ottterms', component:OtttermsComponent},
-  {path:'ottcontact', component:OttcontactsComponent}
+  {path:'ottcontact', component:OttcontactsComponent},
+  {path:'ottmovie', component:OttmovieComponent}
 ]; 
 
 @NgModule({
