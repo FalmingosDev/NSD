@@ -383,7 +383,8 @@ export class ApiService {
     }
 
     public creatorList(action_type){
-      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{action_type}});
+	  const email=localStorage.getItem('token');
+      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
     }
  /* ---------------- Service Durba End --------------------*/
     
