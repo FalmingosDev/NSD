@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-  base_file_url:string="http://localhost/NSD/uploads/";
+  base_file_url:string="http://3.0.255.31/NS/uploads/";
   user_data: any;
   profie_pic_src:string="assets/images/user-home-img.jpg";
   //photo & age proof
