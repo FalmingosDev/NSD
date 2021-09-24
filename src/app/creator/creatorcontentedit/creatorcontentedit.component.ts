@@ -234,7 +234,9 @@ editcreatordata(editcrtForm) {
     // else{
       /*this.dataService.posteditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.uploadThumb,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance); */
 
-      //this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance);
+      this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
+        console.log(res);
+        });;
       
       // this.router.navigate(['/']);
     // }

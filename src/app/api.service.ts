@@ -383,9 +383,49 @@ export class ApiService {
     }
 
     public creatorList(action_type){
-      const local_email=localStorage.getItem('token');
-      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{local_email,action_type}});
+      const email=localStorage.getItem('token');
+      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
     }
- /* ---------------- Service Durba End --------------------*/
+
+
+ public postEditCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+     
+  // var video_title:any=video_title;
+  // var year:any=year;
+  // var email:any=email;
+  // var cast:any=cast;
+  // var video_desc:any=video_desc;
+  // var creator_profile_pic:any=creator_profile_pic;
+
+  // creatorformData.append('uploadThumb',uploadThumb);
+  // console.log(uploadThumb);
+  const email = localStorage.getItem('token');
+  const creatorformData: FormData = new FormData();
+
+  creatorformData.append('email',email);
+
+  creatorformData.append('action_type',"creatorVideoUpdate");
+  creatorformData.append('file',video);
+  creatorformData.append('video_title',video_title);
+  creatorformData.append('video_desc',video_desc);
+  creatorformData.append('img',image);
+  creatorformData.append('genreList',genreList);
+  creatorformData.append('languageList',languageList);
+  creatorformData.append('year',year);
+  creatorformData.append('cast',cast);
+  creatorformData.append('director',director);
+  creatorformData.append('writer',writer);
+  creatorformData.append('photo',photo);
+  creatorformData.append('camera',camera);
+  creatorformData.append('runtime',runtime);
+  creatorformData.append('audiance',audiance);
+  
+  
+
+    // console.log(creatorformData);
+
+  return this.httpClient.post<any>(this.baseUrl+'/edit_creator_form_submit.php',creatorformData);
+
+ }
     
 }

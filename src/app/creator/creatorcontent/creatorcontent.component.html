@@ -9,7 +9,7 @@
               <div class="cre-div-sm" *ngFor="let listdata of list | keyvalue"  [value]="listdata.value.id">
               <!-- <div class="cre-div-sm"> -->
                   <video width="100%" height="100%" controls="">
-                      <source src="http://localhost/NSD/video/ceator_video/{{listdata.value.creator_video}}" type="video/mp4">
+                      <source src={{baseURL}}{{listdata.value.creator_video}} type="video/mp4">
                   </video>
                   <p>{{listdata.value.video_title}}</p>
                   <div class="row">
