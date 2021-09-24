@@ -18,8 +18,8 @@ export class NeworatinglistComponent implements OnInit {
     this.dataService.fetchCreatorsDetails().subscribe((res)=>{
       this.creatots_details=res.data;
       console.log(this.creatots_details);
-     
-    })
+      console.log("hey");
+    });
   }
   onWatchNow(id:any){
    const video_code=id;
