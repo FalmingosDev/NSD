@@ -12,7 +12,7 @@ import { CreatorcontentaddComponent } from './creatorcontentadd/creatorcontentad
 
 const routes: Routes = [
   {path:'creatorcontent', component:CreatorcontentComponent},
-  {path:'creatorcontentdetails', component:CreatorcontentdetailsComponent},
+  {path:'creatorcontentdetails/:video_id', component:CreatorcontentdetailsComponent},
   {path:'creatorcontentedit', component:CreatorcontenteditComponent},
   {path:'header', component:HeaderComponent},
   {path:'footer', component:FooterComponent},

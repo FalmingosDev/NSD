@@ -427,5 +427,14 @@ export class ApiService {
   return this.httpClient.post<any>(this.baseUrl+'/edit_creator_form_submit.php',creatorformData);
 
  }
+
+ creatorContentDetail(video_id){
+   const action_type="creator_content_details";
+   const detailformData: FormData = new FormData();
+   detailformData.append('action_type',action_type);
+   detailformData.append('video_id',video_id);
+   return this.httpClient.post<any>(this.baseUrl+'/creator_detail.php',detailformData);
+
+ }
     
 }

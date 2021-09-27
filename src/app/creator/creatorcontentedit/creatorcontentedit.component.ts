@@ -38,7 +38,7 @@ export class CreatorcontenteditComponent implements OnInit {
   this.local_email=email;
 
   this.editcrtForm = new FormGroup({
-    video_file : new FormControl('', Validators.required),
+    video_file : new FormControl('', Validators.required), 
     video_title : new FormControl('', Validators.required),
     video_desc : new FormControl('', Validators.required),
    // video_upload: new FormControl('', Validators.required),
