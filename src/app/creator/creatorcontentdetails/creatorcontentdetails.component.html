@@ -18,10 +18,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="movie-des-text">
-                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>
+                        <h6>{{video_desc}}</h6>
                         <div class="ed-cm">
                             <ul>
-                                <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-pencil" (click)="editData($event)" aria-hidden="true"></i></a></li>
                                 <li>
                                     <div class="dropdown">  
                                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

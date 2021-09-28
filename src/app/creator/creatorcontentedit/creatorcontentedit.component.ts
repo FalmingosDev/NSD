@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ApiService } from 'src/app/api.service';
 
@@ -14,7 +15,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class CreatorcontenteditComponent implements OnInit {
 
-  local_email:string="";
+  // local_email:string="";
 
   editcrtForm: FormGroup;
   frutas: string[] = [];
@@ -32,10 +33,49 @@ export class CreatorcontenteditComponent implements OnInit {
   video: File;
   image: File;
 
-  constructor(private dataService: ApiService) { }
+  video_link:string;
+  baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
 
-  ngOnInit(): void {    const email = localStorage.getItem('token');
-  this.local_email=email;
+  // p_src:string="assets/video/Intro.mp4";
+ 
+  p_video:string;
+  p_title:string;
+  p_desc:string;
+  p_thumb:string;
+  p_year:string;
+  p_cast:string;
+  p_director:string;
+  p_writer:string;
+  p_photo:string;
+  p_camera:string;
+  p_runtime:string;
+
+
+
+  constructor(private dataService: ApiService,private route:Router,private activateRoute:ActivatedRoute) { }
+
+  ngOnInit(): void {   
+    const id= this.activateRoute.snapshot.params['id'];
+  //  const email = localStorage.getItem('token');
+  //   this.local_email=email;
+  this.dataService.fetchCreatorData(id).subscribe((res)=>{
+    console.log(res.data);
+    this.video_link=this.baseURL+res.data.creator_video;
+    // this.p_video=res.data.creator_video;
+    // console.log("pvideo"+this.p_video);
+    this.p_title=res.data.video_title;
+    this.p_desc=res.data.video_desc;
+    // this.p_thumb=res.data.creator_video_thumb;
+    this.p_year=res.data.year;
+    this.p_cast=res.data.cast;
+    this.p_director=res.data.director;
+    this.p_writer=res.data.writer;
+    this.p_camera=res.data.camera;
+    this.p_runtime=res.data.runtime;
+
+  });
+  
+
 
   this.editcrtForm = new FormGroup({
     video_file : new FormControl('', Validators.required), 
@@ -190,7 +230,15 @@ getLanguageList() {
 
 
 editcreatordata(editcrtForm) {
-  //console.log('editcrtForm');
+  const id= this.activateRoute.snapshot.params['id'];
+  this.dataService.postEditCreatorForm(id,this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
+     console.log(res.data);
+   });
+
+
+
+
+  // //console.log('editcrtForm');
   
   //console.log(this.video);
   // console.log(this.uploadThumb);
@@ -234,9 +282,9 @@ editcreatordata(editcrtForm) {
     // else{
       /*this.dataService.posteditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.uploadThumb,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance); */
 
-      this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
-        console.log(res);
-        });;
+      // this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
+      //   console.log(res);
+      //   });
       
       // this.router.navigate(['/']);
     // }

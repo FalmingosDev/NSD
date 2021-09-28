@@ -388,53 +388,48 @@ export class ApiService {
     }
 
 
- public postEditCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
-     
-  // var video_title:any=video_title;
-  // var year:any=year;
-  // var email:any=email;
-  // var cast:any=cast;
-  // var video_desc:any=video_desc;
-  // var creator_profile_pic:any=creator_profile_pic;
 
-  // creatorformData.append('uploadThumb',uploadThumb);
-  // console.log(uploadThumb);
-  const email = localStorage.getItem('token');
-  const creatorformData: FormData = new FormData();
+  public creatorContentDetail(id){
+    const action_type="creator_content_details";
+    const detailformData: FormData = new FormData();
+    detailformData.append('action_type',action_type);
+    detailformData.append('id',id);
+    return this.httpClient.post<any>(this.baseUrl+'/creator_detail.php',detailformData);
 
-  creatorformData.append('email',email);
-
-  creatorformData.append('action_type',"creatorVideoUpdate");
-  creatorformData.append('file',video);
-  creatorformData.append('video_title',video_title);
-  creatorformData.append('video_desc',video_desc);
-  creatorformData.append('img',image);
-  creatorformData.append('genreList',genreList);
-  creatorformData.append('languageList',languageList);
-  creatorformData.append('year',year);
-  creatorformData.append('cast',cast);
-  creatorformData.append('director',director);
-  creatorformData.append('writer',writer);
-  creatorformData.append('photo',photo);
-  creatorformData.append('camera',camera);
-  creatorformData.append('runtime',runtime);
-  creatorformData.append('audiance',audiance);
-  
-  
-
-    // console.log(creatorformData);
-
-  return this.httpClient.post<any>(this.baseUrl+'/edit_creator_form_submit.php',creatorformData);
+  }
+ 
+ public fetchCreatorData(id){
+   const action_type="fetch creator data";
+  return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php',  {params:{id,action_type}});
 
  }
 
- creatorContentDetail(video_id){
-   const action_type="creator_content_details";
-   const detailformData: FormData = new FormData();
-   detailformData.append('action_type',action_type);
-   detailformData.append('video_id',video_id);
-   return this.httpClient.post<any>(this.baseUrl+'/creator_detail.php',detailformData);
 
- }
-    
+
+
+
+
+  public postEditCreatorForm(id,video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+    console.log("video_title"+video_title);
+    const creatorformData: FormData = new FormData();
+    creatorformData.append('id',id);
+    creatorformData.append('action_type',"editCreatorVideo");
+    creatorformData.append('file',video);
+    creatorformData.append('video_title',video_title);
+    creatorformData.append('video_desc',video_desc);
+    creatorformData.append('img',image);
+    creatorformData.append('genreList',genreList);
+    creatorformData.append('languageList',languageList);
+    creatorformData.append('year',year);
+    creatorformData.append('cast',cast);
+    creatorformData.append('director',director);
+    creatorformData.append('writer',writer);
+    creatorformData.append('photo',photo);
+    creatorformData.append('camera',camera);
+    creatorformData.append('runtime',runtime);
+    creatorformData.append('audiance',audiance);
+    return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData);
+      
+  }
+
 }
