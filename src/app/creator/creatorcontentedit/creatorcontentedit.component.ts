@@ -46,7 +46,7 @@ export class CreatorcontenteditComponent implements OnInit {
   p_cast:string;
   p_director:string;
   p_writer:string;
-  p_photo:string;
+  // p_photo:string;
   p_camera:string;
   p_runtime:string;
 
@@ -91,7 +91,6 @@ export class CreatorcontenteditComponent implements OnInit {
     cast : new FormControl('', Validators.required),
     director : new FormControl('', Validators.required),
     writer : new FormControl('', Validators.required),
-    photo : new FormControl('', Validators.required),
     camera : new FormControl('', Validators.required),
     runtime : new FormControl('', Validators.required),
     audiance : new FormControl('', Validators.required),
@@ -228,66 +227,84 @@ getLanguageList() {
     return this.carros;
   }
 
+  get video_title() { return this.editcrtForm.get('video_title') }
+  get video_desc() { return this.editcrtForm.get('video_desc') }
+  get video_thumb() { return this.editcrtForm.get('video_thumb') }
+  get genre() { return this.editcrtForm.get('genreList') }
+  get language() { return this.editcrtForm.get('languageList') }
+  get year() { return this.editcrtForm.get('year') }
+  get cast() { return this.editcrtForm.get('cast') }
+  get director() { return this.editcrtForm.get('director') }
+  get writer() { return this.editcrtForm.get('writer') }
+  get camera() { return this.editcrtForm.get('camera') }
+  get runtime() { return this.editcrtForm.get('runtime') }
+  get audiance() { return this.editcrtForm.get('audiance') }
+  
+
+
 
 editcreatordata(editcrtForm) {
   const id= this.activateRoute.snapshot.params['id'];
-  this.dataService.postEditCreatorForm(id,this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
-     console.log(res.data);
-   });
 
-
-
-
-  // //console.log('editcrtForm');
-  
-  //console.log(this.video);
-  // console.log(this.uploadThumb);
-
-    // if (this.video_title.status == 'INVALID') {
-    //   alert('Please Enter Title');
-    //   $('#video_title').focus();
-    // }
-    // else if (this.video_desc.status == 'INVALID') {
-    //   alert('Please Enter Description');
-    //   $('#video_desc').focus();
-    // }
-    // else if (this.year.status == 'INVALID') {
-    //   alert('Please Enter Year');
-    //   $('#year').focus();
-    // }
-    // else if (this.cast.status == 'INVALID') {
-    //   alert('Please Enter Cast');
-    //   $('#cast').focus();
-    // }
-    // else if (this.writer.status == 'INVALID') {
-    //   alert('Please Enter Writer');
-    //   $('#writer').focus();
-    // }
-    // else if (this.camera.status == 'INVALID') {
-    //   alert('Please Enter Photographer and cameragrapher');
-    //   $('#camera').focus();
-    // }
-    // else if (this.runtime.status == 'INVALID') {
-    //   alert('Please Mention running time');
-    //   $('#runtime').focus();
-    // }
-    // else if (this.audience.status == 'INVALID') {
-    //   alert('Please tick the proper audience');
-    //   $('#audience').focus();
-    // }
-    // else if (this.selectedFile.status == 'INVALID') {
-    //   alert('Please upload profile picture');
-    //   $('#selectedFile').focus();
-    // }
-    // else{
-      /*this.dataService.posteditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.uploadThumb,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance); */
-
-      // this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
-      //   console.log(res);
-      //   });
-      
-      // this.router.navigate(['/']);
-    // }
+    if (!this.video) {
+      alert('Please upload a video');
+      $('#video').focus();
+    }
+    else if (this.video_title.status == 'INVALID') {
+      alert('Please Enter Title');
+      $('#video_title').focus();
+    }
+    else if (this.video_desc.status == 'INVALID') {
+      alert('Please Enter Description');
+      $('#video_desc').focus();
+    }
+    else if (!this.image) {
+      alert('Please upload thumbnail');
+      $('#image').focus();
+    }
+    else if (this.genre.status == 'INVALID') {
+      alert('Please Enter genre');
+      $('#genreList').focus();
+    }
+    else if (this.language.status == 'INVALID') {
+      alert('Please Enter language');
+      $('#languagList').focus();
+    }
+    else if (this.year.status == 'INVALID') {
+      alert('Please Enter Year');
+      $('#year').focus();
+    }
+    else if (this.cast.status == 'INVALID') {
+      alert('Please Enter Cast');
+      $('#cast').focus();
+    }
+    else if (this.director.status == 'INVALID') {
+      alert('Please Enter Director');
+      $('#writer').focus();
+    }
+    else if (this.writer.status == 'INVALID') {
+      alert('Please Enter Writer');
+      $('#writer').focus();
+    }
+    else if (this.camera.status == 'INVALID') {
+      alert('Please Enter Cameragrapher & Photographer');
+      $('#camera').focus();
+    }
+    else if (this.runtime.status == 'INVALID') {
+      alert('Please Mention running time');
+      $('#runtime').focus();
+    }
+    else if (this.audiance.status == 'INVALID') {
+      alert('Please tick the proper audience');
+      $('#audiance').focus();
+    }
+    else {
+      this.dataService.postEditCreatorForm(id,this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
+        alert(res.data);
+      });
+      this.route.navigate(['/creatorcontent']);
+    }
+    
 
   }
 

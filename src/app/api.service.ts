@@ -332,7 +332,7 @@ export class ApiService {
     }
 
 
-    public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+    public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,camera,runtime,audiance){
      
       // var video_title:any=video_title;
       // var year:any=year;
@@ -359,7 +359,6 @@ export class ApiService {
       creatorformData.append('cast',cast);
       creatorformData.append('director',director);
       creatorformData.append('writer',writer);
-      creatorformData.append('photo',photo);
       creatorformData.append('camera',camera);
       creatorformData.append('runtime',runtime);
       creatorformData.append('audiance',audiance);
@@ -383,6 +382,7 @@ export class ApiService {
     }
 
     public creatorList(action_type){
+      
       const email=localStorage.getItem('token');
       return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
     }
@@ -409,8 +409,8 @@ export class ApiService {
 
 
 
-  public postEditCreatorForm(id,video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
-    console.log("video_title"+video_title);
+  public postEditCreatorForm(id,video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,camera,runtime,audiance){
+    // console.log("video_title"+video_title);
     const creatorformData: FormData = new FormData();
     creatorformData.append('id',id);
     creatorformData.append('action_type',"editCreatorVideo");
@@ -424,7 +424,7 @@ export class ApiService {
     creatorformData.append('cast',cast);
     creatorformData.append('director',director);
     creatorformData.append('writer',writer);
-    creatorformData.append('photo',photo);
+    // creatorformData.append('photo',photo);
     creatorformData.append('camera',camera);
     creatorformData.append('runtime',runtime);
     creatorformData.append('audiance',audiance);
