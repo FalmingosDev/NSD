@@ -278,8 +278,8 @@ export class ApiService {
       return this.httpClient.post<any>(this.baseUrl+'/candidate_aud_result.php',{local_email,action_type});
     }
     public fetchCreatorsDetails(){
-      // const action_type="fetch_creators_details"
-      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{action_type:"fetch_creators_details"});
+      const action_type:string="fetch_creators_details"
+      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{action_type});
       
     }
 
@@ -406,5 +406,9 @@ export class ApiService {
         
     }
  /* ---------------- Service Durba End --------------------*/
+    public fetchCreatorVideoData(video_code){
+      let action_type="fetch_cretor_video";
+      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
+    }
     
 }

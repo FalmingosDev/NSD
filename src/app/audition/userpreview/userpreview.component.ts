@@ -13,7 +13,7 @@ export class UserpreviewComponent implements OnInit{
   user_data:any;
   fileSrc:string="";
   user_pic:string="../assets/images/user-home-img.jpg";
-  base_file_root:string="http://localhost/NSD/uploads/";
+  base_file_root:string="http://3.0.255.31/NS/uploads/";
 
 
   commenter_type:string;
@@ -74,7 +74,7 @@ export class UserpreviewComponent implements OnInit{
       this.commenter_name=previewData.data.name;
       this.commenter_react=previewData.data.react;
       this.commenter_date=previewData.data.reaction_date;
-      this.commenter_star=(previewData.data.star);
+      this.commenter_star=Number(previewData.data.star);
       this.comment=previewData.data.comment;
       this.fileSrc=this.base_file_root+"user_submission/submission3/"+(f_fileName);
     }
@@ -87,8 +87,11 @@ export class UserpreviewComponent implements OnInit{
 
     
   }
-  // counter(i: number) {
-  //   return new Array(i);
-  // }
+  counterFullStar(i: number) {
+    return new Array(i);
+  }
+  counterStar(i: number) {
+    return new Array(i);
+  }
 
 }
