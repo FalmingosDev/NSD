@@ -14,6 +14,7 @@ export class CreatorcontentdetailsComponent implements OnInit {
   baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
   date: string;
   video_desc: string;
+  video_main: string;
   constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
@@ -24,6 +25,7 @@ export class CreatorcontentdetailsComponent implements OnInit {
       this.result=res.data;
       // console.log(this.result);
       this.video_link=this.baseURL+res.data.creator_video;
+      this.video_main=res.data.creator_video;
       this.date = res.data.upload_datetime;
       this.video_desc = res.data.video_desc;
       // console.log(this.video_link);
