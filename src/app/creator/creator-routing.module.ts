@@ -12,8 +12,8 @@ import { CreatorcontentaddComponent } from './creatorcontentadd/creatorcontentad
 
 const routes: Routes = [
   {path:'creatorcontent', component:CreatorcontentComponent},
-  {path:'creatorcontentdetails', component:CreatorcontentdetailsComponent},
-  {path:'creatorcontentedit', component:CreatorcontenteditComponent},
+  {path:'creatorcontentdetails/:id', component:CreatorcontentdetailsComponent},
+  {path:'creatorcontentedit/:id', component:CreatorcontenteditComponent},
   {path:'header', component:HeaderComponent},
   {path:'footer', component:FooterComponent},
   {path:'joinascreator', component:JoinascreatorComponent},

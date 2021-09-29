@@ -287,15 +287,6 @@ export class ApiService {
     /*----------- Service Durba Start ------------ */
 
     public postCreatorForm(creator_user_name,email,creator_dob,creator_topic,creator_desc,creator_profile_pic){
-     
-      // var creator_user_name:any=creator_user_name;
-      // var creator_topic:any=creator_topic;
-      // var email:any=email;
-      // var creator_desc:any=creator_desc;
-      // var creator_dob:any=creator_dob;
-      // var creator_profile_pic:any=creator_profile_pic;
-
-      // console.log(email);
 
       const formData: FormData = new FormData();
       formData.append('creator_user_name',creator_user_name);
@@ -334,15 +325,6 @@ export class ApiService {
 
     public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
      
-      // var video_title:any=video_title;
-      // var year:any=year;
-      // var email:any=email;
-      // var cast:any=cast;
-      // var video_desc:any=video_desc;
-      // var creator_profile_pic:any=creator_profile_pic;
-
-      // creatorformData.append('uploadThumb',uploadThumb);
-      // console.log(uploadThumb);
       const email = localStorage.getItem('token');
       const creatorformData: FormData = new FormData();
 
@@ -385,6 +367,43 @@ export class ApiService {
     public creatorList(action_type){
 	  const email=localStorage.getItem('token');
       return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
+    }
+
+    public creatorContentDetail(id){
+      const action_type="creator_content_details";
+      const detailformData: FormData = new FormData();
+      detailformData.append('action_type',action_type);
+      detailformData.append('id',id);
+      return this.httpClient.post<any>(this.baseUrl+'/creator_detail.php',detailformData);
+    }
+
+    public fetchCreatorData(id){
+      const action_type="fetch creator data";
+     return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php',  {params:{id,action_type}});
+   
+    }
+
+    public postEditCreatorForm(id,video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+      console.log("video_title"+video_title);
+      const creatorformData: FormData = new FormData();
+      creatorformData.append('id',id);
+      creatorformData.append('action_type',"editCreatorVideo");
+      creatorformData.append('file',video);
+      creatorformData.append('video_title',video_title);
+      creatorformData.append('video_desc',video_desc);
+      creatorformData.append('img',image);
+      creatorformData.append('genreList',genreList);
+      creatorformData.append('languageList',languageList);
+      creatorformData.append('year',year);
+      creatorformData.append('cast',cast);
+      creatorformData.append('director',director);
+      creatorformData.append('writer',writer);
+      creatorformData.append('photo',photo);
+      creatorformData.append('camera',camera);
+      creatorformData.append('runtime',runtime);
+      creatorformData.append('audiance',audiance);
+      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData);
+        
     }
  /* ---------------- Service Durba End --------------------*/
     
