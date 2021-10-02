@@ -344,15 +344,10 @@ export class ApiService {
       creatorformData.append('camera',camera);
       creatorformData.append('runtime',runtime);
       creatorformData.append('audiance',audiance);
-      
-      
- 
         // console.log(creatorformData);
 
-      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData).subscribe((res)=>{
-      alert(res.msg);
-      });
-
+      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData);
+      
      }
 
     public getGenreList(action_type){
@@ -377,7 +372,7 @@ export class ApiService {
     }
 
     public fetchCreatorData(id){
-      const action_type="fetch creator data";
+      const action_type="fetch_creator_data";
      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php',  {params:{id,action_type}});
    
     }

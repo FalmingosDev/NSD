@@ -55,16 +55,11 @@ export class CreatorcontenteditComponent implements OnInit {
 
   ngOnInit(): void {   
     const id= this.activateRoute.snapshot.params['id'];
-  //  const email = localStorage.getItem('token');
-  //   this.local_email=email;
-  this.dataService.fetchCreatorData(id).subscribe((res)=>{
-    console.log(res.data);
-    this.video_link=this.baseURL+res.data.creator_video;
-    // this.p_video=res.data.creator_video;
-    // console.log("pvideo"+this.p_video);
+    this.dataService.fetchCreatorData(id).subscribe((res)=>{
+    this.video_link='<video width="100%" height="100%" controls="true" id="main_vid"><source src="'+this.baseURL+res.data.creator_video+'" type="video/mp4" ></video>';
+    document.getElementById('vid_div').innerHTML=this.video_link;
     this.p_title=res.data.video_title;
     this.p_desc=res.data.video_desc;
-    // this.p_thumb=res.data.creator_video_thumb;
     this.p_year=res.data.year;
     this.p_cast=res.data.cast;
     this.p_director=res.data.director;
@@ -299,9 +294,14 @@ editcreatordata(editcrtForm) {
   }
   else {
     this.dataService.postEditCreatorForm(id,this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
-      alert(res.data);
+      if (res.status == 'success'){
+        alert(res.msg);
+        this.route.navigate(['/creatorcontent']);
+      } else {
+        alert(res.msg);
+      }
     });
-    this.route.navigate(['/creatorcontent']);
+    
   }
 
   }

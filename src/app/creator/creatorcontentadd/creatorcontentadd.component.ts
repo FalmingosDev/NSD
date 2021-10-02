@@ -261,9 +261,15 @@ export class CreatorcontentaddComponent implements OnInit {
         }
        
         else{ 
-          this.dataService.postAddCreatorForm(this.video,addcrtForm.video_title,addcrtForm.video_desc,this.image,addcrtForm.genreList,addcrtForm.languageList, addcrtForm.year, addcrtForm.cast,addcrtForm.director,addcrtForm.writer,addcrtForm.camera,addcrtForm.runtime,addcrtForm.audiance);
+          this.dataService.postAddCreatorForm(this.video,addcrtForm.video_title,addcrtForm.video_desc,this.image,addcrtForm.genreList,addcrtForm.languageList, addcrtForm.year, addcrtForm.cast,addcrtForm.director,addcrtForm.writer,addcrtForm.camera,addcrtForm.runtime,addcrtForm.audiance).subscribe((res)=>{
+            if (res.status == 'success'){
+              alert(res.msg);
+              this.router.navigate(['/creatorcontent']);
+            } else {
+              alert(res.msg);
+            }
+          });
           
-          this.router.navigate(['/creatorcontent']);
         }
     
       }
