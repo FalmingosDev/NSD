@@ -14,7 +14,7 @@ import { GameComponent } from './game/game.component';
 const routes: Routes = [
   {path:'', component:HomepageComponent},
   {path:'ratinglist', component:NeworatinglistComponent},
-  {path:'ratingdetail',component:NeworatingdetailComponent},
+  {path:'ratingdetail/:code',component:NeworatingdetailComponent},
   {path:'influencersignup',component:InfluencerSignupComponent, canActivate: [AuthguardGuard]},
   {path:'pricing', component:PriceComponent, canActivate: [AuthguardGuard]},
   {path:'subcription/:username', component:SubcriptionComponent, canActivate: [AuthguardGuard]},

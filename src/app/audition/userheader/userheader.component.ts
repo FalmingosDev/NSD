@@ -23,6 +23,9 @@ export class UserheaderComponent implements OnInit {
     else if(this.router.url=='/userprofile'){
       this.current_url="Profile";
     }
+    else if(this.router.url=='/userpreview'){
+      this.current_url="Preview";
+    }
 
 
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ApiService } from 'src/app/api.service';
 
@@ -10,8 +11,9 @@ import { ApiService } from 'src/app/api.service';
 export class CreatorcontentComponent implements OnInit {
 
   list: string[] = [];
+  baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
 
-  constructor(private dataService: ApiService) { }
+  constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
 
@@ -28,6 +30,12 @@ export class CreatorcontentComponent implements OnInit {
       });
       return this.list;
     
+  }
+
+  viewMore(e,video_id){
+    e.preventDefault();
+    console.log("video_id "+video_id);
+    this.route.navigate(["/creatorcontentdetails/"+video_id]);
   }
 
 }

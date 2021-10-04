@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ApiService } from 'src/app/api.service';
 
@@ -14,7 +15,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class CreatorcontenteditComponent implements OnInit {
 
-  local_email:string="";
+  // local_email:string="";
 
   editcrtForm: FormGroup;
   frutas: string[] = [];
@@ -32,13 +33,46 @@ export class CreatorcontenteditComponent implements OnInit {
   video: File;
   image: File;
 
-  constructor(private dataService: ApiService) { }
+  video_link:string;
+  baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
 
-  ngOnInit(): void {    const email = localStorage.getItem('token');
-  this.local_email=email;
+  // p_src:string="assets/video/Intro.mp4";
+ 
+  p_video:string;
+  p_title:string;
+  p_desc:string;
+  p_thumb:string;
+  p_year:string;
+  p_cast:string;
+  p_director:string;
+  p_writer:string;
+  p_camera:string;
+  p_runtime:string;
+
+
+
+  constructor(private dataService: ApiService,private route:Router,private activateRoute:ActivatedRoute) { }
+
+  ngOnInit(): void {   
+    const id= this.activateRoute.snapshot.params['id'];
+    this.dataService.fetchCreatorData(id).subscribe((res)=>{
+    this.video_link='<video width="100%" height="100%" controls="true" id="main_vid"><source src="'+this.baseURL+res.data.creator_video+'" type="video/mp4" ></video>';
+    document.getElementById('vid_div').innerHTML=this.video_link;
+    this.p_title=res.data.video_title;
+    this.p_desc=res.data.video_desc;
+    this.p_year=res.data.year;
+    this.p_cast=res.data.cast;
+    this.p_director=res.data.director;
+    this.p_writer=res.data.writer;
+    this.p_camera=res.data.camera;
+    this.p_runtime=res.data.runtime;
+
+  });
+  
+
 
   this.editcrtForm = new FormGroup({
-    video_file : new FormControl('', Validators.required),
+    video_file : new FormControl('', Validators.required), 
     video_title : new FormControl('', Validators.required),
     video_desc : new FormControl('', Validators.required),
    // video_upload: new FormControl('', Validators.required),
@@ -51,7 +85,6 @@ export class CreatorcontenteditComponent implements OnInit {
     cast : new FormControl('', Validators.required),
     director : new FormControl('', Validators.required),
     writer : new FormControl('', Validators.required),
-    photo : new FormControl('', Validators.required),
     camera : new FormControl('', Validators.required),
     runtime : new FormControl('', Validators.required),
     audiance : new FormControl('', Validators.required),
@@ -188,56 +221,88 @@ getLanguageList() {
     return this.carros;
   }
 
+  get video_title() { return this.editcrtForm.get('video_title') }
+  get video_desc() { return this.editcrtForm.get('video_desc') }
+  get video_thumb() { return this.editcrtForm.get('video_thumb') }
+  get genre() { return this.editcrtForm.get('genreList') }
+  get language() { return this.editcrtForm.get('languageList') }
+  get year() { return this.editcrtForm.get('year') }
+  get cast() { return this.editcrtForm.get('cast') }
+  get director() { return this.editcrtForm.get('director') }
+  get writer() { return this.editcrtForm.get('writer') }
+  get camera() { return this.editcrtForm.get('camera') }
+  get runtime() { return this.editcrtForm.get('runtime') }
+  get audiance() { return this.editcrtForm.get('audiance') }
+  
+
+
 
 editcreatordata(editcrtForm) {
-  //console.log('editcrtForm');
-  
-  //console.log(this.video);
-  // console.log(this.uploadThumb);
+  const id= this.activateRoute.snapshot.params['id'];
 
-    // if (this.video_title.status == 'INVALID') {
-    //   alert('Please Enter Title');
-    //   $('#video_title').focus();
-    // }
-    // else if (this.video_desc.status == 'INVALID') {
-    //   alert('Please Enter Description');
-    //   $('#video_desc').focus();
-    // }
-    // else if (this.year.status == 'INVALID') {
-    //   alert('Please Enter Year');
-    //   $('#year').focus();
-    // }
-    // else if (this.cast.status == 'INVALID') {
-    //   alert('Please Enter Cast');
-    //   $('#cast').focus();
-    // }
-    // else if (this.writer.status == 'INVALID') {
-    //   alert('Please Enter Writer');
-    //   $('#writer').focus();
-    // }
-    // else if (this.camera.status == 'INVALID') {
-    //   alert('Please Enter Photographer and cameragrapher');
-    //   $('#camera').focus();
-    // }
-    // else if (this.runtime.status == 'INVALID') {
-    //   alert('Please Mention running time');
-    //   $('#runtime').focus();
-    // }
-    // else if (this.audience.status == 'INVALID') {
-    //   alert('Please tick the proper audience');
-    //   $('#audience').focus();
-    // }
-    // else if (this.selectedFile.status == 'INVALID') {
-    //   alert('Please upload profile picture');
-    //   $('#selectedFile').focus();
-    // }
-    // else{
-      /*this.dataService.posteditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.uploadThumb,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance); */
-
-      //this.dataService.postEditCreatorForm(this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.photo,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance);
-      
-      // this.router.navigate(['/']);
-    // }
+  if (!this.video) {
+    alert('Please upload a video');
+    $('#video').focus();
+  }
+  else if (this.video_title.status == 'INVALID') {
+    alert('Please Enter Title');
+    $('#video_title').focus();
+  }
+  else if (this.video_desc.status == 'INVALID') {
+    alert('Please Enter Description');
+    $('#video_desc').focus();
+  }
+  else if (!this.image) {
+    alert('Please upload thumbnail');
+    $('#image').focus();
+  }
+  else if (this.genre.status == 'INVALID') {
+    alert('Please Enter genre');
+    $('#genreList').focus();
+  }
+  else if (this.language.status == 'INVALID') {
+    alert('Please Enter language');
+    $('#languagList').focus();
+  }
+  else if (this.year.status == 'INVALID') {
+    alert('Please Enter Year');
+    $('#year').focus();
+  }
+  else if (this.cast.status == 'INVALID') {
+    alert('Please Enter Cast');
+    $('#cast').focus();
+  }
+  else if (this.director.status == 'INVALID') {
+    alert('Please Enter Director');
+    $('#writer').focus();
+  }
+  else if (this.writer.status == 'INVALID') {
+    alert('Please Enter Writer');
+    $('#writer').focus();
+  }
+  else if (this.camera.status == 'INVALID') {
+    alert('Please Enter Photographer and Cameragrapher');
+    $('#camera').focus();
+  }
+  else if (this.runtime.status == 'INVALID') {
+    alert('Please Mention running time');
+    $('#runtime').focus();
+  }
+  else if (this.audiance.status == 'INVALID') {
+    alert('Please tick the proper audience');
+    $('#audiance').focus();
+  }
+  else {
+    this.dataService.postEditCreatorForm(id,this.video,editcrtForm.video_title,editcrtForm.video_desc,this.image,editcrtForm.genreList,editcrtForm.languageList, editcrtForm.year, editcrtForm.cast,editcrtForm.director,editcrtForm.writer,editcrtForm.camera,editcrtForm.runtime,editcrtForm.audiance).subscribe((res)=>{
+      if (res.status == 'success'){
+        alert(res.msg);
+        this.route.navigate(['/creatorcontent']);
+      } else {
+        alert(res.msg);
+      }
+    });
+    
+  }
 
   }
 
