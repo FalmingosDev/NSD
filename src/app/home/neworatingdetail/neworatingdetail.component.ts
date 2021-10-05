@@ -51,7 +51,9 @@ export class NeworatingdetailComponent implements OnInit {
   ngOnInit(): void {
     this.video_code=this.route.snapshot.params['code'];
     this.dataService.fetchCreatorVideoData(this.video_code).subscribe((res)=>{
-      this.video_link=this.base_file_url+res.data.creator_video;
+      //this.video_link=this.base_file_url+res.data.creator_video;
+      this.video_link='<video width="100%" height="100%" controls="true" id="main_vid"><source src="'+this.base_file_url+res.data.creator_video+'" type="video/mp4" ></video>';
+      document.getElementById('vid_div').innerHTML=this.video_link;
       this.language=res.data.language_name;
       this.genre=res.data.genre_name;
       this.year=res.data.year;
