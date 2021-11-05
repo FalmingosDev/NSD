@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+  } 
 
   postdata(angForm1)
   { //alert(angForm1.value.mobile); //deb
@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
     .pipe(first())
     .subscribe(
     data => {
-		//alert(JSON.stringify(data));
+		console.log(JSON.stringify(data));
 		//alert(data[0].name);
+    
 		if(data[0].newo_user_id > 0){
 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/'; 
 			this.router.navigate([redirect]);

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ApiService {
   redirectUrl: string;
   baseUrl:string = "http://3.0.255.31/NS/php";
-  // baseUrl:string = "http://localhost/NSD/php";
+  baseUrlApi:string = "http://3.0.255.31/NS/newoadmin/api";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   user_data:any;
   previewData:object;  //knockout file
@@ -18,11 +18,10 @@ export class ApiService {
   constructor(private httpClient : HttpClient,private route:Router) { }
 
   public userlogin(email, password) {
-     //alert(mobile);
-     //alert(password);
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, password })
+    return this.httpClient.post<any>(this.baseUrlApi + '/login', { email, password })
+    // return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, password })
     .pipe(map(Users => {
-    // alert(JSON.stringify(Users));
+    //alert(JSON.stringify(Users));
     this.setToken(Users[0].email);
    
 
@@ -32,7 +31,8 @@ export class ApiService {
   }
 
   public userregistration(name,phone,email,pwd) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, phone, email, pwd })
+    return this.httpClient.post<any>(this.baseUrlApi + '/signup', { name, phone, email, pwd })
+    // return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, phone, email, pwd })
     .pipe(map(Users => {
     this.setToken(email);
     this.getLoggedInName.emit(true);

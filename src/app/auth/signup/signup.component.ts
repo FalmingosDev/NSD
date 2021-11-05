@@ -30,7 +30,12 @@ export class SignupComponent implements OnInit {
     .pipe(first())
     .subscribe(
     data => {
-      this.router.navigate(['/login']); 
+      if(data.success){
+        alert(data.msg);
+        this.router.navigate(['/login']); 
+      }else{
+        alert(data.msg);
+      }
     },
 
     error => {

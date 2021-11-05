@@ -64,7 +64,7 @@ export class UserprofileComponent implements OnInit {
 
 
 
-  }
+  } 
 
 
   changePhotoIdType(event) {  // choose photo id type
