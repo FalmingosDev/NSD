@@ -98,7 +98,7 @@ export class UserprofileComponent implements OnInit {
         // console.log(this.url);
       }
       this.selectPhotoDoc = <File>event.target.files[0];
-      this.dataService.photoIndentityProof(this.selectPhotoDoc, this.photoidType);
+      this.dataService.photoIdentityProof(this.selectPhotoDoc, this.photoidType);
 
 
 
@@ -129,7 +129,7 @@ export class UserprofileComponent implements OnInit {
       }
       this.selectAgeDoc=<File>event.target.files[0];
       console.log(this.selectAgeDoc);
-      this.dataService.ageIndentityProof(this.selectAgeDoc, this.ageidType);
+      this.dataService.ageIdentityProof(this.selectAgeDoc, this.ageidType);
 
 
     }

@@ -32,7 +32,7 @@ export class UserpreviewComponent implements OnInit{
 
     const previewData:any=this.dataService.getValueForPreview();
     
-    if(previewData['stage']=="knockout_jury"){
+    if(previewData['stage']=="knockout_jury"){ 
       console.log(previewData.data);
       let k_fileName=previewData.data.submission1_file;
       let cmt_type=previewData.data.type;

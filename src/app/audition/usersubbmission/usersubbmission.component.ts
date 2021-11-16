@@ -61,7 +61,8 @@ export class UsersubbmissionComponent implements OnInit {
     const local_email = localStorage.getItem('token');
     this.dataService.userprofile(local_email)
       .subscribe((res) => {
-        this.user_data2 = res.data;
+        // this.user_data2 = res.data;
+        this.user_data2 = res[0];
         console.log(this.user_data2.picture);
         if (this.user_data2.picture != null) {
           this.profie_pic_src = this.base_file_url+"userprofile_img/" + (this.user_data2.picture);

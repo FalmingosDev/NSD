@@ -172,15 +172,14 @@ export class ApiService {
     public userprofile(local_email){
       let action_type:string="fetch_user_data";
       let email:any=local_email;
-      return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
-      
+      // return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
+      return this.httpClient.get<any>(this.baseUrlApi+'/userprofile',{params:{email}}); 
     }
     
     public fetch_submission_data(local_email){
       let action_type:string="fetch_sub_data";
       let email:any=local_email;
       return this.httpClient.post<any>(this.baseUrl+'/userprofile.php',{action_type,email});
-      
     }
 
     public sendData(data){
@@ -200,7 +199,7 @@ export class ApiService {
         // console.log(res.status);
       });
     }
-    public photoIndentityProof(file,photoidType){
+    public photoIdentityProof(file,photoidType){
       const docformData:FormData=new FormData();
       docformData.append('file',file, file.name);
       docformData.append('photoidType',photoidType);
@@ -212,7 +211,7 @@ export class ApiService {
       })
     }
 
-    public ageIndentityProof(file,ageidType){
+    public ageIdentityProof(file,ageidType){
       const ageformData:FormData=new FormData();
       ageformData.append('file',file, file.name);
       ageformData.append('ageidType',ageidType);

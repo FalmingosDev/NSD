@@ -27,14 +27,24 @@ export class UserhomeComponent implements OnInit {
   ngOnInit(): void {
     let local_email=localStorage.getItem('token');
     this.dataservice.userprofile(local_email).subscribe((response) => {
-     this.user_id=response.data.id;
-     this.user_name=response.data.name;
-     this.user_field=response.data.apply_name;
-     if(response.data.picture!=null){
-       this.url="http://3.0.255.31/NS/uploads/userprofile_img/"+response.data.picture;
+    //  this.user_id=response.data.id;
+    //  this.user_name=response.data.name;
+    //  this.user_field=response.data.apply_name;
+    //  if(response.data.picture!=null){
+    //    this.url="http://3.0.255.31/NS/uploads/userprofile_img/"+response.data.picture;
+    //  }
+ 
+    //converted
+     this.user_id=response[0].id;
+     this.user_name=response[0].name;
+     this.user_field=response[0].apply_name;
+     if(response[0].picture!=null){
+       this.url="http://3.0.255.31/NS/uploads/userprofile_img/"+response[0].picture;
      }
-     this.dataservice.sendData(response.data);
+     this.dataservice.sendData(response[0]);
+     //end convertion
      });
+
      $(".upload-button").on('click', function() {
       $(".file-upload").click();
      });
