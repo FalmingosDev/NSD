@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiService { 
   redirectUrl: string;
   baseUrl:string = "http://3.0.255.31/NS/php";
   baseUrlApi:string = "http://3.0.255.31/NS/newoadmin/api";
