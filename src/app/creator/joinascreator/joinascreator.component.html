@@ -15,11 +15,7 @@
     
 
   <title>Creator</title>
-  <style>
-    body {
-      margin-bottom: 0;
-    }
-  </style>
+ 
 </head>
 
 <body class="">
@@ -44,7 +40,7 @@
 
                     <div class="p-image">
                         <i class="fa fa-camera upload-button"></i>
-                        <input class="file-upload" type="file" id="creator_profile_pic" accept="image/*" (change)="onFileChanged($event)"/>
+                        <input class="file-upload" type="file" formControlName="creator_img" id="creator_profile_pic" accept="image/*" (change)="onFileChanged($event)"/>
                     </div>
 
                   </div>
@@ -125,13 +121,13 @@
       <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
       <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
       <script src="../assets/js/main.js"></script> -->
-      <script>
+      <!-- <script>
         $(document).ready(function() {
 
     
             
         });
-      </script>
+      </script> -->
   </body>
 </html>
 

@@ -11,7 +11,8 @@ import { ApiService } from 'src/app/api.service';
 export class CreatorcontentComponent implements OnInit {
 
   list: string[] = [];
-  baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
+  // baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
+  baseURL: string ='http://newostreet.flamingostech.com/video/ceator_video/';
 
   constructor(private dataService: ApiService,private route:Router) { }
 

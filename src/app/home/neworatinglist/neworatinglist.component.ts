@@ -10,13 +10,15 @@ import { ApiService } from 'src/app/api.service';
 })
 export class NeworatinglistComponent implements OnInit {
   creatots_details:any[];
-  base_file_url:string="http://3.0.255.31/NS/video/creator_thumb/";
+  // base_file_url:string="http://3.0.255.31/NS/video/creator_thumb/";
+  base_file_url:string="https://newostreet.flamingostech.com/video/creator_thumb/";
 
   constructor(private dataService:ApiService,private route:Router) { }
 
   ngOnInit(): void {
     this.dataService.fetchCreatorsDetails().subscribe((res)=>{
       this.creatots_details=res.data;
+      console.log(this.creatots_details)
     });
   }
   onWatchNow(id:any){

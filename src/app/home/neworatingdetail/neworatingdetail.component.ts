@@ -11,7 +11,8 @@ declare var $: any;
 export class NeworatingdetailComponent implements OnInit {
   video_code:any;
   video_link:string;
-  base_file_url:string="http://3.0.255.31/NS/video/ceator_video/";
+  // base_file_url:string="http://3.0.255.31/NS/video/ceator_video/";
+  base_file_url:string="https://newostreet.flamingostech.com/video/ceator_video/";
 
   language:string;
   genre:string;

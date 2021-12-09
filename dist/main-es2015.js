@@ -2286,7 +2286,8 @@ class UserhomeComponent {
             this.user_name = response.data.name;
             this.user_field = response.data.apply_name;
             if (response.data.picture != null) {
-                this.url = "http://3.0.255.31/NS/uploads/userprofile_img/" + response.data.picture;
+                //  this.url="http://3.0.255.31/NS/uploads/userprofile_img/"+response.data.picture;
+                this.url = "https://newostreet.flamingostech.com/uploads/userprofile_img/" + response.data.picture;
             }
             this.dataservice.sendData(response.data);
         });
@@ -2568,11 +2569,13 @@ class NeworatinglistComponent {
     constructor(dataService, route) {
         this.dataService = dataService;
         this.route = route;
-        this.base_file_url = "http://3.0.255.31/NS/video/creator_thumb/";
+        // base_file_url:string="http://3.0.255.31/NS/video/creator_thumb/";
+        this.base_file_url = "https://newostreet.flamingostech.com/video/creator_thumb/";
     }
     ngOnInit() {
         this.dataService.fetchCreatorsDetails().subscribe((res) => {
             this.creatots_details = res.data;
+            console.log(this.creatots_details);
         });
     }
     onWatchNow(id) {
@@ -2835,6 +2838,7 @@ class JoinascreatorComponent {
         const email = localStorage.getItem('token');
         this.local_email = email;
         this.crtForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroup"]({
+            creator_img: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].email]),
             creator_user_name: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required),
             creator_dob: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required),
@@ -2842,29 +2846,12 @@ class JoinascreatorComponent {
             creator_desc: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required),
             creator_profile_pic: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required),
         });
-        /*var readURL = function(input) {
-          if (input.files && input.files[0]) {
-              var reader = new FileReader();
-    
-              reader.onload = function (e) {
-                  $('.profile-pic').attr('src', e.target.result);
-              }
-    
-              reader.readAsDataURL(input.files[0]);
-          }
-      }
-    
-    
-      $(".file-upload").on('change', function(){
-          readURL(this);
-      });*/
         jquery__WEBPACK_IMPORTED_MODULE_1__(".upload-button").on('click', function () {
             jquery__WEBPACK_IMPORTED_MODULE_1__(".file-upload").click();
         });
     }
     onFileChanged(event) {
         const files = event.target.files;
-        //  console.log(files);
         if (files.length === 0)
             return;
         const mimeType = files[0].type;
@@ -2880,6 +2867,7 @@ class JoinascreatorComponent {
         };
         this.selectedFile = event.target.files[0];
     }
+    get creator_img() { return this.crtForm.get('creator_img'); }
     get creator_user_name() { return this.crtForm.get('creator_user_name'); }
     get creator_topic() { return this.crtForm.get('creator_topic'); }
     get creator_desc() { return this.crtForm.get('creator_desc'); }
@@ -2887,9 +2875,11 @@ class JoinascreatorComponent {
     get creator_dob() { return this.crtForm.get('creator_dob'); }
     get creator_profile_pic() { return this.crtForm.get('creator_profile_pic'); }
     creatordata(crtForm) {
-        // console.log(crtForm);
         var action_type = 'submit';
-        if (this.creator_user_name.status == 'INVALID') {
+        if (this.creator_img.status == 'INVALID') {
+            alert('Image field is required');
+        }
+        else if (this.creator_user_name.status == 'INVALID') {
             alert('Name field is required');
             jquery__WEBPACK_IMPORTED_MODULE_1__('#creator_user_name').focus();
         }
@@ -2905,10 +2895,6 @@ class JoinascreatorComponent {
             alert('Please give the reason');
             jquery__WEBPACK_IMPORTED_MODULE_1__('#creator_desc').focus();
         }
-        // else if (this.selectedFile.status == 'INVALID') {
-        //   alert('Please upload profile picture');
-        //   $('#selectedFile').focus();
-        // }
         else {
             this.dataService.postCreatorForm(crtForm.creator_user_name, crtForm.email, crtForm.creator_dob, crtForm.creator_topic, crtForm.creator_desc, this.selectedFile);
             this.router.navigate(['/']);
@@ -2916,7 +2902,7 @@ class JoinascreatorComponent {
     }
 }
 JoinascreatorComponent.ɵfac = function JoinascreatorComponent_Factory(t) { return new (t || JoinascreatorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](src_app_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"])); };
-JoinascreatorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: JoinascreatorComponent, selectors: [["app-joinascreator"]], decls: 76, vars: 3, consts: [["lang", "en"], ["charset", "utf-8"], ["name", "viewport", "content", "width=device-width, initial-scale=1, shrink-to-fit=no"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"], ["rel", "preconnect", "href", "https://fonts.gstatic.com"], ["href", "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap", "rel", "stylesheet"], [1, ""], [1, "sign-home"], [1, "container"], [1, "row"], [1, "sign-sec"], ["href", "javascript:void(0)", "routerLink", "/"], ["aria-hidden", "true", 1, "fa", "fa-home"], [1, "container", "h-100"], [1, "d-flex", "justify-content-center", "h-100"], [1, "user_card"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "d-flex", "justify-content-center"], [1, "brand_logo_container"], [1, "small-12", "medium-2", "large-2", "columns"], [1, "circle"], [1, "profile-pic", 3, "src"], [1, "p-image"], [1, "fa", "fa-camera", "upload-button"], ["type", "file", "id", "creator_profile_pic", "accept", "image/*", 1, "file-upload", 3, "change"], [1, "justify-content-center", "form_container"], [1, "input-group", "mb-3"], ["type", "text", "name", "creator_user_name", "id", "creator_user_name", "formControlName", "creator_user_name", "value", "", "placeholder", "Creator Name", 1, "form-control", "input_user"], [1, "input-group", "mb-2"], ["type", "email", "id", "email", "name", "email", "formControlName", "email", "required", "", "autocomplete", "off", "readonly", "", 1, "form-control", "input_pass", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "creator_dob", "id", "creator_dob", "formControlName", "creator_dob", "value", "", "placeholder", "DOB", 1, "form-control", "input_pass"], ["type", "text", "name", "creator_dob", "id", "creator_topic", "formControlName", "creator_topic", "value", "", "placeholder", "Your Topics", 1, "form-control", "input_pass"], ["id", "creator_desc", "formControlName", "creator_desc", "value", "creator_desc", "placeholder", "Why you want to become a creator", 1, "form-control", "input_pass"], [1, "d-flex", "justify-content-center", "mt-3", "login_container"], ["type", "submit", 1, "btn", "login_btn"], [1, "footer"], [1, "col-md-12"], [1, "social-icon"], ["href", "#", 1, "facebook-a"], ["aria-hidden", "true", 1, "fa", "fa-facebook"], ["href", "#", 1, "instagram-a"], ["aria-hidden", "true", 1, "fa", "fa-instagram"], ["href", "#", 1, "youtube-a"], ["aria-hidden", "true", 1, "fa", "fa-youtube-play"], ["href", "#", 1, "twitter-a"], ["aria-hidden", "true", 1, "fa", "fa-twitter"], [1, "copyright-p"], [1, "block"], ["href", "#"]], template: function JoinascreatorComponent_Template(rf, ctx) { if (rf & 1) {
+JoinascreatorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: JoinascreatorComponent, selectors: [["app-joinascreator"]], decls: 76, vars: 3, consts: [["lang", "en"], ["charset", "utf-8"], ["name", "viewport", "content", "width=device-width, initial-scale=1, shrink-to-fit=no"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"], ["rel", "preconnect", "href", "https://fonts.gstatic.com"], ["href", "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap", "rel", "stylesheet"], [1, ""], [1, "sign-home"], [1, "container"], [1, "row"], [1, "sign-sec"], ["href", "javascript:void(0)", "routerLink", "/"], ["aria-hidden", "true", 1, "fa", "fa-home"], [1, "container", "h-100"], [1, "d-flex", "justify-content-center", "h-100"], [1, "user_card"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "d-flex", "justify-content-center"], [1, "brand_logo_container"], [1, "small-12", "medium-2", "large-2", "columns"], [1, "circle"], [1, "profile-pic", 3, "src"], [1, "p-image"], [1, "fa", "fa-camera", "upload-button"], ["type", "file", "formControlName", "creator_img", "id", "creator_profile_pic", "accept", "image/*", 1, "file-upload", 3, "change"], [1, "justify-content-center", "form_container"], [1, "input-group", "mb-3"], ["type", "text", "name", "creator_user_name", "id", "creator_user_name", "formControlName", "creator_user_name", "value", "", "placeholder", "Creator Name", 1, "form-control", "input_user"], [1, "input-group", "mb-2"], ["type", "email", "id", "email", "name", "email", "formControlName", "email", "required", "", "autocomplete", "off", "readonly", "", 1, "form-control", "input_pass", 3, "ngModel", "ngModelChange"], ["type", "date", "name", "creator_dob", "id", "creator_dob", "formControlName", "creator_dob", "value", "", "placeholder", "DOB", 1, "form-control", "input_pass"], ["type", "text", "name", "creator_dob", "id", "creator_topic", "formControlName", "creator_topic", "value", "", "placeholder", "Your Topics", 1, "form-control", "input_pass"], ["id", "creator_desc", "formControlName", "creator_desc", "value", "creator_desc", "placeholder", "Why you want to become a creator", 1, "form-control", "input_pass"], [1, "d-flex", "justify-content-center", "mt-3", "login_container"], ["type", "submit", 1, "btn", "login_btn"], [1, "footer"], [1, "col-md-12"], [1, "social-icon"], ["href", "#", 1, "facebook-a"], ["aria-hidden", "true", 1, "fa", "fa-facebook"], ["href", "#", 1, "instagram-a"], ["aria-hidden", "true", 1, "fa", "fa-instagram"], ["href", "#", 1, "youtube-a"], ["aria-hidden", "true", 1, "fa", "fa-youtube-play"], ["href", "#", 1, "twitter-a"], ["aria-hidden", "true", 1, "fa", "fa-twitter"], [1, "copyright-p"], [1, "block"], ["href", "#"]], template: function JoinascreatorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "html", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "head");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "meta", 1);
@@ -3052,7 +3038,7 @@ JoinascreatorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("src", ctx.url, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsanitizeUrl"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.local_email);
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"]], styles: ["body[_ngcontent-%COMP%]{\r\n    margin-bottom: 0 !important;\r\n}\r\n.sign-sec[_ngcontent-%COMP%]{\r\n    padding: 10px 10px;\r\n    background: rgba(0,0,0,0.7);\r\n\r\n}\r\n.sign-sec[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{\r\n    text-align: right;\r\n    font-size: 24px;\r\n    color: #fff;\r\n    display: block;\r\n}\r\n.sign-home[_ngcontent-%COMP%]{\r\n    padding-top: 0 !important;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpvaW5hc2NyZWF0b3IuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDJCQUEyQjtBQUMvQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLDJCQUEyQjs7QUFFL0I7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0lBQ2YsV0FBVztJQUNYLGNBQWM7QUFDbEI7QUFDQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJqb2luYXNjcmVhdG9yLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5e1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMCAhaW1wb3J0YW50O1xyXG59XHJcbi5zaWduLXNlY3tcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweDtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwwLDAsMC43KTtcclxuXHJcbn1cclxuLnNpZ24tc2VjIGl7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuLnNpZ24taG9tZXtcclxuICAgIHBhZGRpbmctdG9wOiAwICFpbXBvcnRhbnQ7XHJcbn1cclxuIl19 */", "body[_ngcontent-%COMP%] {\n      margin-bottom: 0;\n    }"] });
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"]], styles: ["body[_ngcontent-%COMP%]{\r\n    margin-bottom: 0 !important;\r\n}\r\n.sign-sec[_ngcontent-%COMP%]{\r\n    padding: 10px 10px;\r\n    background: rgba(0,0,0,0.7);\r\n\r\n}\r\n.sign-sec[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{\r\n    text-align: right;\r\n    font-size: 24px;\r\n    color: #fff;\r\n    display: block;\r\n}\r\n.sign-home[_ngcontent-%COMP%]{\r\n    padding-top: 0 !important;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpvaW5hc2NyZWF0b3IuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDJCQUEyQjtBQUMvQjtBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLDJCQUEyQjs7QUFFL0I7QUFDQTtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0lBQ2YsV0FBVztJQUNYLGNBQWM7QUFDbEI7QUFDQTtJQUNJLHlCQUF5QjtBQUM3QiIsImZpbGUiOiJqb2luYXNjcmVhdG9yLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5e1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMCAhaW1wb3J0YW50O1xyXG59XHJcbi5zaWduLXNlY3tcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweDtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwwLDAsMC43KTtcclxuXHJcbn1cclxuLnNpZ24tc2VjIGl7XHJcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuLnNpZ24taG9tZXtcclxuICAgIHBhZGRpbmctdG9wOiAwICFpbXBvcnRhbnQ7XHJcbn1cclxuIl19 */"] });
 
 
 /***/ }),
@@ -4716,7 +4702,8 @@ class NeworatingdetailComponent {
     constructor(route, dataService) {
         this.route = route;
         this.dataService = dataService;
-        this.base_file_url = "http://3.0.255.31/NS/video/ceator_video/";
+        // base_file_url:string="http://3.0.255.31/NS/video/ceator_video/";
+        this.base_file_url = "https://newostreet.flamingostech.com/video/ceator_video/";
         this.customOptions = {
             loop: true,
             margin: 10,
@@ -9669,7 +9656,8 @@ function UsersubbmissionComponent_div_46_Template(rf, ctx) { if (rf & 1) {
 class UsersubbmissionComponent {
     constructor(dataService) {
         this.dataService = dataService;
-        this.base_file_url = "http://3.0.255.31/NS/uploads/";
+        // base_file_url:string="http://3.0.255.31/NS/uploads/"
+        this.base_file_url = "http://newostreet.flamingostech.com/uploads/";
         this.profie_pic_src = "assets/images/defaul-profile-image.png";
         this.k_file_name = "No file selected";
         this.s_file_name = "No file selected";
@@ -11697,7 +11685,8 @@ class UserpreviewComponent {
         this.dataService = dataService;
         this.fileSrc = "";
         this.user_pic = "../assets/images/user-home-img.jpg";
-        this.base_file_root = "http://3.0.255.31/NS/uploads/";
+        // base_file_root:string="http://3.0.255.31/NS/uploads/";
+        this.base_file_root = "http://newostreet.flamingostech.com/uploads/";
         this.commenter_star_arr = [];
     }
     ngOnInit() {
@@ -14659,7 +14648,8 @@ class CreatorcontentComponent {
         this.dataService = dataService;
         this.route = route;
         this.list = [];
-        this.baseURL = 'http://3.0.255.31/NS/video/ceator_video/';
+        // baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
+        this.baseURL = 'http://newostreet.flamingostech.com/video/ceator_video/';
     }
     ngOnInit() {
         this.creatorList();
@@ -15832,7 +15822,7 @@ class ApiService {
         this.route = route;
         // baseUrl:string = "http://3.0.255.31/NS/php";
         this.baseUrl = "https://newostreet.flamingostech.com/php";
-        // baseUrlApi:string = "http://3.0.255.31/NS/newoadmin/api";
+        // baseUrlApi:string = "http://newostreet.flamingostech.com/newoadmin/api";
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     userlogin(email, password) {
