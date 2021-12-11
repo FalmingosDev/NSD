@@ -9,10 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { JoinascreatorComponent } from './joinascreator/joinascreator.component';
 import { CreatorcontentaddComponent } from './creatorcontentadd/creatorcontentadd.component';
 
-
+ 
 const routes: Routes = [
   {path:'creatorcontent', component:CreatorcontentComponent},
+<<<<<<< Updated upstream
   {path:'creatorcontentdetails/:id', component:CreatorcontentdetailsComponent},
+=======
+  {path:'creatorcontentdetails', component:CreatorcontentdetailsComponent},
+>>>>>>> Stashed changes
   {path:'creatorcontentedit/:id', component:CreatorcontenteditComponent},
   {path:'header', component:HeaderComponent},
   {path:'footer', component:FooterComponent},

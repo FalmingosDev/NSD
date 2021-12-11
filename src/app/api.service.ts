@@ -332,6 +332,7 @@ export class ApiService {
     }
 
 
+<<<<<<< Updated upstream
     public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,camera,runtime,audiance){
      
       // var video_title:any=video_title;
@@ -343,11 +344,13 @@ export class ApiService {
 
       // creatorformData.append('uploadThumb',uploadThumb);
       // console.log(uploadThumb);
+=======
+    public postAddCreatorForm(video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance)
+    {
+>>>>>>> Stashed changes
       const email = localStorage.getItem('token');
       const creatorformData: FormData = new FormData();
-
       creatorformData.append('email',email);
-
       creatorformData.append('action_type',"creatorVideoSubmit");
       creatorformData.append('file',video);
       creatorformData.append('video_title',video_title);
@@ -368,7 +371,7 @@ export class ApiService {
         // console.log(creatorformData);
 
       return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData).subscribe((res)=>{
-      alert(res.msg);
+      console.log(res.msg);
       });
 
      }
@@ -386,6 +389,7 @@ export class ApiService {
       const email=localStorage.getItem('token');
       return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
     }
+<<<<<<< Updated upstream
 
 
 
@@ -432,4 +436,33 @@ export class ApiService {
       
   }
 
+=======
+    public postEditCreatorForm(id,video,video_title,video_desc,image,genreList,languageList,year,cast,director,writer,photo,camera,runtime,audiance){
+      console.log("video_title"+video_title);
+      const creatorformData: FormData = new FormData();
+      creatorformData.append('id',id);
+      creatorformData.append('action_type',"editCreatorVideo");
+      creatorformData.append('file',video);
+      creatorformData.append('video_title',video_title);
+      creatorformData.append('video_desc',video_desc);
+      creatorformData.append('img',image);
+      creatorformData.append('genreList',genreList);
+      creatorformData.append('languageList',languageList);
+      creatorformData.append('year',year);
+      creatorformData.append('cast',cast);
+      creatorformData.append('director',director);
+      creatorformData.append('writer',writer);
+      creatorformData.append('photo',photo);
+      creatorformData.append('camera',camera);
+      creatorformData.append('runtime',runtime);
+      creatorformData.append('audiance',audiance);
+      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData).subscribe((res)=>{
+        console.log(res.msg);
+        });
+  
+
+    }
+ /* ---------------- Service Durba End --------------------*/
+    
+>>>>>>> Stashed changes
 }
