@@ -17,10 +17,11 @@ return this.isLogin(routeurl);
 
 isLogin(routeurl: string) {
 if (this.dataService.isLoggedIn()) {
-return true;
+    return true;
+}else{
+    alert("you need to login first");
+    this.router.navigate(['/']);
 }
 
-this.dataService.redirectUrl = routeurl;
-this.router.navigate([''], {queryParams: { returnUrl: routeurl }} );
 }
 }

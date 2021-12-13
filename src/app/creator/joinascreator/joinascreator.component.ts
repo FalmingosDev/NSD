@@ -31,12 +31,14 @@ export class JoinascreatorComponent implements OnInit {
   { }
 
   ngOnInit(): void {
+    // const email = localStorage.getItem('token');
+   
     
     const email = localStorage.getItem('token');
+    this.dataService.checkCreator(email);// 
     this.local_email=email;
 
     this.crtForm = new FormGroup({
-      creator_img:new FormControl('',[Validators.required]),
       email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
       creator_user_name: new FormControl('', Validators.required),
       creator_dob: new FormControl('', Validators.required),
@@ -72,7 +74,7 @@ export class JoinascreatorComponent implements OnInit {
 
   }
 
-  get creator_img() { return this.crtForm.get('creator_img') }
+
   get creator_user_name() { return this.crtForm.get('creator_user_name') }
   get creator_topic() { return this.crtForm.get('creator_topic') }
   get creator_desc() { return this.crtForm.get('creator_desc') }
@@ -84,8 +86,9 @@ export class JoinascreatorComponent implements OnInit {
 
   creatordata(crtForm) {
     var action_type = 'submit';
-    if(this.creator_img.status == 'INVALID'){
-      alert('Image field is required');
+    if (this.creator_profile_pic.status == 'INVALID') {
+      alert('Please upload profile picture');
+      $('#creator_profile_pic').focus();
     }
     else if (this.creator_user_name.status == 'INVALID') {
       alert('Name field is required');
