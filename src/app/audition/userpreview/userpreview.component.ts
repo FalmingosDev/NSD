@@ -13,8 +13,8 @@ export class UserpreviewComponent implements OnInit{
   user_data:any;
   fileSrc:string="";
   user_pic:string="../assets/images/user-home-img.jpg";
-  // base_file_root:string="http://3.0.255.31/NS/uploads/";
-  base_file_root:string="http://newostreet.flamingostech.com/uploads/";
+  base_file_root:string="http://3.0.255.31/NS/uploads/";
+  // base_file_root:string="http://newostreet.flamingostech.com/uploads/";
 
 
   commenter_type:string;
