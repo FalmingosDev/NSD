@@ -20,7 +20,7 @@ export class UserhomeComponent implements OnInit {
   success_img_upload:any;
   
   
-  url:any="assets/images/defaul-profile-image.png";
+  url:any="assets/images/defaul-profile-image.png";// default avatar img
 
   constructor(private dataservice:ApiService,private router:Router) { }
 
@@ -30,7 +30,7 @@ export class UserhomeComponent implements OnInit {
      this.user_id=response.data.id;
      this.user_name=response.data.name;
      this.user_field=response.data.apply_name;
-     if(response.data.picture!=null){
+     if(response.data.picture!=null){  //check user have any profile picture or not
       //  this.url="http://3.0.255.31/NS/uploads/userprofile_img/"+response.data.picture;
        this.url="https://newostreet.flamingostech.com/uploads/userprofile_img/"+response.data.picture;
      }
