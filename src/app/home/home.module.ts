@@ -20,6 +20,7 @@ import { InfluencerSignupComponent } from './influencer-signup/influencer-signup
 import { PriceComponent } from './price/price.component';
 import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
+import { PlaygameComponent } from './playgame/playgame.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { GameComponent } from './game/game.component';
     InfluencerSignupComponent,
     PriceComponent,
     SubcriptionComponent,
-    GameComponent
+    GameComponent,
+    PlaygameComponent
   ],
   imports: [
     CommonModule,

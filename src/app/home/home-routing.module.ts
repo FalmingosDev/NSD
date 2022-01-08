@@ -10,6 +10,7 @@ import { InfluencerSignupComponent } from './influencer-signup/influencer-signup
 import { PriceComponent } from './price/price.component';
 import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
+import { PlaygameComponent } from './playgame/playgame.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'influencersignup',component:InfluencerSignupComponent, canActivate: [AuthguardGuard]},
   {path:'pricing', component:PriceComponent, canActivate: [AuthguardGuard]},
   {path:'subcription/:username', component:SubcriptionComponent, canActivate: [AuthguardGuard]},
-  {path:'game', component:GameComponent, canActivate: [AuthguardGuard]}
+  {path:'game', component:GameComponent, canActivate: [AuthguardGuard]},
+  {path:'play', component:PlaygameComponent, canActivate: [AuthguardGuard]}
 ];
 
 @NgModule({
