@@ -24,7 +24,7 @@ export class PlaygameComponent implements OnInit {
     this.generateUrl();
     this.final_url=this.getSafeUrl(this.baseGameUrl);
   }
-
+  //sanitize url--------
   getSafeUrl(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
@@ -36,6 +36,7 @@ export class PlaygameComponent implements OnInit {
     // console.log(this.baseGameUrl);
     // this.validIframe=true;
   }
+  //end sanitize url--------
   
 
 }
