@@ -7,6 +7,8 @@ import { OttprivecyComponent } from './ottprivecy/ottprivecy.component';
 import { OtttermsComponent } from './ottterms/ottterms.component'
 import { OttcontactsComponent } from './ottcontacts/ottcontacts.component';
 import { OttmovieComponent } from './ottmovie/ottmovie.component';
+import { OttvideodetailComponent } from './ottvideodetail/ottvideodetail.component';
+import { OttvideotypeComponent } from './ottvideotype/ottvideotype.component';
 
 const routes: Routes = [
   {path:'otthome', component:OtthomeComponent },
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path:'ottprivecy', component:OttprivecyComponent},
   {path:'ottterms', component:OtttermsComponent},
   {path:'ottcontact', component:OttcontactsComponent},
-  {path:'ottmovie', component:OttmovieComponent}
+  {path:'ottmovie', component:OttmovieComponent},
+  {path:'ottvideodetail/:slug',component:OttvideodetailComponent},
+  {path:'ottvideotype',component:OttvideotypeComponent}
 ]; 
 
 @NgModule({

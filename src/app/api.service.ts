@@ -32,13 +32,29 @@ export class ApiService {
     }));
   }
 
-  public userregistration(name,phone,email,pwd) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, phone, email, pwd })
+  public userregistration(action_type,name,phone,email,countryList,pwd) {
+    // console.log(action_type);
+    const signupFrmData: FormData = new FormData();
+    signupFrmData.append('action_type',action_type);
+    signupFrmData.append('name',name);
+    signupFrmData.append('phone',phone);
+    signupFrmData.append('email',email);
+    signupFrmData.append('countryList',countryList);
+    signupFrmData.append('pwd',pwd);
+    
+    return this.httpClient.post<any>(this.baseUrl + '/register.php',signupFrmData )
     .pipe(map(Users => {
     this.setToken(email);
+    console.log(countryList);
+    localStorage.setItem('country_code', countryList);
+    
     this.getLoggedInName.emit(true);
     return Users;
     }));
+  }
+
+  public getCountryList(action_type){
+    return this.httpClient.get<any>(this.baseUrl +'/register.php', {params:{action_type}});
   }
 
   public payment_ott(type) {
@@ -404,6 +420,12 @@ export class ApiService {
     public fetchCreatorVideoData(video_code){
       let action_type="fetch_cretor_video";
       return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
+    }
+
+    public fetchVideoData(slug){
+      const action_type="fetch_watch_details";
+     return this.httpClient.get<any>(this.baseUrl +'/fetch_watch_details.php',  {params:{action_type,slug}});
+   
     }
     
 }
