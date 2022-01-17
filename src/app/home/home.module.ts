@@ -21,6 +21,7 @@ import { PriceComponent } from './price/price.component';
 import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
 import { PlaygameComponent } from './playgame/playgame.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PlaygameComponent } from './playgame/playgame.component';
     PriceComponent,
     SubcriptionComponent,
     GameComponent,
-    PlaygameComponent
+    PlaygameComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,

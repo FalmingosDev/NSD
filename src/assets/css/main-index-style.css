@@ -3,7 +3,7 @@ body{
     padding: 0 !important;
     background-color: #0d1428 !important; 
     font-family: 'Roboto', sans-serif;
-    /* margin-bottom: 74px !important; */
+    margin-bottom: 74px !important;
 }
 a:hover {
     text-decoration: none;  

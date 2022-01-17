@@ -405,5 +405,9 @@ export class ApiService {
       let action_type="fetch_cretor_video";
       return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
     }
+
+    public handelCreateEncryption(objUserData){
+      return this.httpClient.post<any>(this.baseUrl+'/payment.php',{userdata:objUserData});
+    }
     
 }

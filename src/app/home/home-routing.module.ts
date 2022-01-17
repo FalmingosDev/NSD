@@ -11,6 +11,7 @@ import { PriceComponent } from './price/price.component';
 import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
 import { PlaygameComponent } from './playgame/playgame.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'pricing', component:PriceComponent, canActivate: [AuthguardGuard]},
   {path:'subcription/:username', component:SubcriptionComponent, canActivate: [AuthguardGuard]},
   {path:'game', component:GameComponent, canActivate: [AuthguardGuard]},
-  {path:'play', component:PlaygameComponent, canActivate: [AuthguardGuard]}
+  {path:'play/:data', component:PlaygameComponent, canActivate: [AuthguardGuard]},
+  {path:'payment/:sec/:amt/:curr', component:PaymentComponent, canActivate: [AuthguardGuard]}
 ];
 
 @NgModule({
