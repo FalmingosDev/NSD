@@ -19,6 +19,11 @@ export class PaymentComponent implements OnInit {
     const amount=this.route.snapshot.params['amt'];
     const currency=this.route.snapshot.params['curr'];
     const email=localStorage.getItem("token");
+    console.log(section);
+    console.log(amount);
+    console.log(currency);
+    console.log(email);
+    
   
     
     const objUserData = {section,amount,currency,email}
