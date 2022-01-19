@@ -13,6 +13,16 @@ import { OttcontactsComponent } from './ottcontacts/ottcontacts.component';
 import { OttmovieComponent } from './ottmovie/ottmovie.component';
 import { OttvideodetailComponent } from './ottvideodetail/ottvideodetail.component';
 import { OttvideotypeComponent } from './ottvideotype/ottvideotype.component';
+import { Ottvideotype1Component } from './ottvideotype1/ottvideotype1.component';
+import { Ottvideotype2Component } from './ottvideotype2/ottvideotype2.component';
+import { Ottvideotype3Component } from './ottvideotype3/ottvideotype3.component';
+import { Ottvideotype4Component } from './ottvideotype4/ottvideotype4.component';
+import { Ottvideotype5Component } from './ottvideotype5/ottvideotype5.component';
+import { Ottvideotype6Component } from './ottvideotype6/ottvideotype6.component';
+import { OttvideowmdComponent } from './ottvideowmd/ottvideowmd.component';
+import { OttshortsComponent } from './ottshorts/ottshorts.component';
+import { OttcneComponent } from './ottcne/ottcne.component';
+
 
 
 @NgModule({
@@ -26,7 +36,16 @@ import { OttvideotypeComponent } from './ottvideotype/ottvideotype.component';
     OttcontactsComponent,
     OttmovieComponent,
     OttvideodetailComponent,
-    OttvideotypeComponent 
+    OttvideotypeComponent,
+    Ottvideotype1Component,
+    Ottvideotype2Component,
+    Ottvideotype3Component,
+    Ottvideotype4Component,
+    Ottvideotype5Component,
+    Ottvideotype6Component,
+    OttvideowmdComponent,
+    OttshortsComponent,
+    OttcneComponent
   ],
   imports: [
     CommonModule,

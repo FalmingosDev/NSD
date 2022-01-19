@@ -3,6 +3,11 @@
     background: #000;
     border-bottom: 3px solid #d5dd25;
     height: 46px;
+    position: relative;
+    z-index: 999;
+}
+.ot-ection{
+    margin-bottom: 74px !important;
 }
 .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: -41px !important;

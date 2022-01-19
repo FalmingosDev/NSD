@@ -42,6 +42,7 @@ export class OttvideodetailComponent implements OnInit {
 
 
       this.addedby=res.data.watch_videos.addedby;
+      // console.log(this.addedby);
       
       for(let i=0;i<res.data.vedeo_type.length;i++)
       {

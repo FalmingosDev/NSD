@@ -37,7 +37,7 @@ a:hover {
     border-radius: 5px;
 }
 .banner, .what-to-section, .page-head{
-	margin-top: -72px;
+	/* margin-top: -72px; */
 }
 .p-right-0{
     padding-right: 0;
