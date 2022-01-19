@@ -39,6 +39,7 @@ export class JoinascreatorComponent implements OnInit {
     this.local_email=email;
 
     this.crtForm = new FormGroup({
+
       email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
       creator_user_name: new FormControl('', Validators.required),
       creator_dob: new FormControl('', Validators.required),
@@ -106,6 +107,11 @@ export class JoinascreatorComponent implements OnInit {
       alert('Please give the reason');
       $('#creator_desc').focus();
     }
+    // else if (this.creator_desc.status == 'INVALID') {
+    //   alert('Please give the reason');
+    //   $('#creator_desc').focus();
+    // }
+    
     else{
       this.dataService.postCreatorForm(crtForm.creator_user_name,crtForm.email,crtForm.creator_dob, crtForm.creator_topic, crtForm.creator_desc, this.selectedFile);
       this.router.navigate(['/']);
