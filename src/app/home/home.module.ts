@@ -22,6 +22,8 @@ import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
 import { PlaygameComponent } from './playgame/playgame.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { PaymentComponent } from './payment/payment.component';
     SubcriptionComponent,
     GameComponent,
     PlaygameComponent,
-    PaymentComponent
+    PaymentComponent,
+    PaymentSuccessComponent,
+    PaymentCancelComponent
   ],
   imports: [
     CommonModule,
