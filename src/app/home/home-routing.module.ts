@@ -12,6 +12,8 @@ import { SubcriptionComponent } from './subcription/subcription.component';
 import { GameComponent } from './game/game.component';
 import { PlaygameComponent } from './playgame/playgame.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
 
 const routes: Routes = [
   {path:'', component:HomepageComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'subcription/:username', component:SubcriptionComponent, canActivate: [AuthguardGuard]},
   {path:'game', component:GameComponent, canActivate: [AuthguardGuard]},
   {path:'play/:data', component:PlaygameComponent, canActivate: [AuthguardGuard]},
-  {path:'payment/:sec/:amt/:curr', component:PaymentComponent, canActivate: [AuthguardGuard]}
+  {path:'payment/:sec/:amt/:curr', component:PaymentComponent, canActivate: [AuthguardGuard]},
+  {path:'payment_success', component:PaymentSuccessComponent},
+  {path:'payment_cancel', component:PaymentCancelComponent}
 ];
 
 @NgModule({
