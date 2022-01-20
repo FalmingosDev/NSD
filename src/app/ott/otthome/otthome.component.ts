@@ -52,9 +52,14 @@ export class OtthomeComponent implements OnInit {
    nav: false
   };
 
-  constructor() { }
+  constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
   }
+
+//   videodetail() {
+//     console.log("Checking", "Test");
+//     this.route.navigate(["ottvideodetail"]);
+// }
 
 }

@@ -3,7 +3,7 @@ body{
     padding: 0 !important;
     background-color: #0d1428 !important; 
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 74px !important;
+    /* margin-bottom: 74px !important; */
 }
 a:hover {
     text-decoration: none;  
@@ -50,7 +50,7 @@ a:hover {
     border-radius: 5px;
 }
 .banner, .what-to-section, .page-head{
-	margin-top: -72px;
+	/* margin-top: -72px; */
 }
 .p-right-0{
     padding-right: 0;
@@ -1529,6 +1529,49 @@ img {
   transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   color: #999;
 }
+/*netwood-cafe-epi-7*/
+.cf-img{
+    position: relative
+}
+.premium-div {
+    position: absolute;
+    top: 11px;
+    width: 53%;
+    right: -1px;
+}
+.mt-p-row {
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.cf-img img {
+    border-radius: 6px;
+}
+.cf-img {
+    margin: 0px 0px 0px 10px;
+}
+.cf-txt-a-tag {
+    color: #ffc107;
+    font-size: 14px;
+    line-height: 16px;
+    display: inline-block;
+    margin: 6px 0px 0px;
+}
+.cf-h2 {
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 0;
+    line-height: inherit;
+}
+.mp-p {
+    color: #fff;
+    font-size: 21px;
+    margin-bottom: 0;
+}
+.cf-h2 span a {
+    color: #fff;
+}
+
+/*netwood-cafe-epi-7*/
 /*signin*/
 @media screen and (max-height: 450px) {
   .sidenav {

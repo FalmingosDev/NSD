@@ -4,7 +4,6 @@ import { ApiService } from 'src/app/api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
-// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creatorcontentadd',
@@ -203,71 +202,78 @@ export class CreatorcontentaddComponent implements OnInit {
     get audiance() { return this.addcrtForm.get('audiance') }
 
 
-  addcreatordata(addcrtForm) {
-    //console.log('addcrtForm');
+
+    addcreatordata(addcrtForm) {
+      //console.log('addcrtForm');
+      
+      //console.log(this.video);
+      // console.log(this.uploadThumb);
+        if (!this.video) {
+          alert('Please upload a video');
+          $('#video').focus();
+        }
+        else if (this.video_title.status == 'INVALID') {
+          alert('Please Enter Title');
+          $('#video_title').focus();
+        }
+        else if (this.video_desc.status == 'INVALID') {
+          alert('Please Enter Description');
+          $('#video_desc').focus();
+        }
+        else if (!this.image) {
+          alert('Please upload a thumbnail');
+          $('#image').focus();
+        }
+        else if (this.genre.status == 'INVALID') {
+          alert('Please Enter genre');
+          $('#genreList').focus();
+        }
+        else if (this.language.status == 'INVALID') {
+          alert('Please Enter language');
+          $('#languagList').focus();
+        }
+        else if (this.year.status == 'INVALID') {
+          alert('Please Enter Year');
+          $('#year').focus();
+        }
+        else if (this.cast.status == 'INVALID') {
+          alert('Please Enter Cast');
+          $('#cast').focus();
+        }
+        else if (this.director.status == 'INVALID') {
+          alert('Please Enter Director');
+          $('#director').focus();
+        }
+        else if (this.writer.status == 'INVALID') {
+          alert('Please Enter Writer');
+          $('#writer').focus();
+        }
+        else if (this.camera.status == 'INVALID') {
+          alert('Please Enter Photographer and Cameragrapher');
+          $('#camera').focus();
+        }
+        else if (this.runtime.status == 'INVALID') {
+          alert('Please Mention running time');
+          $('#runtime').focus();
+        }
+        else if (this.audiance.status == 'INVALID') {
+          alert('Please tick the proper audience');
+          $('#audiance').focus();
+        }
+       
+        else{ 
+          this.dataService.postAddCreatorForm(this.video,addcrtForm.video_title,addcrtForm.video_desc,this.image,addcrtForm.genreList,addcrtForm.languageList, addcrtForm.year, addcrtForm.cast,addcrtForm.director,addcrtForm.writer,addcrtForm.camera,addcrtForm.runtime,addcrtForm.audiance).subscribe((res)=>{
+            if (res.status == 'success'){
+              alert(res.msg);
+              this.router.navigate(['/creatorcontent']);
+            } else {
+              alert(res.msg);
+            }
+          });
+          
+        }
     
-    //console.log(this.video);
-    // console.log(this.uploadThumb);
-      if (!this.video) {
-        alert('Please upload a video');
-        $('#video').focus();
       }
-      else if (this.video_title.status == 'INVALID') {
-        alert('Please Enter Title');
-        $('#video_title').focus();
-      }
-      else if (this.video_desc.status == 'INVALID') {
-        alert('Please Enter Description');
-        $('#video_desc').focus();
-      }
-      else if (!this.image) {
-        alert('Please upload a thumbnail');
-        $('#image').focus();
-      }
-      else if (this.genre.status == 'INVALID') {
-        alert('Please Enter genre');
-        $('#genreList').focus();
-      }
-      else if (this.language.status == 'INVALID') {
-        alert('Please Enter language');
-        $('#languagList').focus();
-      }
-      else if (this.year.status == 'INVALID') {
-        alert('Please Enter Year');
-        $('#year').focus();
-      }
-      else if (this.cast.status == 'INVALID') {
-        alert('Please Enter Cast');
-        $('#cast').focus();
-      }
-      else if (this.director.status == 'INVALID') {
-        alert('Please Enter Director');
-        $('#director').focus();
-      }
-      else if (this.writer.status == 'INVALID') {
-        alert('Please Enter Writer');
-        $('#writer').focus();
-      }
-      else if (this.camera.status == 'INVALID') {
-        alert('Please Enter Photographer and Cameragrapher');
-        $('#camera').focus();
-      }
-      else if (this.runtime.status == 'INVALID') {
-        alert('Please Mention running time');
-        $('#runtime').focus();
-      }
-      else if (this.audiance.status == 'INVALID') {
-        alert('Please tick the proper audience');
-        $('#audiance').focus();
-      }
-     
-      else{
-            this.dataService.postAddCreatorForm(this.video,addcrtForm.video_title,addcrtForm.video_desc,this.image,addcrtForm.genreList,addcrtForm.languageList, addcrtForm.year, addcrtForm.cast,addcrtForm.director,addcrtForm.writer,addcrtForm.camera,addcrtForm.runtime,addcrtForm.audiance);
-        
-        this.router.navigate(['/creatorcontent']);
-      }
-  
-    }
 
 
 

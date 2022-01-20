@@ -24,24 +24,34 @@ export class LoginComponent implements OnInit {
 
   postdata(angForm1)
   { //alert(angForm1.value.mobile); //deb
-    this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
-    .pipe(first())
-    .subscribe(
-    data => {
-		//alert(JSON.stringify(data));
-		//alert(data[0].name);
-		if(data[0].newo_user_id > 0){
-			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/'; 
-			this.router.navigate([redirect]);
-		}
-		else{
-			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing'; 
-			this.router.navigate([redirect]);
-		}
-    },
-    error => {
-      alert("User name or password is incorrect")
-    });
+      if (this.email.status == 'INVALID') {
+        alert('Please Enter Your Email Address');
+        $('#email').focus();
+      }
+      else if (this.password.status == 'INVALID') {
+        alert('Please Enter Your Password');
+        $('#password').focus();
+      }
+      else{
+      this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
+      .pipe(first())
+      .subscribe(
+      data => {
+      //alert(JSON.stringify(data));
+      //alert(data[0].name);
+      if(data[0].newo_user_id > 0){
+        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/'; 
+        this.router.navigate([redirect]);
+      }
+      else{
+        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing'; 
+        this.router.navigate([redirect]);
+      }
+      },
+      error => {
+        alert("User name or password is incorrect")
+      });
+    }
   }
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
