@@ -7,7 +7,8 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./usersubbmission.component.css']
 })
 export class UsersubbmissionComponent implements OnInit {
-  base_file_url:string="http://localhost/NSD/uploads/"
+  // base_file_url:string="http://3.0.255.31/NS/uploads/"
+  base_file_url:string="http://newostreet.flamingostech.com/uploads/"
   user_data: any;
   user_data2: any;
   profie_pic_src: string = "assets/images/defaul-profile-image.png";

@@ -32,6 +32,11 @@
                                 <input type="text" name="name" formControlName="name" class="e-ph" placeholder="Name">
                                 <input type="text" name="phone" formControlName="phone" class="e-ph" placeholder="Phone No">
                                 <input type="text" name="email" formControlName="email" class="e-ph" placeholder="Email"> 
+                                <select name="countryList" id="countryList"  formControlName="countryList"  class="e-ph" (change)="onCountryChange(this)">
+                                <option>Select Region</option>
+                                <option *ngFor="let data of region | keyvalue"  [value]="data.value.code" id="applied_field" >{{data.value.name}}</option>
+                                </select>
+
                                 <input type="password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 
                                 <button class="sign-in-btn">Sign Up</button> 
                             </form>

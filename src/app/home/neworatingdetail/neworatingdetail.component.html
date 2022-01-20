@@ -28,11 +28,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="pg-h4-box">
-                     <h4 class="pag-h4-nm">The Shawshank Redemption<span>&nbsp;(1994)</span></h4>
+                     <h4 class="pag-h4-nm">{{title}}<span>&nbsp;({{year}})</span></h4>
                         <ul class="page-vd-ul"> 
-                            <li>R</li>
-                            <li>142 min</li>     
-                            <li>Drama</li>
+                            <li>{{ audience }}</li>
+                            <li>{{ runtime }}</li>     
+                            <li>{{ genre }}</li>
                         </ul> 
                     </div>
                 </div>
@@ -103,11 +103,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="rt-video-div">
-                        <video width="100%" height="100%" controls>
-                            <source src="../assets/video/Intro.mp4" type="video/mp4">
-                            <source src="../assets/video/Intro.ogg" type="video/ogg">
-                        </video>
+                    <div class="rt-video-div" id="vid_div">
                     </div>
                 </div>
             </div>  
@@ -159,18 +155,21 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="movie-des-text">
-                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h6>  
-                        <p>Language : <span>Bengali</span></p>
-                        <p>Genre : <span>Crime, Mystery, Thriller</span></p>
-                        <p>Year : <span>2015</span></p>
-                        <p>Cast : <span>Indranil Sen, Kaushik Sen</span></p>
-                        <p>Director : <span>Saibal Mitra</span></p>
+                        <h6>{{description}}</h6>  
+                        <p>Language : <span>{{ language }}</span></p>
+                        <p>Genre : <span>{{ genre }}</span></p>
+                        <p>Year : <span>{{ year }}</span></p>
+                        <p>Cast : <span>{{ cast }}</span></p>
+                        <p>Director : <span>{{ director }}</span></p>
                     </div>
                 </div>
             </div>  
         </div>
       </section>
-      <section class="vd-photo">
+
+
+
+      <!---<section class="vd-photo">
         <div class="container"> 
             <h3 class="vd-photo-h3">Videos</h3>  
             <owl-carousel-o [options]="customOptions">
@@ -213,7 +212,8 @@
             </owl-carousel-o> 
         </div>
       </section>
-      <section class="vd-photo">
+--->
+     <!----- <section class="vd-photo">
         <div class="container">  
             <h3 class="vd-photo-h3">Photos</h3>  
             <owl-carousel-o [options]="customOptions">
@@ -300,16 +300,17 @@
             </owl-carousel-o> 
         </div>
       </section>
+      ---->
       <section class="director-full">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="dr-text">
                         <ul>
-                            <li><p>Director : <span> Francis Ford Coppola</span></p></li>
-                            <li><p>Writers : <span> Mario Puzo</span></p></li>
+                            <li><p>Director : <span>{{ description }}</span></p></li>
+                            <li><p>Writers : <span> {{writer}}</span></p></li>
                             <li><p>Photographer : <span> Connie Nielsen</span></p></li>
-                            <li><p>Cameragrapher : <span> Ryan Zheng</span></p></li>
+                            <li><p>Cameragrapher : <span>{{ camera }}</span></p></li>
                         </ul>
                     </div>
                     <div class="pr-duc-ul">

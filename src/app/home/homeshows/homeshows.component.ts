@@ -34,11 +34,11 @@ export class HomeshowsComponent implements OnInit {
   ngOnInit(): void {
   };
 
-  checkingCreator(){
-    const email = localStorage.getItem('token');
-    this.dataService.checkCreator(email);
-    // routerLink="/joinascreator" routerLinkActive="active"
+  // checkingCreator(){
+  //   const email = localStorage.getItem('token');
+  //  this.dataService.checkCreator(email);
+    
 
-  }
+  // }
 
 }

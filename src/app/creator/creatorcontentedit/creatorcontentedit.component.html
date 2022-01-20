@@ -6,18 +6,7 @@
                 <!-- <form [formGroup]="editcrtForm" class="form" (ngSubmit)="editcreatordata(editcrtForm.value)" enctype="multipart/form-data"> -->
                 <form class="form" [formGroup]="editcrtForm" (ngSubmit)="editcreatordata(editcrtForm.value)">
                     <div class="publish-div">
-                        <div class="rt-video-div">
-                            <video width="100%" height="100%" controls="">
-<<<<<<< Updated upstream
-                                <!-- <source src={{p_src}} type="video/mp4"> -->
-                                <source src={{video_link}} type="video/mp4">
-                                <!-- <source src="assets/video/Intro.ogg" type="video/ogg"> -->
-                            </video>
-=======
-                                <source src="assets/video/Intro.mp4" type="video/mp4">
-                                <source src="assets/video/Intro.ogg" type="video/ogg">
-                            </video> 
->>>>>>> Stashed changes
+                        <div class="rt-video-div" id="vid_div">
                         </div>
                         <div class="tl-div">
                             <h3>Upload New Video<i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
@@ -90,10 +79,10 @@
                             <h3>Writers :<i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
                             <input type="text" class="tl-div-select" formControlName="writer" [(ngModel)]="p_writer" placeholder="select writers..">
                         </div>
-                        <!-- <div class="tl-div">
+                        <!--<div class="tl-div">
                             <h3>Photographer  :<i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
                             <input type="text" class="tl-div-select" formControlName="photo" [(ngModel)]="p_photo" placeholder="photographer ..">
-                        </div> -->
+                        </div>-->
                         <div class="tl-div">
                             <h3>Cameragrapher & Photographer :<i class="fa fa-question-circle-o" aria-hidden="true"></i></h3>
                             <input type="text" class="tl-div-select" formControlName="camera" [(ngModel)]="p_camera" placeholder="cameragrapher & photographer">

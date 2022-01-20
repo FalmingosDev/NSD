@@ -31,8 +31,11 @@ export class JoinascreatorComponent implements OnInit {
   { }
 
   ngOnInit(): void {
+    // const email = localStorage.getItem('token');
+   
     
     const email = localStorage.getItem('token');
+    this.dataService.checkCreator(email);// 
     this.local_email=email;
 
     this.crtForm = new FormGroup({
@@ -43,24 +46,7 @@ export class JoinascreatorComponent implements OnInit {
       creator_topic: new FormControl('', Validators.required),
       creator_desc: new FormControl('', Validators.required),
       creator_profile_pic: new FormControl('',Validators.required),
-      })
-
-    /*var readURL = function(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-              $('.profile-pic').attr('src', e.target.result);
-          }
-
-          reader.readAsDataURL(input.files[0]);
-      }
-  }
-
-
-  $(".file-upload").on('change', function(){
-      readURL(this);
-  });*/
+      });
 
     $(".upload-button").on('click', function() {
       $(".file-upload").click();
@@ -68,9 +54,7 @@ export class JoinascreatorComponent implements OnInit {
   }
 
   onFileChanged(event) {
-    const files = event.target.files;
-  //  console.log(files);
-   
+    const files = event.target.files;   
     if (files.length === 0)
         return;
 
@@ -91,6 +75,7 @@ export class JoinascreatorComponent implements OnInit {
 
   }
 
+
   get creator_user_name() { return this.crtForm.get('creator_user_name') }
   get creator_topic() { return this.crtForm.get('creator_topic') }
   get creator_desc() { return this.crtForm.get('creator_desc') }
@@ -101,8 +86,7 @@ export class JoinascreatorComponent implements OnInit {
 
 
   creatordata(crtForm) {
-  // console.log(crtForm);
-  var action_type = 'submit';
+    var action_type = 'submit';
     if (this.creator_profile_pic.status == 'INVALID') {
       alert('Please upload profile picture');
       $('#creator_profile_pic').focus();
@@ -123,14 +107,8 @@ export class JoinascreatorComponent implements OnInit {
       alert('Please give the reason');
       $('#creator_desc').focus();
     }
-    // else if (this.creator_desc.status == 'INVALID') {
-    //   alert('Please give the reason');
-    //   $('#creator_desc').focus();
-    // }
-    
     else{
       this.dataService.postCreatorForm(crtForm.creator_user_name,crtForm.email,crtForm.creator_dob, crtForm.creator_topic, crtForm.creator_desc, this.selectedFile);
-      
       this.router.navigate(['/']);
     }
 
