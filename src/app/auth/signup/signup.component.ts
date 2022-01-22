@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
       alert('Please Enter Your Name');
       $('#name').focus();
     }
-    else if (this.phone.status == 'INVALID') {
+    else if (this.phone.status == 'INVALID') { 
       alert('Please Enter Your Phone Number');
       $('#phone').focus();
     }

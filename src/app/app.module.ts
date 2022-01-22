@@ -19,13 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     AuthModule,
     HomeModule,
     OttModule,
     AuditionModule,
     CreatorModule,
-    
     HttpClientModule
   ],
   providers: [],
