@@ -432,4 +432,10 @@ export class ApiService {
 
     }
 
+    public paymentResponse(){
+
+      // return this.httpClient.get<any>(this.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
+      return this.httpClient.get<any>('http://3.0.255.31/NS/#/payment_success');
+    }
+
 }

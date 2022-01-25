@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-payment-success',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentSuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: ApiService) { }
 
   ngOnInit(): void {
+    console.log("...........")
+    this.dataService.paymentResponse().subscribe(data=> {
+      console.log(data.encResp)
+  });
   }
 
 }
