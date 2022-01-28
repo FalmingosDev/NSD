@@ -24,6 +24,9 @@ import { PlaygameComponent } from './playgame/playgame.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeheaderComponent } from './welcomeheader/welcomeheader.component';
+import { WelcomefooterComponent } from './welcomefooter/welcomefooter.component';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { PaymentCancelComponent } from './payment-cancel/payment-cancel.componen
     PlaygameComponent,
     PaymentComponent,
     PaymentSuccessComponent,
-    PaymentCancelComponent
+    PaymentCancelComponent,
+    WelcomeComponent,
+    WelcomeheaderComponent,
+    WelcomefooterComponent
   ],
   imports: [
     CommonModule,

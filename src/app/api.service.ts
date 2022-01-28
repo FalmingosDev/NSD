@@ -32,6 +32,7 @@ export class ApiService {
     }));
   }
 
+
   public userregistration(action_type,name,phone,email,countryList,pwd) {
     // console.log(action_type);
     const signupFrmData: FormData = new FormData();
@@ -108,6 +109,11 @@ export class ApiService {
 
   public ott_sso_login(ott_username){
     return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { ott_username }); 
+  }
+  public userInSubcription(loggedEmail){
+    
+	  let type:string = 'checkUserSubcription';
+    return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail});
   }
 
 	

@@ -14,9 +14,11 @@ import { PlaygameComponent } from './playgame/playgame.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  {path:'', component:HomepageComponent},
+  {path:'', component:WelcomeComponent},
+  {path:'newoclan', component:HomepageComponent, canActivate: [AuthguardGuard]},
   {path:'ratinglist', component:NeworatinglistComponent},
   {path:'ratingdetail/:code',component:NeworatingdetailComponent},
   {path:'influencersignup',component:InfluencerSignupComponent, canActivate: [AuthguardGuard]},
