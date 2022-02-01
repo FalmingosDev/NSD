@@ -21,7 +21,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-12">
-            <a href="index.html">
+            <a routerLink="/">
               <div class="logo">
                 <!--<h1>Newo<span> Street</span></h1>-->
                 <img src="assets/images/newo-logo.png" class="img-fluid">
@@ -37,13 +37,13 @@
           <div class="col-12 ">
             <nav>
               <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                  aria-controls="nav-home" aria-selected="true"><i class="fa fa-home hm-tab"
+                <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                  aria-controls="nav-home" aria-selected="true" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-home hm-tab"
                     aria-hidden="true"></i></a>
                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                  aria-controls="nav-profile" aria-selected="false">About</a>
+                  aria-controls="nav-profile" aria-selected="false" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
                 <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab"
-                  aria-controls="nav-about" aria-selected="false">Contact</a>
+                  aria-controls="nav-about" aria-selected="false" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
               </div>
             </nav>
           </div>

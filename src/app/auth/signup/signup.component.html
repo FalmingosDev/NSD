@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="sign-box">
                         <div class="sign-text">
-                            <h1>Sign Up</h1>
+                            <h1>Sign Up<span><a routerLink="/"><i class="fa fa-home" style="float: right; color: white;"></i></a></span></h1>
                             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
                                 <input type="text" name="name" formControlName="name" class="e-ph" placeholder="Name">
                                 <input type="text" name="phone" formControlName="phone" class="e-ph" placeholder="Phone No">

@@ -27,6 +27,9 @@ import { PaymentCancelComponent } from './payment-cancel/payment-cancel.componen
 import { WelcomeComponent } from './welcome/welcome.component';
 import { WelcomeheaderComponent } from './welcomeheader/welcomeheader.component';
 import { WelcomefooterComponent } from './welcomefooter/welcomefooter.component';
+import { ComingsoonComponent } from './comingsoon/comingsoon.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { WelcomefooterComponent } from './welcomefooter/welcomefooter.component'
     PaymentCancelComponent,
     WelcomeComponent,
     WelcomeheaderComponent,
-    WelcomefooterComponent
+    WelcomefooterComponent,
+    ComingsoonComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
