@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:'payment_cancel', component:PaymentCancelComponent},
   {path:'comingsoon', component:ComingsoonComponent}, 
   {path:'about', component:AboutComponent}, 
-  {path:'contact', component:ContactComponent} 
+  {path:'contact', component:ContactComponent},
+  {path: 'profile', component:ProfileComponent}
 ];
 
 @NgModule({

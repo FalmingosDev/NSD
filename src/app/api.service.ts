@@ -444,4 +444,38 @@ export class ApiService {
       return this.httpClient.get<any>('http://3.0.255.31/NS/#/payment_success');
     }
 
+    public profileData(local_email){
+      let action_type:string="fetch_profile_data";
+      let email:any=local_email;
+      return this.httpClient.post<any>(this.baseUrl+'/profile.php',{action_type,email});
+      
+    }
+
+
+    public chngpwdForm(email,old_password,new_password){ 
+      let action_type="change_password";
+      // const formData: FormData = new FormData();
+      // formData.append('new_password',new_password);
+      // return this.httpClient.post<any>(this.baseUrl+'/profile.php',formData);
+
+      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
+        
+    }
+
+    public chngphnForm(email,new_phone,otp){
+      
+      let action_type="change_phone";
+
+      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,new_phone,otp});
+
+    }
+
+    public otpGenerate(email){
+      
+      let action_type="otp";
+
+      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email});
+
+    }
+
 }

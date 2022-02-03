@@ -1,0 +1,11 @@
+.phone{
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    color: #ffc107;
+}
+
+.pswd{
+    flex: 0 0 auto;
+    width: 91.66666667%;
+    color: #ffc107;
+}

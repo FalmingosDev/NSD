@@ -30,6 +30,7 @@ import { WelcomefooterComponent } from './welcomefooter/welcomefooter.component'
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ContactComponent } from './contact/contact.component';
     WelcomefooterComponent,
     ComingsoonComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

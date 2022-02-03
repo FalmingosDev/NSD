@@ -14,6 +14,106 @@ a:hover {
 :focus {
     outline: none;
 }
+/*pr-f-section*/
+.my-pr-f a{
+    color: #ffc107;
+    margin-bottom: 17px;
+    display: inline-block;
+}
+.my-pr-f a i{
+    margin-right: 10px;
+}
+.pr-f-section{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    position: fixed;
+    width: 100%;
+}
+.pr-f-bl {
+	/* background: rgb(252,176,69); */
+	/* background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 100%); */
+	padding: 20px 10px;
+	border-radius: 10px;
+	border: 1px solid #ffc107;
+}
+.nm-lb{
+    color: #fff;
+    font-size: 17px;
+}
+.nm-lb-p {
+    color: #ffad0f;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin: 0;
+}
+.ph-mn {
+    background: transparent;
+    border: 2px solid #ffb920;
+    /* border-bottom: 2px solid #ffb920; */
+    width: 90%;
+    font-size: 12px;
+    padding: 6px 20px;
+    border-radius: 5px;
+    margin-bottom: 11px;
+    color: #fff;
+}
+.ph-mn::placeholder{
+    color: #fff;
+}
+.nm-lb-p-s {
+    font-size: 14px;
+    color: #ffc107;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.up-cl {
+    width: 50%;
+    font-size: 8px;
+    background: #ffc107;
+    border: none;
+    color: #000;
+    border-radius: 4px;
+}
+.otp-btn {
+    padding: 4px 17px;
+    font-size: 13px;
+    background: #000;
+    border: none;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+}
+.id-sm{
+    display: none;  
+}
+.up-cl-pass {
+	width: 41%;
+	font-size: 12px;
+	background: #ffc107;
+	border: none;
+	color: #000;
+	/* display: block; */
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 3px 5px;
+	border-radius: 9px;
+}
+.logout {
+	text-align: center;
+	display: block;
+	color: #000;
+	margin-top: 26px;
+	padding: 10px 5px;
+	border-radius: 10px;
+	background: #000;
+	color: #fff;
+}
+/*pr-f-section*/
 /*new-clan-tree-2*/
     .join-a-tg{
         padding: 2px 6px;
