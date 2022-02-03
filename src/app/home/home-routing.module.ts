@@ -15,6 +15,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'play/:data', component:PlaygameComponent, canActivate: [AuthguardGuard]},
   {path:'payment/:sec/:amt/:curr', component:PaymentComponent, canActivate: [AuthguardGuard]},
   {path:'payment_success', component:PaymentSuccessComponent},
-  {path:'payment_cancel', component:PaymentCancelComponent}
+  {path:'payment_cancel', component:PaymentCancelComponent},
+  {path: 'profile', component:ProfileComponent}
 ];
 
 @NgModule({
