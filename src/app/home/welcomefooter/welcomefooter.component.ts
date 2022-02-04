@@ -9,15 +9,14 @@ import { WelcomeComponent } from '../welcome/welcome.component';
   styleUrls: ['./welcomefooter.component.css']
 })
 export class WelcomefooterComponent implements OnInit {
-  abc:any
   constructor(private router:Router,private dataService: ApiService) {
     
    }
 
   ngOnInit(): void {}
 
-  checkAuthFooter(){
-    this.abc =new WelcomeComponent(this.router,this.dataService).checkAuth();
+  checkAuthFooter():void{
+    new WelcomeComponent(this.router,this.dataService).checkAuth("profile");
   }
 
 }

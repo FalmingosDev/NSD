@@ -13,14 +13,19 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  checkAuth(){
+  checkAuth(value='newoclan'){
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
-        if(res.cnt ==1){
-          this.router.navigate(['/newoclan']);
-        }else{
-          this.router.navigate(['/pricing']);
+        if(value=='newoclan'){
+          if(res.cnt ==1){
+            this.router.navigate(['/newoclan']);
+          }else{
+            this.router.navigate(['/pricing']);
+          }
+        }else if(value=='profile'){
+            this.router.navigate(['/profile']);
         }
+        
       });
     }
     else{
