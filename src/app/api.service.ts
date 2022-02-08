@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   redirectUrl: string;
-  // baseUrl:string = "http://3.0.255.31/NS/php";
-  baseUrl:string = "http://52.76.117.170/php"
-  // baseUrlApi:string = "http://newostreet.flamingostech.com/newoadmin/api";
+  baseUrl:string = "http://52.76.117.170/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   user_data:any;
   previewData:object;  //knockout file
