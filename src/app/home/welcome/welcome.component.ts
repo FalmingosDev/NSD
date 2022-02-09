@@ -8,7 +8,8 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  vidArr:any=["http://3.0.255.31/NS/assets/video/johnty-rodes.mp4","http://3.0.255.31/NS/assets/video/lara-dutta.mp4","http://3.0.255.31/NS/assets/video/sunil-grover.mp4"];
+  assetsUrl:string = 'http://3.0.255.31/NS/assets'
   constructor(private router:Router,private dataService: ApiService) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class WelcomeComponent implements OnInit {
           }
         }else if(value=='profile'){
             this.router.navigate(['/profile']);
-        }
+        } 
         
       });
     }
