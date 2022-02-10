@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   redirectUrl: string;
-  baseUrl:string = "http://52.76.117.170/php";
+  // baseUrl:string = "http://52.76.117.170/php";
+  baseUrl:string = "http://3.0.255.31/NS/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  user_data:any;
+  user_data:any; 
   previewData:object;  //knockout file
 
   constructor(private httpClient : HttpClient,private route:Router) { }
@@ -20,14 +21,15 @@ export class ApiService {
      //alert(mobile);
      //alert(password);
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, password })
-    .pipe(map(Users => {
+    /*.pipe(map(Users => {
     // alert(JSON.stringify(Users));
-    this.setToken(Users[0].email);
-   
+
+     this.setToken(Users[0].email);
 
     this.getLoggedInName.emit(true);
     return Users;
-    }));
+    })
+    )*/;
   }
 
 
@@ -125,6 +127,7 @@ export class ApiService {
   }
   deleteToken() {
     localStorage.removeItem('token');
+    localStorage.removeItem('country_code');
   }
   isLoggedIn() {
     const usertoken = this.getToken();

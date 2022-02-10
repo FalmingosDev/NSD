@@ -1928,6 +1928,7 @@ select.native-select {
     padding: 7px 24px;
     border: none;
     background: #17a2b8;
+    /* background: #051257; */
     border-radius: 4px;
     color: #fff;
 }
