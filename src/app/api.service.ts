@@ -128,6 +128,8 @@ export class ApiService {
   deleteToken() {
     localStorage.removeItem('token');
     localStorage.removeItem('country_code');
+    localStorage.removeItem('subscription_end_date');
+
   }
   isLoggedIn() {
     const usertoken = this.getToken();

@@ -65,6 +65,8 @@ export class LoginComponent implements OnInit {
               if (data.result) {
                 localStorage.setItem('token', data.result.email);
                 localStorage.setItem('country_code', data.result.country);
+                localStorage.setItem('subscription_end_date', data.result.subscription);
+
                 if(data.result.newo_user_id>0){
                   this.router.navigate(['/']);
                 }else{
