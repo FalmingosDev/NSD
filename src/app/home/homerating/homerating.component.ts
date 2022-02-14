@@ -27,6 +27,7 @@ export class HomeratingComponent implements OnInit {
     },
    nav: false
   };
+  
 
   constructor() { };
 
