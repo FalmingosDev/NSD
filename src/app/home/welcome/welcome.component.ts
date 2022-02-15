@@ -13,8 +13,8 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
   styleUrls: ['./welcome.component.css'] 
 })
 export class WelcomeComponent implements OnInit {  
-  window:any
-  vidArr:any=["http://3.0.255.31/NS/assets/video/johnty-rodes.mp4","http://3.0.255.31/NS/assets/video/lara-dutta.mp4","http://3.0.255.31/NS/assets/video/sunil-grover.mp4"];
+  bannerBaseUrl:string='http://3.0.255.31/NS/assets/images/';
+  bannerArr:any=["exchange-banner.jpg","clan-banner.jpg","multiplex-banner.jpg","newsdesk-banner.jpg","newostreet-banner.jpg","nft-banner.jpg"]; 
   assetsUrl:string = 'http://3.0.255.31/NS/assets';
 
  
@@ -31,11 +31,6 @@ export class WelcomeComponent implements OnInit {
     autoplay:false,
     navText: ['<', '>'],
     stagePadding:600,
-    
-    // touchDrag: true,
-    // responsiveClass: true,
-    // navText: [],
-    // dots:false,
     responsive: {
       0: {
        items: 1,
@@ -68,6 +63,7 @@ export class WelcomeComponent implements OnInit {
     responsiveClass: true,
     navText: [],
     dots:false,
+    navSpeed:10,
     responsive: {
       0: {
        items: 3
@@ -125,8 +121,8 @@ export class WelcomeComponent implements OnInit {
       });
     }
     else{
-      alert('You need to log in first!');
-      this.router.navigate(['/login']);   
+      // alert('You need to log in first!');
+      this.router.navigate(['/newoclan_multiplex']);   
     }
   }
   getPassedData(data: any) {  //in transition event

@@ -19,6 +19,11 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ExchangeComponent } from './exchange/exchange.component';
+import { NewoclanMultiplexComponent } from './newoclan-multiplex/newoclan-multiplex.component';
+import { NewsdeskComponent } from './newsdesk/newsdesk.component';
+import { NewostreetComponent } from './newostreet/newostreet.component';
+import { NftartComponent } from './nftart/nftart.component';
 
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
@@ -36,7 +41,13 @@ const routes: Routes = [
   {path:'comingsoon', component:ComingsoonComponent}, 
   {path:'about', component:AboutComponent}, 
   {path:'contact', component:ContactComponent},
-  {path: 'profile', component:ProfileComponent}
+  {path: 'profile', component:ProfileComponent},
+  {path: 'exchange', component:ExchangeComponent},
+  {path: 'newoclan_multiplex', component:NewoclanMultiplexComponent},
+  {path: 'newsdesk', component:NewsdeskComponent},
+  {path: 'newostreet', component:NewostreetComponent},
+  {path: 'nft', component:NftartComponent}
+  
 ];
 
 @NgModule({

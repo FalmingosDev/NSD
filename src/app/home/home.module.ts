@@ -32,6 +32,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PlyrModule } from 'ngx-plyr';
+import { ExchangeComponent } from './exchange/exchange.component';
+import { NewsdeskComponent } from './newsdesk/newsdesk.component';
+import { NewoclanMultiplexComponent } from './newoclan-multiplex/newoclan-multiplex.component';
+import { NewostreetComponent } from './newostreet/newostreet.component';
+import { NftartComponent } from './nftart/nftart.component';
 
 
 
@@ -60,7 +65,12 @@ import { PlyrModule } from 'ngx-plyr';
     ComingsoonComponent,
     AboutComponent,
     ContactComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExchangeComponent,
+    NewsdeskComponent,
+    NewoclanMultiplexComponent,
+    NewostreetComponent,
+    NftartComponent
   ],
   imports: [
     CommonModule,
