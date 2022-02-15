@@ -113,23 +113,23 @@
               <span class="sr-only">Next</span>
             </a>
           </div>--> 
-
+ 
           <!-- example video  -->
 
           <!--owl-->
         <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)">
             <ng-template carouselSlide >
-                  <video  poster="http://3.0.255.31/NS/assets/images/jonty-img.jpg"  width="100%" height="240"  controls>
+                  <video id="vid1"  poster="http://3.0.255.31/NS/assets/images/jonty-img.jpg"  width="100%" height="240"  controls>
                     <source src="http://3.0.255.31/NS/assets/video/johnty-rodes.mp4" type="video/mp4" />
                   </video>     
             </ng-template>
             <ng-template carouselSlide >
-                  <video poster="http://3.0.255.31/NS/assets/images/sunil-img.jpg"  width="100%" height="240"  controls>
+                  <video id="vid2"  poster="http://3.0.255.31/NS/assets/images/sunil-img.jpg"  width="100%" height="240"  controls>
                     <source src="http://3.0.255.31/NS/assets/video/sunil-grover.mp4" type="video/mp4" />
                   </video>   
             </ng-template>
             <ng-template carouselSlide >
-                  <video  poster="http://3.0.255.31/NS/assets/images/lara-img.jpg"  width="100%" height="240"   controls>
+                  <video id="vid3"  poster="http://3.0.255.31/NS/assets/images/lara-img.jpg"  width="100%" height="240"   controls>
                     <source src="http://3.0.255.31/NS/assets/video/lara-dutta.mp4" type="video/mp4" />
                   </video>   
             </ng-template>
