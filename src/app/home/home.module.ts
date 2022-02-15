@@ -31,6 +31,8 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PlyrModule } from 'ngx-plyr';
+
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PlyrModule
   ]
 })
 export class HomeModule { }

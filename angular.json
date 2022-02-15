@@ -32,7 +32,8 @@
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
-              "src/assets/css/main-index-style.css"
+              "src/assets/css/main-index-style.css",
+              "node_modules/plyr/dist/plyr.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js"

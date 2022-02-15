@@ -9,3 +9,8 @@
     width: 91.66666667%;
     color: #ffc107;
 }
+.logo {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
