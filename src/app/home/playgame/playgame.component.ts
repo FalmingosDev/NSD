@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-playgame',
-  templateUrl: './playgame.component.html',
+  templateUrl: './playgame.component.html', 
   styleUrls: ['./playgame.component.css']
 })
 export class PlaygameComponent implements OnInit {
