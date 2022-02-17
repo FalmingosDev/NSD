@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewoclanMultiplexComponent } from './newoclan-multiplex.component';
+import { AboutMultiplexComponent } from './about-multiplex.component';
 
-describe('NewoclanMultiplexComponent', () => {
-  let component: NewoclanMultiplexComponent;
-  let fixture: ComponentFixture<NewoclanMultiplexComponent>;
+describe('AboutMultiplexComponent', () => {
+  let component: AboutMultiplexComponent;
+  let fixture: ComponentFixture<AboutMultiplexComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewoclanMultiplexComponent ]
+      declarations: [ AboutMultiplexComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewoclanMultiplexComponent);
+    fixture = TestBed.createComponent(AboutMultiplexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

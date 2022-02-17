@@ -122,7 +122,7 @@ export class WelcomeComponent implements OnInit {
     }
     else{
       // alert('You need to log in first!');
-      this.router.navigate(['/newoclan_multiplex']);   
+      this.router.navigate(['/about_newoclan']);   
     }
   }
   getPassedData(data: any) {  //in transition event

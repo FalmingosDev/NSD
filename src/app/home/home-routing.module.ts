@@ -20,14 +20,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExchangeComponent } from './exchange/exchange.component';
-import { NewoclanMultiplexComponent } from './newoclan-multiplex/newoclan-multiplex.component';
 import { NewsdeskComponent } from './newsdesk/newsdesk.component';
 import { NewostreetComponent } from './newostreet/newostreet.component';
 import { NftartComponent } from './nftart/nftart.component';
+import { AboutNewoclanComponent } from './about-newoclan/about-newoclan.component';
+import { AboutMultiplexComponent } from './about-multiplex/about-multiplex.component';
 
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
-  {path:'newoclan', component:HomepageComponent, canActivate: [AuthguardGuard]},
+  {path:'newoclan', component:HomepageComponent},
   {path:'ratinglist', component:NeworatinglistComponent},
   {path:'ratingdetail/:code',component:NeworatingdetailComponent},
   {path:'influencersignup',component:InfluencerSignupComponent, canActivate: [AuthguardGuard]},
@@ -43,10 +44,11 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent},
   {path: 'profile', component:ProfileComponent},
   {path: 'exchange', component:ExchangeComponent},
-  {path: 'newoclan_multiplex', component:NewoclanMultiplexComponent},
+  {path: 'about_newoclan', component:AboutNewoclanComponent},
   {path: 'newsdesk', component:NewsdeskComponent},
   {path: 'newostreet', component:NewostreetComponent},
-  {path: 'nft', component:NftartComponent}
+  {path: 'nft', component:NftartComponent},
+  {path: 'about_multiplex', component:AboutMultiplexComponent}
   
 ];
 
