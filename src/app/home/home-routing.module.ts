@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes , ExtraOptions} from '@angular/router';
 
 import { AuthguardGuard } from '../authguard.guard';
 
@@ -25,6 +25,11 @@ import { NewostreetComponent } from './newostreet/newostreet.component';
 import { NftartComponent } from './nftart/nftart.component';
 import { AboutNewoclanComponent } from './about-newoclan/about-newoclan.component';
 import { AboutMultiplexComponent } from './about-multiplex/about-multiplex.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { ReferralComponent } from './referral/referral.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { GalleryComponent } from './gallery/gallery.component';
+
 
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
@@ -48,11 +53,15 @@ const routes: Routes = [
   {path: 'newsdesk', component:NewsdeskComponent},
   {path: 'newostreet', component:NewostreetComponent},
   {path: 'nft', component:NftartComponent},
-  {path: 'about_multiplex', component:AboutMultiplexComponent}
-  
+  {path: 'about_multiplex', component:AboutMultiplexComponent}, 
+  {path: 'rewards', component:RewardsComponent},
+  {path: 'referral', component:ReferralComponent},
+  {path: 'blogs', component:BlogsComponent},
+  {path: 'gallery', component:GalleryComponent}
 ];
 
 @NgModule({
+  // imports: [RouterModule.forChild(routes, {scrollPositionRestoration: 'enabled'})],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })

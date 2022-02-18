@@ -38,6 +38,11 @@ import { NewostreetComponent } from './newostreet/newostreet.component';
 import { NftartComponent } from './nftart/nftart.component';
 import { AboutNewoclanComponent } from './about-newoclan/about-newoclan.component';
 import { AboutMultiplexComponent } from './about-multiplex/about-multiplex.component';
+import { RewardsComponent } from './rewards/rewards.component';
+import { ReferralComponent } from './referral/referral.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { GalleryComponent } from './gallery/gallery.component';
+
 
 
 
@@ -72,7 +77,11 @@ import { AboutMultiplexComponent } from './about-multiplex/about-multiplex.compo
     NewostreetComponent,
     NftartComponent,
     AboutNewoclanComponent,
-    AboutMultiplexComponent
+    AboutMultiplexComponent,
+    RewardsComponent,
+    ReferralComponent,
+    BlogsComponent,
+    GalleryComponent
   ],
   imports: [
     CommonModule,

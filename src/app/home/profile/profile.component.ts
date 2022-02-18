@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
+    this.checkProfile()
     this.dataService.profileData(this.local_email).subscribe((res) => {
       this.result=res.data;
       this.name=res.data.name;
@@ -142,6 +142,18 @@ phoneUpdate(phnChangeForm) {
   logout() {
     this.dataService.deleteToken();
     window.location.href = '';
+  }
+
+  checkProfile(){
+    if(localStorage.getItem('token')){
+      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+            this.route.navigate(['/profile']);        
+      });
+    }
+    else{
+      alert('You need to Log in first!');
+      this.route.navigate(['/login']);   
+    }
   }
 
 }

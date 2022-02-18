@@ -1,157 +1,157 @@
 <app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
-  <section class="banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <owl-carousel-o [options]="customOptionsforbanner" id="banner-owl">
-            <ng-template carouselSlide *ngFor="let bn of bannerArr ">  
-              <img src={{bannerBaseUrl}}{{bn}} class="img-fluid">   
-            </ng-template>
-          </owl-carousel-o> 
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="newo-clan"> 
-    <div class="container">
-      <div class="row mt-3">
-        <div class="col-md-12">
-          <a routerLink="/exchange">
-            <div class="newo-bg">
-              <img src="assets/images/newo-exchange.png" class="img-fluid"> 
-              
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <owl-carousel-o [options]="customOptionsforbanner" id="banner-owl">
+                        <ng-template carouselSlide *ngFor="let bn of bannerArr ">
+                            <img src={{bannerBaseUrl}}{{bn}} class="img-fluid">
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <section class="newo-clan">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <a routerLink="/exchange">
+                        <div class="newo-bg">
+                            <img src="assets/images/newo-exchange.png" class="img-fluid">
 
-  <section class="newo-video">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <!--owl-->
-        <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)">
-            <ng-template carouselSlide >
-                  <video id="vid1"  poster="http://3.0.255.31/NS/assets/images/jonty-img.jpg"  width="100%" height="240"  controls>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newo-video">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--owl-->
+                    <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)">
+                        <ng-template carouselSlide>
+                            <video id="vid1" poster="http://3.0.255.31/NS/assets/images/jonty-img.jpg" width="100%" height="240" controls>
                     <source src="http://3.0.255.31/NS/assets/video/johnty-rodes.mp4" type="video/mp4" />
-                  </video>     
-            </ng-template>
-            <ng-template carouselSlide >
-                  <video id="vid2"  poster="http://3.0.255.31/NS/assets/images/sunil-img.jpg"  width="100%" height="240"  controls>
+                  </video>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <video id="vid2" poster="http://3.0.255.31/NS/assets/images/sunil-img.jpg" width="100%" height="240" controls>
                     <source src="http://3.0.255.31/NS/assets/video/sunil-grover.mp4" type="video/mp4" />
-                  </video>   
-            </ng-template>
-            <ng-template carouselSlide >
-                  <video id="vid3"  poster="http://3.0.255.31/NS/assets/images/lara-img.jpg"  width="100%" height="240"   controls>
+                  </video>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <video id="vid3" poster="http://3.0.255.31/NS/assets/images/lara-img.jpg" width="100%" height="240" controls>
                     <source src="http://3.0.255.31/NS/assets/video/lara-dutta.mp4" type="video/mp4" />
-                  </video>   
-            </ng-template>
-          </owl-carousel-o>
+                  </video>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="new-clan-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <figure>
-            <ul class="tree">
-              <li><span><a href="javascript:void(0)"><img src="assets/images/newoclan.png" style="width: 30%;"><a
+    </section>
+    <section class="new-clan-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <figure>
+                        <ul class="tree">
+                            <li><span><a href="javascript:void(0)"><img src="assets/images/newoclan.png" style="width: 30%;"><a
                       href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()">Join Now</a></a></span>
-                <ul>
-                  <li><span><a href="javascript:void(0)"><img src="assets/images/newo-ott.png"
+                                <ul>
+                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-ott.png"
                           style="width: 100%;"></a></span></li>
-                  <li><span><a href="javascript:void(0)"><img src="assets/images/newo-games.png"
+                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-games.png"
                           style="width: 100%;"></a></span></li>
-                  <li><span><a href="javascript:void(0)"><img src="assets/images/newo-hastag.png"
+                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-hastag.png"
                           style="width: 100%;"></a></span></li>
-                  <li><span><a href="javascript:void(0)"><img src="assets/images/newo-star.png"
+                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-star.png"
                           style="width: 100%;"></a></span></li>
-                  <!--<li><span>Contact us</span></li>-->
-                </ul>
-              </li>
-            </ul>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-  </section>  
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          
-
-          <!--owl-->
-          <!-- plyr  -->
-          <!-- <plyr style="display: block; width: 640px;" plyrTitle="Video 1" [plyrPlaysInline]="true" [plyrSources]="videoSources" (plyrInit)="player = $event" (plyrPlay)="played($event)"></plyr>
-          <button (click)="play()">Play</button> --> -->
-          <!-- plyr -->
-
-          <owl-carousel-o [options]="customOptionsforNew">
-            <ng-template carouselSlide>  
-              <img src="http://3.0.255.31/NS/assets/images/mx-w-1.jpg" class="img-fluid">   
-            </ng-template>
-            <ng-template carouselSlide>       
-              <img src="http://3.0.255.31/NS/assets/images/sp-2.jpg" class="img-fluid">       
-            </ng-template>
-            <ng-template carouselSlide>
-              <img src="http://3.0.255.31/NS/assets/images/mx-w-3.jpg" class="img-fluid">
-            </ng-template>
-            <ng-template carouselSlide>
-              <img src="http://3.0.255.31/NS/assets/images/sp-4.jpg" class="img-fluid">
-            </ng-template> 
-          </owl-carousel-o>         
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="t-show-section">
-    <div class="container">
-      <div class="row mt-3">
-        <div class="col-6">
-          <a routerLink="/about_multiplex">
-            <div class="newo-bg">
-              <img src="assets/images/multiplex.png" class="img-fluid" />
-              <!-- <a routerLink="/comingsoon">Read More...</a> -->
+                                    <!--<li><span>Contact us</span></li>-->
+                                </ul>
+                            </li>
+                        </ul>
+                    </figure>
+                </div>
             </div>
-          </a>
         </div>
-        <div class="col-6">
-          <a  routerLink="/newsdesk">
-            <div class="newo-bg">
-              <img src="assets/images/newsdesk.png" class="img-fluid" />
 
-              <!-- <span>View More...</span> -->
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <!--owl-->
+                    <!-- plyr  -->
+                    <!-- <plyr style="display: block; width: 640px;" plyrTitle="Video 1" [plyrPlaysInline]="true" [plyrSources]="videoSources" (plyrInit)="player = $event" (plyrPlay)="played($event)"></plyr>
+          <button (click)="play()">Play</button> -->-->
+                    <!-- plyr -->
+
+                    <owl-carousel-o [options]="customOptionsforNew">
+                        <ng-template carouselSlide>
+                            <img src="http://3.0.255.31/NS/assets/images/mx-w-1.jpg" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <img src="http://3.0.255.31/NS/assets/images/sp-2.jpg" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <img src="http://3.0.255.31/NS/assets/images/mx-w-3.jpg" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <img src="http://3.0.255.31/NS/assets/images/sp-4.jpg" class="img-fluid">
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-6">
-          <a routerLink="/newostreet">
-            <div class="newo-bg">
-              <img src="assets/images/newostreet.png" class="img-fluid" />
-              <!-- <a routerLink="/comingsoon">Read More...</a> -->
+    </section>
+    <section class="t-show-section">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-6">
+                    <a routerLink="/about_multiplex">
+                        <div class="newo-bg">
+                            <img src="assets/images/multiplex.png" class="img-fluid" />
+                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a routerLink="/newsdesk">
+                        <div class="newo-bg">
+                            <img src="assets/images/newsdesk.png" class="img-fluid" />
+
+                            <!-- <span>View More...</span> -->
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
-        </div>
-        <div class="col-6">
-          <a routerLink="/nft">
-            <div class="newo-bg">
-              <img src="assets/images/nft.png" class="img-fluid" />
-              <!-- <a routerLink="/comingsoon">Read More...</a> -->
+            <div class="row mt-3">
+                <div class="col-6">
+                    <a routerLink="/newostreet">
+                        <div class="newo-bg">
+                            <img src="assets/images/newostreet.png" class="img-fluid" />
+                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a routerLink="/nft">
+                        <div class="newo-bg">
+                            <img src="assets/images/nft.png" class="img-fluid" />
+                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
-  
+    </section>
+
 </div>
-  <app-welcomefooter></app-welcomefooter>
+<app-welcomefooter></app-welcomefooter>

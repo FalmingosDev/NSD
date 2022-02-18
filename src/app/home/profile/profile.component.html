@@ -1,114 +1,108 @@
-
+<app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
-    <header class="mobile-header">
-          <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-12">
-                        <a href="index.html">
-                            <div class="logo">
-                                <img src="assets/images/newo-logo.png" class="img-fluid">
-                            </div>
-                        </a>
-                    </div>
-                </div> 
-            </div>
-          </div>
-     </header>
-            <section class="pr-f-pr-back">
-              <div class="container">
-                 <div class="row">
-                     <div class="col-md-12">
-                    <div class="my-pr-f"><a routerLink="/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>My Profile</a></div>
-                </div>
-              </div>
-           </div>
-          </section>
-    <section class="pr-f-section">
+    <section class="pr-f-pr-back">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="pr-f-bl">
-                        <div class="row">
-                            <div class="col-12">
-                            <label class="nm-lb-p">{{name}}</label>
-                                <div class="nm-lb-p-s">{{email}}</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1 pr-0">
-                                <label class="nm-lb"><i class="fa fa-phone" aria-hidden="true"></i></label> 
-                            </div>
-                            <div class="col-8">
-                                <input type="phone" class="ph-mn" value="{{phone}}" placeholder="Type Phone No..">
-                            </div> 
-                            <div class="col-3 p-0">
-                                <button type="button" class="up-cl"  (click)="showphn()">Edit Phone</button>
-                            </div>
-                        </div>
-                        <form class="container" [formGroup]="phnChangeForm" (ngSubmit)="phoneUpdate(phnChangeForm.value)">
-                            <div class="id-sm" id="id1">
-                                <div class="row"> 
-                                    <div class="col-1 pr-0">
-                                        <label class="nm-lb"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></label>  
-                                    </div>
-                                    <div class="col-11">
-                                        <input type="phone" class="ph-mn" formControlName="new_phone" placeholder="Type New Phone No.." id="new_phone">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-1 pr-0">
-                                        <label class="nm-lb"><i class="fa fa-mobile" aria-hidden="true"></i></label>  
-                                    </div>
-                                    <div class="col-11">
-                                        <input type="phone" class="ph-mn" formControlName="otp" placeholder="Enter OTP.." id="otp">
-                                    </div>
-                                </div>
+                    <!-- <div class="my-pr-f"><a routerLink="/">Back</a></div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pr-f-section">
+        <div class="container mt-ft-pr">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading-perofile">
+                        <h3>My Profile</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pr-f-bl-child">
+                        <div class="pr-f-bl">
+                            <div class="row">
                                 <div class="col-12">
-                                    <button type="submit" class="otp-btn">Update</button>
-                                </div>
-                            </div>
-                        </form> 
-                        <div class="row">
-                            <div class="col-1">&nbsp;</div>
-                            <div class="col-11">
-                                <button type="button" class="up-cl-pass"  (click)="showpwd()">Update Password</button>
-                            </div>
-                        </div>
-                        <form class="container" [formGroup]="pwChangeForm" (ngSubmit)="passwordUpdate(pwChangeForm.value)">
-                        <div class="id-sm" id="id2">
-                            <div class="row mt-3"> 
-                                <div class="col-1 pr-0">
-                                    <label class="nm-lb"><i class="fa fa-unlock-alt" aria-hidden="true"></i> </label>  
-                                </div>
-                                <div class="col-11">
-                                    <input type="phone" class="ph-mn" id="old_password" formControlName="old_password" placeholder="Type Old Pass..">
-                                </div>
-                            </div>
-                            <div class="row"> 
-                                <div class="col-1 pr-0">
-                                    <label class="nm-lb"><i class="fa fa-unlock" aria-hidden="true"></i></label>  
-                                </div>
-                                <div class="col-11">
-                                    <input type="phone" class="ph-mn" id="new_password" formControlName="new_password" placeholder="Type New Pass..">
+                                    <label class="nm-lb-p">{{name}}</label>
+                                    <div class="nm-lb-p-s">{{email}}</div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12">
-                                    <button class="otp-btn" type="submit">Save</button>
+                                <div class="col-1 pr-0">
+                                    <label class="nm-lb"><i class="fa fa-phone" aria-hidden="true"></i></label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="phone" class="ph-mn" value="{{phone}}" placeholder="Type Phone No..">
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button type="button" class="up-cl" (click)="showphn()">Edit Phone</button>
                                 </div>
                             </div>
-                        </div>
-                        </form>
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="javascript:void(0)" class="logout" (click)="logout()">Logout</a>
+                            <form class="container" [formGroup]="phnChangeForm" (ngSubmit)="phoneUpdate(phnChangeForm.value)">
+                                <div class="id-sm" id="id1">
+                                    <div class="row">
+                                        <div class="col-1 pr-0">
+                                            <label class="nm-lb"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-11">
+                                            <input type="phone" class="ph-mn" formControlName="new_phone" placeholder="Type New Phone No.." id="new_phone">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 pr-0">
+                                            <label class="nm-lb"><i class="fa fa-mobile" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-11">
+                                            <input type="phone" class="ph-mn" formControlName="otp" placeholder="Enter OTP.." id="otp">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="otp-btn">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-1">&nbsp;</div>
+                                <div class="col-11">
+                                    <button type="button" class="up-cl-pass" (click)="showpwd()">Update Password</button>
+                                </div>
+                            </div>
+                            <form class="container" [formGroup]="pwChangeForm" (ngSubmit)="passwordUpdate(pwChangeForm.value)">
+                                <div class="id-sm" id="id2">
+                                    <div class="row mt-3">
+                                        <div class="col-1 pr-0">
+                                            <label class="nm-lb"><i class="fa fa-unlock-alt" aria-hidden="true"></i> </label>
+                                        </div>
+                                        <div class="col-11">
+                                            <input type="phone" class="ph-mn" id="old_password" formControlName="old_password" placeholder="Type Old Pass..">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1 pr-0">
+                                            <label class="nm-lb"><i class="fa fa-unlock" aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="col-11">
+                                            <input type="phone" class="ph-mn" id="new_password" formControlName="new_password" placeholder="Type New Pass..">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button class="otp-btn" type="submit">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="javascript:void(0)" class="logout" (click)="logout()">Logout</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>
     </section>
 
-<app-welcomefooter></app-welcomefooter>
+    <app-welcomefooter></app-welcomefooter>

@@ -7,12 +7,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    background-position: center;
 }
 
 .sign-box {
     padding: 10px 10px;
     background: rgba(0, 0, 0, 0.8);
-    margin-top: 27%;
+    margin-top: 60%;
 }
 
 .sign-text h1 {
