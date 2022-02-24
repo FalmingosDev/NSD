@@ -19,8 +19,8 @@ isLogin(routeurl: string) {
 if (this.dataService.isLoggedIn()) {
     return true;
 }else{
-    alert("you need to login first");
-    this.router.navigate(['/']);
+    alert("You need to Login first");
+    this.router.navigate(['/login']);
 }
 
 }

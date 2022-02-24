@@ -22,6 +22,8 @@ import { Ottvideotype6Component } from './ottvideotype6/ottvideotype6.component'
 import { OttvideowmdComponent } from './ottvideowmd/ottvideowmd.component';
 import { OttshortsComponent } from './ottshorts/ottshorts.component';
 import { OttcneComponent } from './ottcne/ottcne.component';
+import { WelcomefooterComponent } from '../home/welcomefooter/welcomefooter.component';
+import { HomeModule } from '../home/home.module';
 
 
 
@@ -45,12 +47,14 @@ import { OttcneComponent } from './ottcne/ottcne.component';
     Ottvideotype6Component,
     OttvideowmdComponent,
     OttshortsComponent,
-    OttcneComponent
+    OttcneComponent,
+    WelcomefooterComponent
   ],
   imports: [
     CommonModule,
     OttRoutingModule,
-    CarouselModule
+    CarouselModule,
+    HomeModule
   ]
 })
 export class OttModule { }

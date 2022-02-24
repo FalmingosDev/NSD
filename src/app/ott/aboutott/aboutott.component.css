@@ -1,7 +1,6 @@
 /***********************cafe-netwood-episode***********************/
 .brow-child-section{
-    padding: 15px 0px;
-    margin-top: -70px;
+    padding: 23px 0px;
 }
 .cf-h2 {
     font-size: 19px;
@@ -56,4 +55,12 @@
 .ter-ol li{
     list-style-type: lower-roman;
     color: #fff;
+}
+.net-ab-div h3{
+        color: #f18d1d;  
+}
+.cf-h2{
+        color: #f18d1d;
+        font-weight: bold;
+        font-size: 25px;
 }

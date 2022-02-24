@@ -21,7 +21,10 @@ import { OttcneComponent } from './ottcne/ottcne.component';
 
 
 
+
+
 const routes: Routes = [
+  
   {path:'otthome', component:OtthomeComponent },
   {path:'aboutott', component:AboutottComponent },
   {path:'ottprivecy', component:OttprivecyComponent},
