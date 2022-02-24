@@ -1,7 +1,26 @@
-section {
-    background: #0d1428;
-    font-family: 'Roboto', sans-serif;
+.sec-mt-bt {
+    height: 100vh;
 }
 a:hover{
     text-decoration: none; 
+}
+.ml-tran {
+    height: 96vh;
+}
+.clan-btn-hm{
+    margin-bottom: 15px; 
+    text-align: center; 
+}
+.clan-btn-hm a{
+    display: inline-block;
+    padding: 19px 23px;
+    background: #000;
+    border-radius: 10px;
+}
+.clan-btn-hm a img{
+    width: 70%;
+    border-radius: 10px;
+}
+.mt-bt {
+    position: fixed;
 }

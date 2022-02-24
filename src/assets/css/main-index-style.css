@@ -17,6 +17,17 @@ a:hover {
 :focus {
     outline: none;
 }
+
+.access-p {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    padding: 10px 15px !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    line-height: 17px !important;
+    border-radius: 8px !important;
+    color: #f18d1d !important;
+}
+
 .app-launch {
     text-align: center !important;
     padding: 6px 0px;
@@ -26,6 +37,7 @@ a:hover {
     font-size: 15px !important;
     font-weight: 900;
 }
+
 .mb-bd a.active {
     /* background: #fff; */
     background-color: rgb(25, 36, 46);
@@ -107,6 +119,7 @@ a:hover {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .ml-tran {
