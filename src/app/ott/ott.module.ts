@@ -22,7 +22,6 @@ import { Ottvideotype6Component } from './ottvideotype6/ottvideotype6.component'
 import { OttvideowmdComponent } from './ottvideowmd/ottvideowmd.component';
 import { OttshortsComponent } from './ottshorts/ottshorts.component';
 import { OttcneComponent } from './ottcne/ottcne.component';
-import { WelcomefooterComponent } from '../home/welcomefooter/welcomefooter.component';
 import { HomeModule } from '../home/home.module';
 
 
@@ -47,8 +46,7 @@ import { HomeModule } from '../home/home.module';
     Ottvideotype6Component,
     OttvideowmdComponent,
     OttshortsComponent,
-    OttcneComponent,
-    WelcomefooterComponent
+    OttcneComponent
   ],
   imports: [
     CommonModule,

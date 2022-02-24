@@ -86,12 +86,14 @@ import { GalleryComponent } from './gallery/gallery.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule, 
     ReactiveFormsModule,
     PlyrModule
+  ],
+  exports:[
+    WelcomefooterComponent
   ]
 })
 export class HomeModule { }
