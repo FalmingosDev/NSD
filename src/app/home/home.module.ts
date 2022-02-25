@@ -42,6 +42,8 @@ import { RewardsComponent } from './rewards/rewards.component';
 import { ReferralComponent } from './referral/referral.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 
 
 
@@ -81,7 +83,9 @@ import { GalleryComponent } from './gallery/gallery.component';
     RewardsComponent,
     ReferralComponent,
     BlogsComponent,
-    GalleryComponent
+    GalleryComponent,
+    PrivacyComponent,
+    TermsComponent
   ],
   imports: [
     CommonModule,

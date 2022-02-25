@@ -22,10 +22,10 @@ export class PaymentComponent implements OnInit {
     const amount=this.route.snapshot.params['amt'];
     const currency=this.route.snapshot.params['curr'];
     const email=localStorage.getItem("token");
-    console.log(section);
-    console.log(amount);
-    console.log(currency);
-    console.log(email);
+    // console.log(section);
+    // console.log(amount);
+    // console.log(currency);
+    // console.log(email);
     
   
     
@@ -33,8 +33,8 @@ export class PaymentComponent implements OnInit {
     //id,name,email,mobile
     this.dataService.handelCreateEncryption(objUserData).subscribe((res)=>{
       this.cc_url=this.getSafeUrl(res.url);
-      console.log(res.url);
-      console.log(this.cc_url);
+      // console.log(res.url);
+      // console.log(this.cc_url);
     });
   }
    createEncryption(){

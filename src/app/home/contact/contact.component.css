@@ -4,3 +4,13 @@
 .sec-mt-bt {
 	height: 100vh;
 }
+.prv-pol{
+	text-align: left;
+	display: inherit;
+	color: #ffc107;
+}
+.terms-co{
+	text-align: right;
+	display: inherit;
+	color: #ffc107;
+}

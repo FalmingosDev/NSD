@@ -29,6 +29,8 @@ import { RewardsComponent } from './rewards/rewards.component';
 import { ReferralComponent } from './referral/referral.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 
 
 const routes: Routes = [
@@ -57,7 +59,10 @@ const routes: Routes = [
   {path: 'rewards', component:RewardsComponent},
   {path: 'referral', component:ReferralComponent},
   {path: 'blogs', component:BlogsComponent},
-  {path: 'gallery', component:GalleryComponent}
+  {path: 'gallery', component:GalleryComponent},
+  {path: 'privacy', component:PrivacyComponent},
+  {path: 'terms', component:TermsComponent}
+
 ];
 
 @NgModule({

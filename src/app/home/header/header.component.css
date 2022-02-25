@@ -5,3 +5,16 @@
 a:hover{
     text-decoration: none;
 }
+.logo h1 span {
+	font-weight: 300;
+	background: #00FF00;
+	background: -webkit-linear-gradient(to left, #00FF00 0%, #00FFFF 100%);
+	background: -moz-linear-gradient(to left, #00FF00 0%, #00FFFF 100%);
+	background: linear-gradient(to left, #86FF86 0%, #00FFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 900;
+	font-size: 35px;
+	position: relative;
+	top: 4px;
+}
