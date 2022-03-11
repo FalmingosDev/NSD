@@ -34,7 +34,9 @@ export class CreatorcontenteditComponent implements OnInit {
   image: File;
 
   video_link:string;
-  baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
+  // baseURL: string ='http://3.0.255.31/NS/video/ceator_video/';
+  baseURL: string ='video/ceator_video/';
+
 
   // p_src:string="assets/video/Intro.mp4";
  

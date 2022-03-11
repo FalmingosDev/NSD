@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes , ExtraOptions} from '@angular/router';
 
 import { AuthguardGuard } from '../authguard.guard';
-
 import { HomepageComponent } from './homepage/homepage.component';
 import { NeworatinglistComponent } from './neworatinglist/neworatinglist.component';
 import { NeworatingdetailComponent } from './neworatingdetail/neworatingdetail.component';
@@ -62,7 +61,6 @@ const routes: Routes = [
   {path: 'gallery', component:GalleryComponent},
   {path: 'privacy', component:PrivacyComponent},
   {path: 'terms', component:TermsComponent}
-
 ];
 
 @NgModule({

@@ -43,6 +43,7 @@
 }
 .net-ab-div h3, .net-ab-div p{
     color: #fff;
+    text-align: justify;
 }
 .ab-border{
     border-bottom: 2px solid #fff;

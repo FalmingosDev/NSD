@@ -13,9 +13,9 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
   styleUrls: ['./welcome.component.css'] 
 })
 export class WelcomeComponent implements OnInit {  
-  bannerBaseUrl:string='http://3.0.255.31/NS/assets/images/';
+  bannerBaseUrl:string='/assets/images/';
   bannerArr:any=["exchange-banner.jpg","clan-banner.jpg","multiplex-banner.jpg","newsdesk-banner.jpg","newostreet-banner.jpg","nft-banner.jpg"]; 
-  assetsUrl:string = 'http://3.0.255.31/NS/assets';
+  assetsUrl:string = '/assets';
 
  
 
@@ -26,6 +26,7 @@ export class WelcomeComponent implements OnInit {
     items: 1,
     loop: false,
     margin: 10,
+    startPosition: 1,
     mouseDrag: true,
     touchDrag: true,
     autoplay:false,
@@ -66,13 +67,13 @@ export class WelcomeComponent implements OnInit {
     navSpeed:10,
     responsive: {
       0: {
-       items: 3
+       items: 2
      },
       480: {
-       items: 3
+       items: 2
      },
       940: {
-       items: 3
+       items: 2
      }
     },
    nav: false
@@ -127,9 +128,11 @@ export class WelcomeComponent implements OnInit {
   }
   getPassedData(data: any) {  //in transition event
     let jonty_video=<HTMLVideoElement>document.getElementById('vid1');
-    let sunil_video=<HTMLVideoElement>document.getElementById('vid2');
-    let lara_video=<HTMLVideoElement>document.getElementById('vid3');
+    let dev_video=<HTMLVideoElement>document.getElementById('vid2');
+    let sunil_video=<HTMLVideoElement>document.getElementById('vid3');
+    let lara_video=<HTMLVideoElement>document.getElementById('vid4');
     jonty_video.pause();
+    dev_video.pause();
     sunil_video.pause();
     lara_video.pause();
     }

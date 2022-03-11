@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { OttModule } from './ott/ott.module'
-import { AuditionModule } from "./audition/audition.module";
 import { CreatorModule } from './creator/creator.module';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     AuthModule,
     HomeModule,
     OttModule,
-    AuditionModule,
     CreatorModule,
     HttpClientModule
   ],

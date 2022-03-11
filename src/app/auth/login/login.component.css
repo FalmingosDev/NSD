@@ -2,7 +2,7 @@
 
 .sign-section {
     /* background-image: url(http://3.0.255.31/NS/assets/images/back-sign.jpg); */
-    background: linear-gradient( rgba(0, 1, 2, 0.38) 100%, rgba(0, 0, 0, 0.79)100%), url(http://3.0.255.31/NS/assets/images/back-sign.jpg);
+    background: linear-gradient( rgba(0, 1, 2, 0.38) 100%, rgba(0, 0, 0, 0.79)100%), url(/assets/images/back-sign.jpg);
     padding: 30px 0px;
     background-repeat: no-repeat;
     background-size: cover;

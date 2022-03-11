@@ -25,7 +25,7 @@
 }
 .mt-bd-watch{
     border-bottom: 4px solid #d5dd25;
-    padding: 20PX 0PX 30PX;
+    /* padding: 20PX 0PX 30PX; */
 }
 .md-op .modal-body{
     text-align: center;

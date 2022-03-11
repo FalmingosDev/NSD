@@ -41,7 +41,10 @@
                 <div class="col-md-6 col-8">
                     <a routerLink="/home">
                         <div class="logo">
-                            <h1><img src="assets/images/clan-header.png" class="img-fluid" style="width: 45%;"><span> Clan</span></h1>
+                            <h1 class="text-right">
+                                <!-- <img src="assets/images/clan-header.png" class="img-fluid" style="width: 37%;"><span> <img src="assets/images/clan-text-header.png" class="img-fluid" style="width: 28%;"></span> -->
+                                <img src="assets/images/newo-logo.png" class="img-fluid" style="width: 41%;">
+                            </h1>
                         </div>
                     </a>
                 </div>
@@ -54,7 +57,7 @@
                       <a href="javascript:void(0)" onclick="closeNav()">Services</a>
                       <a href="javascript:void(0)" onclick="closeNav()">Clients</a>
                       <a href="javascript:void(0)" onclick="closeNav()">Contact</a>
-                      <a href="javascript:void(0)" onclick="closeNav()" routerLink="/pricing">Pricing</a>
+                      <!-- <a href="javascript:void(0)" onclick="closeNav()" routerLink="/pricing">Pricing</a> -->
                       <a href="javascript:void(0)" onclick="closeNav()" (click)="logout()" *ngIf="logoutbtn" >Sign Out</a>
                       <a href="javascript:void(0)" onclick="closeNav()" routerLink="/login" *ngIf="loginbtn" >Sign In</a>
                     </div>

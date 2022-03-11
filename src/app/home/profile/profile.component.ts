@@ -25,9 +25,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router) { 
-    
-  }
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router) {}
   
 
   ngOnInit(): void {
@@ -74,37 +72,37 @@ export class ProfileComponent implements OnInit {
     }
     else{
       this.dataService.chngpwdForm(this.local_email,pwChangeForm.old_password,pwChangeForm.new_password).subscribe((res)=>{
-      if (res.status){
-        alert(res.msg);
-      }
-      else {
-        alert(res.msg);
-      }
-    });
+        if (res.status){
+          alert(res.msg);
+        }
+        else {
+          alert(res.msg);
+        }
+      });
+    }
+    
   }
-  
-}
 
-phoneUpdate(phnChangeForm) {
-  if (this.new_phone.status == 'INVALID') {
-    alert('Please Enter Valid Phone');
-    $('#new_phone').focus();
+  phoneUpdate(phnChangeForm) {
+    if (this.new_phone.status == 'INVALID') {
+      alert('Please Enter Valid Phone');
+      $('#new_phone').focus();
+    }
+    else if (this.otp.status == 'INVALID') {
+      alert('Please Enter OTP');
+      $('#otp').focus();
+    }
+    else{
+      this.dataService.chngphnForm(this.local_email,phnChangeForm.new_phone,phnChangeForm.otp).subscribe((res)=>{
+        if (res.status){
+          alert(res.msg);
+        }
+        else {
+          alert(res.msg);
+        }
+      });
+    }
   }
-  else if (this.otp.status == 'INVALID') {
-    alert('Please Enter OTP');
-    $('#otp').focus();
-  }
-  else{
-    this.dataService.chngphnForm(this.local_email,phnChangeForm.new_phone,phnChangeForm.otp).subscribe((res)=>{
-      if (res.status){
-        alert(res.msg);
-      }
-      else {
-        alert(res.msg);
-      }
-    });
-  }
-}
 
   showphn() { 
     this.pwChangeForm.value.old_password='';
@@ -127,8 +125,7 @@ phoneUpdate(phnChangeForm) {
     
    } 
    
-   showpwd() { 
-
+   showpwd() {
     this.phnChangeForm.value.new_phone='';
     this.phnChangeForm.value.otp='';
     (<HTMLFormElement>document.getElementById('new_phone')).value = '';

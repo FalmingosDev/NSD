@@ -11,7 +11,9 @@ export class CreatorcontentdetailsComponent implements OnInit {
   id:string;
   result:any=[];
   video_link:any ;
-  baseURL: any ='http://3.0.255.31/NS/video/ceator_video/';
+  // baseURL: any ='http://3.0.255.31/NS/video/ceator_video/';
+  baseURL: any ='video/ceator_video/';
+
   date: string;
   video_desc: string;
   video_main: string = '';

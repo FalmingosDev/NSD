@@ -24,3 +24,11 @@ a:hover{
 .mt-bt {
     position: fixed;
 }
+.sec-mt-bt {
+    background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(/assets/images/new-bg-ft2.jpg);
+    padding: 20px 0px 10px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
