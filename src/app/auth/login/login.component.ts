@@ -69,7 +69,8 @@ export class LoginComponent implements OnInit {
 
                 if(data.result.newo_user_id>0){
                   this.router.navigate(['/']);
-                }else{
+                }
+                else{
                   this.router.navigate(['/pricing']);
                 }
 

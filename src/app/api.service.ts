@@ -40,7 +40,7 @@ export class ApiService {
     signupFrmData.append('name',name);
     signupFrmData.append('phone',phone);
     signupFrmData.append('email',email);
-    signupFrmData.append('countryList',countryList);
+    signupFrmData.append('countryList',countryList); 
     signupFrmData.append('pwd',pwd);
     
     return this.httpClient.post<any>(this.baseUrl + '/register.php',signupFrmData )
@@ -49,7 +49,8 @@ export class ApiService {
     console.log(countryList);
     localStorage.setItem('country_code', countryList);
     
-    this.getLoggedInName.emit(true);
+    // this.getLoggedInName.emit(true);
+    console.log(Users);
     return Users;
     }));
   }

@@ -32,11 +32,13 @@ export class ProfileComponent implements OnInit {
     
     this.checkProfile()
     this.dataService.profileData(this.local_email).subscribe((res) => {
-      this.result=res.data;
-      this.name=res.data.name;
-      this.email=res.data.email;
-      this.phone=res.data.phone;
-      this.password=res.data.password;
+      if(res.data){
+        this.result=res.data;
+        this.name=res.data.name;
+        this.email=res.data.email;
+        this.phone=res.data.phone;
+        this.password=res.data.password;
+      }
      });
 
 

@@ -73,6 +73,7 @@ export class SignupComponent implements OnInit {
       .pipe(first())
       .subscribe(
       data => {
+        console.log(data);
         if (data.status == 'success'){
           alert(data.msg);
           this.router.navigate(['/login']);
