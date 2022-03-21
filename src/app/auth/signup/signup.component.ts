@@ -13,14 +13,16 @@ export class SignupComponent implements OnInit {
   angForm: FormGroup;
   countryValues: string[] = [];
   region: string[] = [];
+  
 
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
     this.angForm = this.fb.group({
       name: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       countryList: ['', Validators.required],
+      // ISD_code: ['', Validators.required],
+      phone : ['',[Validators.required, Validators.pattern("^([1-9][0-9]*|0)$")]],
+      email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       password: ['', Validators.required]
     });
   }
@@ -30,8 +32,16 @@ export class SignupComponent implements OnInit {
   }
 
   onCountryChange(e){
-  //   this.countryValues.push(e.target.value);
-  //  console.log(this.countryValues); 
+    // this.countryValues.push(e.target.value);
+    // console.log(this.countryValues); 
+
+    // console.log(this.country); 
+    // var action_type = 'ISD_code';
+    // this.dataService.getISD(action_type).subscribe((result) => {
+    // this.ISD_code = result.data;
+    // // console.log(this.ISD_code);
+    // });
+    // return this.ISD_code;
   }
 
   getCountryList() { 
@@ -45,31 +55,30 @@ export class SignupComponent implements OnInit {
 
   postdata(angForm1) 
   {
-    // console.warn(angForm1.value);
     var action_type = 'signup';
     // console.log(action_type);
     if (this.name.status == 'INVALID') {
       alert('Please Enter Your Name');
       $('#name').focus();
     }
+    else if (this.country.status == 'INVALID') {
+      alert('Please Select Your Region');
+      $('#countryList').focus();
+    }
     else if (this.phone.status == 'INVALID') { 
-      alert('Please Enter Your Phone Number');
+      alert('Please Enter Valid Phone Number');
       $('#phone').focus();
     }
    else if (this.email.status == 'INVALID') {
       alert('Please Enter Your Email Address');
       $('#email').focus();
     }
-    else if (this.country.status == 'INVALID') {
-      alert('Please Select Your Region');
-      $('#countryList').focus();
-    }
     else if (this.password.status == 'INVALID') {
       alert('Please Enter Your Password');
       $('#password').focus();
     }
     else{
-      this.dataService.userregistration(action_type,angForm1.value.name,angForm1.value.phone,angForm1.value.email,angForm1.value.countryList,angForm1.value.password)
+      this.dataService.userregistration(action_type,angForm1.value.name,angForm1.value.countryList,angForm1.value.phone,angForm1.value.email,angForm1.value.password)
       .pipe(first())
       .subscribe(
       data => {
@@ -94,6 +103,8 @@ export class SignupComponent implements OnInit {
   get name() { return this.angForm.get('name'); }
   get phone() { return this.angForm.get('phone'); }
   get country() { return this.angForm.get('countryList');}
+  // get ISD() { return this.angForm.get('ISD_code');}
+
 
 }
 

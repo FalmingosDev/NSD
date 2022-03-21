@@ -33,14 +33,14 @@ export class ApiService {
   }
 
 
-  public userregistration(action_type,name,phone,email,countryList,pwd) {
+  public userregistration(action_type,name,countryList,phone,email,pwd) {
     // console.log(action_type);
     const signupFrmData: FormData = new FormData();
     signupFrmData.append('action_type',action_type);
     signupFrmData.append('name',name);
+    signupFrmData.append('countryList',countryList);
     signupFrmData.append('phone',phone);
-    signupFrmData.append('email',email);
-    signupFrmData.append('countryList',countryList); 
+    signupFrmData.append('email',email);    
     signupFrmData.append('pwd',pwd);
     
     return this.httpClient.post<any>(this.baseUrl + '/register.php',signupFrmData )
@@ -55,7 +55,14 @@ export class ApiService {
     }));
   }
 
+  public latlong(action_type,lat,lng){
+    return this.httpClient.post<any>(this.baseUrl +'/login_detail.php', {params:{action_type,lat,lng}});
+  }
+
   public getCountryList(action_type){
+    return this.httpClient.get<any>(this.baseUrl +'/register.php', {params:{action_type}});
+  }
+  public getISD(action_type){
     return this.httpClient.get<any>(this.baseUrl +'/register.php', {params:{action_type}});
   }
 
@@ -73,7 +80,7 @@ export class ApiService {
     var gamesemail:string = games_email;
     var starhuntemail:string = starhunt_email;
 	
-	var count:number=0;
+	  var count:number=0;
     if(primary==netwoodemail) count++;
     if(primary==gamesemail) count++;
     if(primary==starhuntemail) count++;
@@ -83,7 +90,12 @@ export class ApiService {
 		return this.httpClient.post<any>(this.baseUrl + '/usersubscription.php', { primary,netwoodemail,gamesemail,starhuntemail }); 
 	 
   }
-  
+
+  public userSubcription(){
+    var loggedEmail:string=this.getToken();
+    let type:string = 'checkSubcription';
+    return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail});
+    }  
   
   public checkOtt(ott){
 	var loggedEmail:string=this.getToken();

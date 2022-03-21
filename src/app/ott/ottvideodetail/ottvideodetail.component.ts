@@ -30,7 +30,7 @@ export class OttvideodetailComponent implements OnInit {
 
     this.dataService.fetchVideoData(slug).subscribe((res)=>{
       this.result=res.data;
-      this.video_link='<video width="100%" height="100%" controls=""><source src="'+res.data.video_files.file_url+'" type="video/mp4" ><source src="'+res.data.video_files.file_url+'" type="video/ogg" ></video>';
+      this.video_link='<video autoplay width="100%" height="100%" controls=""><source src="'+res.data.video_files.file_url+'" type="video/mp4" ><source src="'+res.data.video_files.file_url+'" type="video/ogg" ></video>';
       document.getElementById('vid_div').innerHTML=this.video_link;
       this.slug = res.data.slug; 
       this.file_url=res.data.video_files.file_url;
@@ -39,8 +39,6 @@ export class OttvideodetailComponent implements OnInit {
       this.genre=res.data.genre.name;
       this.type=res.data.vedeo_type[0].video_type;
       this.total_video=res.data.total_video_files;
-
-
       this.addedby=res.data.watch_videos.addedby;
       // console.log(this.addedby);
       

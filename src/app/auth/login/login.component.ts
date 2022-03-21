@@ -11,15 +11,38 @@ import { ApiService } from '../../api.service';
 })
 export class LoginComponent implements OnInit {
   angForm: FormGroup;
+
+  public lat;
+  public lng;
+
   constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router) {
-    this.angForm = this.fb.group({
+      this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
-      //mobile: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
+    this.getCurrentLocation();    
+  }
+
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+      //console.log(position.coords.latitude + ' ' + position.coords.longitude);
+      this.lat = position.coords.latitude;
+      this.lng = position.coords.longitude;
+      console.log(this.lat);
+      console.log(this.lng);
+      var action_type='latlong';
+      this.dataService.latlong(action_type,this.lat,this.lng).subscribe((result)=>{
+
+      })
+    });
+    }
+    else {
+      alert("Geolocation is not supported by this browser.");
+    }
   }
 
   postdata(angForm1) { //alert(angForm1.value.mobile); //deb
@@ -46,14 +69,11 @@ export class LoginComponent implements OnInit {
                const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing'; 
                this.router.navigate([redirect]);
              }*/
-
-
             //---
             // if(data===null){
             //   alert("User name or password is incorrect");
             //   return;
             // }
-
             // if(data.newo_user_id >0){
             //   this.router.navigate(['/']);
             // }else if(data.newo_user_id == 0){
@@ -66,13 +86,13 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('token', data.result.email);
                 localStorage.setItem('country_code', data.result.country);
                 localStorage.setItem('subscription_end_date', data.result.subscription);
-
-                if(data.result.newo_user_id>0){
-                  this.router.navigate(['/']);
-                }
-                else{
-                  this.router.navigate(['/pricing']);
-                }
+                // if(data.result.newo_user_id>0){
+                //   this.router.navigate(['/']);
+                // }
+                // else{
+                //   this.router.navigate(['/newoclan']);
+                // }
+                this.router.navigate(['/']);
 
               }else {
                 alert("User name or password is incorrect");
@@ -80,13 +100,6 @@ export class LoginComponent implements OnInit {
             } else {
               alert("Please Try again later");
             }
-
-
-            //--
-
-
-
-
           },
           // error => {
           //   alert("User name or password is incorrect")

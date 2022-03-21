@@ -37,69 +37,111 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
   };
-  
-  checkForOtt(ott){		
+
+
+
+userSubcriptionOtt(){		
 	this.dataService.getLoggedInName.subscribe();
     if(this.dataService.isLoggedIn())
     {
-		this.dataService.checkOtt(ott).subscribe((result)=>{
-			if(result.code==1){
-				//alert('User Subscription Successfully Completed!');
+		this.dataService.userSubcription().subscribe((res)=>{
+			if(res.code==1){
 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/otthome';
 				this.router.navigate([redirect]); 
-				//window.location.href = 'https://www.netwood.tv/';
 			}
 			else{
-				alert(result.msg);
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+				alert(res.msg);
+				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing';
 				this.router.navigate([redirect]);
 			}
-			
 		})
     }
-    else{
-		var chkMsg = confirm('You need to log in first!');
-		if (chkMsg == true) {
-			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
-			this.router.navigate([redirect]);
-		} else {
-			return false;
-		}
-		
-    }
+
   }
-  
-  checkForGame(game){		
+
+  userSubcriptionGame(){		
 	this.dataService.getLoggedInName.subscribe();
     if(this.dataService.isLoggedIn())
     {
-		this.dataService.checkGame(game).subscribe((result)=>{
-			if(result.code==1){
-				/* alert('User Subscription Successfully Completed!');
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
-				this.router.navigate([redirect]); */
+		this.dataService.userSubcription().subscribe((res)=>{
+			if(res.code==1){
 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
-				this.router.navigate([redirect]);
+				this.router.navigate([redirect]); 
 			}
 			else{
-				alert(result.msg);
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+				alert(res.msg);
+				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing';
 				this.router.navigate([redirect]);
 			}
-			
 		})
     }
-    else{
-		var chkMsg = confirm('You need to log in first!');
-		if (chkMsg == true) {
-			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
-			this.router.navigate([redirect]);
-		} else{
-			return false;
-		}
+}
+
+
+
+  
+//   checkForOtt(ott){		
+// 	this.dataService.getLoggedInName.subscribe();
+//     if(this.dataService.isLoggedIn())
+//     {
+// 		this.dataService.checkOtt(ott).subscribe((result)=>{
+// 			if(result.code==1){
+// 				//alert('User Subscription Successfully Completed!');
+// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/otthome';
+// 				this.router.navigate([redirect]); 
+// 				//window.location.href = 'https://www.netwood.tv/';
+// 			}
+// 			else{
+// 				alert(result.msg);
+// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+// 				this.router.navigate([redirect]);
+// 			}
+			
+// 		})
+//     }
+//     else{
+// 		var chkMsg = confirm('You need to log in first!');
+// 		if (chkMsg == true) {
+// 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
+// 			this.router.navigate([redirect]);
+// 		} else {
+// 			return false;
+// 		}
 		
-    }
-  }
+//     }
+//   }
+  
+//   checkForGame(game){		
+// 	this.dataService.getLoggedInName.subscribe();
+//     if(this.dataService.isLoggedIn())
+//     {
+// 		this.dataService.checkGame(game).subscribe((result)=>{
+// 			if(result.code==1){
+// 				/* alert('User Subscription Successfully Completed!');
+// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
+// 				this.router.navigate([redirect]); */
+// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
+// 				this.router.navigate([redirect]);
+// 			}
+// 			else{
+// 				alert(result.msg);
+// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+// 				this.router.navigate([redirect]);
+// 			}
+			
+// 		})
+//     }
+//     else{
+// 		var chkMsg = confirm('You need to log in first!');
+// 		if (chkMsg == true) {
+// 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
+// 			this.router.navigate([redirect]);
+// 		} else{
+// 			return false;
+// 		}
+		
+//     }
+//   }
   
 //   checkForStarhunt(star){		
 // 	this.dataService.getLoggedInName.subscribe();

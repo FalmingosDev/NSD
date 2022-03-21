@@ -43,10 +43,10 @@ export class OtthomeComponent implements OnInit {
        items: 2
      },
       480: {
-       items: 1
+       items: 2
      },
       940: {
-       items: 1
+       items: 2
      }
     },
    nav: false

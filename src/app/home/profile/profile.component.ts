@@ -51,7 +51,9 @@ export class ProfileComponent implements OnInit {
 
     this.phnChangeForm = new FormGroup({
 
-      new_phone : new FormControl('',(Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"))),
+      // new_phone : new FormControl('',(Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"))),
+      new_phone : new FormControl('',(Validators.required, Validators.pattern("^([1-9][0-9]*|0)$"))),
+      
       otp : new FormControl('', Validators.required),
   
     })

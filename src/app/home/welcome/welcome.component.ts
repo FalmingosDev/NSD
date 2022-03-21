@@ -112,8 +112,9 @@ export class WelcomeComponent implements OnInit {
         if(value=='newoclan'){
           if(res.cnt ==1){
             this.router.navigate(['/newoclan']);
-          }else{
-            this.router.navigate(['/pricing']);
+          }
+          else{
+            this.router.navigate(['/about_newoclan']);
           }
         }else if(value=='profile'){
             this.router.navigate(['/profile']);
@@ -122,7 +123,7 @@ export class WelcomeComponent implements OnInit {
       });
     }
     else{
-      // alert('You need to log in first!');
+      
       this.router.navigate(['/about_newoclan']);   
     }
   }

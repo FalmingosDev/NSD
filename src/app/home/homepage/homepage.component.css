@@ -5,7 +5,9 @@ a:hover{
     text-decoration: none; 
 }
 .ml-tran {
-    height: 96vh;
+    height: inherit;
+    width: 100%;
+    margin-top: 10px;
 }
 .clan-btn-hm{
     margin-bottom: 15px; 
@@ -23,6 +25,7 @@ a:hover{
 }
 .mt-bt {
     position: fixed;
+    width: 100%;
 }
 .sec-mt-bt {
     background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(/assets/images/new-bg-ft2.jpg);

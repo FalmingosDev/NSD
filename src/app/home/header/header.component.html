@@ -38,7 +38,7 @@
       <section class="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-8">
+                <div class="col-8">
                     <a routerLink="/home">
                         <div class="logo">
                             <h1 class="text-right">
@@ -48,15 +48,13 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-6 col-4"> 
+                <div class="col-4"> 
                     <span class="sp-color" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                     <div id="mySidenav" class="sidenav">
                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       <a routerLink="/" onclick="closeNav()"><i class="fa fa-home f-home" aria-hidden="true"></i></a>  
-                      <a href="javascript:void(0)" onclick="closeNav()">About</a>
-                      <a href="javascript:void(0)" onclick="closeNav()">Services</a>
-                      <a href="javascript:void(0)" onclick="closeNav()">Clients</a>
-                      <a href="javascript:void(0)" onclick="closeNav()">Contact</a>
+                      <a href="javascript:void(0)" onclick="closeNav()" routerLink="/about">About</a>
+                      <a href="javascript:void(0)" onclick="closeNav()" routerLink="/contact">Contact</a>
                       <!-- <a href="javascript:void(0)" onclick="closeNav()" routerLink="/pricing">Pricing</a> -->
                       <a href="javascript:void(0)" onclick="closeNav()" (click)="logout()" *ngIf="logoutbtn" >Sign Out</a>
                       <a href="javascript:void(0)" onclick="closeNav()" routerLink="/login" *ngIf="loginbtn" >Sign In</a>

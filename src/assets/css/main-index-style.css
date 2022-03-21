@@ -28,13 +28,18 @@ a:hover {
     font-size: 17px;
     margin-right: 10px;
 }
+.btn-primary {
+    color: #fff !important;
+    background-color: #ffc107 !important;
+    border: none !important;  
+}
 .acm{
     padding: 10px !important;
     margin: 10px 0px !important;
     background: #00000061 !important;
     border-radius: 10px !important;
     font-style: italic !important;
-    color: #f18d1d !important;
+    color: #fff !important;
 }
 .new-clan-section {
     background: linear-gradient(0deg, #343a40, #21252900), url(../images/clan-bg.jpg);
@@ -2485,8 +2490,14 @@ select.native-select {
     left: 0;
     right: 0;
     transform: translateY(-50%);
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(252,70,107,0.20211834733893552) 100%);
+    /* background: #0000005e; */
+    /* width: 57%; */
+    text-align: center;
+    margin: 0 auto;
+    padding: 23px 0px;
 }
-
 .pricing-text p span {
     display: block;
     font-size: 21px;

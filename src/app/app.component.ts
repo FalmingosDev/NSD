@@ -8,6 +8,8 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'NS';
+  // public lat;
+  // public lng;
   
 
   constructor(private router: Router) { }
@@ -19,6 +21,23 @@ export class AppComponent implements OnInit {
         }
         window.scrollTo(0, 0)
     });
+    // this.getCurrentLocation();
+    
   }
+
+  // getCurrentLocation() {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(position => {
+  //     console.log(position.coords.latitude + ' ' + position.coords.longitude)
+  //     this.lat = position.coords.latitude;
+  //     this.lng = position.coords.longitude;
+  //     console.log(this.lat);
+  //     console.log(this.lat);});
+  //   }
+  //   else {
+  //     alert("Geolocation is not supported by this browser.");
+  //   }
+  // }
+
   
 }
