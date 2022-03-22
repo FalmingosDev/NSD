@@ -17,10 +17,10 @@ export class ApiService {
 
   constructor(private httpClient : HttpClient,private route:Router) { }
 
-  public userlogin(email, password) {
+  public userlogin(email, password,lat,lng) {
      //alert(mobile);
      //alert(password);
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, password })
+    return this.httpClient.post<any>(this.baseUrl + '/login.php', { email,password,lat,lng })
     /*.pipe(map(Users => {
     // alert(JSON.stringify(Users));
 
@@ -53,10 +53,6 @@ export class ApiService {
     console.log(Users);
     return Users;
     }));
-  }
-
-  public latlong(action_type,lat,lng){
-    return this.httpClient.post<any>(this.baseUrl +'/login_detail.php', {params:{action_type,lat,lng}});
   }
 
   public getCountryList(action_type){

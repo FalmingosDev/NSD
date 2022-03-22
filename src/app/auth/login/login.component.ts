@@ -29,15 +29,9 @@ export class LoginComponent implements OnInit {
   getCurrentLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-      //console.log(position.coords.latitude + ' ' + position.coords.longitude);
       this.lat = position.coords.latitude;
       this.lng = position.coords.longitude;
-      console.log(this.lat);
-      console.log(this.lng);
-      var action_type='latlong';
-      this.dataService.latlong(action_type,this.lat,this.lng).subscribe((result)=>{
-
-      })
+    
     });
     }
     else {
@@ -46,6 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   postdata(angForm1) { //alert(angForm1.value.mobile); //deb
+    
     if (this.email.status == 'INVALID') {
       alert('Please Enter Your Email Address');
       $('#email').focus();
@@ -55,7 +50,11 @@ export class LoginComponent implements OnInit {
       $('#password').focus();
     }
     else {
-      this.dataService.userlogin(angForm1.value.email, angForm1.value.password)
+      this.getCurrentLocation();
+      // console.log(this.lat);
+      localStorage.setItem('lat', this.lat);
+      localStorage.setItem('lng', this.lng);
+      this.dataService.userlogin(angForm1.value.email, angForm1.value.password,this.lat,this.lng)
         .pipe(first())
         .subscribe(
           data => {
@@ -83,9 +82,12 @@ export class LoginComponent implements OnInit {
             // }
             if (data.status) {
               if (data.result) {
+                
                 localStorage.setItem('token', data.result.email);
                 localStorage.setItem('country_code', data.result.country);
                 localStorage.setItem('subscription_end_date', data.result.subscription);
+                localStorage.removeItem('lat');
+                localStorage.removeItem('lng');
                 // if(data.result.newo_user_id>0){
                 //   this.router.navigate(['/']);
                 // }
