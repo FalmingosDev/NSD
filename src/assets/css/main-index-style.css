@@ -736,16 +736,16 @@ input[type=checkbox] {
     /*background-size: contain;*/
 }
 
-.left {
+/*.left {
     position: absolute;
     width: 50%;
     left: 0;
     background-image: url(../images/left-curtain.png);
     background-size: cover;
     background-repeat: no-repeat;
-    /*background: #000;*/
+    background: #000;
     top: 0;
-    /* z-index: 99; */
+     z-index: 99; 
     height: inherit;
 }
 
@@ -753,14 +753,14 @@ input[type=checkbox] {
     position: absolute;
     width: 50%;
     right: 0;
-    /*background: #000;*/
+    background: #000;
     background-image: url(../images/right-curtain.png);
     background-size: cover;
     background-repeat: no-repeat;
     top: 0;
-    /* z-index: 99; */
+     z-index: 99; 
     height: inherit;
-}
+} */
 
 .neo-wall {
     position: relative;

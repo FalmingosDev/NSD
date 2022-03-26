@@ -21,6 +21,7 @@
       </style>  
   </head>
   <body>
+    <ngx-alerts></ngx-alerts>
     <section class="sign-section">
         <div class="container">
             <div class="row">
@@ -34,7 +35,7 @@
                                 <option value="">Select Region</option>
                                 <option *ngFor="let data of region | keyvalue"  [value]="data.value.code" id="applied_field" >{{data.value.name}}</option>
                                 </select>
-                                <!-- <input type="text" name="ISD" [readonly]="true" class="e-code" formControlName="ISD_code"> -->
+                                <!-- <input type="text" name="ISD" [readonly]="true" class="e-code"> -->
                                 <input type="text" name="phone" formControlName="phone" class="e-phone" placeholder="Phone No">
                                 <input type="text" name="email" formControlName="email" class="e-ph" placeholder="Email"> 
                                 <input type="password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 

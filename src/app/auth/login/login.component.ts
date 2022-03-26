@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,10 @@ export class LoginComponent implements OnInit {
 
   public lat;
   public lng;
+  ipAddress: any;
+  http: any;
 
-  constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router) {
+  constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router, private alertService: AlertService) {
       this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
       password: ['', Validators.required]
@@ -23,7 +26,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCurrentLocation();    
+    // this.getCurrentLocation();  
+    // this.getIPAddress();  
   }
 
   getCurrentLocation() {
@@ -35,22 +39,32 @@ export class LoginComponent implements OnInit {
     });
     }
     else {
-      alert("Geolocation is not supported by this browser.");
+      this.alertService.warning("Geolocation is not supported by this browser.");
     }
+  }
+
+  getIPAddress()
+  {
+    this.http.get("http://api.ipify.org/?format=json").subscribe((res:any)=>{
+      this.ipAddress = res.ip;
+      console.log(this.ipAddress);
+    });
   }
 
   postdata(angForm1) { //alert(angForm1.value.mobile); //deb
     
     if (this.email.status == 'INVALID') {
-      alert('Please Enter Your Email Address');
+      this.alertService.warning('Please Enter Your Email Address');
+      // alert('Please Enter Your Email Address');
       $('#email').focus();
     }
     else if (this.password.status == 'INVALID') {
-      alert('Please Enter Your Password');
+      this.alertService.warning('Please Enter Your Password');
       $('#password').focus();
     }
     else {
       this.getCurrentLocation();
+     
       // console.log(this.lat);
       localStorage.setItem('lat', this.lat);
       localStorage.setItem('lng', this.lng);
@@ -97,10 +111,10 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['/']);
 
               }else {
-                alert("User name or password is incorrect");
+                this.alertService.danger("User name or password is incorrect");
               }
             } else {
-              alert("Please Try again later");
+              this.alertService.danger("Please Try again later");
             }
           },
           // error => {

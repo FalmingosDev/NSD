@@ -1,5 +1,8 @@
 .sec-mt-bt {
-    height: 100vh;
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    padding: inherit !important;
 }
 a:hover{
     text-decoration: none; 
@@ -7,10 +10,12 @@ a:hover{
 .ml-tran {
     height: inherit;
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    margin: auto !important;
+    padding: 26px 20px 1px !important;
 }
 .clan-btn-hm{
-    margin-bottom: 15px; 
+    margin-bottom: 25px; 
     text-align: center; 
 }
 .clan-btn-hm a{

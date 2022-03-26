@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertModule } from 'ngx-alerts';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthRoutingModule,
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'})
   ]
 })
 export class AuthModule { }

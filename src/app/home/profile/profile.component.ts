@@ -3,6 +3,8 @@ import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angula
 import { ActivatedRoute,Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
+import { AlertService } from 'ngx-alerts';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -25,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router) {}
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) {}
   
 
   ngOnInit(): void {
@@ -67,20 +69,20 @@ export class ProfileComponent implements OnInit {
   passwordUpdate(pwChangeForm) {
 
     if (this.old_password.status == 'INVALID') {
-      alert('Please Enter Old Password');
+      this.alertService.warning('Please Enter Old Password');
       $('#old_password').focus();
     }
     else if (this.new_password.status == 'INVALID') {
-      alert('Please Enter New Password');
+      this.alertService.warning('Please Enter New Password');
       $('#new_password').focus();
     }
     else{
       this.dataService.chngpwdForm(this.local_email,pwChangeForm.old_password,pwChangeForm.new_password).subscribe((res)=>{
         if (res.status){
-          alert(res.msg);
+          this.alertService.success(res.msg);
         }
         else {
-          alert(res.msg);
+          this.alertService.danger(res.msg);
         }
       });
     }
@@ -89,20 +91,20 @@ export class ProfileComponent implements OnInit {
 
   phoneUpdate(phnChangeForm) {
     if (this.new_phone.status == 'INVALID') {
-      alert('Please Enter Valid Phone');
+      this.alertService.warning('Please Enter Valid Phone');
       $('#new_phone').focus();
     }
     else if (this.otp.status == 'INVALID') {
-      alert('Please Enter OTP');
+      this.alertService.warning('Please Enter OTP');
       $('#otp').focus();
     }
     else{
       this.dataService.chngphnForm(this.local_email,phnChangeForm.new_phone,phnChangeForm.otp).subscribe((res)=>{
         if (res.status){
-          alert(res.msg);
+          this.alertService.success(res.msg);
         }
         else {
-          alert(res.msg);
+          this.alertService.danger(res.msg);
         }
       });
     }
@@ -116,7 +118,7 @@ export class ProfileComponent implements OnInit {
     
     this.dataService.otpGenerate(this.local_email).subscribe((res)=>{
       if (res.status){
-        alert(res.msg);
+        this.alertService.success(res.msg);
       }
       //  else {
       //   alert(res.msg);
@@ -152,7 +154,7 @@ export class ProfileComponent implements OnInit {
       });
     }
     else{
-      alert('You need to Log in first!');
+      this.alertService.warning('You need to Log in first!');
       this.route.navigate(['/login']);   
     }
   }

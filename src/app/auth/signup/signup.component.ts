@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angula
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-signup',
@@ -12,11 +13,11 @@ import { ApiService } from '../../api.service';
 export class SignupComponent implements OnInit {
   angForm: FormGroup;
   countryValues: string[] = [];
-  region: string[] = [];
+  region: any[] = [];
   
 
 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private alertService: AlertService) {
     this.angForm = this.fb.group({
       name: ['', Validators.required],
       countryList: ['', Validators.required],
@@ -48,7 +49,7 @@ export class SignupComponent implements OnInit {
     var action_type = 'countryList';
     this.dataService.getCountryList(action_type).subscribe((result) => {
     this.region = result.data;
-    // console.log(this.region);
+    console.log(this.region);
     });
     return this.region;
   }
@@ -58,36 +59,36 @@ export class SignupComponent implements OnInit {
     var action_type = 'signup';
     // console.log(action_type);
     if (this.name.status == 'INVALID') {
-      alert('Please Enter Your Name');
+      this.alertService.warning('Please Enter Your Name');
       $('#name').focus();
     }
     else if (this.country.status == 'INVALID') {
-      alert('Please Select Your Region');
+      this.alertService.warning('Please Select Your Region');
       $('#countryList').focus();
     }
     else if (this.phone.status == 'INVALID') { 
-      alert('Please Enter Valid Phone Number');
+      this.alertService.warning('Please Enter Valid Phone Number');
       $('#phone').focus();
     }
    else if (this.email.status == 'INVALID') {
-      alert('Please Enter Your Email Address');
+    this.alertService.warning('Please Enter Your Email Address');
       $('#email').focus();
     }
     else if (this.password.status == 'INVALID') {
-      alert('Please Enter Your Password');
+      this.alertService.warning('Please Enter Your Password');
       $('#password').focus();
     }
     else{
       this.dataService.userregistration(action_type,angForm1.value.name,angForm1.value.countryList,angForm1.value.phone,angForm1.value.email,angForm1.value.password)
       .pipe(first())
       .subscribe(
-      data => {
+      data => {`--`
         console.log(data);
         if (data.status == 'success'){
-          alert(data.msg);
+          this.alertService.success(data.msg);
           this.router.navigate(['/login']);
         } else {
-          alert(data.msg);
+          this.alertService.danger(data.msg);
         }
         // this.router.navigate(['/login']); 
       },

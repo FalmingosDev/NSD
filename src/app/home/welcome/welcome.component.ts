@@ -17,7 +17,8 @@ export class WelcomeComponent implements OnInit {
   bannerArr:any=["exchange-banner.jpg","clan-banner.jpg","multiplex-banner.jpg","newsdesk-banner.jpg","newostreet-banner.jpg","nft-banner.jpg"]; 
   assetsUrl:string = '/assets';
 
- 
+  isSubscribe:boolean;
+  isNotSubscribe:boolean;
 
  
 
@@ -100,10 +101,25 @@ export class WelcomeComponent implements OnInit {
   };
 
 
+  constructor(private router:Router,private dataService: ApiService) { 
+    if(localStorage.getItem('token')){
+      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+          if(res.cnt ==1){
+            this.isSubscribe = true;
+            this.isNotSubscribe = false;
+          }
+          else{
+            this.isSubscribe = false;
+            this.isNotSubscribe = true;
+          }
+      });
+    } 
+    else{
+      this.isSubscribe = false;
+      this.isNotSubscribe = true;
+    }
 
-
-
-  constructor(private router:Router,private dataService: ApiService) { }
+  }
 
   ngOnInit(): void {}
   checkAuth(value='newoclan'){
@@ -127,6 +143,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigate(['/about_newoclan']);   
     }
   }
+
+
   getPassedData(data: any) {  //in transition event
     let jonty_video=<HTMLVideoElement>document.getElementById('vid1');
     let dev_video=<HTMLVideoElement>document.getElementById('vid2');

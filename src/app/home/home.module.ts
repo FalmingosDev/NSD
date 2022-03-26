@@ -44,6 +44,9 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { AlertModule } from 'ngx-alerts';
+
+
 
 
 
@@ -94,7 +97,8 @@ import { TermsComponent } from './terms/terms.component';
     CarouselModule,
     FormsModule, 
     ReactiveFormsModule,
-    PlyrModule
+    PlyrModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'})
   ],
   exports:[
     WelcomefooterComponent

@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
+import { AlertService } from 'ngx-alerts';
+
 
 @Component({
   selector: 'app-price',
@@ -12,7 +14,7 @@ import { ApiService } from '../../api.service';
 export class PriceComponent implements OnInit {
   angForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router,private alertService: AlertService) {
     this.angForm = this.fb.group({
       // email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       // mobile: ['', Validators.required],
@@ -29,7 +31,7 @@ export class PriceComponent implements OnInit {
 	  //alert(JSON.stringify(result));
       if(result.id==1){
         this.dataService.ott_sso_register(result.username).subscribe((result)=>{
-          alert('Your Subscription Successfully Completed!');
+          this.alertService.success('Your Subscription Successfully Completed!');
         });
         const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
         this.router.navigate([redirect]);
@@ -39,7 +41,7 @@ export class PriceComponent implements OnInit {
         this.router.navigate([redirect]);
       } 
       else{
-        alert('Sorry! Your Subscription Failed!');
+        this.alertService.danger('Sorry! Your Subscription Failed!');
         const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
         this.router.navigate([redirect]);
       }

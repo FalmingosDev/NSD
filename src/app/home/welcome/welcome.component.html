@@ -66,8 +66,13 @@
                 <div class="col-md-12">
                     <figure>
                         <ul class="tree">
-                            <li><span><a href="javascript:void(0)"><img src="/assets/images/newoclan.png" style="width: 67%;"><a
-                      href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()">Join Now</a></a></span> 
+                            <li>
+                                <span>
+                                    <a href="javascript:void(0)"><img src="/assets/images/newoclan.png" style="width: 67%;">
+                                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
+                                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
+                                    </a>
+                                </span> 
                                 <!-- <ul>
                                     <li><span><a href="javascript:void(0)"><img src="assets/images/newo-ott.png"
                           style="width: 100%;"></a></span></li>

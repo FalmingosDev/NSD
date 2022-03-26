@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-homepage',
@@ -33,7 +34,7 @@ export class HomepageComponent implements OnInit {
    nav: false
   };
 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) { };
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private alertService: AlertService) { };
 
   ngOnInit(): void {
   };
