@@ -30,6 +30,8 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { HastagComponent } from './hastag/hastag.component';
+import { StarsComponent } from './stars/stars.component';
 
 
 const routes: Routes = [
@@ -60,7 +62,10 @@ const routes: Routes = [
   {path: 'blogs', component:BlogsComponent},
   {path: 'gallery', component:GalleryComponent},
   {path: 'privacy', component:PrivacyComponent},
-  {path: 'terms', component:TermsComponent}
+  {path: 'terms', component:TermsComponent},
+  {path: 'hashtag', component:HastagComponent},
+  {path: 'stars', component:StarsComponent}
+
 ];
 
 @NgModule({

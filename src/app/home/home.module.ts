@@ -45,6 +45,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { AlertModule } from 'ngx-alerts';
+import { HastagComponent } from './hastag/hastag.component';
+import { StarsComponent } from './stars/stars.component';
 
 
 
@@ -88,7 +90,9 @@ import { AlertModule } from 'ngx-alerts';
     BlogsComponent,
     GalleryComponent,
     PrivacyComponent,
-    TermsComponent
+    TermsComponent,
+    HastagComponent,
+    StarsComponent
   ],
   imports: [
     CommonModule,

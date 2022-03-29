@@ -14,14 +14,14 @@ export class SignupComponent implements OnInit {
   angForm: FormGroup;
   countryValues: string[] = [];
   region: any[] = [];
+  selectedlevel: any;
+  selectValue: any;
   
-
-
+  
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private alertService: AlertService) {
     this.angForm = this.fb.group({
       name: ['', Validators.required],
       countryList: ['', Validators.required],
-      // ISD_code: ['', Validators.required],
       phone : ['',[Validators.required, Validators.pattern("^([1-9][0-9]*|0)$")]],
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       password: ['', Validators.required]
@@ -32,24 +32,16 @@ export class SignupComponent implements OnInit {
     this.getCountryList();
   }
 
-  onCountryChange(e){
-    // this.countryValues.push(e.target.value);
-    // console.log(this.countryValues); 
-
-    // console.log(this.country); 
-    // var action_type = 'ISD_code';
-    // this.dataService.getISD(action_type).subscribe((result) => {
-    // this.ISD_code = result.data;
-    // // console.log(this.ISD_code);
-    // });
-    // return this.ISD_code;
+  onCountryChange(){
+    this.selectValue=this.selectedlevel.split("|");
+    (<HTMLInputElement>document.getElementById("ISD")).value=this.selectValue[1];
   }
 
   getCountryList() { 
     var action_type = 'countryList';
     this.dataService.getCountryList(action_type).subscribe((result) => {
     this.region = result.data;
-    console.log(this.region);
+    // console.log(this.region);
     });
     return this.region;
   }

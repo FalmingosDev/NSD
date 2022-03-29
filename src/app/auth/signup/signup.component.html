@@ -31,11 +31,11 @@
                             <h1>Sign Up<span><a routerLink="/"><i class="fa fa-home" style="float: right; color: white;"></i></a></span></h1>
                             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
                                 <input type="text" name="name" formControlName="name" class="e-ph" placeholder="Name">
-                                <select name="countryList" id="countryList"  formControlName="countryList"  class="e-ph" (change)="onCountryChange(this)">
+                                <select name="countryList" id="countryList"  formControlName="countryList"  class="e-ph" [(ngModel)]="selectedlevel" (change)="onCountryChange()">
                                 <option value="">Select Region</option>
-                                <option *ngFor="let data of region | keyvalue"  [value]="data.value.code" id="applied_field" >{{data.value.name}}</option>
+                                <option *ngFor="let data of region | keyvalue"  value="{{data.value.code}}|{{data.value.ISD}}" id="applied_field" >{{data.value.name}}</option>
                                 </select>
-                                <!-- <input type="text" name="ISD" [readonly]="true" class="e-code"> -->
+                                <input type="text" name="ISD" id="ISD" [readonly]="true" value=" " class="e-code">
                                 <input type="text" name="phone" formControlName="phone" class="e-phone" placeholder="Phone No">
                                 <input type="text" name="email" formControlName="email" class="e-ph" placeholder="Email"> 
                                 <input type="password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 

@@ -158,14 +158,14 @@ a:hover{
     body {
         width: 100%;
     }
-    .e-phone{
+    /* .e-phone{
         width: 100%;
-    }
+    } */
 }
 @media(max-width: 767px){
-    .e-phone{
+    /* .e-phone{
         width: 100%;
-    }
+    } */
     /***********************sign-section***********************/
 .sign-section{
     background-image: url(/assets/images/back-sign.jpg);
@@ -193,13 +193,14 @@ a:hover{
 }
 
 .e-code{
-        width: 18%;
-        padding: 8px 10px;
-        background: #333;
-        border: none;
-        margin-bottom: 12px;
-        margin-right: 12px;
-        color: #fff;
+    width: 18%;
+    padding: 8px 10px;
+    background: #333;
+    border: none;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    color: #fff;
+    text-align: center;
 }
 .sign-in-btn{
         background: #ffc107;
