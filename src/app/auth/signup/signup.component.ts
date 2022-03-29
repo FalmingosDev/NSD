@@ -32,8 +32,8 @@ export class SignupComponent implements OnInit {
     this.getCountryList();
   }
 
-  onCountryChange(){
-    this.selectValue=this.selectedlevel.split("|");
+  onCountryChange(event:any){
+    this.selectValue=event.target.value.split("|");
     (<HTMLInputElement>document.getElementById("ISD")).value=this.selectValue[1];
   }
 
@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
     var action_type = 'countryList';
     this.dataService.getCountryList(action_type).subscribe((result) => {
     this.region = result.data;
-    // console.log(this.region);
+    console.log(this.region);
     });
     return this.region;
   }

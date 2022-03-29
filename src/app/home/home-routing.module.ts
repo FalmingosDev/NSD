@@ -32,6 +32,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
+import {NewsdetailComponent} from './newsdetail/newsdetail.component';
 
 
 const routes: Routes = [
@@ -64,7 +65,8 @@ const routes: Routes = [
   {path: 'privacy', component:PrivacyComponent},
   {path: 'terms', component:TermsComponent},
   {path: 'hashtag', component:HastagComponent},
-  {path: 'stars', component:StarsComponent}
+  {path: 'stars', component:StarsComponent},
+  {path: 'newsdetail', component:NewsdetailComponent}
 
 ];
 

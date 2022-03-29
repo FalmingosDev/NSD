@@ -5,3 +5,50 @@
 .ml-tran {
     height: 100vh;
 }
+.rs-h3-cl {
+    color: #ffc107;
+    font-size: 32px;
+    display: block;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.gm-a h2{
+    font-size: 13px;
+    color: #ffc107;
+    margin-top: 10px;
+    padding: 0px 15px;
+}
+.gm-a h4{
+    font-size: 23px;
+    color: #fff;
+    padding: 0px 15px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.news-p{
+    color: #ffc107;
+    font-size: 16px;
+    display: block; 
+    margin-top: 0px;
+    padding: 0px 15px;
+    /* text-align: justify; */
+}
+.gm-a{
+        display: inline-block;
+        background: #ffffff38;
+        /* padding: 10px; */
+        border-radius: 0px 0px 10px 10px;
+}
+.slide{
+    position: relative;
+}
+.slide h1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-size: 36px;
+    font-family: 'Josefin Sans', sans-serif;
+}

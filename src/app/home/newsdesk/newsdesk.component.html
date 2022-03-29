@@ -1,18 +1,316 @@
 <app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
-    <section class="sec-mt-bt">
-        <div class="ml-tran">
-            <!-- <p style="color: yellow; text-align: center; margin-top: 30%; font-size: 36px; font-weight: bolder;">Coming Soon</p> -->
-            <div class="ml-txt">
+    <section class="banner">
+        <owl-carousel-o [options]="newsDskOptBn">
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="assets/images/netwood/slider-netwood-1.jpg" [routerLink]="['/newsdetail']"
+                        class="img-fluid">
+                    <h1>Lorem ipsum, dolor sit amet</h1>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="assets/images/netwood/slider-netwood-2.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
+                    <h1>Lorem ipsum, dolor sit amet</h1>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="assets/images/netwood/slider-netwood-3.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
+                    <h1>Lorem ipsum, dolor sit amet</h1>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="slide">
+                    <img src="assets/images/netwood/slider-netwood-4.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
+                    <h1>Lorem ipsum, dolor sit amet</h1>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
 
-                <div class="net-ot-bg-ch">
-                    <h6>Newo Newsdesk</h6>
-                    <p>A News aggregation service that combines trusted global news sources and presents verified facts in a concise manner. The categories available on this feature are - Sports, Gaming, Lifestyle, Entertainment, and Financial topics. All these interesting features will be just the click of a button away on the Newo app. Amongst all the hustle and bustle of life, now all the updates will reach you through only one app.
-                    </p>
+    </section>
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-12">
+                            <h3 class="rs-h3-cl">
+                                <a>Business</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="newsDskbusns">
+                        <ng-template carouselSlide *ngFor="let bData of businessData | keyvalue">
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="{{bData.value.urlToImage}}"
+                                        [routerLink]="['/ottvideodetail/">
+                                    <!--<h2>{{bData.value.source}</h2>-->
+                                    <h4>{{bData.value.title}}</h4>
+                                    <p class="news-p">{{bData.value.content}}</p>
+                                    <h2>By {{bData.value.author}}</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <!--<ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1776.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1757.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1738.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1881.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1883.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>-->
+                    </owl-carousel-o>
                 </div>
             </div>
-            <div class="ml-txt">
-                <p class="app-launch">Launching On 1st May 2022</p>
+        </div>
+    </section>
+    <section class="rg-section mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-12">
+                            <h3 class="rs-h3-cl">
+                                <a>Entertainment</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="newsDskEnt">
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1737.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1776.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1757.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1738.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1881.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1883.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rg-section mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-12">
+                            <h3 class="rs-h3-cl">
+                                <a>Sports</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="newsDskSport">
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1737.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1776.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1757.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1738.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1881.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#" class="gm-a">
+                                <div class="slide">
+                                    <img src="assets/images/netwood/1883.jpg"
+                                        [routerLink]="['/ottvideodetail/chupi-chupi-raat-netwood-world-music-day']">
+                                    <h2>Lorem ipsum</h2>
+                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        Distinctio quaerat beatae...</p>
+                                    <h2>By Payel Biswas</h2>
+                                </div>
+                            </a>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
             </div>
         </div>
     </section>

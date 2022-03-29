@@ -47,6 +47,7 @@ import { TermsComponent } from './terms/terms.component';
 import { AlertModule } from 'ngx-alerts';
 import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
+import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 
 
 
@@ -92,7 +93,8 @@ import { StarsComponent } from './stars/stars.component';
     PrivacyComponent,
     TermsComponent,
     HastagComponent,
-    StarsComponent
+    StarsComponent,
+    NewsdetailComponent
   ],
   imports: [
     CommonModule,

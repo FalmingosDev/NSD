@@ -98,7 +98,7 @@ export class ApiService {
 	var type:string = ott;
 	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
-  
+
   public checkGame(game){
 	var loggedEmail:string=this.getToken();
 	var type:string = game;
@@ -342,6 +342,11 @@ export class ApiService {
 
       return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email});
 
+    }
+
+    public businessList(){
+
+       return this.httpClient.get<any>('https://newsapi.org/v2/everything?q=bitcoin&from=2022-02-28&sortBy=publishedAt&apiKey=49c9715ef8634e48842df52e0451504f');
     }
 
 }
