@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-newsdetail',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsdetailComponent implements OnInit {
 
-  constructor() { }
+  newsUrl: any;
+  sanitizer:any;
+ final_url:string;
+
+
+  constructor(sanitizer: DomSanitizer,) {
+    this.sanitizer=sanitizer;
+   }
 
   ngOnInit(): void {
+
+    this.newsUrl=localStorage.getItem('url');
+    this.final_url=this.getSafeUrl(this.newsUrl);
+    // console.log(this.url);
+  }
+  getSafeUrl(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
 }

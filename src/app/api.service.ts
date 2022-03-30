@@ -345,8 +345,8 @@ export class ApiService {
     }
 
     public businessList(){
-
-       return this.httpClient.get<any>('https://newsapi.org/v2/everything?q=bitcoin&from=2022-02-28&sortBy=publishedAt&apiKey=49c9715ef8634e48842df52e0451504f');
+       return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=49c9715ef8634e48842df52e0451504f');
     }
+
 
 }

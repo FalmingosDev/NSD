@@ -43,13 +43,12 @@
                     </div>
                     <owl-carousel-o [options]="newsDskbusns">
                         <ng-template carouselSlide *ngFor="let bData of businessData | keyvalue">
-                            <a href="#" class="gm-a">
+                            <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.url)" class="gm-a">
                                 <div class="slide">
-                                    <img src="{{bData.value.urlToImage}}"
-                                        [routerLink]="['/newsdetail']">
+                                    <img src="{{bData.value.urlToImage}}">
                                     <!--<h2>{{bData.value.source}</h2>-->
-                                    <h4>{{bData.value.title}}</h4>
-                                    <p class="news-p">{{bData.value.content}}</p>
+                                    <h4 class="news-p">{{bData.value.title}}</h4>
+                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
                                     <h2>By {{bData.value.author}}</h2>
                                 </div>
                             </a>

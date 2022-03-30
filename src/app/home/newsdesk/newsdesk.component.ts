@@ -33,7 +33,7 @@ export class NewsdeskComponent implements OnInit {
   newsDskbusns: any = {
     loop: true,
     margin: 10,
-    autoplay:true,
+    //autoplay:true,
     responsiveClass: true,
     navText: ['Previous', 'Next'],
     dots:false,
@@ -95,6 +95,8 @@ export class NewsdeskComponent implements OnInit {
 
   list: string[] = [];
   businessData:any = [];
+  businessUrl:any = [];
+
 
 
   constructor(private dataService: ApiService,private route:Router) { }
@@ -105,10 +107,16 @@ export class NewsdeskComponent implements OnInit {
 
   businessNews(){   
     this.dataService.businessList().subscribe((result) => {
-      console.log(result.articles)
+      // console.log(result.articles)
       this.businessData = result.articles
     });
-    
   }
+
+  newsUrl(newsLink){
+    localStorage.setItem('url',newsLink);
+  }
+
+
+  
 
 }
