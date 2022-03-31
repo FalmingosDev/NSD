@@ -96,6 +96,10 @@ export class NewsdeskComponent implements OnInit {
   list: string[] = [];
   businessData:any = [];
   businessUrl:any = [];
+  entertainmentData:any =[];
+  sportsData:any =[];
+  topData:any =[];
+
 
 
 
@@ -103,12 +107,37 @@ export class NewsdeskComponent implements OnInit {
 
   ngOnInit(): void {
     this.businessNews();
+    this.entertainmentNews();
+    this.sportsNews();
+    this.topNews();
+
   }
 
   businessNews(){   
     this.dataService.businessList().subscribe((result) => {
       // console.log(result.articles)
       this.businessData = result.articles
+    });
+  }
+
+  entertainmentNews(){   
+    this.dataService.entertainmentList().subscribe((result) => {
+      // console.log(result.articles)
+      this.entertainmentData = result.articles
+    });
+  }
+
+  sportsNews(){   
+    this.dataService.sportsList().subscribe((result) => {
+      // console.log(result.articles)
+      this.sportsData = result.articles
+    });
+  }
+
+  topNews(){   
+    this.dataService.topList().subscribe((result) => {
+      // console.log(result.articles)
+      this.topData = result.articles
     });
   }
 

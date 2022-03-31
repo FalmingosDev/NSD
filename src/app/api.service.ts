@@ -15,6 +15,8 @@ export class ApiService {
   user_data:any; 
   previewData:object;  //knockout file
 
+  data: any;
+
   constructor(private httpClient : HttpClient,private route:Router) { }
 
   public userlogin(email, password,lat,lng) {
@@ -304,49 +306,68 @@ export class ApiService {
 
     }
 
-    public paymentResponse(){
+  public paymentResponse(){
+    // return this.httpClient.get<any>(this.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
+    return this.httpClient.get<any>('https://newocoin.app/#/payment_success');
+  }
 
-      // return this.httpClient.get<any>(this.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
-      return this.httpClient.get<any>('https://newocoin.app/#/payment_success');
-    }
+  public profileData(local_email){
+    let action_type:string="fetch_profile_data";
+    let email:any=local_email;
+    return this.httpClient.post<any>(this.baseUrl+'/profile.php',{action_type,email});
+    
+  }
 
-    public profileData(local_email){
-      let action_type:string="fetch_profile_data";
-      let email:any=local_email;
-      return this.httpClient.post<any>(this.baseUrl+'/profile.php',{action_type,email});
+
+  public chngpwdForm(email,old_password,new_password){ 
+    let action_type="change_password";
+    // const formData: FormData = new FormData();
+    // formData.append('new_password',new_password);
+    // return this.httpClient.post<any>(this.baseUrl+'/profile.php',formData);
+
+    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
       
-    }
+  }
 
+  public chngphnForm(email,new_phone,otp){
+    
+    let action_type="change_phone";
 
-    public chngpwdForm(email,old_password,new_password){ 
-      let action_type="change_password";
-      // const formData: FormData = new FormData();
-      // formData.append('new_password',new_password);
-      // return this.httpClient.post<any>(this.baseUrl+'/profile.php',formData);
+    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,new_phone,otp});
 
-      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
-        
-    }
+  }
 
-    public chngphnForm(email,new_phone,otp){
-      
-      let action_type="change_phone";
+  public otpGenerate(email){
+    let action_type="otp";
+    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email});
+  }
 
-      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,new_phone,otp});
+  public businessList(){
+    return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=49c9715ef8634e48842df52e0451504f');
+  }
 
-    }
+  public entertainmentList(){
+    return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=49c9715ef8634e48842df52e0451504f');
+  }
 
-    public otpGenerate(email){
-      
-      let action_type="otp";
+   public sportsList(){
+    return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=49c9715ef8634e48842df52e0451504f');
+  }
 
-      return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email});
+ 
+  public topList(){
+    return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&apiKey=49c9715ef8634e48842df52e0451504f');
+  }
 
-    }
+  public ottBannerList(){
+    return this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showbanner');
+  }
 
-    public businessList(){
-       return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=49c9715ef8634e48842df52e0451504f');
-    }
-
+  public ottVideoDetail(id){
+    // return this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showvideodetail/'+id);
+    this.data=this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showvideodetail/'+id);
+    console.log(this.data);
+    return this.data;
+  }
 
 }

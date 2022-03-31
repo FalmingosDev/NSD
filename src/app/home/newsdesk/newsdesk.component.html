@@ -2,31 +2,14 @@
 <div class="mt-bt">
     <section class="banner">
         <owl-carousel-o [options]="newsDskOptBn">
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <img src="assets/images/netwood/slider-netwood-1.jpg" [routerLink]="['/newsdetail']"
-                        class="img-fluid">
-                    <h1>Lorem ipsum, dolor sit amet</h1>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <img src="assets/images/netwood/slider-netwood-2.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
-                    <h1>Lorem ipsum, dolor sit amet</h1>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <img src="assets/images/netwood/slider-netwood-3.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
-                    <h1>Lorem ipsum, dolor sit amet</h1>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <img src="assets/images/netwood/slider-netwood-4.jpg" [routerLink]="['/newsdetail']" class="img-fluid">
-                    <h1>Lorem ipsum, dolor sit amet</h1>
-                </div>
-            </ng-template>
+                <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">
+                    <a [routerLink]="['/newsdetail']" (click)="newsUrl(tData.value.url)" class="gm-a">
+                        <div class="slide">
+                            <img src="{{tData.value.urlToImage}}">                            
+                            <h1>{{tData.value.title}}</h1>
+                        </div>
+                    </a>
+                </ng-template> 
         </owl-carousel-o>
 
     </section>
@@ -44,7 +27,7 @@
                     <owl-carousel-o [options]="newsDskbusns">
                         <ng-template carouselSlide *ngFor="let bData of businessData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.url)" class="gm-a">
-                                <div class="slide">
+                                <div class="slide sl-sm">
                                     <img src="{{bData.value.urlToImage}}">
                                     <!--<h2>{{bData.value.source}</h2>-->
                                     <h4 class="news-p">{{bData.value.title}}</h4>
@@ -70,84 +53,17 @@
                         </div>
                     </div>
                     <owl-carousel-o [options]="newsDskEnt">
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1737.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
+                        <ng-template carouselSlide *ngFor="let eData of entertainmentData | keyvalue">
+                            <a [routerLink]="['/newsdetail']" (click)="newsUrl(eData.value.url)" class="gm-a">
+                                <div class="slide sl-sm">
+                                    <img src="{{eData.value.urlToImage}}">
+                                    <!--<h2>{{bData.value.source}</h2>-->
+                                    <h4 class="news-p">{{eData.value.title}}</h4>
+                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
+                                    <h2>By {{eData.value.author}}</h2>
                                 </div>
                             </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1776.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1757.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1738.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1881.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1883.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
+                        </ng-template> 
                     </owl-carousel-o>
                 </div>
             </div>
@@ -165,84 +81,17 @@
                         </div>
                     </div>
                     <owl-carousel-o [options]="newsDskSport">
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1737.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
+                        <ng-template carouselSlide *ngFor="let sData of sportsData | keyvalue">
+                            <a [routerLink]="['/newsdetail']" (click)="newsUrl(sData.value.url)" class="gm-a">
+                                <div class="slide sl-sm">
+                                    <img src="{{sData.value.urlToImage}}">
+                                    <!--<h2>{{bData.value.source}</h2>-->
+                                    <h4 class="news-p">{{sData.value.title}}</h4>
+                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
+                                    <h2>By {{sData.value.author}}</h2>
                                 </div>
                             </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1776.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1757.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1738.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1881.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <a href="#" class="gm-a">
-                                <div class="slide">
-                                    <img src="assets/images/netwood/1883.jpg"
-                                        [routerLink]="['/newsdetail']">
-                                    <h2>Lorem ipsum</h2>
-                                    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
-                                    <p class="news-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Distinctio quaerat beatae...</p>
-                                    <h2>By Payel Biswas</h2>
-                                </div>
-                            </a>
-                        </ng-template>
+                        </ng-template> 
                     </owl-carousel-o>
                 </div>
             </div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-otthome',
@@ -9,6 +11,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./otthome.component.css']
 })
 export class OtthomeComponent implements OnInit {
+
+  env=environment;
 
   bannerOptions: any = {
     loop: true,
@@ -52,14 +56,28 @@ export class OtthomeComponent implements OnInit {
    nav: false
   };
 
+
+  bannerData:any =[];
+  videoId:any =[];
+
+
   constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
+
+    this.ottBanner();
   }
 
-//   videodetail() {
-//     console.log("Checking", "Test");
-//     this.route.navigate(["ottvideodetail"]);
-// }
+  ottBanner(){   
+    this.dataService.ottBannerList().subscribe((result) => {
+      this.bannerData = result
+    });
+  }
+
+  videoDetail(event,id){
+    event.preventDefault();
+    this.route.navigate(["/ottvideodetail/"+id]);
+  }
+  
 
 }

@@ -3,8 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  AWS_VIDEO_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/video/',
+  AWS_THUMB_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/thumb/',
+  AWS_POSTER_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/poster/'
+  
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

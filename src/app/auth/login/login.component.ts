@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getCurrentLocation();  
-    // this.getIPAddress();  
+    this.getCurrentLocation();  
   }
 
   getCurrentLocation() {
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
       this.lat = position.coords.latitude;
       this.lng = position.coords.longitude;
-    
+      
     });
     }
     else {
@@ -43,19 +42,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  getIPAddress()
-  {
-    this.http.get("http://api.ipify.org/?format=json").subscribe((res:any)=>{
-      this.ipAddress = res.ip;
-      console.log(this.ipAddress);
-    });
-  }
-
   postdata(angForm1) { //alert(angForm1.value.mobile); //deb
     
     if (this.email.status == 'INVALID') {
       this.alertService.warning('Please Enter Your Email Address');
-      // alert('Please Enter Your Email Address');
       $('#email').focus();
     }
     else if (this.password.status == 'INVALID') {
@@ -63,9 +53,6 @@ export class LoginComponent implements OnInit {
       $('#password').focus();
     }
     else {
-      this.getCurrentLocation();
-     
-      // console.log(this.lat);
       localStorage.setItem('lat', this.lat);
       localStorage.setItem('lng', this.lng);
       this.dataService.userlogin(angForm1.value.email, angForm1.value.password,this.lat,this.lng)
@@ -102,6 +89,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('subscription_end_date', data.result.subscription);
                 localStorage.removeItem('lat');
                 localStorage.removeItem('lng');
+
                 // if(data.result.newo_user_id>0){
                 //   this.router.navigate(['/']);
                 // }
@@ -125,5 +113,6 @@ export class LoginComponent implements OnInit {
   }
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
+
 
 }

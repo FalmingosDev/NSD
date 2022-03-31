@@ -13,6 +13,7 @@ export class NewsdetailComponent implements OnInit {
  final_url:string;
 
 
+
   constructor(sanitizer: DomSanitizer,) {
     this.sanitizer=sanitizer;
    }
@@ -21,6 +22,7 @@ export class NewsdetailComponent implements OnInit {
 
     this.newsUrl=localStorage.getItem('url');
     this.final_url=this.getSafeUrl(this.newsUrl);
+    // this.link=this.final_url + "&output=embed";
     // console.log(this.url);
   }
   getSafeUrl(url) {
