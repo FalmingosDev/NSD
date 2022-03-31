@@ -89,7 +89,10 @@ export class OttvideodetailComponent implements OnInit {
       this.video_name = this.ottVideoData[0].name;
       this.video_type = this.ottVideoData[0].type_name;
       this.video_genere = this.ottVideoData[0].genere_name;
-      this.final_video_url = this.getSafeUrl(this.env.AWS_VIDEO_URL+this.video_link);
+      //this.final_video_url = this.getSafeUrl(this.env.AWS_VIDEO_URL+this.video_link);
+      this.video_link='<video autoplay width="100%" height="100%" controls="" id="vidId"><source src="'+this.env.AWS_VIDEO_URL+this.video_link+'" type="video/mp4" ></video>';
+      document.getElementById('vid_div').innerHTML=this.video_link;
+    // document.getElementById('vid_div').innerHTML=this.video_link;
       //console.log(this.final_video_url);
       //console.log(this.video_link);
     });    
@@ -103,7 +106,7 @@ export class OttvideodetailComponent implements OnInit {
   getVideoData(){
     //console.log(document.getElementById("vidId"));
     this.vid = document.getElementById("vidId");
-    this.vid.addEventListener('started',function(){
+    this.vid.addEventListener('ended',function(){
       alert("hii");
   });
   }
