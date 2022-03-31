@@ -38,6 +38,11 @@ export class OttvideodetailComponent implements OnInit {
 
   sanitizer:any;
 
+
+
+
+  vid: any;
+
   constructor(domSanitizer: DomSanitizer, private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute) {
     this.sanitizer=domSanitizer;
    }
@@ -78,7 +83,7 @@ export class OttvideodetailComponent implements OnInit {
     this.dataService.ottVideoDetail(this.id).subscribe((result) => {
       this.ottVideoData = result;
 
-      console.log(this.ottVideoData);
+      //console.log(this.ottVideoData);
 
       this.video_link = this.ottVideoData[0].media;
       this.video_name = this.ottVideoData[0].name;
@@ -96,6 +101,10 @@ export class OttvideodetailComponent implements OnInit {
 
 
   getVideoData(){
-    console.log(document.getElementById("vidId"));
+    //console.log(document.getElementById("vidId"));
+    this.vid = document.getElementById("vidId");
+    this.vid.addEventListener('started',function(){
+      alert("hii");
+  });
   }
 }
