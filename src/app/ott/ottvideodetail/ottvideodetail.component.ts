@@ -34,7 +34,7 @@ export class OttvideodetailComponent implements OnInit {
 
   //final_video_url: string;
   //final_video_url: SafeUrl; 
-  public final_video_url: SafeResourceUrl | String = '';
+  public final_video_url: string ;
 
   sanitizer:any;
 
@@ -55,7 +55,7 @@ export class OttvideodetailComponent implements OnInit {
 
     // this.dataService.fetchVideoData(slug).subscribe((res)=>{
     // this.result=res.data;
-    // this.video_link='<video autoplay width="100%" height="100%" controls=""><source src="'+res.data.video_files.file_url+'" type="video/mp4" ><source src="'+res.data.video_files.file_url+'" type="video/ogg" ></video>';
+    // this.video_link='<video autoplay width="100%" height="100%" controls="" id="vidId"><source src="'+res.data.video_files.file_url+'" type="video/mp4" ><source src="'+res.data.video_files.file_url+'" type="video/ogg" ></video>';
     // document.getElementById('vid_div').innerHTML=this.video_link;
     // this.slug = res.data.slug; 
     // this.file_url=res.data.video_files.file_url;
@@ -74,7 +74,6 @@ export class OttvideodetailComponent implements OnInit {
     //   document.getElementById('vid_tag').innerHTML=this.videoType;
 
     // })
-    this.getVideoData();
   
   }
   
@@ -89,7 +88,11 @@ export class OttvideodetailComponent implements OnInit {
       this.video_name = this.ottVideoData[0].name;
       this.video_type = this.ottVideoData[0].type_name;
       this.video_genere = this.ottVideoData[0].genere_name;
-      this.final_video_url = this.getSafeUrl(this.env.AWS_VIDEO_URL+this.video_link);
+      //this.final_video_url = this.getSafeUrl(this.env.AWS_VIDEO_URL+this.video_link);
+      this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;
+      const video = <HTMLVideoElement>(document.querySelector('#vidId'));
+      video.src = this.final_video_url;
+
       //console.log(this.final_video_url);
       //console.log(this.video_link);
     });    
@@ -99,12 +102,8 @@ export class OttvideodetailComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-
-  getVideoData(){
-    //console.log(document.getElementById("vidId"));
-    this.vid = document.getElementById("vidId");
-    this.vid.addEventListener('started',function(){
-      alert("hii");
-  });
+  videoEnded(){
+    alert('video ended');
   }
+    
 }
