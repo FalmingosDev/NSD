@@ -31,7 +31,7 @@ const routes: Routes = [
   {path:'ottterms', component:OtttermsComponent},
   {path:'ottcontact', component:OttcontactsComponent},
   {path:'ottmovie', component:OttmovieComponent},
-  {path:'ottvideodetail/:slug',component:OttvideodetailComponent},
+  {path:'ottvideodetail/:id',component:OttvideodetailComponent},
   {path:'ottvideotype',component:OttvideotypeComponent},
   {path:'ottvideotype1',component:Ottvideotype1Component},
   {path:'ottvideotype2',component:Ottvideotype2Component},
@@ -42,7 +42,6 @@ const routes: Routes = [
   {path:'ottvideowmd',component:OttvideowmdComponent},
   {path:'ottshorts',component:OttshortsComponent},
   {path:'ottcne',component:OttcneComponent}
-  
 ]; 
 
 @NgModule({

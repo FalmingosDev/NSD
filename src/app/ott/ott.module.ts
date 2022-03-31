@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser'
 
 import { OttRoutingModule } from './ott-routing.module';
 import { OtthomeComponent } from './otthome/otthome.component';
@@ -52,6 +54,8 @@ import { HomeModule } from '../home/home.module';
     CommonModule,
     OttRoutingModule,
     CarouselModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     HomeModule
   ]
 })

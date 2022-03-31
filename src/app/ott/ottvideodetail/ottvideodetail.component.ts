@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -22,10 +24,23 @@ export class OttvideodetailComponent implements OnInit {
   // videoType:any="";
   // video_link:any ;
 
+  env=environment;
   ottVideoData: any;
   id: string;
+  video_link: string;
+  video_name: string;
+  video_type: string;
+  video_genere: string;
 
-  constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute) { }
+  //final_video_url: string;
+  //final_video_url: SafeUrl; 
+  public final_video_url: SafeResourceUrl | String = '';
+
+  sanitizer:any;
+
+  constructor(domSanitizer: DomSanitizer, private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute) {
+    this.sanitizer=domSanitizer;
+   }
 
   ngOnInit(): void {
 
@@ -54,19 +69,33 @@ export class OttvideodetailComponent implements OnInit {
     //   document.getElementById('vid_tag').innerHTML=this.videoType;
 
     // })
-
-
+    this.getVideoData();
+  
   }
-
+  
   ottDetail(){ 
-    // this.id= this.activatedRoute.snapshot.params['id']; 
-    this.id=this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
+    this.id= this.activatedRoute.snapshot.params['id']; 
     this.dataService.ottVideoDetail(this.id).subscribe((result) => {
-      this.ottVideoData = result
+      this.ottVideoData = result;
+
       console.log(this.ottVideoData);
-    });
+
+      this.video_link = this.ottVideoData[0].media;
+      this.video_name = this.ottVideoData[0].name;
+      this.video_type = this.ottVideoData[0].type_name;
+      this.video_genere = this.ottVideoData[0].genere_name;
+      this.final_video_url = this.getSafeUrl(this.env.AWS_VIDEO_URL+this.video_link);
+      //console.log(this.final_video_url);
+      //console.log(this.video_link);
+    });    
+  }
+
+  getSafeUrl(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 
+  getVideoData(){
+    console.log(document.getElementById("vidId"));
+  }
 }
