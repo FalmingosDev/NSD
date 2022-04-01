@@ -29,6 +29,7 @@ export class OttvideodetailComponent implements OnInit {
   }
   
   ottDetail(){ 
+    
     this.id= this.activatedRoute.snapshot.params['id']; 
     this.dataService.ottVideoDetail(this.id).subscribe((result) => {
       this.ottVideoData = result;
@@ -39,11 +40,16 @@ export class OttvideodetailComponent implements OnInit {
       this.video_type = this.ottVideoData[0].type_name;
       this.video_genere = this.ottVideoData[0].genere_name;
       this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;
+
       const video = <HTMLVideoElement>(document.querySelector('#vidId'));
       video.src = this.final_video_url;
-      video.addEventListener('ended',function(){
-        alert("hii");
-      });
+      video.addEventListener('ended',function() {
+        if(this.played.end(0) - this.played.start(0) === this.duration) {
+          console.log("Played all");
+        }else {
+          console.log("Some parts were skipped");
+        }
+      })
     });    
   }
 

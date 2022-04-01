@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -16,6 +17,7 @@ export class ApiService {
   previewData:object;  //knockout file
 
   data: any;
+  env= environment;
 
   constructor(private httpClient : HttpClient,private route:Router) { }
 
@@ -360,14 +362,25 @@ export class ApiService {
   }
 
   public ottBannerList(){
-    return this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showbanner');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showbanner');
+  }
+
+  public ottShortsList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showshorts');
+  }
+
+  public ottMusicList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showmusic');
   }
 
   public ottVideoDetail(id){
-    // return this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showvideodetail/'+id);
-    this.data=this.httpClient.get<any>('https://www.newocoin.app/newoadmin/api/showvideodetail/'+id);
-    console.log(this.data);
-    return this.data;
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showvideodetail/'+id);
   }
+
+
+  // https://www.newocoin.app/newoadmin/api/showmusic
+  // https://www.newocoin.app/newoadmin/api/showwebs
+  // https://www.newocoin.app/newoadmin/api/showmovie
+
 
 }

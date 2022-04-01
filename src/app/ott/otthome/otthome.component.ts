@@ -56,21 +56,57 @@ export class OtthomeComponent implements OnInit {
    nav: false
   };
 
+  shortsOptions: any = {
+    loop: true,
+    margin: 10,
+    autoplay:true,
+    responsiveClass: true,
+    navText: ['Previous', 'Next'],
+    dots:false,
+    responsive: {
+      0: {
+       items: 2
+     },
+      480: {
+       items: 2
+     },
+      940: {
+       items: 2
+     }
+    },
+   nav: false
+  };
+
 
   bannerData:any =[];
+  shortsData:any =[];
   videoId:any =[];
+  musicData:any =[];
 
 
   constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
-
     this.ottBanner();
+    this.ottShorts();
+    this.ottMusic();
   }
 
   ottBanner(){   
     this.dataService.ottBannerList().subscribe((result) => {
       this.bannerData = result
+    });
+  }
+
+  ottShorts(){   
+    this.dataService.ottShortsList().subscribe((result) => {
+      this.shortsData = result
+    });
+  }
+
+  ottMusic(){   
+    this.dataService.ottMusicList().subscribe((result) => {
+      this.musicData = result
     });
   }
 
