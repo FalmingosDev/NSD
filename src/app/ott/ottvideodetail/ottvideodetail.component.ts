@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from '../../../environments/environment';
+import { AlertService } from 'ngx-alerts';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class OttvideodetailComponent implements OnInit {
   final_video_url: string ;
 
 
-  constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.ottDetail();
@@ -33,7 +34,7 @@ export class OttvideodetailComponent implements OnInit {
     this.id= this.activatedRoute.snapshot.params['id']; 
     this.dataService.ottVideoDetail(this.id).subscribe((result) => {
       this.ottVideoData = result;
-
+      const videoId = this.id;
       this.video_link = this.ottVideoData[0].media;
       this.video_name = this.ottVideoData[0].name;
       this.video_starring = this.ottVideoData[0].stars;
@@ -46,11 +47,28 @@ export class OttvideodetailComponent implements OnInit {
       video.addEventListener('ended',function() {
         if(this.played.end(0) - this.played.start(0) === this.duration) {
           console.log("Played all");
+          addToWallet(videoId, 1, localStorage.getItem('token'));
         }else {
+          //this.alertService.warning("Some parts were skipped");
           console.log("Some parts were skipped");
+          showError();
         }
       })
     });    
   }
-
 }
+
+
+function addToWallet(vId, action, userEmail) {
+  //console.log(vId+' '+action+' '+userEmail);
+  console.log("Added to Wallet");
+  /*this.dataService.walletAdd(vId, action, userEmail).subscribe((result) => {
+    console.log(result);
+  });*/
+}
+
+function showError(){
+  //this.alertService.warning("Some parts were skipped");
+  console.log("Some parts were skipped From function");
+}
+

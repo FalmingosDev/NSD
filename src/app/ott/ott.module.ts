@@ -25,6 +25,7 @@ import { OttvideowmdComponent } from './ottvideowmd/ottvideowmd.component';
 import { OttshortsComponent } from './ottshorts/ottshorts.component';
 import { OttcneComponent } from './ottcne/ottcne.component';
 import { HomeModule } from '../home/home.module';
+import { AlertModule } from 'ngx-alerts';
 
 
 
@@ -56,7 +57,8 @@ import { HomeModule } from '../home/home.module';
     CarouselModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HomeModule
+    HomeModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'})
   ]
 })
 export class OttModule { }

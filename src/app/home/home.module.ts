@@ -48,6 +48,7 @@ import { AlertModule } from 'ngx-alerts';
 import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 
@@ -104,6 +105,7 @@ import { NewsdetailComponent } from './newsdetail/newsdetail.component';
     FormsModule, 
     ReactiveFormsModule,
     PlyrModule,
+    LightboxModule, 
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'})
   ],
   exports:[

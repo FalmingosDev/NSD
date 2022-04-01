@@ -24,12 +24,8 @@ export class ProfileComponent implements OnInit {
   phnChangeForm: FormGroup;
   // show:boolean=true;
   
-
-
-
   constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) {}
   
-
   ngOnInit(): void {
     
     this.checkProfile()

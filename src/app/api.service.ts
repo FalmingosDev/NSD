@@ -378,9 +378,9 @@ export class ApiService {
   }
 
 
-  // https://www.newocoin.app/newoadmin/api/showmusic
-  // https://www.newocoin.app/newoadmin/api/showwebs
-  // https://www.newocoin.app/newoadmin/api/showmovie
+/*public walletAdd(vId, action, userEmail){
+  return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet/',{vId, action, userEmail});
+}*/
 
 
 }
