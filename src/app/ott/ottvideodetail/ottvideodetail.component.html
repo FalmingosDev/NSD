@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="rt-video-div" id="vid_div">
-                        <video autoplay width="100%" height="100%" controls="" id="vidId" onended="videoEnded()">
+                        <video autoplay width="100%" height="100%" controls="" id="vidId">
                           <source [src]="final_video_url" type="video/mp4" >
                         </video>
                     </div>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="vdya-div">
-                        <!-- <h3>{{title}}</h3> -->
+                        <h3>{{video_name}}</h3>
                         <ul>
                             <li>
                                 <button type="button" class="btn btn-lv" data-toggle="modal" data-target="#heart-md">
@@ -39,7 +39,7 @@
                         </ul>
                     </div>
                     <div class="vdya-str">
-                        <p>Starring : <a href="#">{{video_name}}</a></p>
+                        <p>Starring : <a href="#">{{video_starring}}</a></p>
                         <p>Genre : <a href="#">{{video_genere}}</a></p>
                         <p>Video Type : <a href="#">{{video_type}}</a></p>
                     </div>
