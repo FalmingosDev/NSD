@@ -378,9 +378,9 @@ export class ApiService {
   }
 
 
-/*public walletAdd(vId, action, userEmail){
-  return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet/',{vId, action, userEmail});
-}*/
+  public walletAdd(vId, action, userEmail){
+    return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, action, userEmail});
+  }
 
 
 }

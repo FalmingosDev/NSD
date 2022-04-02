@@ -59,28 +59,6 @@ export class LoginComponent implements OnInit {
         .pipe(first())
         .subscribe(
           data => {
-            //alert(JSON.stringify(data));
-            //alert(data[0].name);
-            /* if(data[0].newo_user_id > 0){
-               const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/'; 
-               this.router.navigate([redirect]);
-             }
-             else{
-               const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/pricing'; 
-               this.router.navigate([redirect]);
-             }*/
-            //---
-            // if(data===null){
-            //   alert("User name or password is incorrect");
-            //   return;
-            // }
-            // if(data.newo_user_id >0){
-            //   this.router.navigate(['/']);
-            // }else if(data.newo_user_id == 0){
-            //   this.router.navigate(['/pricing']);
-            // }else{
-            //   alert("User name or password is incorrect");
-            // }
             if (data.status) {
               if (data.result) {
                 
@@ -89,13 +67,6 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('subscription_end_date', data.result.subscription);
                 localStorage.removeItem('lat');
                 localStorage.removeItem('lng');
-
-                // if(data.result.newo_user_id>0){
-                //   this.router.navigate(['/']);
-                // }
-                // else{
-                //   this.router.navigate(['/newoclan']);
-                // }
                 this.router.navigate(['/']);
 
               }else {
@@ -105,9 +76,6 @@ export class LoginComponent implements OnInit {
               this.alertService.danger("Please Try again later");
             }
           },
-          // error => {
-          //   alert("User name or password is incorrect")
-          // }
         );
     }
   }

@@ -21,7 +21,7 @@ export class OttvideodetailComponent implements OnInit {
   video_type: string;
   video_genere: string;
   final_video_url: string ;
-
+  videoId: string ;
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
 
@@ -34,7 +34,7 @@ export class OttvideodetailComponent implements OnInit {
     this.id= this.activatedRoute.snapshot.params['id']; 
     this.dataService.ottVideoDetail(this.id).subscribe((result) => {
       this.ottVideoData = result;
-      const videoId = this.id;
+      this.videoId = this.id;
       this.video_link = this.ottVideoData[0].media;
       this.video_name = this.ottVideoData[0].name;
       this.video_starring = this.ottVideoData[0].stars;
@@ -46,29 +46,29 @@ export class OttvideodetailComponent implements OnInit {
       video.src = this.final_video_url;
       video.addEventListener('ended',function() {
         if(this.played.end(0) - this.played.start(0) === this.duration) {
-          console.log("Played all");
-          addToWallet(videoId, 1, localStorage.getItem('token'));
+          document.getElementById('played').click();
         }else {
-          //this.alertService.warning("Some parts were skipped");
-          console.log("Some parts were skipped");
-          showError();
+          document.getElementById('skip').click();
         }
       })
     });    
   }
-}
 
+  PlayedAll(){
+    this.addToWallet(this.videoId, 1, localStorage.getItem('token'))
+  }
 
-function addToWallet(vId, action, userEmail) {
-  //console.log(vId+' '+action+' '+userEmail);
-  console.log("Added to Wallet");
-  /*this.dataService.walletAdd(vId, action, userEmail).subscribe((result) => {
-    console.log(result);
-  });*/
-}
+  addToWallet(vId, action, userEmail) {
+    this.dataService.walletAdd(vId, action, userEmail).subscribe((result) => {
+      if (result[0].status) {
+        this.alertService.success("Congratulation! You have earned "+result[0].coin+" Coins");
+      }
+    });
+  }
 
-function showError(){
-  //this.alertService.warning("Some parts were skipped");
-  console.log("Some parts were skipped From function");
+  Skipped(){
+    this.alertService.warning("Some parts were skipped");
+  }
+
 }
 
