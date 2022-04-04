@@ -6,38 +6,18 @@
                     <div class="col-12">
                         <div class="ml-tran2">
                             <div class="col-12">
-                                <div class="t-b-s-background">
-                                    <img src="assets/images/blog-img-1.jpg" class="img-fluid">
+                                <div class="t-b-s-background" *ngFor="let blog of blogsListData | keyvalue" [value]="blog.value.blog_id">
+
+                                    <img src="{{env.AWS_BLOG_URL+blog.value.blog_img}}" class="img-fluid">
                                     <div class="t-b-s-box">
-                                        <h2 class="ml-tx-h1">An Introduction to The Newo App</h2>
+                                        <h2 class="ml-tx-h1">{{blog.value.blog_title}}</h2>
                                         <ul class="blog-list">
-                                            <li><i class="fa fa-user"></i> Written by Sreena Sarkar</li>
-                                            <li><i class="fa fa-calendar"></i>  March 25, 2022
+                                            <li><i class="fa fa-user"></i> Written by {{blog.value.blog_author}}</li>
+                                            <li><i class="fa fa-calendar"></i> {{blog.value.blog_date}}
                                             </li>
                                         </ul>
-                                        <p class="t-b-s-text-p">Team Newo Clan is pleased to announce that we have ﬁnally
-                                            launched our most awaited multi-utility Application, Newo. Our goal is always to
-                                            deliver on the demand of entertainment, gaming, lifestyle, career, and community
-                                            building.
-                                            The App will be signiﬁcantly easier to navigate and is ultimately user-friendly.
-                                            Here we have a portal within the app where you can buy, sell, trade, and stake
-                                            cryptocurrency, effectively turning the Newo App into a complete exchange that
-                                            uses Newo Coin as the primary utility token. Now that the portal is live,
-                                            traders will be able to earn staking rewards!
+                                        <p class="t-b-s-text-p">{{blog.value.blog_text}} <a href="javascript void(0)" (click)="blogsDetail($event,blog.value.blog_id)">Read More....</a>
                                         </p>
-                                        <h2 class="ml-tx-h1">What Is the NEWO App?</h2>
-                                        <p class="t-b-s-text-p">
-                                            Newo is your one-stop destination for trading your virtual digital assets, streaming the best of universal entertainment, TV shows, news & movies, skill-based gaming, and a great shopping experience in the form of a light app with faster load time & wide selection across categories.
-                                        </p>
-                                        <h2 class="ml-tx-h1">Facts About The Newo App</h2>
-                                        <p class="t-b-s-text-p">So far, The Newo App has been one of the fastest-growing cryptocurrency apps.
-                                            However, don’t take our word for it.
-                                            If you want to learn more about why people around the nation use the NEWO App to help them manage their crypto portfolios, just read any of the reviews on the Google Play Store.
-                                            Out of all of those reviews, The Crypto App has an average of 4.6 out of 5 stars!
-                                            </p>
-                                        <h2 class="ml-tx-h1">How Can I Download And Try the NEWO App? </h2>
-                                        <p class="t-b-s-text-p">If you haven’t done so already, we encourage you to join the thousands of others who have already downloaded the NEWO App and give it a try. We are conﬁdent that it will improve your overall crypto asset trading experience and help you better manage your crypto portfolio.
-                                        Interested? Download the NEWO App for free from Google Play and it will also be available soon in App Store.</p>
                                     </div>
                                 </div>
                             </div>

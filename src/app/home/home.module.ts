@@ -48,6 +48,8 @@ import { AlertModule } from 'ngx-alerts';
 import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
+import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
+import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 
 
 
@@ -94,7 +96,8 @@ import { NewsdetailComponent } from './newsdetail/newsdetail.component';
     TermsComponent,
     HastagComponent,
     StarsComponent,
-    NewsdetailComponent
+    NewsdetailComponent,
+    BlogdetailsComponent
   ],
   imports: [
     CommonModule,
@@ -104,7 +107,8 @@ import { NewsdetailComponent } from './newsdetail/newsdetail.component';
     FormsModule, 
     ReactiveFormsModule,
     PlyrModule,
-    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'})
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'}),
+    NgImageFullscreenViewModule
   ],
   exports:[
     WelcomefooterComponent

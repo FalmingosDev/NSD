@@ -382,5 +382,12 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, action, userEmail});
   }
 
+  public blogsList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'bloglist');
+  }
+
+  public blogsDetail(id){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'blogdetail/'+id);
+  }
 
 }

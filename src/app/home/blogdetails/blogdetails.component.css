@@ -1,0 +1,202 @@
+/*for blog*/ 
+.t-b-s-text-p{
+    color: #fff;
+    font-size: 15px;
+    margin: 0;
+    text-align: justify;
+}
+.t-b-s-background {
+    background: #4766866b;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.sec-mt-bt{ 
+    padding-top: 0 !important;
+}
+.blog-dt-div{
+    position: relative;
+}
+.blog-dt-text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.blog-dt-text h2{
+    color: #fff;
+    font-size: 30px;
+}
+.blog-dt-text p{
+    color: #fff;
+    font-size: 14px;
+}
+.blog-list {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ffc107;
+    padding: 0px 0px 11px;
+    margin-bottom: 10px;
+}
+.blog-list li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #ffc107 ;
+}
+.blog-list li a{
+    color: #ffc107 ;
+}
+.ml-tx-h1{
+    color: #ffc107 ;
+    font-size: 25px;
+}
+.social-share {
+    /* border-bottom: 1px solid #ffc107;
+    border-top: 1px solid #ffc107; */
+}
+.social-share-title {
+    padding: 10px 0 30px;
+    font-style: italic;
+    font-size: 13px;
+    color: #ffc107;
+}
+.social-share ul {
+    padding-left: 0;
+    margin-left: 8px;
+    list-style: none;
+    padding: 5px 0px 10px 0px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.social-share ul li {
+    list-style: none;
+    display: inline-block;
+}
+.social-share ul li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px !important;
+    font-family: 'Open Sans', sans-serif;
+}
+.social-share ul li a i {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    border-radius: 50%;
+    margin: 3px;
+    border: 1px solid #ffc107;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    color: #ffc107;
+}
+.list-group {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px !important;
+    padding: 0px 15px;
+}
+.list-group-item.disabled, .list-group-item.disabled:hover, .list-group-item.disabled:focus {
+    font-size: 15px !important;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #0d1428;
+    border: 1px solid #fff;
+}
+.list-group-item a {
+    font-size: 13px;
+    color: #fff;
+}
+.list-group-item.disabled, .list-group-item:disabled {
+    color: #000000;
+    pointer-events: none;
+    background-color: #ffc107 !important;
+}
+.list-group-item+.list-group-item {
+    border-top-width: thin;
+    color: #fff;
+}
+.search-blog {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    color: #888;
+    float: left;
+    font-size: 13px;
+    height: 39px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+.submit_dtl {
+    margin-top: 2px;
+    background: orange;
+    border: 2px solid;
+    color: #fff;
+    padding: 3px 14px;
+    height: 34px;
+    width: auto;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    right: 20px;
+}
+.search_dtl {
+    background: none;
+    border: none;
+    color: orange;
+     float: left; 
+    right: 7px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 38px;
+    min-width: 40px;
+    position: absolute;  
+    vertical-align: middle;
+    margin-top: 1px;
+    font-family: 'Open Sans', sans-serif;
+}
+.widget {
+    padding: 8px 20px;
+    border: 1px solid #fff;
+    margin: 0px 17px;
+    border-radius: 6px;
+}
+.widget ul{
+    padding: 0;
+    margin: 0;
+}
+.widget h4{
+    color: #ffc107;
+    font-size: 25px;
+}
+.widget ul li {
+    color: #d39e00;
+    margin: 0px 0px 0px 29px;
+}
+.widget ul li a{
+    color: #fff;
+}
+.month-ul {
+    margin: 0;
+    padding: 10px 7px;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+}
+.month-ul li {
+    display: inline-block;
+    list-style: none;
+    color: #fff;
+    padding: 1px 3px;
+}
+/*for blog*/

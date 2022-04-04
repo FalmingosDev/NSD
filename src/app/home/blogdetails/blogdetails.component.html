@@ -1,0 +1,33 @@
+<div class="mt-bt">
+    <app-welcomeheader></app-welcomeheader>
+
+    <section class="sec-mt-bt2" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ml-tran2">
+                        <div class="col-12">
+                            <div class="t-b-s-background">
+                                <img src="{{env.AWS_BLOG_URL+blogimage}}" class="img-fluid">
+                                <div class="t-b-s-box">
+                                    <h2 class="ml-tx-h1">{{title}}</h2>
+                                    <div class="social-share">
+                                        <span class="social-share-title text-capitalize">Written by - {{author}}</span>
+                                    </div>
+                                    <ul class="blog-list">
+                                        <li><i class="fa fa-calendar"></i> {{date}}</li>
+                                    </ul>
+                                    <p class="t-b-s-text-p">{{text}}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <app-welcomefooter></app-welcomefooter>
+</div>
