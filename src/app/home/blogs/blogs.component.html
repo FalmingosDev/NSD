@@ -1,21 +1,28 @@
 <div class="mt-bt">
     <app-welcomeheader></app-welcomeheader>
-        <section class="sec-mt-bt2" style="">
+        <section class="sec-mt-bt2">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="ml-tran2">
                             <div class="col-12">
-                                <div class="t-b-s-background" *ngFor="let blog of blogsListData | keyvalue" [value]="blog.value.blog_id">
-
+                                <div class="t-b-s-background" *ngFor="let blog of blogsListData | keyvalue">
                                     <img src="{{env.AWS_BLOG_URL+blog.value.blog_img}}" class="img-fluid">
                                     <div class="t-b-s-box">
-                                        <h2 class="ml-tx-h1">{{blog.value.blog_title}}</h2>
-                                        <ul class="blog-list">
-                                            <li><i class="fa fa-user"></i> Written by {{blog.value.blog_author}}</li>
-                                            <li><i class="fa fa-calendar"></i> {{blog.value.blog_date}}
-                                            </li>
-                                        </ul>
+                                        <div class="row">
+                                            <div class="col-9 blog_txt">
+                                                <h2 class="ml-tx-h1">{{blog.value.blog_title}}</h2>
+                                                <ul class="blog-list">
+                                                    <li><i class="fa fa-user"></i> Written by {{blog.value.blog_author}}
+                                                    </li>
+                                                    <li><i class="fa fa-calendar"></i> {{blog.value.blog_date}}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-3 blog_avatar_img">
+                                                <img src="assets/images/avatar.png" class="img-fluid">
+                                            </div>
+                                        </div>
                                         <p class="t-b-s-text-p">{{blog.value.blog_text.slice(0,250)}} <a href="javascript void(0)" (click)="blogsDetail($event,blog.value.blog_id)">Read More....</a>
                                         </p>
                                     </div>

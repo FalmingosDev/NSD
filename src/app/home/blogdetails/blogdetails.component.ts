@@ -32,7 +32,7 @@ export class BlogdetailsComponent implements OnInit {
     this.id= this.activatedRoute.snapshot.params['blog_id'];  
     this.dataService.blogsDetail(this.id).subscribe((result) => {
       this.blogsListData = result;
-      console.log(this.blogsListData);
+      // console.log(this.blogsListData);
       this.blogId = this.id;
       this.author = this.blogsListData.blog_author;
       this.title = this.blogsListData.blog_title;

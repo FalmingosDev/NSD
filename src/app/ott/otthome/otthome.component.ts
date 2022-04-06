@@ -106,6 +106,7 @@ export class OtthomeComponent implements OnInit {
   ottMusic(){   
     this.dataService.ottMusicList().subscribe((result) => {
       this.musicData = result
+      console.log(this.musicData);
     });
   }
 

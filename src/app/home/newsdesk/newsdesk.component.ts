@@ -15,7 +15,7 @@ export class NewsdeskComponent implements OnInit {
     autoplay:true,
     responsiveClass: true,
     navText: ['Previous', 'Next'],
-    dots:true,
+    dots:false,
     responsive: {
       0: {
        items: 1
@@ -115,29 +115,29 @@ export class NewsdeskComponent implements OnInit {
 
   businessNews(){   
     this.dataService.businessList().subscribe((result) => {
-      // console.log(result.articles)
-      this.businessData = result.articles
+      //rconsole.log(result.data)
+      this.businessData = result.data
     });
   }
 
   entertainmentNews(){   
     this.dataService.entertainmentList().subscribe((result) => {
-      // console.log(result.articles)
-      this.entertainmentData = result.articles
+      // console.log(result.data)
+      this.entertainmentData = result.data
     });
   }
 
   sportsNews(){   
     this.dataService.sportsList().subscribe((result) => {
-      // console.log(result.articles)
-      this.sportsData = result.articles
+      // console.log(result.data)
+      this.sportsData = result.data
     });
   }
 
   topNews(){   
     this.dataService.topList().subscribe((result) => {
-      // console.log(result.articles)
-      this.topData = result.articles
+      // console.log(result.data)
+      this.topData = result.data
     });
   }
 

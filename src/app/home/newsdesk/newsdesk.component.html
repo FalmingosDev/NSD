@@ -5,7 +5,7 @@
                 <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">
                     <a [routerLink]="['/newsdetail']" (click)="newsUrl(tData.value.url)" class="gm-a">
                         <div class="slide">
-                            <img src="{{tData.value.urlToImage}}">                            
+                            <img src="{{tData.value.image}}">                            
                             <h1>{{tData.value.title}}</h1>
                         </div>
                     </a>
@@ -28,7 +28,7 @@
                         <ng-template carouselSlide *ngFor="let bData of businessData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.url)" class="gm-a">
                                 <div class="slide sl-sm">
-                                    <img src="{{bData.value.urlToImage}}">
+                                    <img src="{{bData.value.image}}">
                                     <!--<h2>{{bData.value.source}</h2>-->
                                     <h4 class="news-p">{{bData.value.title}}</h4>
                                     <!-- <p class="news-p">{{bData.value.content}}</p> -->
@@ -56,7 +56,7 @@
                         <ng-template carouselSlide *ngFor="let eData of entertainmentData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(eData.value.url)" class="gm-a">
                                 <div class="slide sl-sm">
-                                    <img src="{{eData.value.urlToImage}}">
+                                    <img src="{{eData.value.image}}">
                                     <!--<h2>{{bData.value.source}</h2>-->
                                     <h4 class="news-p">{{eData.value.title}}</h4>
                                     <!-- <p class="news-p">{{bData.value.content}}</p> -->
@@ -84,7 +84,7 @@
                         <ng-template carouselSlide *ngFor="let sData of sportsData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(sData.value.url)" class="gm-a">
                                 <div class="slide sl-sm">
-                                    <img src="{{sData.value.urlToImage}}">
+                                    <img src="{{sData.value.image}}">
                                     <!--<h2>{{bData.value.source}</h2>-->
                                     <h4 class="news-p">{{sData.value.title}}</h4>
                                     <!-- <p class="news-p">{{bData.value.content}}</p> -->
