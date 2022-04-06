@@ -21,7 +21,7 @@ export class BlogsComponent implements OnInit {
 
   blogsList(){   
     this.dataService.blogsList().subscribe((result) => {
-      this.blogsListData = result
+      this.blogsListData = result;
     });
   }
 

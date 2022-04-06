@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment';
 export class ApiService {
   redirectUrl: string;
   baseUrl:string = "https://newocoin.app/php";
-  // baseUrl:string = "http://3.0.255.31/NS/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   user_data:any; 
   previewData:object;  //knockout file
@@ -38,7 +37,7 @@ export class ApiService {
 
 
   public userregistration(action_type,name,countryList,phone,email,pwd) {
-    // console.log(action_type);
+
     const signupFrmData: FormData = new FormData();
     signupFrmData.append('action_type',action_type);
     signupFrmData.append('name',name);
@@ -50,11 +49,7 @@ export class ApiService {
     return this.httpClient.post<any>(this.baseUrl + '/register.php',signupFrmData )
     .pipe(map(Users => {
     this.setToken(email);
-    console.log(countryList);
-    localStorage.setItem('country_code', countryList);
-    
-    // this.getLoggedInName.emit(true);
-    console.log(Users);
+    localStorage.setItem('country_code', countryList);    
     return Users;
     }));
   }
@@ -109,12 +104,6 @@ export class ApiService {
 	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
   
-  // public checkStarhunt(star){
-	// var loggedEmail:string=this.getToken();
-	// var type:string = star;
-	// return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
-  // }
-
   public ott_sso_register(ott_username){
     var type:string = 'register';
     return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { type,ott_username }); 
@@ -189,9 +178,6 @@ export class ApiService {
       formData.append('creator_dob',creator_dob);
       formData.append('email',email);
       formData.append('file',creator_profile_pic, creator_profile_pic.name);
-      
- 
-
 
     return this.httpClient.post<any>(this.baseUrl+'/creator_form_submit.php',formData).subscribe((res)=>{
       alert(res.msg);
@@ -212,7 +198,6 @@ export class ApiService {
           this.route.navigate(['/joinascreator']);
         }
       })
-  
 
     }
 
@@ -323,10 +308,6 @@ export class ApiService {
 
   public chngpwdForm(email,old_password,new_password){ 
     let action_type="change_password";
-    // const formData: FormData = new FormData();
-    // formData.append('new_password',new_password);
-    // return this.httpClient.post<any>(this.baseUrl+'/profile.php',formData);
-
     return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
       
   }
@@ -378,8 +359,8 @@ export class ApiService {
   }
 
 
-  public walletAdd(vId, action, userEmail){
-    return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, action, userEmail});
+  public walletAdd(vId, category, action, userEmail){
+    return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, category, action, userEmail});
   }
 
   public blogsList(){

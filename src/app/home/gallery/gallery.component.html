@@ -1,61 +1,20 @@
 <div class="mt-bt">
     <app-welcomeheader></app-welcomeheader>
-    <div class="container">
-        <div class="row mb-3">
-            <div class="col-md-4 col-4" *ngFor="let image of gallery; let i = index">
-                <div class="cf-img">
-                    <img src="{{image}}" (click)="showLightbox(i)" (click)="open(mymodal)" class="img-fluid"/> 
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-4 col-4" *ngFor="let image of gallery; let i = index">
+                    <div class="cf-img">
+                        <img src="{{image}}" (click)="showLightbox(i)" (click)="open(mymodal)" class="img-fluid"/> 
+                    </div>
                 </div>
+                <ng-image-fullscreen-view
+                    [images]="imageObject"
+                    [imageIndex]="selectedImageIndex"
+                    [show]="showFlag"
+                    (close)="closeEventHandler()">
+                </ng-image-fullscreen-view>
             </div>
-            <ng-image-fullscreen-view
-            [images]="imageObject"
-            [imageIndex]="selectedImageIndex"
-            [show]="showFlag"
-            (close)="closeEventHandler()"></ng-image-fullscreen-view>
         </div>
-        <!-- <div class="col-md-4 col-4" >
-                    <div class="cf-img">
-                        <img src="assets/images/gal_img1.jpeg" class="img-fluid"> 
-                    </div>
-                </div>
-                <div class="col-md-4 col-4">
-                    <div class="cf-img">
-                        <img src="assets/images/gal_img2.jpeg" class="img-fluid"> 
-                    </div>
-                </div>
-                <div class="col-md-4 col-4">
-                    <div class="cf-img">
-                        <img src="assets/images/gal_img3.jpeg" class="img-fluid"> 
-                    </div>
-                </div>
-            </div> -->
-        <!-- <div class="row mb-3">
-                <div class="col-md-4 col-4">
-                    <div class="cf-img">
-                        <img src="assets/images/gal_img4.jpeg" class="img-fluid"> 
-                    </div>
-                </div>
-                <div class="col-md-4 col-4">
-                    <div class="cf-img">
-                        <img src="assets/images/post_01.png" class="img-fluid"> 
-                    </div>
-                </div>
-                <div class="col-md-4 col-4">
-                    <div class="cf-img">
-                        <img src="assets/images/post_02.png" class="img-fluid"> 
-                    </div>
-                </div>
-            </div> -->
-        <!-- <div class="row">
-            <div class="col-md-4 col-4">
-                <div class="cf-img">
-                    <img src="assets/images/post_03.png" class="img-fluid">
-                </div>
-            </div>
-        </div> -->
-    </div>
-
-    
     <app-welcomefooter></app-welcomefooter>
 </div>
 <ng-template #mymodal let-modal>

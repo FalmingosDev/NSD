@@ -19,10 +19,13 @@ export class ProfileComponent implements OnInit {
   email: string;
   phone: any=[];
   password: any=[];
+  wallet: any=[];
+
 
   pwChangeForm: FormGroup;
   phnChangeForm: FormGroup;
   // show:boolean=true;
+  walletData: any;
   
   constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) {}
   
@@ -36,6 +39,8 @@ export class ProfileComponent implements OnInit {
         this.email=res.data.email;
         this.phone=res.data.phone;
         this.password=res.data.password;
+        this.wallet=res.data.point;
+
       }
      });
 
@@ -154,5 +159,6 @@ export class ProfileComponent implements OnInit {
       this.route.navigate(['/login']);   
     }
   }
+
 
 }
