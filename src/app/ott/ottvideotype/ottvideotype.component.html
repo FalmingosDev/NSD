@@ -3,64 +3,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-10">
-                    <h2 class="cf-h2"><span><a routerLink="/ottcne"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>  Cafe Netwood Episode</h2>  
+                    <h2 class="cf-h2"><span><a routerLink="/otthome"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span> Cafe Netwood Episode</h2>  
                 </div>
                 <div class="col-md-6 col-2">
-                    <p class="mp-p">7</p>
+                    <p class="mp-p">{{episode}}</p>
                 </div>
             </div>  
             <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
+                <div class="col-md-4 col-4 p-0" *ngFor="let epData of ottEpisodeData | keyvalue">
                     <div class="cf-img">
-                        <a routerLink="/ottvideodetail/amar-maa-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-1.jpg" class="img-fluid"> 
-                        Amar Maa by Lagnaj...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                        <a routerLink="/ottvideodetail/ami-chini-go-chini-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-2.jpg" class="img-fluid"> 
-                        Ami Chini Go Chini...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                        <a routerLink="/ottvideodetail/sokhi-rongo-koto-bol" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-3.jpg" class="img-fluid"> 
-                        Sokhi Rongo Koto B...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
-                <div class="cf-img">
-                    <a routerLink="/ottvideodetail/biya-legeche-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-4.jpg" class="img-fluid"> 
-                        Biya Legeche by La...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                        <a routerLink="/ottvideodetail/boshonto-eshe-geche-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-5.jpg" class="img-fluid"> 
-                        Boshonto Eshe Gech...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                        <a routerLink="/ottvideodetail/ektara-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-6.jpg" class="img-fluid"> 
-                        Ektara by Lagnajit...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                        <a routerLink="/ottvideodetail/preme-pora-baron-by-lagnajita" class="cf-txt-a-tag">
-                        <img src="assets/images/netwood/cafe-seven-7.jpg" class="img-fluid"> 
-                        Preme Pora Baron b...</a>
+                        <a (click)="videoDetail($event,epData.value.id)" class="cf-txt-a-tag">
+                        <img src="{{env.AWS_THUMB_URL+epData.value.thumb}}" class="img-fluid"> 
+                        {{epData.value.name}}</a>
                     </div>
                 </div>
             </div>

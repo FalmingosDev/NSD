@@ -81,6 +81,7 @@ export class OtthomeComponent implements OnInit {
   shortsData:any =[];
   videoId:any =[];
   musicData:any =[];
+  wmdData: any=[];
 
 
   constructor(private dataService: ApiService,private route:Router) { }
@@ -89,6 +90,7 @@ export class OtthomeComponent implements OnInit {
     this.ottBanner();
     this.ottShorts();
     this.ottMusic();
+    this.ottWmd();
   }
 
   ottBanner(){   
@@ -110,9 +112,21 @@ export class OtthomeComponent implements OnInit {
     });
   }
 
+  ottWmd(){   
+    this.dataService.ottWmdList().subscribe((result) => {
+      this.wmdData = result
+      console.log(this.wmdData);
+    });
+  }
+
   videoDetail(event,id){
     event.preventDefault();
     this.route.navigate(["/ottvideodetail/"+id]);
+  }
+
+  episodeDetail(event,epId){
+    event.preventDefault();
+    this.route.navigate(["/ottvideotype/"+epId]);
   }
   
 

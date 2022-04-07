@@ -362,10 +362,18 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'showmusic');
   }
 
+  public ottWmdList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showwmd');
+  }
+
   public ottVideoDetail(id){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showvideodetail/'+id);
   }
 
+  
+  public ottepisodeDetail(epId){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showMusicEpisode/'+epId);
+  }
 
   public walletAdd(vId, category, action, userEmail){
     return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, category, action, userEmail});

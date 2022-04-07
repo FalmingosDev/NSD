@@ -133,7 +133,27 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let mData of musicData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,mData.value.id)"><img src="{{env.AWS_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="episodeDetail($event,mData.value.episode)"><img src="{{env.AWS_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-8">
+                            <h3 class="rs-h3-cl"><a>WMD</a></h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="resumeOptions">
+                        <ng-template carouselSlide *ngFor="let wData of wmdData | keyvalue">
+                            <div class="slide">
+                                <a (click)="videoDetail($event,wData.value.id)"><img src="{{env.AWS_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
                         </ng-template>
                     </owl-carousel-o>                    

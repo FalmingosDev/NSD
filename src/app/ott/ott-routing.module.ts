@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'ottcontact', component:OttcontactsComponent},
   {path:'ottmovie', component:OttmovieComponent},
   {path:'ottvideodetail/:id',component:OttvideodetailComponent},
-  {path:'ottvideotype',component:OttvideotypeComponent},
+  {path:'ottvideotype/:episode',component:OttvideotypeComponent},
   {path:'ottvideotype1',component:Ottvideotype1Component},
   {path:'ottvideotype2',component:Ottvideotype2Component},
   {path:'ottvideotype3',component:Ottvideotype3Component},
