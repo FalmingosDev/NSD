@@ -50,6 +50,7 @@ import { StarsComponent } from './stars/stars.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
+import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 
 
 
@@ -97,7 +98,8 @@ import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
     HastagComponent,
     StarsComponent,
     NewsdetailComponent,
-    BlogdetailsComponent
+    BlogdetailsComponent,
+    WalletdetailsComponent
   ],
   imports: [
     CommonModule,

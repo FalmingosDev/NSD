@@ -34,6 +34,7 @@ import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
 import {NewsdetailComponent} from './newsdetail/newsdetail.component';
 import {BlogdetailsComponent} from './blogdetails/blogdetails.component';
+import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 
 
 const routes: Routes = [
@@ -68,8 +69,8 @@ const routes: Routes = [
   {path: 'hashtag', component:HastagComponent},
   {path: 'stars', component:StarsComponent},
   {path: 'newsdetail', component:NewsdetailComponent},
-  {path: 'blogdetails/:blog_id', component:BlogdetailsComponent}
-
+  {path: 'blogdetails/:blog_id', component:BlogdetailsComponent},
+  {path: 'walletdetails', component:WalletdetailsComponent}
 ];
 
 @NgModule({
