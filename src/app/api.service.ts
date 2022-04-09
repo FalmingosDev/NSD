@@ -387,4 +387,9 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'blogdetail/'+id);
   }
 
+  public walletList(){
+    const email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'walletdetails/'+email);
+  }
+
 }

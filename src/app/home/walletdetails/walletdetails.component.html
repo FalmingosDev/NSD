@@ -1,30 +1,59 @@
 <app-welcomeheader></app-welcomeheader>
+<div class="mt-bt">
 <div class="container">
-    <div class="card m-5 p-3">
+    <div class="card m-5 p-3" style="padding: 0 !important;
+    margin: 0 !important;">
         <div class="card-body">
-            <table class="table table-bordered table-striped table-hover">
+            <div class="table-responsive">
+            <!-- <table id="example" class="display" style="width:100%;">
                 <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Phone number</th>
-                    <th>Address</th>
-                </tr>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Point</th>
+                        <th>Action</th>
+                        <th>Credit/Debit</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <!-- <tr *ngFor="let user of allUsers">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.phone }}</td>
-                    <td>{{ user.address.street }}, {{ user.address.city }}</td>
-                </tr> -->
+                    <tr *ngFor="let data of walletData | keyvalue">
+                         <td>{{data.value.category}}</td>
+                        <td>{{data.value.category_name}}</td>
+                        <td>{{data.value.wallet_point}}</td>
+                        <td>{{data.value.wallet_action}}</td>
+                        <td>{{data.value.credit_debit}}</td> 
+                        <td>ABCD</td>
+                        <td>ABCD</td>
+                        <td>ABCD</td>
+                        <td>ABCD</td>
+                        <td>ABCD</td>
+                    </tr>
                 </tbody>
+            </table> -->
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Point</th>
+                        <th>Action</th>
+                        <th>Credit/Debit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of walletData | keyvalue">
+                        <td>{{data.value.category}}</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>27</td>
+                        <td>2011/01/25</td>
+                    </tr>
+                </tbody>
+                
             </table>
         </div>
+        </div>
     </div>
+</div>
 </div>
 <app-welcomefooter></app-welcomefooter>
