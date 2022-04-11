@@ -115,8 +115,8 @@ export class NewsdeskComponent implements OnInit {
 
   businessNews(){   
     this.dataService.businessList().subscribe((result) => {
-      //rconsole.log(result.data)
-      this.businessData = result.data
+      console.log(result[0].channel.item)
+      this.businessData = result[0].channel.item
     });
   }
 

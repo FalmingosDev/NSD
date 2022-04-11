@@ -30,7 +30,7 @@
                     </tr>
                 </tbody>
             </table> -->
-            <table id="example" class="display" style="width:100%">
+            <table id="walletTable" class="display" style="width:100%">
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -43,10 +43,10 @@
                 <tbody>
                     <tr *ngFor="let data of walletData | keyvalue">
                         <td>{{data.value.category}}</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
-                        <td>27</td>
-                        <td>2011/01/25</td>
+                        <td>{{data.value.category_name}}</td>
+                        <td>{{data.value.wallet_point}}</td>
+                        <td>{{data.value.wallet_action}}</td>
+                        <td style="color:rgb(123, 227, 63)" ng-if="data.value.credit_debit == 'credit' ">{{data.value.credit_debit}}</td>
                     </tr>
                 </tbody>
                 

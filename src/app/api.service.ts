@@ -326,9 +326,9 @@ export class ApiService {
   }
 
   public businessList(){
-    // return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=49c9715ef8634e48842df52e0451504f');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'rssfeed');
 
-    return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=business&countries=us');
+    // return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=business&countries=us');
   }
 
   public entertainmentList(){
@@ -382,7 +382,7 @@ export class ApiService {
   public blogsList(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'bloglist');
   }
-
+  
   public blogsDetail(id){
     return this.httpClient.get<any>(this.env.laravel_api_url+'blogdetail/'+id);
   }
