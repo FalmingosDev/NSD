@@ -1,59 +1,34 @@
 <app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
-<div class="container">
-    <div class="card m-5 p-3" style="padding: 0 !important;
+    <div class="container">
+        <div class="card m-5 p-3" style="padding: 0 !important;
     margin: 0 !important;">
-        <div class="card-body">
-            <div class="table-responsive">
-            <!-- <table id="example" class="display" style="width:100%;">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Name</th>
-                        <th>Point</th>
-                        <th>Action</th>
-                        <th>Credit/Debit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of walletData | keyvalue">
-                         <td>{{data.value.category}}</td>
-                        <td>{{data.value.category_name}}</td>
-                        <td>{{data.value.wallet_point}}</td>
-                        <td>{{data.value.wallet_action}}</td>
-                        <td>{{data.value.credit_debit}}</td> 
-                        <td>ABCD</td>
-                        <td>ABCD</td>
-                        <td>ABCD</td>
-                        <td>ABCD</td>
-                        <td>ABCD</td>
-                    </tr>
-                </tbody>
-            </table> -->
-            <table id="walletTable" class="display" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Name</th>
-                        <th>Point</th>
-                        <th>Action</th>
-                        <th>Credit/Debit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let data of walletData | keyvalue">
-                        <td>{{data.value.category}}</td>
-                        <td>{{data.value.category_name}}</td>
-                        <td>{{data.value.wallet_point}}</td>
-                        <td>{{data.value.wallet_action}}</td>
-                        <td style="color:rgb(123, 227, 63)" ng-if="data.value.credit_debit == 'credit' ">{{data.value.credit_debit}}</td>
-                    </tr>
-                </tbody>
-                
-            </table>
-        </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="walletTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Point</th>
+                                <th>Action</th>
+                                <th>Credit/Debit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of walletData | keyvalue">
+                                <td>{{data.value.category}}</td>
+                                <td>{{data.value.category_name}}</td>
+                                <td>{{data.value.wallet_point}}</td>
+                                <td>{{data.value.wallet_action}}</td>
+                                <td>{{data.value.credit_debit}}</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <app-welcomefooter></app-welcomefooter>

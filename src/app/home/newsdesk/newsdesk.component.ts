@@ -115,29 +115,31 @@ export class NewsdeskComponent implements OnInit {
 
   businessNews(){   
     this.dataService.businessList().subscribe((result) => {
-      console.log(result[0].channel.item)
-      this.businessData = result[0].channel.item
+      //console.log(result[0]);
+      //onsole.log(result[0].channel.item);
+      this.businessData = result[0];
+      //console.log(this.businessData);
     });
   }
 
   entertainmentNews(){   
     this.dataService.entertainmentList().subscribe((result) => {
       // console.log(result.data)
-      this.entertainmentData = result.data
+      this.entertainmentData = result.data;
     });
   }
 
   sportsNews(){   
     this.dataService.sportsList().subscribe((result) => {
       // console.log(result.data)
-      this.sportsData = result.data
+      this.sportsData = result.data;
     });
   }
 
   topNews(){   
     this.dataService.topList().subscribe((result) => {
       // console.log(result.data)
-      this.topData = result.data
+      this.topData = result.data;
     });
   }
 
