@@ -2,14 +2,14 @@
 <div class="mt-bt">
     <section class="banner">
         <owl-carousel-o [options]="newsDskOptBn">
-                <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">
-                    <a [routerLink]="['/newsdetail']" (click)="newsUrl(tData.value.url)" class="gm-a">
-                        <div class="slide">
-                            <img src="{{tData.value.image}}">                            
-                            <h1>{{tData.value.title}}</h1>
-                        </div>
-                    </a>
-                </ng-template> 
+            <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">
+                <a [routerLink]="['/newsdetail']" (click)="newsUrl(tData.value.url)" class="gm-a">
+                    <div class="slide">
+                        <img src="{{tData.value.image}}">
+                        <h1>{{tData.value.title}}</h1>
+                    </div>
+                </a>
+            </ng-template>
         </owl-carousel-o>
 
     </section>
@@ -28,14 +28,13 @@
                         <ng-template carouselSlide *ngFor="let bData of businessData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.link[0])" class="gm-a">
                                 <div class="slide sl-sm">
-                                    <img src="{{bData.value.postImage[0]}}">
-                                    <!--<h2>{{bData.value.source}</h2>-->
+                                    <img src={{bData.value.postImage[0]}} />
                                     <h4 class="news-p">{{bData.value.title[0]}}</h4>
-                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
-                                    <!-- <h2>By {{bData.value.author}}</h2> -->
+                                    <!-- <p class="news-p">{{bData.content[0]}}</p> -->
+                                    <!-- <h2>By {{bData.author[0]}}</h2> -->
                                 </div>
                             </a>
-                        </ng-template> 
+                        </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
@@ -63,7 +62,7 @@
                                     <h2>By {{eData.value.author}}</h2>
                                 </div>
                             </a>
-                        </ng-template> 
+                        </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
@@ -91,7 +90,7 @@
                                     <h2>By {{sData.value.author}}</h2>
                                 </div>
                             </a>
-                        </ng-template> 
+                        </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>

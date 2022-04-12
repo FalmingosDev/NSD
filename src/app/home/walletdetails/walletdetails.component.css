@@ -67,6 +67,13 @@ table.dataTable tfoot th {
     border: 1px solid #f18d1d;
 }
 
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #fff !important;
+}
 
 #walletTable_length {
     color: #fff !important;
