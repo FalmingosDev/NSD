@@ -80,42 +80,56 @@ export class OtthomeComponent implements OnInit {
   bannerData:any =[];
   shortsData:any =[];
   videoId:any =[];
-  musicData:any =[];
+  CNEData:any =[];
   wmdData: any=[];
+  quickyData: any=[];
+  latestData: any=[];
 
 
   constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
     this.ottBanner();
+    this.ottLatest();
+    this.ottQuicky();
     this.ottShorts();
-    this.ottMusic();
+    this.ottCNE();
     this.ottWmd();
   }
 
   ottBanner(){   
     this.dataService.ottBannerList().subscribe((result) => {
-      this.bannerData = result
+      this.bannerData = result;
+    });
+  }
+
+  ottLatest(){   
+    this.dataService.ottLatestList().subscribe((result) => {
+      this.latestData = result;
+    });
+  }
+
+  ottQuicky(){   
+    this.dataService.ottQuickyList().subscribe((result) => {
+      this.quickyData = result;
     });
   }
 
   ottShorts(){   
     this.dataService.ottShortsList().subscribe((result) => {
-      this.shortsData = result
+      this.shortsData = result;
     });
   }
 
-  ottMusic(){   
-    this.dataService.ottMusicList().subscribe((result) => {
-      this.musicData = result
-      console.log(this.musicData);
+  ottCNE(){   
+    this.dataService.ottCNEList().subscribe((result) => {
+      this.CNEData = result;
     });
   }
 
   ottWmd(){   
     this.dataService.ottWmdList().subscribe((result) => {
-      this.wmdData = result
-      console.log(this.wmdData);
+      this.wmdData = result;
     });
   }
 

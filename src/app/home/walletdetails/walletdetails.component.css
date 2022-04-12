@@ -1,0 +1,91 @@
+body {
+    color: #fff !important;
+}
+
+.card {
+    background-color: #000;
+}
+
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+    background-color: #f9f9f900;
+    color: #f18d1d;
+}
+
+table.dataTable tbody tr {
+    background-color: #000;
+    color: #f18d1d;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #000;
+}
+
+table.dataTable.display tbody tr:hover>.sorting_1,
+table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
+    background-color: #000;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #f18d1d;
+}
+
+table.dataTable thead th,
+table.dataTable tfoot th {
+    font-weight: bold;
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #fff !important;
+}
+
+#walletTable_info {
+    color: #fff;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    border: 1px solid #f18d1d;
+}
+
+
+#walletTable_length {
+    color: #fff !important;
+}
+
+table.dataTable.display tbody tr.even>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #000;
+}
+.newsdesk_desk_div{
+    margin-bottom: 15px;
+}
+.newsdesk_desk_div a{
+    display: inline-block;
+    text-align: center;
+    padding: 6px 28px;
+    border-radius: 10px 0px 10px;
+    color: #000;
+    background: #f18d1d;
+    box-shadow: 3px 4px 7px #000000a6;
+    font-weight: bold;
+}

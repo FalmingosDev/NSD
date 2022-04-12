@@ -22,21 +22,12 @@ export class WalletdetailsComponent implements OnInit {
     this.walletList();
   }
 
-  // ngAfterViewInit(): void{
-  //   this.inItdataTable();
-  // }
-
   walletList(){   
     this.dataService.walletList().subscribe((result) => {
       this.walletData = result;
       setTimeout(function() { $('#walletTable').dataTable() }, 1000);
-
       // console.log(this.walletData);
     });
   }
-
-  // inItdataTable(){
-  //   $('#example').DataTable();
-  // }
 
 }

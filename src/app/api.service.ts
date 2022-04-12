@@ -354,12 +354,20 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'showbanner');
   }
 
+  public ottLatestList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showlatest');
+  }
+
+  public ottQuickyList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showquicky');
+  }
+
   public ottShortsList(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showshorts');
   }
 
-  public ottMusicList(){
-    return this.httpClient.get<any>(this.env.laravel_api_url+'showmusic');
+  public ottCNEList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showcne');
   }
 
   public ottWmdList(){
@@ -372,7 +380,7 @@ export class ApiService {
 
   
   public ottepisodeDetail(epId){
-    return this.httpClient.get<any>(this.env.laravel_api_url+'showMusicEpisode/'+epId);
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showcnepisode/'+epId);
   }
 
   public walletAdd(vId, category, action, userEmail){

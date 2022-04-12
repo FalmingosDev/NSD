@@ -79,4 +79,21 @@
     margin-left: 15px;
     margin-right: 15px;
 }
+.ott_vd_a{
+    position: absolute;
+    z-index: 9;
+    top: 5px;
+    left: 2px;
+    color: #fff;
+}
+.ott_vd_a a{
+    color: #fff;
+}
+/* .rotated{
+    -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform:rotate(90deg);
+} */
 /*netwood-watch*/

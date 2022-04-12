@@ -17,7 +17,47 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9 col-8">
-                            <h3 class="rs-h3-cl"><a routerLink="/ottshorts">Shorts</a></h3>
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">Latest Videos</a></h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="resumeOptions">
+                        <ng-template carouselSlide *ngFor="let lData of latestData | keyvalue">
+                            <div class="slide">
+                                <a (click)="videoDetail($event,lData.value.id)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid"></a>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-8">
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">Quicky</a></h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="resumeOptions">
+                        <ng-template carouselSlide *ngFor="let qData of quickyData | keyvalue">
+                            <div class="slide">
+                                <a (click)="videoDetail($event,qData.value.id)"><img src="{{env.AWS_THUMB_URL+qData.value.thumb}}" class="img-fluid"></a>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-8">
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">Short Movies</a></h3>
                         </div>
                     </div>
                     <owl-carousel-o [options]="resumeOptions">
@@ -37,11 +77,11 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9 col-8">
-                            <h3 class="rs-h3-cl"><a>Music</a></h3>
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">Cafe Netwood</a></h3>
                         </div>
                     </div>
                     <owl-carousel-o [options]="resumeOptions">
-                        <ng-template carouselSlide *ngFor="let mData of musicData | keyvalue">
+                        <ng-template carouselSlide *ngFor="let mData of CNEData | keyvalue">
                             <div class="slide">
                                 <a (click)="episodeDetail($event,mData.value.episode)"><img src="{{env.AWS_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
                             </div>
@@ -57,7 +97,7 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9 col-8">
-                            <h3 class="rs-h3-cl"><a>WMD</a></h3>
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">World Music Day</a></h3>
                         </div>
                     </div>
                     <owl-carousel-o [options]="resumeOptions">
