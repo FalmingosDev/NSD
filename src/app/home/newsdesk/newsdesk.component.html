@@ -1,6 +1,24 @@
 <app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
-    <section class="banner">
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-6" *ngFor="let bData of businessData | keyvalue">
+                            <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.link[0])">
+                                <img src={{bData.value.postImage[0]}} />
+                                <h4 class="news-p">{{bData.value.title[0]}}</h4>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <section class="banner">
         <owl-carousel-o [options]="newsDskOptBn">
             <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">
                 <a [routerLink]="['/newsdetail']" (click)="newsUrl(tData.value.url)" class="gm-a">
@@ -12,8 +30,8 @@
             </ng-template>
         </owl-carousel-o>
 
-    </section>
-    <section class="rg-section">
+    </section> -->
+    <!-- <section class="rg-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -30,8 +48,6 @@
                                 <div class="slide sl-sm">
                                     <img src={{bData.value.postImage[0]}} />
                                     <h4 class="news-p">{{bData.value.title[0]}}</h4>
-                                    <!-- <p class="news-p">{{bData.content[0]}}</p> -->
-                                    <!-- <h2>By {{bData.author[0]}}</h2> -->
                                 </div>
                             </a>
                         </ng-template>
@@ -39,8 +55,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="rg-section mt-3">
+    </section> -->
+    <!-- <section class="rg-section mt-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -56,9 +72,9 @@
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(eData.value.url)" class="gm-a">
                                 <div class="slide sl-sm">
                                     <img src="{{eData.value.image}}">
-                                    <!--<h2>{{bData.value.source}</h2>-->
+                                  
                                     <h4 class="news-p">{{eData.value.title}}</h4>
-                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
+                                    
                                     <h2>By {{eData.value.author}}</h2>
                                 </div>
                             </a>
@@ -84,9 +100,9 @@
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(sData.value.url)" class="gm-a">
                                 <div class="slide sl-sm">
                                     <img src="{{sData.value.image}}">
-                                    <!--<h2>{{bData.value.source}</h2>-->
+                                    
                                     <h4 class="news-p">{{sData.value.title}}</h4>
-                                    <!-- <p class="news-p">{{bData.value.content}}</p> -->
+                                   
                                     <h2>By {{sData.value.author}}</h2>
                                 </div>
                             </a>
@@ -95,6 +111,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </div>
 <app-welcomefooter></app-welcomefooter>

@@ -1,3 +1,17 @@
 .play-dv {
     background-color: #ffffff !important;
 }
+.newsdesk_desk_div {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+.newsdesk_desk_div a {
+    display: inline-block;
+    text-align: center;
+    padding: 6px 28px;
+    border-radius: 10px 0px 10px;
+    color: #000;
+    background: #f18d1d;
+    box-shadow: 3px 4px 7px #000000a6;
+    font-weight: bold;
+}

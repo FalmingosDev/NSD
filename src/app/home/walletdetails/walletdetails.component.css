@@ -96,3 +96,15 @@ table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
     box-shadow: 3px 4px 7px #000000a6;
     font-weight: bold;
 }
+.pr-f-section{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient( rgb(0 0 0 / 79%) 100%, rgb(0 0 0 / 69%) 100%), url(/assets/images/profile.jpg);
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
