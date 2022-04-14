@@ -96,4 +96,23 @@
   -ms-transform:rotate(90deg);
   transform:rotate(90deg);
 } */
+.rotatetrue video{
+    /* -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform:rotate(90deg); */
+  height: 100vw;
+    transform: rotate(90deg);
+
+}
+.rotatefalse video{
+    /* -moz-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  -o-transform:rotate(0deg);
+  -ms-transform:rotate(0deg);
+  transform:rotate(0deg); */
+    height: 100vw;
+    transform: rotate(90deg);
+}
 /*netwood-watch*/

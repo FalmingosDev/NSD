@@ -145,7 +145,7 @@ export class WelcomeComponent implements OnInit {
   }
 
 
-  getPassedData(data: any) {  //in transition event
+  getPassedData() {  //in transition event
     let jonty_video=<HTMLVideoElement>document.getElementById('vid1');
     let dev_video=<HTMLVideoElement>document.getElementById('vid2');
     let sunil_video=<HTMLVideoElement>document.getElementById('vid3');

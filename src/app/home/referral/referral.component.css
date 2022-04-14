@@ -1,0 +1,97 @@
+
+.sec-mt-bt{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient( rgb(0 0 0 / 79%) 100%, rgb(0 0 0 / 69%) 100%), url(/assets/images/profile.jpg);
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ml-tran {
+margin-top: -58px;
+}
+.lg-rt-div {
+text-align: center;
+display: block;
+}
+.code_sp{
+position: relative;
+font-size: 14px;
+color: #000;
+display: block;
+margin: 10px 0px;
+background: #fff;
+padding: 7px 7px;
+border-radius: 6px;
+}
+.code_sp_btn{
+position: absolute;
+top: 6px;
+right: 0px;
+background-color: transparent;
+border: none;
+}
+.lg-rt-div span{
+text-align: center;
+display: block;
+color: #f09433;
+font-size: 37px;
+font-weight: bold;
+}
+.share_cd{
+color: #f18d1d;
+text-align: center;
+display: block;
+}  
+.share_cd ul li{
+display: inline-block;
+list-style: none;
+padding: 5px 5px;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+color: #fff;
+text-align: center;
+margin: 5px 3px;
+}
+.share_cd ul li:nth-child(1){
+background-color: green;
+}
+.share_cd ul li:nth-child(2){
+background: #f09433; 
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.share_cd ul li:nth-child(3){
+background-color: #00acee;
+}
+.share_cd ul{
+padding: 0;
+margin: 0;
+}
+.table thead th {
+vertical-align: bottom;
+border-bottom: 2px solid #f09433;
+border: 1px solid #f09433;
+}
+.table {
+color: #f09433;
+}
+.table td, .table th {
+padding: .75rem;
+vertical-align: top;
+border-top: 1px solid #f09433;
+border: 1px solid #f09433;
+}
+.listing_table{
+margin-top: 20px;
+}
+.ref_code{
+position: relative;
+}

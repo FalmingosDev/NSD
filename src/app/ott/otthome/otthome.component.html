@@ -23,7 +23,8 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let lData of latestData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,lData.value.id)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="videoDetail($event,lData.value.id)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='0'"></a>
+                                <a (click)="episodeDetail($event,lData.value.episode)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='1'"></a>
                             </div>
                         </ng-template>
                     </owl-carousel-o>

@@ -24,7 +24,6 @@ export class OttvideotypeComponent implements OnInit {
     this.id= this.activatedRoute.snapshot.params['episode']; 
     this.dataService.ottepisodeDetail(this.id).subscribe((result) => {
     this.ottEpisodeData = result;
-    console.log(this.ottEpisodeData);
     this.episode = this.ottEpisodeData[0].episode;
     }); 
   }

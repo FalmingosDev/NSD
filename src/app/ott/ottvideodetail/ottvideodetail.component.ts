@@ -11,7 +11,8 @@ import { AlertService } from 'ngx-alerts';
   styleUrls: ['./ottvideodetail.component.css']
 })
 export class OttvideodetailComponent implements OnInit {
-
+  
+  isFavorite: boolean = false;
   env=environment;
   ottVideoData: any;
   id: string;
@@ -25,6 +26,7 @@ export class OttvideodetailComponent implements OnInit {
   videoCategory: string ;
   video_thumb: string;
   thumb: string;
+  renderer: any;
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
 
@@ -78,6 +80,21 @@ export class OttvideodetailComponent implements OnInit {
 
   Skipped(){
     this.alertService.danger("Some parts were skipped");
+  }
+
+  fullScreen(){
+    console.log('hiii');
+    this.isFavorite = true;
+    //this.renderer.addClass('rotate')
+    // console.log(screen.orientation.type);
+    // console.log(screen.orientation.angle);
+    
+    //screen.orientation.addEventListener("click", function() {
+      //document.documentElement.requestFullScreen();
+    //screen.orientation.unlock();
+    //screen.orientation.lock("landscape-primary");
+    //});
+    //console.log(screen.orientation.type);
   }
 
 }
