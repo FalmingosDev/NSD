@@ -55,8 +55,6 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
 
 
 
-
-
 @NgModule({
   declarations: [
     HomepageComponent,

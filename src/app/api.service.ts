@@ -375,7 +375,8 @@ export class ApiService {
   }
 
   public ottVideoDetail(id){
-    return this.httpClient.get<any>(this.env.laravel_api_url+'showvideodetail/'+id);
+    const userEmail=localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showvideodetail/'+id+'/'+userEmail);
   }
 
   
@@ -385,6 +386,21 @@ export class ApiService {
 
   public walletAdd(vId, category, action, userEmail){
     return this.httpClient.post<any>(this.env.laravel_api_url+'addtowallet',{vId, category, action, userEmail});
+  }
+
+  public watchTime(video_id,play_time){
+    const userEmail=localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url+'savepausetime',{video_id,userEmail,play_time});
+  }
+
+  public pauseTime(video_id){
+    const userEmail=localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url+'getpausetime',{video_id,userEmail});
+  }
+
+  public resumeList(){
+    const userEmail=localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'getresumelist/'+userEmail);
   }
 
   public blogsList(){

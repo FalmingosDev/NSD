@@ -5,13 +5,15 @@ import { environment } from '../../../environments/environment';
 import { AlertService } from 'ngx-alerts';
 
 
+
+
 @Component({
   selector: 'app-ottvideodetail',
   templateUrl: './ottvideodetail.component.html',
   styleUrls: ['./ottvideodetail.component.css']
 })
-export class OttvideodetailComponent implements OnInit {
-  
+export class OttvideodetailComponent implements OnInit  {
+  // private videoPlayer: ElementRef;
   isFavorite: boolean = false;
   env=environment;
   ottVideoData: any;
@@ -27,18 +29,32 @@ export class OttvideodetailComponent implements OnInit {
   video_thumb: string;
   thumb: string;
   renderer: any;
+  currentTime: any;
+  ottVideoTimeData: any;
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.ottDetail();
+    window.addEventListener("hashchange", function(e){
+    });
   }
-  
-  ottDetail(){ 
-    
+
+  setCurrentTime(data) {
     this.id= this.activatedRoute.snapshot.params['id']; 
-    this.dataService.ottVideoDetail(this.id).subscribe((result) => {
-      this.ottVideoData = result;
+    this.currentTime = data.target.currentTime;
+    this.dataService.watchTime(this.id,this.currentTime,).subscribe((result) =>{});
+  }
+
+  // pauseOrPlay(video){
+  //   video.pause();
+  // }
+
+  ottDetail(){     
+      this.id= this.activatedRoute.snapshot.params['id']; 
+      this.dataService.ottVideoDetail(this.id).subscribe((result) => {
+      this.ottVideoData = result.video_detail;
+      this.ottVideoTimeData = result.play_time;
       this.videoId = this.id;
       this.videoCategory = this.ottVideoData[0].category;
       this.video_link = this.ottVideoData[0].media;
@@ -46,13 +62,13 @@ export class OttvideodetailComponent implements OnInit {
       this.video_starring = this.ottVideoData[0].stars;
       this.video_type = this.ottVideoData[0].type_name;
       this.video_genere = this.ottVideoData[0].genere_name;
-      this.video_thumb = this.ottVideoData[0].thumb;
-      
+      this.video_thumb = this.ottVideoData[0].thumb;      
       this.thumb=this.env.AWS_THUMB_URL+this.video_thumb;
       this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;
       const video = <HTMLVideoElement>(document.querySelector('#vidId'));
       video.poster=this.thumb;
       video.src = this.final_video_url;
+      video.currentTime = this.ottVideoTimeData;
       video.addEventListener('ended',function() {
         if(this.played.end(0) - this.played.start(0) === this.duration) {
           document.getElementById('played').click();

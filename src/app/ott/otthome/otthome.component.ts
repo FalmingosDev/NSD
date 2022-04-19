@@ -84,6 +84,8 @@ export class OtthomeComponent implements OnInit {
   wmdData: any=[];
   quickyData: any=[];
   latestData: any=[];
+  pauseData: any=[];
+
 
 
   constructor(private dataService: ApiService,private route:Router) { }
@@ -95,6 +97,7 @@ export class OtthomeComponent implements OnInit {
     this.ottShorts();
     this.ottCNE();
     this.ottWmd();
+    this.ottResume();
   }
 
   ottBanner(){   
@@ -130,6 +133,12 @@ export class OtthomeComponent implements OnInit {
   ottWmd(){   
     this.dataService.ottWmdList().subscribe((result) => {
       this.wmdData = result;
+    });
+  }
+
+  ottResume(){   
+    this.dataService.resumeList().subscribe((result) => {
+      this.pauseData = result.resumeListData;
     });
   }
 

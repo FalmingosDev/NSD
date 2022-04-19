@@ -17,6 +17,28 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9 col-8">
+                            <h3 class="rs-h3-cl"><a href="javascript:void(0);">Resume Videos</a></h3>
+                        </div>
+                    </div>
+                    <owl-carousel-o [options]="resumeOptions">
+                        <ng-template carouselSlide *ngFor="let pData of pauseData | keyvalue">
+                            <a (click)="videoDetail($event,pData.value.id)">
+                                <div class="slide">
+                                    <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                                </div>
+                            </a>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="rg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-9 col-8">
                             <h3 class="rs-h3-cl"><a href="javascript:void(0);">Latest Videos</a></h3>
                         </div>
                     </div>

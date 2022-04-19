@@ -16,8 +16,12 @@ export class BlogdetailsComponent implements OnInit {
   author: string;
   title: string;
   date: string;
-  text: string;
+  text: any;
   blogimage: string;
+  final_text: string;
+  blogAuthor: string;
+  blogAuthorImg: string;
+
 
   env=environment;
 
@@ -38,8 +42,10 @@ export class BlogdetailsComponent implements OnInit {
       this.title = this.blogsListData.blog_title;
       this.date = this.blogsListData.blog_date;
       this.text = this.blogsListData.blog_text;
+      this.final_text=this.text.replaceAll('<br>','').replaceAll('<p>','').replaceAll('</p>','');
       this.blogimage = this.blogsListData.blog_img;
-
+      this.blogAuthor=this.blogsListData.blog_author;
+      this.blogAuthorImg=this.blogsListData.author_img;
     });
   }
 
