@@ -31,28 +31,30 @@ export class OttvideodetailComponent implements OnInit  {
   renderer: any;
   currentTime: any;
   ottVideoTimeData: any;
+  
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.ottDetail();
-    window.addEventListener("hashchange", function(e){
-    });
   }
 
-  setCurrentTime(data) {
+  setPauseTime(data) {
     this.id= this.activatedRoute.snapshot.params['id']; 
     this.currentTime = data.target.currentTime;
     this.dataService.watchTime(this.id,this.currentTime,).subscribe((result) =>{});
   }
 
-  // pauseOrPlay(video){
-  //   video.pause();
-  // }
+  setPauseTimeBack(){
+    const vid = <HTMLVideoElement>(document.getElementById('vidId'));
+    this.currentTime=vid.currentTime;
+    this.id= this.activatedRoute.snapshot.params['id'];
+    this.dataService.watchTime(this.id,this.currentTime,).subscribe((result) =>{});
+  }
 
   ottDetail(){     
-      this.id= this.activatedRoute.snapshot.params['id']; 
-      this.dataService.ottVideoDetail(this.id).subscribe((result) => {
+    this.id= this.activatedRoute.snapshot.params['id']; 
+    this.dataService.ottVideoDetail(this.id).subscribe((result) => {
       this.ottVideoData = result.video_detail;
       this.ottVideoTimeData = result.play_time;
       this.videoId = this.id;

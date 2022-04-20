@@ -4,15 +4,16 @@
     <section class="pl-video">
         <div class="container-fluid">
             <div class="row">
-                <div class="ott_vd_a">
-                    <!-- (click)="setCurrentTime($event)"  -->
-                    <a routerLink="/otthome"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-                </div>
+                <div class="ott_vd_a"> 
+                    <a routerLink="/otthome" >
+                        <i (click)="setPauseTimeBack()" class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                 </div> 
                 <div class="col-md-12">
                     <div class="rt-video-div" id="vid_div">
-                        <video (pause)="setCurrentTime($event)" [ngClass]="{'rotatetrue': isFavorite,'rotatefalse': !isFavorite}"  autoplay width="100%" height="100%" controls="" id="vidId" (fullscreenchange)="fullScreen()">
+                        <video (pause)="setPauseTime($event)" [ngClass]="{'rotatetrue': isFavorite,'rotatefalse': !isFavorite}"  autoplay width="100%" height="100%" controls="" id="vidId" (fullscreenchange)="fullScreen()">
                           <source [src]="final_video_url" type="video/mp4">
-                        </video>
+                        </video>                        
                     </div>
                 </div>
             </div>
@@ -90,5 +91,6 @@
 
 <a href="javascript:void(0)" (click)="PlayedAll()" id="played" style="display: none;">PlayedAll</a>
 <a href="javascript:void(0)" (click)="Skipped()" id="skip" style="display: none;">Skipped</a>
+
 <!-- <app-ottfooter></app-ottfooter> -->
 <!-- <app-welcomefooter></app-welcomefooter> -->
