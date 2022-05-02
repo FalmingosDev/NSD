@@ -22,7 +22,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="vdya-div">
-                        <h3>{{video_name}}</h3>
+                        <h3 *ngIf="!video_aud">{{video_name}}</h3>
+                        <h3 *ngIf="video_aud">{{video_name}} ({{video_aud}})</h3>
                         <ul>
                             <li>
                                 <button type="button" class="btn btn-lv" data-toggle="modal" data-target="#heart-md">
@@ -43,6 +44,7 @@
                         </ul>
                     </div>
                     <div class="vdya-str">
+                        <p>{{video_synopsis}}</p>
                         <p>Starring : <a href="#">{{video_starring}}</a></p>
                         <p>Genre : <a href="#">{{video_genere}}</a></p>
                         <p>Video Type : <a href="#">{{video_type}}</a></p>

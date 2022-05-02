@@ -5,3 +5,14 @@ section{
 .pricing-text p span {
     color: #fff;
 }
+.input-new-box input{
+    position: absolute;
+    width: 35%;
+    top: 84px;
+    left: 125px;
+}
+.input-new-box a{position: relative;
+    position: relative;
+    top: 0;
+    left: 88px;
+}

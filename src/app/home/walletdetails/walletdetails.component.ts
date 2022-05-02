@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import "datatables.net";
+import * as $ from 'jquery';
+import 'popper.js';
+//import 'jquery';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { environment } from '../../../environments/environment';
@@ -11,7 +14,7 @@ import { environment } from '../../../environments/environment';
 })
 export class WalletdetailsComponent implements OnInit {
 
-  $:any =[];
+  //$:any =[];
   walletData:any =[];
   env=environment;
 

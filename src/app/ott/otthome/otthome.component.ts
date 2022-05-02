@@ -85,6 +85,8 @@ export class OtthomeComponent implements OnInit {
   quickyData: any=[];
   latestData: any=[];
   pauseData: any=[];
+  isResume: boolean;
+  isNotResume: boolean;
 
 
 
@@ -136,9 +138,23 @@ export class OtthomeComponent implements OnInit {
     });
   }
 
+  // ottResume(){   
+  //   this.dataService.resumeList().subscribe((result) => {
+  //     this.pauseData = result.resumeListData;
+  //   });
+  // }
+
   ottResume(){   
     this.dataService.resumeList().subscribe((result) => {
       this.pauseData = result.resumeListData;
+      if(this.pauseData.length==0){
+        this.isResume = false;
+        this.isNotResume = true;
+      }
+      else{
+        this.isResume = true;
+        this.isNotResume = false;
+      }
     });
   }
 

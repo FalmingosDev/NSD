@@ -31,6 +31,8 @@ export class OttvideodetailComponent implements OnInit  {
   renderer: any;
   currentTime: any;
   ottVideoTimeData: any;
+  video_synopsis: any;
+  video_aud: any;
   
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute, private alertService: AlertService) {}
@@ -38,6 +40,11 @@ export class OttvideodetailComponent implements OnInit  {
   ngOnInit(): void {
     this.ottDetail();
   }
+
+  ngOnDestroy() { 
+    this.setPauseTimeBack();
+  }
+ 
 
   setPauseTime(data) {
     this.id= this.activatedRoute.snapshot.params['id']; 
@@ -64,6 +71,8 @@ export class OttvideodetailComponent implements OnInit  {
       this.video_starring = this.ottVideoData[0].stars;
       this.video_type = this.ottVideoData[0].type_name;
       this.video_genere = this.ottVideoData[0].genere_name;
+      this.video_synopsis = this.ottVideoData[0].synopsis;
+      this.video_aud = this.ottVideoData[0].certification;
       this.video_thumb = this.ottVideoData[0].thumb;      
       this.thumb=this.env.AWS_THUMB_URL+this.video_thumb;
       this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
   redirectUrl: string;
-  baseUrl:string = "https://newocoin.app/php";
+  // env.env.baseUrl:string = "https://newocoin.app/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   user_data:any; 
   previewData:object;  //knockout file
@@ -23,7 +23,7 @@ export class ApiService {
   public userlogin(email, password,lat,lng) {
      //alert(mobile);
      //alert(password);
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { email,password,lat,lng })
+    return this.httpClient.post<any>(this.env.baseUrl + '/login.php', { email,password,lat,lng })
     /*.pipe(map(Users => {
     // alert(JSON.stringify(Users));
 
@@ -46,7 +46,7 @@ export class ApiService {
     signupFrmData.append('email',email);    
     signupFrmData.append('pwd',pwd);
     
-    return this.httpClient.post<any>(this.baseUrl + '/register.php',signupFrmData )
+    return this.httpClient.post<any>(this.env.baseUrl + '/register.php',signupFrmData )
     .pipe(map(Users => {
     this.setToken(email);
     localStorage.setItem('country_code', countryList);    
@@ -55,16 +55,16 @@ export class ApiService {
   }
 
   public getCountryList(action_type){
-    return this.httpClient.get<any>(this.baseUrl +'/register.php', {params:{action_type}});
+    return this.httpClient.get<any>(this.env.baseUrl +'/register.php', {params:{action_type}});
   }
   public getISD(action_type){
-    return this.httpClient.get<any>(this.baseUrl +'/register.php', {params:{action_type}});
+    return this.httpClient.get<any>(this.env.baseUrl +'/register.php', {params:{action_type}});
   }
 
   public payment_ott(type) {
     var useremail:string = this.getToken();
 	//alert(useremail);
-     return this.httpClient.post<any>(this.baseUrl + '/payment.php', { type,useremail });
+     return this.httpClient.post<any>(this.env.baseUrl + '/payment.php', { type,useremail });
   }
 
   public usersubscribe(netwood_email,games_email,starhunt_email) {
@@ -82,40 +82,40 @@ export class ApiService {
     if(count==0)
 		alert("subscribe atleast one primary numbr");
     else 
-		return this.httpClient.post<any>(this.baseUrl + '/usersubscription.php', { primary,netwoodemail,gamesemail,starhuntemail }); 
+		return this.httpClient.post<any>(this.env.baseUrl + '/usersubscription.php', { primary,netwoodemail,gamesemail,starhuntemail }); 
 	 
   }
 
   public userSubcription(){
     var loggedEmail:string=this.getToken();
     let type:string = 'checkSubcription';
-    return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail});
+    return this.httpClient.post<any>(this.env.baseUrl + '/loginaccess.php', { type,loggedEmail});
     }  
   
   public checkOtt(ott){
 	var loggedEmail:string=this.getToken();
 	var type:string = ott;
-	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
+	return this.httpClient.post<any>(this.env.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
 
   public checkGame(game){
 	var loggedEmail:string=this.getToken();
 	var type:string = game;
-	return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
+	return this.httpClient.post<any>(this.env.baseUrl + '/loginaccess.php', { type,loggedEmail }); 
   }
   
   public ott_sso_register(ott_username){
     var type:string = 'register';
-    return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { type,ott_username }); 
+    return this.httpClient.post<any>(this.env.baseUrl + '/ott_sso.php', { type,ott_username }); 
   }
 
   public ott_sso_login(ott_username){
-    return this.httpClient.post<any>(this.baseUrl + '/ott_sso.php', { ott_username }); 
+    return this.httpClient.post<any>(this.env.baseUrl + '/ott_sso.php', { ott_username }); 
   }
   
   public userInSubcription(loggedEmail){
 	  let type:string = 'checkUserSubcription';
-    return this.httpClient.post<any>(this.baseUrl + '/loginaccess.php', { type,loggedEmail});
+    return this.httpClient.post<any>(this.env.baseUrl + '/loginaccess.php', { type,loggedEmail});
   }
 
 	
@@ -163,7 +163,7 @@ export class ApiService {
     
     public fetchCreatorsDetails(){
       const action_type:string="fetch_creators_details"
-      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{action_type});
+      return this.httpClient.post<any>(this.env.baseUrl+'/fetch_creatots_details.php',{action_type});
       
     }
 
@@ -179,7 +179,7 @@ export class ApiService {
       formData.append('email',email);
       formData.append('file',creator_profile_pic, creator_profile_pic.name);
 
-    return this.httpClient.post<any>(this.baseUrl+'/creator_form_submit.php',formData).subscribe((res)=>{
+    return this.httpClient.post<any>(this.env.baseUrl+'/creator_form_submit.php',formData).subscribe((res)=>{
       alert(res.msg);
     })
 
@@ -188,7 +188,7 @@ export class ApiService {
     public checkCreator(email){
       // alert (email);
       const action_type="check_creator";
-      return this.httpClient.post<any>(this.baseUrl+'/creator_check.php',{email,action_type}).subscribe((res)=>{
+      return this.httpClient.post<any>(this.env.baseUrl+'/creator_check.php',{email,action_type}).subscribe((res)=>{
         if(res.status ==="user_exists"){
           alert("You have already joined as creator");
           this.route.navigate(['/creatorcontent']);
@@ -225,21 +225,21 @@ export class ApiService {
       creatorformData.append('audiance',audiance);
         // console.log(creatorformData);
 
-      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData);
+      return this.httpClient.post<any>(this.env.baseUrl+'/add_creator_form_submit.php',creatorformData);
       
      }
 
     public getGenreList(action_type){
-      return this.httpClient.get<any>(this.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
+      return this.httpClient.get<any>(this.env.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
     }
     
     public getLanguageList(action_type){
-      return this.httpClient.get<any>(this.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
+      return this.httpClient.get<any>(this.env.baseUrl +'/add_creator_form_submit.php', {params:{action_type}});
     }
 
     public creatorList(action_type){
 	  const email=localStorage.getItem('token');
-      return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php', {params:{email,action_type}});
+      return this.httpClient.get<any>(this.env.baseUrl +'/creator_detail.php', {params:{email,action_type}});
     }
 
     public creatorContentDetail(id){
@@ -247,12 +247,12 @@ export class ApiService {
       const detailformData: FormData = new FormData();
       detailformData.append('action_type',action_type);
       detailformData.append('id',id);
-      return this.httpClient.post<any>(this.baseUrl+'/creator_detail.php',detailformData);
+      return this.httpClient.post<any>(this.env.baseUrl+'/creator_detail.php',detailformData);
     }
 
     public fetchCreatorData(id){
       const action_type="fetch_creator_data";
-     return this.httpClient.get<any>(this.baseUrl +'/creator_detail.php',  {params:{id,action_type}});
+     return this.httpClient.get<any>(this.env.baseUrl +'/creator_detail.php',  {params:{id,action_type}});
    
     }
 
@@ -274,41 +274,45 @@ export class ApiService {
       creatorformData.append('camera',camera);
       creatorformData.append('runtime',runtime);
       creatorformData.append('audiance',audiance);
-      return this.httpClient.post<any>(this.baseUrl+'/add_creator_form_submit.php',creatorformData);
+      return this.httpClient.post<any>(this.env.baseUrl+'/add_creator_form_submit.php',creatorformData);
         
     }
  /* ---------------- Service Durba End --------------------*/
     public fetchCreatorVideoData(video_code){
       let action_type="fetch_cretor_video";
-      return this.httpClient.post<any>(this.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
+      return this.httpClient.post<any>(this.env.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
     }
 
     public handelCreateEncryption(objUserData){
-      return this.httpClient.post<any>(this.baseUrl+'/payment.php',{userdata:objUserData});
+      return this.httpClient.post<any>(this.env.baseUrl+'/payment.php',{userdata:objUserData});
     }
 
     public fetchVideoData(slug){
       const action_type="fetch_watch_details";
-     return this.httpClient.get<any>(this.baseUrl +'/fetch_watch_details.php',  {params:{action_type,slug}});
+     return this.httpClient.get<any>(this.env.baseUrl +'/fetch_watch_details.php',  {params:{action_type,slug}});
 
     }
 
   public paymentResponse(){
-    // return this.httpClient.get<any>(this.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
-    return this.httpClient.get<any>('https://newocoin.app/#/payment_success');
+    
+    // return this.httpClient.get<any>(this.env.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
+    
+    // return this.httpClient.get<any>('https://newocoin.app/#/payment_success');
+
+    return this.httpClient.get<any>(this.env.appUrl+'#/payment_success');
   }
 
   public profileData(local_email){
     let action_type:string="fetch_profile_data";
     let email:any=local_email;
-    return this.httpClient.post<any>(this.baseUrl+'/profile.php',{action_type,email});
+    return this.httpClient.post<any>(this.env.baseUrl+'/profile.php',{action_type,email});
     
   }
 
 
   public chngpwdForm(email,old_password,new_password){ 
     let action_type="change_password";
-    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
+    return this.httpClient.post<any>(this.env.baseUrl +'/profile.php', {action_type,email,old_password,new_password});
       
   }
 
@@ -316,13 +320,13 @@ export class ApiService {
     
     let action_type="change_phone";
 
-    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email,new_phone,otp});
+    return this.httpClient.post<any>(this.env.baseUrl +'/profile.php', {action_type,email,new_phone,otp});
 
   }
 
   public otpGenerate(email){
     let action_type="otp";
-    return this.httpClient.post<any>(this.baseUrl +'/profile.php', {action_type,email});
+    return this.httpClient.post<any>(this.env.baseUrl +'/profile.php', {action_type,email});
   }
 
   public businessList(){
@@ -378,7 +382,6 @@ export class ApiService {
     const userEmail=localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url+'showvideodetail/'+id+'/'+userEmail);
   }
-
   
   public ottepisodeDetail(epId){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showcnepisode/'+epId);
@@ -414,6 +417,10 @@ export class ApiService {
   public walletList(){
     const email = localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url+'walletdetails/'+email);
+  }
+
+  public referralGenerate(email){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'referralcode/'+email);
   }
 
 }
