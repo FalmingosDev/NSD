@@ -138,11 +138,6 @@ export class OtthomeComponent implements OnInit {
     });
   }
 
-  // ottResume(){   
-  //   this.dataService.resumeList().subscribe((result) => {
-  //     this.pauseData = result.resumeListData;
-  //   });
-  // }
 
   ottResume(){   
     this.dataService.resumeList().subscribe((result) => {

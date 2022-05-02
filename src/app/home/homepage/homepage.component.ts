@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AlertService } from 'ngx-alerts';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -34,12 +36,37 @@ export class HomepageComponent implements OnInit {
    nav: false
   };
 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private alertService: AlertService) { };
+  ////game////
+  // primaryUrl:string="https://www.gamezop.com/?id=4627";
+  // baseGameUrl:string;
+  // data:string;
+  // final_url:string;
+  // sanitizer:any;
+
+  constructor(sanitizer: DomSanitizer,private fb: FormBuilder,private dataService: ApiService,private router:Router,private route:ActivatedRoute, private alertService: AlertService) {
+
+    ////game////
+    // this.sanitizer=sanitizer;
+   };
 
   ngOnInit(): void {
+
+    ////game////
+    // this.generateUrl();
+    // this.final_url=this.getSafeUrl(this.baseGameUrl);
   };
 
+  ////game////
+  // getSafeUrl(url) {
+  //   return this.sanitizer.bypassSecurityTrustResourceUrl(url)
+  // }
 
+  ////game////
+  // generateUrl(){
+  //   this.data=this.route.snapshot.params['data'];
+  //   this.baseGameUrl=this.primaryUrl+this.data;
+  //   return this.baseGameUrl;
+  // }
 
 userSubcriptionOtt(){		
 	this.dataService.getLoggedInName.subscribe();

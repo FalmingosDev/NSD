@@ -1,4 +1,10 @@
-/*for blog*/ 
+/*for blog*/
+.blog_avatar_img img{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover
+} 
 .t-b-s-box {
     color: #fff;
     font-size: 15px;
