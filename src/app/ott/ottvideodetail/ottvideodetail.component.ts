@@ -43,8 +43,7 @@ export class OttvideodetailComponent implements OnInit  {
 
   ngOnDestroy() { 
     this.setPauseTimeBack();
-  }
- 
+  } 
 
   setPauseTime(data) {
     this.id= this.activatedRoute.snapshot.params['id']; 
@@ -114,10 +113,9 @@ export class OttvideodetailComponent implements OnInit  {
     this.isFavorite = true;
     //this.renderer.addClass('rotate')
     // console.log(screen.orientation.type);
-    // console.log(screen.orientation.angle);
-    
+    // console.log(screen.orientation.angle);    
     //screen.orientation.addEventListener("click", function() {
-      //document.documentElement.requestFullScreen();
+    //document.documentElement.requestFullScreen();
     //screen.orientation.unlock();
     //screen.orientation.lock("landscape-primary");
     //});

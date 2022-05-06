@@ -47,7 +47,7 @@ const routes: Routes = [
   {path:'subcription/:username', component:SubcriptionComponent, canActivate: [AuthguardGuard]},
   {path:'game', component:GameComponent, canActivate: [AuthguardGuard]},
   {path:'play/:data', component:PlaygameComponent, canActivate: [AuthguardGuard]},
-  {path:'payment/:sec/:amt/:curr', component:PaymentComponent, canActivate: [AuthguardGuard]},
+  {path:'payment/:sec/:amt/:curr/:referrer', component:PaymentComponent, canActivate: [AuthguardGuard]},
   {path:'payment_success', component:PaymentSuccessComponent},
   {path:'payment_cancel', component:PaymentCancelComponent},
   {path:'comingsoon', component:ComingsoonComponent}, 

@@ -13,40 +13,78 @@ import { AlertService } from 'ngx-alerts';
 })
 export class PriceComponent implements OnInit {
   angForm: FormGroup;
+  code: any;
+  id: any;
+  referrerid: any;
 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router,private alertService: AlertService) {
+  constructor(private fb: FormBuilder,private dataService: ApiService,private route:Router,private alertService: AlertService) {
     this.angForm = this.fb.group({
-      // email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-      // mobile: ['', Validators.required],
-      // password: ['', Validators.required]
+      code: ['']
     });
    }
 
   ngOnInit(): void {
+
   }
 
-  postdata(angform1)
+  codeverification()
   {
-    this.dataService.payment_ott(angform1).subscribe((result)=>{
-	  //alert(JSON.stringify(result));
-      if(result.id==1){
-        this.dataService.ott_sso_register(result.username).subscribe((result)=>{
-          this.alertService.success('Your Subscription Successfully Completed!');
-        });
-        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
-        this.router.navigate([redirect]);
+    this.code=(<HTMLInputElement>document.getElementById("code")).value;
+      if(this.code){
+        this.dataService.verifycoupon(this.code).subscribe((result)=>{
+          if(result.status){
+            this.alertService.success("Coupon Code applied"); 
+            }
+            else{
+              this.dataService.verifycode(this.code).subscribe((res)=>{
+              if(res.success){
+                  this.id=res.id;
+                  this.alertService.success("Referral Code applied");
+                  setTimeout(() => {
+                    this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
+                }, 800);
+      
+                }
+                else{
+                  this.alertService.danger("Invalid Coupon");
+                  setTimeout(() => {
+                    this.code = (<HTMLInputElement>document.getElementById("code")).value="";
+                  }, 800);                  
+                }
+              });              
+            }
+          });       
       }
-      else if(result.id==2 || result.id==3){
-        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/subcription/'+result.username;
-        this.router.navigate([redirect]);
-      } 
-      else{
-        this.alertService.danger('Sorry! Your Subscription Failed!');
-        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/';
-        this.router.navigate([redirect]);
-      }
-    })
+    else{
+      this.route.navigate(['/payment/3/1999/INR/0']);
+    }
   }
+
+  // codeverification()
+  // {
+  //   this.code=(<HTMLInputElement>document.getElementById("code")).value;
+  //   if(this.code){
+  //     this.dataService.verifycode(this.code).subscribe((res)=>{
+  //       if(res.success){
+  //           this.id=res.id;
+  //           this.alertService.success("Referral Code applied");
+  //           setTimeout(() => {
+  //             this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
+  //           }, 2000);
+  //         }
+  //         else{
+  //           this.alertService.danger("Invalid Coupon");
+  //           setTimeout(() => {
+  //             this.code = (<HTMLInputElement>document.getElementById("code")).value="";
+  //           }, 800);               
+  //         }
+  //     });
+  //   } 
+  //   else{
+  //     this.route.navigate(['/payment/3/1999/INR/0']);
+  //   }
+
+  // }
 
   
 

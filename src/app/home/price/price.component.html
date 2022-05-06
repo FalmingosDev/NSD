@@ -1,4 +1,5 @@
 <app-header></app-header>
+<ngx-alerts></ngx-alerts> 
 <section class="pricing">
     <div class="pricing-head-text">
         <h1>Plans for any budget so you can start today</h1>
@@ -12,20 +13,15 @@
                 <div class="pricing-box pricing-bx-back-3">
                     <div class="pricing-img">
                         <img src="/assets/images/pricing-3-ch.jpg" class="img-fluid">
-                        <form [formGroup]="angForm" (ngSubmit)="postdata(3)">
                             <div class="pricing-text">
                                 <p>
                                     <span class="pr-span">₹ 1999</span>
                                 </p>
-                                <div class="input-new-box">
-                                    
-                                    <input type="text" class="form-control" placeHolder="Coupon Code" id="name">
-                                    <a type="button" class="btn btn-primary">Apply</a>
-
-                                </div>
-                                <a type="button" class="btn btn-primary mt-3" routerLink="/payment/3/1999/INR">Subscribe Now</a>
+                            <div class="input-new-box">                                
+                                <input type="text" class="form-control code-form" placeHolder="Have a Coupon or Referral?" id="code">
                             </div>
-                        </form>
+                                <a type="button" class="btn btn-primary mt-3" (click)="codeverification()">Subscribe Now</a>
+                            </div>
                     </div>
                 </div>
             </div>

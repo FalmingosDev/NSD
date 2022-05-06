@@ -7,10 +7,10 @@
                     <div class="ml-tran">
                         <div class="ml-text">
                             <div class="lg-rt-div">
-                                <span>500</span>
+                                <span>{{total}}</span>
                             </div>
                             <div class="ref_code">
-                                <span class="code_sp" id="referral_code">1234578</span>
+                                <span class="code_sp" id="referral_code">{{referralCodeId}}</span>
                                 <button (click)="copyToClipboard('#referral_code')" class="code_sp_btn"><i class="fa fa-clone" aria-hidden="true"></i></button>
                                 <span class="share_cd" id="myId">Share this code</span>
                                 <div class="share_cd">
@@ -30,7 +30,7 @@
                                                 <th scope="col">Point</th>
                                               </tr>
                                             </thead>
-                                            <tbody>
+                                            <!-- <tbody>
                                               <tr>
                                                 <th scope="row">Payel Biswas</th>
                                                 <td>14/04/22</td>
@@ -41,7 +41,16 @@
                                                 <td>10/04/22</td>
                                                 <td>23</td>
                                               </tr>
-                                            </tbody>
+                                            </tbody> -->
+
+                                            <tbody>
+                                                <tr *ngFor="let row of item;">
+                                                  <th scope="row">{{row.name}}</th>
+                                                  <td>{{row.use_date}}</td>
+                                                  <td>{{row.referrer_point}}</td>
+                                                </tr>
+                                              </tbody>
+
                                           </table>
                                     </div>
                                 </div>

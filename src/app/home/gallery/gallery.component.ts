@@ -15,7 +15,8 @@ export class GalleryComponent implements OnInit {
   'assets/images/gal_img4.jpeg',
   'assets/images/post_01.png', 
   'assets/images/post_02.png', 
-  'assets/images/post_03.png'
+  'assets/images/post_03.png',
+  'assets/images/post_04.jpeg'
   ];
 
   // for img popup

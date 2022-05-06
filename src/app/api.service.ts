@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Injectable({
@@ -17,8 +18,11 @@ export class ApiService {
 
   data: any;
   env= environment;
+  sanitizer:any;
 
-  constructor(private httpClient : HttpClient,private route:Router) { }
+  constructor(private httpClient : HttpClient,private route:Router,sanitizer: DomSanitizer) { 
+    this.sanitizer=sanitizer;
+  }
 
   public userlogin(email, password,lat,lng) {
      //alert(mobile);
@@ -61,10 +65,13 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.baseUrl +'/register.php', {params:{action_type}});
   }
 
-  public payment_ott(type) {
-    var useremail:string = this.getToken();
-	//alert(useremail);
-     return this.httpClient.post<any>(this.env.baseUrl + '/payment.php', { type,useremail });
+  // public payment_subscription(type,referrarid) {
+  //   var useremail:string = this.getToken();
+  //   return this.httpClient.post<any>(this.env.baseUrl + '/payment.php', { type,referrarid,useremail });
+  // }
+
+  public handelCreateEncryption(objUserData){
+    return this.httpClient.post<any>(this.env.baseUrl+'/payment.php',{userdata:objUserData});
   }
 
   public usersubscribe(netwood_email,games_email,starhunt_email) {
@@ -283,10 +290,6 @@ export class ApiService {
       return this.httpClient.post<any>(this.env.baseUrl+'/fetch_creatots_details.php',{video_code,action_type});
     }
 
-    public handelCreateEncryption(objUserData){
-      return this.httpClient.post<any>(this.env.baseUrl+'/payment.php',{userdata:objUserData});
-    }
-
     public fetchVideoData(slug){
       const action_type="fetch_watch_details";
      return this.httpClient.get<any>(this.env.baseUrl +'/fetch_watch_details.php',  {params:{action_type,slug}});
@@ -414,6 +417,12 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'blogdetail/'+id);
   }
 
+  getReferralList(){
+    const email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'getreferraldata/'+email);
+    
+  }
+
   public walletList(){
     const email = localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url+'walletdetails/'+email);
@@ -422,5 +431,29 @@ export class ApiService {
   public referralGenerate(email){
     return this.httpClient.get<any>(this.env.laravel_api_url+'referralcode/'+email);
   }
+
+  public verifycode(code){    
+    return this.httpClient.get<any>(this.env.laravel_api_url+'verifycode/'+code);
+  }
+
+  public verifycoupon(code){
+    const email = localStorage.getItem('token');    
+    return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
+  }
+
+  // public verifycoupon(code){
+  //   const email = localStorage.getItem('token');    
+
+  //   // const vcode=encodeURI(email);
+  //   // return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email='+vcode+'&referral='+code);
+  //   // const vcode=encodeURI('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);    
+  //   // const vcode=this.getSafeUrl('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
+    
+  //   const vcode= this.sanitizer.bypassSecurityTrustResourceUrl('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
+  //   return this.httpClient.get<any>(vcode);
+
+  //   // return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
+    
+  // }
 
 }

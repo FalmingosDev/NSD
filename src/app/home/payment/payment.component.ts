@@ -21,6 +21,7 @@ export class PaymentComponent implements OnInit {
     const section=this.route.snapshot.params['sec'];
     const amount=this.route.snapshot.params['amt'];
     const currency=this.route.snapshot.params['curr'];
+    const referrer=this.route.snapshot.params['referrer'];
     const email=localStorage.getItem("token");
     // console.log(section);
     // console.log(amount);
@@ -29,7 +30,8 @@ export class PaymentComponent implements OnInit {
     
   
     
-    const objUserData = {section,amount,currency,email}
+    const objUserData = {section,amount,currency,referrer,email}
+
     //id,name,email,mobile
     this.dataService.handelCreateEncryption(objUserData).subscribe((res)=>{
       this.cc_url=this.getSafeUrl(res.url);
