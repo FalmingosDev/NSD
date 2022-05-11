@@ -93,7 +93,7 @@ userSubcriptionOtt(){
     {
 		this.dataService.userSubcription().subscribe((res)=>{
 			if(res.code==1){
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
+				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/play';
 				this.router.navigate([redirect]); 
 			}
 			else{
@@ -139,37 +139,33 @@ userSubcriptionOtt(){
 //     }
 //   }
   
-//   checkForGame(game){		
-// 	this.dataService.getLoggedInName.subscribe();
-//     if(this.dataService.isLoggedIn())
-//     {
-// 		this.dataService.checkGame(game).subscribe((result)=>{
-// 			if(result.code==1){
-// 				/* alert('User Subscription Successfully Completed!');
-// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
-// 				this.router.navigate([redirect]); */
-// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
-// 				this.router.navigate([redirect]);
-// 			}
-// 			else{
-// 				alert(result.msg);
-// 				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
-// 				this.router.navigate([redirect]);
-// 			}
-			
-// 		})
-//     }
-//     else{
-// 		var chkMsg = confirm('You need to log in first!');
-// 		if (chkMsg == true) {
-// 			const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
-// 			this.router.navigate([redirect]);
-// 		} else{
-// 			return false;
-// 		}
-		
-//     }
-//   }
+  checkForGame(game){		
+	this.dataService.getLoggedInName.subscribe();
+    if(this.dataService.isLoggedIn())
+    {
+      this.dataService.checkGame(game).subscribe((result)=>{
+        if(result.code==1){
+          const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
+          this.router.navigate([redirect]);
+        }
+        else{
+          alert(result.msg);
+          const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '';
+          this.router.navigate([redirect]);
+        }        
+      })
+    }
+    else{
+		var chkMsg = confirm('You need to log in first!');
+      if (chkMsg == true) {
+        const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : 'login';
+        this.router.navigate([redirect]);
+      } 
+      else{
+        return false;
+      }
+    }
+  }
   
 //   checkForStarhunt(star){		
 // 	this.dataService.getLoggedInName.subscribe();

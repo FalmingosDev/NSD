@@ -297,11 +297,6 @@ export class ApiService {
     }
 
   public paymentResponse(){
-    
-    // return this.httpClient.get<any>(this.env.baseUrl +'/payment_response.php',  {params:{action_type:"payment_success"}});
-    
-    // return this.httpClient.get<any>('https://newocoin.app/#/payment_success');
-
     return this.httpClient.get<any>(this.env.appUrl+'#/payment_success');
   }
 
@@ -419,8 +414,7 @@ export class ApiService {
 
   getReferralList(){
     const email = localStorage.getItem('token');
-    return this.httpClient.get<any>(this.env.laravel_api_url+'getreferraldata/'+email);
-    
+    return this.httpClient.get<any>(this.env.laravel_api_url+'getreferraldata/'+email);    
   }
 
   public walletList(){
@@ -440,6 +434,13 @@ export class ApiService {
     const email = localStorage.getItem('token');    
     return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
   }
+
+  public couponsubscription(){
+    const email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'couponsubscription/'+email);
+  }
+
+  
 
   // public verifycoupon(code){
   //   const email = localStorage.getItem('token');    

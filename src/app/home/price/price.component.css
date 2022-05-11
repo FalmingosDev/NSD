@@ -2,6 +2,34 @@ section{
     background: #0d1428;
     font-family: 'Roboto', sans-serif;
 }
+.i-span img{
+    width: 14px;
+    margin-left: 4px;
+}
+.modal-content {
+    /* background-color: #efb812; */
+    background: linear-gradient(90deg, #007bff 0%, #0dcaf0 50%, #00ffdc 100%);
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 66px;
+}
+.modal-title {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: justify;
+    font-style: italic;
+}
+.modal-header {
+    border: none;
+    padding: 0 13px;
+}
 .input-new-box{
     padding: 10px 51px;
     text-align: center;

@@ -3,6 +3,7 @@ import { AlertService } from 'ngx-alerts';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
+
 @Component({
   selector: 'app-referral',
   templateUrl: './referral.component.html',

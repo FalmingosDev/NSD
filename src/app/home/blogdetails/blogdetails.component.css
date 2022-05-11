@@ -1,9 +1,22 @@
 /*for blog*/ 
+
 .t-b-s-text-p{
     color: #fff;
     font-size: 15px;
     margin: 0;
     text-align: justify;
+}
+.blog_avatar_img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ffc107;
+}
+.img-fit{
+    width: 100%;
+    height: 238px;
+    object-fit: cover;
 }
 .t-b-s-background {
     background: #4766866b;

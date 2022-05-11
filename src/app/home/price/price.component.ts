@@ -33,7 +33,17 @@ export class PriceComponent implements OnInit {
       if(this.code){
         this.dataService.verifycoupon(this.code).subscribe((result)=>{
           if(result.status){
-            this.alertService.success("Coupon Code applied"); 
+            this.alertService.success("Coupon Code applied");
+            this.dataService.couponsubscription().subscribe((result)=>{
+              if(result.status){
+                setTimeout(() => {
+                  this.route.navigate(['/payment_success']);
+              }, 2000);
+              }
+              else{
+                this.alertService.danger("Subscription Failed! Try Again");
+              }
+            });
             }
             else{
               this.dataService.verifycode(this.code).subscribe((res)=>{
@@ -42,11 +52,10 @@ export class PriceComponent implements OnInit {
                   this.alertService.success("Referral Code applied");
                   setTimeout(() => {
                     this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
-                }, 800);
-      
+                }, 2000);
                 }
                 else{
-                  this.alertService.danger("Invalid Coupon");
+                  this.alertService.danger("Invalid Coupon or Referral");
                   setTimeout(() => {
                     this.code = (<HTMLInputElement>document.getElementById("code")).value="";
                   }, 800);                  
@@ -59,33 +68,5 @@ export class PriceComponent implements OnInit {
       this.route.navigate(['/payment/3/1999/INR/0']);
     }
   }
-
-  // codeverification()
-  // {
-  //   this.code=(<HTMLInputElement>document.getElementById("code")).value;
-  //   if(this.code){
-  //     this.dataService.verifycode(this.code).subscribe((res)=>{
-  //       if(res.success){
-  //           this.id=res.id;
-  //           this.alertService.success("Referral Code applied");
-  //           setTimeout(() => {
-  //             this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
-  //           }, 2000);
-  //         }
-  //         else{
-  //           this.alertService.danger("Invalid Coupon");
-  //           setTimeout(() => {
-  //             this.code = (<HTMLInputElement>document.getElementById("code")).value="";
-  //           }, 800);               
-  //         }
-  //     });
-  //   } 
-  //   else{
-  //     this.route.navigate(['/payment/3/1999/INR/0']);
-  //   }
-
-  // }
-
-  
 
 }
