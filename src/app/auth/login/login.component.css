@@ -9,8 +9,15 @@
     height: 100vh;
     background-position: center;
 }
-
+#togglePassword{
+  cursor: pointer;
+  position: absolute;
+  top: 116px;
+  right: 23px;
+  color: #fff;
+}
 .sign-box {
+    position: relative;
     padding: 10px 10px;
     background: rgba(0, 0, 0, 0.8);
     margin-top: 60%;

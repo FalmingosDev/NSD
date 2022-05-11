@@ -32,7 +32,8 @@
                             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" >
                                 <input type="email" name="email" formControlName="email" class="e-ph" placeholder="Email">
                                 <!--<input type="text" name="mobile" formControlName="mobile" class="e-ph" placeholder="mobile">-->
-                                <input type="password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 
+                                <input type="password" autocomplete="current-password" id="id_password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 
+                                <i class="fa fa-eye" aria-hidden="true" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                                 <button class="sign-in-btn">Sign In</button> 
                             </form>
                             <div class="row mt-top">
