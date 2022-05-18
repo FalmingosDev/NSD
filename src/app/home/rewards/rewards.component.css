@@ -109,3 +109,15 @@
 .btn-check:focus+.btn-danger, .btn-danger:focus {
     box-shadow: none;
 }
+.plc{
+    background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(/assets/images/new-bg-ft2.jpg) !important;
+    padding: 20px 0px 10px !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    min-height: 152px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
