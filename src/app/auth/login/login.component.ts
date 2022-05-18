@@ -43,8 +43,7 @@ export class LoginComponent implements OnInit {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
       this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-      
+      this.lng = position.coords.longitude;      
     });
     }
     else {

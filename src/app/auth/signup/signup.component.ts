@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
       password.setAttribute('type', type);
       // toggle the eye slash icon
       this.classList.toggle('fa-eye-slash');
+      // this.classList.toggle('fa fa-eye');
   });
   }
 
