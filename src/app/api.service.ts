@@ -451,6 +451,22 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'couponsubscription/'+email);
   }
 
+
+  /*--------------------------------------------------------------- Reward Start ------------------------------------------------*/
+  public rewardList(){
+    const email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'rewardlist/'+email);
+  }
+
+  public getRewardData(id){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'rewarddata/'+id);
+  }
+
+  public activateReward(rewardId){
+    const email = localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url+'activatereward',{rewardId,email});
+  }
+  /*---------------------------------------------------------------- Reward End -------------------------------------------------*/
   
 
   // public verifycoupon(code){
