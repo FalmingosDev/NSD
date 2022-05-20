@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import * as $ from 'jquery';
-// import  as owl-carousel from 'owl-carousel';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
+import { AlertService } from 'ngx-alerts';
  
 
 @Component({
@@ -12,16 +12,21 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css'] 
 })
+
 export class WelcomeComponent implements OnInit {  
   bannerBaseUrl:string='/assets/images/';
   bannerArr:any=["exchange-banner.jpg","clan-banner.jpg","multiplex-banner.jpg","newsdesk-banner.jpg","newostreet-banner.jpg","nft-banner.jpg"]; 
   assetsUrl:string = '/assets';
 
+  public lat;
+  public lng;
+
+  country:any;
   isSubscribe:boolean;
   isNotSubscribe:boolean;
 
- 
-
+  isBD:boolean;
+  isNotBD:boolean;
 
   customOptions: OwlOptions  = {
     items: 1,
@@ -51,7 +56,6 @@ export class WelcomeComponent implements OnInit {
    
   };
   activeSlides: SlidesOutputData;
-
   slidesStore: any[];
 
   // getPassedData(data: SlidesOutputData) {
@@ -101,7 +105,7 @@ export class WelcomeComponent implements OnInit {
   };
 
 
-  constructor(private router:Router,private dataService: ApiService) { 
+  constructor(private router:Router,private dataService: ApiService,private alertService: AlertService) { 
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
           if(res.cnt ==1){
@@ -118,10 +122,54 @@ export class WelcomeComponent implements OnInit {
       this.isSubscribe = false;
       this.isNotSubscribe = true;
     }
-
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCurrentLocation();
+  }
+
+  getCurrentLocation(){
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+      this.lat = position.coords.latitude;
+      this.lng = position.coords.longitude;
+        this.dataService.getcountry(this.lat,this.lng).subscribe((result) => {      
+          this.country = result.countryCode;
+          localStorage.setItem('current_country', this.country);
+          if(result.countryCode=='BD'){
+            this.isBD = true;
+            this.isNotBD = false;
+          }
+          else{
+            this.isBD = false;
+            this.isNotBD = true;
+          }
+          //////////////////////
+          // if(localStorage.getItem('current_country')){
+          //   this.dataService.currentCountry(localStorage.getItem('current_country')).subscribe((res)=>{
+          //       if(res==BD){
+          //         this.isBD = true;
+          //         this.isNotBD = false;
+          //       }
+          //       else{
+          //         this.isBD = false;
+          //         this.isNotBD = true;
+          //       }
+          //   });
+          // } 
+          // else{
+          //   this.isBD = false;
+          //   this.isNotBD = true;
+          // }
+          ///////////////////////////
+        });   
+      });
+    }
+    else {
+      this.alertService.warning("Geolocation is not supported by this browser");
+    }
+  }
+
   checkAuth(value='newoclan'){
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
@@ -133,19 +181,16 @@ export class WelcomeComponent implements OnInit {
             this.router.navigate(['/about_newoclan']);
           }
         }else if(value=='profile'){
-            this.router.navigate(['/profile']);
-        } 
-        
+          this.router.navigate(['/profile']);
+        }         
       });
     }
-    else{
-      
+    else{      
       this.router.navigate(['/about_newoclan']);   
     }
   }
 
-
-  getPassedData() {  //in transition event
+  getPassedData(){
     let jonty_video=<HTMLVideoElement>document.getElementById('vid1');
     let dev_video=<HTMLVideoElement>document.getElementById('vid2');
     let sunil_video=<HTMLVideoElement>document.getElementById('vid3');
@@ -154,7 +199,7 @@ export class WelcomeComponent implements OnInit {
     dev_video.pause();
     sunil_video.pause();
     lara_video.pause();
-    }
+  }
 
 
 

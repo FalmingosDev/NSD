@@ -43,30 +43,18 @@ export class HomepageComponent implements OnInit {
   // final_url:string;
   // sanitizer:any;
 
+  
+
   constructor(sanitizer: DomSanitizer,private fb: FormBuilder,private dataService: ApiService,private router:Router,private route:ActivatedRoute, private alertService: AlertService) {
 
-    ////game////
-    // this.sanitizer=sanitizer;
    };
 
-  ngOnInit(): void {
-
-    ////game////
-    // this.generateUrl();
-    // this.final_url=this.getSafeUrl(this.baseGameUrl);
+  ngOnInit(): void {   
+   
   };
 
-  ////game////
-  // getSafeUrl(url) {
-  //   return this.sanitizer.bypassSecurityTrustResourceUrl(url)
-  // }
-
-  ////game////
-  // generateUrl(){
-  //   this.data=this.route.snapshot.params['data'];
-  //   this.baseGameUrl=this.primaryUrl+this.data;
-  //   return this.baseGameUrl;
-  // }
+  
+  
 
 userSubcriptionOtt(){		
 	this.dataService.getLoggedInName.subscribe();
@@ -93,7 +81,7 @@ userSubcriptionOtt(){
     {
 		this.dataService.userSubcription().subscribe((res)=>{
 			if(res.code==1){
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
+				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/play';
 				this.router.navigate([redirect]); 
 			}
 			else{

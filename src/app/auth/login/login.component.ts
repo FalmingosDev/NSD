@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   public lat;
   public lng;
+  
   ipAddress: any;
   http: any;
 

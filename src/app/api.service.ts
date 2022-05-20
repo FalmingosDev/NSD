@@ -125,6 +125,7 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.baseUrl + '/loginaccess.php', { type,loggedEmail});
   }
 
+
 	
 
   //token
@@ -352,6 +353,11 @@ export class ApiService {
   
   }
 
+  public getcountry(lat,lng){
+    return this.httpClient.get<any>('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lng);
+    
+    }
+
   public ottBannerList(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showbanner');
   }
@@ -392,6 +398,11 @@ export class ApiService {
   public watchTime(video_id,play_time){
     const userEmail=localStorage.getItem('token');
     return this.httpClient.post<any>(this.env.laravel_api_url+'savepausetime',{video_id,userEmail,play_time});
+  }
+  
+  public insertgamescore(game_id,score){ 
+    const userEmail=localStorage.getItem('token');   
+    return this.httpClient.post<any>(this.env.laravel_api_url+'savegamescore',{userEmail,game_id,score});
   }
 
   public pauseTime(video_id){

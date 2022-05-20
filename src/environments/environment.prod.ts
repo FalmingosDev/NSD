@@ -7,5 +7,6 @@ export const environment = {
   AWS_BLOG_URL: 'https://newouploads.s3.ap-southeast-1.amazonaws.com/blog/',
   AWS_BLOG_AUTHOR_URL: 'https://newouploads.s3.ap-southeast-1.amazonaws.com/blog_author/',
   laravel_api_url: 'https://newocoin.app/newoadmin/api/',
-  baseUrl: 'https://newocoin.app/php'
+  baseUrl: 'https://newocoin.app/php',
+  gameUrl: 'https://newocoin.app/Game/game/'
 }; 
