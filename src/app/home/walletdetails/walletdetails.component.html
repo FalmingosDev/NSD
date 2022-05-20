@@ -1,40 +1,40 @@
 <app-welcomeheader></app-welcomeheader>
 <div class="mt-bt">
     <section class="pr-f-section">
-    <div class="container">
-        <div class="card m-5 p-3" style="padding: 0 !important;
+        <div class="container">
+            <div class="card m-5 p-3" style="padding: 0 !important;
         margin: 0 !important;">
-        <div class="newsdesk_desk_div">
-            <a routerLink="/profile"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>&nbsp;Back</a>
-        </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="walletTable" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Name</th>
-                                <th>Point</th>
-                                <th>Action</th>
-                                <th>Credit/Debit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let data of walletData | keyvalue">
-                                <td>{{data.value.category}}</td>
-                                <td>{{data.value.category_name}}</td>
-                                <td>{{data.value.wallet_point}}</td>
-                                <td>{{data.value.wallet_action}}</td>
-                                <td style="color:rgb(245, 0, 0)" *ngIf="data.value.credit_debit=='Debit'">{{data.value.credit_debit}}</td>
-                                <td style="color:rgb(14, 255, 14)" *ngIf="data.value.credit_debit=='Credit'">{{data.value.credit_debit}}</td>
-                            </tr>
-                        </tbody>
+                <div class="newsdesk_desk_div">
+                    <a routerLink="/profile"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>&nbsp;Back</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="walletTable" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Point</th>
+                                    <th>Action</th>
+                                    <th>Credit/Debit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of walletData | keyvalue">
+                                    <td>{{data.value.category1}}</td>
+                                    <td>{{data.value.category_name}}</td>
+                                    <td>{{data.value.wallet_point}}</td>
+                                    <td>{{data.value.wallet_action}}</td>
+                                    <td style="color:rgb(245, 0, 0)" *ngIf="data.value.credit_debit=='Debit'">{{data.value.credit_debit}}</td>
+                                    <td style="color:rgb(14, 255, 14)" *ngIf="data.value.credit_debit=='Credit'">{{data.value.credit_debit}}</td>
+                                </tr>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
 <app-welcomefooter></app-welcomefooter>

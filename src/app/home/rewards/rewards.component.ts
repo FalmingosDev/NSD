@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-rewards',
@@ -7,13 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RewardsComponent implements OnInit {
 
-  constructor() { }
+  rewardlist:any=[];
+  rewardData_id:String="";
+  rewardData_title:String="";
+  rewardData_desc:String="";
+  rewardData_val_date:String="";
+
+  constructor(private service:ApiService,private route:Router) { }
   
   ngOnInit(): void {
-    
+    this.getrewardlist();
   }
 
-  activte(id){
+  getrewardlist(){
+    this.service.rewardList().subscribe((result)=>{
+      this.rewardlist = result.reward_list;
+    })
+  }
+
+  
+  active_modal(id){
+    this.service.getRewardData(id).subscribe((result)=>{
+      this.rewardData_id = result.reward_data[0].id;
+      this.rewardData_title = result.reward_data[0].rewards_title;
+      this.rewardData_desc = result.reward_data[0].rewards_desc;
+      this.rewardData_val_date = result.reward_data[0].validity_date;
+    })
+    $('#rewardDiv'+id).attr('data-target','#active_spark1');
+  }
+
+
+  activte(id,rewardId){
+    this.service.activateReward(rewardId).subscribe((result)=>{
+      
+    })
     let act=document.getElementById(id).style.display;
     if(act=='block'){
       document.getElementById(id).style.display='none';
@@ -22,5 +51,8 @@ export class RewardsComponent implements OnInit {
       document.getElementById(id).style.display='block'; 
     } 
   }
+
+
 }
+
 
