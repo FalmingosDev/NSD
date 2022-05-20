@@ -443,7 +443,8 @@ export class ApiService {
 
   /*--------------------------------------------------------------- Reward Start ------------------------------------------------*/
   public rewardList(){
-    return this.httpClient.get<any>(this.env.laravel_api_url+'rewardlist');
+    const email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'rewardlist/'+email);
   }
 
   public getRewardData(id){

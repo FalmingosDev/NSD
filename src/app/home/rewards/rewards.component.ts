@@ -24,6 +24,7 @@ export class RewardsComponent implements OnInit {
   getrewardlist(){
     this.service.rewardList().subscribe((result)=>{
       this.rewardlist = result.reward_list;
+      //console.log(this.rewardlist);
     })
   }
 
@@ -33,23 +34,24 @@ export class RewardsComponent implements OnInit {
       this.rewardData_id = result.reward_data[0].id;
       this.rewardData_title = result.reward_data[0].rewards_title;
       this.rewardData_desc = result.reward_data[0].rewards_desc;
-      this.rewardData_val_date = result.reward_data[0].validity_date;
+      //this.rewardData_val_date = result.reward_data[0].validity_date;
     })
     $('#rewardDiv'+id).attr('data-target','#active_spark1');
   }
 
 
   activte(id,rewardId){
-    this.service.activateReward(rewardId).subscribe((result)=>{
-      
-    })
     let act=document.getElementById(id).style.display;
-    if(act=='block'){
-      document.getElementById(id).style.display='none';
-    }
-    else{
-      document.getElementById(id).style.display='block'; 
-    } 
+    this.service.activateReward(rewardId).subscribe((result)=>{
+      if(result.status){
+        document.getElementById(id).style.display='block'; 
+      }
+      else{
+        document.getElementById(id).style.display='none';
+      }
+      setTimeout(function(){$("#active_spark1 .close").click()},2000);
+      this.getrewardlist();
+    })
   }
 
 

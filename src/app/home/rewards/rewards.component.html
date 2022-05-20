@@ -15,12 +15,38 @@
             </div>
             <div class="row">
                 <div class="col-6" *ngFor="let rewards of rewardlist">
-                    <div class="rewl_bx plc" data-toggle="modal" (click)="active_modal(rewards.id)" style="height:167px;" id="rewardDiv{{rewards.id}}">
+                    <div class="rewl_bx plc" *ngIf="rewards.reward_apply=='Not Applied' && rewards.validity=='Valid'" (click)="active_modal(rewards.id)" data-toggle="modal" style="height:167px;" id="rewardDiv{{rewards.id}}">
                         <div class="re2_img">
                             <img src="assets/images/ref-logo.png" class="img-fluid">
                         </div>
+                        <h3 *ngIf="rewards.validity=='Coming Soon'"><i class="fa fa-lock" aria-hidden="true"></i> Use from 20 May,2022</h3>
+                    </div>
+                    <div class="rewl_bx" *ngIf="rewards.reward_apply=='Not Applied' && rewards.validity=='Coming Soon'">
+                        <div class="re2_img">
+                            <img src="assets/images/ref-logo.png" class="img-fluid">
+                            <p>{{rewards.rewards_title}}</p>
+                        </div>
+                        <h3><i class="fa fa-lock" aria-hidden="true"></i> Use from {{rewards.start_date}}</h3>
+                    </div>
+                    <div class="rewl_bx" *ngIf="rewards.reward_apply=='Applied'">
+                        <div class="re2_img">
+                            <img src="assets/images/ref-logo.png" class="img-fluid">
+                            <p>{{rewards.rewards_title}}</p>
+                            <h4>Valid till {{rewards.end_date}}</h4>
+                            <h6>T&C</h6>
+                        </div>
                     </div>
                 </div>
+                <!--<div class="col-6">
+                    <div class="rewl_bx">
+                        <div class="re2_img">
+                            <img src="assets/images/ref-logo.png" class="img-fluid">
+                            <p>₹ 2000 Off on Participating in</p>
+                            <h4>Valid till 31 May,2022</h4>
+                            <h6>T&C</h6>
+                        </div>
+                    </div>
+                </div>-->
                 <!--<div class="col-6">
                     <div class="rewl_bx">
                         <div class="re2_img">
@@ -76,10 +102,10 @@
             </div>
             <div class="modal-body">
                 <div class="spk-sm">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                    <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>-->
                     <p>{{rewardData_title}}</p>
                     <p>{{rewardData_desc}}</p>
-                    <p>{{rewardData_val_date}}</p>
+
                     <div class="active-img" id="act_img" style="display: none;">
                         <img src="assets/images/payment_success.gif" class="img-fluid">
                         <p>Active</p>

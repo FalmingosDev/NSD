@@ -17,6 +17,7 @@
     background: #364654;
     border-radius: 10px;
     margin-bottom: 15px;
+    height: 167px;
 }
 
 .re2_img p {
@@ -93,6 +94,7 @@
 .modal-dialog {
     position: absolute;
     bottom: 60px;
+    width: 96%;
 }
 
 .animate-bottom {
