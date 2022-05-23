@@ -4,11 +4,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from '../../../environments/environment';
 
+
 @Component({
   selector: 'app-playgame',
   templateUrl: './playgame.component.html', 
   styleUrls: ['./playgame.component.css']
 })
+
+
+
+
 export class PlaygameComponent implements OnInit {
   env=environment;
   // primaryUrl:string="https://newoapp.app/Whack_a_mole/game/index.html";
@@ -38,23 +43,25 @@ export class PlaygameComponent implements OnInit {
     this.score = localStorage.getItem('score');        
   }
   //sanitize url--------
-  getSafeUrl(url) {
+  /*getSafeUrl(url) {
+    console.log(url);
     return this.sanitizer.bypassSecurityTrustResourceUrl(url)
-  }
+  }*/
 
   game(){
     this.gameId=this.activatedRoute.snapshot.params['id'];
     this.game_id = localStorage.setItem('gameId', this.gameId);
     this.dataService.getGameUrl(this.gameId).subscribe((result) =>{
       this.gameUrl=this.primaryUrl+result.game_url;
-      this.final_url=this.getSafeUrl(this.gameUrl);
+      // this.final_url=this.getSafeUrl(this.gameUrl);
+      this.final_url=this.sanitizer.bypassSecurityTrustResourceUrl(this.gameUrl);
     });
   }
 
   gamescore(){
     this.score = localStorage.getItem('score');
     this.game_id = localStorage.getItem('gameId');
-    console.log(this.game_id);
+    //console.log(this.score);
     this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{});
   }
 
