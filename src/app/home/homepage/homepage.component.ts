@@ -81,7 +81,8 @@ userSubcriptionOtt(){
     {
 		this.dataService.userSubcription().subscribe((res)=>{
 			if(res.code==1){
-				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/play';
+				const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/game';
+        // const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/play';
 				this.router.navigate([redirect]); 
 			}
 			else{

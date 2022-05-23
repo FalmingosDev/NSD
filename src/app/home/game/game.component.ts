@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../../api.service';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -8,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  env=environment;
+  gameData: any;
+  constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
-
+    this.gameList();
   };
 
+
+  gameList(){   
+    this.dataService.gameList().subscribe((result) => {
+      this.gameData = result;
+      console.log(this.gameData);
+    });
+  }
+
+  // gameDetail(event,id){
+  //   event.preventDefault();
+  //   this.route.navigate(["/play/"+id]);
+  // }
 }

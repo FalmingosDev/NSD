@@ -3,15 +3,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-6">
-					<div class="gm-img">
+					<!-- <div class="gm-img">
 						<a routerLink="/play/B1fSpMkP51m?id=cfuucl7YgA&lang=en">
 							<img src="assets/images/game-1.webp" class="img-fluid">
 							<h6>Bottle Shoot</h6>
 							<p>164.3M plays</p>
 						</a>
+					</div> -->
+					<div class="gm-img" *ngFor="let game of gameData | keyvalue">
+						<a routerLink="/play/{{game.value.game_id}}">
+							<img src="{{env.AWS_GAME_URL+game.value.game_img}}" class="img-fluid">
+							<h6>{{game.value.game_name}}</h6>
+							<p>164.3M plays</p>
+						</a>
 					</div>
 				</div>
-				<div class="col-6">
+				<!-- <div class="col-6">
 					<div class="gm-img">
 						<a routerLink="/play/ryN9EGAQa?id=cfuucl7YgA&lang=en">
 							<img src="assets/images/game-2.webp" class="img-fluid">
@@ -55,7 +62,7 @@
 						<p>164.3M plays</p>
 					</a>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>

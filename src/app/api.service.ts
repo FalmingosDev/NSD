@@ -400,11 +400,7 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url+'savepausetime',{video_id,userEmail,play_time});
   }
   
-  public insertgamescore(game_id,score){ 
-    const userEmail=localStorage.getItem('token');   
-    return this.httpClient.post<any>(this.env.laravel_api_url+'savegamescore',{userEmail,game_id,score});
-  }
-
+ 
   public pauseTime(video_id){
     const userEmail=localStorage.getItem('token');
     return this.httpClient.post<any>(this.env.laravel_api_url+'getpausetime',{video_id,userEmail});
@@ -483,5 +479,20 @@ export class ApiService {
   //   // return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email='+email+'&referral='+code);
     
   // }
+
+  public gameList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'gamelist');
+  }
+
+  public getGameUrl(game_id){ 
+    // const userEmail=localStorage.getItem('token');   
+    return this.httpClient.post<any>(this.env.laravel_api_url+'gameurl',{game_id});
+  }
+
+
+  public insertgamescore(game_id,score){ 
+    const userEmail=localStorage.getItem('token');   
+    return this.httpClient.post<any>(this.env.laravel_api_url+'savegamescore',{userEmail,game_id,score});
+  }
 
 }
