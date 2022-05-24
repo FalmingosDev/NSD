@@ -13,3 +13,5 @@ npm install datatables.net-dt
 ## Image Fullscreen Viewer Install Command
 npm i ng-image-fullscreen-view
 npm i ng-image-fullscreen-view --force
+## Popper.js Install Command
+npm i popper.js

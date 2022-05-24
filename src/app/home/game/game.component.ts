@@ -23,12 +23,8 @@ export class GameComponent implements OnInit {
   gameList(){   
     this.dataService.gameList().subscribe((result) => {
       this.gameData = result;
-      console.log(this.gameData);
+      // console.log(this.gameData);
     });
   }
 
-  // gameDetail(event,id){
-  //   event.preventDefault();
-  //   this.route.navigate(["/play/"+id]);
-  // }
 }

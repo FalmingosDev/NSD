@@ -62,7 +62,11 @@ export class PlaygameComponent implements OnInit {
     this.score = localStorage.getItem('score');
     this.game_id = localStorage.getItem('gameId');
     //console.log(this.score);
-    this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{});
+    this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
+      localStorage.removeItem('score');
+      localStorage.removeItem('gameId');
+    });
+   
   }
 
 }
