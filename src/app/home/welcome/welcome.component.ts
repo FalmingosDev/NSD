@@ -136,14 +136,21 @@ export class WelcomeComponent implements OnInit {
         this.dataService.getcountry(this.lat,this.lng).subscribe((result) => {      
           this.country = result.countryCode;
           localStorage.setItem('current_country', this.country);
-          if(result.countryCode=='BD'){
-            this.isBD = true;
-            this.isNotBD = false;
-          }
-          else{
-            this.isBD = false;
-            this.isNotBD = true;
-          }
+          
+          //BD or not boolean Condition
+          // if(result.countryCode=='BD'){
+          //   this.isBD = true;
+          //   this.isNotBD = false;
+          // }
+          // else if(result.countryCode==''){
+          //   this.isBD = false;
+          //   this.isNotBD = true;
+          // }
+          // else{
+          //   this.isBD = false;
+          //   this.isNotBD = true;
+          // }
+
           //////////////////////
           // if(localStorage.getItem('current_country')){
           //   this.dataService.currentCountry(localStorage.getItem('current_country')).subscribe((res)=>{
