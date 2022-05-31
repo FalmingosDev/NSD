@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,AfterViewInit, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { AlertService } from 'ngx-alerts';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,8 @@ import { AlertService } from 'ngx-alerts';
 })
 export class LoginComponent implements OnInit {
   angForm: FormGroup;
+  passForm: FormGroup;
+
 
   public lat;
   public lng;
@@ -23,6 +26,10 @@ export class LoginComponent implements OnInit {
       this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
       password: ['', Validators.required]
+    });
+
+    this.passForm = this.fb.group({
+      email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
     });
   }
 
@@ -50,6 +57,29 @@ export class LoginComponent implements OnInit {
     else {
       this.alertService.warning("Geolocation is not supported by this browser.");
     }
+  }
+
+
+  passreset(passForm1) {
+    if(this.email_id.status == 'INVALID') {
+      this.alertService.warning('Please Enter Valid Email Address');
+      $('#email').focus();
+    }
+    else {      
+      this.dataService.resetPassword(passForm1.value.email).subscribe(data => {
+            if(data.status) {
+              this.alertService.success("Password has been sent to your registered email");
+              setTimeout(() => {
+                window.location.reload();
+              }, 2000);
+            } 
+            else {
+              this.alertService.danger("This email is not Registered");
+            }
+          },
+        );
+    }
+
   }
 
   postdata(angForm1) { //alert(angForm1.value.mobile); //deb
@@ -91,6 +121,16 @@ export class LoginComponent implements OnInit {
   }
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
+  get email_id() { return this.passForm.get('email'); }
+
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#forgot_pass").click(function(){
+      $('#sign_id').hide();
+      $('#reset_id').show();
+      });
+    });
+}
 
 
 }

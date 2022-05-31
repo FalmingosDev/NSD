@@ -28,15 +28,11 @@ export class ApiService {
      //alert(mobile);
      //alert(password);
     return this.httpClient.post<any>(this.env.baseUrl + '/login.php', { email,password,lat,lng })
-    /*.pipe(map(Users => {
-    // alert(JSON.stringify(Users));
+    
+  }
 
-     this.setToken(Users[0].email);
-
-    this.getLoggedInName.emit(true);
-    return Users;
-    })
-    )*/;
+  public resetPassword(email) {
+   return this.httpClient.get<any>(this.env.laravel_api_url+'resetpass/'+email);   
   }
 
 
