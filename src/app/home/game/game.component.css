@@ -8,3 +8,61 @@ section{
 a:hover{
     text-decoration: none;
 }
+
+
+.box{
+    border-radius: 30px;
+   
+    height: 350px;
+    background: #ff8100;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-title-new{
+    font-family: open sans-serif;
+    text-align: center;
+    padding: 5px 11px;
+    color: #fff;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;}
+.game{   
+     background: #f2b671;
+    /* height: 296px; */
+    border-radius: 30px;
+    padding: 10px 14px;
+    margin: -4px 10px;
+    min-height: 84%;
+}
+.game p{font-size: 27px;font-weight: 600;font-family: sans-serif;}
+
+
+
+.modal-content {
+    /* background-color: #efb812; */
+    
+    background-image: url('/assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.modal-dialog {
+    position: relative;
+    width: auto;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 66px;
+}
+.modal-title {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: justify;
+    font-style: italic;
+}
+.modal-header {
+    border: none;
+    padding: 0 13px;
+}

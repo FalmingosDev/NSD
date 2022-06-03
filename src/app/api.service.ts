@@ -480,6 +480,10 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'gamelist');
   }
 
+  public gamePayment(game_id){
+    const user_email = localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url+'gamepayment',{game_id,user_email});
+  }
   public getGameUrl(game_id){ 
     // const userEmail=localStorage.getItem('token');   
     return this.httpClient.post<any>(this.env.laravel_api_url+'gameurl',{game_id});

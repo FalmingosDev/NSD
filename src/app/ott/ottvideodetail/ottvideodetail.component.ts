@@ -96,7 +96,7 @@ export class OttvideodetailComponent implements OnInit  {
   addToWallet(vId,category, action, userEmail) {
     this.dataService.walletAdd(vId, category, action, userEmail).subscribe((result) => {
       if (result[0].status) {
-        this.alertService.success("Congratulation! You have earned "+result[0].coin+" Coins");
+        this.alertService.success("Congratulation! You have earned "+result[0].coin+" NEWO coin");
       }
       else{
         this.alertService.warning("Coin already added in your wallet for this video");
