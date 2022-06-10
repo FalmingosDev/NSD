@@ -29,8 +29,29 @@ export class WalletdetailsComponent implements OnInit {
     this.dataService.walletList().subscribe((result) => {
       this.walletData = result;
       setTimeout(function() { $('#walletTable').dataTable() }, 1000);
-      // console.log(this.walletData);
     });
   }
+
+  // walletList(){   
+  //   this.dataService.walletList().subscribe((result) => {
+  //     this.walletData = result;
+  //     setTimeout(function() { $('#walletTable').dataTable({
+  //       'columns': [
+  //         { data: 'Action' }, /* index - 0 */
+  //         { data: 'Name' }, /* index - 1 */
+  //         { data: 'NEWO Coin' }, /* index - 2 */
+  //         { data: 'CR/DR' } /* index - 3 */
+  //      ],
+  //      'columnDefs': [ {
+  //         'targets': [3,4], /* column index */
+  //         'orderable': false, /* true or false */
+  //      }]
+  //   }) }, 1000);
+  //     // console.log(this.walletData);
+  //     // $('#example').DataTable({
+  //     //   "ordering": false
+  //   // });
+  //   });
+  // }
 
 }

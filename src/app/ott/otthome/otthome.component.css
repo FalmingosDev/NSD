@@ -39,5 +39,29 @@ a {
     font-weight: 600;
 }
 
+ /*-----------------------------------------------------------------   WATCH & WIN START ---------------------------------------------*/
+
+ .super_ott_coin {
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    text-align: center;
+}
+
+.ott_coin {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    background-image: linear-gradient( to right, #ca9b64 0, #dabb8c 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #dabb8c 78%, #ca9b64 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+/*-----------------------------------------------------------------   WATCH & WIN END ---------------------------------------------*/
+
+    
+
 
 
