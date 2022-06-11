@@ -1,0 +1,60 @@
+
+.newo-bg a {
+	text-align: center;
+	display: block;
+	color: #007bff;
+	font-size: 13px;
+	margin: 3px 0px 0px;
+	
+}
+
+.newo-bg span { 
+	text-align: center;
+	display: block;
+	color: #007bff;
+	font-size: 13px;
+	margin: 3px 0px 0px; 
+	
+}
+/*
+owl-carousel-o ng-template{
+	opacity: 0.4;
+	transition: .4s ease all;
+	margin: 0 20px;
+	transform: scale(.8);
+}
+@media(max-width:1000px) {
+	owl-carousel-o ng-template {
+		margin: 0;
+		transform: scale(.9)
+	}
+}
+
+owl-carousel-o .active ng-template {
+	opacity: 1;
+	transform: scale(1);
+}*/
+.vidobytes .item{
+	opacity: 0.4;
+	transition: .4s ease all;
+	margin: 0 20px;
+	transform: scale(.8);
+}
+@media(max-width:1000px) {
+	.vidobytes .item {
+		margin: 0;
+		transform: scale(.9)
+	}
+}
+.vidobytes .active .item {
+	opacity: 1;
+	transform: scale(1);
+}
+#banner-owl .owl-nav .owl-prev, #video-home-owl .owl-nav .owl-prev {
+    font-size: 60px;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}

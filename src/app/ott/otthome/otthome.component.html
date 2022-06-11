@@ -1,6 +1,6 @@
 <app-ottheader></app-ottheader>
 <div class="ot-ection" style="margin-bottom: 74px;">
-    <section class="banner">
+    <section class="ott-banner">
         <owl-carousel-o [options]="bannerOptions">
             <ng-template carouselSlide *ngFor="let bData of bannerData | keyvalue">
                 <a (click)="videoDetail($event,bData.value.id)">

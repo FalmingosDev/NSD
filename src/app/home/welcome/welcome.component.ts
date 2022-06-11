@@ -1,111 +1,115 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
-import { AlertService } from 'ngx-alerts';
- 
+// import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css'] 
+  styleUrls: ['./welcome.component.css']
 })
+export class WelcomeComponent implements OnInit {
 
-export class WelcomeComponent implements OnInit {  
-  bannerBaseUrl:string='/assets/images/';
-  bannerArr:any=["exchange-banner.jpg","clan-banner.jpg","multiplex-banner.jpg","newsdesk-banner.jpg","newostreet-banner.jpg","nft-banner.jpg"]; 
-  assetsUrl:string = '/assets';
-
-  public lat;
-  public lng;
+  public lat: any;
+  public lng: any;
 
   country:any;
-  isSubscribe:boolean;
-  isNotSubscribe:boolean;
+  isSubscribe:boolean=false;
+  isNotSubscribe:boolean=false;
 
-  isBD:boolean;
-  isNotBD:boolean;
+  // isBD:boolean;
+  // isNotBD:boolean;
 
-  customOptions: OwlOptions  = {
-    items: 1,
-    loop: false,
+
+  customOptionsforNew: OwlOptions  = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
     margin: 10,
-    startPosition: 1,
-    mouseDrag: true,
-    touchDrag: true,
-    autoplay:false,
-    navText: ['<', '>'],
-    stagePadding:600,
+    navSpeed: 700,
+    navText: ['', ''],
     responsive: {
       0: {
-       items: 1,
-       stagePadding:30
-     },
-      480: {
-       items: 1,
-       stagePadding:30
-     },
+        items: 4
+      },
+      400: {
+        items: 4
+      },
+      740: {
+        items: 4
+      },
       940: {
-       items: 1,
-       stagePadding:10
-     }
+        items: 4
+      }
     },
-   nav: false
-   
+    nav: true
   };
-  activeSlides: SlidesOutputData;
-  slidesStore: any[];
 
-  // getPassedData(data: SlidesOutputData) {
-  
-
-  
-  customOptionsforNew: any = {
+  customOptionsforcelibraty: OwlOptions  = {
     loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    margin: 10,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 3
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: false
+  };
+
+
+  customOptionsforinside: OwlOptions  = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
     margin: 10,
     autoplay:true,
-    responsiveClass: true,
-    navText: [],
-    dots:false,
-    navSpeed:10,
+    navSpeed: 10,
+    navText: ['', ''],
     responsive: {
       0: {
-       items: 2
-     },
-      480: {
-       items: 2
-     },
+        items: 2,
+        stagePadding: 50
+      },
+      400: {
+        items: 2,
+        stagePadding: 30
+      },
+      740: {
+        items: 2,
+        stagePadding: 30
+      },
       940: {
-       items: 2
-     }
+        items: 2,
+        stagePadding: 30 
+      }
     },
-   nav: false
+    nav: false
   };
 
-  customOptionsforbanner: any = {
-    loop: true,
-    margin: 10,
-    autoplay:true,
-    responsiveClass: true,
-    navText: [],
-    dots:false,
-    responsive: {
-      0: {
-       items: 1
-     },
-      480: {
-       items: 1
-     },
-      940: {
-       items: 1
-     }
-    },
-  };
-
-
-  constructor(private router:Router,private dataService: ApiService,private alertService: AlertService) { 
+  constructor(private router:Router,private dataService: ApiService) { 
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
           if(res.cnt ==1){
@@ -123,6 +127,7 @@ export class WelcomeComponent implements OnInit {
       this.isNotSubscribe = true;
     }
   }
+  
 
   ngOnInit(): void {
     this.getCurrentLocation();
@@ -136,44 +141,11 @@ export class WelcomeComponent implements OnInit {
         this.dataService.getcountry(this.lat,this.lng).subscribe((result) => {      
           this.country = result.countryCode;
           localStorage.setItem('current_country', this.country);
-          
-          //BD or not boolean Condition
-          // if(result.countryCode=='BD'){
-          //   this.isBD = true;
-          //   this.isNotBD = false;
-          // }
-          // else if(result.countryCode==''){
-          //   this.isBD = false;
-          //   this.isNotBD = true;
-          // }
-          // else{
-          //   this.isBD = false;
-          //   this.isNotBD = true;
-          // }
-
-          //////////////////////
-          // if(localStorage.getItem('current_country')){
-          //   this.dataService.currentCountry(localStorage.getItem('current_country')).subscribe((res)=>{
-          //       if(res==BD){
-          //         this.isBD = true;
-          //         this.isNotBD = false;
-          //       }
-          //       else{
-          //         this.isBD = false;
-          //         this.isNotBD = true;
-          //       }
-          //   });
-          // } 
-          // else{
-          //   this.isBD = false;
-          //   this.isNotBD = true;
-          // }
-          ///////////////////////////
         });   
       });
     }
     else {
-      this.alertService.warning("Geolocation is not supported by this browser");
+      alert("Geolocation is not supported by this browser");
     }
   }
 
@@ -207,10 +179,5 @@ export class WelcomeComponent implements OnInit {
     sunil_video.pause();
     lara_video.pause();
   }
-
-
-
-
-
 
 }

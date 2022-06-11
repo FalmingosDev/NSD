@@ -1,48 +1,72 @@
-
-          
-    <ngx-alerts></ngx-alerts>   
-    <section class="sign-section">
-            <div class="container">
+<ngx-alerts></ngx-alerts>
+<div class="margin-div">
+    <div class="profile-name">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="sign-box">
-                        <div class="sign-text" id="sign_id">
-                            <h1>Sign In<span><a routerLink="/"><i class="fa fa-home" style="float: right; color: white;"></i></a></span></h1>
-                            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" >
-                                <input type="email" name="email" formControlName="email" class="e-ph" placeholder="Email">
-                                <!--<input type="text" name="mobile" formControlName="mobile" class="e-ph" placeholder="mobile">-->
-                                <input type="password" autocomplete="current-password" id="id_password" name="Password" formControlName="password" class="e-ph" placeholder="Password"> 
-                                <i class="fa fa-eye fa-eye-slash" aria-hidden="true" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
-                                <button class="sign-in-btn">Sign In</button> 
-                            </form>
-                            <div class="row mt-top">
-                                <div class="col-md-6 col-6">
-                                    <label class="container-check" id="forgot_pass">Forgot Password 
-                                    </label>
-                                </div>
-                                <!-- <div class="col-md-6 col-6">
-                                    <a href="#" class="nd-help">Need help?</a>
-                                </div> -->
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="lg-facebook">
-                                        <!-- <img src="assets/images/facebook-icon-img.png" class="img-fluid">
-                                        <span class="login-span">Login with Facebook</span> -->
-                                        <p class="new-p-o">New to Newo? <a routerLink="/signup"> Sign up now.</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sign-text" id="reset_id" style="display: none;">
-                            <h1>Reset Password<span><a routerLink="/"><i class="fa fa-home" style="float: right; color: white;"></i></a></span></h1>
-                            <form [formGroup]="passForm" (ngSubmit)="passreset(passForm)" >
-                                <input type="email" name="email" formControlName="email" class="e-ph" placeholder="Email">
-                                <button class="sign-in-btn">Submit</button> 
-                            </form>
+                <div class="col-8">
+                    <div class="profile-header-details">
+                        <a href="#">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="profile-header-details">
+                        <div class="face-round-profile">
+                            <img src="assets/images/logo.png" class="img-fluid">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>  
-    </section>
+        </div>
+  </div> 
+  <div class="my-newo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-newo-text">
+                    <h2><span> Login</span></h2>
+                    <p>Pleace sign in to continue</p>
+                </div>
+            </div>
+        </div>
+        <section class="password-change-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="edit-form"> 
+                    <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" >
+                      <div class="form-group">
+                        <label class="edit-label" for="">Email</label>
+                        <input type="email" formControlName="email" class="form-control" id="email-text" aria-describedby="emailHelp">
+                      </div>
+                      <div class="form-group frm-input">                          
+                      </div>
+                      <div class="form-group frm-input">
+                        <label class="edit-label" for="">Password</label>
+                        <li>
+                          <input type="password" name="password" formControlName="password" class="form-control" id="password" />
+                          <span class="password-showhide">
+                            <span class="show-password"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                          <span class="hide-password"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                          </span>
+                        </li>
+                    </div>
+                        <div class="fg">
+                            <a href="#">Forgot Password</a>
+                        </div>
+                        <div class="sg-btn">
+                            <button type="submit" class="btn btn-warning">Sign In</button>
+                        </div>
+                        <div class="did-ac">
+                            <p>Didn't have an account?<a routerLink="/signup"> Create Account</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+  </section>
+      </div>
+  </div>
+</div>

@@ -1,190 +1,321 @@
-<app-welcomeheader></app-welcomeheader>
-<div class="mt-bt">
+<div class="margin-div">
+    <section class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="newo-img">
+                        <img src="assets/images/logo.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="offset-6 col-2 text-center">
+                    <div class="round-img">
+                        <a routerLink="/profile">
+                        <img src="assets/images/face-round.png" class="img-fluid"> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
     <section class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <owl-carousel-o [options]="customOptionsforbanner" id="banner-owl">
-                        <ng-template carouselSlide *ngFor="let bn of bannerArr ">
-                            <img src={{bannerBaseUrl}}{{bn}} class="img-fluid">
+                    <div class="img-logo-div">
+                        <div class="wl-cm">
+                            <img src="assets/images/yel-arrow.png" class="img-fluid">
+                            <h2>WELCOME <span>TO</span> <span>THE</span></h2>
+                            <img src="assets/images/smart-text.png" class="img-fluid smrt">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="newo-join">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <img src="assets/images/newo-cln.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="join-div">
+                        <!-- <a href="#">Join Now</a> -->
+                        <!-- <a href="javascript:void(0)"> -->
+                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
+                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
+                        <!-- </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+    <section class="ml-sl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <owl-carousel-o [options]="customOptionsforNew" class="sl-im-pd" id="sl-img">
+                            <ng-template carouselSlide>
+                                <div class="sl-img">
+                                    <div class="sl-img-sm">
+                                        <img src="assets/images/sl-1.png" class="img-fluid">
+                                    </div>
+                                    <div class="round-sl">
+                                        <img src="assets/images/popcorn.png" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
+                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="sl-img">
+                                    <div class="sl-img-sm">
+                                        <img src="assets/images/sl-2.png" class="img-fluid">
+                                    </div>
+                                    <div class="round-sl">
+                                        <img src="assets/images/sl-icon-2.png" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
+                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="sl-img">
+                                    <div class="sl-img-sm">
+                                        <img src="assets/images/sl-3.png" class="img-fluid">
+                                    </div>
+                                    <div class="round-sl">
+                                        <img src="assets/images/sl-icon-3.png" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
+                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="sl-img">
+                                    <div class="sl-img-sm">
+                                        <img src="assets/images/sl-4.png" class="img-fluid">
+                                    </div>
+                                    <div class="round-sl">
+                                        <img src="assets/images/sl-icon-4.png" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
+                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                </div>
+            </div>
+        </div>  
+    </section>
+      <section class="grd-background">
+          <div class="container-fluid">
+              <div class="row">
+                 <div class="col-md-12 p-0">
+                    <img src="assets/images/gra-img.png" class="img-fluid">
+                  </div>   
+              </div>
+          </div>
+      </section>
+      <section class="smart-div">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/images/dev-newo-app-img.png" class="img-fluid">
+                </div>
+              </div>
+          </div>
+      </section>
+      <section class="celibraty-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <owl-carousel-o [options]="customOptionsforcelibraty" (translated)="getPassedData()" class="sl-im-pd" id="celb">
+                        <ng-template carouselSlide>
+                            <a href="#">
+                                <div class="celibraty-main-div">
+                                    <div class="celb-img">
+                                        <img src="assets/images/cricketer.jpg" class="img-fluid clb-img-sm">
+                                        <!-- <video id="vid1" poster="assets/images/cricketer.jpg" width="100%" height="240" controls>
+                                        <source src="/assets/video/johnty-rodes.mp4" type="video/mp4" /> -->
+                                        <!-- </video> -->
+                                        <div class="youtube-icon">
+                                            <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#">
+                                <div class="celibraty-main-div">
+                                <div class="celb-img">
+                                    <img src="assets/images/lara.jpg" class="img-fluid clb-img-sm">
+                                    <div class="youtube-icon">
+                                        <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#">
+                                <div class="celibraty-main-div">
+                                <div class="celb-img">
+                                    <img src="assets/images/sidh.jpg" class="img-fluid clb-img-sm">
+                                    <div class="youtube-icon">
+                                        <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <a href="#">
+                                <div class="celibraty-main-div">
+                                    <div class="celb-img">
+                                        <img src="assets/images/cricketer.jpg" class="img-fluid clb-img-sm">
+                                        <div class="youtube-icon">
+                                            <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="newo-clan">
-        <div class="container">
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <!-- <a *ngIf="isNotBD" href="https://newocoin.in/"> -->
-                        <div class="newo-bg">                            
-                            <img src="/assets/images/newo-exchange.jpg" class="img-fluid">
-                        </div>
-                    <!-- </a> -->
-                    <!-- <a *ngIf="isNotBD" href="https://newocoin.in/">
-                        <div class="newo-bg">                            
-                            <img src="/assets/images/newo-exchange.jpg" class="img-fluid">
-                        </div>
-                    </a>
-                    <a *ngIf="isBD" href="javascript:void(0)">
-                    </a> 
-
-                    <a href="https://newocoin.in/">
-                        <div class="newo-bg">                            
-                            <img src="/assets/images/newo-exchange.png" class="img-fluid">
-                        </div>
-                    </a>
-                    <a *ngIf="this.country=='BD'" href="javascript:void(0)">
-                    </a>
-                     -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="newo-video">
+          </div>
+      </section>
+      <section class="net_ott">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <!--owl-->
-                    <owl-carousel-o [options]="customOptions" (translated)="getPassedData()" class="video-owl-sm">
+                    <img src="assets/images/ott-bg-sm.png" class="img-fluid">
+                </div>
+            </div>  
+        </div>
+      </section>
+      <section class="round-st-box-section">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#">
+                        <div class="round-st-bx">
+                            <div class="row round-md-row">
+                                <div class="col-4">
+                                    <div class="net-st">
+                                        <img src="assets/images/net-star.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-3 text-right"> 
+                                    <img src="assets/images/round-sl-1.png" class="img-fluid">
+                                </div>
+                                <div class="col-1">
+                                    <div class="brd-border"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="arrow-wt">
+                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="round-st-bx">
+                            <div class="row round-md-row">
+                                <div class="col-4">
+                                    <div class="net-st">
+                                        <img src="assets/images/n-hastag.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-3 text-right"> 
+                                    <img src="assets/images/round-sl-2.png" class="img-fluid">
+                                </div>
+                                <div class="col-1">
+                                    <div class="brd-border"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="arrow-wt">
+                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="round-st-bx">
+                            <div class="row round-md-row">
+                                <div class="col-4">
+                                    <div class="net-st">
+                                        <img src="assets/images/n-games.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-3 text-right"> 
+                                    <img src="assets/images/round-sl-3.png" class="img-fluid">
+                                </div>
+                                <div class="col-1">
+                                    <div class="brd-border"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="arrow-wt">
+                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+              </div>
+          </div>
+      </section>
+      <section class="newo-inside">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newo-in-h1">
+                        <img src="assets/images/newo-lg.png" class="img-fluid"><span>INSIDES</span><span class="art_btn_sm"><img src="assets/images/ar-btn.png" class="img-fluid"></span>
+                    </div>
+                </div>
+            </div>
+                <div class="inside_div">
+                    <owl-carousel-o [options]="customOptionsforinside" class="sl-im-pd"  id="inside_id">
                         <ng-template carouselSlide>
-                            <video id="vid1" poster="/assets/images/jonty-img.jpg" width="100%" height="240" controls>
-                    <source src="/assets/video/johnty-rodes.mp4" type="video/mp4" />
-                  </video>
+                            <div class="it_owl">
+                                <img src="assets/images/newo-ins-1.png" class="img-fluid">
+                            </div>
                         </ng-template>
                         <ng-template carouselSlide>
-                            <video id="vid2" poster="/assets/images/dev-img.jpg" width="100%" height="240" controls>
-                    <source src="/assets/video/dev.mp4" type="video/mp4" />
-                  </video>
+                            <div class="it_owl">
+                                <img src="assets/images/newo-ins-2.png" class="img-fluid">
+                            </div>
                         </ng-template>
                         <ng-template carouselSlide>
-                            <video id="vid3" poster="/assets/images/sunil-img.jpg" width="100%" height="240" controls>
-                    <source src="/assets/video/sunil-grover.mp4" type="video/mp4" />
-                  </video>
+                            <div class="it_owl">
+                                <img src="assets/images/newo-ins-1.png" class="img-fluid">
+                            </div>
                         </ng-template>
                         <ng-template carouselSlide>
-                            <video id="vid4" poster="/assets/images/lara-img.jpg" width="100%" height="240" controls>
-                    <source src="/assets/video/lara-dutta.mp4" type="video/mp4" />
-                  </video>
+                            <div class="it_owl">
+                                <img src="assets/images/newo-ins-2.png" class="img-fluid">
+                            </div>
                         </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="new-clan-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <figure>
-                        <ul class="tree">
-                            <li>
-                                <span>
-                                    <a href="javascript:void(0)"><img src="/assets/images/newoclan.png" style="width: 67%;">
-                                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
-                                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
-                                    </a>
-                                </span> 
-                                <!-- <ul>
-                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-ott.png"
-                          style="width: 100%;"></a></span></li>
-                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-games.png"
-                          style="width: 100%;"></a></span></li>
-                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-hastag.png"
-                          style="width: 100%;"></a></span></li>
-                                    <li><span><a href="javascript:void(0)"><img src="assets/images/newo-star.png"
-                          style="width: 100%;"></a></span></li>
-                                </ul> -->
-                            </li>
-                        </ul>
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-
-                    <!--owl-->
-                    <!-- plyr  -->
-                    <!-- <plyr style="display: block; width: 640px;" plyrTitle="Video 1" [plyrPlaysInline]="true" [plyrSources]="videoSources" (plyrInit)="player = $event" (plyrPlay)="played($event)"></plyr>
-          <button (click)="play()">Play</button> -->-->
-                    <!-- plyr -->
-
-                    <owl-carousel-o [options]="customOptionsforNew">
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/mx-w-1.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/sp-2.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/mx-w-3.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/sp-4.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/sp-5.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/sp-6.jpg" class="img-fluid">
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <img src="/assets/images/sp-7.jpg" class="img-fluid">
-                        </ng-template>
-                    </owl-carousel-o>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="t-show-section">
-        <div class="container">
-            <div class="row mt-3">
-                <div class="col-6">
-                    <a routerLink="/about_multiplex">
-                        <div class="newo-bg">
-                            <img src="assets/images/multiplex.png" class="img-fluid" />
-                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a routerLink="/newsdesk">
-                        <div class="newo-bg">
-                            <img src="assets/images/newsdesk.png" class="img-fluid" />
-
-                            <!-- <span>View More...</span> -->
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-6">
-                    <a routerLink="/newostreet">
-                        <div class="newo-bg">
-                            <img src="assets/images/newostreet.png" class="img-fluid" />
-                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a routerLink="/nft">
-                        <div class="newo-bg">
-                            <img src="assets/images/nft.png" class="img-fluid" />
-                            <!-- <a routerLink="/comingsoon">Read More...</a> -->
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>
-<app-welcomefooter></app-welcomefooter>
+      </section>
+      
+          </div>
+          <app-welcomefooter></app-welcomefooter>
+        
+        
