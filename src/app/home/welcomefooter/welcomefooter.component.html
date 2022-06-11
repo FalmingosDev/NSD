@@ -1,83 +1,91 @@
 <div class="mobile_footer">
-    <div id="p1"><a routerLink="/"><img src="assets/images/footer-home.png" class="img-fluid" style="width: 30%;"></a></div> 
-    <div id="p2"><a href="#"><img src="assets/images/foot-2-img.png" style="width: 30%;"></a></div>
-    <div id="p3"><a href="#"><img src="assets/images/foot-3-img.png" style="width: 50%;"></a></div>
-    <div id="p4"><a href="#"><img src="assets/images/foot-4-img.png" style="width: 30%;"></a></div> 
+    <div id="p1">
+        <a routerLink="/"><img src="assets/images/footer-home.png" class="img-fluid" style="width: 30%;"></a>
+    </div>
+    <div id="p2">
+        <a href="#"><img src="assets/images/foot-2-img.png" style="width: 30%;"></a>
+    </div>
+    <div id="p3">
+        <a href="#"><img src="assets/images/foot-3-img.png" style="width: 50%;"></a>
+    </div>
+    <div id="p4">
+        <a href="#"><img src="assets/images/foot-4-img.png" style="width: 30%;"></a>
+    </div>
     <div id="p5">
-            <span style="cursor:pointer" onclick="openNav()"><img src="assets/images/foot-5-img.png" style="width: 30%;"></span>
-            
-            <div id="mySidenav" class="sidenav">
-                <div class="menu-div">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#useful-links">Useful Links</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#services">Services</a>
-                </li>
-              </ul>
+        <span style="cursor:pointer" onclick="openNav()"><img src="assets/images/foot-5-img.png" style="width: 30%;"></span>
 
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div id="useful-links" class="container tab-pane active"><br>
-                  <ul class="menu-ul">
-                    <li>
-                        <a href="#"><img src="assets/images/notification-icon.png">Notifications</a>
-                    </li>  
-                    <li>
-                        <a href="#"><img src="assets/images/about-company-icon.png">About Company</a>
+        <div id="mySidenav" class="sidenav">
+            <div class="menu-div">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#useful-links">Useful Links</a>
                     </li>
-                      <li>
-                        <a href="#"><img src="assets/images/blog-icon.png">Blog</a>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#services">Services</a>
                     </li>
-                      <li>
-                        <a href="#"><img src="assets/images/stories-icon.png">Stories</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/review-icon.png">Reviews</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/faq-icon.png">FAQ</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/support-icon.png">Support Center</a>
-                    </li>
-                  </ul>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="useful-links" class="container tab-pane active"><br>
+                        <ul class="menu-ul">
+                            <li>
+                                <a href="#"><img src="assets/images/notification-icon.png">Notifications</a>
+                            </li>
+                            <li>
+                                <a routerLink="/about"><img src="assets/images/about-company-icon.png">About Company</a>
+                            </li>
+                            <li>
+                                <a routerLink="/blogs"><img src="assets/images/blog-icon.png">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="assets/images/stories-icon.png">Stories</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="assets/images/review-icon.png">Reviews</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="assets/images/faq-icon.png">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="assets/images/support-icon.png">Support Center</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="services" class="container tab-pane fade"><br>
+                        <ul class="menu-ul">
+                            <li>
+                                <a href="#"><img src="assets/images/exchange-icon.png">Exchange</a>
+                            </li>
+                            <li>
+                                <a routerLink="/nft"><img src="assets/images/nft-icon.png">NFT ART</a>
+                            </li>
+                            <li>
+                                <a routerLink="/about_multiplex"><img src="assets/images/multiplex-icon.png">Multiplex</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" (click)="checkAuth('ott')"><img src="assets/images/ott-icon.png">OTT</a>
+                            </li>
+                            <li>
+                                <a routerLink="/newsdesk"><img src="assets/images/newsdesk-icon.png">Newsdesk</a>
+                            </li>
+                            <li>
+                                <a routerLink="/newostreet"><img src="assets/images/street-icon.png">Street</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" (click)="checkAuth()"><img src="assets/images/newocln-icon.png">Newoclan</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" (click)="checkAuth('hash')"><img src="assets/images/hastag-icon.png">Hastag</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" (click)="checkAuth('game')"><img src="assets/images/games.png">Games</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="services" class="container tab-pane fade"><br>
-                  <ul class="menu-ul">
-                    <li>
-                        <a href="#"><img src="assets/images/exchange-icon.png">Exchange</a>
-                    </li>  
-                    <li>
-                        <a href="#"><img src="assets/images/nft-icon.png">NFT ART</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/multiplex-icon.png">Multiplex</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/ott-icon.png">OTT</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/newsdesk-icon.png">Newsdesk</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/street-icon.png">Street</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/newocln-icon.png">Newoclan</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="ssets/images/hastag-icon.png">Hastag</a>
-                    </li>
-                      <li>
-                        <a href="#"><img src="assets/images/games.png">Games</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
         </div>
-      </div> 
+    </div>
 </div>

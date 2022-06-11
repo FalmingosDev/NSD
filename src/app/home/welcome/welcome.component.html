@@ -10,12 +10,12 @@
                 <div class="offset-6 col-2 text-center">
                     <div class="round-img">
                         <a routerLink="/profile">
-                        <img src="assets/images/face-round.png" class="img-fluid"> 
+                            <img src="assets/images/face-round.png" class="img-fluid">
                         </a>
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
     </section>
     <section class="banner">
         <div class="container">
@@ -44,95 +44,99 @@
                     <div class="join-div">
                         <!-- <a href="#">Join Now</a> -->
                         <!-- <a href="javascript:void(0)"> -->
-                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
-                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
+                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
+                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
                         <!-- </a> -->
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
     </section>
     <section class="ml-sl">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                        <owl-carousel-o [options]="customOptionsforNew" class="sl-im-pd" id="sl-img">
-                            <ng-template carouselSlide>
-                                <div class="sl-img">
-                                    <div class="sl-img-sm">
-                                        <img src="assets/images/sl-1.png" class="img-fluid">
-                                    </div>
-                                    <div class="round-sl">
-                                        <img src="assets/images/popcorn.png" class="img-fluid">
-                                    </div>
-                                    <div class="bottom-img">
-                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
-                                    </div>
+                    <owl-carousel-o [options]="customOptionsforNew" class="sl-im-pd" id="sl-img">
+                        <ng-template carouselSlide>
+                            <div class="sl-img">
+                                <div class="sl-img-sm">
+                                    <img src="assets/images/sl-1.png" class="img-fluid">
                                 </div>
-                            </ng-template>
-                            <ng-template carouselSlide>
-                                <div class="sl-img">
-                                    <div class="sl-img-sm">
-                                        <img src="assets/images/sl-2.png" class="img-fluid">
-                                    </div>
-                                    <div class="round-sl">
-                                        <img src="assets/images/sl-icon-2.png" class="img-fluid">
-                                    </div>
-                                    <div class="bottom-img">
-                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
-                                    </div>
+                                <div class="round-sl">
+                                    <img src="assets/images/popcorn.png" class="img-fluid">
                                 </div>
-                            </ng-template>
-                            <ng-template carouselSlide>
-                                <div class="sl-img">
-                                    <div class="sl-img-sm">
-                                        <img src="assets/images/sl-3.png" class="img-fluid">
-                                    </div>
-                                    <div class="round-sl">
-                                        <img src="assets/images/sl-icon-3.png" class="img-fluid">
-                                    </div>
-                                    <div class="bottom-img">
-                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
-                                    </div>
+                                <div class="bottom-img" style="text-align:center; ">
+                                    <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px; border-radius: 5px;">MULTIPLEX</span>
+                                    <!-- <img src="assets/images/multiplex-bx.png" class="img-fluid"> -->
                                 </div>
-                            </ng-template>
-                            <ng-template carouselSlide>
-                                <div class="sl-img">
-                                    <div class="sl-img-sm">
-                                        <img src="assets/images/sl-4.png" class="img-fluid">
-                                    </div>
-                                    <div class="round-sl">
-                                        <img src="assets/images/sl-icon-4.png" class="img-fluid">
-                                    </div>
-                                    <div class="bottom-img">
-                                        <img src="assets/images/multiplex-bx.png" class="img-fluid">
-                                    </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="sl-img">
+                                <div class="sl-img-sm">
+                                    <img src="assets/images/sl-2.png" class="img-fluid">
                                 </div>
-                            </ng-template>
-                        </owl-carousel-o>
+                                <div class="round-sl">
+                                    <img src="assets/images/sl-icon-2.png" class="img-fluid">
+                                </div>
+                                <div class="bottom-img" style="text-align:center; ">
+                                    <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">NEWSDESK</span>
+                                    <!-- <img src="assets/images/multiplex-bx.png" class="img-fluid"> -->
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="sl-img">
+                                <div class="sl-img-sm">
+                                    <img src="assets/images/sl-3.png" class="img-fluid">
+                                </div>
+                                <div class="round-sl">
+                                    <img src="assets/images/sl-icon-3.png" class="img-fluid">
+                                </div>
+                                <div class="bottom-img" style="text-align:center; ">
+                                    <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">STREET</span>
+                                    <!-- <img src="assets/images/multiplex-bx.png" class="img-fluid"> -->
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="sl-img">
+                                <div class="sl-img-sm">
+                                    <img src="assets/images/sl-4.png" class="img-fluid">
+                                </div>
+                                <div class="round-sl">
+                                    <img src="assets/images/sl-icon-4.png" class="img-fluid">
+                                </div>
+                                <div class="bottom-img" style="text-align:center; ">
+                                    <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">NFT ART</span>
+                                    <!-- <img src="assets/images/multiplex-bx.png" class="img-fluid"> -->
+                                </div>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
                 </div>
             </div>
-        </div>  
+        </div>
     </section>
-      <section class="grd-background">
-          <div class="container-fluid">
-              <div class="row">
-                 <div class="col-md-12 p-0">
+    <section class="grd-background">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 p-0">
                     <img src="assets/images/gra-img.png" class="img-fluid">
-                  </div>   
-              </div>
-          </div>
-      </section>
-      <section class="smart-div">
-          <div class="container">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="smart-div">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <img src="assets/images/dev-newo-app-img.png" class="img-fluid">
                 </div>
-              </div>
-          </div>
-      </section>
-      <section class="celibraty-div">
+            </div>
+        </div>
+    </section>
+    <section class="celibraty-div">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -155,25 +159,25 @@
                         <ng-template carouselSlide>
                             <a href="#">
                                 <div class="celibraty-main-div">
-                                <div class="celb-img">
-                                    <img src="assets/images/lara.jpg" class="img-fluid clb-img-sm">
-                                    <div class="youtube-icon">
-                                        <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                    <div class="celb-img">
+                                        <img src="assets/images/lara.jpg" class="img-fluid clb-img-sm">
+                                        <div class="youtube-icon">
+                                            <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </a>
                         </ng-template>
                         <ng-template carouselSlide>
                             <a href="#">
                                 <div class="celibraty-main-div">
-                                <div class="celb-img">
-                                    <img src="assets/images/sidh.jpg" class="img-fluid clb-img-sm">
-                                    <div class="youtube-icon">
-                                        <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                    <div class="celb-img">
+                                        <img src="assets/images/sidh.jpg" class="img-fluid clb-img-sm">
+                                        <div class="youtube-icon">
+                                            <img src="assets/images/youtube-icon.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </a>
                         </ng-template>
                         <ng-template carouselSlide>
@@ -191,19 +195,21 @@
                     </owl-carousel-o>
                 </div>
             </div>
-          </div>
-      </section>
-      <section class="net_ott">
+        </div>
+    </section>
+    <section class="net_ott">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="assets/images/ott-bg-sm.png" class="img-fluid">
+                    <a href="javascript:void(0)" (click)="checkAuth('ott')">
+                        <img src="assets/images/ott-bg-sm.png" class="img-fluid">
+                    </a>
                 </div>
-            </div>  
+            </div>
         </div>
-      </section>
-      <section class="round-st-box-section">
-          <div class="container">
+    </section>
+    <section class="round-st-box-section">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <a href="#">
@@ -215,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1"></div>
-                                <div class="col-3 text-right"> 
+                                <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-1.png" class="img-fluid">
                                 </div>
                                 <div class="col-1">
@@ -223,7 +229,9 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="arrow-wt">
-                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                        <a href="javascript:void(0)" (click)="checkAuth('stars')">
+                                            <img src="assets/images/arrow.png" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +246,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1"></div>
-                                <div class="col-3 text-right"> 
+                                <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-2.png" class="img-fluid">
                                 </div>
                                 <div class="col-1">
@@ -246,7 +254,9 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="arrow-wt">
-                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                        <a href="javascript:void(0)" (click)="checkAuth('hash')">
+                                            <img src="assets/images/arrow.png" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +271,7 @@
                                     </div>
                                 </div>
                                 <div class="col-1"></div>
-                                <div class="col-3 text-right"> 
+                                <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-3.png" class="img-fluid">
                                 </div>
                                 <div class="col-1">
@@ -269,17 +279,19 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="arrow-wt">
-                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                        <a href="javascript:void(0)" (click)="checkAuth('game')">
+                                            <img src="assets/images/arrow.png" class="img-fluid">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-              </div>
-          </div>
-      </section>
-      <section class="newo-inside">
+            </div>
+        </div>
+    </section>
+    <section class="newo-inside">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -288,34 +300,32 @@
                     </div>
                 </div>
             </div>
-                <div class="inside_div">
-                    <owl-carousel-o [options]="customOptionsforinside" class="sl-im-pd"  id="inside_id">
-                        <ng-template carouselSlide>
-                            <div class="it_owl">
-                                <img src="assets/images/newo-ins-1.png" class="img-fluid">
-                            </div>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <div class="it_owl">
-                                <img src="assets/images/newo-ins-2.png" class="img-fluid">
-                            </div>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <div class="it_owl">
-                                <img src="assets/images/newo-ins-1.png" class="img-fluid">
-                            </div>
-                        </ng-template>
-                        <ng-template carouselSlide>
-                            <div class="it_owl">
-                                <img src="assets/images/newo-ins-2.png" class="img-fluid">
-                            </div>
-                        </ng-template>
-                    </owl-carousel-o>
-                </div>
+            <div class="inside_div">
+                <owl-carousel-o [options]="customOptionsforinside" class="sl-im-pd" id="inside_id">
+                    <ng-template carouselSlide>
+                        <div class="it_owl">
+                            <img src="assets/images/newo-ins-1.png" class="img-fluid">
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="it_owl">
+                            <img src="assets/images/newo-ins-2.png" class="img-fluid">
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="it_owl">
+                            <img src="assets/images/newo-ins-1.png" class="img-fluid">
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="it_owl">
+                            <img src="assets/images/newo-ins-2.png" class="img-fluid">
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
             </div>
-      </section>
-      
-          </div>
-          <app-welcomefooter></app-welcomefooter>
-        
-        
+        </div>
+    </section>
+
+</div>
+<app-welcomefooter></app-welcomefooter>
