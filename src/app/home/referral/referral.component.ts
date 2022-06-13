@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from 'ngx-alerts';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -16,12 +17,24 @@ export class ReferralComponent implements OnInit {
   referralCodeId:any;
   total:number;
 
-  constructor(private dataService: ApiService,private route:Router,private alertService: AlertService) { }
+  final_url:string;
+  sanitizer:any;
+  wappShareurl:string;
+  wappUrl:string="https://web.whatsapp.com://send?text=https://newocoin.app/share/share.html?refCodeUrl="
+
+  constructor(sanitizer: DomSanitizer,private dataService: ApiService,private route:Router,private alertService: AlertService) {
+    this.sanitizer=sanitizer;
+   }
 
   ngOnInit(): void {
 
+    
+
     this.checkProfile();
     this.getListDetails();
+
+    // this.final_url=this.wappUrl+this.referralCodeId;
+    // this.wappShareurl=this.sanitizer.bypassSecurityTrustResourceUrl(this.final_url);
   }
   copyToClipboard(element){
     var $temp = $("<input>");
@@ -38,6 +51,10 @@ export class ReferralComponent implements OnInit {
       this.collection=result;
       this.item=this.collection.referralList;
       this.referralCodeId=this.collection.referralCode;
+
+      this.final_url=this.wappUrl+this.referralCodeId;
+    this.wappShareurl=this.sanitizer.bypassSecurityTrustResourceUrl(this.final_url);
+
       //this.referPoint=this.collection.referralList;
       //  console.warn(this.item);
       //console.log(this.referralCodeId);

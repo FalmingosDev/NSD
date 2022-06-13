@@ -1,5 +1,6 @@
 <div class="mt-bt">
     <app-welcomeheader></app-welcomeheader>
+    
     <section class="sec-mt-bt">
         <div class="container">
             <div class="row">
@@ -15,8 +16,11 @@
                                 <span class="share_cd" id="myId">Share this code</span>
                                 <div class="share_cd">
                                     <ul>
-                                        <!-- <li><a href="whatsapp://send?text=https://newocoin.app?refCodeUrl={{referralCodeId}}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li> -->
-                                        <li><i class="fa fa-whatsapp" aria-hidden="true"></i></li>
+                                        <!-- <li><a href="whatsapp://send?text=https://newocoin.app/share/share.html?refCodeUrl={{referralCodeId}}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li> -->
+                                        <a [href]="wappShareurl" data-action="share/whatsapp/share" target="_blank">
+                                        <li><i class="fa fa-whatsapp" aria-hidden="true">
+                                            
+                                        </i></li></a>
                                         <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
                                         <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
                                     </ul>
@@ -48,5 +52,6 @@
             </div>
         </div>
     </section>
+
     <app-welcomefooter></app-welcomefooter>
 </div>

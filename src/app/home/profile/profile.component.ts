@@ -20,6 +20,10 @@ export class ProfileComponent implements OnInit {
   phone: any=[];
   password: any=[];
   wallet: any=[];
+  referrer_point: any=[];
+  login_time: any=[];
+  wallet_point: any=[];
+
 
 
   pwChangeForm: FormGroup | undefined;
@@ -34,7 +38,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     
     this.checkProfile()
-    this.dataService.profileData(this.local_email).subscribe((res: { data: { name: string | undefined; email: string | undefined; phone: any; password: any; point: any; }; }) => {
+    this.dataService.profileData(this.local_email).subscribe((res) => {
       if(res.data){
         this.result=res.data;
         this.name=res.data.name;
@@ -42,23 +46,22 @@ export class ProfileComponent implements OnInit {
         this.phone=res.data.phone;
         this.password=res.data.password;
         this.wallet=res.data.point;
+        this.referrer_point=res.data.referrer_point;
+        this.wallet_point=res.data.wallet_point;
+        this.login_time=res.data.login_time;
 
       }
      });
 
 
      this.pwChangeForm = new FormGroup({
-
       old_password : new FormControl('', Validators.required),
       new_password : new FormControl('', Validators.required),
   
     })
 
     this.phnChangeForm = new FormGroup({
-
-      // new_phone : new FormControl('',(Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"))),
-      new_phone : new FormControl('',(Validators.required, Validators.pattern("^([1-9][0-9]*|0)$"))),
-      
+      new_phone : new FormControl('',(Validators.required, Validators.pattern("^([1-9][0-9]*|0)$"))),      
       otp : new FormControl('', Validators.required),
   
     })
@@ -171,6 +174,7 @@ export class ProfileComponent implements OnInit {
       this.route.navigate(['/login']);   
     }
   }
+
 
 
 }

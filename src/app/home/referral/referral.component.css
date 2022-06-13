@@ -4,10 +4,10 @@
     display: flex;
     align-items: center;
     height: 70vh;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     background: linear-gradient( rgb(0 0 0 / 79%) 100%, rgb(0 0 0 / 69%) 100%), url(/assets/images/profile.jpg);
-    height: 85vh;
+    height: 79vh;
     background-size: cover;
     background-repeat: no-repeat;
 }

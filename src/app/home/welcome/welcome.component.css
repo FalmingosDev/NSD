@@ -3,7 +3,7 @@
 }
 .clb-img-sm {
     width: 100% !important;
-    height: 87px !important;
+    /* height: 87px !important; */
     object-fit: cover;
     border-radius: 10px;
 } 
@@ -14,4 +14,14 @@
 
 #sl-img .owl-stage {
     padding-top: 33px;
+}
+.modal-content {
+    background-color: #0000;
+}
+.close {
+    color: #fff;
+    opacity: 9;
+}
+.modal-header {
+    border-bottom: none;
 }

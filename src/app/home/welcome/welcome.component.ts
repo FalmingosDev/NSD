@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
+
 // import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -13,6 +14,8 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
+  
 
   public lat: any;
   public lng: any;
@@ -110,6 +113,8 @@ export class WelcomeComponent implements OnInit {
   };
 
   constructor(private router:Router,private dataService: ApiService) { 
+   
+
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
           if(res.cnt ==1){
@@ -131,7 +136,9 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentLocation();
+    
   }
+
 
   getCurrentLocation(){
     if(navigator.geolocation) {
