@@ -1,115 +1,96 @@
-<app-welcomeheader></app-welcomeheader>
-<div class="mt-bt">
-    <ngx-alerts></ngx-alerts>
-    <section class="pr-f-pr-back">
+<div class="margin-div">
+    <div class="profile-name">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <!-- <div class="my-pr-f"><a routerLink="/">Back</a></div> -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="pr-f-section">
-        <div class="container mt-ft-pr">
-            <div class="row">
-                <div class="col-12">
-                    <div class="heading-perofile">
-                        <h3>My Profile</h3>
+                <div class="col-7">
+                    <div class="profile-header-details">
+                        <a href="#">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </a>
+                        <h6>Hi,<span class="profile-user-name">{{name}}</span>
+                            <span class="profile-email">{{email}}</span></h6>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="pr-f-bl-child">
-                        <div class="pr-f-bl">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="wallet-img">
-                                        <a routerLink="/walletdetails">
-                                        <span>{{wallet}}</span><img src="assets/images/wallet-icon.png" class="img-fluid"></a>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label class="nm-lb-p">{{name}}</label>
-                                    <div class="nm-lb-p-s">{{email}}</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1 pr-0">
-                                    <label class="nm-lb"><i class="fa fa-phone" aria-hidden="true"></i></label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="phone" class="ph-mn" value="{{phone}}" placeholder="Type Phone No..">
-                                </div>
-                                <div class="col-3 p-0">
-                                    <button type="button" class="up-cl" (click)="showphn()">Edit Phone</button>
-                                </div>
-                            </div>
-                            <form class="container" [formGroup]="phnChangeForm" (ngSubmit)="phoneUpdate(phnChangeForm.value)">
-                                <div class="id-sm" id="id1">
-                                    <div class="row">
-                                        <div class="col-1 pr-0">
-                                            <label class="nm-lb"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></label>
-                                        </div>
-                                        <div class="col-11">
-                                            <input type="phone" class="ph-mn" formControlName="new_phone" placeholder="Type New Phone No.." id="new_phone">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1 pr-0">
-                                            <label class="nm-lb"><i class="fa fa-mobile" aria-hidden="true"></i></label>
-                                        </div>
-                                        <div class="col-11">
-                                            <input type="phone" class="ph-mn" formControlName="otp" placeholder="Enter OTP.." id="otp">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="otp-btn">Update</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="row">
-                                <div class="col-1">&nbsp;</div>
-                                <div class="col-11">
-                                    <button type="button" class="up-cl-pass" (click)="showpwd()">Update Password</button>
-                                </div>
-                            </div>
-                            <form class="container" [formGroup]="pwChangeForm" (ngSubmit)="passwordUpdate(pwChangeForm.value)">
-                                <div class="id-sm" id="id2">
-                                    <div class="row mt-3">
-                                        <div class="col-1 pr-0">
-                                            <label class="nm-lb"><i class="fa fa-unlock-alt" aria-hidden="true"></i> </label>
-                                        </div>
-                                        <div class="col-11">
-                                            <input type="phone" class="ph-mn" id="old_password" formControlName="old_password" placeholder="Type Old Pass..">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1 pr-0">
-                                            <label class="nm-lb"><i class="fa fa-unlock" aria-hidden="true"></i></label>
-                                        </div>
-                                        <div class="col-11">
-                                            <input type="phone" class="ph-mn" id="new_password" formControlName="new_password" placeholder="Type New Pass..">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <button class="otp-btn" type="submit">Save</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="javascript:void(0)" class="logout" (click)="logout()">Logout</a>
-                                </div>
-                            </div>
+                <div class="col-5">
+                    <div class="profile-header-details">
+                        <a routerLink="/change_password">
+                            <p>Change Password</p>
+                        </a>
+                        <div class="face-round-profile">
+                            <img src="assets/images/face-round.png" class="img-fluid">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <app-welcomefooter></app-welcomefooter>
+  </div> 
+  <div class="my-newo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-newo-text">
+                    <h2>My<span> Newo</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="my-newo-bx">
+                    <img src="assets/images/wallet.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="my-newo-count">
+                    <h3>Wallet<span>{{wallet}}</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="my-newo-bx">
+                    <img src="assets/images/profile-rewards.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="my-newo-count">
+                    <h3>Rewards<span>6</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="my-newo-bx">
+                    <img src="assets/images/profile-referals.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="my-newo-count">
+                    <h3>Refferals<span>6</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="my-newo-bx">
+                    <img src="assets/images/profile-activity.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="my-newo-count">
+                    <h3>Activity Log<span>Last Active:20.41 hrs. Tuesday</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="profile-logout">
+                <a href="#">
+                    <img src="assets/images/profile-logout.png" class="img-fluid">
+                </a>
+            </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<app-welcomefooter></app-welcomefooter>

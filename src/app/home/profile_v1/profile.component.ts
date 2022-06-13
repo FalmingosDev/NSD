@@ -12,29 +12,27 @@ import { AlertService } from 'ngx-alerts';
 })
 export class ProfileComponent implements OnInit {
 
-  local_email:string | null=localStorage.getItem('token');
-  id:string | undefined;
+  local_email:string=localStorage.getItem('token');
+  id:string;
   result:any=[];
-  name: string | undefined;
-  email: string | undefined;
+  name: string;
+  email: string;
   phone: any=[];
   password: any=[];
   wallet: any=[];
 
 
-  pwChangeForm: FormGroup | undefined;
-  phnChangeForm: FormGroup | undefined;
+  pwChangeForm: FormGroup;
+  phnChangeForm: FormGroup;
   // show:boolean=true;
   walletData: any;
-  // old_password: any;
-  // new_password: any;
   
   constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) {}
   
   ngOnInit(): void {
     
     this.checkProfile()
-    this.dataService.profileData(this.local_email).subscribe((res: { data: { name: string | undefined; email: string | undefined; phone: any; password: any; point: any; }; }) => {
+    this.dataService.profileData(this.local_email).subscribe((res) => {
       if(res.data){
         this.result=res.data;
         this.name=res.data.name;
@@ -64,10 +62,10 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  get old_password() { return this.pwChangeForm.get('old_password') as FormControl; }
-  get new_password() { return this.pwChangeForm.get('new_password') as FormControl; }
-  get new_phone() { return this.phnChangeForm.get('new_phone') as FormControl;}
-  get otp(){ return this.phnChangeForm.get('otp') as FormControl;}
+  get old_password() { return this.pwChangeForm.get('old_password') }
+  get new_password() { return this.pwChangeForm.get('new_password') }
+  get new_phone() { return this.phnChangeForm.get('new_phone')}
+  get otp(){ return this.phnChangeForm.get('otp')}
  
   passwordUpdate(pwChangeForm) {
 
@@ -80,7 +78,7 @@ export class ProfileComponent implements OnInit {
       $('#new_password').focus();
     }
     else{
-      this.dataService.chngpwdForm(this.local_email,pwChangeForm.old_password,pwChangeForm.new_password).subscribe((res: { status: any; msg: string | { html: string; }; })=>{
+      this.dataService.chngpwdForm(this.local_email,pwChangeForm.old_password,pwChangeForm.new_password).subscribe((res)=>{
         if (res.status){
           this.alertService.success(res.msg);
         }
@@ -92,57 +90,47 @@ export class ProfileComponent implements OnInit {
     
   }
 
-  // phoneUpdate(phnChangeForm: { new_phone: any; otp: any; }) {
-  //   if (this.new_phone.status == 'INVALID') {
-  //     this.alertService.warning('Please Enter Valid Phone');
-  //     $('#new_phone').focus();
-  //   }
-  //   else if (this.otp.status == 'INVALID') {
-  //     this.alertService.warning('Please Enter OTP');
-  //     $('#otp').focus();
-  //   }
-  //   else{
-  //     this.dataService.chngphnForm(this.local_email,phnChangeForm.new_phone,phnChangeForm.otp).subscribe((res: { status: any; msg: string | { html: string; }; })=>{
-  //       if (res.status){
-  //         this.alertService.success(res.msg);
-  //       }
-  //       else {
-  //         this.alertService.danger(res.msg);
-  //       }
-  //     });
-  //   }
-  // }
+  phoneUpdate(phnChangeForm) {
+    if (this.new_phone.status == 'INVALID') {
+      this.alertService.warning('Please Enter Valid Phone');
+      $('#new_phone').focus();
+    }
+    else if (this.otp.status == 'INVALID') {
+      this.alertService.warning('Please Enter OTP');
+      $('#otp').focus();
+    }
+    else{
+      this.dataService.chngphnForm(this.local_email,phnChangeForm.new_phone,phnChangeForm.otp).subscribe((res)=>{
+        if (res.status){
+          this.alertService.success(res.msg);
+        }
+        else {
+          this.alertService.danger(res.msg);
+        }
+      });
+    }
+  }
 
-  // showphn() { 
-  //   this.pwChangeForm.value.old_password='';
-  //   this.pwChangeForm.value.new_password='';
-  //   (<HTMLFormElement>document.getElementById('old_password'))['value'] = '';
-  //   (<HTMLFormElement>document.getElementById('new_password'))['value'] = '';
+  showphn() { 
+    this.pwChangeForm.value.old_password='';
+    this.pwChangeForm.value.new_password='';
+    (<HTMLFormElement>document.getElementById('old_password')).value = '';
+    (<HTMLFormElement>document.getElementById('new_password')).value = '';
     
-  //   this.dataService.otpGenerate(this.local_email).subscribe((res: { status: any; msg: string | { html: string; }; })=>{
-  //     if (res.status){
-  //       this.alertService.success(res.msg);
-  //     }
-  //     //  else {
-  //     //   alert(res.msg);
-  //     // }
-  //   });
+    this.dataService.otpGenerate(this.local_email).subscribe((res)=>{
+      if (res.status){
+        this.alertService.success(res.msg);
+      }
+      //  else {
+      //   alert(res.msg);
+      // }
+    });
 
-  //   document.getElementById("id1").style.display="block";
-  //   document.getElementById("id2").style.display="none";
+    document.getElementById("id1").style.display="block";
+    document.getElementById("id2").style.display="none";
 
     
-  //  } 
-   
-  //  showpwd_v1() {
-  //   this.phnChangeForm.value.new_phone='';
-  //   this.phnChangeForm.value.otp='';
-  //   (<HTMLFormElement>document.getElementById('new_phone'))['value'] = '';
-  //   (<HTMLFormElement>document.getElementById('otp'))['value'] = '';
-
-  //   document.getElementById("id1").style.display="none";
-  //   document.getElementById("id2").style.display="block";
-  //  } 
+   } 
    
    showpwd() {
     this.phnChangeForm.value.new_phone='';

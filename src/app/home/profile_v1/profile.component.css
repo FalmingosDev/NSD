@@ -1,0 +1,32 @@
+.nav-item {
+    width: 30% !important;
+}
+.phone{
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    color: #ffc107;
+}
+
+.pswd{
+    flex: 0 0 auto;
+    width: 91.66666667%;
+    color: #ffc107;
+}
+.logo {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+.pr-f-section {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient( rgb(0 0 0 / 79%) 100%, rgb(0 0 0 / 69%) 100%), url(/assets/images/profile.jpg);
+    /* background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%); */
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

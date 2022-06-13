@@ -51,6 +51,7 @@ import { NewsdetailComponent } from './newsdetail/newsdetail.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 
@@ -97,7 +98,8 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
     StarsComponent,
     NewsdetailComponent,
     BlogdetailsComponent,
-    WalletdetailsComponent
+    WalletdetailsComponent,
+    ChangepasswordComponent
   ],
   imports: [
     CommonModule,

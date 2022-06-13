@@ -35,6 +35,8 @@ import { StarsComponent } from './stars/stars.component';
 import {NewsdetailComponent} from './newsdetail/newsdetail.component';
 import {BlogdetailsComponent} from './blogdetails/blogdetails.component';
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+
 
 
 const routes: Routes = [
@@ -71,7 +73,8 @@ const routes: Routes = [
   {path: 'stars', component:StarsComponent},
   {path: 'newsdetail', component:NewsdetailComponent},
   {path: 'blogdetails/:blog_id', component:BlogdetailsComponent},
-  {path: 'walletdetails', component:WalletdetailsComponent}
+  {path: 'walletdetails', component:WalletdetailsComponent},
+  {path: 'change_password', component:ChangepasswordComponent}
 ];
 
 @NgModule({
