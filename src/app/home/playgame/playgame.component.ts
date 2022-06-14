@@ -61,6 +61,7 @@ export class PlaygameComponent implements OnInit {
   gamescore(){
     this.score = localStorage.getItem('score');
     this.game_id = localStorage.getItem('gameId');
+    indexedDB.open('highscore');
     //console.log(this.score);
     this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
       localStorage.removeItem('score');

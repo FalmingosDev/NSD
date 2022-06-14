@@ -52,6 +52,8 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { AboutReferralComponent } from './about-referral/about-referral.component';
+import { ReferralDetailComponent } from './referral-detail/referral-detail.component';
 
 
 
@@ -99,7 +101,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     NewsdetailComponent,
     BlogdetailsComponent,
     WalletdetailsComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    AboutReferralComponent,
+    ReferralDetailComponent
   ],
   imports: [
     CommonModule,

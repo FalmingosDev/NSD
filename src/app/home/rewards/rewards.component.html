@@ -1,120 +1,274 @@
-<div class="mt-bt">
-    <app-welcomeheader></app-welcomeheader>
-    <section class="sec-mt-bt">
+<div class="margin-div">
+    <div class="profile-name">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="ml-tran">
-                        <div class="ml-text">
-                            <h1>Rewards</h1>
-                            <p>It pays to be a member — free gifts every day! Love that? Of course, you do. The NEWO rewards program entitles you to a sea of rewards in the shape of NEWO Coins & other exciting gifts as well on every in-app activity.
-                            </p>
-                        </div>
+                <div class="col-9">
+                    <div class="profile-header-details">
+                        <a href="#">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </a>
+                        <h6><span class="profile-user-name">Rewards</span><span class="profile-email"></span></h6>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6" *ngFor="let rewards of rewardlist">
-                    <div class="rewl_bx plc" *ngIf="rewards.reward_apply=='Not Applied' && rewards.validity=='Valid'" (click)="active_modal(rewards.id)" data-toggle="modal" style="height:167px;" id="rewardDiv{{rewards.id}}">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                        </div>
-                        <h3 *ngIf="rewards.validity=='Coming Soon'"><i class="fa fa-lock" aria-hidden="true"></i> Use from 20 May,2022</h3>
-                    </div>
-                    <div class="rewl_bx" *ngIf="rewards.reward_apply=='Not Applied' && rewards.validity=='Coming Soon'">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>{{rewards.rewards_title}}</p>
-                        </div>
-                        <h3><i class="fa fa-lock" aria-hidden="true"></i> Use from {{rewards.start_date}}</h3>
-                    </div>
-                    <div class="rewl_bx" *ngIf="rewards.reward_apply=='Applied'">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>{{rewards.rewards_title}}</p>
-                            <h4>Valid till {{rewards.end_date}}</h4>
-                            <h6>T&C</h6>
+                <div class="col-3">
+                    <div class="profile-header-details">
+                        <div class="face-round-profile">
+                            <img src="assets/images/rewards-icon.png" class="img-fluid">
                         </div>
                     </div>
-                </div>
-                <!--<div class="col-6">
-                    <div class="rewl_bx">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>₹ 2000 Off on Participating in</p>
-                            <h4>Valid till 31 May,2022</h4>
-                            <h6>T&C</h6>
-                        </div>
-                    </div>
-                </div>-->
-                <!--<div class="col-6">
-                    <div class="rewl_bx">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>₹ 2000 Off on Participating in <span>Expires in 1 days</span></p>    data-target="#active_spark1" 
-                        </div>
-                        <h6>T&C</h6>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="rewl_bx">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>₹ 2000 Off on Participating in</p>
-                            <h4>Valid till 31 May,2022</h4>
-                        </div>
-                        <h6>T&C</h6>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="rewl_bx">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>Price Drop for Plus members</p>
-                        </div>
-                        <h3><i class="fa fa-lock" aria-hidden="true"></i> Use from 20 May,2022</h3>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="rewl_bx">
-                        <div class="re2_img">
-                            <img src="assets/images/ref-logo.png" class="img-fluid">
-                            <p>Price Drop for Plus members</p>
-                        </div>
-                        <h3 style="background: grey;">Expired</h3>
-                    </div>
-                </div>-->
-
+                </div> 
             </div>
         </div>
-    </section>
-    <app-welcomefooter></app-welcomefooter>
+  </div> 
+  <section class="free-rewards">
+          <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#">
+                        <div class="subscrip-pay">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="sub-text">
+                                        <h3><span>FREE GIFTS</span> EVERYDAY</h3>
+                                    </div>
+                                </div>
+                                <div class="col-6 p-0">
+                                    <div class="sub-count">
+                                        <p>EXCITING!</p>
+                                        <span>ISN’T IT?</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="is-p">
+                            <p>NEWO Reward program is designed to shower you with loads of rewards in the form of NEWO Coin. Along with that you can also  win other exciting gifts by participating in numerous in-app activities. </p>
+                        </div>
+                    </a>
+                </div>
+              </div>
+          </div>
+      </section>
+  <section class="wl-cm-b">
+    <div class="container">
+        <div class="row">
+        <div class="col-6" *ngFor="let rewards of rewardlist">
+            <div class="wl-sm-bl" (click)="active_modal(rewards.id)" data-toggle="modal" data-target="#welbonus" id="rewardDiv{{rewards.id}}">
+                <img src="assets/images/wl-cm-1.png" class="img-fluid">
+                <p>{{rewards.rewards_title}}</p>
+                <h6>Valid till {{rewards.end_date}}</h6>
+            </div>
+        </div>
+        <!-- <div class="col-6">
+          <div class="wl-sm-bl" data-toggle="modal" data-target="#welbonus">
+              <img src="assets/images/wl-cm-1.png" class="img-fluid">
+              <p>Welcome<span>Bonus</span></p>
+              <h6>Valid till June, 2022</h6>
+          </div>
+      </div> -->
+        <!-- <div class="col-6">
+            <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus">
+                <img src="assets/images/wl-cm-2.png" class="img-fluid">
+                <p>Weekly <span>Bonus</span></p>
+                <div class="act">
+                    <h6>Activates on 01 July, 2022</h6>
+                </div>
+            </div>
+        </div> -->
+      </div>
+      <!-- <div class="row">
+        <div class="col-6">
+            <div class="wl-sm-bl" data-toggle="modal" data-target="#fortbonus">
+                <img src="assets/images/wl-cm-3.png" class="img-fluid">
+                <p>Fortnight <span>Bonus</span></p>
+                <div class="act">
+                <h6>Activates on 01 July, 2022</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="wl-sm-bl" data-toggle="modal" data-target="#monthbonus">
+                <img src="assets/images/wl-cm-4.png" class="img-fluid">
+                <p>Monthly <span>Bonus</span></p>
+                <div class="act">
+                    <h6>Activates on 01 July, 2022</h6>
+                </div>
+            </div>
+        </div>
+      </div> -->
+      <!-- <div class="row">
+        <div class="col-6">
+            <div class="wl-sm-bl" data-toggle="modal" data-target="#weltwobonus">
+                <img src="assets/images/wl-cm-5.png" class="img-fluid">
+                <p>Welcome <span>Bonus</span></p>
+                <div class="act">
+                    <h6>Activates on 01 July, 2022</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="wl-sm-bl" data-toggle="modal" data-target="#weektwobonus">
+                <img src="assets/images/wl-cm-6.png" class="img-fluid">
+                <p>Weekly <span>Bonus</span></p>
+                <div class="act">
+                    <h6>Activates on 01 July, 2022</h6>
+                </div>
+            </div>
+        </div> 
+      </div> -->
+    </div>
+  </section>
 </div>
 
-<div class="modal fade animate" id="active_spark1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!-- Modal -->
+<div class="modal fade" id="welbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content animate-bottom">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-            </div>
-            <div class="modal-body">
-                <div class="spk-sm">
-                    <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>-->
-                    <p>{{rewardData_title}}</p>
-                    <p>{{rewardData_desc}}</p>
-
-                    <div class="active-img" id="act_img" style="display: none;">
-                        <img src="assets/images/payment_success.gif" class="img-fluid">
-                        <p>Active</p>
-                    </div>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" (click)="activte('act_img',rewardData_id)">Activate</button>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
             </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="modal fade" id="weekbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                </div>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="fortbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                </div>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="monthbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                </div>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="weltwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                </div>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="weektwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="wl-bonus">
+                <h1>WELCOME BONUS</h1>
+                <div class="wl-cm-gift">
+                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                </div>
+                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                <h6>NEWO COIN</h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Activate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-welcomefooter></app-welcomefooter>

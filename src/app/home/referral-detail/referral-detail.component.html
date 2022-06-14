@@ -1,0 +1,81 @@
+<div class="margin-div">
+    <div class="ref-log-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <div class="profile-header-details">
+                        <a routerLink="/referral">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </a>
+                        <h6><span class="profile-user-name">REFERRAL LOG</span><span class="profile-email"></span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div> 
+  <section class="refimg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 pr-0">
+                <img src="assets/images/referral-log-bg.png" class="img-fluid">
+            </div>
+        </div>
+      </div>
+  </section>
+  <section class="ref-dt">
+    <div class="container">
+        <div class="row pd-td" *ngFor="let row of item;">
+            <div class="col-3">
+                <div class="dt-round-log">
+                    <img src="assets/images/avatar2.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="dt-rounf-ref-text">
+                    <p>{{row.name}}<span>on {{row.use_date}}</span></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="ref-dt-coin">
+                    <p>{{row.referrer_point}}<span><img src="assets/images/zero-icon.png" class="img-fluid"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row pd-td">
+            <div class="col-3">
+                <div class="dt-round-log">
+                    <img src="assets/images/avatar2.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="dt-rounf-ref-text">
+                    <p>Sanchita Paul<span>on 01.06.2022</span></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="ref-dt-coin">
+                    <p>100 <span><img src="assets/images/zero-icon.png" class="img-fluid"></span></p>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="row pd-td">
+            <div class="col-3">
+                <div class="dt-round-log">
+                    <img src="assets/images/avatar2.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="dt-rounf-ref-text">
+                    <p>Murgan Putty<span>on 01.06.2022</span></p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="ref-dt-coin">
+                    <p>100 <span><img src="assets/images/zero-icon.png" class="img-fluid"></span></p>
+                </div>
+            </div>
+        </div> -->
+      </div>
+  </section>
+  
+</div>

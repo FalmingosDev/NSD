@@ -7,14 +7,14 @@
     font-style: normal;
     font-display: swap;
 }
-@font-face {
+/* @font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins-SemiBold.woff2') format('woff2'),
         url('../fonts/Poppins-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
-}
+} */
 @font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins-Regular.woff2') format('woff2'),
@@ -23,14 +23,14 @@
     font-style: normal;
     font-display: swap;
 }
-@font-face {
+/* @font-face {
     font-family: 'Outfit';
     src: url('../fonts/Outfit-SemiBold.woff2') format('woff2'),
         url('../fonts/Outfit-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
-}
+} */
 body{
     margin: 0;
     padding: 0;
@@ -228,12 +228,13 @@ body{
 }
 .join-div a {
     display: inline-block;
-    font-size: 28px;
+    font-size: 16px;
     color: #f8bd59;
     text-align: right;
     margin-top: -8px;
-    font-family: 'Outfit';
+    font-family: 'Poppins' !important;
     font-weight: 600;
+    text-transform: uppercase;
 }
 .round-sl{
     position: absolute;

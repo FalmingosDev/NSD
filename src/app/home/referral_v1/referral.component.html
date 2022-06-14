@@ -1,0 +1,57 @@
+<div class="mt-bt">
+    <app-welcomeheader></app-welcomeheader>
+    
+    <section class="sec-mt-bt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ml-tran">
+                        <div class="ml-text">
+                            <div class="lg-rt-div">
+                                <span>{{total}}</span>
+                            </div>
+                            <div class="ref_code">
+                                <span class="code_sp" id="referral_code">{{referralCodeId}}</span>
+                                <button (click)="copyToClipboard('#referral_code')" class="code_sp_btn"><i class="fa fa-clone" aria-hidden="true"></i></button>
+                                <span class="share_cd" id="myId">Share this code</span>
+                                <div class="share_cd">
+                                    <ul>
+                                        <!-- <li><a href="whatsapp://send?text=https://newocoin.app/share/share.html?refCodeUrl={{referralCodeId}}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li> -->
+                                        <a [href]="wappShareurl" data-action="share/whatsapp/share" target="_blank">
+                                        <li><i class="fa fa-whatsapp" aria-hidden="true">
+                                            
+                                        </i></li></a>
+                                        <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="listing_table">
+                                    <div class="table-responsive">
+                                        <table style="border: 1px solid #fff" class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Used By</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">NEWO Coin</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let row of item;">
+                                                  <th scope="row">{{row.name}}</th>
+                                                  <td>{{row.use_date}}</td>
+                                                  <td>{{row.referrer_point}}</td>
+                                                </tr>
+                                              </tbody>
+                                          </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <app-welcomefooter></app-welcomefooter>
+</div>

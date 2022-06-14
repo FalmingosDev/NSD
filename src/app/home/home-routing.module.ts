@@ -26,6 +26,8 @@ import { AboutNewoclanComponent } from './about-newoclan/about-newoclan.componen
 import { AboutMultiplexComponent } from './about-multiplex/about-multiplex.component';
 import { RewardsComponent } from './rewards/rewards.component';
 import { ReferralComponent } from './referral/referral.component';
+import { AboutReferralComponent } from './about-referral/about-referral.component';
+import { ReferralDetailComponent } from './referral-detail/referral-detail.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PrivacyComponent } from './privacy/privacy.component';
@@ -36,6 +38,7 @@ import {NewsdetailComponent} from './newsdetail/newsdetail.component';
 import {BlogdetailsComponent} from './blogdetails/blogdetails.component';
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+
 
 
 
@@ -65,6 +68,8 @@ const routes: Routes = [
   {path: 'about_multiplex', component:AboutMultiplexComponent}, 
   {path: 'rewards', component:RewardsComponent},
   {path: 'referral', component:ReferralComponent},
+  {path: 'about_referral', component:AboutReferralComponent},
+  {path: 'referral_details', component:ReferralDetailComponent},
   {path: 'blogs', component:BlogsComponent},
   {path: 'gallery', component:GalleryComponent},
   {path: 'privacy', component:PrivacyComponent},

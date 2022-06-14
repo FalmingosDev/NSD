@@ -1,97 +1,152 @@
+.wl-bonus h1{
+    color: #fff;
+  text-align: center;
+  font-size: 22px;
+}
+.wl-cm-gift{
+    text-align: center;
+}
+.wl-cm-gift img{
+    width: 45%;
+}
+.wl-bonus p{
+        text-align: center;
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+}
+.wl-bonus p img{
+   width: 5%;
+  margin-top: -4px;
+}
+.welcome-bg-main{
+    position: relative;
+}
+.welcome-bg-ch {
+background: #f09;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+    background: rgb(34,1,148);
+background: linear-gradient(149deg, rgba(34,1,148,1) 0%, rgba(9,9,121,1) 35%, rgba(139,6,251,1) 100%);
+        padding: 0px 0px 46px;
+}
+.pr-row{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.wl-bonus h6{
+        text-align: center;
+      color: #fff;
+      font-size: 20px;
+      padding: 11px 0px;
+}
+.reward-details{
+    text-align: center;
+  padding: 10px 10px;
+  border: 1px dashed #320674;
+  margin: 0px 16px;
+}
+.reward-details p{
+    font-size: 13px;
+  color: #AB96F2;
+  margin: 0;
+}
+.coupon-code-div{
+        padding: 10px 20px;
+      margin: 10px 20px;
+      background: #971BFD;
+      border-radius: 14px;
+      border: 2px dashed #CC70FF;
+}
+.coupon-sm-1 p{
+    text-align: center;
+  color: #CC70FF;
+  margin: 0;
+  font-size: 15px;
+}
+.coupon-sm-1 p span{
+    display: block;
+}
+.coupon-sm-2 p{
+    text-align: center;
+      margin: 0;
+      color: #CC70FF;
+}
+.coupon-sm-2 p span{
+    display: block;
+}
+.coupon-sm-1{
+      border-right: 1px solid #CC70FF;
+}
 
-.sec-mt-bt{
-    padding: 20px 0px;
-    display: flex;
-    align-items: center;
-    height: 70vh;
-    /* position: fixed; */
+.copy-code-number{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align:center;
+}
+
+.copy-code-number i{
+  margin: 20px 0px 0px 20px;
+}
+
+.share-atch{
+    text-align: center;
+    color: #fff;
+      margin: 42px 0px 0px;
+}
+.refferal-icon{
+    margin-top: -30px;
+    text-align: center;
+}
+.refferal-icon img{
     width: 100%;
-    background: linear-gradient( rgb(0 0 0 / 79%) 100%, rgb(0 0 0 / 69%) 100%), url(/assets/images/profile.jpg);
-    height: 79vh;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
-.ml-tran {
-margin-top: -58px;
+.refferal-icon {
+  margin-top: -30px;
+  text-align: center;
+  padding: 0px 44px;
 }
-.lg-rt-div {
-text-align: center;
-display: block;
+.other-inform{
+        margin: 0px 20px;
 }
-.code_sp{
-position: relative;
-font-size: 14px;
-color: #000;
-display: block;
-margin: 10px 0px;
-background: #fff;
-padding: 7px 7px;
-border-radius: 6px;
+.other-inform p{
+        padding: 10px 20px;
+      border: 1px dashed #fff;
+      margin: 20px 0px;
+      color: #fff;
 }
-.code_sp_btn{
-position: absolute;
-top: 6px;
-right: 0px;
-background-color: transparent;
-border: none;
+.ref-margin-div{
+    margin-bottom: 156px;
 }
-.lg-rt-div span{
-text-align: center;
-display: block;
-color: #f09433;
-font-size: 37px;
-font-weight: bold;
+.as-ref{
+    color: #AB96F2;
+  display: block;
+  text-align: center;
+  font-size: 18px;
 }
-.share_cd{
-color: #f18d1d;
-text-align: center;
-display: block;
-}  
-.share_cd ul li{
-display: inline-block;
-list-style: none;
-padding: 5px 5px;
-width: 30px;
-height: 30px;
-border-radius: 50%;
-color: #fff;
-text-align: center;
-margin: 5px 3px;
+.share-ref{
+    color: #fff;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  padding: 30px 0px 18px;
 }
-.share_cd ul li:nth-child(1){
-background-color: green;
+.code-number{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
-.share_cd ul li:nth-child(2){
-background: #f09433; 
-background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+.share-atch a{
+    color: #fff;
+  font-size: 21px;
+  font-weight: bold;
 }
-.share_cd ul li:nth-child(3){
-background-color: #00acee;
-}
-.share_cd ul{
-padding: 0;
-margin: 0;
-}
-.table thead th {
-vertical-align: bottom;
-border-bottom: 2px solid #f09433;
-border: 1px solid #f09433;
-}
-.table {
-color: #f09433;
-}
-.table td, .table th {
-padding: .75rem;
-vertical-align: top;
-border-top: 1px solid #f09433;
-border: 1px solid #f09433;
-}
-.listing_table{
-margin-top: 20px;
-}
-.ref_code{
-position: relative;
+.refferal-icon p{
+    color: #fff;
+  text-align: center;
+  font-size: 11px;
+    margin-top: 10px;
 }

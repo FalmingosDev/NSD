@@ -15,11 +15,11 @@ export class ReferralComponent implements OnInit {
   collection:any=[];
   item:any;
   referralCodeId:any;
-  total:number | undefined;
+  total:number;
 
-  final_url:string | undefined;
+  final_url:string;
   sanitizer:any;
-  wappShareurl:string | undefined;
+  wappShareurl:string;
   wappUrl:string="https://web.whatsapp.com://send?text=https://newocoin.app/share/share.html?refCodeUrl="
 
   constructor(sanitizer: DomSanitizer,private dataService: ApiService,private route:Router,private alertService: AlertService) {
@@ -36,14 +36,14 @@ export class ReferralComponent implements OnInit {
     // this.final_url=this.wappUrl+this.referralCodeId;
     // this.wappShareurl=this.sanitizer.bypassSecurityTrustResourceUrl(this.final_url);
   }
-  copyToClipboard(element: any){
+  copyToClipboard(element){
     var $temp = $("<input>");
     $("body").append($temp);
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
-    // alert('Copied to clipboard');
-    this.alertService.success('Copied to clipboard');
+    alert('Copied to clipboard');
+    // this.alertService.success('Copied to clipboard');
   }
 
   getListDetails(){
@@ -60,7 +60,7 @@ export class ReferralComponent implements OnInit {
       //console.log(this.referralCodeId);
       
       
-       this.total= this.item.reduce(function (s: number, record: { referrer_point: number; }) {    
+       this.total= this.item.reduce(function (s, record) {    
         return s + (record.referrer_point*1);    
      }, 0);    
     //  console.log(this.total);

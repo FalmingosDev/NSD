@@ -2,8 +2,9 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     background-color: #0d1428 !important;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     /* margin-bottom: 74px !important; */
+    font-family: 'Poppins' !important;
 }
 
 a {

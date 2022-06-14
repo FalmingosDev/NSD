@@ -1,0 +1,105 @@
+.referal-zik-zak-bg-ch {
+    background: #f09;
+    background: rgb(34,1,148);
+    background: linear-gradient(149deg, rgba(34,1,148,1) 0%, rgba(9,9,121,1) 35%, rgba(139,6,251,1) 100%);
+}
+          .refer-f-p p{
+            color: #0AFFFF;
+            font-size: 20px;
+            padding: 20px 0px 0px;
+          }
+          .refer-f-p img{
+              width: 57%;
+          }
+          .gt p{
+              color: #fff;
+            font-size: 23px;
+            margin-top: 9px;
+          }
+          .ref-cn p{
+              font-size: 57px;
+                color: #FFC85D;
+                font-weight: 900;
+          }
+          .ref-cn p span img {
+            width: 17%;
+            margin-right: 4px;
+            margin-top: -8px;
+        }
+          .newo-gl{
+                  padding-bottom: 24px;
+          }
+          .newo-gl img{
+              width: 68%;
+          }
+          .newo-gl p{
+            color: #fff;
+            margin: 0;
+            padding: 10px 0px;
+          }
+          .ref-bt-bl-2{
+              background: #181B3E;
+          }
+          .ref-cl-div{
+    margin-top: -13px;
+          }
+          .ref-bt-bl-2 h1{
+              color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+          }
+          .ref-bt-bl-2 p{
+              color: #fff;
+            font-size: 14px;
+          }
+          .ref-prog{
+            padding: 16px 20px;
+            border-radius: 20px;
+            background: #58429E;
+              margin-bottom: 20px;
+          }
+          .ref-prog h2{
+              font-size: 17px;
+            text-align: center;
+            font-weight: bold;
+            color: #AB96F2;
+          }
+          .ref-prog p{
+              text-align: center;
+              border-bottom: 2px solid #AB96F2;
+                  padding: 0px 0px 11px;
+          }
+          .ref-prog p img{ 
+              width: 44%;
+          }
+          .ref-prog p span{
+              color: #fff;
+          }
+          .ref-bl{
+              padding-bottom: 37px;
+          }
+          .ref-prog h6{
+              text-align: center;
+            color: #fff;
+            font-size: 17px;
+          }
+          .join-div-ref{
+            text-align: center;
+          }
+          .join-div-ref a{
+                  display: inline-block;
+                padding: 10px 20px;
+                background: #00FFFF;
+                border-radius: 36px;
+                font-size: 16px;
+                color: #181b3E;
+                font-weight: bold;
+          }
+          .ref-qns p{
+              color: #fff;
+            font-size: 16px;
+          }
+          .ref-qns h3{
+              color: #AB96F2;
+              font-size: 20px;
+          }

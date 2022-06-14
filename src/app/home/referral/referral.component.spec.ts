@@ -11,9 +11,7 @@ describe('ReferralComponent', () => {
       declarations: [ ReferralComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ReferralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

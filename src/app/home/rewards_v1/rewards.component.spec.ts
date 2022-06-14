@@ -11,7 +11,9 @@ describe('RewardsComponent', () => {
       declarations: [ RewardsComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(RewardsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

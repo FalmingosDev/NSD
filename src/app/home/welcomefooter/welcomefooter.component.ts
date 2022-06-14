@@ -61,11 +61,26 @@ export class WelcomefooterComponent implements OnInit {
         else if(value=='profile'){
           this.router.navigate(['/profile']);
         }
-                 
+        else if(value=='referral'){
+          if(res.cnt ==1){
+            this.router.navigate(['/referral']);
+          }
+          else{
+            this.router.navigate(['/about_referral']);
+          }
+        }       
       });
     }
-    else{      
-      this.router.navigate(['/about_newoclan']);   
+    else{  
+      if(value=='newoclan' || value=='ott' || value=='stars' || value=='hash' || value=='game'){    
+        this.router.navigate(['/about_newoclan']);
+      }
+      else if(value=='profile'){
+        this.router.navigate(['/login']);
+      }
+      else if(value=='referral'){
+        this.router.navigate(['/about_referral']);
+      }   
     }
   }
 

@@ -1,0 +1,152 @@
+.re2_img {
+    text-align: center;
+}
+
+.re2_img img {
+    text-align: center;
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.rewl_bx {
+    padding: 10px 0px;
+    background: #364654;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    height: 167px;
+}
+
+.re2_img p {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    padding: 0px 6px;
+    margin: 10px 0px;
+}
+
+.re2_img p span {
+    display: block;
+    color: red;
+}
+
+.rewl_bx h6 {
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    font-weight: bold;
+}
+
+.re2_img h4 {
+    font-size: 12px;
+    color: #afacac;
+}
+
+.rewl_bx h3 {
+    font-size: 12px;
+    text-align: center;
+    background: #f18d1d;
+    padding: 4px 0px;
+}
+
+.re2_img h3 i {
+    font-size: 17px;
+    margin-right: 3px;
+}
+
+.spk-sm p {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.modal-content {
+    background-color: #6c757d;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-title {
+    color: #fff;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.btn-danger {
+    background-color: #f18d1d;
+    color: #000;
+    border: none;
+}
+
+.modal-dialog {
+    position: absolute;
+    bottom: 60px;
+    width: 96%;
+}
+
+.animate-bottom {
+    position: relative;
+    animation: animatebottom 0.4s;
+}
+
+.spk-sm img {
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.btn-danger:not(:disabled):not(.disabled).active,
+.btn-danger:not(:disabled):not(.disabled):active,
+.show>.btn-danger.dropdown-toggle {
+    color: #000;
+    background-color: #f18d1d;
+    border: none;
+}
+
+.btn-check:focus+.btn-danger,
+.btn-danger:focus {
+    box-shadow: none;
+}
+
+.plc {
+    background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(/assets/images/new-bg-ft2.jpg) !important;
+    padding: 20px 0px 10px !important;
+    background-size: cover !important;
+    /*background-attachment: fixed !important;*/
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    min-height: 152px;
+    /*height: 100%;*/
+    display: flex;
+    align-items: center;
+}
+
+.tl_ul li {
+    list-style: none;
+    font-size: 14px;
+    color: #fff;
+}
