@@ -4,7 +4,7 @@
 /bazel-out
 /integration/bazel/bazel-*
 *.log
-node_modules
+NSD/node_modules
 /node_modules
 
 # CircleCI temporary file for cache key computation.
