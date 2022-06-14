@@ -23,74 +23,74 @@
                 </div>
             </div>
         </div>
-  </div> 
-  <div class="my-newo">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="my-newo-text">
-                    <h2>My<span> Newo</span></h2>
+    </div>
+    <div class="my-newo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="my-newo-text">
+                        <h2>My<span> Newo</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="my-newo-bx">
+                        <img src="assets/images/wallet.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="my-newo-count">
+                        <h3>Wallet (Balance)<span>{{wallet}}</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="my-newo-bx">
+                        <img src="assets/images/profile-rewards.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="my-newo-count">
+                        <h3>Reward (Earned)<span>{{wallet_point}}</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="my-newo-bx">
+                        <img src="assets/images/profile-referals.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="my-newo-count">
+                        <h3>Referral (Earned)<span>{{referrer_point}}</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="my-newo-bx">
+                        <img src="assets/images/profile-activity.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="my-newo-count">
+                        <h3>Activity Log<span>{{login_time}}</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="profile-logout">
+                        <a href="javascript:void(0)" (click)="logout()">
+                            <img src="assets/images/profile-logout.png" class="img-fluid">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3">
-                <div class="my-newo-bx">
-                    <img src="assets/images/wallet.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="my-newo-count">
-                    <h3>Wallet (Balance)<span>{{wallet}}</span></h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <div class="my-newo-bx">
-                    <img src="assets/images/profile-rewards.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="my-newo-count">
-                    <h3>Reward (Earned)<span>{{wallet_point}}</span></h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <div class="my-newo-bx">
-                    <img src="assets/images/profile-referals.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="my-newo-count">
-                    <h3>Referral (Earned)<span>{{referrer_point}}</span></h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <div class="my-newo-bx">
-                    <img src="assets/images/profile-activity.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="my-newo-count">
-                    <h3>Activity Log<span>{{login_time}}</span></h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="profile-logout">
-                <a href="#">
-                    <img src="assets/images/profile-logout.png" class="img-fluid">
-                </a>
-            </div>
-            </div>
-        </div>
-      </div>
-  </div>
+    </div>
 </div>
 <app-welcomefooter></app-welcomefooter>
