@@ -16,12 +16,12 @@
                             <img src="assets/images/rewards-icon.png" class="img-fluid">
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
-  </div> 
-  <section class="free-rewards">
-          <div class="container">
+    </div>
+    <section class="free-rewards">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <a href="#">
@@ -41,41 +41,56 @@
                             </div>
                         </div>
                         <div class="is-p">
-                            <p>NEWO Reward program is designed to shower you with loads of rewards in the form of NEWO Coin. Along with that you can also  win other exciting gifts by participating in numerous in-app activities. </p>
+                            <p>NEWO Reward program is designed to shower you with loads of rewards in the form of NEWO Coin. Along with that you can also win other exciting gifts by participating in numerous in-app activities. </p>
                         </div>
                     </a>
                 </div>
-              </div>
-          </div>
-      </section>
-  <section class="wl-cm-b">
-    <div class="container">
-        <div class="row">
-        <div class="col-6" *ngFor="let rewards of rewardlist">
-            <div class="wl-sm-bl" (click)="active_modal(rewards.id)" data-toggle="modal" data-target="#welbonus" id="rewardDiv{{rewards.id}}">
-                <img src="assets/images/wl-cm-1.png" class="img-fluid">
-                <p>{{rewards.rewards_title}}</p>
-                <h6>Valid till {{rewards.end_date}}</h6>
             </div>
         </div>
-        <!-- <div class="col-6">
+    </section>
+    <section class="wl-cm-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-6" *ngFor="let rewards of rewardlist">
+
+                    <div class="wl-sm-bl plc" (click)="active_modal(rewards.id)" data-toggle="modal" data-target="#welbonus" id="rewardDiv{{rewards.id}} " *ngIf="rewards.reward_apply=='Not Applied' && rewards.validity=='Valid'">
+                        <img src="assets/images/wl-cm-1.png" class="img-fluid">
+                        <p>{{rewards.rewards_title}}</p>
+                    </div>
+
+                    <div class="wl-sm-bl" data-toggle="modal" data-target="#welbonus" id="rewardDiv{{rewards.id}} " *ngIf="rewards.reward_apply=='Applied' && rewards.validity=='Valid'">
+                        <img src="assets/images/wl-cm-1.png" class="img-fluid">
+                        <p>{{rewards.rewards_title}}</p>
+                        <h6>Valid till {{rewards.end_date}}</h6>
+                    </div>
+
+                    <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus" *ngIf="rewards.validity=='Coming Soon'">
+                        <img src="assets/images/wl-cm-2.png" class="img-fluid">
+                        <p>Weekly <span>Bonus</span></p>
+                        <div class="act">
+                            <h6>Activates on {{rewards.start_date}}</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="col-6">
           <div class="wl-sm-bl" data-toggle="modal" data-target="#welbonus">
               <img src="assets/images/wl-cm-1.png" class="img-fluid">
               <p>Welcome<span>Bonus</span></p>
               <h6>Valid till June, 2022</h6>
           </div>
       </div> -->
-        <!-- <div class="col-6">
-            <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus">
-                <img src="assets/images/wl-cm-2.png" class="img-fluid">
-                <p>Weekly <span>Bonus</span></p>
-                <div class="act">
-                    <h6>Activates on 01 July, 2022</h6>
-                </div>
+                <!-- <div class="col-6">
+                  <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus">
+                      <img src="assets/images/wl-cm-2.png" class="img-fluid">
+                      <p>Weekly <span>Bonus</span></p>
+                      <div class="act">
+                          <h6>Activates on 01 July, 2022</h6>
+                      </div>
+                  </div>
+              </div> -->
             </div>
-        </div> -->
-      </div>
-      <!-- <div class="row">
+            <!-- <div class="row">
         <div class="col-6">
             <div class="wl-sm-bl" data-toggle="modal" data-target="#fortbonus">
                 <img src="assets/images/wl-cm-3.png" class="img-fluid">
@@ -95,7 +110,7 @@
             </div>
         </div>
       </div> -->
-      <!-- <div class="row">
+            <!-- <div class="row">
         <div class="col-6">
             <div class="wl-sm-bl" data-toggle="modal" data-target="#weltwobonus">
                 <img src="assets/images/wl-cm-5.png" class="img-fluid">
@@ -115,160 +130,160 @@
             </div>
         </div> 
       </div> -->
-    </div>
-  </section>
+        </div>
+    </section>
 </div>
 
 
 <!-- Modal -->
 <div class="modal fade" id="welbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="activte('welbonus',rewardData_id)">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="weekbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="weekbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="fortbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="fortbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="monthbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="monthbonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="weltwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="weltwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="weektwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="weektwobonus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rewards</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
-            <div class="wl-bonus">
-                <h1>WELCOME BONUS</h1>
-                <div class="wl-cm-gift">
-                    <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <h6>NEWO COIN</h6>
                 </div>
-                <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
-                <h6>NEWO COIN</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Activate</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Activate</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 <app-welcomefooter></app-welcomefooter>

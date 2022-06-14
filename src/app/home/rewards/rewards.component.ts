@@ -49,7 +49,7 @@ export class RewardsComponent implements OnInit {
       else{
         document.getElementById(id).style.display='none';
       }
-      setTimeout(function(){$("#active_spark1 .close").click()},2000);
+      setTimeout(function(){$("#welbonus .close").click()},2000);
       this.getrewardlist();
     })
   }
