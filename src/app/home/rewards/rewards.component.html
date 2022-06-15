@@ -58,7 +58,7 @@
                         <p>{{rewards.rewards_title}}</p>
                     </div>
 
-                    <div class="wl-sm-bl" data-toggle="modal" data-target="#welbonus" id="rewardDiv{{rewards.id}} " *ngIf="rewards.reward_apply=='Applied' && rewards.validity=='Valid'">
+                    <div class="wl-sm-bl" data-toggle="modal" id="rewardDiv{{rewards.id}} " *ngIf="rewards.reward_apply=='Applied' && rewards.validity=='Valid'">
                         <img src="assets/images/wl-cm-1.png" class="img-fluid">
                         <p>{{rewards.rewards_title}}</p>
                         <h6>Valid till {{rewards.end_date}}</h6>
@@ -155,8 +155,12 @@
                     <h6>NEWO COIN</h6>
                 </div>
             </div>
+            <div class="active-img" id="act_img" style="display: none;">
+                <img src="assets/images/payment_success.gif" class="img-fluid">
+                <p>Active</p>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" (click)="activte('welbonus',rewardData_id)">Activate</button>
+                <button type="button" class="btn btn-primary" (click)="activte('act_img',rewardData_id)">Activate</button>
             </div>
         </div>
     </div>

@@ -172,7 +172,7 @@
     height: 100%;
     overflow: hidden;
     outline: 0;
-    top: 76%;
+    top: 60%;
     transform: translateY(-50%);
 }
 
@@ -187,4 +187,12 @@
     /*height: 100%;*/
     display: flex;
     align-items: center;
+}
+
+#act_img {
+    display: block;
+    text-align: center;
+    width: 32%;
+    margin: 0 auto;
+    color: #fff;
 }
