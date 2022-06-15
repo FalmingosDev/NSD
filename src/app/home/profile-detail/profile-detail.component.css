@@ -1,0 +1,60 @@
+.edit-btn-div button{
+    padding: 10px 3px;
+border: none;
+font-size: 11px;
+display: flex;
+align-items: center;
+/* height: 100%; */
+background: #0ff;
+border-radius: 13px;
+}
+.edit-btn-div {
+display: flex;
+align-items: center;
+height: 100%;
+margin-top: 9px;
+}
+
+
+.profile-pic {
+    width: 200px;
+    height: 135px;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.file-upload {
+    display: none;
+}
+.circle {
+    border-radius: 100% !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 72px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+    position: absolute;
+    top: 174px;
+    right: 30px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    width: 100%;
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}

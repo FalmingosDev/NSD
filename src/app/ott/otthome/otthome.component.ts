@@ -84,6 +84,7 @@ export class OtthomeComponent implements OnInit {
   wmdData: any=[];
   quickyData: any=[];
   latestData: any=[];
+  musicData: any=[];
   pauseData: any=[];
   isResume: boolean;
   isNotResume: boolean;
@@ -100,6 +101,7 @@ export class OtthomeComponent implements OnInit {
     this.ottCNE();
     this.ottWmd();
     this.ottResume();
+    this.ottMusicList();
   }
 
   ottBanner(){   
@@ -150,6 +152,12 @@ export class OtthomeComponent implements OnInit {
         this.isResume = true;
         this.isNotResume = false;
       }
+    });
+  }
+
+  ottMusicList(){   
+    this.dataService.ottMusicList().subscribe((result) => {
+      this.musicData = result;
     });
   }
 

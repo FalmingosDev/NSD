@@ -80,7 +80,10 @@ export class WelcomefooterComponent implements OnInit {
       }
       else if(value=='referral'){
         this.router.navigate(['/about_referral']);
-      }   
+      } 
+      else if(value=='rewards'){
+        this.router.navigate(['/login']);
+      }  
     }
   }
 

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
+import { environment } from '../../../environments/environment';
 
 // import { AlertService } from 'ngx-alerts';
 
@@ -15,7 +16,9 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
 })
 export class WelcomeComponent implements OnInit {
 
+  env=environment;
   
+  latestPosterData: any=[];
 
   public lat: any;
   public lng: any;
@@ -136,7 +139,15 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentLocation();
+    this.homePosterLatest();
     
+  }
+
+  homePosterLatest(){   
+    this.dataService.homeLatestLoster().subscribe((result) => {
+      this.latestPosterData = result;
+      console.log(this.latestPosterData);
+    });
   }
 
 

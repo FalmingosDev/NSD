@@ -52,7 +52,7 @@
             </div>
         </div>
     </section>
-    <section class="ml-sl">
+    <!-- <section class="ml-sl">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -67,7 +67,6 @@
                                         <img src="assets/images/popcorn.png" class="img-fluid">
                                     </div>
                                     <div class="bottom-img" style="text-align:center; ">
-                                        <!-- <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px; border-radius: 5px;">MULTIPLEX</span> -->
                                         <img src="assets/images/multiplex-bx.png" class="img-fluid">
                                     </div>
                                 </div>
@@ -83,7 +82,6 @@
                                         <img src="assets/images/sl-icon-2.png" class="img-fluid">
                                     </div>
                                     <div class="bottom-img" style="text-align:center; ">
-                                        <!-- <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">NEWSDESK</span> -->
                                         <img src="assets/images/newsdesk-bx.png" class="img-fluid">
                                     </div>
                                 </div>
@@ -99,7 +97,6 @@
                                         <img src="assets/images/sl-icon-3.png" class="img-fluid">
                                     </div>
                                     <div class="bottom-img" style="text-align:center; ">
-                                        <!-- <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">STREET</span> -->
                                         <img src="assets/images/street-bx.png" class="img-fluid">
                                     </div>
                                 </div>
@@ -115,7 +112,6 @@
                                         <img src="assets/images/sl-icon-4.png" class="img-fluid">
                                     </div>
                                     <div class="bottom-img" style="text-align:center; ">
-                                        <!-- <span style="color:rgb(255, 255, 255); background-color: rgb(160, 14, 116); font-weight: bold; font-size: 14px; padding: 3px;border-radius: 5px;">NFT ART</span> -->
                                         <img src="assets/images/nft-bx.png" class="img-fluid">
                                     </div>
                                 </div>
@@ -125,6 +121,42 @@
                 </div>
             </div>
         </div>
+    </section> -->
+    <section class="ml-sl">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="main-ml">
+                        <div class="main-ml-img">
+                            <img src="assets/images/multiplex.png" class="img-fluid">
+                        </div>
+                        <div class="main-bl-text">
+                            <P>MULTIPLEX</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="main-ml">
+                        <div class="main-ml-img">
+                            <img src="assets/images/news.png" class="img-fluid">
+                        </div>
+                        <div class="main-bl-text">
+                            <P>NEWSDESK</P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="main-ml">
+                        <div class="main-ml-img">
+                            <img src="assets/images/street.png" class="img-fluid">
+                        </div>
+                        <div class="main-bl-text">
+                            <P>STREET</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </section>
     <section class="grd-background">
         <div class="container-fluid">
@@ -203,14 +235,44 @@
     <section class="net_ott">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <a href="javascript:void(0)" (click)="checkAuth('ott')">
-                        <img src="assets/images/ott-bg-sm.png" class="img-fluid">
-                    </a>
+                <div class="col-4">
+                    <div class="ot-net-img">
+                        <img src="assets/images/net-ot.png" class="img-fluid">
+                    </div>
                 </div>
+                <div class="col-8">
+                    <ul class="icon-ott">
+                        <li><img src="assets/images/play-store.png" class="img-fluid"></li>
+                        <li><img src="assets/images/apple-icon.png" class="img-fluid"></li>
+                    </ul>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-4">
+                    <div class="ot-icon-vd">
+                        <a href="javascript:void(0)" (click)="checkAuth('ott')">
+                        <img src="assets/images/ott-vd-icon.png" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 pl-0" *ngFor="let pData of latestPosterData | keyvalue">
+                    <div class="ot-im-vd">
+                        <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                    </div>
+                </div>
+                <!-- <div class="col-4 pl-0">
+                    <div class="ot-im-vd">
+                        <img src="assets/images/baguni.jpg" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-4 pl-0">
+                    <div class="ot-im-vd">
+                        <img src="assets/images/pinki.jpg" class="img-fluid">
+                    </div>
+                </div> -->
             </div>
         </div>
-    </section>
+      </section>
     <section class="round-st-box-section">
         <div class="container">
             <div class="row">
@@ -223,7 +285,7 @@
                                         <img src="assets/images/net-star.png" class="img-fluid">
                                     </div>
                                 </div>
-                                <div class="col-1"></div>
+                                <div class="col-2"></div>
                                 <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-1.png" class="img-fluid">
                                 </div>
@@ -248,7 +310,7 @@
                                         <img src="assets/images/n-hastag.png" class="img-fluid">
                                     </div>
                                 </div>
-                                <div class="col-1"></div>
+                                <div class="col-2"></div>
                                 <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-2.png" class="img-fluid">
                                 </div>
@@ -273,7 +335,7 @@
                                         <img src="assets/images/n-games.png" class="img-fluid">
                                     </div>
                                 </div>
-                                <div class="col-1"></div>
+                                <div class="col-2"></div>
                                 <div class="col-3 text-right">
                                     <img src="assets/images/round-sl-3.png" class="img-fluid">
                                 </div>
@@ -294,7 +356,25 @@
             </div>
         </div>
     </section>
-    <section class="newo-inside">
+    <section class="dream-spin">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="dream-spin-img">
+                        <img src="assets/images/newo-dream-spin.png" class="img-fluid">
+                        <p>Unlock your Fortune</p>
+                    </div>
+                    <div class="dream-spin-main">
+                        <img src="assets/images/spiner-img.jpg" class="img-fluid">
+                    </div>
+                    <div class="spin-date">
+                        <p>Spin on 15th August</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </section>
+    <!-- <section class="newo-inside">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -328,7 +408,7 @@
                 </owl-carousel-o>
             </div>
         </div>
-    </section>
+    </section> -->
 
 </div>
 

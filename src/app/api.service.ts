@@ -362,6 +362,9 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'showlatest');
   }
 
+  public homeLatestLoster(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showhomeposter');
+  }
   public ottQuickyList(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showquicky');
   }
@@ -376,6 +379,10 @@ export class ApiService {
 
   public ottWmdList(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showwmd');
+  }
+
+  public ottMusicList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'showmusic');
   }
 
   public ottVideoDetail(id){

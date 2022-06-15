@@ -54,6 +54,7 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { AboutReferralComponent } from './about-referral/about-referral.component';
 import { ReferralDetailComponent } from './referral-detail/referral-detail.component';
+import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 
 
 
@@ -103,7 +104,8 @@ import { ReferralDetailComponent } from './referral-detail/referral-detail.compo
     WalletdetailsComponent,
     ChangepasswordComponent,
     AboutReferralComponent,
-    ReferralDetailComponent
+    ReferralDetailComponent,
+    ProfileDetailComponent
   ],
   imports: [
     CommonModule,
