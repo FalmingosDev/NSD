@@ -246,13 +246,14 @@
                         <li><img src="assets/images/apple-icon.png" class="img-fluid"></li>
                     </ul>
                 </div>
-            </div>  
+            </div> 
+            <a href="javascript:void(0)" (click)="checkAuth('ott')">
             <div class="row">
                 <div class="col-4">
                     <div class="ot-icon-vd">
-                        <a href="javascript:void(0)" (click)="checkAuth('ott')">
+                        <!-- <a href="javascript:void(0)" (click)="checkAuth('ott')"> -->
                         <img src="assets/images/ott-vd-icon.png" class="img-fluid">
-                        </a>
+                        <!-- </a> -->
                     </div>
                 </div>
                 <div class="col-4 pl-0" *ngFor="let pData of latestPosterData | keyvalue">
@@ -260,24 +261,15 @@
                         <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
                     </div>
                 </div>
-                <!-- <div class="col-4 pl-0">
-                    <div class="ot-im-vd">
-                        <img src="assets/images/baguni.jpg" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-4 pl-0">
-                    <div class="ot-im-vd">
-                        <img src="assets/images/pinki.jpg" class="img-fluid">
-                    </div>
-                </div> -->
             </div>
+        </a> 
         </div>
       </section>
     <section class="round-st-box-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#">
+                    <a href="javascript:void(0)" (click)="checkAuth('stars')">
                         <div class="round-st-bx">
                             <div class="row round-md-row">
                                 <div class="col-4">
@@ -294,15 +286,15 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="arrow-wt">
-                                        <a href="javascript:void(0)" (click)="checkAuth('stars')">
+                                        <!-- <a href="javascript:void(0)" (click)="checkAuth('stars')"> -->
                                             <img src="assets/images/arrow.png" class="img-fluid">
-                                        </a>
+                                        <!-- </a> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="javascript:void(0)" (click)="checkAuth('hash')">
                         <div class="round-st-bx">
                             <div class="row round-md-row">
                                 <div class="col-4">
@@ -318,16 +310,14 @@
                                     <div class="brd-border"></div>
                                 </div>
                                 <div class="col-2">
-                                    <div class="arrow-wt">
-                                        <a href="javascript:void(0)" (click)="checkAuth('hash')">
-                                            <img src="assets/images/arrow.png" class="img-fluid">
-                                        </a>
+                                    <div class="arrow-wt">                                        
+                                        <img src="assets/images/arrow.png" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="javascript:void(0)" (click)="checkAuth('game')">
                         <div class="round-st-bx">
                             <div class="row round-md-row">
                                 <div class="col-4">
@@ -344,9 +334,9 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="arrow-wt">
-                                        <a href="javascript:void(0)" (click)="checkAuth('game')">
+                                        
                                             <img src="assets/images/arrow.png" class="img-fluid">
-                                        </a>
+                                       
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { ActivatedRoute,Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+
+import { AlertService } from 'ngx-alerts';
 import * as $ from 'jquery';
 
 @Component({
@@ -12,10 +17,18 @@ export class ProfileDetailComponent implements OnInit {
   url:any='assets/images/defaul-profile-image.png';
   selectedFile:File;
 
-  constructor() { 
+  local_email:string=localStorage.getItem('token');
+  id:string;
+  result:any=[];
+  name: string;
+  email: string;
+  phone: any=[];
+  password: any=[];
+  wallet: any=[];
+
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) { 
     $(document).ready(function(){
       $("#edit-click").click(function(){
-          alert('1')
       $('#edit-one').hide();
       $('#edit-two').show();
       });
@@ -28,6 +41,19 @@ export class ProfileDetailComponent implements OnInit {
     $(".upload-button").on('click', function() {
       $(".file-upload").click();
     });
+
+
+    this.dataService.profileData(this.local_email).subscribe((res) => {
+      if(res.data){
+        this.result=res.data;
+        this.name=res.data.name;
+        this.email=res.data.email;
+        this.phone=res.data.phone;
+        this.password=res.data.password;
+        this.wallet=res.data.point;
+
+      }
+     });
   }
   onFileChanged(event) {
     const files = event.target.files;   

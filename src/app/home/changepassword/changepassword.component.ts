@@ -4,6 +4,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 import { AlertService } from 'ngx-alerts';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-changepassword',
@@ -15,7 +16,24 @@ export class ChangepasswordComponent implements OnInit {
   pwChangeForm: FormGroup | undefined;
   local_email:string=localStorage.getItem('token');
 
-  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private router:Router,private alertService: AlertService) { }
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private router:Router,private alertService: AlertService) {
+    $(document).ready(function() {
+
+      $(".show-password, .hide-password").on('click', function() {
+        var passwordId = $(this).parents('li:first').find('input').attr('id');
+        if ($(this).hasClass('show-password')) {
+          $("#" + passwordId).attr("type", "text");
+          $(this).parent().find(".show-password").hide();
+          $(this).parent().find(".hide-password").show();
+        } else {
+          $("#" + passwordId).attr("type", "password");
+          $(this).parent().find(".hide-password").hide();
+          $(this).parent().find(".show-password").show();
+        }
+      });
+    });
+    
+   }
 
   ngOnInit(): void {
     this.pwChangeForm = new FormGroup({

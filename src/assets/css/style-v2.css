@@ -42,8 +42,14 @@ body{
     color: #fff;
 }
 .margin-div{
-    margin-bottom: 74px;
+    margin-bottom: 100px;
 }
+.mobile_footer p{
+    margin: 0;
+    font-size: 13px;
+    margin-top: 5px;
+      color: #fff;
+  }
 
 /*side-nav*/
 .sidenav {

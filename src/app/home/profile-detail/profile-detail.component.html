@@ -23,6 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                  <form>
                     <div class="upload-img-profile">
                         <div class="small-12 medium-2 large-2 columns" id="firstImage">
                             <div class="circle">
@@ -30,22 +31,12 @@
                               </div>
                             <div class="p-image">
                               <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
-                              <input class="file-upload" type="file" accept="image/*"  (change)="onFileChanged($event)"/>
+                              <input class="file-upload" type="file" accept="image/*" formControlName="creator_profile_pic" (change)="onFileChanged($event)"/>
                             </div>
                           </div>
 
-                          <!-- <div class="small-12 medium-2 large-2 columns" id="secondImage">
-                            <div class="circle">
-                              <img class="profile-pic" src="assets/images/avatar.png">
-
-                            </div>
-                            <div class="p-image">
-                              <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
-                              <input class="file-upload" type="file" accept="image/*" />
-                                <p>@insaneRB</p>
-                            </div>
-                          </div> -->
                     </div>
+                  </form>
                 </div>
             </div>
           </div>
@@ -55,28 +46,28 @@
             <div class="row">
                 <div class="col-12">
                     <div class="edit-form">
-                        <form>
-                            <div id="edit-one">
+                        <div id="edit-one">
+                          <form>
                           <div class="form-group">
                             <label class="edit-label" for="">Name</label>
-                            <input type="text" class="form-control" id="textname" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" value="{{name}}" id="textname" aria-describedby="emailHelp">
                           </div>
                           <div class="form-group">
                             <label class="edit-label" for="">Email</label>
-                            <input type="email" class="form-control" id="email-text" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" value="{{email}}" id="email-text" aria-describedby="emailHelp">
                           </div>
                             <div class="form-group">
                                 <label class="edit-label" for="">Gender</label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>Male</option>
+                                    <option selected>Select Gender</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                   </select>
                           </div>
                           <div class="row form-row">
-                                <div class="form-group">
+                                <div class="form-group col-9" style="padding-left: 15px;">
                                   <label class="edit-label" for="">Phone Number</label>
-                                  <input type="phone" class="form-control" id="phone-text" aria-describedby="emailHelp">
+                                  <input type="phone" class="form-control" value="{{phone}}" id="phone-text" aria-describedby="emailHelp">
                                 </div>
                               <div class="col-3">
                                   <div class="edit-btn-div">
@@ -84,28 +75,32 @@
                               </div>
                               </div>
                             </div>
-                            </div>
-                              <div class="edit-phone-div" id="edit-two" style="display: none">
-                                <div class="form-group">
-                                    <label class="edit-label" for="">Old NO</label>
-                                    <input type="phone" class="form-control" id="old-phone" aria-describedby="phonelHelp">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="edit-label" for="">New NO</label>
-                                    <input type="phone" class="form-control" id="old-phone" aria-describedby="phonelHelp">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="edit-label" for="">OTP</label>
-                                    <input type="text" class="form-control" id="old-phone" aria-describedby="phonelHelp">
-                                  </div>
-                              </div>
-                            
                             <div class="submit-div">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="submit" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-                            </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <button type="submit" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                          </div>
+                          </form>
+                          </div>
+                          <div class="edit-phone-div" id="edit-two" style="display: none">
+                            <form>
+                              <div class="form-group">
+                                  <label class="edit-label" for="">Old NO</label>
+                                  <input type="phone" class="form-control" value="{{phone}}" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="form-group">
+                                  <label class="edit-label" for="">New NO</label>
+                                  <input type="phone" class="form-control" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="form-group">
+                                  <label class="edit-label" for="">OTP</label>
+                                  <input type="text" class="form-control" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="submit-div">
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  <button type="submit" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                              </div>
                             </form>
-                        
+                        </div>
                     </div>
                 </div>
             </div>

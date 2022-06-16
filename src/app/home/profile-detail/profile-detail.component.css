@@ -58,3 +58,6 @@ img {
   transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   color: #999;
 }
+option:not(:checked) {
+  background-color: #000;
+}
