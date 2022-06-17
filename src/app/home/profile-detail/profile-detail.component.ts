@@ -17,6 +17,7 @@ export class ProfileDetailComponent implements OnInit {
   url:any='assets/images/defaul-profile-image.png';
   selectedFile:File;
 
+  pflForm: FormGroup;
   local_email:string=localStorage.getItem('token');
   id:string;
   result:any=[];
@@ -24,9 +25,8 @@ export class ProfileDetailComponent implements OnInit {
   email: string;
   phone: any=[];
   password: any=[];
-  wallet: any=[];
 
-  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) { 
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private router:Router,private alertService: AlertService) { 
     $(document).ready(function(){
       $("#edit-click").click(function(){
       $('#edit-one').hide();
@@ -38,6 +38,14 @@ export class ProfileDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.pflForm = new FormGroup({
+
+      // email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
+      user_name: new FormControl('', Validators.required),
+      profile_pic: new FormControl('',Validators.required),
+      });
+
     $(".upload-button").on('click', function() {
       $(".file-upload").click();
     });
@@ -50,7 +58,6 @@ export class ProfileDetailComponent implements OnInit {
         this.email=res.data.email;
         this.phone=res.data.phone;
         this.password=res.data.password;
-        this.wallet=res.data.point;
 
       }
      });
@@ -70,10 +77,47 @@ export class ProfileDetailComponent implements OnInit {
     this.imagePath = files;
     reader.readAsDataURL(files[0]); 
     reader.onload = (_event) => { 
-        this.url = reader.result; 
+      this.url = reader.result; 
       
     }
     this.selectedFile=<File>event.target.files[0];
 
   }
+
+
+  get user_name() { return this.pflForm.get('user_name') }
+  get profile_pic() { return this.pflForm.get('profile_pic') }
+
+
+
+  pfldata(pflForm) {
+    // console.log(this.profile_pic.value);
+    // console.log(this.selectedFile);
+
+    // if (this.profile_pic.status == 'INVALID') {
+    //   alert('Please upload profile picture');
+    //   $('#profile_pic').focus();
+    // }
+    // else if (this.user_name.status == 'INVALID') {
+    //   alert('Name field is required');
+    //   $('#user_name').focus();
+    // }
+    // else{
+
+      this.dataService.updatePflForm(pflForm.user_name,this.selectedFile).subscribe((res) => {
+        if (res.status){
+          this.alertService.success(res.msg);
+          setTimeout(() => {
+            this.router.navigate(['/profile']);
+          }, 2000);
+        }
+        else {
+          this.alertService.danger(res.msg);
+        }
+      });
+    // }
+
+  }
+
+
 }

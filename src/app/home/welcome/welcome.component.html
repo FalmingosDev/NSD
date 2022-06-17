@@ -10,7 +10,13 @@
                 <div class="offset-6 col-2 text-center">
                     <div class="round-img">
                         <a routerLink="/profile">
-                            <img src="assets/images/face-round.png" class="img-fluid">
+                            <!-- <img src="assets/images/face-round.png" class="img-fluid"> -->
+                            <svg width="88%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                <g>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M43.215,433.924c5.125,59.787,50.392,77.723,103.346,77.723   c60.641,0,121.282,0,181.923,0c46.975,0,108.471,7.687,133.239-48.684c17.082-39.289,3.416-120.428-13.666-155.446   c-10.249-20.498-24.769-38.434-42.705-48.684c-63.203-34.164-71.744,17.082-133.239,26.477   c-75.161,11.103-86.264-48.684-140.926-35.018C56.881,268.229,38.09,368.159,43.215,433.924L43.215,433.924z" fill="#fff"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M237.949,0.896c-63.203,8.541-116.157,64.911-106.762,139.218   c7.687,62.349,65.766,114.449,139.218,105.054c61.495-7.687,113.595-65.766,104.2-138.364   C366.918,46.163,310.548-7.645,237.949,0.896L237.949,0.896z" fill="#fff"></path>
+                                </g>
+                                </svg>
                         </a>
                     </div>
                 </div>
@@ -32,6 +38,7 @@
             </div>
         </div>
     </section>
+    <a href="javascript:void(0)" (click)="checkAuth()">
     <section class="newo-join">
         <div class="container">
             <div class="row">
@@ -52,6 +59,7 @@
             </div>
         </div>
     </section>
+</a>
     <!-- <section class="ml-sl">
         <div class="container">
             <div class="row">
@@ -126,34 +134,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <div class="main-ml">
-                        <div class="main-ml-img">
-                            <img src="assets/images/multiplex.png" class="img-fluid">
-                        </div>
-                        <div class="main-bl-text">
-                            <P>MULTIPLEX</P>
-                        </div>
-                    </div>
+                    <a herf="javascript:void(0)" routerLink="/about_multiplex">
+                        <div class="main-ml">
+                            <div class="main-ml-img">
+                                <img src="assets/images/multiplex.png" class="img-fluid">
+                            </div>
+                            <div class="main-bl-text">
+                                <P>MULTIPLEX</P>
+                            </div>
+                        </div>                                                                                              
+                    </a>
                 </div>
                 <div class="col-4">
-                    <div class="main-ml">
-                        <div class="main-ml-img">
-                            <img src="assets/images/news.png" class="img-fluid">
+                    <a herf="javascript:void(0)" routerLink="/newsdesk">
+                        <div class="main-ml">
+                            <div class="main-ml-img">
+                                <img src="assets/images/news.png" class="img-fluid">
+                            </div>
+                            <div class="main-bl-text">
+                                <P>NEWSDESK</P>
+                            </div>
                         </div>
-                        <div class="main-bl-text">
-                            <P>NEWSDESK</P>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-4">
-                    <div class="main-ml">
-                        <div class="main-ml-img">
-                            <img src="assets/images/street.png" class="img-fluid">
-                        </div>
-                        <div class="main-bl-text">
-                            <P>STREET</P>
-                        </div>
-                    </div>
+                    <a herf="javascript:void(0)" routerLink="/newostreet">
+                        <div class="main-ml">
+                            <div class="main-ml-img">
+                                <img src="assets/images/street.png" class="img-fluid">
+                            </div>
+                            <div class="main-bl-text">
+                                <P>STREET</P>
+                            </div>
+                        </div>                                                                      
+                    </a>
                 </div>
             </div>
         </div>  
@@ -172,7 +186,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- <img src="assets/images/dev-newo-app-img.png" class="img-fluid"> -->
-                    <img src="assets/images/dev-newo-app-img.png" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#dev-modal">
+                    <img src="assets/images/dev-newo-app-img.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#dev-modal">
                 </div>
             </div>
         </div>
@@ -186,7 +200,7 @@
                             <a href="#">
                                 <div class="celibraty-main-div">
                                     <div class="celb-img">
-                                        <img src="assets/images/cricketer.jpg" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#cricketer-modal">
+                                        <img src="assets/images/cricketer.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#cricketer-modal">
                                         <!-- <video id="vid1" poster="assets/images/cricketer.jpg" width="100%" height="240" controls>
                                         <source src="/assets/video/johnty-rodes.mp4" type="video/mp4" /> -->
                                         <!-- </video> -->
@@ -201,7 +215,7 @@
                             <a href="#">
                                 <div class="celibraty-main-div">
                                     <div class="celb-img">
-                                        <img src="assets/images/lara.jpg" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#lara-modal">
+                                        <img src="assets/images/lara.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#lara-modal">
                                     </div>
                                 </div>
                             </a>
@@ -210,7 +224,7 @@
                             <a href="#">
                                 <div class="celibraty-main-div">
                                     <div class="celb-img">
-                                        <img src="assets/images/sidh.jpg" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#sidth-modal">
+                                        <img src="assets/images/sidh.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#sidth-modal">
                                     </div>
                                 </div>
                             </a>
@@ -240,23 +254,23 @@
                         <img src="assets/images/net-ot.png" class="img-fluid">
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-3"></div>
+                <!-- <div class="col-8">
                     <ul class="icon-ott">
                         <li><img src="assets/images/play-store.png" class="img-fluid"></li>
                         <li><img src="assets/images/apple-icon.png" class="img-fluid"></li>
                     </ul>
+                </div> -->
+                <div class="col-5">
+                    <div class="ot-icon-vd">
+                        <img src="assets/images/ott-vd-icon.png" class="img-fluid">
+                    </div>
                 </div>
             </div> 
             <a href="javascript:void(0)" (click)="checkAuth('ott')">
             <div class="row">
-                <div class="col-4">
-                    <div class="ot-icon-vd">
-                        <!-- <a href="javascript:void(0)" (click)="checkAuth('ott')"> -->
-                        <img src="assets/images/ott-vd-icon.png" class="img-fluid">
-                        <!-- </a> -->
-                    </div>
-                </div>
-                <div class="col-4 pl-0" *ngFor="let pData of latestPosterData | keyvalue">
+                
+                <div class="col-6" *ngFor="let pData of latestPosterData | keyvalue">
                     <div class="ot-im-vd">
                         <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
                     </div>
@@ -274,20 +288,28 @@
                             <div class="row round-md-row">
                                 <div class="col-4">
                                     <div class="net-st">
-                                        <img src="assets/images/net-star.png" class="img-fluid">
+                                        <img src="assets/images/net-star.webp" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-3 text-right">
-                                    <img src="assets/images/round-sl-1.png" class="img-fluid">
+                                    <img src="assets/images/round-sl-1.webp" class="img-fluid">
                                 </div>
                                 <div class="col-1">
                                     <div class="brd-border"></div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-2 pd-l-r">
                                     <div class="arrow-wt">
                                         <!-- <a href="javascript:void(0)" (click)="checkAuth('stars')"> -->
-                                            <img src="assets/images/arrow.png" class="img-fluid">
+                                            <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                <style type="text/css">
+                                                    .st0{fill-rule:evenodd;clip-rule:evenodd;}
+                                                </style>
+                                                <g>
+                                                    <path class="st0" d="M352.3,208.5H49c-25.2,0-46.6,21.6-46.6,47l0,0c0,25.4,21.4,47,46.6,47h303.2l-70.5,69.9   c-17.6,19.1-17.6,48.3,0,66.1l0,0c18.9,19.1,47.8,19.1,65.4,0l147.2-148.7c1.3,0,1.3,0,2.5-1.3l0,0c7.5-7.6,12.6-19.1,12.6-29.2   l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0l0,0v-1.3l0,0l0,0V253l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0   v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0c-1.3-10.2-5-19.1-12.6-26.7l0,0c-1.3,0-1.3-1.3-2.5-1.3L347.2,72.5   c-17.6-17.8-46.6-17.8-65.4,0l0,0c-17.6,17.8-17.6,47,0,66.1L352.3,208.5z" fill="#c3b5f2"></path>
+                                                </g>
+                                                </svg>
+                                            <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
                                         <!-- </a> -->
                                     </div>
                                 </div>
@@ -299,19 +321,27 @@
                             <div class="row round-md-row">
                                 <div class="col-4">
                                     <div class="net-st">
-                                        <img src="assets/images/n-hastag.png" class="img-fluid">
+                                        <img src="assets/images/n-hastag.webp" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-3 text-right">
-                                    <img src="assets/images/round-sl-2.png" class="img-fluid">
+                                    <img src="assets/images/round-sl-2.webp" class="img-fluid">
                                 </div>
                                 <div class="col-1">
                                     <div class="brd-border"></div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-2 pd-l-r">
                                     <div class="arrow-wt">                                        
-                                        <img src="assets/images/arrow.png" class="img-fluid">
+                                        <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
+                                        <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                            <style type="text/css">
+                                                .st0{fill-rule:evenodd;clip-rule:evenodd;}
+                                            </style>
+                                            <g>
+                                                <path class="st0" d="M352.3,208.5H49c-25.2,0-46.6,21.6-46.6,47l0,0c0,25.4,21.4,47,46.6,47h303.2l-70.5,69.9   c-17.6,19.1-17.6,48.3,0,66.1l0,0c18.9,19.1,47.8,19.1,65.4,0l147.2-148.7c1.3,0,1.3,0,2.5-1.3l0,0c7.5-7.6,12.6-19.1,12.6-29.2   l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0l0,0v-1.3l0,0l0,0V253l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0   v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0c-1.3-10.2-5-19.1-12.6-26.7l0,0c-1.3,0-1.3-1.3-2.5-1.3L347.2,72.5   c-17.6-17.8-46.6-17.8-65.4,0l0,0c-17.6,17.8-17.6,47,0,66.1L352.3,208.5z" fill="#c3b5f2"></path>
+                                            </g>
+                                            </svg>
                                     </div>
                                 </div>
                             </div>
@@ -322,20 +352,28 @@
                             <div class="row round-md-row">
                                 <div class="col-4">
                                     <div class="net-st">
-                                        <img src="assets/images/n-games.png" class="img-fluid">
+                                        <img src="assets/images/n-games.webp" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-3 text-right">
-                                    <img src="assets/images/round-sl-3.png" class="img-fluid">
+                                    <img src="assets/images/round-sl-3.webp" class="img-fluid">
                                 </div>
                                 <div class="col-1">
                                     <div class="brd-border"></div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-2 pd-l-r">
                                     <div class="arrow-wt">
                                         
-                                            <img src="assets/images/arrow.png" class="img-fluid">
+                                            <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
+                                            <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                <style type="text/css">
+                                                    .st0{fill-rule:evenodd;clip-rule:evenodd;}
+                                                </style>
+                                                <g>
+                                                    <path class="st0" d="M352.3,208.5H49c-25.2,0-46.6,21.6-46.6,47l0,0c0,25.4,21.4,47,46.6,47h303.2l-70.5,69.9   c-17.6,19.1-17.6,48.3,0,66.1l0,0c18.9,19.1,47.8,19.1,65.4,0l147.2-148.7c1.3,0,1.3,0,2.5-1.3l0,0c7.5-7.6,12.6-19.1,12.6-29.2   l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0l0,0v-1.3l0,0l0,0V253l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0   v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0c-1.3-10.2-5-19.1-12.6-26.7l0,0c-1.3,0-1.3-1.3-2.5-1.3L347.2,72.5   c-17.6-17.8-46.6-17.8-65.4,0l0,0c-17.6,17.8-17.6,47,0,66.1L352.3,208.5z" fill="#c3b5f2"></path>
+                                                </g>
+                                                </svg>
                                        
                                     </div>
                                 </div>
@@ -355,7 +393,7 @@
                         <p>Unlock your Fortune</p>
                     </div>
                     <div class="dream-spin-main">
-                        <img src="assets/images/spiner-img.jpg" class="img-fluid">
+                        <img src="assets/images/spiner-img.webp" class="img-fluid">
                     </div>
                     <div class="spin-date">
                         <p>Spin on 15th August</p>
@@ -411,7 +449,7 @@
           </button>
             </div>
             <div class="modal-body">
-                <video id="vid1" poster="assets/images/cricketer.jpg" width="100%" height="240" controls>
+                <video id="vid1" poster="assets/images/cricketer-madal.webp" width="100%" height="240" controls>
                 <source src="/assets/video/johnty-rodes.mp4" type="video/mp4" />
                 </video>
             </div>
@@ -428,7 +466,7 @@
           </button>
             </div>
             <div class="modal-body">
-                <video id="vid4" poster="assets/images/lara.jpg" width="100%" height="240" controls>
+                <video id="vid4" poster="assets/images/lara-modal.webp" width="100%" height="240" controls>
                 <source src="/assets/video/lara-dutta.mp4" type="video/mp4" />
                 </video>
             </div>
@@ -445,7 +483,7 @@
           </button>
             </div>
             <div class="modal-body">
-                <video id="vid3" poster="assets/images/sidh.jpg" width="100%" height="240" controls>
+                <video id="vid3" poster="assets/images/sidh-modal.webp" width="100%" height="240" controls>
                 <source src="/assets/video/sunil-grover.mp4" type="video/mp4" />
                 </video>
             </div>
@@ -462,7 +500,7 @@
           </button>
             </div>
             <div class="modal-body">
-                <video id="vid2" poster="assets/images/dev-newo-app-img.png" width="100%" height="240" controls>
+                <video id="vid2" poster="assets/images/dev-newo-app-img.webp" width="100%" height="240" controls>
                 <source src="/assets/video/dev.mp4" type="video/mp4" autoplay/>
                 </video>
             </div>

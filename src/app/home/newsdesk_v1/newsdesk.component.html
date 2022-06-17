@@ -5,17 +5,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <!-- <div class="col-6" *ngFor="let bData of businessData | keyvalue">
+                        <div class="col-6" *ngFor="let bData of businessData | keyvalue">
                             <a [routerLink]="['/newsdetail']" (click)="newsUrl(bData.value.link[0])">
                                 <img src={{bData.value.postImage[0]}} />
                                 <h4 class="news-p">{{bData.value.title[0]}}</h4>
 
-                            </a>
-                        </div> -->
-                        <div class="col-6 fit-bl" *ngFor="let eData of entertainmentData | keyvalue">
-                            <a href="javascript:vois(0)" [routerLink]="['/newsdetail']" *ngIf="eData.value.media != 'N/A'" (click)="newsUrl(eData.value.title,eData.value.author,eData.value.published_date,eData.value.summary,eData.value.media)">
-                                <img src={{eData.value.media}} height="100%;" width="100%;" />
-                                <h4 class="news-p">{{eData.value.title}}</h4>
                             </a>
                         </div>
                     </div>
@@ -23,7 +17,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- <section class="banner">
         <owl-carousel-o [options]="newsDskOptBn">
             <ng-template carouselSlide *ngFor="let tData of topData | keyvalue">

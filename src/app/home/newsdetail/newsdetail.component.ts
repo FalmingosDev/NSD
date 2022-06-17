@@ -10,9 +10,16 @@ export class NewsdetailComponent implements OnInit {
 
   newsUrl: any;
   sanitizer:any;
- final_url:string;
+  final_url:string;
 
+  entBaseUrl:string = 'https://www.imdb.com/title/';
+  entFullUrl:string = "";
 
+  newsTitle:string="";
+  newsAuthor:string="";
+  newspDate:string="";
+  newsImg:string="";
+  newsSummary:string="";
 
   constructor(sanitizer: DomSanitizer,) {
     this.sanitizer=sanitizer;
@@ -20,10 +27,16 @@ export class NewsdetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.newsUrl=localStorage.getItem('url');
-    this.final_url=this.getSafeUrl(this.newsUrl);
+    // this.newsUrl=localStorage.getItem('url');
+    // this.entFullUrl = this.newsUrl;
+    // this.final_url=this.getSafeUrl(this.entFullUrl);
     // this.link=this.final_url + "&output=embed";
-    // console.log(this.url);
+    // console.log(this.final_url);
+    this.newsTitle=localStorage.getItem('title');
+    this.newsAuthor=localStorage.getItem('author');
+    this.newspDate=localStorage.getItem('pdate');
+    this.newsImg=localStorage.getItem('img');
+    this.newsSummary=localStorage.getItem('desc');
   }
   getSafeUrl(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url)

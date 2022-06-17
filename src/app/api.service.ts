@@ -330,11 +330,20 @@ export class ApiService {
     // return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=business&countries=us');
   }
 
-  public entertainmentList(){
-    // return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=49c9715ef8634e48842df52e0451504f');
 
-    return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=entertainment&countries=us');
+  public entertainmentList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'rssfeed');
+
+   // return this.httpClient.get<any>(this.settings);
+
+    // return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=entertainment&countries=us');
   }
+  
+  // public entertainmentList(){
+  //   // return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=49c9715ef8634e48842df52e0451504f');
+
+  //   return this.httpClient.get<any>('https://api.mediastack.com/v1/news?access_key=62267afed30842b7cc100cb529c9d316&keywords=entertainment&countries=us');
+  // }
 
    public sportsList(){
     // return this.httpClient.get<any>('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=49c9715ef8634e48842df52e0451504f');
@@ -500,6 +509,23 @@ export class ApiService {
   public insertgamescore(game_id,score){ 
     const userEmail=localStorage.getItem('token');   
     return this.httpClient.post<any>(this.env.laravel_api_url+'savegamescore',{userEmail,game_id,score});
+  }
+
+  public updatePflForm(user_name,profile_pic){
+
+    let action_type='update_pfl';
+    const email=localStorage.getItem('token');
+    const formData: FormData = new FormData();
+    formData.append('action_type',action_type);
+    formData.append('user_name',user_name);
+    formData.append('email',email);
+    // formData.append('file',profile_pic);
+
+    formData.append('file',profile_pic, profile_pic.name);
+
+  return this.httpClient.post<any>(this.env.baseUrl+'/profile.php',formData );
+  // return this.httpClient.post<any>(this.env.baseUrl+'/profile.php', {email,user_name,profile_pic});
+
   }
 
 }

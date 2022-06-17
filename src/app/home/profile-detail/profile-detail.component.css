@@ -27,13 +27,13 @@ margin-top: 9px;
     display: none;
 }
 .circle {
-    border-radius: 100% !important;
+    border-radius: 26px !important;
     overflow: hidden;
     width: 128px;
     height: 128px;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    position: absolute;
-    top: 72px;
+    position: relative;
+    top: 0px;
 }
 img {
     max-width: 100%;
@@ -41,7 +41,7 @@ img {
 }
 .p-image {
     position: absolute;
-    top: 174px;
+    top: 105px;
     right: 30px;
     color: #666666;
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);

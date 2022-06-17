@@ -99,9 +99,6 @@ export class NewsdeskComponent implements OnInit {
   entertainmentData:any =[];
   sportsData:any =[];
   topData:any =[];
-  entData:any =[];
-
-  
 
 
 
@@ -109,51 +106,43 @@ export class NewsdeskComponent implements OnInit {
   constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
-    //this.businessNews();
+    this.businessNews();
     this.entertainmentNews();
-    //this.sportsNews();
-    //this.topNews();
+    this.sportsNews();
+    this.topNews();
 
   }
 
-  /*businessNews(){   
+  businessNews(){   
     this.dataService.businessList().subscribe((result) => {
       //console.log(result[0].channel.item)
       this.businessData = result[0];
     });
-  }*/
+  }
 
   entertainmentNews(){   
     this.dataService.entertainmentList().subscribe((result) => {
       // console.log(result.data)
-      this.entertainmentData = result.articles;
-      // console.log(this.entertainmentData)
+      this.entertainmentData = result.data;
     });
-
   }
 
+  sportsNews(){   
+    this.dataService.sportsList().subscribe((result) => {
+      // console.log(result.data)
+      this.sportsData = result.data;
+    });
+  }
 
-  // sportsNews(){   
-  //   this.dataService.sportsList().subscribe((result) => {
-  //     // console.log(result.data)
-  //     this.sportsData = result.data;
-  //   });
-  // }
+  topNews(){   
+    this.dataService.topList().subscribe((result) => {
+      // console.log(result.data)
+      this.topData = result.data;
+    });
+  }
 
-  // topNews(){   
-  //   this.dataService.topList().subscribe((result) => {
-  //     // console.log(result.data)
-  //     this.topData = result.data;
-  //   });
-  // }
-
-  newsUrl(newsTitle,newsAuthor,newspDate,newsSummary,newsImg){
-    //localStorage.setItem('url',newsLink);
-    localStorage.setItem('title',newsTitle);
-    localStorage.setItem('author',newsAuthor);
-    localStorage.setItem('pdate',newspDate);
-    localStorage.setItem('img',newsImg);
-    localStorage.setItem('desc',newsSummary);
+  newsUrl(newsLink){
+    localStorage.setItem('url',newsLink);
   }
 
 

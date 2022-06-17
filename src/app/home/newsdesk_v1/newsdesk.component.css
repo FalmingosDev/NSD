@@ -5,7 +5,6 @@
 .ml-tran {
     height: 100vh;
 }
-
 .rs-h3-cl {
     color: #ffc107;
     font-size: 32px;
@@ -13,15 +12,13 @@
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
 }
-
-.gm-a h2 {
+.gm-a h2{
     font-size: 13px;
     color: #ffc107;
     margin-top: 10px;
     padding: 0px 15px;
 }
-
-.gm-a h4 {
+.gm-a h4{
     font-size: 23px;
     color: #fff;
     padding: 0px 15px;
@@ -30,20 +27,16 @@
     display: inline-block;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 2.1em;
-    /* (Number of lines you want visible) * (line-height) */
+    max-height: 2.1em; /* (Number of lines you want visible) * (line-height) */
     line-height: 1.2em;
 }
-
-
 /* .gm-a h4:after{
     content: "...";
     position: absolute;
     right: 86px;
     bottom: -1px;
 } */
-
-.news-p {
+.news-p{
     color: #ffc107;
     font-size: 16px;
     /* display: block;  */
@@ -54,37 +47,31 @@
     display: inline-block;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 3.6em;
-    /* (Number of lines you want visible) * (line-height) */
+    max-height: 3.6em; /* (Number of lines you want visible) * (line-height) */
     line-height: 1.2em;
 }
-
-.news-p:after {
+.news-p:after{
     content: "...";
     position: absolute;
     right: 55px;
     bottom: -1px;
 }
-
 .news-h {
     width: 50ch;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
-.gm-a {
-    display: inline-block;
-    background: #ffffff38;
-    /* padding: 10px; */
-    border-radius: 0px 0px 10px 10px;
+.gm-a{
+        display: inline-block;
+        background: #ffffff38;
+        /* padding: 10px; */
+        border-radius: 0px 0px 10px 10px;
 }
-
-.slide {
+.slide{
     position: relative;
 }
-
-.slide h1 {
+.slide h1{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -95,15 +82,8 @@
     font-size: 36px;
     font-family: 'Josefin Sans', sans-serif;
 }
-
 .sl-sm img {
     margin-bottom: 20px;
     height: 182px;
-    object-fit: cover;
-}
-
-.fit-bl img {
-    width: 100%;
-    height: 200px;
     object-fit: cover;
 }

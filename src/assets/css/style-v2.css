@@ -44,12 +44,12 @@ body{
 .margin-div{
     margin-bottom: 100px;
 }
-.mobile_footer p{
+.mobile_footer p {
     margin: 0;
     font-size: 13px;
     margin-top: 5px;
-      color: #fff;
-  }
+    color: #fff;
+}
 
 /*side-nav*/
 .sidenav {
@@ -615,11 +615,11 @@ img {
 }
 .p-image p{
     color: #00ffff;
-    font-size: 23px;
+    font-size: 13px;
 }
 /*edit-form-section*/
 .edit-form-section{
-    margin-top: 208px;
+    /* margin-top: 208px; */
     padding: 10px 0px;
 }
 .form-control {
