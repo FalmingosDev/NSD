@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-6">
                     <div class="profile-header-details">
-                        <a href="#">
+                        <a routerLink="/change_password">
                             <p>Change Password</p>
                         </a>
                     </div>
@@ -31,10 +31,9 @@
                               </div>
                             <div class="p-image">
                               <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
-                              <input class="file-upload" type="file" accept="image/*" formControlName="creator_profile_pic" (change)="onFileChanged($event)"/>
+                              <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)"/>
                             </div>
                           </div>
-
                     </div>
                   </form>
                 </div>
