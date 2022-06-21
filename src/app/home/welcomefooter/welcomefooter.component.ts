@@ -61,6 +61,14 @@ export class WelcomefooterComponent implements OnInit {
         else if(value=='profile'){
           this.router.navigate(['/profile']);
         }
+        else if(value=='rewards'){
+            if(res.cnt ==1){
+              this.router.navigate(['/rewards']);
+            }
+            else{
+              this.router.navigate(['/pricing']);
+            }
+        }
         else if(value=='referral'){
           if(res.cnt ==1){
             this.router.navigate(['/referral']);

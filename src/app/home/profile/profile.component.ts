@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 
 import { AlertService } from 'ngx-alerts';
 
@@ -11,6 +12,8 @@ import { AlertService } from 'ngx-alerts';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  env = environment;
 
   local_email:string | null=localStorage.getItem('token');
   id:string | undefined;
@@ -23,6 +26,9 @@ export class ProfileComponent implements OnInit {
   referrer_point: any=[];
   login_time: any=[];
   wallet_point: any=[];
+  profile_pic : string;
+  profile_pic_base : string = this.env.appUrl+'profile_pic/';
+  profile_pic_url : string;
 
 
 
@@ -49,7 +55,8 @@ export class ProfileComponent implements OnInit {
         this.referrer_point=res.data.referrer_point;
         this.wallet_point=res.data.wallet_point;
         this.login_time=res.data.login_time;
-
+        this.profile_pic = res.data.profile_pic;
+        this.profile_pic_url = this.profile_pic_base+res.data.profile_pic;
       }
      });
 

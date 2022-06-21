@@ -1,20 +1,28 @@
-.edit-btn-div button{
+.edit-btn-div button {
     padding: 10px 3px;
-border: none;
-font-size: 11px;
-display: flex;
-align-items: center;
-/* height: 100%; */
-background: #0ff;
-border-radius: 13px;
-}
-.edit-btn-div {
-display: flex;
-align-items: center;
-height: 100%;
-margin-top: 9px;
+    border: none;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    /* height: 100%; */
+    background: #0ff;
+    border-radius: 13px;
 }
 
+.edit-btn-div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 9px;
+}
+
+.edit-btn-div a {
+    padding: 8px 020px;
+    background: #0ff;
+    display: inline-block;
+    border-radius: 10px;
+    color: #000;
+}
 
 .profile-pic {
     width: 200px;
@@ -26,6 +34,7 @@ margin-top: 9px;
 .file-upload {
     display: none;
 }
+
 .circle {
     border-radius: 26px !important;
     overflow: hidden;
@@ -35,10 +44,12 @@ margin-top: 9px;
     position: relative;
     top: 0px;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 .p-image {
     position: absolute;
     top: 105px;
@@ -47,17 +58,20 @@ img {
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
     width: 100%;
 }
+
 .p-image:hover {
-  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
 }
+
 .upload-button {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .upload-button:hover {
-  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-  color: #999;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    color: #999;
 }
+
 option:not(:checked) {
-  background-color: #000;
+    background-color: #000;
 }

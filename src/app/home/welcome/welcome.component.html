@@ -39,27 +39,27 @@
         </div>
     </section>
     <a href="javascript:void(0)" (click)="checkAuth()">
-    <section class="newo-join">
-        <div class="container">
-            <div class="row">
-                <div class="col-7">
-                    <div>
-                        <img src="assets/images/newo-cln.png" class="img-fluid">
+        <section class="newo-join">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <div>
+                            <img src="assets/images/newo-cln.png" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-5">
-                    <div class="join-div">
-                        <!-- <a href="#">Join Now</a> -->
-                        <!-- <a href="javascript:void(0)"> -->
-                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
-                        <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
-                        <!-- </a> -->
+                    <div class="col-5">
+                        <div class="join-div">
+                            <!-- <a href="#">Join Now</a> -->
+                            <!-- <a href="javascript:void(0)"> -->
+                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isSubscribe">Enjoy Now</a>
+                            <a href="javascript:void(0)" class="join-a-tg" (click)="checkAuth()" *ngIf="isNotSubscribe">Join Now</a>
+                            <!-- </a> -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</a>
+        </section>
+    </a>
     <!-- <section class="ml-sl">
         <div class="container">
             <div class="row">
@@ -142,7 +142,7 @@
                             <div class="main-bl-text">
                                 <P>MULTIPLEX</P>
                             </div>
-                        </div>                                                                                              
+                        </div>
                     </a>
                 </div>
                 <div class="col-4">
@@ -166,11 +166,11 @@
                             <div class="main-bl-text">
                                 <P>STREET</P>
                             </div>
-                        </div>                                                                      
+                        </div>
                     </a>
                 </div>
             </div>
-        </div>  
+        </div>
     </section>
     <section class="grd-background">
         <div class="container-fluid">
@@ -248,37 +248,38 @@
     </section>
     <section class="net_ott">
         <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="ot-net-img">
-                        <img src="assets/images/net-ot.png" class="img-fluid">
+            <a href="javascript:void(0)" (click)="checkAuth('ott')">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="ot-net-img">
+                            <img src="assets/images/net-ot.png" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-3"></div>
-                <!-- <div class="col-8">
+                    <div class="col-3"></div>
+                    <!-- <div class="col-8">
                     <ul class="icon-ott">
                         <li><img src="assets/images/play-store.png" class="img-fluid"></li>
                         <li><img src="assets/images/apple-icon.png" class="img-fluid"></li>
                     </ul>
                 </div> -->
-                <div class="col-5">
-                    <div class="ot-icon-vd">
-                        <img src="assets/images/ott-vd-icon.png" class="img-fluid">
+                    <div class="col-5">
+                        <div class="ot-icon-vd">
+                            <img src="assets/images/ott-vd-icon.png" class="img-fluid">
+                        </div>
                     </div>
                 </div>
-            </div> 
-            <a href="javascript:void(0)" (click)="checkAuth('ott')">
-            <div class="row">
-                
-                <div class="col-6" *ngFor="let pData of latestPosterData | keyvalue">
-                    <div class="ot-im-vd">
-                        <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                <!-- <a href="javascript:void(0)" (click)="checkAuth('ott')"> -->
+                <div class="row">
+
+                    <div class="col-6" *ngFor="let pData of latestPosterData | keyvalue">
+                        <div class="ot-im-vd">
+                            <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a> 
+            </a>
         </div>
-      </section>
+    </section>
     <section class="round-st-box-section">
         <div class="container">
             <div class="row">
@@ -301,7 +302,7 @@
                                 <div class="col-2 pd-l-r">
                                     <div class="arrow-wt">
                                         <!-- <a href="javascript:void(0)" (click)="checkAuth('stars')"> -->
-                                            <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                                 <style type="text/css">
                                                     .st0{fill-rule:evenodd;clip-rule:evenodd;}
                                                 </style>
@@ -309,7 +310,7 @@
                                                     <path class="st0" d="M352.3,208.5H49c-25.2,0-46.6,21.6-46.6,47l0,0c0,25.4,21.4,47,46.6,47h303.2l-70.5,69.9   c-17.6,19.1-17.6,48.3,0,66.1l0,0c18.9,19.1,47.8,19.1,65.4,0l147.2-148.7c1.3,0,1.3,0,2.5-1.3l0,0c7.5-7.6,12.6-19.1,12.6-29.2   l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0l0,0v-1.3l0,0l0,0V253l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0   v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0c-1.3-10.2-5-19.1-12.6-26.7l0,0c-1.3,0-1.3-1.3-2.5-1.3L347.2,72.5   c-17.6-17.8-46.6-17.8-65.4,0l0,0c-17.6,17.8-17.6,47,0,66.1L352.3,208.5z" fill="#c3b5f2"></path>
                                                 </g>
                                                 </svg>
-                                            <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
+                                        <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
                                         <!-- </a> -->
                                     </div>
                                 </div>
@@ -332,7 +333,7 @@
                                     <div class="brd-border"></div>
                                 </div>
                                 <div class="col-2 pd-l-r">
-                                    <div class="arrow-wt">                                        
+                                    <div class="arrow-wt">
                                         <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
                                         <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                             <style type="text/css">
@@ -364,9 +365,9 @@
                                 </div>
                                 <div class="col-2 pd-l-r">
                                     <div class="arrow-wt">
-                                        
-                                            <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
-                                            <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+
+                                        <!-- <img src="assets/images/arrow.png" class="img-fluid"> -->
+                                        <svg width="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                                 <style type="text/css">
                                                     .st0{fill-rule:evenodd;clip-rule:evenodd;}
                                                 </style>
@@ -374,7 +375,7 @@
                                                     <path class="st0" d="M352.3,208.5H49c-25.2,0-46.6,21.6-46.6,47l0,0c0,25.4,21.4,47,46.6,47h303.2l-70.5,69.9   c-17.6,19.1-17.6,48.3,0,66.1l0,0c18.9,19.1,47.8,19.1,65.4,0l147.2-148.7c1.3,0,1.3,0,2.5-1.3l0,0c7.5-7.6,12.6-19.1,12.6-29.2   l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0v-1.3l0,0l0,0l0,0v-1.3l0,0l0,0V253l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0   v-1.3l0,0l0,0l0,0l0,0l0,0l0,0l0,0l0,0v-1.3l0,0l0,0c-1.3-10.2-5-19.1-12.6-26.7l0,0c-1.3,0-1.3-1.3-2.5-1.3L347.2,72.5   c-17.6-17.8-46.6-17.8-65.4,0l0,0c-17.6,17.8-17.6,47,0,66.1L352.3,208.5z" fill="#c3b5f2"></path>
                                                 </g>
                                                 </svg>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -400,8 +401,8 @@
                     </div>
                 </div>
             </div>
-          </div>
-      </section>
+        </div>
+    </section>
     <!-- <section class="newo-inside">
         <div class="container">
             <div class="row">

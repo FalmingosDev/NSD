@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="profile-header-details">
-                        <a href="/profile">
+                        <a routerLink="/profile">
                             <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -52,8 +52,12 @@
                                 <div class="upload-img-profile">
                                     <div class="small-12 medium-2 large-2 columns" id="firstImage">
                                         <div class="circle">
-                                            <img class="profile-pic" src={{url}}>
+                                            <img class="profile-pic" src={{url}} *ngIf="profile_img != ''">
+                                            <img class="profile-pic" src={{url}} *ngIf="profile_img == ''">
                                         </div>
+                                        <!-- <div class="circle">
+                                            <img class="profile-pic" src={{url}}>
+                                        </div> -->
                                         <div class="p-image">
                                             <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
                                             <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)" />
@@ -84,36 +88,39 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="edit-btn-div">
-                                            <button id="edit-click">Edit Phone</button>
+                                            <a href="javascript:void(0)" routerLink="/edit_phone/{{phone}}">
+                                                <i aria-hidden="true" class="fa fa-pencil upload-button"></i> Edit
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="submit-div">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="submit" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                    <a href="javascript:void(0)" routerLink="/profile" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 </div>
                             </form>
                         </div>
-                        <div class="edit-phone-div" id="edit-two" style="display: none">
-                            <form>
+                        <!-- <div class="edit-phone-div" id="edit-two" style="display: none">
+                            <form class="container" [formGroup]="phnChangeForm" (ngSubmit)="phoneUpdate(phnChangeForm.value)">
                                 <div class="form-group">
                                     <label class="edit-label" for="">Old NO</label>
                                     <input type="phone" class="form-control" value="{{phone}}" id="old-phone" aria-describedby="phonelHelp">
                                 </div>
                                 <div class="form-group">
                                     <label class="edit-label" for="">New NO</label>
-                                    <input type="phone" class="form-control" id="old-phone" aria-describedby="phonelHelp">
+                                    <input type="phone" class="form-control" formControlName="new_phone" id="old-phone" aria-describedby="phonelHelp">
                                 </div>
                                 <div class="form-group">
                                     <label class="edit-label" for="">OTP</label>
-                                    <input type="text" class="form-control" id="old-phone" aria-describedby="phonelHelp">
+                                    <input type="text" class="form-control" formControlName="otp" id="old-phone" aria-describedby="phonelHelp">
                                 </div>
                                 <div class="submit-div">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <a href="javascript:void(0)" routerLink="/profile"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-close" routerLink="/profile"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 </div>
                             </form>
-                        </div>
+
+                        </div> -->
                     </div>
                 </div>
             </div>

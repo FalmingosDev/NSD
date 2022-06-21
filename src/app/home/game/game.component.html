@@ -1,18 +1,19 @@
 <app-header></app-header>
+<div class="mt-bt">
+    <section style="text-align: center; color: yellow;">
 
-<section style="text-align: center; color: yellow;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12" *ngFor="let game of gameData | keyvalue">
-                <div class="gm-img">
-                    <img src="{{env.AWS_GAME_URL+game.value.game_img}}" class="img-fluid" (click)="active_modal(game.value.game_id,game.value.game_price,game.value.game_name)" data-toggle="modal" data-target="#earnmodal">
-                    <h6>{{game.value.game_name}}</h6>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" *ngFor="let game of gameData | keyvalue">
+                    <div class="gm-img">
+                        <img src="{{env.AWS_GAME_URL+game.value.game_img}}" class="img-fluid" (click)="active_modal(game.value.game_id,game.value.game_price,game.value.game_name)" data-toggle="modal" data-target="#earnmodal">
+                        <h6>{{game.value.game_name}}</h6>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+</div>
 
 <div class="modal fade" id="earnmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

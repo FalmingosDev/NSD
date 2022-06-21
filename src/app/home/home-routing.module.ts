@@ -39,6 +39,8 @@ import {BlogdetailsComponent} from './blogdetails/blogdetails.component';
 import { WalletdetailsComponent } from './walletdetails/walletdetails.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { EditphoneComponent } from './editphone/editphone.component';
+
 
 
 
@@ -81,7 +83,8 @@ const routes: Routes = [
   {path: 'blogdetails/:blog_id', component:BlogdetailsComponent},
   {path: 'walletdetails', component:WalletdetailsComponent},
   {path: 'change_password', component:ChangepasswordComponent},
-  {path: 'profile_detail', component:ProfileDetailComponent}
+  {path: 'profile_detail', component:ProfileDetailComponent},
+  {path: 'edit_phone/:phone', component:EditphoneComponent}
 ];
 
 @NgModule({

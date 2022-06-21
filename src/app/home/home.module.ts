@@ -55,6 +55,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { AboutReferralComponent } from './about-referral/about-referral.component';
 import { ReferralDetailComponent } from './referral-detail/referral-detail.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
+import { EditphoneComponent } from './editphone/editphone.component';
 
 
 
@@ -105,7 +106,8 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
     ChangepasswordComponent,
     AboutReferralComponent,
     ReferralDetailComponent,
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    EditphoneComponent
   ],
   imports: [
     CommonModule,
