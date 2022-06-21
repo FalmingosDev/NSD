@@ -19,7 +19,7 @@ export class ProfileDetailComponent implements OnInit {
 
   imagePath:File;
   message:string;
-  url:any="";
+  url:any='assets/images/defaul-profile-image.png';
   imgFile:File;
 
   pflForm: FormGroup;
@@ -71,12 +71,12 @@ export class ProfileDetailComponent implements OnInit {
         
         this.profile_img = res.data.profile_pic;
         this.profile_pic_url = this.profile_pic_base+res.data.profile_pic;
-        if(this.profile_img){
+        /*if(this.profile_img){
           this.url = this.profile_pic_url;
         }
         else{
           this.url = 'assets/images/defaul-profile-image.png';
-        }
+        }*/
       }
      });
 
@@ -91,7 +91,7 @@ export class ProfileDetailComponent implements OnInit {
 
   pfldata(pflForm) {
       console.log(pflForm.user_name);
-      this.dataService.updatePflForm(pflForm.user_name,this.imgFile).subscribe((res) => {
+      this.dataService.updatePflForm(pflForm.user_name).subscribe((res) => {
         if(res.status){
           this.alertService.success(res.msg);
           setTimeout(() => {
