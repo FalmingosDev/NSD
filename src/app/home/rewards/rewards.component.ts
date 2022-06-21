@@ -14,6 +14,7 @@ export class RewardsComponent implements OnInit {
   rewardData_title:String="";
   rewardData_desc:String="";
   rewardData_val_date:String="";
+  rewardData_coin:String="";
 
   constructor(private service:ApiService,private route:Router) { }
   
@@ -34,6 +35,7 @@ export class RewardsComponent implements OnInit {
       this.rewardData_id = result.reward_data[0].id;
       this.rewardData_title = result.reward_data[0].rewards_title;
       this.rewardData_desc = result.reward_data[0].rewards_desc;
+      this.rewardData_coin = result.reward_data[0].reward_coin;
       //this.rewardData_val_date = result.reward_data[0].validity_date;
     })
     $('#rewardDiv'+id).attr('data-target','#active_spark1');

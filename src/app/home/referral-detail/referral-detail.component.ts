@@ -14,6 +14,8 @@ export class ReferralDetailComponent implements OnInit {
   item:any;
   referralCodeId:any;
   total:number;
+  itemLength:number;
+
   constructor(private dataService: ApiService,private route:Router,private alertService: AlertService) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class ReferralDetailComponent implements OnInit {
       this.item=this.collection.referralList;
       this.referralCodeId=this.collection.referralCode;
 
+      this.itemLength = this.item.length;
 
       //this.referPoint=this.collection.referralList;
       //  console.warn(this.item);

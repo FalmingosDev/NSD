@@ -12,36 +12,37 @@
                 </div>
             </div>
         </div>
-  </div> 
-  <section class="refimg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 pr-0">
-                <img src="assets/images/referral-log-bg.png" class="img-fluid">
-            </div>
-        </div>
-      </div>
-  </section>
-  <section class="ref-dt">
-    <div class="container">
-        <div class="row pd-td" *ngFor="let row of item;">
-            <div class="col-3">
-                <div class="dt-round-log">
-                    <img src="assets/images/avatar2.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="dt-rounf-ref-text">
-                    <p>{{row.name}}<span>on {{row.use_date}}</span></p>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="ref-dt-coin">
-                    <p>{{row.referrer_point}}<span><img src="assets/images/zero-icon.png" class="img-fluid"></span></p>
+    </div>
+    <section class="refimg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 pr-0">
+                    <img src="assets/images/referral-log-bg.png" class="img-fluid">
                 </div>
             </div>
         </div>
-        <!-- <div class="row pd-td">
+    </section>
+    <section class="ref-dt">
+        <div class="container">
+            <div *ngIf="itemLength == 0" style="text-align:center; color:aliceblue;">No Data Found</div>
+            <div class="row pd-td" *ngFor="let row of item;">
+                <div class="col-3">
+                    <div class="dt-round-log">
+                        <img src="assets/images/avatar2.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="dt-rounf-ref-text">
+                        <p>{{row.name}}<span>on {{row.use_date}}</span></p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="ref-dt-coin">
+                        <p>{{row.referrer_point}}<span><img src="assets/images/zero-icon.png" class="img-fluid"></span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row pd-td">
             <div class="col-3">
                 <div class="dt-round-log">
                     <img src="assets/images/avatar2.png" class="img-fluid">
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </div> -->
-        <!-- <div class="row pd-td">
+            <!-- <div class="row pd-td">
             <div class="col-3">
                 <div class="dt-round-log">
                     <img src="assets/images/avatar2.png" class="img-fluid">
@@ -75,7 +76,7 @@
                 </div>
             </div>
         </div> -->
-      </div>
-  </section>
-  
+        </div>
+    </section>
+
 </div>

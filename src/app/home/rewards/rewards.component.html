@@ -61,7 +61,10 @@
                     <div class="wl-sm-bl" data-toggle="modal" id="rewardDiv{{rewards.id}} " *ngIf="rewards.reward_apply=='Applied' && rewards.validity=='Valid'">
                         <img src="assets/images/wl-cm-1.png" class="img-fluid">
                         <p>{{rewards.rewards_title}}</p>
-                        <h6>Valid till {{rewards.end_date}}</h6>
+                        <!-- <h6>Valid till {{rewards.end_date}}</h6> -->
+                        <div class="act">
+                            <h6>Applied</h6>
+                        </div>
                     </div>
 
                     <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus" *ngIf="rewards.validity=='Coming Soon'">
@@ -150,7 +153,7 @@
                     <div class="wl-cm-gift">
                         <img src="assets/images/welcome-gt-img.png" class="img-fluid">
                     </div>
-                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> 100</span></p>
+                    <p><img src="assets/images/wl-bonus-icon.png" class="img-fluid"><span> {{rewardData_coin}}</span></p>
                     <h6>NEWO COIN</h6>
                 </div>
             </div>

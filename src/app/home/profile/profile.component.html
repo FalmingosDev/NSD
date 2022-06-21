@@ -16,9 +16,11 @@
                         <a routerLink="/change_password">
                             <p>Change Password</p>
                         </a>
-                        <div class="face-round-profile">
-                            <img src="assets/images/face-round.png" class="img-fluid">
-                        </div>
+                        <a href="javascript:void(0)" routerLink="/profile_detail">
+                            <div class="face-round-profile">
+                                <img src="assets/images/face-round.png" class="img-fluid" style="max-width: 50%;">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -34,40 +36,46 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
-                    <div class="my-newo-bx">
-                        <img src="assets/images/wallet.png" class="img-fluid">
+                <a href="javascript:void(0)" routerLink="/walletdetails">
+                    <div class="col-3">
+                        <div class="my-newo-bx">
+                            <img src="assets/images/wallet.png" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-9">
-                    <div class="my-newo-count">
-                        <h3>Wallet (Balance)<span>{{wallet}}</span></h3>
+                    <div class="col-9">
+                        <div class="my-newo-count">
+                            <h3>Wallet (Balance)<span>{{wallet}}</span></h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="row">
-                <div class="col-3">
-                    <div class="my-newo-bx">
-                        <img src="assets/images/profile-rewards.png" class="img-fluid">
+                <a href="javascript:void(0)" routerLink="/rewards">
+                    <div class="col-3">
+                        <div class="my-newo-bx">
+                            <img src="assets/images/profile-rewards.png" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-9">
-                    <div class="my-newo-count">
-                        <h3>Reward (Earned)<span>{{wallet_point}}</span></h3>
+                    <div class="col-9">
+                        <div class="my-newo-count">
+                            <h3>Reward (Earned)<span>{{wallet_point}}</span></h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="row">
-                <div class="col-3">
-                    <div class="my-newo-bx">
-                        <img src="assets/images/profile-referals.png" class="img-fluid">
+                <a href="javascript:void(0)" routerLink="/referral">
+                    <div class="col-3">
+                        <div class="my-newo-bx">
+                            <img src="assets/images/profile-referals.png" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-9">
-                    <div class="my-newo-count">
-                        <h3>Referral (Earned)<span>{{referrer_point}}</span></h3>
+                    <div class="col-9">
+                        <div class="my-newo-count">
+                            <h3>Referral (Earned)<span>{{referrer_point}}</span></h3>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="row">
                 <div class="col-3">

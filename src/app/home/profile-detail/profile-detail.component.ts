@@ -15,7 +15,7 @@ export class ProfileDetailComponent implements OnInit {
   imagePath:File;
   message:string;
   url:any='assets/images/defaul-profile-image.png';
-  selectedFile:File;
+  imgFile:File;
 
   pflForm: FormGroup;
   local_email:string=localStorage.getItem('token');
@@ -42,8 +42,8 @@ export class ProfileDetailComponent implements OnInit {
     this.pflForm = new FormGroup({
 
       // email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
-      user_name: new FormControl('', Validators.required),
-      profile_pic: new FormControl('',Validators.required),
+        user_name: new FormControl('', Validators.required),
+        profile_pic: new FormControl(''),
       });
 
     $(".upload-button").on('click', function() {
@@ -80,44 +80,20 @@ export class ProfileDetailComponent implements OnInit {
       this.url = reader.result; 
       
     }
-    this.selectedFile=<File>event.target.files[0];
+
+    this.imgFile=<File>event.target.files[0];
+    console.log(this.imgFile);
 
   }
 
+  pfldata(pflForm) {
+      console.log(pflForm.user_name);
+      this.dataService.updatePflForm(pflForm.user_name,this.imgFile).subscribe((res) => {
+      });
+  }
 
   get user_name() { return this.pflForm.get('user_name') }
   get profile_pic() { return this.pflForm.get('profile_pic') }
-
-
-
-  pfldata(pflForm) {
-    // console.log(this.profile_pic.value);
-    // console.log(this.selectedFile);
-
-    // if (this.profile_pic.status == 'INVALID') {
-    //   alert('Please upload profile picture');
-    //   $('#profile_pic').focus();
-    // }
-    // else if (this.user_name.status == 'INVALID') {
-    //   alert('Name field is required');
-    //   $('#user_name').focus();
-    // }
-    // else{
-
-      this.dataService.updatePflForm(pflForm.user_name,this.selectedFile).subscribe((res) => {
-        if (res.status){
-          this.alertService.success(res.msg);
-          setTimeout(() => {
-            this.router.navigate(['/profile']);
-          }, 2000);
-        }
-        else {
-          this.alertService.danger(res.msg);
-        }
-      });
-    // }
-
-  }
 
 
 }

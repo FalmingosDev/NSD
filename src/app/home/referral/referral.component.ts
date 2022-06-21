@@ -21,7 +21,7 @@ export class ReferralComponent implements OnInit {
   sanitizer:any;
   wappShareurl:string | undefined;
   // wappUrl:string="https://web.whatsapp.com://send?text=https://newocoin.app/share/share.html?refCodeUrl="
-  wappUrl:string="https://api.whatsapp.com//send/?text=https://newocoin.app/share/share.html?refCodeUrl="
+  wappUrl:string="https://api.whatsapp.com//send/?text=Use this code for Subscription https://newocoin.app/share/share.html?refCodeUrl="
 
   constructor(sanitizer: DomSanitizer,private dataService: ApiService,private route:Router,private alertService: AlertService) {
     this.sanitizer=sanitizer;
