@@ -111,9 +111,16 @@ body{
     border-radius: 10px;
     width: 100%;
 } */
+#mySidenav .nav-tabs {
+    border-bottom: 2px solid #725cc1;
+}
 #mySidenav a.nav-link.active {
     width: 100%;
     border-radius: 11px;
+    color: #fff;
+    background-color: #725cc1;
+    border: none;
+    border-radius: 10px;
 }
 .nav-tabs .nav-link {
     margin-bottom: -3px;
@@ -179,7 +186,7 @@ body{
 }
 /*header*/
 .banner {
-    background-image: url(../images/banner.jpg);
+    background-image: url(../images/banner.webp);
     padding: 20px 0px;
     height: 300px;
     background-attachment: fixed;

@@ -33,7 +33,7 @@ export class PlaygameComponent implements OnInit {
   game_id: any;
 
   // validIframe:boolean=false;
-  constructor(sanitizer: DomSanitizer,private activatedRoute:ActivatedRoute,private dataService: ApiService,private route:Router) {
+  constructor(sanitizer: DomSanitizer,private activatedRoute:ActivatedRoute,private dataService: ApiService,private router:Router) {
     this.sanitizer=sanitizer;
    }
 
@@ -63,11 +63,25 @@ export class PlaygameComponent implements OnInit {
     this.game_id = localStorage.getItem('gameId');
     indexedDB.open('highscore');
     //console.log(this.score);
-    this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
-      localStorage.removeItem('score');
-      localStorage.removeItem('gameId');
-    });
-   
+
+    if(this.game_id=4){
+      this.score='100';
+    // console.log(this.score);
+      this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
+        localStorage.removeItem('score');
+        localStorage.removeItem('gameId');
+        this.router.navigate(['/game']);
+      });
+
+    }
+    else{
+      this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
+        localStorage.removeItem('score');
+        localStorage.removeItem('gameId');
+        this.router.navigate(['/game']);
+
+      });
+    }
   }
 
 }
