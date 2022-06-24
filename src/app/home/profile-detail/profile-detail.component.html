@@ -1,0 +1,128 @@
+<ngx-alerts></ngx-alerts>
+<div class="margin-div">
+    <section class="edit-profile-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="profile-header-details">
+                        <a routerLink="/profile">
+                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="profile-header-details">
+                        <a routerLink="/change_password">
+                            <p>Change Password</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edit-img-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <form> -->
+                    <!-- <div class="upload-img-profile">
+                        <div class="small-12 medium-2 large-2 columns" id="firstImage">
+                            <div class="circle">
+                                <img class="profile-pic" src={{url}}> 
+                              </div>
+                            <div class="p-image">
+                              <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
+                              <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)"/>
+                            </div>
+                          </div>
+                    </div> -->
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="edit-form-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="edit-form">
+                        <div id="edit-one">
+                            <!-- <form> -->
+                            <form [formGroup]="pflForm" (ngSubmit)="pfldata(pflForm.value)">
+                                <div class="upload-img-profile">
+                                    <div class="small-12 medium-2 large-2 columns" id="firstImage">
+                                        <!-- <div class="circle">
+                                             <img class="profile-pic" src={{url}} *ngIf="profile_img != ''">
+                                            <img class="profile-pic" src={{url}} *ngIf="profile_img == ''"> 
+                                            <img class="profile-pic" src={{url}}>
+                                        </div> -->
+                                        <!-- <div class="p-image">
+                                            <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
+                                            <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)" />
+                                            <p>{{email}}</p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="edit-label" for="">Name</label>
+                                    <input type="text" class="form-control" formControlName="user_name" value="{{name}}" id="textname" aria-describedby="emailHelp">
+                                </div>
+                                <!-- <div class="form-group">
+                            <label class="edit-label" for="">Email</label>
+                            <input type="email" class="form-control" value="{{email}}" id="email-text" aria-describedby="emailHelp">
+                          </div>
+                            <div class="form-group">
+                                <label class="edit-label" for="">Gender</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                  </select>
+                          </div> -->
+                                <div class="row form-row">
+                                    <div class="form-group col-9" style="padding-left: 15px;">
+                                        <label class="edit-label" for="">Phone Number</label>
+                                        <input type="phone" class="form-control" value="{{phone}}" id="phone-text" aria-describedby="emailHelp" readonly>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="edit-btn-div">
+                                            <a href="javascript:void(0)" routerLink="/edit_phone/{{phone}}">
+                                                <i aria-hidden="true" class="fa fa-pencil upload-button"></i> Edit
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="submit-div">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <a href="javascript:void(0)" routerLink="/profile" class="btn btn-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="edit-phone-div" id="edit-two" style="display: none">
+                            <form class="container" [formGroup]="phnChangeForm" (ngSubmit)="phoneUpdate(phnChangeForm.value)">
+                                <div class="form-group">
+                                    <label class="edit-label" for="">Old NO</label>
+                                    <input type="phone" class="form-control" value="{{phone}}" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="form-group">
+                                    <label class="edit-label" for="">New NO</label>
+                                    <input type="phone" class="form-control" formControlName="new_phone" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="form-group">
+                                    <label class="edit-label" for="">OTP</label>
+                                    <input type="text" class="form-control" formControlName="otp" id="old-phone" aria-describedby="phonelHelp">
+                                </div>
+                                <div class="submit-div">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <a href="javascript:void(0)" class="btn btn-close" routerLink="/profile"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                </div>
+                            </form>
+
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<app-welcomefooter></app-welcomefooter>
