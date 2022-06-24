@@ -8,6 +8,8 @@ import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { OttModule } from './ott/ott.module'
 import { CreatorModule } from './creator/creator.module';
+import { HashtagModule } from './hashtag/hashtag.module';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     OttModule,
     CreatorModule,
-    HttpClientModule
+    HttpClientModule,
+    HashtagModule
   ],
   providers: [],
   bootstrap: [AppComponent]

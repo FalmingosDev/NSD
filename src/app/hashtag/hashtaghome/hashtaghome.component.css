@@ -1,0 +1,100 @@
+@media screen and (max-width: 767px) {
+    .logo {
+    width: 65%;
+    display: block;
+}
+    .mobile_footer h1{font-size: 13px;}
+    .colboration p {
+    color: #fff;
+    padding: 10px 2px;
+}
+    
+    .header-main{
+        border:1px solid #6e6969;padding: 6px 0;}
+    .main-div img{border-radius: 5px;padding: 0 0 8px 0; box-shadow: 1px 1px 1px #000;}
+    .colboration i{color: #ffff;margin: 10px 15px;}
+    .img-source{float: right;}
+    .first-box{padding: 0 5px 0 5px;}
+    .button-new span{
+        font-size: 14px;
+        background: #00adff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 1px 1px 2px #898383;}
+    .colboration p {
+    color: #fff;
+    padding: 10px 2px;
+}
+    .button-new1 span{
+        font-size: 14px;
+        background: #f30166;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 1px 1px 2px #898383;
+}
+    .colboration p {
+    color: #fff;
+    padding: 10px 2px;
+}
+    .button-new3 span{
+    font-size: 14px;
+    background: #fff;
+    padding: 1px 10px;
+    border-radius: 5px;
+    color: #000;
+    box-shadow: 1px 1px 2px #898383;
+    } 
+    .has-logo img{
+        width: 50%;
+    }
+    .button-new4 span{
+    font-size: 14px; 
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #000;
+    box-shadow: 1px 1px 2px #898383;
+    }
+    .img-source img{border: 1px solid #eee;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    object-fit: cover;}
+ 
+    
+    .colboration p {
+    color: #fff;
+    padding: 10px 2px;
+}
+    .main-div{position: relative;}
+    .button-new span{position: absolute;
+    top: 12px;
+    right: 13px;
+    width: 115px;
+   
+    }  
+    .button-new i{margin: 0 4px;}
+    .button-new1 i{margin: 0 4px;}
+   
+   
+    .button-new1 span{
+    position: absolute;
+    top: 50px;
+    right: 13px;
+    width: 115px;
+    
+    }
+    .button-new3 span {
+    position: absolute;
+    top: 110px;
+    left: 8px;
+}
+    .button-new4 span {
+    position: absolute;
+    top: 138px;
+    left: 6px;
+    
+}
+}
