@@ -50,7 +50,9 @@ body{
     margin-top: 5px;
     color: #fff;
 }
-
+.menu-div-img img{
+    width: 48%;
+}
 /*side-nav*/
 .sidenav {
   height: 100%;

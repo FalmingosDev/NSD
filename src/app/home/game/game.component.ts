@@ -44,17 +44,23 @@ export class GameComponent implements OnInit {
   }
 
   payForGame(id){ 
-    this.dataService.gamePayment(id).subscribe((result)=>{ 
-      if(result.success==true){     
-        $("#close_modal").click();
+    if(this.price==0) {
+      $("#close_modal").click();
         this.route.navigate(['/play/'+id+'']);
-      }
-      else if(result.success==false){  
-        $("#insuff_balance").show();   
-        $("#balance").hide();
-        $("#pay").hide();
-      }
-    })
+    }  
+    else{ 
+      this.dataService.gamePayment(id).subscribe((result)=>{ 
+        if(result.success==true){     
+          $("#close_modal").click();
+          this.route.navigate(['/play/'+id+'']);
+        }
+        else if(result.success==false){  
+          $("#insuff_balance").show();   
+          $("#balance").hide();
+          $("#pay").hide();
+        }
+      })
+    }
   }
 
 }

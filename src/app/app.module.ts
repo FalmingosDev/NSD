@@ -11,6 +11,8 @@ import { CreatorModule } from './creator/creator.module';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { DatePipe } from '@angular/common';
+
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreatorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

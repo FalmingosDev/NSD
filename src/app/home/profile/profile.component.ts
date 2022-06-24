@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   password: any=[];
   wallet: any=[];
   referrer_point: any=[];
-  login_time: any=[];
+  active_date: any=[];
   wallet_point: any=[];
   profile_pic : string;
   profile_pic_base : string = this.env.appUrl+'profile_pic/';
@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
         this.wallet=res.data.point;
         this.referrer_point=res.data.referrer_point;
         this.wallet_point=res.data.wallet_point;
-        this.login_time=res.data.login_time;
+        this.active_date=res.data.active_date;
         this.profile_pic = res.data.profile_pic;
         this.profile_pic_url = this.profile_pic_base+res.data.profile_pic;
       }

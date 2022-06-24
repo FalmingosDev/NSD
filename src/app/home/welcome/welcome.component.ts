@@ -7,6 +7,9 @@ import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
 import { environment } from '../../../environments/environment';
 
+import { DatePipe } from '@angular/common';
+
+
 // import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -22,6 +25,9 @@ export class WelcomeComponent implements OnInit {
 
   public lat: any;
   public lng: any;
+  public myDate: any;
+  public transform_date: any;
+  
 
   country:any;
   isSubscribe:boolean=false;
@@ -115,7 +121,7 @@ export class WelcomeComponent implements OnInit {
     nav: false
   };
 
-  constructor(private router:Router,private dataService: ApiService) { 
+  constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe) { 
    
 
     if(localStorage.getItem('token')){
@@ -138,6 +144,13 @@ export class WelcomeComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.myDate = new Date();
+    // console.log(this.myDate);
+    this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+    console.log(this.transform_date);
+ 
+      this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
+   
     this.getCurrentLocation();
     this.homePosterLatest();
     
@@ -146,7 +159,7 @@ export class WelcomeComponent implements OnInit {
   homePosterLatest(){   
     this.dataService.homeLatestLoster().subscribe((result) => {
       this.latestPosterData = result;
-      console.log(this.latestPosterData);
+      // console.log(this.latestPosterData);
     });
   }
 

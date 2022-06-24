@@ -358,6 +358,11 @@ export class ApiService {
   
   }
 
+  public activeDateUpdate(active_date){
+    const userEmail=localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url+'saveactivedate',{userEmail,active_date});
+  }
+
   public getcountry(lat,lng){
     return this.httpClient.get<any>('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lng);
     

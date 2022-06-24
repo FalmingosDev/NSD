@@ -15,10 +15,11 @@ a:hover {
 
 .box {
     border-radius: 30px;
-    height: 350px;
+    height: inherit;
     background: #ff8100;
     display: block;
     margin: 0 auto;
+    padding: 10px 0px 20px;
 }
 
 .modal-title-new {
@@ -33,17 +34,20 @@ a:hover {
 
 .game {
     background: #f2b671;
-    /* height: 296px; */
     border-radius: 30px;
     padding: 10px 14px;
     margin: -4px 10px;
-    min-height: 84%;
+    min-height: inherit;
 }
 
 .game p {
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 700;
     font-family: Comic Sans MS;
+}
+.modal-footer {
+    padding: 0px 10px 5px;
+    border: none;
 }
 
 .modal-content {
