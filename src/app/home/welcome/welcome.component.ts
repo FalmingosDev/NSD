@@ -33,6 +33,7 @@ export class WelcomeComponent implements OnInit {
   isSubscribe:boolean=false;
   isNotSubscribe:boolean=false;
 
+
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -120,6 +121,7 @@ export class WelcomeComponent implements OnInit {
     },
     nav: false
   };
+ 
 
   constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe) { 
  
@@ -254,17 +256,22 @@ export class WelcomeComponent implements OnInit {
   }
 
   leadBonusModalApply(){
-    this.dataService.activateLeadBonus().subscribe((result)=>{
+    let lead_coupon = (<HTMLInputElement>document.getElementById('lead_coupon')).value;
+    this.dataService.activateLeadBonus(lead_coupon).subscribe((result)=>{
       if(result.status){
         document.getElementById("lead_coupon").style.display='none'; 
+        document.getElementById("leadcoupon_failed").style.display='none'; 
         document.getElementById("leadcoupon_success").style.display='block'; 
+        localStorage.setItem('lead_bonus', '1');
         setTimeout(function(){$("#getLeadModal .close").click()},2000);
         this.router.navigate(['/']);
       }
       else{
+        //alert(result.message);
+        // document.getElementById("lead_coupon").style.display='none'; 
+        (<HTMLInputElement>document.getElementById('leadcoupon_failed')).innerHTML = result.message;
         document.getElementById("leadcoupon_failed").style.display='block'; 
-        setTimeout(function(){$("#getLeadModal .close").click()},2000);
-        this.router.navigate(['/']);
+        //this.router.navigate(['/']);
       }
       
     })
