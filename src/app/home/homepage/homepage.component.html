@@ -85,7 +85,42 @@
                     </div>
                     <div class="clan-div">
                         <a href="javascript: void(0);" (click)="userSubcriptionOtt()">
-                            <img src="assets/images/clan-3.png" class="img-fluid">
+                            <!-- <img src="assets/images/clan-3.png" class="img-fluid"> -->
+                            <div class="net_ott">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="ot-net-img">
+                                                <img src="assets/images/net-ot.png" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                        </div>
+                                        <div class="col-5">
+                                            <div class="ot-icon-vd">
+                                                <img src="assets/images/ott-vd-icon.webp" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div class="row">
+                                        <!-- <div class="col-6">
+                                            <div class="ot-im-vd">
+                                                <img src="https://newoott.s3.ap-southeast-1.amazonaws.com/thumb/T1655290713.jpg" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="ot-im-vd">
+                                                <img src="https://newoott.s3.ap-southeast-1.amazonaws.com/thumb/T1655129046.jpg" class="img-fluid">
+                                            </div>
+                                        </div> -->
+                                        <div class="col-6" *ngFor="let pData of latestPosterData | keyvalue">
+                                            <div class="ot-im-vd">
+                                                <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </a>
                     </div>
                     <div class="clan-text">

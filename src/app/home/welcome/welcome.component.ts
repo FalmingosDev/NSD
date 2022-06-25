@@ -90,6 +90,32 @@ export class WelcomeComponent implements OnInit {
     nav: false
   };
 
+  customOptionsfordrmowl: OwlOptions  = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    autoplay:true,
+    margin: 10,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1 
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: false
+  };
 
   customOptionsforinside: OwlOptions  = {
     loop: true,
@@ -161,7 +187,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   homePosterLatest(){   
-    this.dataService.homeLatestLoster().subscribe((result) => {
+    this.dataService.homeLatestPoster().subscribe((result) => {
       this.latestPosterData = result;
       // console.log(this.latestPosterData);
     });
@@ -263,7 +289,7 @@ export class WelcomeComponent implements OnInit {
         document.getElementById("leadcoupon_failed").style.display='none'; 
         document.getElementById("leadcoupon_success").style.display='block'; 
         localStorage.setItem('lead_bonus', '1');
-        setTimeout(function(){$("#getLeadModal .close").click()},2000);
+        setTimeout(function(){$("#getLeadModal .close").click()},1000);
         this.router.navigate(['/']);
       }
       else{

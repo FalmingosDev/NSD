@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
 import { AlertService } from 'ngx-alerts';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -36,10 +37,12 @@ export class ProfileComponent implements OnInit {
   phnChangeForm: FormGroup | undefined;
   // show:boolean=true;
   walletData: any;
+
+  transform_date: any;
   // old_password: any;
   // new_password: any;
   
-  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService) {}
+  constructor(private activeRoute:ActivatedRoute, private dataService: ApiService,private route:Router,private alertService: AlertService,private datePipe: DatePipe) {}
   
   ngOnInit(): void {
     
@@ -55,6 +58,8 @@ export class ProfileComponent implements OnInit {
         this.referrer_point=res.data.referrer_point;
         this.wallet_point=res.data.wallet_point;
         this.active_date=res.data.active_date;
+
+        this.transform_date =this.datePipe.transform(this.active_date,'dd.MM.yyyy');
         this.profile_pic = res.data.profile_pic;
         this.profile_pic_url = this.profile_pic_base+res.data.profile_pic;
       }

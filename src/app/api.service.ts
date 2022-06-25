@@ -376,7 +376,7 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url+'showlatest');
   }
 
-  public homeLatestLoster(){
+  public homeLatestPoster(){
     return this.httpClient.get<any>(this.env.laravel_api_url+'showhomeposter');
   }
   public ottQuickyList(){

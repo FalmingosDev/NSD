@@ -187,7 +187,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- <img src="assets/images/dev-newo-app-img.png" class="img-fluid"> -->
-                    <img src="assets/images/dev-newo-app-img.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#dev-modal">
+                    <div class="wel-div">
+                        <img src="assets/images/dev-newo-app-img.webp" class="img-fluid clb-img-sm" data-toggle="modal" data-target="#dev-modal">
+                        <div class="weldiv-icon">
+                            <img src="assets/images/youtube-icon.png" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -386,17 +391,53 @@
             </div>
         </div>
     </section>
+
     <section class="dream-spin">
-        <div class="container">
+        <div class="container"> 
             <div class="row">
                 <div class="col-12">
-                    <div class="dream-spin-img">
+                    <div class="dream-spin-img mb-3">
+                        <img src="assets/images/dream-spin-title.webp" class="img-fluid">
+                    </div>
+                    <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
+                        <ng-template carouselSlide>
+                            <div class="drm-item">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-1.webp" class="img-fluid">
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 15th August</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="drm-item">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-2.webp" class="img-fluid">
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 24th October</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <!-- <ng-template carouselSlide>
+                            <div class="drm-item">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-3.webp" class="img-fluid">
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 31st December</p>  
+                                </div>
+                            </div>
+                        </ng-template> -->
+                    </owl-carousel-o>
+                    <!-- <div class="dream-spin-img">
                         <img src="assets/images/newo-dream-spin.webp" class="img-fluid">
                         <p>Unlock your Fortune</p>
                     </div>
                     <div class="dream-spin-main">
                         <img src="assets/images/spiner-img.webp" class="img-fluid">
-                    </div>
+                    </div> -->
                     <!-- <div class="spin-date">
                         <p>Spin on 15th August</p>
                     </div> -->

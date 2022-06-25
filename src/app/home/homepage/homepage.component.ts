@@ -7,6 +7,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AlertService } from 'ngx-alerts';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-homepage',
@@ -15,6 +16,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomepageComponent implements OnInit {
 
+  latestPosterData: any=[];
+  env=environment;
   customOptions: any = {
     loop: true,
     margin: 10,
@@ -50,10 +53,16 @@ export class HomepageComponent implements OnInit {
    };
 
   ngOnInit(): void {   
-   
+    this.PosterLatest();
   };
 
   
+  PosterLatest(){   
+    this.dataService.homeLatestPoster().subscribe((result) => {
+      this.latestPosterData = result;
+      // console.log(this.latestPosterData);
+    });
+  }
   
 
 userSubcriptionOtt(){		
