@@ -534,4 +534,9 @@ export class ApiService {
 
   }
 
+  public activateLeadBonus(){
+    const userEmail=localStorage.getItem('token');   
+    return this.httpClient.post<any>(this.env.laravel_api_url+'saveleadcoupon',{userEmail});
+  }
+
 }

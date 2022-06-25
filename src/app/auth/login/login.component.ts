@@ -120,6 +120,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('token', data.result.email);
                 localStorage.setItem('country_code', data.result.country);
                 localStorage.setItem('subscription_end_date', data.result.subscription);
+                localStorage.setItem('lead_bonus', data.result.lead_count);
                 localStorage.removeItem('lat');
                 localStorage.removeItem('lng');
                 this.router.navigate(['/']);

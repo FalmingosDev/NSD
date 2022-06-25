@@ -23,6 +23,7 @@
             </div>
         </div>
     </section>
+    <a href="#" data-toggle="modal" data-target="#getLeadModal" style="display: none;" id="btn-modal">btn</a>
     <section class="banner">
         <div class="container">
             <div class="row">
@@ -504,6 +505,33 @@
                 <video id="vid2" poster="assets/images/dev-newo-app-img.webp" width="100%" height="240" controls>
                 <source src="/assets/video/dev.mp4" type="video/mp4" autoplay/>
                 </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade getmodal" id="getLeadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: #f09;background: rgb(34, 1, 148);background: linear-gradient(149deg, rgba(34, 1, 148, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(139, 6, 251, 1) 100%);margin: 0px 20px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="wl-bonus">
+                    <h1>WELCOME BONUS</h1>
+                    <div class="wl-cm-gift">
+                        <img src="assets/images/welcome-gt-img.png" class="img-fluid">
+                    </div>
+                    <div class="textarea-div">
+                        <input type="text" class="form-control" aria-describedby="validatedInputGroupPrepend" required id="lead_coupon">
+                        <span style="color:white; text-align:center; display:none; font-size: 20px;" id="leadcoupon_success">Congratulations</span>
+                        <span style="color:white; text-align:center; display:none; font-size: 20px;" id="leadcoupon_failed">Opps Sorry</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="leadBonusModalApply()">Apply</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

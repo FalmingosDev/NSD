@@ -27,7 +27,7 @@ export class WelcomeComponent implements OnInit {
   public lng: any;
   public myDate: any;
   public transform_date: any;
-  
+  modal: any;
 
   country:any;
   isSubscribe:boolean=false;
@@ -122,7 +122,7 @@ export class WelcomeComponent implements OnInit {
   };
 
   constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe) { 
-   
+ 
 
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
@@ -140,10 +140,12 @@ export class WelcomeComponent implements OnInit {
       this.isSubscribe = false;
       this.isNotSubscribe = true;
     }
+      
   }
   
 
   ngOnInit(): void {
+
     this.myDate = new Date();
     // console.log(this.myDate);
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
@@ -153,7 +155,7 @@ export class WelcomeComponent implements OnInit {
    
     this.getCurrentLocation();
     this.homePosterLatest();
-    
+    this.leadBonusModal();    
   }
 
   homePosterLatest(){   
@@ -243,6 +245,29 @@ export class WelcomeComponent implements OnInit {
     dev_video.pause();
     sunil_video.pause();
     lara_video.pause();
+  }
+
+  leadBonusModal(){
+    if(localStorage.getItem('lead_bonus') == '0'){
+       document.getElementById('btn-modal').click();
+    }
+  }
+
+  leadBonusModalApply(){
+    this.dataService.activateLeadBonus().subscribe((result)=>{
+      if(result.status){
+        document.getElementById("lead_coupon").style.display='none'; 
+        document.getElementById("leadcoupon_success").style.display='block'; 
+        setTimeout(function(){$("#getLeadModal .close").click()},2000);
+        this.router.navigate(['/']);
+      }
+      else{
+        document.getElementById("leadcoupon_failed").style.display='block'; 
+        setTimeout(function(){$("#getLeadModal .close").click()},2000);
+        this.router.navigate(['/']);
+      }
+      
+    })
   }
 
 }
