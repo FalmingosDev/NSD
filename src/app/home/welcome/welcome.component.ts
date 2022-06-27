@@ -173,13 +173,12 @@ export class WelcomeComponent implements OnInit {
   
 
   ngOnInit(): void {
-
+    
     this.myDate = new Date();
-    // console.log(this.myDate);
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    console.log(this.transform_date);
- 
-      this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
+    if(localStorage.getItem('token')){ 
+    this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
+    }
    
     this.getCurrentLocation();
     this.homePosterLatest();
