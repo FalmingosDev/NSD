@@ -194,7 +194,7 @@ export class WelcomeComponent implements OnInit {
 
 
   getCurrentLocation(){
-    if(navigator.geolocation) {
+    if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(position => {
       this.lat = position.coords.latitude;
       this.lng = position.coords.longitude;
