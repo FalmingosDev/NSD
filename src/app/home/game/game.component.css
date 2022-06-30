@@ -39,7 +39,16 @@ a:hover {
     margin: -4px 10px;
     min-height: inherit;
 }
-
+.close{
+    position: relative;
+    top: 0;
+    right: 1px;
+    font-size: 36px;
+    margin-left: 50px;
+    opacity: 16 !important;
+    color: #000;
+    font-weight: 100;
+}
 .game p {
     font-size: 18px;
     font-weight: 700;
