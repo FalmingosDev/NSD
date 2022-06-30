@@ -15,6 +15,7 @@ import { environment } from '../../../environments/environment';
 
 
 export class PlaygameComponent implements OnInit {
+  
   env=environment;
   // primaryUrl:string="https://newoapp.app/Whack_a_mole/game/index.html";
   // primaryUrl:string="https://newoapp.app/WheelGame/game/index.html";
