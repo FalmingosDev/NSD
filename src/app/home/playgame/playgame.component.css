@@ -45,6 +45,8 @@ section{
 } */
 .back_btn_div{
     float: right;
+    position: absolute;
+    right: 0;
 }
 
 a {
