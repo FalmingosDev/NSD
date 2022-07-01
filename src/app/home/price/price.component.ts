@@ -24,7 +24,7 @@ export class PriceComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    
   }
 
   codeverification()
@@ -68,5 +68,7 @@ export class PriceComponent implements OnInit {
       this.route.navigate(['/payment/3/1999/INR/0']);
     }
   }
+
+  
 
 }
