@@ -1,29 +1,30 @@
 <!doctype html>
 <html lang="en">
-<head> 
-  <meta charset="utf-8">
-  <title>NEWO</title>
-  <base href="/">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" >
-  <meta name="apple-mobile-web-app-capable" content="yes" >
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="../assets/css/main-index-style.css"> 
+
+<head>
+    <meta charset="utf-8">
+    <title>NEWO</title>
+    <base href="/">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/main-index-style.css"> 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap4.min.css"> -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!--fancy-box-->
-    <link rel="stylesheet" type="text/css" href="assets/css/settings.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/settings.css">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
     <!--fancy-box-->
     <link rel="stylesheet" href="assets/css/main-index-style.css">
@@ -35,25 +36,30 @@
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css" media="screen" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.4.8/plyr.css"> -->
 
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body>
-  <app-root></app-root>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.4.8/plyr.js"></script> -->
-  <script>
-	window._token = document.querySelector("[name=csrf-token]").getAttribute("content");
-	
-    function openNav() { 
-        document.getElementById("mySidenav").style.width = "100%";
-      }
 
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-      } 
-  </script>
+<body>
+    <app-root></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.4.8/plyr.js"></script> -->
+    <!--<script src="https://www.paypal.com/sdk/js?client-id=AdnM-f93jmXOahTQNCbELntwKPPP64Ou5RJQwxgvjhSFFoeBZhSF78stI5WITZ64xn8ax3s-PHx1k3f8&disable-funding=credit,card"></script>-->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ad6_Keu5GSKtA3lsfJws6FBvnosNJV_fktVdl1y9uC3wc7rEY41nwzHn_UnUoQ-xLbYM-rSzjc6Oj7D0&disable-funding=credit,card"></script>
+    <script src="assets/js/paypal.js"></script>
+    <script>
+        window._token = document.querySelector("[name=csrf-token]").getAttribute("content");
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
+
 </html>
