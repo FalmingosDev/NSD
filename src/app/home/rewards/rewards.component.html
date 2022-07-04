@@ -67,6 +67,13 @@
                         </div>
                     </div>
 
+                    <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus" *ngIf="rewards.validity=='User Active'">
+                        <img src="assets/images/wl-cm-2.png" class="img-fluid">
+                        <p>{{rewards.rewards_title}}</p>
+                        <div class="act">
+                            <h6>Available in {{rewards.date_diff}} days</h6>
+                        </div>
+                    </div>
                     <div class="wl-sm-bl" data-toggle="modal" data-target="#weekbonus" *ngIf="rewards.validity=='Coming Soon'">
                         <img src="assets/images/wl-cm-2.png" class="img-fluid">
                         <p>Weekly <span>Bonus</span></p>
