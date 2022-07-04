@@ -12,6 +12,7 @@ import { HashtagModule } from './hashtag/hashtag.module';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { MultiplexModule } from './multiplex/multiplex.module';
 
 
 
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     OttModule,
     CreatorModule,
     HttpClientModule,
-    HashtagModule
+    HashtagModule,
+    MultiplexModule
   ],
   providers: [],
   bootstrap: [AppComponent]
