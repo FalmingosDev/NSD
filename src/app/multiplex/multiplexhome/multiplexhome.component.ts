@@ -11,14 +11,16 @@ export class MultiplexhomeComponent implements OnInit {
 
 
   customOptionsforshortflim: OwlOptions  = {
+    autoplay:false,
     loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    dots: false,
+    dots: true,
     margin: 10,
     navSpeed: 700,
     navText: ['', ''],
+    stagePadding:20,
     responsive: {
       0: {
         items: 1
@@ -33,7 +35,7 @@ export class MultiplexhomeComponent implements OnInit {
         items: 1
       }
     },
-    nav: true
+    nav: false
   };
   customOptionsforshowflim: OwlOptions  = {
     autoplay:true,

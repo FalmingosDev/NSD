@@ -5,12 +5,16 @@ import { MultiplexRoutingModule } from './multiplex-routing.module';
 import { MultiplexhomeComponent } from './multiplexhome/multiplexhome.component';
 import { HomeModule } from '../home/home.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
+import { MultiplexwishlistComponent } from './multiplexwishlist/multiplexwishlist.component';
 
 
 
 @NgModule({
   declarations: [
-    MultiplexhomeComponent
+    MultiplexhomeComponent,
+    MultiplextendingComponent,
+    MultiplexwishlistComponent
   ],
   imports: [
     CommonModule,

@@ -1,3 +1,4 @@
+<div class="body-strucre">
 <section class="top-header-sec">
     <div class="container">
         <div class="row">
@@ -43,11 +44,11 @@
     </div>
 </section>
 
-<section class="sec-owl">
+<section class="sec-owl">  
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="shortflim">
+                <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="celb">     
                     <ng-template carouselSlide>
                     <div class="it-main">
                             <a href="#">
@@ -77,7 +78,9 @@
                                                 <p>Thriller</p>
                                             </div>
                                         </div>
-                                        <img src="assets/images/book-n.webp" class="img-fluid">
+                                        <div class="book-m-new">
+                                            <img src="assets/images/book-n.webp" class="img-fluid">
+                                         </div>
                                         <div class="book-now">
                                             <div class="row">
                                                 <div class="col-8 bg-f-img-text">
@@ -124,7 +127,9 @@
                                                     <p>Thriller</p>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/book-n.webp" class="img-fluid">
+                                            <div class="book-m-new">
+                                                <img src="assets/images/book-n.webp" class="img-fluid">
+                                             </div>
                                             <div class="book-now">
                                                 <div class="row">
                                                     <div class="col-8 bg-f-img-text">
@@ -171,7 +176,9 @@
                                                         <p>Thriller</p>
                                                     </div>
                                                 </div>
-                                                <img src="assets/images/book-n.webp" class="img-fluid">
+                                                <div class="book-m-new">
+                                                    <img src="assets/images/book-n.webp" class="img-fluid">
+                                                 </div>
                                                 <div class="book-now">
                                                     <div class="row">
                                                         <div class="col-8 bg-f-img-text">
@@ -204,15 +211,15 @@
             <div class="col-md-8 col-8">
                 <p>Recommended For you</p>
             </div>
-            <div class="col-md-4 col-4">
+            <div class="col-md-4 col-4 view-all">
                 <p>View All</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="showflim">
+                <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
                     <ng-template carouselSlide>
-                                    <div class="t-b-s-background">
+                                    <div class="t-b-s-background"> 
                                                     
                                                 <div class="show-box new-box">
                                                     <img src="assets/images/beguni.jpg" class="img-fluid">
@@ -337,13 +344,13 @@
             <div class="col-md-8 col-8">
                 <p>Upcoming films</p>
             </div>
-            <div class="col-md-4 col-4">
+            <div class="col-md-4 col-4 view-all">
                 <p>View All</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <owl-carousel-o [options]="customOptionsforupcoming" class="sl-im-pd" id="upcoming">
+                <owl-carousel-o [options]="customOptionsforupcoming" class="sl-im-pd" id="celb">
                     <ng-template carouselSlide>
                         <div class="t-b-s-background">
                                  
@@ -471,6 +478,6 @@
         </div>
     </div>
 </section>
-
+</div>
 
 <app-welcomefooter></app-welcomefooter>

@@ -94,7 +94,8 @@
     width: 11px !important;
     margin: -13px 39px;
 }
-    .second-part{margin: 5px 10px;}
+    .second-part-1{padding: 15px 10px;}
+    .second-part{margin: 10px 10px;}
     .thirt-part p{color: #fff;font-size: 14px;}
     .thirt-part{margin: 5px 10px;}
     .second-part p{color: #fff; font-size: 14px;}
@@ -150,20 +151,10 @@
     float: right;
     margin: 0 -15px;
 }
-#celb .owl-dot.active span, #celb .owl-dot:hover span {
-    background: #ab96f3;
-    border: 2px solid #ab96f3;
-}
-#celb .owl-dot.active span, #celb .owl-dot:hover span {
-    background: #ab96f3;
-    border: 2px solid #ab96f3;
-}
-#celb .owl-dot span {
-    border: 2px solid #05fffb;
-    background-color: transparent;
-}
+
 .view-all p{float: right; font-size: 12px;}
 .book-m-new img{border-radius: 0;}
+
 
 
 
