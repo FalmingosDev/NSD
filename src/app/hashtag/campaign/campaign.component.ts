@@ -21,7 +21,7 @@ export class CampaignComponent implements OnInit {
   userid: any;
   max_participate: number;
   total_apply: number;
-  userEmail:any;
+  userEmail: any;
 
 
   constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService) { }
@@ -29,7 +29,7 @@ export class CampaignComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this.activatedRoute.snapshot.params['id'];
-    this.campaignDetailsList.hashtagcampaignDetailsList(this.id,this.local_email).subscribe((result) => {
+    this.campaignDetailsList.hashtagcampaignDetailsList(this.id, this.local_email).subscribe((result) => {
 
       this.client_details = result.campaign_details_list.client_details;
       this.campaign_objective = result.campaign_details_list.campaign_objective;
@@ -44,7 +44,7 @@ export class CampaignComponent implements OnInit {
       this.active_user_apply_check = result.active_user_apply;
 
 
-     
+
     })
 
   }
@@ -54,6 +54,14 @@ export class CampaignComponent implements OnInit {
     let userid = this.local_email;
     this.addapiacceptcampaign.addacceptcampaign(userid, campaignid).subscribe(res => {
       var resp: any = res;
+
+      if (resp.success == true) {
+        var successmsg =
+
+          '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>';
+
+        document.getElementById("applyreplace").innerHTML = successmsg;
+      }
     }, error => {
 
     })
