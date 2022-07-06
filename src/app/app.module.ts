@@ -12,6 +12,8 @@ import { CreatorModule } from './creator/creator.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DatePipe } from '@angular/common';
+import { HashtagModule } from './hashtag/hashtag.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +28,10 @@ import { DatePipe } from '@angular/common';
     HomeModule,
     OttModule,
     CreatorModule,
-    HttpClientModule
+    HttpClientModule,
+    HashtagModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
