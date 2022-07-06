@@ -7,6 +7,7 @@ import { HomeModule } from '../home/home.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
 import { MultiplexwishlistComponent } from './multiplexwishlist/multiplexwishlist.component';
+import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckout.component';
 
 
 
@@ -14,7 +15,8 @@ import { MultiplexwishlistComponent } from './multiplexwishlist/multiplexwishlis
   declarations: [
     MultiplexhomeComponent,
     MultiplextendingComponent,
-    MultiplexwishlistComponent
+    MultiplexwishlistComponent,
+    MultiplexcheckoutComponent
   ],
   imports: [
     CommonModule,

@@ -14,9 +14,9 @@
     width: 73px;
     height: 20px;
     left: 22px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
     background: rgb(26,28,66);
-    background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%);
+    background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%); */
 }
     
   
@@ -156,9 +156,11 @@
 .book-m-new img{border-radius: 0;}
 
 .main-wishlist-1 h3{color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;;}
-    .main-wishlist img{width: 25%;float: right;margin-top: 15px;}
+    .main-wishlist img{width: 35%;float: right;margin-top: 15px;}
+    .main-wishlist-1 img{width: 15%;margin-bottom: 5px;;}
+    .top-bar-nav{margin: 15px 10px;}
     
 }
 @media (min-width: 320px) and (max-width: 375px) {

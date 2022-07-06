@@ -1,0 +1,79 @@
+@media screen and (max-width: 767px) {
+    .body-strucre{margin-bottom: 100px;}
+    .main-wishlist-1 h3{color: #fff;
+        font-size: 18px;
+        font-weight: 500;;}
+        .main-wishlist img{width: 35%;float: right;margin-top: 15px;}
+        .t-b-s-background {
+            background: #6850b2;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .chat-chati ul li{list-style: none;}
+        .chat-chati ul li{color: #fff;line-height:1.5rem;}
+        .chat-chati ul{padding: 10px 16px;}
+        .movie{font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.1rem;}
+            .checkout-main-text-box span{font-size: 12px;color: #fff;}
+            .ruppes-sign img{width: 22%;}
+            .main-total span{font-size: 18px;font-weight: 500;}
+            .total-rupee span{font-size: 16px;font-weight: 500;padding-right: 0;}
+            
+            .ruppes-sign-0ne img{width: 17%;}
+            .main-img-1{padding: 0;}
+            .main-img-1 img{margin: 6px -6px;
+                border-radius: 10px;}
+                .second-part-font{padding-top:20px ;}
+                .coin-new p{text-align: right;color: #fff;
+                    font-size: 12px;margin-bottom: 5px;}
+                    .coin-new img{width: 4%;margin: 0 1px;}
+                    .coin-new span{margin:0 2px;}
+                    .coin-new {padding:10px 15px;}
+                    .img-test-new1 img{width: 25%; float: right;}
+                    .pay-btn p{background-color: #6850b2;
+                        padding: 15px 10px;
+                        border-radius: 50px;
+                        text-align: center;
+                        color: #fff;
+                        font-weight: 500;
+                        font-size: 18px;
+                        
+                    }
+                    .line-draw{margin: 0 20px;}
+                   
+                    .line-draw ul{padding: 0;
+                    display: flex;
+                    align-items: center;}
+                    .line-draw ul li{display: inline-block;}
+                    .line-draw ul li:nth-child(1){
+                        width: 45%;
+                        background: #ad94fa;
+                        height: 2px;}
+                        .line-draw ul li:nth-child(3){
+                            width: 45%;
+                            background: #ad94fa;
+                            height: 2px;}
+                            .line-draw ul li:nth-child(2){
+                               color: #fff;margin: 0 4px;}
+                    /* .line-draw span:nth-child(2){color:#fff;}
+                    .line-draw span:nth-child(1){border: 1px solid #eee;}
+                    .line-draw span:nth-child(3){border: 1px solid #eee;} */
+                    .coins-img img{width: 8% !important;}
+                    .pay-btn img{width: 3%;}
+                    .main-wishlist-1 img{width: 15%;margin-bottom: 5px;;}
+                    .top-bar-nav{margin: 15px 10px;}
+                  
+                    
+                
+        
+       
+}
+@media (min-width: 320px) and (max-width: 375px) {
+.chat-chati ul {
+   padding: 5px 10px !important;
+   margin: 0 0px;
+}
+.chat-chati li{font-size: 11px !important;} 
+.date-text{font-size: 10px !important;margin: 1px 2px 2px 2px;} 
+} 
