@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MultiplexModule } from './multiplex/multiplex.module';
 
 import { DatePipe } from '@angular/common';
-import { HashtagModule } from './hashtag/hashtag.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -34,8 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     HashtagModule,
     FormsModule,
-    ReactiveFormsModule,
-    MultiplexModule
+    ReactiveFormsModule
+    
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
