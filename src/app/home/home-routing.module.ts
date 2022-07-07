@@ -40,6 +40,7 @@ import { WalletdetailsComponent } from './walletdetails/walletdetails.component'
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { EditphoneComponent } from './editphone/editphone.component';
+import { HashtaghomeComponent } from '../hashtag/hashtaghome/hashtaghome.component';
 
 
 
@@ -77,7 +78,7 @@ const routes: Routes = [
   {path: 'gallery', component:GalleryComponent},
   {path: 'privacy', component:PrivacyComponent},
   {path: 'terms', component:TermsComponent},
-  {path: 'hashtag', component:HastagComponent},
+  {path: 'hashtag', component:HashtaghomeComponent},
   {path: 'stars', component:StarsComponent},
   {path: 'newsdetail', component:NewsdetailComponent},
   {path: 'blogdetails/:blog_id', component:BlogdetailsComponent},

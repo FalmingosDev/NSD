@@ -15,3 +15,5 @@ npm i ng-image-fullscreen-view
 npm i ng-image-fullscreen-view --force
 ## Popper.js Install Command
 npm i popper.js
+## Module Create
+ng g m [module-name] --routing

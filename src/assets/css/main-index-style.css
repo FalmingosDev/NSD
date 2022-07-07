@@ -1,7 +1,8 @@
 body {
     margin: 0 !important;
     padding: 0 !important;
-    background-color: #0d1428 !important;
+    /* background-color: #0d1428 !important; */
+    background: #181b3e !important;
     /* font-family: 'Roboto', sans-serif; */
     /* margin-bottom: 74px !important; */
     font-family: 'Poppins' !important;
@@ -701,7 +702,7 @@ a:hover {
     width: 100%;
       height: 100%;} */
 
-input[type=checkbox] {
+/* input[type=checkbox] {
     position: absolute;
     cursor: pointer;
     width: 100%;
@@ -710,7 +711,7 @@ input[type=checkbox] {
     opacity: 0;
     top: 0;
     left: 0;
-}
+} */
 
 .mt-bt {
     margin-bottom: 74px;
