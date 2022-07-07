@@ -110,20 +110,25 @@
                             </div>
                             <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span>
 
-                            <div class="row box-card">
-                                <div class="col-md-8 col-8">
-                                    <div class="detail-page"><a
-                                            routerLink="/campaign/{{ campaignDetails.campaign_id }}">View details</a>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-12 col-12">
 
+                                    <div class="back_btn_div-new">
+                                        <a routerLink="/campaign/{{ campaignDetails.campaign_id }}"><span>
+                                            View Details<span class="detail-icon"><img
+                                                        src="assets/logo/left-arrow-btn.svg" alt=""
+                                                        class="img-fluid"></span></span>
+                                            <div class="liquid"></div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-md-8 col-4">
+                                <!-- <div class="col-md-8 col-4">
                                     <div class="detail-icon">
                                         <a routerLink="/campaign/{{ campaignDetails.campaign_id }}">
                                             <img src="assets/logo/left-arrow-btn.svg" alt="" class="img-fluid">
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 

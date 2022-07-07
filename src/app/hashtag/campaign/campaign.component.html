@@ -8,14 +8,31 @@
                         <span><img src="assets/logo/n-hastag.webp" class="img-fluid"></span>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 col-4"> 
-                <div class="img-source">
-                     <img src="assets/images/ovter.png">
-                </div>
-               
-            </div> -->
+                    <div class="col-md-4 col-4">
+                        <div class="back_btn_div">
+                            <a href="javascript:void(0)"><span>Back</span>
+                                <div class="liquid"></div>
+                            </a>
+                        </div>
+                    
+                    </div>
             </div>
         </div>
+    </section>
+    <section class="hashtag-cam-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 details-new-text-1">
+                    <span>#abcd</span><br>
+                    <span class="text-page-1">Lorenipsum</span>
+                </div>
+            
+            
+            </div>
+
+        </div>
+
+
     </section>
     <section class="new-from">
         <div class="container">
@@ -26,7 +43,7 @@
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                    <span class="title">About[[{{client_name}}]]</span>
+                                    <span class="title">About {{client_name}} </span>
                                     <span class="accicon"><i class="fa fa-angle-down rotate-icon"
                                             aria-hidden="true"></i></span>
                                 </div>
@@ -39,7 +56,7 @@
                             <div class="card">
                                 <div class="card-header" data-toggle="collapse" data-target="#collapseTwo"
                                     aria-expanded="true" aria-controls="collapseTwo">
-                                    <span class="title">Campaign Object</span>
+                                    <span class="title">Campaign Objective</span>
                                     <span class="accicon"><i class="fa fa-angle-down rotate-icon"
                                             aria-hidden="true"></i></span>
                                 </div>
@@ -52,7 +69,7 @@
                             <div class="card">
                                 <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseThree"
                                     aria-expanded="false">
-                                    <span class="title">[[Offer]]</span>
+                                    <span class="title">Offer</span>
                                     <span class="accicon"><i class="fa fa-angle-down rotate-icon"
                                             aria-hidden="true"></i></span>
                                 </div>
@@ -76,7 +93,7 @@
 
                                                 <li *ngFor="let steps of stepsList">{{steps.steps_heading}}<br />
                                                     <p>
-                                                        Note: {{steps.steps_details}}&nbsp;<span>View</span>
+                                                        Note: {{steps.steps_details}}
                                                     </p>
                                                 </li>
                                             </ol>
@@ -96,7 +113,7 @@
     <ng-container *ngIf="active_user_apply_check>0;  else notapplied">
 
         <div class="d-flex justify-content-center hashtag-accept-btn-div">
-            <button type="button" class="hashtag-accept-btn">Applied</button>
+            <button type="button" class="hashtag-accept-btn">APPLIED</button>
         </div>
 
     </ng-container>
@@ -115,7 +132,7 @@
 
         <ng-template #seatnotavailable>
             <div class="d-flex justify-content-center hashtag-accept-btn-div">
-                <button type="button" class="hashtag-accept-btn">NO SEAT'S LEFT</button>
+                <button type="button" class="hashtag-accept-btn">NO SEATS LEFT</button>
             </div>
         </ng-template>
     </ng-template>
