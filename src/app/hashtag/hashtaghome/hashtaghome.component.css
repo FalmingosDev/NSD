@@ -226,12 +226,16 @@
         color: #f00;
         padding: 12px 15px;
     }
+    .card-campain span{font-size: 12px;}
 
     .text-sec p {
         font-weight: 400;
         font-size: 11px;
       
     }
+
+
+    
 
     .active-no {
         border-radius: 50%;
@@ -271,17 +275,18 @@
     }
 
     .detail-icon {
-        background: red;
+        background: rgb(255, 255, 255);
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         float: right;
         margin: 5px 6px;
+        line-height: 22px;
     }
 
-    .detail-icon i {
-        color: #fff;
-        padding: 0 8px 1px;
+    .detail-icon img {
+     width: 35%;
+     margin: 0 7px;
     }
 
     .fa.fa-instagram {

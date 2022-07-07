@@ -6,20 +6,23 @@ import { HashtaghomeComponent } from './hashtaghome/hashtaghome.component';
 import { HomeModule } from '../home/home.module';
 import { CampaignComponent } from './campaign/campaign.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserprofile.component';
+
 
 
 
 @NgModule({
   declarations: [
     HashtaghomeComponent,
-    CampaignComponent
+    CampaignComponent,
+    HashtaguserprofileComponent
   ],
   imports: [
     CommonModule,
     HashtagRoutingModule,
     HomeModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
   ],
   bootstrap: [HashtaghomeComponent]
 })
