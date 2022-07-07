@@ -5,12 +5,14 @@ import { HashtagRoutingModule } from './hashtag-routing.module';
 import { HashtaghomeComponent } from './hashtaghome/hashtaghome.component';
 import { HomeModule } from '../home/home.module';
 import { CampaignComponent } from './campaign/campaign.component';
+import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserprofile.component';
 
 
 @NgModule({
   declarations: [
     HashtaghomeComponent,
-    CampaignComponent
+    CampaignComponent,
+    HashtaguserprofileComponent
   ],
   imports: [
     CommonModule,
