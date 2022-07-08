@@ -22,8 +22,7 @@ export class HashtaghomeComponent implements OnInit {
   filterLength: number;
   filterArray: any;
   AllCampaign: any;
-
-
+ 
   constructor(private dataService: ApiService, private campaignList: ApiService, status: FormBuilder, offer: FormBuilder) {
 
 
@@ -40,20 +39,14 @@ export class HashtaghomeComponent implements OnInit {
   ngOnInit(): void {
 
 
-    {
-      this.dataService.hashtagcampaignList().subscribe((result) => {
-        this.offerList = result.campaign_offer;
-      })
-    }
-
     this.dataService.profileData(this.local_email).subscribe((res) => {
       if (res.data) {
         this.username = res.data.name;
       }
     });
 
-
-    this.campaignList.hashtagcampaignList().subscribe((result) => {
+    this.email=this.local_email;
+    this.campaignList.hashtagcampaignList(this.email).subscribe((result) => {
 
       this.AllcampaignListAll = result.campaign_list;
       this.todayDate = result.todayDate;

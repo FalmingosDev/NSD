@@ -540,8 +540,8 @@ export class ApiService {
   }
 
   /* Hashtag */
-  hashtagcampaignList() {
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'campign-list');
+  hashtagcampaignList(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'campign-list/'+ email);
   }
 
   hashtagcampaignDetailsList(id, userEmail) {

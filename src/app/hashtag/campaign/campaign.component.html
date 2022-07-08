@@ -8,14 +8,14 @@
                         <span><img src="assets/logo/n-hastag.webp" class="img-fluid"></span>
                     </div>
                 </div>
-                    <div class="col-md-4 col-4">
-                        <div class="back_btn_div">
-                            <a routerLink="/hashtag"><span>Back</span>
-                                <div class="liquid"></div>
-                            </a>
-                        </div>
-                    
+                <div class="col-md-4 col-4">
+                    <div class="back_btn_div">
+                        <a routerLink="/hashtag"><span>Back</span>
+                            <div class="liquid"></div>
+                        </a>
                     </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -26,8 +26,8 @@
                     <span>{{campaign_hashtag}}</span><br>
                     <span class="text-page-1">{{campaign_name}}</span>
                 </div>
-            
-            
+
+
             </div>
 
         </div>
@@ -109,24 +109,42 @@
         </div>
     </section>
 
-
-    <ng-container *ngIf="active_user_apply_check>0;  else notapplied">
+    <ng-container *ngIf="campaign_current_status=='Expired';  else notexp">
 
         <div class="d-flex justify-content-center hashtag-accept-btn-div">
-            <button type="button" class="hashtag-accept-btn">APPLIED</button>
+            <button type="button" class="hashtag-accept-btn">EXPIRED</button>
         </div>
 
     </ng-container>
+
+    <ng-template #notexp>
+        <ng-container *ngIf="campaign_current_status=='Upcoming';  else notupcoming">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">UPCOMING</button>
+            </div>
+    
+        </ng-container>
+    </ng-template>
+
+    <ng-template #notupcoming>
+        <ng-container *ngIf="active_user_apply_check>0;  else notapplied">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">APPLIED</button>
+            </div>
+
+        </ng-container>
+    </ng-template>
 
 
     <ng-template #notapplied>
         <ng-container *ngIf="(total_apply - max_participate)!=0; else seatnotavailable">
 
             <div class="d-flex justify-content-center hashtag-accept-btn-div" id="applyreplace">
-               
-                    <button type="button" class="hashtag-accept-btn" (click)="acceptcampaign(this.id)"
-                        >ACCEPT</button>
-               
+
+                <button type="button" class="hashtag-accept-btn" (click)="acceptcampaign(this.id)">ACCEPT</button>
+
             </div>
         </ng-container>
 

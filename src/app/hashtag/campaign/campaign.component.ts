@@ -47,6 +47,10 @@ export class CampaignComponent implements OnInit {
 
       this.campaign_name=result.campaign_details_list.campaign_name;
 
+      console.log(result);
+      this.campaign_current_status=result.campaign_details_list.campaign_current_status;
+
+
     })
 
   }
@@ -58,9 +62,10 @@ export class CampaignComponent implements OnInit {
       var resp: any = res;
 
       if (resp.success == true) {
-        var successmsg =
+        var successmsg =''
 
-          '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>';
+          // '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>'
+          ;
 
         document.getElementById("applyreplace").innerHTML = successmsg;
       }

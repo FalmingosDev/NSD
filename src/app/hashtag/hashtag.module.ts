@@ -7,15 +7,15 @@ import { HomeModule } from '../home/home.module';
 import { CampaignComponent } from './campaign/campaign.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserprofile.component';
-
-
+import { CategorymasterComponent } from './categorymaster/categorymaster.component';
 
 
 @NgModule({
   declarations: [
     HashtaghomeComponent,
     CampaignComponent,
-    HashtaguserprofileComponent
+    HashtaguserprofileComponent,
+    CategorymasterComponent
   ],
   imports: [
     CommonModule,

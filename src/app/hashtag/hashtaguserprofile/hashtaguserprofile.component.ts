@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-hashtaguserprofile',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HashtaguserprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    $(document).ready(function(){
+      $("#stepfunone").click(function(){
+        $("#editwo").show();
+        $("#editone").hide();
+      });
+      $("#stepfuntwo").click(function(){
+        $("#editone").show();
+        $("#editwo").hide();
+      });
+    });
+  }
 
   ngOnInit(): void {
   }
+
+  
 
 }
