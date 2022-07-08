@@ -277,15 +277,15 @@
     .detail-icon {
         background: rgb(255, 255, 255);
         border-radius: 50%;
-        width: 22px;
-        height: 22px;
+        width: 19px;
+        height: 19px;
         float: right;
         margin: 5px 6px;
         line-height: 22px;
     }
 
     .detail-icon img {
-     width: 35%;
+     width: 30%;
      margin: 0 7px;
     }
 
@@ -446,7 +446,7 @@
     
     .back_btn_div-new a {
         position: relative;
-        padding: 2px 13px;
+        /* padding: 2px 3px; */
         display: block;
         text-decoration: none;
         text-transform: uppercase;
@@ -460,17 +460,17 @@
     .back_btn_div-new a span {
         position: relative;
         color: #fff;
-        font-size: 18px;
-       
-        letter-spacing: 5px;
+        font-size: 8px;
+        letter-spacing: 2px;
         z-index: 1;
     }
+    .max-parti p{font-size: 12px;font-weight: 300;}
     
     .back_btn_div-new a .liquid {
         position: absolute;
         top: 0;
-        right: -48.5%;
-        width: 315px;
+        /* 272 */
+        width: 125px;
         height: 211px;
         background: #4973ff;
         box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);

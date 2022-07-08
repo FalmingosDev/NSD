@@ -50,20 +50,17 @@
                                     <span></span>
 
                                     <ng-container *ngIf="campaignDetails.campaign_current_status=='Active';else second">
-                                        <span style="color:green">Active <span
-                                                class="active-no">{{campaignDetails.max_participate}}</span></span>
+                                        <span style="color:green">Active</span>
                                     </ng-container>
 
                                     <ng-template #second>
                                         <ng-container
                                             *ngIf="campaignDetails.campaign_current_status=='Upcoming';else third"><span
-                                                style="color:rgb(132, 20, 134)">UpComing <span
-                                                    class="active-no">{{campaignDetails.max_participate}}</span></span>
+                                                style="color:rgb(132, 20, 134)">UpComing</span>
                                         </ng-container>
                                     </ng-template>
 
-                                    <ng-template #third><span style="color:rgb(206, 38, 119)">Expired<span
-                                                class="active-no">{{campaignDetails.max_participate}}</span></span>
+                                    <ng-template #third><span style="color:rgb(206, 38, 119)">Expired</span>
                                     </ng-template>
 
 
@@ -111,7 +108,13 @@
                             <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span>
 
                             <div class="row">
-                                <div class="col-md-12 col-12">
+                                <div class="col-md-6 col-7">
+                                    <div class="max-parti">
+                                        <p><u>Max Participations</u>:{{campaignDetails.max_participate}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-5">
 
                                     <div class="back_btn_div-new">
                                         <a routerLink="/campaign/{{ campaignDetails.campaign_id }}"><span>
