@@ -43,7 +43,9 @@ export class CampaignComponent implements OnInit {
 
       this.active_user_apply_check = result.active_user_apply;
 
+      this.campaign_hashtag=result.campaign_details_list.campaign_hashtag;
 
+      this.campaign_name=result.campaign_details_list.campaign_name;
 
     })
 
