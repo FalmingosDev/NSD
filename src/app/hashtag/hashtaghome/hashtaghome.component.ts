@@ -58,7 +58,7 @@ export class HashtaghomeComponent implements OnInit {
       this.AllcampaignListAll = result.campaign_list;
       this.todayDate = result.todayDate;
       this.AllCampaign = this.AllcampaignListAll;
-      console.log(result);
+      
     })
 
   }
