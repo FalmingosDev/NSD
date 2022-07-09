@@ -12,7 +12,6 @@ import { HashtagModule } from './hashtag/hashtag.module';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { MultiplexModule } from './multiplex/multiplex.module';
 
 import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
