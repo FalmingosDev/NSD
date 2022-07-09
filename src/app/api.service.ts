@@ -552,4 +552,12 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'accept-campaign-by-user', { userid, campaignid });
   }
 
+  categoryMasterList(){
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-category-master');
+  }
+
+  hashtagUserRegis(category, link,email) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-registration', { category, link,email });
+  }
+
 }

@@ -47,7 +47,6 @@ export class CampaignComponent implements OnInit {
 
       this.campaign_name=result.campaign_details_list.campaign_name;
 
-      console.log(result);
       this.campaign_current_status=result.campaign_details_list.campaign_current_status;
 
 
