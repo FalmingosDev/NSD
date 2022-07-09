@@ -6,8 +6,8 @@
         background-color: #640bbd;
         color: #fff;
         border: 1px solid #640bbd;
-        border-radius: 5px;
-        padding: 5px 100px;
+        border-radius: 10px;
+        padding: 8px 100px;
     }
     .back_btn_div{
         float: right;
@@ -31,7 +31,7 @@
     a span {
         position: relative;
         color: #fff;
-        fot-size: 20px;
+        font-size: 20px;
         font-family: Arial;
         letter-spacing: 8px;
         z-index: 1;
@@ -158,15 +158,16 @@
         /*    padding-left: 2.5rem;*/
         padding: 0.25rem 0 0.25rem 2.75rem;
     }
-
+    
     ol.style_1>li {
         position: relative;
         counter-increment: li;
         min-height: 2rem;
         padding-top: 0.5rem;
         list-style: none;
-        color: #fff;
+        color: #000;
     }
+    
 
     ol.style_1 li {
         margin-bottom: 0.375rem;
@@ -185,6 +186,7 @@
     background: #1d1c1c;
     width: 25px;
     height: 25px;
+    color: #fff;
     }
 
     ol.style_1>li::before,
@@ -233,7 +235,7 @@
     }
     .hashtag-accept-btn-div button{
         position: fixed;
-        top: 400px;
+        top: 700px;
     
     }
 }

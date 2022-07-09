@@ -50,17 +50,51 @@
                                     <span></span>
 
                                     <ng-container *ngIf="campaignDetails.campaign_current_status=='Active';else second">
-                                        <span style="color:green">Active</span>
+                                        <!-- <span style="color:green"></span> -->
+                                         
+                                        <div class="ribbon-wrapper">
+                                                
+                                            <div class="ribbon-front-new">
+                                                Active
+                                            </div>
+                                            <div class="ribbon-edge-topleft"></div>
+                                            <div class="ribbon-edge-topright"></div>
+                                            <div class="ribbon-edge-bottomleft"></div>
+                                          
+                                </div>
                                     </ng-container>
 
-                                    <ng-template #second>
+                                    <ng-template #second>  
                                         <ng-container
-                                            *ngIf="campaignDetails.campaign_current_status=='Upcoming';else third"><span
-                                                style="color:rgb(132, 20, 134)">UpComing</span>
+                                            *ngIf="campaignDetails.campaign_current_status=='Upcoming';else third">
+                                            <div class="ribbon-wrapper">
+                                                
+                                                <div class="ribbon-front-new-1">
+                                                   Upcoming
+                                                </div>
+                                                <div class="ribbon-edge-topleft"></div>
+                                                <div class="ribbon-edge-topright"></div>
+                                                <div class="ribbon-edge-bottomleft"></div>
+                                              
+                                    </div>
                                         </ng-container>
                                     </ng-template>
 
-                                    <ng-template #third><span style="color:rgb(206, 38, 119)">Expired</span>
+                                    <ng-template #third>
+
+                                       
+                                            <div class="ribbon-wrapper">
+                                                
+                                                        <div class="ribbon-front">
+                                                           Expired
+                                                        </div>
+                                                        <div class="ribbon-edge-topleft"></div>
+                                                        <div class="ribbon-edge-topright"></div>
+                                                        <div class="ribbon-edge-bottomleft"></div>
+                                                      
+                                            </div>
+                                        
+                                        <!-- <span class="badge badge-pill badge-info">Expired</span> -->
                                     </ng-template>
 
 
@@ -87,30 +121,31 @@
 
                         <div class="container pd-container">
                             <div class="row">
-                                <div class="col-md-6 col-4 hashtag_hash">
+                                <div class="col-md-6 col-5 hashtag_hash">
                                     <a>
                                         <img src="{{env.hashtag_campaign+ campaignDetails.campaign_image}}"
                                             class="img-fluid">
                                     </a>
-                                    <span class="sp-has">{{campaignDetails.campaign_hashtag}}</span>
+                                    <!-- <span class="sp-has">{{campaignDetails.campaign_hashtag}}</span> -->
                                 </div>
-                                <div class="col-md-6 col-8">
+                                <div class="col-md-6 col-7">
                                     <div class="text-sec">
+                                        <h1 class="sp-has">{{campaignDetails.campaign_hashtag}}</h1>
                                         <h6><b>{{campaignDetails.campaign_name}}</b></h6>
 
-                                        <p [ngClass]="{'limitTextHeight': isReadMore}" (click)="showText()">
+                                        <!-- <p [ngClass]="{'limitTextHeight': isReadMore}" (click)="showText()">
                                             <i>{{campaignDetails.campaign_objective}}</i>{{ isReadMore ? '': '' }}
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
 
                             </div>
-                            <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span>
+                            <!-- <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span> -->
 
                             <div class="row">
                                 <div class="col-md-6 col-7">
                                     <div class="max-parti">
-                                        <p><u>Max Participations</u>:{{campaignDetails.max_participate}}</p>
+                                        <!-- <span><u>Max Participations</u>:{{campaignDetails.max_participate}}</span> -->
                                     </div>
                                 </div>
 
