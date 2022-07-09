@@ -10,6 +10,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiService {
+  removeWishList() {
+    throw new Error('Method not implemented.');
+  }
   recomendedWishList() {
     throw new Error('Method not implemented.');
   }
@@ -569,6 +572,17 @@ export class ApiService {
          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-checkout?multiplex_id='+multiplex_id+'&user_email='+user_email);
 
         }
+
+
+        viewAllWishList(){
+          const user_email = localStorage.getItem('token');
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-recommended-view-all-list?user_email='+user_email);
+         } 
+  
+
+
+
+
 
   public activateLeadBonus(leadCoupon) {
     const userEmail = localStorage.getItem('token');
