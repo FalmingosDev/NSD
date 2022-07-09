@@ -1,28 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { HomeModule } from '../home/home.module';
+// import { HomeModule } from '../home/home.module'; 
+// import { CarouselModule } from 'ngx-owl-carousel-o'; 
 
 import { MultiplexRoutingModule } from './multiplex-routing.module';
+import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckout.component';
 import { MultiplexhomeComponent } from './multiplexhome/multiplexhome.component';
-import { HomeModule } from '../home/home.module';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
 import { MultiplexwishlistComponent } from './multiplexwishlist/multiplexwishlist.component';
-import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckout.component';
-
+import { HomeModule } from '../home/home.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
+    MultiplexcheckoutComponent,
     MultiplexhomeComponent,
     MultiplextendingComponent,
-    MultiplexwishlistComponent,
-    MultiplexcheckoutComponent
+    MultiplexwishlistComponent
   ],
   imports: [
     CommonModule,
     MultiplexRoutingModule,
     HomeModule,
-    CarouselModule
+    CarouselModule,
+    BrowserAnimationsModule
+    
   ]
 })
 export class MultiplexModule { }

@@ -1,111 +1,114 @@
 <div class="body-strucre">
-<section class="top-header-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-                <div class="top-sm-ban">
-                    <img src="assets/images/multiplex-bg.webp" class="img-fluid">
+    <section class="top-header-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="top-sm-ban">
+                        <img src="assets/images/multiplex-bg.webp" class="img-fluid">
 
+                    </div>
+                    <div class="mobile">
+                        <img src="assets/images/multiplex-top.webp" class="img-fluid">
+                    </div>
                 </div>
-                <div class="mobile">
-                    <img src="assets/images/multiplex-top.webp" class="img-fluid">
-                </div>
+
+
             </div>
+        </div>
+    </section>
+    <section class="top-bar-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="top-text-sm">
 
+                        <ul>
+                            <li class="frisr-child"><a href="#">Trending</a></li>
+                            <li><a href="">New</a></li>
+                            <li><a href="#">Genre1</a></li>
+                            <li><a href="#">Genre1</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-12">
+                    <div class="search-btn">
+                        <a href=""><img src="assets/images/search.svg" class="img-fluid"></a>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
-    </div>
-</section>
-<section class="top-bar-nav">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-                <div class="top-text-sm">
+    </section>
 
-                    <ul>
-                        <li class="frisr-child"><a href="#">Trending</a></li>
-                        <li><a href="">New</a></li>
-                        <li><a href="#">Genre1</a></li>
-                        <li><a href="#">Genre1</a></li>
-                    </ul>
-                </div>
+    <section class="sec-owl">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="celb">
+                        <ng-template carouselSlide *ngFor="let item of bannerCollection">
+                            <a routerLink="/multiplexcheckout/{{item.id}}">
+                            <div class="it-main">
+                                <a href="#">
+                                    <div class="it-main-im">
+                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
 
-            </div>
-
-            <div class="col-md-12 col-12">
-                <div class="search-btn">
-                    <a href=""><img src="assets/images/search.svg" class="img-fluid"></a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<section class="sec-owl">  
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="celb">     
-                    <ng-template carouselSlide>
-                    <div class="it-main">
-                            <a href="#">
-                                <div class="it-main-im">
-                                    <img src="assets/images/beguni.jpg" class="img-fluid">
-                                </div>
-                                <div class="bottom-img">
-                                    
-                                    <div class="block-n-text">
-                                        <div class="row">
-                                            <div class="col-8">
-                                                <p>Baguni Phool</p>
-                                            </div>
-                                            <div class="col-4 p-0">
-                                                <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
-                                                        class="img-fluid"><span class="rating-text">8.5/10</span></span>
-                                            </div>
-                                        </div>
-                                        <div class="row text-bg">
-                                            <div class="col-5">
-                                                <p>1hr <span>23min</span></p>
-                                            </div>
-                                            <div class="col-4">
-                                                <p>2022</p>
-                                            </div>
-                                            <div class="col-3 p-0">
-                                                <p>Thriller</p>
-                                            </div>
-                                        </div>
-                                        <div class="book-m-new">
-                                            <img src="assets/images/book-n.webp" class="img-fluid">
-                                         </div>
-                                        <div class="book-now">
+                                        <div class="block-n-text">
                                             <div class="row">
-                                                <div class="col-8 bg-f-img-text">
-                                                    <p>Book Now</p>
+                                                <div class="col-8">
+                                                    <p>{{item.name}}</p>
                                                 </div>
                                                 <div class="col-4 p-0">
-                                                    <span class="bg-f-img-text">100<img src="assets/images/ruppee.png"
-                                                            class="img-fluid"></span>
+                                                    <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"><span
+                                                            class="rating-text">{{item.rating}}/10</span></span>
+                                                </div>
+                                            </div>
+                                            <div class="row text-bg">
+                                                <div class="col-5">
+                                                    <p><span>{{item.duration_time}}</span></p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p>{{item.year}}</p>
+                                                </div>
+                                                <div class="col-3 p-0">
+                                                    <p>{{item.genere_name}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-m-new">
+                                                <img src="assets/images/book-n.webp" class="img-fluid">
+                                            </div>
+                                            <div class="book-now">
+                                                <div class="row">
+                                                    <div class="col-8 bg-f-img-text">
+                                                        <p>Book Now</p>
+                                                    </div>
+                                                    <div class="col-4 p-0">
+                                                        <span class="bg-f-img-text">{{item.price|number}}<img
+                                                                src="assets/images/ruppee.png" class="img-fluid"></span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                </div>
-                            </a>
-                        </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="it-main">
+                                    </div>
+                                </a>
+                            </div>
+                        </a>
+                        </ng-template>
+                        <!-- <ng-template carouselSlide>
+                            <div class="it-main">
                                 <a href="#">
                                     <div class="it-main-im">
                                         <img src="assets/images/beguni.jpg" class="img-fluid">
                                     </div>
                                     <div class="bottom-img">
-                                        
+
                                         <div class="block-n-text">
                                             <div class="row">
                                                 <div class="col-8">
@@ -113,7 +116,8 @@
                                                 </div>
                                                 <div class="col-4 p-0">
                                                     <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
-                                                            class="img-fluid"><span class="rating-text">8.5/10</span></span>
+                                                            class="img-fluid"><span
+                                                            class="rating-text">8.5/10</span></span>
                                                 </div>
                                             </div>
                                             <div class="row text-bg">
@@ -129,355 +133,391 @@
                                             </div>
                                             <div class="book-m-new">
                                                 <img src="assets/images/book-n.webp" class="img-fluid">
-                                             </div>
+                                            </div>
                                             <div class="book-now">
                                                 <div class="row">
                                                     <div class="col-8 bg-f-img-text">
                                                         <p>Book Now</p>
                                                     </div>
                                                     <div class="col-4 p-0">
-                                                        <span class="bg-f-img-text">100<img src="assets/images/ruppee.png"
-                                                                class="img-fluid"></span>
+                                                        <span class="bg-f-img-text">100<img
+                                                                src="assets/images/ruppee.png" class="img-fluid"></span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                     </div>
                                 </a>
                             </div>
                         </ng-template>
                         <ng-template carouselSlide>
                             <div class="it-main">
-                                    <a href="#">
-                                        <div class="it-main-im">
-                                            <img src="assets/images/beguni.jpg" class="img-fluid">
-                                        </div>
-                                        <div class="bottom-img">
-                                            
-                                            <div class="block-n-text">
+                                <a href="#">
+                                    <div class="it-main-im">
+                                        <img src="assets/images/beguni.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="bottom-img">
+
+                                        <div class="block-n-text">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <p>Baguni Phool</p>
+                                                </div>
+                                                <div class="col-4 p-0">
+                                                    <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"><span
+                                                            class="rating-text">8.5/10</span></span>
+                                                </div>
+                                            </div>
+                                            <div class="row text-bg">
+                                                <div class="col-5">
+                                                    <p>1hr <span>23min</span></p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p>2022</p>
+                                                </div>
+                                                <div class="col-3 p-0">
+                                                    <p>Thriller</p>
+                                                </div>
+                                            </div>
+                                            <div class="book-m-new">
+                                                <img src="assets/images/book-n.webp" class="img-fluid">
+                                            </div>
+                                            <div class="book-now">
                                                 <div class="row">
-                                                    <div class="col-8">
-                                                        <p>Baguni Phool</p>
+                                                    <div class="col-8 bg-f-img-text">
+                                                        <p>Book Now</p>
                                                     </div>
                                                     <div class="col-4 p-0">
-                                                        <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
-                                                                class="img-fluid"><span class="rating-text">8.5/10</span></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row text-bg">
-                                                    <div class="col-5">
-                                                        <p>1hr <span>23min</span></p>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <p>2022</p>
-                                                    </div>
-                                                    <div class="col-3 p-0">
-                                                        <p>Thriller</p>
-                                                    </div>
-                                                </div>
-                                                <div class="book-m-new">
-                                                    <img src="assets/images/book-n.webp" class="img-fluid">
-                                                 </div>
-                                                <div class="book-now">
-                                                    <div class="row">
-                                                        <div class="col-8 bg-f-img-text">
-                                                            <p>Book Now</p>
-                                                        </div>
-                                                        <div class="col-4 p-0">
-                                                            <span class="bg-f-img-text">100<img src="assets/images/ruppee.png"
-                                                                    class="img-fluid"></span>
-                                                        </div>
+                                                        <span class="bg-f-img-text">100<img
+                                                                src="assets/images/ruppee.png" class="img-fluid"></span>
                                                     </div>
                                                 </div>
                                             </div>
-        
                                         </div>
-                                    </a>
-                                </div>
-                            </ng-template>
-                   
-                   
-                </owl-carousel-o>
-            
-            </div>
-        </div>
-    </div>
 
-</section>
-<section class="second-part">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-8">
-                <p>Recommended For you</p>
-            </div>
-            <div class="col-md-4 col-4 view-all">
-                <p>View All</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </ng-template> -->
+
+
+                    </owl-carousel-o>
+
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
-                    <ng-template carouselSlide>
-                                    <div class="t-b-s-background"> 
-                                                    
-                                                <div class="show-box new-box">
-                                                    <img src="assets/images/beguni.jpg" class="img-fluid">
-                                                </div> 
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-3">
-                                            
-                                            </div>
-                                            <div class="col-9 chat-chati">
+
+    </section>
+    <section class="second-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-8">
+                    <p>Recommended For you</p>
+                </div>
+                <div class="col-md-4 col-4 view-all">
+                    <p>View All</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
+                        <ng-template carouselSlide *ngFor="let item of recomendedCollection">
+                            <div class="t-b-s-background">
+                                <a routerLink="/multiplexcheckout/{{item.id}}">
+                                <div class="show-box new-box">
+                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                </div></a>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <a routerLink="/multiplexcheckout/{{item.id}}">           
+                                                <li><span class="movie">{{item.name}}</span></li>
+                                                <li><span>{{item.duration_time}}</span><span
+                                                        class="main-date">{{item.year}}</span></li>
+                                                <li><span>{{item.genere_name}}</span></li></a>
+                                                <li class="star">
+                                                    <span><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">{{item.rating}}/10</span>
+                                                    <span class="main-whistlist-new">
+                                                        <div *ngIf="item.wishlist_status!=1"><a
+                                                                (click)="addWishList(item.id)"><img
+                                                                    src="assets/logo/wishlist.svg"
+                                                                    class="img-fluid"></a></div>
+                                                        <div *ngIf="item.wishlist_status==1"><a
+                                                                (click)="removeWishList(item.id)"><img
+                                                                    src="assets/logo/wishlisted.svg"
+                                                                    class="img-fluid"></a></div>
+
+
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                        <!-- <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/beguni.jpg" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
                                             <ul>
                                                 <li><span class="movie">Chat Chati</span></li>
                                                 <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
                                                 <li><span>Comedy, Romance, Muisc</span></li>
-                                            <li class="star">
-                                                    <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                                <li class="star">
+                                                    <span><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"></span>
                                                     <span class="date-text">8.5/10</span>
-                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
                                                 </li>
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
-                                    
                                 </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="t-b-s-background">
-                                        
-                                    <div class="show-box new-box">
-                                        <img src="assets/images/beguni.jpg" class="img-fluid">
-                                    </div> 
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-3">
-                                
-                                </div>
-                                <div class="col-9 chat-chati">
-                                <ul>
-                                    <li><span class="movie">Chat Chati</span></li>
-                                    <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
-                                    <li><span>Comedy, Romance, Muisc</span></li>
-                                <li class="star">
-                                        <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
-                                        <span class="date-text">8.5/10</span>
-                                        <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                                    </li>
-                                    </ul>
-                                </div>
+
                             </div>
-                        </div>
-                        
-                    </div>
-        </ng-template>
-        
-        <ng-template carouselSlide>
-            <div class="t-b-s-background">
-                            
-                        <div class="show-box new-box">
-                            <img src="assets/images/beguni.jpg" class="img-fluid">
-                        </div> 
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                    
-                    </div>
-                    <div class="col-9 chat-chati">
-                    <ul>
-                        <li><span class="movie">Chat Chati</span></li>
-                        <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
-                        <li><span>Comedy, Romance, Muisc</span></li>
-                    <li class="star">
-                            <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
-                            <span class="date-text">8.5/10</span>
-                            <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                        </li>
-                        </ul>
-                    </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/beguni.jpg" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <li><span class="movie">Chat Chati</span></li>
+                                                <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
+                                                <li><span>Comedy, Romance, Muisc</span></li>
+                                                <li class="star">
+                                                    <span><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">8.5/10</span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/beguni.jpg" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <li><span class="movie">Chat Chati</span></li>
+                                                <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
+                                                <li><span>Comedy, Romance, Muisc</span></li>
+                                                <li class="star">
+                                                    <span><img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">8.5/10</span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template> -->
+
+                    </owl-carousel-o>
                 </div>
             </div>
-            
         </div>
-</ng-template>
-
-<ng-template carouselSlide>
-    <div class="t-b-s-background">
-                    
-                <div class="show-box new-box">
-                    <img src="assets/images/beguni.jpg" class="img-fluid">
-                </div> 
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-            
-            </div>
-            <div class="col-9 chat-chati">
-            <ul>
-                <li><span class="movie">Chat Chati</span></li>
-                <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
-                <li><span>Comedy, Romance, Muisc</span></li>
-            <li class="star">
-                    <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
-                    <span class="date-text">8.5/10</span>
-                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-</div>
-</ng-template>
-
-                </owl-carousel-o>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="thirt-part">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-8">
-                <p>Upcoming films</p>
-            </div>
-            <div class="col-md-4 col-4 view-all">
-                <p>View All</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <owl-carousel-o [options]="customOptionsforupcoming" class="sl-im-pd" id="celb">
-                    <ng-template carouselSlide>
-                        <div class="t-b-s-background">
-                                 
-                            <div class="show-box new-box">
-                                <img src="assets/images/poster3.webp" class="img-fluid">
-                             </div> 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                           
-                        </div>
-                        <div class="col-9 chat-chati">
-                          <ul>
-                            <li><span class="movie">Sur</span></li>
-                            <li><span>2 hr 02 min</span></li>
-                            <li><span>Musical , Thriller , Drama</span></li>
-                             <li class="cal">
-                                 <span><img src="assets/images/calender.png" class="img-fluid"></span>
-                                 <span class="date-text">Thursday, 30 June 2022</span>
-                                 <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                              </li>
-                            </ul>
-                        </div>
-                    </div>
+    </section>
+    <section class="thirt-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-8">
+                    <p>Upcoming films</p>
                 </div>
-                
-            </div>
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <div class="t-b-s-background">
-                                 
-                            <div class="show-box new-box">
-                                <img src="assets/images/poster3.webp" class="img-fluid">
-                             </div> 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                           
-                        </div>
-                        <div class="col-9 chat-chati">
-                          <ul>
-                            <li><span class="movie">Sur</span></li>
-                            <li><span>2 hr 02 min</span></li>
-                            <li><span>Musical , Thriller , Drama</span></li>
-                             <li class="cal">
-                                 <span><img src="assets/images/calender.png" class="img-fluid"></span>
-                                 <span class="date-text">Thursday, 30 June 2022</span>
-                                 <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                              </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-md-4 col-4 view-all">
+                    <p>View All</p>
                 </div>
-                
             </div>
-                    </ng-template>
-                    
-                    <ng-template carouselSlide>
-                        <div class="t-b-s-background">
-                                 
-                            <div class="show-box new-box">
-                                <img src="assets/images/poster3.webp" class="img-fluid">
-                             </div> 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                           
-                        </div>
-                        <div class="col-9 chat-chati">
-                          <ul>
-                            <li><span class="movie">Sur</span></li>
-                            <li><span>2 hr 02 min</span></li>
-                            <li><span>Musical , Thriller , Drama</span></li>
-                             <li class="cal">
-                                 <span><img src="assets/images/calender.png" class="img-fluid"></span>
-                                 <span class="date-text">Thursday, 30 June 2022</span>
-                                 <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                              </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-                    </ng-template>
-                    
-                    <ng-template carouselSlide>
-                        <div class="t-b-s-background">
-                                 
-                            <div class="show-box new-box">
-                                <img src="assets/images/poster3.webp" class="img-fluid">
-                             </div> 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                           
-                        </div>
-                        <div class="col-9 chat-chati">
-                          <ul>
-                            <li><span class="movie">Sur</span></li>
-                            <li><span>2 hr 02 min</span></li>
-                            <li><span>Musical , Thriller , Drama</span></li>
-                             <li class="cal">
-                                 <span><img src="assets/images/calender.png" class="img-fluid"></span>
-                                 <span class="date-text">Thursday, 30 June 2022</span>
-                                 <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
-                              </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-                    </ng-template>
-                    
-                    
-                  
-        
-        
+            <div class="row">
+                <div class="col-md-12">
+                    <owl-carousel-o [options]="customOptionsforupcoming" class="sl-im-pd" id="celb">
+                        <ng-template carouselSlide *ngFor="let item of upcommingCollection">
+                            <div class="t-b-s-background">
+                               
+                                <div class="show-box new-box">
+                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul> 
+                                                <li><span class="movie">{{item.name}}</span></li>
+                                                <!-- <li><span>2 hr 02 min</span></li> -->
+                                                <li><span>{{item.genere_name}}</span></li>
+                                                <li class="cal">
+                                                    <span><img src="assets/images/calender.png"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">{{item.start_date|date:'fullDate'}}</span>
+                                                    <span class="main-whistlist-new">
+                                                        <div *ngIf="item.wishlist_status!=1"><a
+                                                            (click)="addWishList(item.id)"><img
+                                                                src="assets/logo/wishlist.svg"
+                                                                class="img-fluid"></a></div>
+                                                    <div *ngIf="item.wishlist_status==1"><a
+                                                            (click)="removeWishList(item.id)"><img
+                                                                src="assets/logo/wishlisted.svg"
+                                                                class="img-fluid"></a></div></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                        <!-- <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/poster3.webp" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <li><span class="movie">Sur</span></li>
+                                                <li><span>2 hr 02 min</span></li>
+                                                <li><span>Musical , Thriller , Drama</span></li>
+                                                <li class="cal">
+                                                    <span><img src="assets/images/calender.png"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">Thursday, 30 June 2022</span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/poster3.webp" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <li><span class="movie">Sur</span></li>
+                                                <li><span>2 hr 02 min</span></li>
+                                                <li><span>Musical , Thriller , Drama</span></li>
+                                                <li class="cal">
+                                                    <span><img src="assets/images/calender.png"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">Thursday, 30 June 2022</span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide>
+                            <div class="t-b-s-background">
+
+                                <div class="show-box new-box">
+                                    <img src="assets/images/poster3.webp" class="img-fluid">
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-3">
+
+                                        </div>
+                                        <div class="col-9 chat-chati">
+                                            <ul>
+                                                <li><span class="movie">Sur</span></li>
+                                                <li><span>2 hr 02 min</span></li>
+                                                <li><span>Musical , Thriller , Drama</span></li>
+                                                <li class="cal">
+                                                    <span><img src="assets/images/calender.png"
+                                                            class="img-fluid"></span>
+                                                    <span class="date-text">Thursday, 30 June 2022</span>
+                                                    <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg"
+                                                            class="img-fluid"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template> -->
 
 
 
-                </owl-carousel-o>
+
+
+
+
+
+                    </owl-carousel-o>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
 
 <app-welcomefooter></app-welcomefooter>

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MultiplexhomeComponent } from './multiplexhome/multiplexhome.component';
 import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
@@ -7,9 +7,9 @@ import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckou
 
 const routes: Routes = [
   {path:'multiplexhome',component:MultiplexhomeComponent},
-  {path:'mutiplextending',component:MultiplextendingComponent},
-  {path:'mutiplexwishlist',component:MultiplexwishlistComponent},
-  {path:'mutiplexcheckout',component:MultiplexcheckoutComponent},
+  {path:'multiplextending',component:MultiplextendingComponent},
+  {path:'multiplexwishlist',component:MultiplexwishlistComponent},
+  {path:'multiplexcheckout/:multiplex_id',component:MultiplexcheckoutComponent},
 
 ];
 
