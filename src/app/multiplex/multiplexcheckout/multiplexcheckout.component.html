@@ -139,11 +139,12 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-12">
                         <div class="pay-btn">
-                            <p>
-                                <span>Pay&nbsp;<img src="assets/logo/ruppee.png" class="img-fluid">&nbsp;{{collection.use_amount}}</span><span>&nbsp;+{{collection.use_coin}}&nbsp;</span>
-                                <span class="coins-img"><img src="assets/logo/coins-img.png" class="img-fluid"></span>
-                            </p>
-
+                            <a href="javascript:void(0)" (click)="multiplexCheckout(collection.id,collection.use_amount,collection.use_coin)">
+                                <p>
+                                    <span>Pay&nbsp;<img src="assets/logo/ruppee.png" class="img-fluid">&nbsp;{{collection.use_amount}}</span><span>&nbsp;+{{collection.use_coin}}&nbsp;</span>
+                                    <span class="coins-img"><img src="assets/logo/coins-img.png" class="img-fluid"></span>
+                                </p>
+                            </a>
                         </div>
 
                     </div>
