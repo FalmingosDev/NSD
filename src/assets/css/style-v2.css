@@ -686,10 +686,17 @@ body {
 }
 
 .my-newo-bx {
-    padding: 16px 15px;
+    padding: 9px 8px;
     background: #353a60;
     border-radius: 12px;
     margin-bottom: 15px;
+}
+
+.my-newo-bx img {
+    width: 59%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
 .my-newo-count h3 {

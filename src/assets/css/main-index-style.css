@@ -19,23 +19,29 @@ a:hover {
 :focus {
     outline: none;
 }
-.wallet-img{
+
+.wallet-img {
     text-align: right;
 }
-.wallet-img img{
+
+.wallet-img img {
     width: 8%;
 }
-.wallet-img span{
+
+.wallet-img span {
     color: #f18d1d;
     font-size: 17px;
     margin-right: 10px;
 }
+
+
 /* .btn-primary {
     color: #fff !important;
     background-color: #ffc107 !important;
     border: none !important;  
 } */
-.acm{
+
+.acm {
     padding: 10px !important;
     margin: 10px 0px !important;
     background: #00000061 !important;
@@ -43,12 +49,14 @@ a:hover {
     font-style: italic !important;
     color: #fff !important;
 }
+
 .new-clan-section {
     background: linear-gradient(0deg, #343a40, #21252900), url(../images/clan-bg.jpg);
     background-size: contain;
     background-attachment: fixed;
     background-position: center;
 }
+
 .access-p {
     background-color: rgba(0, 0, 0, 0.5) !important;
     padding: 10px 15px !important;
@@ -116,6 +124,8 @@ a:hover {
     border: 4px solid #fff;
     object-fit: cover;
 }
+
+
 /* .video-owl-sm .item{
     opacity:0.4;
     transition:.4s ease all;
@@ -126,7 +136,6 @@ a:hover {
     opacity:1;
     transform:scale(1);
   } */
- 
 
 .ml-text h1 {
     font-size: 20px;
@@ -156,6 +165,7 @@ a:hover {
     box-shadow: 3px 4px 7px #000000a6;
     font-weight: bold;
 }
+
 
 /* .sec-mt-bt {
     background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(../images/new-bg-ft.jpg);
@@ -227,7 +237,7 @@ a:hover {
     height: 70vh;
     position: fixed;
     width: 100%;
-    /* background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(http://3.0.255.31/NS/assets/images/new-bg-ft.jpg); */ 
+    /* background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%), url(http://3.0.255.31/NS/assets/images/new-bg-ft.jpg); */
     background: linear-gradient( rgba(6, 57, 98, 0.87) 100%, rgb(0 0 0 / 79%)100%);
     height: 85vh;
     background-size: cover;
@@ -348,6 +358,7 @@ a:hover {
 
 
 /*new-clan-tree-2*/
+
 
 /* .join-a-tg {
     padding: 16px 6px;
@@ -702,6 +713,7 @@ a:hover {
     width: 100%;
       height: 100%;} */
 
+
 /* input[type=checkbox] {
     position: absolute;
     cursor: pointer;
@@ -737,6 +749,7 @@ a:hover {
     border-radius: 10px;
     /*background-size: contain;*/
 }
+
 
 /*.left {
     position: absolute;
@@ -913,6 +926,7 @@ nav>div a.nav-item.nav-link.active:after {
     border-top-color: transparent;
 }
 
+
 /* .tab-content {
     background: #fdfdfd;
     line-height: 25px;
@@ -943,6 +957,7 @@ nav>div a.nav-item.nav-link:focus {
 
 
 /*mobile-footer*/
+
 
 /* .mobile_footer {
     z-index: 9999;
@@ -1254,6 +1269,7 @@ header {
 
 /***********************header***********************/
 
+
 /* .header {
     padding: 10px 0px 0px;
 } */
@@ -1273,6 +1289,7 @@ header {
 
 /***********************sidenav***********************/
 
+
 /* .sidenav {
     height: 100%;
     width: 0;
@@ -1285,6 +1302,7 @@ header {
     transition: 0.5s;
     padding-top: 60px;
 } */
+
 
 /* .sidenav a {
     padding: 8px 8px 8px 32px;
@@ -1928,6 +1946,7 @@ header {
     margin-bottom: 0;
 }
 
+
 /* .what-to-section.nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
     color: #495057;
@@ -2490,17 +2509,18 @@ select.native-select {
     left: 0;
     right: 0;
     transform: translateY(-50%);
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(252,70,107,0.20211834733893552) 100%);
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(252, 70, 107, 0.20211834733893552) 100%);
     /* background: #0000005e; */
     /* width: 57%; */
     text-align: center;
     margin: 0 auto;
     padding: 23px 0px;
 }
+
 .pricing-text p span {
-    display: block;
-    font-size: 21px;
+    /* display: block; */
+    /* font-size: 21px; */
 }
 
 .pr-span {

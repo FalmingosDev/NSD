@@ -41,6 +41,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { EditphoneComponent } from './editphone/editphone.component';
 import { HashtaghomeComponent } from '../hashtag/hashtaghome/hashtaghome.component';
+import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
+import { RedeemComponent } from './redeem/redeem.component';
+import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component';
 
 
 
@@ -85,7 +88,10 @@ const routes: Routes = [
   {path: 'walletdetails', component:WalletdetailsComponent},
   {path: 'change_password', component:ChangepasswordComponent},
   {path: 'profile_detail', component:ProfileDetailComponent},
-  {path: 'edit_phone/:phone', component:EditphoneComponent}
+  {path: 'edit_phone/:phone', component:EditphoneComponent},
+  {path: 'referralinvite', component:ReferralinviteComponent},
+  {path: 'redeem', component: RedeemComponent},
+  {path: 'paypalpayment', component: PaypalpaymentComponent}
 ];
 
 @NgModule({
