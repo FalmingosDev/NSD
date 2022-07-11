@@ -10,6 +10,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiService {
+  multiplex_id() {
+    throw new Error('Method not implemented.');
+  }
   removeWishList() {
     throw new Error('Method not implemented.');
   }
@@ -579,7 +582,11 @@ export class ApiService {
           return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-recommended-view-all-list?user_email='+user_email);
          } 
   
-
+         upcomingViewAllList()
+         {
+         
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-upcoming-view-all-list');
+         }
 
 
 

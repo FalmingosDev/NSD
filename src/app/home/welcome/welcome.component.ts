@@ -251,6 +251,14 @@ export class WelcomeComponent implements OnInit {
           else{
             this.router.navigate(['/about_newoclan']);
           }
+        }
+        else if(value=='multiplex'){
+          if(res.cnt ==1){
+            this.router.navigate(['/multiplexhome']);
+          }
+          else{
+            this.router.navigate(['/about_newoclan']);
+          }
         } 
         else if(value=='profile'){
           this.router.navigate(['/profile']);

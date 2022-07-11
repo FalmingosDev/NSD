@@ -13,6 +13,7 @@ import { HomeModule } from '../home/home.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwishlist.component';
+import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwi
     MultiplexhomeComponent,
     MultiplextendingComponent,
     MultiplexwishlistComponent,
-    RecommendedwishlistComponent
+    RecommendedwishlistComponent,
+    UpcomingviewallComponent
   ],
   imports: [
     CommonModule,

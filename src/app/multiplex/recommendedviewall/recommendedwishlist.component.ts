@@ -9,10 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 export class RecommendedwishlistComponent implements OnInit {
   env=environment;
+  recomendedWishList: any;
   constructor(private api:ApiService) { }
    wishListShow:any=[];
    recomendedWishListRemove :any=[];
    findWishListId:any=[];
+   
   ngOnInit(): void {
    this.viewAllRecommendedList();
   }
@@ -24,12 +26,23 @@ export class RecommendedwishlistComponent implements OnInit {
       this.wishListShow=result.recommended_multiplex_list;
     })
 }
-// removeWishList(multiplex_id)
-// {
-// this.api.removeWishList().subscribe((result)=>
-// {
-//   this.
-// })
-// }
+removeWishList(multiplex_id)
+{
+this.api.removeMultiplexWishlist(multiplex_id).subscribe((result)=>
+{
+  this.recomendedWishListRemove=result;
+  this.viewAllRecommendedList();
+})
+}
+
+addWishList(multiplex_id)
+  {
+    
+    this.api.addMultiplexWishlist(multiplex_id).subscribe((result) => {
+    this.recomendedWishList=result;
+    this.viewAllRecommendedList();
+     })
+
+}
 
 }

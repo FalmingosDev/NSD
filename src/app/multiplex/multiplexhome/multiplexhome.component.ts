@@ -99,7 +99,7 @@ export class MultiplexhomeComponent implements OnInit {
   upcommingCollection: any = [];
   recomendedWishList: any=[];
   recomendedWishListRemove: any=[];
-  
+  wishListCollection:any=[];
   ngOnInit(): void {
     this.multiplexList();
     // this.addWishList(multiplex_id);  
@@ -112,6 +112,7 @@ export class MultiplexhomeComponent implements OnInit {
       this.bannerCollection = result.banner_multiplex_list;
       this.recomendedCollection = result.recommended_multiplex_list;
       this.upcommingCollection = result.upcoming_multiplex_list;
+      this.wishListCollection=result.multiplex_wishlist;
 
     })
   }
