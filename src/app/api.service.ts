@@ -589,6 +589,10 @@ export class ApiService {
          }
 
 
+  public multiplexCreateEncryption(objUserData) {
+      return this.httpClient.post<any>(this.env.baseUrl + '/multiplex_payment.php', { userdata: objUserData });
+  }
+
 
 
   public activateLeadBonus(leadCoupon) {

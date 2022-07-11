@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwishlist.component';
 import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.component';
+import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.comp
     MultiplextendingComponent,
     MultiplexwishlistComponent,
     RecommendedwishlistComponent,
-    UpcomingviewallComponent
+    UpcomingviewallComponent,
+    MultiplexpaymentComponent
   ],
   imports: [
     CommonModule,

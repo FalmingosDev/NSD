@@ -7,6 +7,7 @@ import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckou
 import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwishlist.component';
 import { componentFactoryName } from '@angular/compiler';
 import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.component';
+import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
 
 const routes: Routes = [
   {path:'multiplexhome',component:MultiplexhomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'multiplexwishlist',component:MultiplexwishlistComponent},
   {path:'multiplexcheckout/:multiplex_id',component:MultiplexcheckoutComponent},
   {path:'recommendedviewall',component:RecommendedwishlistComponent},
-  {path:'upcomingviewall',component:UpcomingviewallComponent}
+  {path:'upcomingviewall',component:UpcomingviewallComponent},
+  {path: 'multiplex_payment/:multiplex_id/:price/:curr/:coin', component:MultiplexpaymentComponent}
 ];
 
 @NgModule({
