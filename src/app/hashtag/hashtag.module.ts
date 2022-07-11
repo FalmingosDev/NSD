@@ -8,6 +8,8 @@ import { CampaignComponent } from './campaign/campaign.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserprofile.component';
 import { CategorymasterComponent } from './categorymaster/categorymaster.component';
+import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component';
+import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CategorymasterComponent } from './categorymaster/categorymaster.compone
     HashtaghomeComponent,
     CampaignComponent,
     HashtaguserprofileComponent,
-    CategorymasterComponent
+    CategorymasterComponent,
+    MyallcampaignComponent,
+    MypendingcampaignComponent
   ],
   imports: [
     CommonModule,

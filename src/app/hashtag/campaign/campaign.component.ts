@@ -48,7 +48,8 @@ export class CampaignComponent implements OnInit {
       this.campaign_name=result.campaign_details_list.campaign_name;
 
       this.campaign_current_status=result.campaign_details_list.campaign_current_status;
-
+     
+      this.campaign_spl_note=result.campaign_details_list.campaign_spl_note;
 
     })
 

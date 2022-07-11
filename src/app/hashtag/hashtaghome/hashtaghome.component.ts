@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -12,6 +13,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./hashtaghome.component.css']
 })
 export class HashtaghomeComponent implements OnInit {
+  static ngOnInit(): any {
+    throw new Error('Method not implemented.');
+  }
+  static AllCampaign: any;
+  static result: any;
   [x: string]: any;
   env = environment;
   todayDate: any;
@@ -22,8 +28,8 @@ export class HashtaghomeComponent implements OnInit {
   filterLength: number;
   filterArray: any;
   AllCampaign: any;
- 
-  constructor(private dataService: ApiService, private campaignList: ApiService, status: FormBuilder, offer: FormBuilder,private _router: Router) {
+
+  constructor(private dataService: ApiService, private campaignList: ApiService, status: FormBuilder, offer: FormBuilder, private _router: Router) {
 
 
     this.forms = status.group({
@@ -45,22 +51,26 @@ export class HashtaghomeComponent implements OnInit {
       }
     });
 
-    this.email=this.local_email;
+    this.email = this.local_email;
     this.campaignList.hashtagcampaignList(this.email).subscribe((result) => {
 
-      if(result.key==="hashtag_non_user"){
+      if (result.key === "hashtag_non_user") {
 
         this._router.navigateByUrl('/categorymaster');
-     
+
       }
-      else{
+      else {
 
         this.AllcampaignListAll = result.campaign_list;
         this.todayDate = result.todayDate;
         this.AllCampaign = this.AllcampaignListAll;
-        this.offerList =result.campaign_offer;
+        this.offerList = result.campaign_offer;
+
+        console.log(result);
+
+        return result;
       }
-      
+
     })
 
   }
@@ -166,4 +176,16 @@ export class HashtaghomeComponent implements OnInit {
     }
   }
 
+
+
+  // $(document).ready(function(){
+  //   $("#select-all").click(function () {
+  //     var checkboxes = document.getElementsByName('offer');
+  //     for (var checkbox of checkboxes) {
+  //       checkbox.checked = this.checked;
+  //     }
+  //   });
+  // });
 }
+
+

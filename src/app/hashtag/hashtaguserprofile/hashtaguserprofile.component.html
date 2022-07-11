@@ -1,65 +1,186 @@
-<div>
-    <section class="hastag-user-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="edit-form">
-                        <form>
-                            <div id="edit-one" id="editone">
-                          <div class="form-group">
-                            <label class="edit-label" for="">Email Id</label>
-                            <input type="email" class="form-control" id="textname" aria-describedby="emailHelp">
-                          </div>
-                          <div class="form-group">
-                            <label class="edit-label" for="">User Name</label>
-                            <input type="text" class="form-control" id="email-text" aria-describedby="emailHelp">
-                          </div>
-                                <div class="form-group">
-                                  <label class="edit-label" for="">Password</label>
-                                  <input type="password" class="form-control" id="phone-text" aria-describedby="emailHelp">
-                                </div>
-                                <div class="form-group">
-                                  <label class="edit-label" for="">Confirm Password</label>
-                                  <input type="password" class="form-control" id="phone-text" aria-describedby="emailHelp">
-                                </div>
-                            
-                            
-                            <div class="step">
-                                <button class="btn btn-primary" id="stepfunone">
-                                    Next step
-                                </button>
-                            </div>
-                        </div>
-                        <div id="edit-one" id="editwo" style="display: none;">
-                            <div class="form-group">
-                              <label class="edit-label" for="">Email Id</label>
-                              <input type="email" class="form-control" id="textname" aria-describedby="emailHelp">
-                            </div>
-                            <div class="form-group">
-                              <label class="edit-label" for="">User Name</label>
-                              <input type="text" class="form-control" id="email-text" aria-describedby="emailHelp">
-                            </div>
-                                  <div class="form-group">
-                                    <label class="edit-label" for="">Password</label>
-                                    <input type="password" class="form-control" id="phone-text" aria-describedby="emailHelp">
-                                  </div>
-                                  <div class="form-group">
-                                    <label class="edit-label" for="">Confirm Password</label>
-                                    <input type="password" class="form-control" id="phone-text" aria-describedby="emailHelp">
-                                  </div>
-                              
-                              
-                              <div class="step">
-                                  <button class="btn btn-primary"  id="stepfuntwo">
-                                     Previous Step
-                                  </button>
-                              </div>
-                          </div>
-                            </form>
-                        
-                    </div>
-                </div>
-            </div>
+<div class="campaign-bottom">
+  <section class="header-main">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8 col-8">
+          <div class="has-logo">
+            <span><img src="assets/logo/n-hastag.webp" class="img-fluid"></span>
+          </div>
         </div>
-    </section>
+        <div class="col-md-4 col-4">
+          <div class="back_btn_div">
+            <a routerLink="/hashtag"><span>Back</span>
+              <div class="liquid"></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="header-main-new">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 col-4">
+          
+        </div>
+        <div class="col-md-8 col-8">
+          <div class="eidt-camp">
+            <span><a routerLink="/myallcampaign">My all Campain</a></span>
+            <span><a routerLink="/mypendingcampaign">Pending Links</a></span>
+          </div>
+        </div>
+        <!-- <div class="col-md-4 col-4"> 
+                <div class="img-source">
+                     <img src="assets/images/ovter.png">
+                </div>
+               
+            </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="new-from">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <div class="main-text-head">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                  <span class="title">Profile</span>
+                  <span class="accicon"><i class="fa fa-angle-down rotate-icon" aria-hidden="true"></i></span>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div>
+                      <section class="hastag-user-section" style="padding-bottom:90px ;">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="edit-form">
+                                <form [formGroup]="UserForm">
+                                  <div id="edit-one" id="editone">
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Name</label>
+                                      <input type="text" class="form-control" id="textname" formControlName="name"
+                                        aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Email</label>
+                                      <input type="text" class="form-control" id="email-text" formControlName="email"
+                                        aria-describedby="emailHelp" value="{{userid}}" readonly disabled>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Mobile</label>
+                                      <input type="text" class="form-control" id="phone-text" formControlName="mobile"
+                                        aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Date Of Birth</label>
+                                      <input type="date" class="form-control" id="phone-text" formControlName="dob"
+                                        aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Language</label>
+                                      <select class="form-control" id="phone-text" formControlName="language"
+                                        aria-describedby="emailHelp">
+                                        <option value="{{lang.id}}" *ngFor="let lang of language_list">{{lang.language}}
+                                        </option>
+                                      </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Maritial Status</label>
+                                      <select name="" id="" class="form-control" formControlName="maritial">
+                                        <option value="">Select Maritial Status</option>
+                                        <option value="Married">Married</option>
+                                        <option value="UnMarried">UnMarried</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Profession</label>
+                                      <select name="" id="" class="form-control" formControlName="profession">
+                                        <option value="">Select Profession</option>
+                                        <option value="{{profession.id}}" *ngFor="let profession of professions_list">
+                                          {{profession.profession_name}}</option>
+                                      </select>
+                                    </div>
+                                    <div class="step">
+                                      <button class="btn btn-primary" id="stepfunone">
+                                        Next step
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="edit-one" id="editwo" style="display: none;">
+
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Country</label>
+                                      <select name="" class="form-control" id="textname" formControlName="country"
+                                        aria-describedby="emailHelp">
+                                        <option value="">Select Your Country</option>
+                                        <option value="{{country.id}}" *ngFor="let country of countryList">
+                                          {{country.Name}}</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">State</label>
+                                      <input type="email" class="form-control" id="textname" formControlName="state"
+                                        aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">City</label>
+                                      <input type="email" class="form-control" id="textname" formControlName="city"
+                                        aria-describedby="emailHelp">
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Pin Code</label>
+                                      <input type="email" class="form-control" id="textname" formControlName="pincode"
+                                        aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="edit-label" for="">Address</label>
+                                      <textarea name="" id="" cols="30" rows="5" class="form-control"
+                                        formControlName="address" aria-describedby="emailHelp">
+                  </textarea>
+                                    </div>
+                                    <div class="step">
+                                      <button class="btn btn-primary" id="stepfuntwo">
+                                        Previous Step
+                                      </button>
+                                    </div>
+                                    <div>
+                                      <button (click)="addUser()" class="btn btn-primary">Submit</button>
+                                    </div>
+                                  </div>
+
+
+                                </form>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
 </div>
+
+<app-welcomefooter></app-welcomefooter>
