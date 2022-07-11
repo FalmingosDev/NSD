@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { MultiplexRoutingModule } from './multiplex-routing.module';
 import { MultiplexcheckoutComponent } from './multiplexcheckout/multiplexcheckout.component';
 import { MultiplexhomeComponent } from './multiplexhome/multiplexhome.component';
-import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
+// import { MultiplextendingComponent } from './multiplextending/multiplextending.component';
 import { MultiplexwishlistComponent } from './multiplexwishlist/multiplexwishlist.component';
 import { HomeModule } from '../home/home.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -20,7 +20,7 @@ import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.comp
   declarations: [
     MultiplexcheckoutComponent,
     MultiplexhomeComponent,
-    MultiplextendingComponent,
+    // MultiplextendingComponent,
     MultiplexwishlistComponent,
     RecommendedwishlistComponent,
     UpcomingviewallComponent

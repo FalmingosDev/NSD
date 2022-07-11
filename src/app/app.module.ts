@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MultiplexModule } from './multiplex/multiplex.module';
 
 
 
