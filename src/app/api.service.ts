@@ -10,6 +10,15 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiService {
+  multiplex_id() {
+    throw new Error('Method not implemented.');
+  }
+  removeWishList() {
+    throw new Error('Method not implemented.');
+  }
+  recomendedWishList() {
+    throw new Error('Method not implemented.');
+  }
   redirectUrl: string;
   // env.env.baseUrl:string = "https://newocoin.app/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
@@ -533,6 +542,54 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.baseUrl + '/profile.php', { action_type, user_name, useremail });
 
   }
+
+                           /*Multiplex*/ 
+ multiplexList(){
+  const user_email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-list?user_email='+user_email);
+   }
+  
+ public addMultiplexWishlist(multiplex_id:any){
+//  alert(multiplex_id);
+      const user_email = localStorage.getItem('token');
+      // alert(user_email);
+      return this.httpClient.post<any>(this.env.laravel_api_url+'add-multiplex-wishlist',{multiplex_id,user_email});
+  }
+
+  public removeMultiplexWishlist(multiplex_id:any){
+    //  alert(multiplex_id);
+          const user_email = localStorage.getItem('token');
+          // alert(user_email);
+          return this.httpClient.post<any>(this.env.laravel_api_url+'remove-multiplex-wishlist',{multiplex_id,user_email});
+      }
+
+      wishList(){
+        const user_email = localStorage.getItem('token');
+        return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-wishlist?user_email='+user_email);
+       } 
+
+      
+        multiplexCheckout(multiplex_id){
+
+         const user_email = localStorage.getItem('token');
+         return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-checkout?multiplex_id='+multiplex_id+'&user_email='+user_email);
+
+        }
+
+
+        viewAllWishList(){
+          const user_email = localStorage.getItem('token');
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-recommended-view-all-list?user_email='+user_email);
+         } 
+  
+         upcomingViewAllList()
+         {
+         
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-upcoming-view-all-list');
+         }
+
+
+
 
   public activateLeadBonus(leadCoupon) {
     const userEmail = localStorage.getItem('token');
