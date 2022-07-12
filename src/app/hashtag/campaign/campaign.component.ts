@@ -24,7 +24,7 @@ export class CampaignComponent implements OnInit {
   userEmail: any;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) { }
 
   ngOnInit(): void {
 
@@ -43,13 +43,17 @@ export class CampaignComponent implements OnInit {
 
       this.active_user_apply_check = result.active_user_apply;
 
-      this.campaign_hashtag=result.campaign_details_list.campaign_hashtag;
+      this.campaign_hashtag = result.campaign_details_list.campaign_hashtag;
 
-      this.campaign_name=result.campaign_details_list.campaign_name;
+      this.campaign_name = result.campaign_details_list.campaign_name;
 
-      this.campaign_current_status=result.campaign_details_list.campaign_current_status;
-     
-      this.campaign_spl_note=result.campaign_details_list.campaign_spl_note;
+      this.campaign_current_status = result.campaign_details_list.campaign_current_status;
+
+      this.campaign_spl_note = result.campaign_details_list.campaign_spl_note;
+
+      this.message = result.message;
+
+      this.results=result.common_cat;
 
     })
 
@@ -62,10 +66,11 @@ export class CampaignComponent implements OnInit {
       var resp: any = res;
 
       if (resp.success == true) {
-        var successmsg =''
+        var successmsg = ''
 
           // '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>'
           ;
+        this._router.navigateByUrl('/mypendingcampaign');
 
         document.getElementById("applyreplace").innerHTML = successmsg;
       }

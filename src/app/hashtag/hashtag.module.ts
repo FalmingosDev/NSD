@@ -10,6 +10,7 @@ import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserpro
 import { CategorymasterComponent } from './categorymaster/categorymaster.component';
 import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component';
 import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
+import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressadd/pendingsocialandaddressadd.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaig
     HashtaguserprofileComponent,
     CategorymasterComponent,
     MyallcampaignComponent,
-    MypendingcampaignComponent
+    MypendingcampaignComponent,
+    PendingsocialandaddressaddComponent,
+    
   ],
   imports: [
     CommonModule,

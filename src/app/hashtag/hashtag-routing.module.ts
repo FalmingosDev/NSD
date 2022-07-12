@@ -6,6 +6,8 @@ import { HashtaguserprofileComponent } from './hashtaguserprofile/hashtaguserpro
 import { CategorymasterComponent } from './categorymaster/categorymaster.component';
 import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component';
 import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
+import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressadd/pendingsocialandaddressadd.component';
+
 
 const routes: Routes = [
   {path:'hashtaghome', component:HashtaghomeComponent},
@@ -14,8 +16,8 @@ const routes: Routes = [
   {path:'userprofile',component:HashtaguserprofileComponent},
   {path:'categorymaster',component:CategorymasterComponent},
   {path:'myallcampaign',component:MyallcampaignComponent},
-  {path:'mypendingcampaign',component:MypendingcampaignComponent}
-  
+  {path:'mypendingcampaign',component:MypendingcampaignComponent},
+  {path:'hashtagsocialandaddressadd/:id',component:PendingsocialandaddressaddComponent}
   
 ];
 

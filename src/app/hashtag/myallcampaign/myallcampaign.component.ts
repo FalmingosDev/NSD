@@ -28,8 +28,6 @@ export class MyallcampaignComponent implements OnInit {
       this.todayDate = result.todayDate;
       this.AllCampaign = this.AllcampaignListAll;
      
-
-      console.log(result);
     })
   }
 

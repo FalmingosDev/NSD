@@ -564,18 +564,27 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-country-list');
   }
 
-  addUserDetails(userdata,email) {
-    return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-details-add', { userdata,email });
+  addUserDetails(userdata, email) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-details-add', { userdata, email });
   }
-  
+
   hashtagmyallcampaignList(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-my-all-campaign/' + email);
   }
 
-  
 
-  addSocialDetails(userdata,emails) {
-    return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata,emails });
+
+  addSocialDetails(userdata, emails) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata, emails });
+  }
+
+  addUserBankDetails(userdata, email) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-bank-details-add', { userdata, email });
+  }
+
+
+  hashtagAddSocialAndAdress(userdata,campaign_id, email) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-social-address-add', { userdata,campaign_id,email });
   }
 
 }

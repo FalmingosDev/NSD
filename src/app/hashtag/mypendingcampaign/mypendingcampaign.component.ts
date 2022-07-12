@@ -19,15 +19,14 @@ export class MypendingcampaignComponent implements OnInit {
   AllCampaign: any;
   offerList: any;
   env = environment;
-
-
-
-
   addSocialLink !: FormGroup;
   emails: string;
   camp_id: any;
-  camp_ids: any;
-  constructor(private dataService: ApiService, private campaignList: ApiService, private _router: Router, private addSocial: ApiService, private formBuilder: FormBuilder) { }
+
+  constructor(private dataService: ApiService, private campaignList: ApiService, private _router: Router, private addSocial: ApiService, private formBuilder: FormBuilder) {
+
+    
+  }
 
   ngOnInit(): void {
 
@@ -50,20 +49,17 @@ export class MypendingcampaignComponent implements OnInit {
 
   }
 
-  social(id) {
 
-    let camp_ids = id;
-   
-    (document.getElementById('hidden_id') as HTMLInputElement).value = id;
 
-  }
 
-  
 
   addSocialLinkDetails() {
     this.emails = this.local_email;
 
-    this.addSocial.addSocialDetails(this.addSocialLink.value,this.emails).subscribe({
+    // var d = this.social(this.id);
+    // console.log(d);
+
+    this.addSocial.addSocialDetails(this.addSocialLink.value, this.emails).subscribe({
       next: (res) => {
         alert("Link Added SuccessFully !")
       },
@@ -72,11 +68,21 @@ export class MypendingcampaignComponent implements OnInit {
       }
     })
   }
+  // social(id) {
 
+
+
+  //   return id;
+
+  //   //(document.getElementById('hidden_id') as HTMLInputElement).value = id;
+
+  // }
 
 
 }
-function socials() {
-  throw new Error('Function not implemented.');
-}
+
+
+
+
+
 

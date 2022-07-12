@@ -1,9 +1,9 @@
 @media screen and (max-width: 767px) {
-    .all-cm {
-        color: #fff;
-        font-size: 20px;
-        margin: 0;
-        padding: 10px 0px 0px;
+    .campaign-bottom{
+        margin-bottom: 100px;
+    }
+    .accicon{
+        float: right;
     }
     .back_btn_div{
         float: right;
@@ -284,6 +284,9 @@
     .card {
         border: 1px solid #ddd;
     }
+    .card-header {
+        background-color: #e59b14;
+    }
 
     .card {
         position: relative;
@@ -293,11 +296,24 @@
         flex-direction: column;
         min-width: 0;
         word-wrap: break-word;
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: #ffffff4a;
         background-clip: border-box;
         border: 1pxsolidrgba(0, 0, 0, .125);
         border-radius: 0.25rem;
-        padding: 5px 4px;
+    }
+    .btn-primary-next {
+        background: #00ffff !important;
+        border: none !important;
+        padding: 6px 16px !important;
+        border-radius: 19px !important;
+        color: #181b3e !important;
+        font-weight: bold !important;
+        font-size: 14px !important;
+        float: right;
+    }
+    .edit-label{
+        background: #5b5d76 !important;
     }
 
     .card-campain h1 {

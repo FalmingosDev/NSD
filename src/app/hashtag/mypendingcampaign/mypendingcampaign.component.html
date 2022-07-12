@@ -5,7 +5,8 @@
 
                 <div class="col-md-8 col-8">
                     <div class="has-logo">
-                        <span><img src="assets/logo/n-hastag.webp" class="img-fluid"></span>
+                        <span><img src="assets/logo/n-hastag.webp"
+                                class="img-fluid"></span>
                     </div>
                 </div>
                 <div class="col-md-4 col-4">
@@ -21,14 +22,24 @@
     </section>
 
 
-
-    <section class="body-middle-part mt-3" id="part3" *ngFor="let campaignDetails of AllcampaignListAll">
+    <section class="campaign-section-tag">
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="all-cm">Pending Campaigns</h2>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="body-middle-part mt-3" id="part3" *ngFor="let
+        campaignDetails of AllcampaignListAll">
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12">
 
-                    <ng-container *ngIf="(campaignDetails.social_link==null || campaignDetails.social_link=='');">
+                    <ng-container *ngIf="(campaignDetails.social_link==null ||
+                        campaignDetails.social_link=='');">
 
                         <div class="card">
                             <div class="row">
@@ -37,33 +48,38 @@
                                         <span></span>
 
                                         <ng-container
-                                            *ngIf="campaignDetails.campaign_current_status=='Active';else second">
+                                            *ngIf="campaignDetails.campaign_current_status=='Active';else
+                                            second">
                                             <!-- <span style="color:green"></span> -->
-
                                             <div class="ribbon-wrapper">
 
                                                 <div class="ribbon-front-new">
                                                     Active
                                                 </div>
-                                                <div class="ribbon-edge-topleft"></div>
-                                                <div class="ribbon-edge-topright"></div>
-                                                <div class="ribbon-edge-bottomleft"></div>
-
+                                                <div
+                                                    class="ribbon-edge-topleft"></div>
+                                                <div
+                                                    class="ribbon-edge-topright"></div>
+                                                <div
+                                                    class="ribbon-edge-bottomleft"></div>
                                             </div>
                                         </ng-container>
 
                                         <ng-template #second>
                                             <ng-container
-                                                *ngIf="campaignDetails.campaign_current_status=='Upcoming';else third">
+                                                *ngIf="campaignDetails.campaign_current_status=='Upcoming';else
+                                                third">
                                                 <div class="ribbon-wrapper">
-
-                                                    <div class="ribbon-front-new-1">
+                                                    <div
+                                                        class="ribbon-front-new-1">
                                                         Upcoming
                                                     </div>
-                                                    <div class="ribbon-edge-topleft"></div>
-                                                    <div class="ribbon-edge-topright"></div>
-                                                    <div class="ribbon-edge-bottomleft"></div>
-
+                                                    <div
+                                                        class="ribbon-edge-topleft"></div>
+                                                    <div
+                                                        class="ribbon-edge-topright"></div>
+                                                    <div
+                                                        class="ribbon-edge-bottomleft"></div>
                                                 </div>
                                             </ng-container>
                                         </ng-template>
@@ -76,10 +92,12 @@
                                                 <div class="ribbon-front">
                                                     Expired
                                                 </div>
-                                                <div class="ribbon-edge-topleft"></div>
-                                                <div class="ribbon-edge-topright"></div>
-                                                <div class="ribbon-edge-bottomleft"></div>
-
+                                                <div
+                                                    class="ribbon-edge-topleft"></div>
+                                                <div
+                                                    class="ribbon-edge-topright"></div>
+                                                <div
+                                                    class="ribbon-edge-bottomleft"></div>
                                             </div>
 
                                             <!-- <span class="badge badge-pill badge-info">Expired</span> -->
@@ -111,7 +129,8 @@
                                 <div class="row">
                                     <div class="col-md-6 col-5 hashtag_hash">
                                         <a>
-                                            <img src="{{env.hashtag_campaign+ campaignDetails.campaign_image}}"
+                                            <img src="{{env.hashtag_campaign+
+                                                campaignDetails.campaign_image}}"
                                                 class="img-fluid">
                                         </a>
                                         <!-- <span class="sp-has">{{campaignDetails.campaign_hashtag}}</span> -->
@@ -120,7 +139,6 @@
                                         <div class="text-sec">
                                             <h1 class="sp-has">{{campaignDetails.campaign_hashtag}}</h1>
                                             <h6><b>{{campaignDetails.campaign_name}}</b></h6>
-
                                             <!-- <p [ngClass]="{'limitTextHeight': isReadMore}" (click)="showText()">
                                                 <i>{{campaignDetails.campaign_objective}}</i>{{ isReadMore ? '': '' }}
                                             </p> -->
@@ -129,7 +147,6 @@
 
                                 </div>
                                 <!-- <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span> -->
-
                                 <div class="row">
                                     <div class="col-md-6 col-7">
                                         <div class="max-parti">
@@ -142,12 +159,15 @@
                                     <div class="col-md-6 col-5">
 
                                         <ng-container
-                                            *ngIf="(campaignDetails.campaign_current_status=='Active');else notactive">
+                                            *ngIf="(campaignDetails.campaign_current_status=='Active');else
+                                            notactive">
                                             <div class="back_btn_div-new">
-                                                <a data-toggle="modal" data-target="#addsociallink"
-                                                    (click)="social(campaignDetails.campaign_id)"><span>
-                                                        Add Social Link<span class="detail-icon"><img
-                                                                src="assets/logo/left-arrow-btn.svg" alt=""
+                                                <a
+                                                    routerLink="/hashtagsocialandaddressadd/{{campaignDetails.campaign_id}}"><span>
+                                                        Add Social Link<span
+                                                            class="detail-icon"><img
+                                                                src="assets/logo/left-arrow-btn.svg"
+                                                                alt=""
                                                                 class="img-fluid"></span></span>
                                                     <div class="liquid"></div>
                                                 </a>
@@ -190,31 +210,4 @@
 
 </script>
 
-<!-- Modal -->
-<div class="modal fade" id="addsociallink" tabindex="-1" role="dialog" aria-labelledby="addsociallinkLabel"
-    aria-hidden="true">
-
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form [formGroup]="addSocialLink">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addsociallinkLabel">Add Social Link</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" id="hidden_id" formControlName="campaign_uniq_id">
-
-                    <input type="text" formControlName="social_link">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)="addSocialLinkDetails()">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-</div>
 <app-welcomefooter></app-welcomefooter>

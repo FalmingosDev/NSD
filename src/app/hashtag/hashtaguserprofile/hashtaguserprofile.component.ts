@@ -15,8 +15,9 @@ export class HashtaguserprofileComponent implements OnInit {
   professions_list: any;
   userid: string;
   UserForm !: FormGroup;
+  addUserBankForm !: FormGroup;
 
-  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService) {
+  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService) {
     $(document).ready(function () {
       $("#stepfunone").click(function () {
         $("#editwo").show();
@@ -56,19 +57,42 @@ export class HashtaguserprofileComponent implements OnInit {
       address: ['', Validators.required]
     })
 
+    this.addUserBankForm = this.formBuilder.group({
+
+      bankname: ['', Validators.required],
+      acholdername: ['', Validators.required],
+      acnumber: ['', Validators.required],
+      ifsc: ['', Validators.required],
+      upiid: ['', Validators.required]
+
+    })
+
 
   };
 
   addUser() {
     // if (this.UserForm.valid) {
-      this.UserDetails.addUserDetails(this.UserForm.value, this.userid).subscribe({
-        next: (res) => {
-          alert("User Added SuccessFully !")
-        },
-        error: () => {
-          alert("Error")
-        }
-      })
+    this.UserDetails.addUserDetails(this.UserForm.value, this.userid).subscribe({
+      next: (res) => {
+        alert("User Added SuccessFully !")
+      },
+      error: () => {
+        alert("Error")
+      }
+    })
+    // }
+  }
+
+  addUserBank() {
+    // if (this.UserForm.valid) {
+    this.UserBankDetails.addUserBankDetails(this.addUserBankForm.value, this.userid).subscribe({
+      next: (res) => {
+        alert("User Bank Added SuccessFully !")
+      },
+      error: () => {
+        alert("Error")
+      }
+    })
     // }
   }
 }

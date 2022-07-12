@@ -66,8 +66,6 @@ export class HashtaghomeComponent implements OnInit {
         this.AllCampaign = this.AllcampaignListAll;
         this.offerList = result.campaign_offer;
 
-        console.log(result);
-
         return result;
       }
 
