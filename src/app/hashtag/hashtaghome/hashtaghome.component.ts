@@ -54,17 +54,19 @@ export class HashtaghomeComponent implements OnInit {
     this.email = this.local_email;
     this.campaignList.hashtagcampaignList(this.email).subscribe((result) => {
 
-      if (result.key === "hashtag_non_user") {
+     
+
+      if (result.data.key === "hashtag_non_user") {
 
         this._router.navigateByUrl('/categorymaster');
 
       }
       else {
 
-        this.AllcampaignListAll = result.campaign_list;
-        this.todayDate = result.todayDate;
+        this.AllcampaignListAll = result.data.campaign_list;
+        this.todayDate = result.data.todayDate;
         this.AllCampaign = this.AllcampaignListAll;
-        this.offerList = result.campaign_offer;
+        this.offerList = result.data.campaign_offer;
 
         return result;
       }

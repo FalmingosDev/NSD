@@ -31,29 +31,29 @@ export class CampaignComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.campaignDetailsList.hashtagcampaignDetailsList(this.id, this.local_email).subscribe((result) => {
 
-      this.client_details = result.campaign_details_list.client_details;
-      this.campaign_objective = result.campaign_details_list.campaign_objective;
-      this.offer_name = result.campaign_details_list.offer_name;
-      this.client_name = result.campaign_details_list.client_name;
+      this.client_details = result.data.campaign_details_list.client_details;
+      this.campaign_objective = result.data.campaign_details_list.campaign_objective;
+      this.offer_name = result.data.campaign_details_list.offer_name;
+      this.client_name = result.data.campaign_details_list.client_name;
 
-      this.stepsList = result.campaign_steps;
+      this.stepsList = result.data.campaign_steps;
 
-      this.max_participate = result.campaign_details_list.max_participate;
-      this.total_apply = result.total_apply;
+      this.max_participate = result.data.campaign_details_list.max_participate;
+      this.total_apply = result.data.total_apply;
 
-      this.active_user_apply_check = result.active_user_apply;
+      this.active_user_apply_check = result.data.active_user_apply;
 
-      this.campaign_hashtag = result.campaign_details_list.campaign_hashtag;
+      this.campaign_hashtag = result.data.campaign_details_list.campaign_hashtag;
 
-      this.campaign_name = result.campaign_details_list.campaign_name;
+      this.campaign_name = result.data.campaign_details_list.campaign_name;
 
-      this.campaign_current_status = result.campaign_details_list.campaign_current_status;
+      this.campaign_current_status = result.data.campaign_details_list.campaign_current_status;
 
-      this.campaign_spl_note = result.campaign_details_list.campaign_spl_note;
+      this.campaign_spl_note = result.data.campaign_details_list.campaign_spl_note;
 
-      this.message = result.message;
+      this.message = result.data.message;
 
-      this.results=result.common_cat;
+      this.results=result.data.common_cat;
 
     })
 
