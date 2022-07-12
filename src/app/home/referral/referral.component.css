@@ -1,152 +1,188 @@
-.wl-bonus h1{
+.wl-bonus h1 {
     color: #fff;
-  text-align: center;
-  font-size: 22px;
+    text-align: center;
+    font-size: 22px;
 }
-.wl-cm-gift{
+
+.share-i {
+    color: #fff;
+    font-size: 20px;
+    padding: 7px;
+    background: #3ac7b2;
+    border-radius: 50%;
+    border: 1px dashed #fff;
+}
+
+.wl-cm-gift {
     text-align: center;
 }
-.wl-cm-gift img{
+
+.wl-cm-gift img {
     width: 45%;
 }
-.wl-bonus p{
-        text-align: center;
-  font-size: 22px;
-  color: #fff;
-  margin: 0;
+
+.wl-bonus p {
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    margin: 0;
 }
-.wl-bonus p img{
-   width: 5%;
-  margin-top: -4px;
+
+.wl-bonus p img {
+    width: 5%;
+    margin-top: -4px;
 }
-.welcome-bg-main{
+
+.welcome-bg-main {
     position: relative;
 }
+
 .welcome-bg-ch {
-background: #f09;
-border-bottom-left-radius: 50px;
-border-bottom-right-radius: 50px;
-    background: rgb(34,1,148);
-background: linear-gradient(149deg, rgba(34,1,148,1) 0%, rgba(9,9,121,1) 35%, rgba(139,6,251,1) 100%);
-        padding: 0px 0px 46px;
+    background: #f09;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background: rgb(34, 1, 148);
+    background: linear-gradient(149deg, rgba(34, 1, 148, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(139, 6, 251, 1) 100%);
+    padding: 0px 0px 46px;
 }
-.pr-row{
+
+.pr-row {
     margin-left: 15px;
     margin-right: 15px;
 }
-.wl-bonus h6{
-        text-align: center;
-      color: #fff;
-      font-size: 20px;
-      padding: 11px 0px;
-}
-.reward-details{
-    text-align: center;
-  padding: 10px 10px;
-  border: 1px dashed #320674;
-  margin: 0px 16px;
-}
-.reward-details p{
-    font-size: 13px;
-  color: #AB96F2;
-  margin: 0;
-}
-.coupon-code-div{
-        padding: 10px 20px;
-      margin: 10px 20px;
-      background: #971BFD;
-      border-radius: 14px;
-      border: 2px dashed #CC70FF;
-}
-.coupon-sm-1 p{
-    text-align: center;
-  color: #CC70FF;
-  margin: 0;
-  font-size: 15px;
-}
-.coupon-sm-1 p span{
-    display: block;
-}
-.coupon-sm-2 p{
-    text-align: center;
-      margin: 0;
-      color: #CC70FF;
-}
-.coupon-sm-2 p span{
-    display: block;
-}
-.coupon-sm-1{
-      border-right: 1px solid #CC70FF;
-}
 
-.copy-code-number{
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align:center;
-}
-
-.copy-code-number i{
-  margin: 20px 0px 0px 20px;
-}
-
-.share-atch{
+.wl-bonus h6 {
     text-align: center;
     color: #fff;
-      margin: 42px 0px 0px;
+    font-size: 20px;
+    padding: 11px 0px;
 }
-.refferal-icon{
+
+.reward-details {
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px dashed #320674;
+    margin: 0px 16px;
+}
+
+.reward-details p {
+    font-size: 13px;
+    color: #AB96F2;
+    margin: 0;
+}
+
+.coupon-code-div {
+    padding: 10px 20px;
+    margin: 10px 20px;
+    background: #971BFD;
+    border-radius: 14px;
+    border: 2px dashed #CC70FF;
+}
+
+.coupon-sm-1 p {
+    text-align: center;
+    color: #CC70FF;
+    margin: 0;
+    font-size: 15px;
+}
+
+.coupon-sm-1 p span {
+    display: block;
+}
+
+.coupon-sm-2 p {
+    text-align: center;
+    margin: 0;
+    color: #CC70FF;
+}
+
+.coupon-sm-2 p span {
+    display: block;
+}
+
+.coupon-sm-1 {
+    border-right: 1px solid #CC70FF;
+}
+
+.copy-code-number {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.copy-code-number i {
+    margin: 20px 0px 0px 20px;
+}
+
+.share-atch {
+    text-align: center;
+    color: #fff;
+    margin: 42px 0px 0px;
+}
+
+.refferal-icon {
     margin-top: -30px;
     text-align: center;
 }
-.refferal-icon img{
+
+.refferal-icon img {
     width: 100%;
 }
+
 .refferal-icon {
-  margin-top: -30px;
-  text-align: center;
-  padding: 0px 44px;
+    margin-top: -30px;
+    text-align: center;
+    padding: 0px 44px;
 }
-.other-inform{
-        margin: 0px 20px;
+
+.other-inform {
+    margin: 0px 20px;
 }
-.other-inform p{
-        padding: 10px 20px;
-      border: 1px dashed #fff;
-      margin: 20px 0px;
-      color: #fff;
+
+.other-inform p {
+    padding: 10px 20px;
+    border: 1px dashed #fff;
+    margin: 20px 0px;
+    color: #fff;
 }
-.ref-margin-div{
+
+.ref-margin-div {
     margin-bottom: 156px;
 }
-.as-ref{
+
+.as-ref {
     color: #AB96F2;
-  display: block;
-  text-align: center;
-  font-size: 18px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
 }
-.share-ref{
+
+.share-ref {
     color: #fff;
-  text-align: center;
-  display: block;
-  font-size: 20px;
-  padding: 30px 0px 18px;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    padding: 30px 0px 18px;
 }
-.code-number{
+
+.code-number {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
 }
-.share-atch a{
+
+.share-atch a {
     color: #fff;
-  font-size: 21px;
-  font-weight: bold;
+    font-size: 21px;
+    font-weight: bold;
 }
-.refferal-icon p{
+
+.refferal-icon p {
     color: #fff;
-  text-align: center;
-  font-size: 11px;
+    text-align: center;
+    font-size: 11px;
     margin-top: 10px;
 }

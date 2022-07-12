@@ -125,7 +125,7 @@ export class ReferralComponent implements OnInit {
         .then(() => console.log('Successful share'))
         .catch(error => console.log('Error sharing', error));
     } else {
-      alert('share not supported');
+      // alert('share not supported');
     }
     
   }

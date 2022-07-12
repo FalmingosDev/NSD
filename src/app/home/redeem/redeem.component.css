@@ -1,0 +1,76 @@
+.reddem-div {
+    background: #292D52;
+    border-radius: 15px;
+    padding: 19px 17px;
+}
+
+.redeem-img {
+    text-align: center;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #353a60 !important;
+    opacity: 1;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.redeem-img img {
+    width: 20%;
+}
+
+.redeem-text {
+    padding: 10px 0px;
+}
+
+.redeem-text h1 {
+    color: #ffc107;
+    font-size: 18px;
+}
+
+.ref-log-div {
+    padding: 30px 0px 0px;
+}
+
+.dt-round-log img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.dt-rounf-ref-text p {
+    color: #AB96F2;
+    font-size: 13px;
+}
+
+.dt-rounf-ref-text p span {
+    display: block;
+    color: #fff;
+}
+
+.ref-dt-coin {
+    text-align: right;
+}
+
+.ref-dt-coin p {
+    color: #fff;
+    margin-top: 12px;
+}
+
+.ref-dt-coin p span img {
+    width: 33%;
+}
+
+.pd-td {
+    padding: 0px 0px 20px;
+}
+
+.redeem-text ul li {
+    color: #fff;
+}
