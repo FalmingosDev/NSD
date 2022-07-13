@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="col-9 chat-chati">
                                         <ul>
-                                            <a routerLink="/multiplexcheckout/{{item.id}}">
+                                            <a (click)="checkSubscribe(item.id,item.is_subscribe)">
                                                 <li><span class="movie">{{item.name}}</span></li>
                                                 <li><span>{{item.duration_time}}</span><span
                                                         class="main-date">{{item.year}}</span></li>

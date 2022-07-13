@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MultiplexwishlistComponent implements OnInit {
    env=environment;
-  constructor(private api:ApiService) { }
+  constructor(private api:ApiService,private router:Router) { }
    wishListShow:any=[];
    recomendedWishListRemove :any=[];
    findWishListId:any=[];
@@ -35,6 +36,19 @@ export class MultiplexwishlistComponent implements OnInit {
      })
      
 }
+
+checkSubscribe(multiplex_id,is_subscribe)
+{
+  if(is_subscribe=='Y')
+  {
+    this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
+  }
+  else
+  {
+    this.router.navigate(['/multiplexcheckout/'+multiplex_id]);
+  }
+}
+
 
 }
 

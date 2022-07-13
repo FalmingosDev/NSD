@@ -16,18 +16,19 @@
             </div>
         </div>
     </section>
-    <section class="top-bar-nav">  
+    <section class="top-bar-nav">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12">
                     <div class="top-text-sm">
 
                         <ul>
-                            <li class="frisr-child"><a  routerLink=""><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                            <li class="frisr-child"><a routerLink=""><i class="fa fa-home" aria-hidden="true"></i></a>
+                            </li>
                             <li class="second"><a routerLink="/multiplextending">Trending</a></li>
                             <li><a href="">New</a></li>
-                            <li><a href="#">Purchase</a></li>
-                           
+                            <li><a  (click)="showPurchaseList()">Purchase</a></li>
+
                         </ul>
                     </div>
 
@@ -52,55 +53,56 @@
                     <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of bannerCollection">
                             <a routerLink="/multiplexcheckout/{{item.id}}">
-                            <div class="it-main">
-                                <a href="#">
-                                    <div class="it-main-im">
-                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                    </div>
-                                    <div class="bottom-img">
+                                <div class="it-main">
+                                    <a href="#">
+                                        <div class="it-main-im">
+                                            <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                        </div>
+                                        <div class="bottom-img">
 
-                                        <div class="block-n-text">
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <p>{{item.name}}</p>
-                                                </div>
-                                                <div class="col-4 p-0">
-                                                    <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
-                                                            class="img-fluid"><span
-                                                            class="rating-text">{{item.rating}}/10</span></span>
-                                                </div>
-                                            </div>
-                                            <div class="row text-bg">
-                                                <div class="col-5">
-                                                    <p><span>{{item.duration_time}}</span></p>
-                                                </div>
-                                                <div class="col-4">
-                                                    <p>{{item.year}}</p>
-                                                </div>
-                                                <div class="col-3 p-0">
-                                                    <p>{{item.genere_name}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="book-m-new">
-                                                <img src="assets/images/book-n.webp" class="img-fluid">
-                                            </div>
-                                            <div class="book-now">
+                                            <div class="block-n-text">
                                                 <div class="row">
-                                                    <div class="col-8 bg-f-img-text">
-                                                        <p>Book Now</p>
+                                                    <div class="col-8">
+                                                        <p>{{item.name}}</p>
                                                     </div>
                                                     <div class="col-4 p-0">
-                                                        <span class="bg-f-img-text">{{item.price|number}}<img
-                                                                src="assets/images/ruppee.png" class="img-fluid"></span>
+                                                        <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
+                                                                class="img-fluid"><span
+                                                                class="rating-text">{{item.rating}}/10</span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row text-bg">
+                                                    <div class="col-5">
+                                                        <p><span>{{item.duration_time}}</span></p>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <p>{{item.year}}</p>
+                                                    </div>
+                                                    <div class="col-3 p-0">
+                                                        <p>{{item.genere_name}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="book-m-new">
+                                                    <img src="assets/images/book-n.webp" class="img-fluid">
+                                                </div>
+                                                <div class="book-now">
+                                                    <div class="row">
+                                                        <div class="col-8 bg-f-img-text">
+                                                            <p>Book Now</p>
+                                                        </div>
+                                                        <div class="col-4 p-0">
+                                                            <span class="bg-f-img-text">{{item.price|number}}<img
+                                                                    src="assets/images/ruppee.png"
+                                                                    class="img-fluid"></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    </div>
-                                </a>
-                            </div>
-                        </a>
+                                        </div>
+                                    </a>
+                                </div>
+                            </a>
                         </ng-template>
                     </owl-carousel-o>
 
@@ -124,10 +126,12 @@
                     <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of recomendedCollection">
                             <div class="t-b-s-background">
-                                <a routerLink="/multiplexcheckout/{{item.id}}">
-                                <div class="show-box new-box">
-                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                </div></a>
+
+                                
+                                    <div class="show-box new-box">
+                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                    </div>
+                                
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
@@ -135,11 +139,12 @@
                                         </div>
                                         <div class="col-9 chat-chati">
                                             <ul>
-                                                <a routerLink="/multiplexcheckout/{{item.id}}">           
-                                                <li><span class="movie">{{item.name}}</span></li>
-                                                <li><span>{{item.duration_time}}</span><span
-                                                        class="main-date">{{item.year}}</span></li>
-                                                <li><span>{{item.genere_name}}</span></li></a>
+                                                <a (click)="checkSubscribe(item.id,item.is_subscribe)">
+                                                    <li><span class="movie">{{item.name}}</span></li>
+                                                    <li><span>{{item.duration_time}}</span><span
+                                                            class="main-date">{{item.year}}</span></li>
+                                                    <li><span>{{item.genere_name}}</span></li>
+                                                </a>
                                                 <li class="star">
                                                     <span><img src="assets/images/rating-fill.svg"
                                                             class="img-fluid"></span>
@@ -164,7 +169,7 @@
 
                             </div>
                         </ng-template>
-                       
+
 
                     </owl-carousel-o>
                 </div>
@@ -186,7 +191,7 @@
                     <owl-carousel-o [options]="customOptionsforupcoming" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of upcommingCollection">
                             <div class="t-b-s-background">
-                               
+
                                 <div class="show-box new-box">
                                     <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
                                 </div>
@@ -196,7 +201,7 @@
 
                                         </div>
                                         <div class="col-9 chat-chati">
-                                            <ul> 
+                                            <ul>
                                                 <li><span class="movie">{{item.name}}</span></li>
                                                 <!-- <li><span>2 hr 02 min</span></li> -->
                                                 <li><span>{{item.genere_name}}</span></li>
@@ -204,7 +209,7 @@
                                                     <span><img src="assets/images/calender.png"
                                                             class="img-fluid"></span>
                                                     <span class="date-text">{{item.start_date|date:'fullDate'}}</span>
-                                                   
+
                                                 </li>
                                             </ul>
                                         </div>
@@ -233,10 +238,11 @@
                     <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of wishListCollection">
                             <div class="t-b-s-background">
-                                <a routerLink="/multiplexcheckout/{{item.id}}">
-                                <div class="show-box new-box">
-                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                </div></a>
+                                
+                                    <div class="show-box new-box">
+                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                    </div>
+                                
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
@@ -244,18 +250,21 @@
                                         </div>
                                         <div class="col-9 chat-chati">
                                             <ul>
-                                                <a routerLink="/multiplexcheckout/{{item.id}}">           
-                                                <li><span class="movie">{{item.name}}</span></li>
-                                                <li><span>{{item.duration_time}}</span><span
-                                                        class="main-date">{{item.year}}</span></li>
-                                                <li><span>{{item.genere_name}}</span></li></a>
+                                                <a (click)="checkSubscribe(item.id,item.is_subscribe)">
+                                                    <li><span class="movie">{{item.name}}</span></li>
+                                                    <li><span>{{item.duration_time}}</span><span
+                                                            class="main-date">{{item.year}}</span></li>
+                                                    <li><span>{{item.genere_name}}</span></li>
+                                                </a>
                                                 <li class="star">
                                                     <span><img src="assets/images/rating-fill.svg"
                                                             class="img-fluid"></span>
                                                     <span class="date-text">{{item.rating}}/10</span>
                                                     <span class="main-whistlist-new">
-                                                        <span><a (click)="removeWishList(item.id)"><img src="assets/logo/wishlisted.svg" class="img-fluid"></a></span>
-                                                   </span>
+                                                        <span><a (click)="removeWishList(item.id)"><img
+                                                                    src="assets/logo/wishlisted.svg"
+                                                                    class="img-fluid"></a></span>
+                                                    </span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -264,7 +273,7 @@
 
                             </div>
                         </ng-template>
-                       
+
 
                     </owl-carousel-o>
                 </div>

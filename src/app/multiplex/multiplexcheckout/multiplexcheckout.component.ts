@@ -23,7 +23,7 @@ env=environment;
       this.collection=result.multiplex_details;
       // console.log(result);
       this.coin=result.users_walet_coin
-      console.log("coin is ",this.coin)
+      console.log("coin ",this.coin)
     })
 
   }

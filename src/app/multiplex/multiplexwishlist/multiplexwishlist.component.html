@@ -28,11 +28,11 @@
                                         
 
                                         <div class="t-b-s-background"> 
-                                                    <a routerLink="/multiplexcheckout/{{item.id}}"> 
+                                                   
                                                     <div class="show-box new-box">
                                                       <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
                                                     </div>
-                                                    </a> 
+                                                    
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-3">
@@ -40,7 +40,7 @@
                                                 </div>
                                                 <div class="col-9 chat-chati">
                                                 <ul>
-                                                    <a routerLink="/multiplexcheckout/{{item.id}}">
+                                                    <a (click)="checkSubscribe(item.id,item.is_subscribe)">
                                                     <li><span class="movie">{{item.name}}</span></li>
                                                     <li><span>{{item.duration_time}}</span><span class="main-date">{{item.year}}</span></li>
                                                     <li><span>{{item.genere_name}}</span></li>
