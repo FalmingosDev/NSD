@@ -2,7 +2,7 @@
     <section class="top-header-sec">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-12">
+                <div class="col-md-12 col-12 p-0">
                     <div class="top-sm-ban">
                         <img src="assets/images/multiplex-bg.webp" class="img-fluid">
 
@@ -16,17 +16,18 @@
             </div>
         </div>
     </section>
-    <section class="top-bar-nav">
+    <section class="top-bar-nav">  
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12">
                     <div class="top-text-sm">
 
                         <ul>
-                            <li class="frisr-child"><a routerLink="/multiplextending">Trending</a></li>
+                            <li class="frisr-child"><a href=""><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                            <li class="second"><a routerLink="/multiplextending">Trending</a></li>
                             <li><a href="">New</a></li>
-                            <li><a href="#">Genre1</a></li>
-                            <li><a href="#">Genre1</a></li>
+                            <li><a href="#">Purchase</a></li>
+                           
                         </ul>
                     </div>
 
@@ -47,7 +48,7 @@
     <section class="sec-owl">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 p-0">
                     <owl-carousel-o [options]="customOptionsforshortflim" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of bannerCollection">
                             <a routerLink="/multiplexcheckout/{{item.id}}">
@@ -144,14 +145,14 @@
                                                             class="img-fluid"></span>
                                                     <span class="date-text">{{item.rating}}/10</span>
                                                     <span class="main-whistlist-new">
-                                                        <div *ngIf="item.wishlist_status!=1"><a
+                                                        <span *ngIf="item.wishlist_status!=1"><a
                                                                 (click)="addWishList(item.id)"><img
                                                                     src="assets/logo/wishlist.svg"
-                                                                    class="img-fluid"></a></div>
-                                                        <div *ngIf="item.wishlist_status==1"><a
+                                                                    class="img-fluid"></a></span>
+                                                        <span *ngIf="item.wishlist_status==1"><a
                                                                 (click)="removeWishList(item.id)"><img
                                                                     src="assets/logo/wishlisted.svg"
-                                                                    class="img-fluid"></a></div>
+                                                                    class="img-fluid"></a></span>
 
 
                                                     </span>
@@ -253,7 +254,7 @@
                                                             class="img-fluid"></span>
                                                     <span class="date-text">{{item.rating}}/10</span>
                                                     <span class="main-whistlist-new">
-                                                        <div><a (click)="removeWishList(item.id)"><img src="assets/logo/wishlisted.svg" class="img-fluid"></a></div>
+                                                        <span><a (click)="removeWishList(item.id)"><img src="assets/logo/wishlisted.svg" class="img-fluid"></a></span>
                                                    </span>
                                                 </li>
                                             </ul>

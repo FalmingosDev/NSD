@@ -11,9 +11,9 @@
    .top-text-sm ul li:nth-child(4):after {
     position: absolute;
     content: '';
-    width: 73px;
+    width: 81px;
     height: 20px;
-    left: 22px;
+    left: 56px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
     background: rgb(26,28,66);
     background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%);
@@ -22,9 +22,10 @@
   
     .date-text{font-size: 12px;margin: 0 5px;}
     .top-header-sec{background-image: url(/assets/images/banner-bg.jpg);background-size: cover;background-repeat: no-repeat;}
-    .top-sm-ban{margin-top: -40px;}
-    .mobile img{margin-top: -128px;}
+    /* .top-sm-ban{margin-top: -40px;} */
+    .mobile img{margin-top: -155px;padding: 18px 15px;}
     .top-text-sm ul li {display: inline-block;list-style: none;margin: 20px 8px;font-weight:500;}
+    .view-all a{color: #fff;}
     .top-text-sm ul li a{color:#59429d; }
     .top-text-sm ul {padding: 0;}
     .search-btn {
@@ -48,10 +49,10 @@
     }
    
    .block-n-text {
-    padding: 10px 15px;height: 161px;}
+    padding: 15px 15px;height: 161px;}
     .bottom-img {
     position: relative;
-    margin-top: -143px;
+    margin-top: -104px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -65,6 +66,8 @@
     letter-spacing: 0.1rem;
         color: #fff
     }
+    
+    
     .bg-f-img{
         display: inline-flex;
         margin: 5px 17px;
@@ -79,20 +82,20 @@
     }
     .text-bg p{font-size: 12px;}
     .bg-f-img-text p{font-size: 18px;
-    color: #493783;
+    color: #000000;
     font-weight: 500;
-    text-align: center
+   padding: 0 11px;
 }
     .book-now{
     position: relative;
     top: -40px!important;;
     left: 13px;
     }
-    .bg-f-img-text{font-size: 20px;color: #000; font-weight: 500}
+    .bg-f-img-text{font-size: 20px;color: #000; font-weight: 500;padding: 0 10px;}
     
     .bg-f-img-text img {
     width: 11px !important;
-    margin: -13px 39px;
+    margin: -13px 54px;
 }
     .second-part{margin: 5px 10px;}
     .thirt-part p{color: #fff;font-size: 14px;}
@@ -108,14 +111,16 @@
     .owl-nav{text-align: right !important;}
     .t-b-s-background{
         background: #6850b2;
+        margin-top: 10px;
 }
     .show-box img{border-radius: 10px;}
     .chat-chati ul li{list-style: none;}
     .chat-chati ul li{color: #fff;line-height:1.5rem;}
    
-    .movie{font-size: 16px;
+    .movie{font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.1rem;}
+    letter-spacing: 0.1rem;
+    }
     .chat-chati li{font-size: 13px;}
     .bg-f-img1 img {
  width: 6% !important;
@@ -123,18 +128,21 @@
 
 
 }
+.fourth-part p{color: #fff;font-size: 14px;}
+.fourth-part {margin: 5px 10px;}
     .bg-f-img1 {
     display: inline-flex;
     }
     .show-box{margin: 10px;}
     .show-box img{
    width: 26% !important;
-    position: absolute;
+    position: fixed;
     top: 0px;
-    left: 0px;}
+    left: 10px;}
     .chat-chati ul{padding: 10px 16px;
     margin: 0 0px;}
-    .frisr-child a{color: #fff!important;font-size: 18px;}
+    .frisr-child a{color: #fff!important;font-size: 20px;}
+    .second a{color: #fff!important;font-size: 18px;}
     .main-date{float: right;margin: 0 -15px;}
     .main-whistlist img {
     width: 20%!important;
@@ -148,7 +156,7 @@
     .main-whistlist-new img {
     width: 13%!important;
     float: right;
-    margin: 0 -15px;
+    margin: 0 -15px 10px 0;
 }
 #celb .owl-dot.active span, #celb .owl-dot:hover span {
     background: #ab96f3;
@@ -163,6 +171,7 @@
     background-color: transparent;
 }
 .view-all p{float: right; font-size: 12px;}
+.view-all a:hover{color: #05fffb;}
 .book-m-new img{border-radius: 0;}
 
 

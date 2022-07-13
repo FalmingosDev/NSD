@@ -18,6 +18,8 @@
     background: rgb(26,28,66);
     background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%); */
 }
+
+
     
   
     .date-text{font-size: 12px;margin: 0 5px;}
@@ -114,7 +116,7 @@
     .chat-chati ul li{list-style: none;}
     .chat-chati ul li{color: #fff;line-height:1.5rem;}
    
-    .movie{font-size: 16px;
+    .movie{font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.1rem;}
     .chat-chati li{font-size: 13px;}

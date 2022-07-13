@@ -1,9 +1,10 @@
 @media screen and (max-width: 767px) {
     .body-strucre{margin-bottom: 100px;}
     .t-b-s-background {
-        background: #4766866b;
+     
         border-radius: 10px;
-        margin-bottom: 15px;
+    padding-bottom: 10px;
+      
     }
     .top-text-sm ul li{
         position: relative;
@@ -132,7 +133,7 @@
    width: 26% !important;
     position: absolute;
     top: 0px;
-    left: 0px;}
+    left: 20px;}
     .chat-chati ul{padding: 10px 16px;
     margin: 0 0px;}
     .frisr-child a{color: #fff!important;font-size: 18px;}
@@ -159,7 +160,7 @@
     font-size: 18px;
     font-weight: 500;;}
     .main-wishlist img{width: 35%;float: right;margin-top: 15px;}
-    .main-wishlist-1 img{width: 15%;margin-bottom: 5px;;}
+    .main-wishlist-1 img{width: 8%;margin-bottom: 5px;;}
     .top-bar-nav{margin: 15px 10px;}
     
 }

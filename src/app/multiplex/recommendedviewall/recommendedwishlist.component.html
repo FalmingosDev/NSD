@@ -47,14 +47,14 @@
                                                 <span class="date-text">{{item.rating}}/10</span>
 
                                                 <span class="main-whistlist-new">
-                                                    <div *ngIf="item.wishlist_status!=1"><a
+                                                    <span *ngIf="item.wishlist_status!=1"><a
                                                             (click)="addWishList(item.id)"><img
                                                                 src="assets/logo/wishlist.svg" class="img-fluid"></a>
-                                                    </div>
-                                                    <div *ngIf="item.wishlist_status==1"><a
+                                                    </span>
+                                                    <span *ngIf="item.wishlist_status==1"><a
                                                             (click)="removeWishList(item.id)"><img
                                                                 src="assets/logo/wishlisted.svg" class="img-fluid"></a>
-                                                    </div>
+                                                    </span>
                                                 </span>
                                             </li>
                                         </ul>
