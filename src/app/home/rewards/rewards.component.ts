@@ -31,6 +31,8 @@ export class RewardsComponent implements OnInit {
 
   
   active_modal(id){
+    document.getElementById('act_img').style.display='none';
+    (<HTMLFormElement>document.getElementById('active_btn')).disabled  = false;
     this.service.getRewardData(id).subscribe((result)=>{
       this.rewardData_id = result.reward_data[0].id;
       this.rewardData_title = result.reward_data[0].rewards_title;
@@ -43,6 +45,7 @@ export class RewardsComponent implements OnInit {
 
 
   activte(id,rewardId){
+    (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
     let act=document.getElementById(id).style.display;
     this.service.activateReward(rewardId).subscribe((result)=>{
       if(result.status){
