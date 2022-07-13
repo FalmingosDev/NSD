@@ -8,6 +8,7 @@ import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwi
 import { componentFactoryName } from '@angular/compiler';
 import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.component';
 import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
+import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 
 const routes: Routes = [
   {path:'multiplexhome',component:MultiplexhomeComponent},
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path:'multiplexcheckout/:multiplex_id',component:MultiplexcheckoutComponent},
   {path:'recommendedviewall',component:RecommendedwishlistComponent},
   {path:'upcomingviewall',component:UpcomingviewallComponent},
-  {path: 'multiplex_payment/:multiplex_id/:price/:curr/:coin', component:MultiplexpaymentComponent}
+  {path: 'multiplex_payment/:multiplex_id/:price/:curr/:coin', component:MultiplexpaymentComponent},
+ {path :'multiplexvideoview/:multiplex_id',component:MultiplexvideoviewComponent}
+
 ];
 
 @NgModule({

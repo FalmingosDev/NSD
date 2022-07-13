@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecommendedwishlistComponent } from './recommendedviewall/recommendedwishlist.component';
 import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.component';
 import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
+import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.c
     MultiplexwishlistComponent,
     RecommendedwishlistComponent,
     UpcomingviewallComponent,
-    MultiplexpaymentComponent
+    MultiplexpaymentComponent,
+    MultiplexvideoviewComponent
   ],
   imports: [
     CommonModule,
