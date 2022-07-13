@@ -548,8 +548,8 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'campign-details-list/' + id + '/' + userEmail);
   }
 
-  addacceptcampaign(userid, campaignid) {
-    return this.httpClient.post<any>(this.env.laravel_api_url + 'accept-campaign-by-user', { userid, campaignid });
+  addacceptcampaign(formdata,userid, campaignid) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'accept-campaign-by-user', { formdata,userid, campaignid });
   }
 
   categoryMasterList() {
@@ -585,6 +585,16 @@ export class ApiService {
 
   hashtagAddSocialAndAdress(userdata,campaign_id, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-social-address-add', { userdata,campaign_id,email });
+  }
+
+  hashtagProfileGet(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-details/' + email);
+  }
+
+  
+
+  addAcceptCampaignBefore(email,campaign_id) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
   }
 
 }

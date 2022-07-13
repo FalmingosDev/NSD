@@ -24,7 +24,12 @@ export class CampaignComponent implements OnInit {
   userEmail: any;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) { 
+
+    this.id = this.activatedRoute.snapshot.params['id'];
+
+   
+  }
 
   ngOnInit(): void {
 
@@ -57,27 +62,16 @@ export class CampaignComponent implements OnInit {
 
     })
 
+
   }
 
-  acceptcampaign(id: any) {
-    let campaignid = id;
-    let userid = this.local_email;
-    this.addapiacceptcampaign.addacceptcampaign(userid, campaignid).subscribe(res => {
-      var resp: any = res;
+  acceptcampaign_before(id:any){
 
-      if (resp.success == true) {
-        var successmsg = ''
-
-          // '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>'
-          ;
-        this._router.navigateByUrl('/mypendingcampaign');
-
-        document.getElementById("applyreplace").innerHTML = successmsg;
-      }
-    }, error => {
-
-    })
+    this._router.navigateByUrl('/acceptcampaignbefore/'+id);
+    
   }
+
+  
 
 
 }

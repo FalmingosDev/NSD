@@ -16,8 +16,23 @@ export class HashtaguserprofileComponent implements OnInit {
   userid: string;
   UserForm !: FormGroup;
   addUserBankForm !: FormGroup;
+  email_id: string;
+  profileData: any;
+  fullname: any;
+  name: string;
+  mob: any;
+  dob: any;
+  language: any;
+  maritial: any;
+  profession: any;
+  user_country: any;
+  user_state: any;
+  user_city: any;
+  user_pincode: any;
+  user_address1: any;
+  langu: any;
 
-  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService) {
+  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService) {
     $(document).ready(function () {
       $("#stepfunone").click(function () {
         $("#editwo").show();
@@ -28,9 +43,16 @@ export class HashtaguserprofileComponent implements OnInit {
         $("#editwo").hide();
       });
     });
+
+    this.email_id = this.local_email;
+
+    this.hashtagProfileGetDetails(this.email_id);
+
   }
 
   ngOnInit(): void {
+
+
 
     this.getCountryList.CountryList().subscribe((result) => {
 
@@ -38,6 +60,7 @@ export class HashtaguserprofileComponent implements OnInit {
       this.language_list = result.data.language_list;
       this.professions_list = result.data.professions_list;
       this.userid = this.local_email;
+
     })
 
 
@@ -68,6 +91,8 @@ export class HashtaguserprofileComponent implements OnInit {
     })
 
 
+
+
   };
 
   addUser() {
@@ -95,4 +120,28 @@ export class HashtaguserprofileComponent implements OnInit {
     })
     // }
   }
+
+  hashtagProfileGetDetails(userid) {
+
+    this.profileGet.hashtagProfileGet(userid).subscribe((result) => {
+
+
+      this.fullname = result.data[0].name;
+      this.mob = result.data[0].user_contact_number;
+      this.dob = result.data[0].dob;
+      this.langu = result.data[0].language;
+      this.maritial = result.data[0].maritial;
+      this.profession = result.data[0].profession;
+      this.user_country = result.data[0].user_country;
+      this.user_state = result.data[0].user_state;
+      this.user_city = result.data[0].user_city;
+      this.user_pincode = result.data[0].user_pincode;
+      this.user_address1 = result.data[0].user_address1;
+      console.log(this.user_address1);
+
+    })
+
+  }
+
+
 }
