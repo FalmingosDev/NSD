@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+
     .cls-btn{text-align: center;padding: 25px 0;}
     .body-strucre{margin-bottom: 100px;}
     .main-wishlist-1 h3{color: #fff;
@@ -71,12 +71,3 @@
                 
         
        
-}
-@media (min-width: 320px) and (max-width: 375px) {
-.chat-chati ul {
-   padding: 5px 10px !important;
-   margin: 0 0px;
-}
-.chat-chati li{font-size: 11px !important;} 
-.date-text{font-size: 10px !important;margin: 1px 2px 2px 2px;} 
-} 
