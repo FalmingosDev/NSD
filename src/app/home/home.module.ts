@@ -59,6 +59,8 @@ import { EditphoneComponent } from './editphone/editphone.component';
 import { ReferralinviteComponent } from './referralinvite/referralinvite.component';
 import { RedeemComponent } from './redeem/redeem.component';
 import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component';
+import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
+import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
 
 
 
@@ -113,7 +115,9 @@ import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component'
     EditphoneComponent,
     ReferralinviteComponent,
     RedeemComponent,
-    PaypalpaymentComponent
+    PaypalpaymentComponent,
+    RechargewalletComponent,
+    RechargepaymentComponent
   ],
   imports: [
     CommonModule,

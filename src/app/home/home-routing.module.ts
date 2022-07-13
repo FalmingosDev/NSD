@@ -44,6 +44,8 @@ import { HashtaghomeComponent } from '../hashtag/hashtaghome/hashtaghome.compone
 import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
 import { RedeemComponent } from './redeem/redeem.component';
 import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component';
+import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
+import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
 
 
 
@@ -91,7 +93,9 @@ const routes: Routes = [
   {path: 'edit_phone/:phone', component:EditphoneComponent},
   {path: 'referralinvite', component:ReferralinviteComponent},
   {path: 'redeem', component: RedeemComponent},
-  {path: 'paypalpayment', component: PaypalpaymentComponent}
+  {path: 'paypalpayment', component: PaypalpaymentComponent},
+  {path: 'rechargewallet',component:RechargewalletComponent},
+  {path: 'rechargepayment/:recharge_id/:recharge_price/:curr/:recharge_coins', component: RechargepaymentComponent}
 ];
 
 @NgModule({

@@ -543,7 +543,7 @@ export class ApiService {
 
   }
 
-                           /*Multiplex*/ 
+  /*Multiplex*/ 
  multiplexList(){
   const user_email = localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-list?user_email='+user_email);
@@ -643,5 +643,13 @@ export class ApiService {
   hashtagAddSocialAndAdress(userdata,campaign_id, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-social-address-add', { userdata,campaign_id,email });
   }
+  rechagewallet(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'recharge-wallet-list');
+  }
 
+  /*------------------------------------------------- Recharge Payment Start------------------------------------------------*/
+  handelRechargeCreateEncryption(objUserData){
+    return this.httpClient.post<any>(this.env.baseUrl + '/recharge_payment.php', { userdata: objUserData });
+  }
+  /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
 }
