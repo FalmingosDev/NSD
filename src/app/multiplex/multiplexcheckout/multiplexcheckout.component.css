@@ -11,14 +11,14 @@
         }
         .chat-chati ul li{list-style: none;}
         .chat-chati ul li{color: #fff;line-height:1.5rem;}
-        .chat-chati ul{padding: 10px 16px;}
+        .chat-chati ul{padding: 8px 1px;margin: 0;}
         .movie{font-size: 16px;
             font-weight: 500;
             letter-spacing: 0.1rem;}
             .checkout-main-text-box span{font-size: 12px;color: #fff;}
             .ruppes-sign img{width: 11%;margin: 0 2px;}
             .main-total span{font-size: 18px;font-weight: 500;}
-            .total-rupee span{font-size: 14px;font-weight: 500;padding-right: 0;}
+            .total-rupee span{font-size: 14px;font-weight: 500;padding-right: 0; float: right;}
             
             .ruppes-sign-0ne img{width: 12%;}
             .main-img-1{padding: 0;}
