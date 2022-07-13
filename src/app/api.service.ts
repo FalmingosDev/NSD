@@ -602,7 +602,7 @@ export class ApiService {
 
   purchaseList(){
     const user_email = localStorage.getItem('token');
-    alert(user_email);
+    // alert(user_email);
       return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-purchase-list?user_email='+user_email);
      }
 

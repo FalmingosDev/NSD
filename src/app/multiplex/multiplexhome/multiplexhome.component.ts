@@ -153,17 +153,7 @@ checkSubscribe(multiplex_id,is_subscribe)
   }
 }
 
-  showPurchaseList()
-  {
-
-    alert('hii');
-this.api.purchaseList().subscribe((result)=>
-{
-this.list=result.purchase_list;
-console.log(this.list);
-})
-
-  }
+ 
 }
 
 // function multiplex_id(multiplex_id: any) {

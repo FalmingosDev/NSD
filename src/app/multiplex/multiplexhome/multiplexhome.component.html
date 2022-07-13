@@ -27,7 +27,7 @@
                             </li>
                             <li class="second"><a routerLink="/multiplextending">Trending</a></li>
                             <li><a href="">New</a></li>
-                            <li><a  (click)="showPurchaseList()">Purchase</a></li>
+                            <li><a routerLink="/multiplexpurchaseList">Purchase</a></li>
 
                         </ul>
                     </div>
@@ -127,11 +127,11 @@
                         <ng-template carouselSlide *ngFor="let item of recomendedCollection">
                             <div class="t-b-s-background">
 
-                                
-                                    <div class="show-box new-box">
-                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                    </div>
-                                
+
+                                <div class="show-box new-box">
+                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                </div>
+
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
@@ -238,11 +238,11 @@
                     <owl-carousel-o [options]="customOptionsforshowflim" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide *ngFor="let item of wishListCollection">
                             <div class="t-b-s-background">
-                                
-                                    <div class="show-box new-box">
-                                        <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                    </div>
-                                
+
+                                <div class="show-box new-box">
+                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                </div>
+
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">

@@ -12,6 +12,17 @@ export class PurchaseListComponent implements OnInit {
   constructor(private api:ApiService) { }
     
   ngOnInit(): void {
+this.purchaseList();
+  }
+  purchaseList()
+  {
+
+    alert('hii');
+this.api.purchaseList().subscribe((result)=>
+{
+this.list=result.purchase_list;
+console.log("list is:",this.list);
+})
 
   }
  
