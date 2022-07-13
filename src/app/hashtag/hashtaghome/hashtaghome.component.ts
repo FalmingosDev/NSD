@@ -3,7 +3,8 @@ import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -12,6 +13,11 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./hashtaghome.component.css']
 })
 export class HashtaghomeComponent implements OnInit {
+  static ngOnInit(): any {
+    throw new Error('Method not implemented.');
+  }
+  static AllCampaign: any;
+  static result: any;
   [x: string]: any;
   env = environment;
   todayDate: any;
@@ -23,8 +29,7 @@ export class HashtaghomeComponent implements OnInit {
   filterArray: any;
   AllCampaign: any;
 
-
-  constructor(private dataService: ApiService, private campaignList: ApiService, status: FormBuilder, offer: FormBuilder) {
+  constructor(private dataService: ApiService, private campaignList: ApiService, status: FormBuilder, offer: FormBuilder, private _router: Router) {
 
 
     this.forms = status.group({
@@ -40,25 +45,32 @@ export class HashtaghomeComponent implements OnInit {
   ngOnInit(): void {
 
 
-    {
-      this.dataService.hashtagcampaignList().subscribe((result) => {
-        this.offerList = result.campaign_offer;
-      })
-    }
-
     this.dataService.profileData(this.local_email).subscribe((res) => {
       if (res.data) {
         this.username = res.data.name;
       }
     });
 
+    this.email = this.local_email;
+    this.campaignList.hashtagcampaignList(this.email).subscribe((result) => {
 
-    this.campaignList.hashtagcampaignList().subscribe((result) => {
+     
 
-      this.AllcampaignListAll = result.campaign_list;
-      this.todayDate = result.todayDate;
-      this.AllCampaign = this.AllcampaignListAll;
-      
+      if (result.data.key === "hashtag_non_user") {
+
+        this._router.navigateByUrl('/categorymaster');
+
+      }
+      else {
+
+        this.AllcampaignListAll = result.data.campaign_list;
+        this.todayDate = result.data.todayDate;
+        this.AllCampaign = this.AllcampaignListAll;
+        this.offerList = result.data.campaign_offer;
+
+        return result;
+      }
+
     })
 
   }
@@ -164,4 +176,16 @@ export class HashtaghomeComponent implements OnInit {
     }
   }
 
+
+
+  // $(document).ready(function(){
+  //   $("#select-all").click(function () {
+  //     var checkboxes = document.getElementsByName('offer');
+  //     for (var checkbox of checkboxes) {
+  //       checkbox.checked = this.checked;
+  //     }
+  //   });
+  // });
 }
+
+

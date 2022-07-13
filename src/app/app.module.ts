@@ -18,10 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MultiplexModule } from './multiplex/multiplex.module';
 
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,

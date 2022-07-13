@@ -1,3 +1,5 @@
+/*
+
 @media screen and (max-width: 767px) {
     .body-strucre{margin-bottom: 100px;}
     .header-main{
@@ -5,7 +7,7 @@
         .has-logo img{
             width: 50%;
         }
-    /*accrodian start*/
+   
     .card-header .title {
     font-size: 14px;
     color: #000;
@@ -32,16 +34,15 @@
   border-top: 1px solid #ddd;
 }
 .card-header:not(.collapsed) .rotate-icon {
-  /* transform: rotate(180deg); */
+  
   transform: rotate(90deg) translate(-0.3rem, -0.45rem);
     transition: transform .2s ease-in-out;
 }
     .main-text-head{margin-top: 15px;}
-    /*accrodian end*/
-    /*campain-body*/
+  
     ol.style_1 {
     counter-reset: li;
-/*    padding-left: 2.5rem;*/
+
     padding: 0.25rem 0 0.25rem 2.75rem;
 }
     ol.style_1 > li {
@@ -112,4 +113,416 @@ input {
    
   }
 }
-    /*campain-body end*/
+
+*/
+/*campain-body end*/
+option:not(:checked) {
+    background-color: #000;
+  }
+.back_btn_div{
+    float: right;
+    position: relative;
+    right: 0;
+}
+
+.back_btn_div a {
+    position: relative;
+    padding: 2px 13px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 186px;
+    overflow: hidden;
+    border-radius: 59px;
+    text-align: center;
+}
+
+.back_btn_div a span {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    letter-spacing: 8px;
+    z-index: 1;
+}
+
+.back_btn_div a .liquid {
+    position: absolute;
+    top: 0;
+    right: -48.5%;
+    width: 181px;
+    height: 211px;
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.back_btn_div a .liquid::after,
+.back_btn_div a .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+}
+
+a .liquid::before {
+    border-radius: 45%;
+    /* max-width:320px;
+    min-width:0px; */
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+}
+
+.back_btn_div a .liquid::after {
+    border-radius: 45%;
+    /* max-width:320px;
+    min-width:0px; */
+    background: #e59b14;
+    /* background: rgba(20, 20, 20, .5); */
+    animation: animate 10s linear infinite;
+}
+
+.back_btn_div a:hover .liquid {
+    top: -120px;
+}
+.header-main {
+    border: 1px solid #6e6969;
+    padding: 6px 0;
+}
+
+.has-logo img {
+    width: 50%;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+.btn-primary2 {
+    background: #00ffff !important;
+    border: none !important;
+    padding: 6px 11px !important;
+    border-radius: 18px !important;
+    color: #181b3e !important;
+    font-weight: bold !important;
+    font-size: 9px !important;
+    margin-right: 5px;
+} 
+.accicon{
+    float: right;
+}
+.card {
+    background-color: #ffffff4a;
+}
+.card-header {
+    background-color: #e59b14;
+}
+.edit-label {
+    background: #5b5d76 !important;
+}
+.campaign-bottom{
+    margin-bottom: 100px;
+}
+.hastag-user-section{
+    padding-bottom: 0;
+}
+.btn-primary-next {
+    background: #00ffff !important;
+    border: none !important;
+    padding: 6px 16px !important;
+    border-radius: 19px !important;
+    color: #181b3e !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    float: right;
+}
+.step{
+    float: left;
+}
+@media screen and (max-width: 767px) {
+
+    .eidt-camp a {
+        color: #fff;
+        font-size: 11px;
+        ;
+    }
+
+    .eidt-camp {
+        float: right;
+        margin-top: 15px;
+        ;
+    }
+
+    .eidt-camp span {
+        background: #ab96f2;
+        padding: 5px 6px;
+        border-radius: 25px;
+        margin: 0 3px;
+    }
+
+    /* * {
+        margin: 0;
+        padding: 0;
+    } */
+
+    html {
+        height: 100%;
+    }
+
+    /*Background color*/
+    /* #grad1 {
+        background-color: : #9C27B0;
+        background-image: linear-gradient(120deg, #FF4081, #81D4FA);
+    } */
+
+    /*form styles*/
+    #msform {
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    #msform fieldset .form-card {
+        background: white;
+        border: 0 none;
+        border-radius: 0px;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 20px 40px 30px 40px;
+        box-sizing: border-box;
+        width: 94%;
+        margin: 0 3% 20px 3%;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+
+    /*Hide all except first fieldset*/
+    #msform fieldset:not(:first-of-type) {
+        display: none;
+    }
+
+    #msform fieldset .form-card {
+        text-align: left;
+        color: #9E9E9E;
+    }
+
+    #msform input,
+    #msform textarea {
+        padding: 0px 8px 4px 8px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 25px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    #msform input:focus,
+    #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none;
+        font-weight: bold;
+        border-bottom: 2px solid skyblue;
+        outline-width: 0;
+    }
+
+    /*Blue Buttons*/
+    #msform .action-button {
+        width: 100px;
+        background: skyblue;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 0px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+    #msform .action-button:hover,
+    #msform .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue;
+    }
+
+    /*Previous Buttons*/
+    #msform .action-button-previous {
+        width: 100px;
+        background: #616161;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 0px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+    #msform .action-button-previous:hover,
+    #msform .action-button-previous:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #616161;
+    }
+
+    /*Dropdown List Exp Date*/
+    select.list-dt {
+        border: none;
+        outline: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 2px 5px 3px 5px;
+        margin: 2px;
+    }
+
+    select.list-dt:focus {
+        border-bottom: 2px solid skyblue;
+    }
+
+    /*The background card*/
+    .card {
+        z-index: 0;
+        border: none;
+        border-radius: 0.5rem;
+        position: relative;
+    }
+
+    /*FieldSet headings*/
+    .fs-title {
+        font-size: 25px;
+        color: #2C3E50;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /*progressbar*/
+    #progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        color: lightgrey;
+    }
+
+    #progressbar .active {
+        color: #000000;
+    }
+
+    #progressbar li {
+        list-style-type: none;
+        font-size: 12px;
+        width: 25%;
+        float: left;
+        position: relative;
+    }
+
+    /*Icons in the ProgressBar*/
+    #progressbar #account:before {
+        font-family: FontAwesome;
+        content: "\f023";
+    }
+
+    #progressbar #personal:before {
+        font-family: FontAwesome;
+        content: "\f007";
+    }
+
+    #progressbar #payment:before {
+        font-family: FontAwesome;
+        content: "\f09d";
+    }
+
+    #progressbar #confirm:before {
+        font-family: FontAwesome;
+        content: "\f00c";
+    }
+
+    /*ProgressBar before any progress*/
+    #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px;
+    }
+
+    /*ProgressBar connectors*/
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: lightgray;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        z-index: -1;
+    }
+
+    /*Color number of the step and the connector before it*/
+    #progressbar li.active:before,
+    #progressbar li.active:after {
+        background: skyblue;
+    }
+
+    /*Imaged Radio Buttons*/
+    .radio-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .radio {
+        display: inline-block;
+        width: 204;
+        height: 104;
+        border-radius: 0;
+        background: lightblue;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 8px 2px;
+    }
+
+    .radio:hover {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .radio.selected {
+        box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Fit image in bootstrap div*/
+    .fit-image {
+        width: 100%;
+        object-fit: cover;
+    }
+
+}

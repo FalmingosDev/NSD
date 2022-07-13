@@ -1,14 +1,26 @@
 @media screen and (max-width: 767px) {
+    .alert-danger {
+        font-size: 12px;
+    }
     .campaign-bottom{
-        margin-bottom: 120px;
+        margin-bottom: 204px;
     }
     .hashtag-accept-btn {
         background-color: #640bbd;
         color: #fff;
         border: 1px solid #640bbd;
-        border-radius: 5px;
-        padding: 5px 100px;
+        border-radius: 10px;
+        padding: 8px 100px;
     }
+
+    .hashtag-accept-btn-eli {
+        background-color: #640bbd;
+        color: #fff;
+        border: 1px solid #640bbd;
+        border-radius: 10px;
+        padding: 8px 30px;
+    }
+    
     .back_btn_div{
         float: right;
         position: relative;
@@ -31,7 +43,7 @@
     a span {
         position: relative;
         color: #fff;
-        fot-size: 20px;
+        font-size: 20px;
         font-family: Arial;
         letter-spacing: 8px;
         z-index: 1;
@@ -89,7 +101,13 @@
             transform: translate(-50%, -75%) rotate(360deg);
         }
     }
-     .details-new-text-1{background: #fff;box-shadow: 3px 3px 3px #6e6969;margin: 10px 0;}
+     .details-new-text-1{
+        background: #353a60;
+        box-shadow: 3px 3px 3px #6e6969;
+        margin: 10px 0;
+        color: #fff;
+        padding: 3px 10px
+    }
     
     .header-main {
         border: 1px solid #6e6969;
@@ -99,10 +117,7 @@
     .has-logo img {
         width: 50%;
     }
-.campaign-bottom{
-    margin-bottom: 100px;
-}
-.details-new-text-1 span{color:#000 ;font-size: 14px;font-weight: 400;}
+.details-new-text-1 span{color:rgb(255, 255, 255) ;font-size: 14px;font-weight: 400;}
 .text-page-1{color:#000 ;font-size: 12px !important;font-weight: normal !important;}
     /*accrodian start*/
     .card-header .title {
@@ -158,15 +173,16 @@
         /*    padding-left: 2.5rem;*/
         padding: 0.25rem 0 0.25rem 2.75rem;
     }
-
+    
     ol.style_1>li {
         position: relative;
         counter-increment: li;
         min-height: 2rem;
         padding-top: 0.5rem;
         list-style: none;
-        color: #fff;
+        color: #000;
     }
+    
 
     ol.style_1 li {
         margin-bottom: 0.375rem;
@@ -185,6 +201,7 @@
     background: #1d1c1c;
     width: 25px;
     height: 25px;
+    color: #fff;
     }
 
     ol.style_1>li::before,
@@ -233,9 +250,17 @@
     }
     .hashtag-accept-btn-div button{
         position: fixed;
-        top: 400px;
-    
+        bottom: 103px;
+        
     }
+    .hashtag-accept-btn-div-eli button{
+        position: fixed;
+        bottom: 103px;
+        font-size: 11px;
+        
+    }
+    
+    
 }
 
 /*campain-body end*/

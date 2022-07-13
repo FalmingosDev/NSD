@@ -1,4 +1,99 @@
 @media screen and (max-width: 767px) {
+    .all-cm {
+        color: #fff;
+        font-size: 20px;
+        margin: 0;
+        padding: 10px 0px 0px;
+    }
+
+    .back_btn_div{
+        float: right;
+        position: relative;
+        right: 0;
+    }
+    
+    .back_btn_div a {
+        position: relative;
+        padding: 2px 13px;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 186px;
+        overflow: hidden;
+        border-radius: 59px;
+        text-align: center;
+    }
+    
+    .back_btn_div a span {
+        position: relative;
+        color: #fff;
+        font-size: 20px;
+        font-family: Arial;
+        letter-spacing: 8px;
+        z-index: 1;
+    }
+    
+    .back_btn_div a .liquid {
+        position: absolute;
+        top: 0;
+        right: -48.5%;
+        width: 181px;
+        height: 211px;
+        background: #4973ff;
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+        transition: .5s;
+    }
+    
+    .back_btn_div a .liquid::after,
+    .back_btn_div a .liquid::before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000;
+    }
+    
+    a .liquid::before {
+        border-radius: 45%;
+        /* max-width:320px;
+        min-width:0px; */
+        background: rgba(20, 20, 20, 1);
+        animation: animate 5s linear infinite;
+    }
+    
+    .back_btn_div a .liquid::after {
+        border-radius: 45%;
+        /* max-width:320px;
+        min-width:0px; */
+        background: #e59b14;
+        /* background: rgba(20, 20, 20, .5); */
+        animation: animate 10s linear infinite;
+    }
+    
+    .back_btn_div a:hover .liquid {
+        top: -120px;
+    }
+    .header-main {
+        border: 1px solid #6e6969;
+        padding: 6px 0;
+    }
+    
+    .has-logo img {
+        width: 50%;
+    }
+    
+    @keyframes animate {
+        0% {
+            transform: translate(-50%, -75%) rotate(0deg);
+        }
+        100% {
+            transform: translate(-50%, -75%) rotate(360deg);
+        }
+    }
     .animate-bottom {
         position: relative;
         animation: animatebottom 0.4s;
