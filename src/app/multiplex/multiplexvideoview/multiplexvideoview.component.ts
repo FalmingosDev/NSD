@@ -42,7 +42,7 @@ export class MultiplexvideoviewComponent implements OnInit {
       this.videoplay=result.multiplex_details;
 
       const videoMultiplex = <HTMLVideoElement>(document.querySelector('#multiplexVid'));
-      videoMultiplex.poster=this.vidPoster;
+      // videoMultiplex.poster=this.vidPoster;
       videoMultiplex.src = this.vidUrl;
       // videoMultiplex.currentTime = this.ottVideoTimeData;
       
