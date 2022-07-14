@@ -9,5 +9,9 @@ export const environment = {
   AWS_GAME_URL:'https://newouploads.s3.ap-southeast-1.amazonaws.com/game/',
   laravel_api_url: 'https://newocoin.app/newoadmin/api/',
   baseUrl: 'https://newocoin.app/php',
-  gameUrl: 'https://newocoin.app/Game/game/'
+  gameUrl: 'https://newocoin.app/Game/game/',
+
+  hashtag_campaign:'https://newouploads.s3.ap-southeast-1.amazonaws.com/hashtag_campaign/',
+  hashtag_campaign_social:'https://www.newoapp.app/assets/images/hashtag_social/',
+  hashtag_category:'https://newouploads.s3.ap-southeast-1.amazonaws.com/hashtag_category/',
 }; 
