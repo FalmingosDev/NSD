@@ -1,0 +1,241 @@
+<div class="campaign-bottom">
+    <section class="header-main">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-8">
+                    <div class="has-logo">
+                        <span><img src="assets/logo/n-hastag.webp"
+                                class="img-fluid"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4">
+                    <div class="back_btn_div">
+                        <a routerLink="/hashtag"><span>Back</span>
+                            <div class="liquid"></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hashtag-cam-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <ng-container *ngIf="message=='0';else notmsg">
+                        <div></div>
+                    </ng-container>
+
+                    <ng-template #notmsg>
+                        <div class="alert alert-danger alert-dismissible fade
+                            show"
+                            role="alert">
+                            {{message}}
+                            <button type="button" class="close"
+                                data-dismiss="alert"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </ng-template>
+
+                    <div class="details-new-text-1">
+                        <span>{{campaign_hashtag}}</span><br>
+                        <span class="text-page-1">{{campaign_name}}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+    <section class="new-from">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="main-text-head">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse"
+                                    data-target="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    <span class="title">About {{client_name}}
+                                    </span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapseOne" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>{{client_details}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse"
+                                    data-target="#collapseTwo"
+                                    aria-expanded="true"
+                                    aria-controls="collapseTwo">
+                                    <span class="title">Campaign Objective</span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapseTwo" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>{{campaign_objective}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse"
+                                    data-target="#collapseFive"
+                                    aria-expanded="true"
+                                    aria-controls="collapseFive">
+                                    <span class="title">Campaign Special Note</span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapseFive" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p>{{campaign_spl_note}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header collapsed"
+                                    data-toggle="collapse"
+                                    data-target="#collapseThree"
+                                    aria-expanded="false">
+                                    <span class="title">Offer</span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapseThree" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        {{offer_name}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header collapsed"
+                                    data-toggle="collapse"
+                                    data-target="#collapsefour"
+                                    aria-expanded="false">
+                                    <span class="title">Steps</span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapsefour" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="main-campain">
+                                            <ol class="style_1">
+
+                                                <li *ngFor="let steps of
+                                                    stepsList">{{steps.steps_heading}}<br
+                                                        />
+                                                    <p>
+                                                        Note:
+                                                        {{steps.steps_details}}
+                                                    </p>
+                                                </li>
+                                            </ol>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <ng-container *ngIf="message!='0';else notresult">
+
+    </ng-container>
+
+
+    <ng-template #notresult>
+        <ng-container *ngIf="results=='0';else notmsgtrue">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div-eli">
+                <button type="button" class="hashtag-accept-btn-eli">NOT ELIGIBLE THIS CATEGORY</button>
+            </div>
+
+        </ng-container>
+    </ng-template>
+
+
+
+
+    <ng-template #notmsgtrue>
+        <ng-container *ngIf="campaign_current_status=='Expired'; else notexp">
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">EXPIRED</button>
+            </div>
+
+        </ng-container>
+    </ng-template>
+
+    <ng-template #notexp>
+        <ng-container *ngIf="campaign_current_status=='Upcoming'; else
+            notupcoming">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">UPCOMING</button>
+            </div>
+
+        </ng-container>
+    </ng-template>
+
+    <ng-template #notupcoming>
+        <ng-container *ngIf="active_user_apply_check>0; else notapplied">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">APPLIED</button>
+            </div>
+
+        </ng-container>
+    </ng-template>
+
+
+    <ng-template #notapplied>
+        <ng-container *ngIf="(total_apply - max_participate)!=0 ; else
+            seatnotavailable">
+
+            <div class="d-flex justify-content-center hashtag-accept-btn-div"
+                id="applyreplace">
+
+                <button type="button" class="hashtag-accept-btn"
+                    (click)="acceptcampaign_before(this.id)">ACCEPT</button>
+
+            </div>
+        </ng-container>
+
+        <ng-template #seatnotavailable>
+            <div class="d-flex justify-content-center hashtag-accept-btn-div">
+                <button type="button" class="hashtag-accept-btn">NO SEATS LEFT</button>
+            </div>
+        </ng-template>
+    </ng-template>
+</div>
+
+<app-welcomefooter></app-welcomefooter>

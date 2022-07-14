@@ -1,0 +1,234 @@
+<div class="has-mt">
+    <section class="header-main">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-8">
+                    <div class="has-logo">
+                        <span><img src="assets/logo/n-hastag.webp" class="img-fluid"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4">
+                    <div class="img-source">
+                        <img src="assets/images/ovter.png" routerLink="/userprofile">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-9">
+                    <div class="colboration">
+                        <p>Hi,<b>&nbsp;{{username}}</b></p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-3">
+                    <div class="colboration">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filterModal"
+                            style="padding: 4px 9px !important;font-size: 13px;margin-top: 10px;width: 100%;">
+                            Filter
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="body-middle-part mt-3" id="part3" *ngFor="let campaignDetails of AllcampaignListAll">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-4 col-5">
+                                <div class="card-campain">
+                                    <span></span>
+
+                                    <ng-container *ngIf="campaignDetails.campaign_current_status=='Active';else second">
+                                        <!-- <span style="color:green"></span> -->
+
+                                        <div class="ribbon-wrapper">
+
+                                            <div class="ribbon-front-new">
+                                                Active
+                                            </div>
+                                            <div class="ribbon-edge-topleft"></div>
+                                            <div class="ribbon-edge-topright"></div>
+                                            <div class="ribbon-edge-bottomleft"></div>
+
+                                        </div>
+                                    </ng-container>
+
+                                    <ng-template #second>
+                                        <ng-container
+                                            *ngIf="campaignDetails.campaign_current_status=='Upcoming';else third">
+                                            <div class="ribbon-wrapper">
+
+                                                <div class="ribbon-front-new-1">
+                                                    Upcoming
+                                                </div>
+                                                <div class="ribbon-edge-topleft"></div>
+                                                <div class="ribbon-edge-topright"></div>
+                                                <div class="ribbon-edge-bottomleft"></div>
+
+                                            </div>
+                                        </ng-container>
+                                    </ng-template>
+
+                                    <ng-template #third>
+
+
+                                        <div class="ribbon-wrapper">
+
+                                            <div class="ribbon-front">
+                                                Expired
+                                            </div>
+                                            <div class="ribbon-edge-topleft"></div>
+                                            <div class="ribbon-edge-topright"></div>
+                                            <div class="ribbon-edge-bottomleft"></div>
+
+                                        </div>
+
+                                        <!-- <span class="badge badge-pill badge-info">Expired</span> -->
+                                    </ng-template>
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-7 payout-cla pl-0">
+                                <ul>
+                                    <li>
+                                        <div class="button-new-pay">
+                                            <span><i class="fa fa-inr"
+                                                    aria-hidden="true"></i>{{campaignDetails.offer_name}}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="button-new-hastag">
+                                            <span>{{campaignDetails.social_name}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+
+                        <div class="container pd-container">
+                            <div class="row">
+                                <div class="col-md-6 col-5 hashtag_hash">
+                                    <a>
+                                        <img src="{{env.hashtag_campaign+ campaignDetails.campaign_image}}"
+                                            class="img-fluid">
+                                    </a>
+                                    <!-- <span class="sp-has">{{campaignDetails.campaign_hashtag}}</span> -->
+                                </div>
+                                <div class="col-md-6 col-7">
+                                    <div class="text-sec">
+                                        <h1 class="sp-has">{{campaignDetails.campaign_hashtag}}</h1>
+                                        <h6><b>{{campaignDetails.campaign_name}}</b></h6>
+
+                                        <!-- <p [ngClass]="{'limitTextHeight': isReadMore}" (click)="showText()">
+                                            <i>{{campaignDetails.campaign_objective}}</i>{{ isReadMore ? '': '' }}
+                                        </p> -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- <span class="sp-crd">{{campaignDetails.campaign_spl_note}}... </span> -->
+
+                            <div class="row">
+                                <div class="col-md-6 col-7">
+                                    <div class="max-parti">
+                                        <!-- <span><u>Max Participations</u>:{{campaignDetails.max_participate}}</span> -->
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-5">
+
+                                    <div class="back_btn_div-new">
+                                        <a routerLink="/campaign/{{ campaignDetails.campaign_id }}"><span>
+                                                View Details<span class="detail-icon"><img
+                                                        src="assets/logo/left-arrow-btn.svg" alt=""
+                                                        class="img-fluid"></span></span>
+                                            <div class="liquid"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-8 col-4">
+                                    <div class="detail-icon">
+                                        <a routerLink="/campaign/{{ campaignDetails.campaign_id }}">
+                                            <img src="assets/logo/left-arrow-btn.svg" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade md-ch-bx" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content animate-bottom">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filter Campaign</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <h1>Campaign Status</h1>
+
+                    <ul class="deal-ul">
+                        <form [formGroup]="forms">
+                            <li *ngFor="let status of statusList; let i=index">
+                                <input class="ck-inp" type="checkbox" formArrayName="selectedStatus"
+                                    [value]="status.value" (change)="onCheckboxstatusChange($event)">
+                                <label class="mr-lb">{{status.name}}</label>
+                            </li>
+                        </form>
+                    </ul>
+
+
+
+                    <h1>Deal Type</h1>
+                    <ul class="deal-ul">
+                        <form [formGroup]="form">
+                            <li *ngFor="let offerItem of offerList; let i=index">
+                                <input class="ck-inp" type="checkbox" formArrayName="selectedOffer"
+                                    value="{{offerItem.offer_name}}" (change)="onCheckboxofferChange($event)">
+                                <label class="mr-lb">{{offerItem.offer_name}}</label>
+                            </li>
+                        </form>
+
+
+                    </ul>
+
+                </div>
+                <form [formGroup]="form" (ngSubmit)="submitfilter()">
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="select-all">Apply</button>
+                        <!-- <input type="reset" class="btn btn-primary" value="Clear"> -->
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-welcomefooter></app-welcomefooter>

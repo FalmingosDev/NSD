@@ -42,6 +42,7 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 import { EditphoneComponent } from './editphone/editphone.component';
 import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
 import { RedeemComponent } from './redeem/redeem.component';
+import { HashtaghomeComponent } from '../hashtag/hashtaghome/hashtaghome.component';
 
 
 
@@ -79,7 +80,7 @@ const routes: Routes = [
   {path: 'gallery', component:GalleryComponent},
   {path: 'privacy', component:PrivacyComponent},
   {path: 'terms', component:TermsComponent},
-  {path: 'hashtag', component:HastagComponent},
+  {path: 'hashtag', component:HashtaghomeComponent},
   {path: 'stars', component:StarsComponent},
   {path: 'newsdetail', component:NewsdetailComponent},
   {path: 'blogdetails/:blog_id', component:BlogdetailsComponent},

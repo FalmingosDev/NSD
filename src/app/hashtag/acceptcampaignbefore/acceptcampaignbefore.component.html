@@ -1,0 +1,127 @@
+<div class="campaign-bottom">
+    <section class="header-main">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-8">
+                    <div class="has-logo">
+                        <span><img src="assets/logo/n-hastag.webp"
+                                class="img-fluid"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-4">
+                    <div class="back_btn_div">
+                        <a routerLink="/"><span>Back</span>
+                            <div class="liquid"></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-from pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="main-text-head">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" data-toggle="collapse"
+                                    data-target="#collapseTwo"
+                                    aria-expanded="true"
+                                    aria-controls="collapseTwo">
+                                    <span class="title">Delivery Address</span>
+                                    <span class="accicon"><i class="fa
+                                            fa-angle-down rotate-icon"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <div id="collapseTwo" class="collapse show"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div>
+                                            <section class="hastag-user-section"
+                                               >
+                                                <div class="">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div
+                                                                class="edit-form">
+                                                                <form
+                                                               
+                                                                
+                                                                 [formGroup] = "acceptBefore" (ngSubmit)="acceptcampaign()">
+                                                                    <div
+                                                                        id="edit-one"
+                                                                        id="editone">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                class="edit-label"
+                                                                                for="">
+                                                                                
+                                                                                Name</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                id="name"
+                                                                               formControlName="name"
+                                                                                aria-describedby="emailHelp" class="form-control" >
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                class="edit-label"
+                                                                                for="">Mobile
+                                                                                Number</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                id="mob"
+                                                                               formControlName="mob"
+                                                                                aria-describedby="emailHelp"class="form-control" >
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                class="edit-label"
+                                                                                for="">
+                                                                                Delivery
+                                                                                Address</label>
+                                                                            <textarea
+                                                                               
+                                                                                id="textname"
+                                                                                formControlName="address"
+                                                                                aria-describedby="emailHelp"
+                                                                                cols="30"
+                                                                                rows="5"class="form-control" ></textarea>
+                                                                        </div>
+                                                                        <div>
+                                                                            <button
+                                                                               
+                                                                              type="submit"  class="btn-primary-next" >Update</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+<app-welcomefooter></app-welcomefooter>
