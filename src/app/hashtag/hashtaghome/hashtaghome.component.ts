@@ -13,9 +13,7 @@ import * as $ from 'jquery';
   styleUrls: ['./hashtaghome.component.css']
 })
 export class HashtaghomeComponent implements OnInit {
-  static ngOnInit(): any {
-    throw new Error('Method not implemented.');
-  }
+ 
   static AllCampaign: any;
   static result: any;
   [x: string]: any;

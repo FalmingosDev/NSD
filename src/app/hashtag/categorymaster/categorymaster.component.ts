@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@ang
 import { ApiService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-categorymaster',
@@ -16,6 +17,7 @@ export class CategorymasterComponent implements OnInit {
   selectedOffer: any;
   local_email: string | null = localStorage.getItem('token');
   productForm !: FormGroup;
+  env = environment;
 
   constructor(private categorymaster: ApiService, private formBuilder: FormBuilder, offer: FormBuilder, private hashtagUserRegis: ApiService,private _router: Router) {
     this.form = offer.group({
@@ -31,13 +33,16 @@ export class CategorymasterComponent implements OnInit {
       facebook: [''],
       instagram: [''],
       youtube: [''],
-      twitter: ['']
+      twitter: [''],
+      amazon: ['']
     })
 
 
     this.categorymaster.categoryMasterList().subscribe((result) => {
 
       this.allcategorymaster = result;
+
+      console.log(result);
     })
 
   }
