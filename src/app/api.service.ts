@@ -589,12 +589,30 @@ export class ApiService {
          }
 
 
+  public multiplexCreateEncryption(objUserData) {
+      return this.httpClient.post<any>(this.env.baseUrl + '/multiplex_payment.php', { userdata: objUserData });
+  }
+
 
 
   public activateLeadBonus(leadCoupon) {
     const userEmail = localStorage.getItem('token');
     return this.httpClient.post<any>(this.env.laravel_api_url + 'saveleadcoupon', { userEmail, leadCoupon });
   }
+
+  purchaseList(){
+    const user_email = localStorage.getItem('token');
+    // alert(user_email);
+      return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-purchase-list?user_email='+user_email);
+     }
+
+multiplexVideoPlay(multiplex_id)
+{
+ 
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-video-view-details?user_email='+user_email+'&multiplex_id='+multiplex_id);
+}
+
 
   /* Hashtag */
   hashtagcampaignList(email) {

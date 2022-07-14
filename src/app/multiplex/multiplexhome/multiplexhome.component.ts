@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
@@ -91,9 +91,10 @@ export class MultiplexhomeComponent implements OnInit {
     },
 
   };
+  list: any;
 
 
-  constructor(private api: ApiService) { }
+  constructor( private route:ActivatedRoute,private api: ApiService,private router:Router) { }
   bannerCollection: any = [];
   recomendedCollection: any = [];
   upcommingCollection: any = [];
@@ -101,6 +102,8 @@ export class MultiplexhomeComponent implements OnInit {
   recomendedWishListRemove: any=[];
   wishListCollection:any=[];
   ngOnInit(): void {
+    const userEmail = localStorage.getItem('token');
+  
     this.multiplexList();
     // this.addWishList(multiplex_id);  
     // this.removeWishList(multiplex_id);  
@@ -111,8 +114,11 @@ export class MultiplexhomeComponent implements OnInit {
       console.warn(result)
       this.bannerCollection = result.banner_multiplex_list;
       this.recomendedCollection = result.recommended_multiplex_list;
+      // alert(this.recomendedCollection.id)
+      //  console.log("details ",this.recomendedCollection);
       this.upcommingCollection = result.upcoming_multiplex_list;
       this.wishListCollection=result.multiplex_wishlist;
+      
 
     })
   }
@@ -135,8 +141,19 @@ removeWishList(multiplex_id)
 
 }
 
+checkSubscribe(multiplex_id,is_subscribe)
+{
+  if(is_subscribe=='Y')
+  {
+    this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
+  }
+  else
+  {
+    this.router.navigate(['/multiplexcheckout/'+multiplex_id]);
+  }
+}
 
-
+ 
 }
 
 // function multiplex_id(multiplex_id: any) {

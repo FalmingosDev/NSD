@@ -3,19 +3,14 @@
     <section class="top-bar-nav">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-7">
+                <div class="col-md-12 col-12">
                     <div class="main-wishlist-1">
                         <div> <a routerLink="/multiplexhome"><img src="assets/logo/back-btn.webp" class="img-fluid"></a>
                         </div>
                         <h3>Recommended For You</h3>
                     </div>
                 </div>
-                <div class="col-md-12 col-5">
-                    <div class="main-wishlist">
-                        <img src="" class="img-fluid">
-
-                    </div>
-                </div>
+               
 
             </div>
 
@@ -41,7 +36,7 @@
                                     </div>
                                     <div class="col-9 chat-chati">
                                         <ul>
-                                            <a routerLink="/multiplexcheckout/{{item.id}}">
+                                            <a (click)="checkSubscribe(item.id,item.is_subscribe)">
                                                 <li><span class="movie">{{item.name}}</span></li>
                                                 <li><span>{{item.duration_time}}</span><span
                                                         class="main-date">{{item.year}}</span></li>
@@ -52,14 +47,14 @@
                                                 <span class="date-text">{{item.rating}}/10</span>
 
                                                 <span class="main-whistlist-new">
-                                                    <div *ngIf="item.wishlist_status!=1"><a
+                                                    <span *ngIf="item.wishlist_status!=1"><a
                                                             (click)="addWishList(item.id)"><img
                                                                 src="assets/logo/wishlist.svg" class="img-fluid"></a>
-                                                    </div>
-                                                    <div *ngIf="item.wishlist_status==1"><a
+                                                    </span>
+                                                    <span *ngIf="item.wishlist_status==1"><a
                                                             (click)="removeWishList(item.id)"><img
                                                                 src="assets/logo/wishlisted.svg" class="img-fluid"></a>
-                                                    </div>
+                                                    </span>
                                                 </span>
                                             </li>
                                         </ul>

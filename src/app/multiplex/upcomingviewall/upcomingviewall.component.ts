@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-upcomingviewall',
@@ -7,13 +8,13 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./upcomingviewall.component.css']
 })
 export class UpcomingviewallComponent implements OnInit {
-
+env=environment;
   constructor( private api:ApiService) { }
   upcommingCollection: any = [];
   ngOnInit(): void {
-   this.upcomingViewAllList();
+   this.upcomingAllList();
   }
-  upcomingViewAllList(){
+  upcomingAllList(){
       this.api.upcomingViewAllList().subscribe((result) => {
   
         console.warn(result)

@@ -1,87 +1,86 @@
 <div class="body-strucre">
-
+    
     <section class="top-bar-nav">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-7">
                     <div class="main-wishlist-1">
-                        <div> <a routerLink="/multiplexhome"><img src="assets/logo/back-btn.webp" class="img-fluid"></a>
-                        </div>
-                        <h3>Upcoming For You</h3>
+                      <div> <a routerLink="/multiplexhome"><img src="assets/logo/back-btn.webp" class="img-fluid"></a></div>
+                            <h3>Upcoming For You</h3>
                     </div>
                 </div>
                 <div class="col-md-12 col-5">
                     <div class="main-wishlist">
                         <img src="" class="img-fluid">
-
+                        
                     </div>
                 </div>
-
+    
             </div>
-
+    
         </div>
     </section>
     <div *ngFor="let item of upcommingCollection">
-        <section class="second-part-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+    <section class="second-part-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                        
 
-
-                        <div class="t-b-s-background">
-                            
-                                <div class="show-box new-box">
-                                    <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
-                                </div>
-                            
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-3">
-
-                                    </div>
-                                    <div class="col-9 chat-chati">
-                                        <ul>
-                                            
-                                                <li><span class="movie">{{item.name}}</span></li>
-                                                <!-- <li><span>{{item.duration_time}}</span><span
-                                                        class="main-date">{{item.year}}</span></li> -->
-                                                <li><span>{{item.genere_name}}</span></li>
-                                                <li class="cal">
-                                                    <span><img src="assets/images/calender.png"
-                                                            class="img-fluid"></span>
-                                                    <span class="date-text">{{item.start_date|date:'fullDate'}}</span>
-                                                   
-                                                </li>
-                                            
-                                            <!-- <li class="star">
-                                                <img src="assets/images/rating-fill.svg" class="img-fluid">
-                                                <span class="date-text">{{item.rating}}/10</span>
-
-                                                <span class="main-whistlist-new">
-                                                    <div *ngIf="item.wishlist_status!=1"><a
-                                                            (click)="addWishList(item.id)"><img
-                                                                src="assets/logo/wishlist.svg" class="img-fluid"></a>
-                                                    </div> -->
-                                                    <!-- <div *ngIf="item.wishlist_status==1"><a
+                                        <div class="t-b-s-background"> 
+                                                    
+                                                    <div class="show-box new-box">
+                                                      <img src="{{env.multiplex_poster_url+item.image}}" class="img-fluid">
+                                                    </div>
+                                                    
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                
+                                                </div>
+                                                <div class="col-9 chat-chati">
+                                                <ul>
+                                                    
+                                                    <li><span class="movie">{{item.name}}</span></li>
+                                                    <!-- <li><span>{{item.duration_time}}</span><span class="main-date">{{item.year}}</span></li> -->
+                                                    <li><span>{{item.genere_name}}</span></li>
+                                                    
+                                                    <li class="cal">
+                                                        <span><img src="assets/images/calender.png"
+                                                                class="img-fluid"></span>
+                                                        <span class="date-text">{{item.start_date|date:'fullDate'}}</span>
+                                                       
+                                                    </li>
+                                                    <li class="cal">
+                                                        <span></span>
+                                                        <span class="date-text"></span>
+                                                       
+                                                    </li>
+                                                    
+                                                    
+                                                    <!-- <li class="star">
+                                                        <img src="assets/images/rating-fill.svg"
+                                                            class="img-fluid">
+                                                        <span class="date-text">{{item.rating}}/10</span>
+                                                        
+                                                        <span class="main-whistlist-new"><a
                                                             (click)="removeWishList(item.id)"><img
-                                                                src="assets/logo/wishlisted.svg" class="img-fluid"></a>
-                                                    </div> 
-                                                </span>
-                                            </li> -->
-                                        </ul>
+                                                                src="assets/logo/wishlisted.svg"
+                                                                class="img-fluid"></a></span>
+                                                    </li> -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
+                       
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </div>
 
-
-</div>
-
-<app-welcomefooter></app-welcomefooter>
+    </div>
+    
+    <app-welcomefooter></app-welcomefooter>

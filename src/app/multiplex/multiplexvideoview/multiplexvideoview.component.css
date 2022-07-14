@@ -11,20 +11,105 @@
    .top-text-sm ul li:nth-child(4):after {
     position: absolute;
     content: '';
-    width: 73px;
+    width: 81px;
     height: 20px;
-    left: 22px;
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
+    left: 56px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
     background: rgb(26,28,66);
-    background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%); */
+    background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%);
 }
+
+.star-vd-icon-1 span img{width: 10%;padding: 0 2px;}
+.star-vd-icon-1 h1{color: #fff;font-size: 16px;margin: 0;}
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+.rating{float: left;}
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:120%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+/* end of Lea's code */
+
+/*
+ * Clearfix from html5 boilerplate
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* my stuff */
+#status, button {
+    margin: 20px 0;
+}
+
+  
     
   
     .date-text{font-size: 12px;margin: 0 5px;}
     .top-header-sec{background-image: url(/assets/images/banner-bg.jpg);background-size: cover;background-repeat: no-repeat;}
-    .top-sm-ban{margin-top: -40px;}
-    .mobile img{margin-top: -128px;}
+    /* .top-sm-ban{margin-top: -40px;} */
+    .mobile img{margin-top: -155px;padding: 18px 15px;}
     .top-text-sm ul li {display: inline-block;list-style: none;margin: 20px 8px;font-weight:500;}
+    .view-all a{color: #fff;}
+  
     .top-text-sm ul li a{color:#59429d; }
     .top-text-sm ul {padding: 0;}
     .search-btn {
@@ -48,10 +133,10 @@
     }
    
    .block-n-text {
-    padding: 10px 15px;height: 161px;}
+    padding: 15px 15px;height: 161px;}
     .bottom-img {
     position: relative;
-    margin-top: -143px;
+    margin-top: -104px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -65,6 +150,8 @@
     letter-spacing: 0.1rem;
         color: #fff
     }
+    
+    
     .bg-f-img{
         display: inline-flex;
         margin: 5px 17px;
@@ -79,23 +166,22 @@
     }
     .text-bg p{font-size: 12px;}
     .bg-f-img-text p{font-size: 18px;
-    color: #493783;
+    color: #000000;
     font-weight: 500;
-    text-align: center
+   padding: 0 11px;
 }
     .book-now{
     position: relative;
     top: -40px!important;;
     left: 13px;
     }
-    .bg-f-img-text{font-size: 20px;color: #000; font-weight: 500}
+    .bg-f-img-text{font-size: 20px;color: #000; font-weight: 500;padding: 0 10px;}
     
     .bg-f-img-text img {
     width: 11px !important;
-    margin: -13px 39px;
+    margin: -13px 54px;
 }
-    .second-part-1{padding: 15px 10px;}
-    .second-part{margin: 10px 10px;}
+    .second-part{margin: 5px 10px;}
     .thirt-part p{color: #fff;font-size: 14px;}
     .thirt-part{margin: 5px 10px;}
     .second-part p{color: #fff; font-size: 14px;}
@@ -109,14 +195,16 @@
     .owl-nav{text-align: right !important;}
     .t-b-s-background{
         background: #6850b2;
+        margin-top: 10px;
 }
     .show-box img{border-radius: 10px;}
     .chat-chati ul li{list-style: none;}
     .chat-chati ul li{color: #fff;line-height:1.5rem;}
    
-    .movie{font-size: 16px;
+    .movie{font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.1rem;}
+    letter-spacing: 0.1rem;
+    }
     .chat-chati li{font-size: 13px;}
     .bg-f-img1 img {
  width: 6% !important;
@@ -124,18 +212,21 @@
 
 
 }
+.fourth-part p{color: #fff;font-size: 14px;}
+.fourth-part {margin: 5px 10px;}
     .bg-f-img1 {
     display: inline-flex;
     }
     .show-box{margin: 10px;}
     .show-box img{
    width: 26% !important;
-    position: absolute;
+    position: fixed;
     top: 0px;
-    left: 0px;}
+    left: 10px;}
     .chat-chati ul{padding: 10px 16px;
     margin: 0 0px;}
-    .frisr-child a{color: #fff!important;font-size: 18px;}
+    .frisr-child a{color: #fff!important;font-size: 20px;}
+   
     .main-date{float: right;margin: 0 -15px;}
     .main-whistlist img {
     width: 20%!important;
@@ -149,50 +240,28 @@
     .main-whistlist-new img {
     width: 13%!important;
     float: right;
-    margin: 0 -15px;
+    margin: 0 -15px 10px 0;
 }
-
+#celb .owl-dot.active span, #celb .owl-dot:hover span {
+    background: #ab96f3;
+    border: 2px solid #ab96f3;
+}
+#celb .owl-dot.active span, #celb .owl-dot:hover span {
+    background: #ab96f3;
+    border: 2px solid #ab96f3;
+}
+#celb .owl-dot span {
+    border: 2px solid #05fffb;
+    background-color: transparent;
+}
 .view-all p{float: right; font-size: 12px;}
+.view-all a:hover{color: #05fffb;}
 .book-m-new img{border-radius: 0;}
 
-.main-wishlist-1 h3{color: #fff;
-    font-size: 18px;
-    font-weight: 500;;}
-    .main-wishlist img{width: 35%;float: right;margin-top: 15px;}
-    .main-wishlist-1 img{width: 15%;margin-bottom: 5px;;}
-    .top-bar-nav{margin: 15px 10px;}
-    
-/* }
-@media (min-width: 320px) and (max-width: 375px) {
-     .bg-f-img-text p{
-    font-size: 16px;
-    color: #493783;
-    font-weight: 500;   
-    text-align: center
-}
-.book-now {
-    position: relative;
-    top: -35px!important;
-    left: 9px;
-}
-    .bg-f-img-text{font-size: 16px;color: #000; font-weight: 500}
-    
-    .show-box img {
-        width: 27%!important;  
-        position: absolute;
-        top: 2px;
-        left: 0px;
-}
-    .chat-chati ul {
-    padding: 5px 10px !important;
-    margin: 0 0px;
-}
-.chat-chati li{font-size: 11px !important;} 
-.date-text{font-size: 10px !important;margin: 1px 2px 2px 2px;}  
-
-   
-    
-} */
 
 
-   
+    
+    
+     
+    
+    
