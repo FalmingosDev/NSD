@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+
     .body-strucre{margin-bottom: 100px;}
     .t-b-s-background {
         background: #4766866b;
@@ -182,8 +182,8 @@
      
     
     
-}
-@media (min-width: 320px) and (max-width: 375px) {
+
+/* @media (min-width: 320px) and (max-width: 375px) {
      .bg-f-img-text p{
     font-size: 16px;
     color: #493783;
@@ -210,9 +210,9 @@
 .chat-chati li{font-size: 11px !important;} 
 .date-text{font-size: 10px !important;margin: 1px 2px 2px 2px;}  
 
-   
+    */
     
-}
+
 
 
    

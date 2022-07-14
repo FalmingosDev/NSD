@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+
     .body-strucre{margin-bottom: 100px;}
     .t-b-s-background {
         background: #4766866b;
@@ -164,7 +164,7 @@
     .main-wishlist-1 img{width: 15%;margin-bottom: 5px;;}
     .top-bar-nav{margin: 15px 10px;}
     
-}
+/* }
 @media (min-width: 320px) and (max-width: 375px) {
      .bg-f-img-text p{
     font-size: 16px;
@@ -197,4 +197,4 @@
 }
 
 
-   
+    */

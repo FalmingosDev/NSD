@@ -1550,12 +1550,13 @@ header {
     border-right: 1px solid #b4b6bd;
     color: #d2caca;
     font-size: 10px;
-    padding-right: 6px;
+   padding: 0 10px;
 }
 
 .pg-h4-box {
-    background: #615555;
+    background: #6850b2;
     padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .st-yellow {
