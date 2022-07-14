@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, Form } from '@angular/forms';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, Form, FormControl } from '@angular/forms';
 import * as $ from 'jquery';
 import { ApiService } from 'src/app/api.service';
 
@@ -14,7 +14,7 @@ export class HashtaguserprofileComponent implements OnInit {
   language_list: any;
   professions_list: any;
   userid: string;
-  UserForm !: FormGroup;
+  UserForm: FormGroup;
   addUserBankForm !: FormGroup;
   email_id: string;
   profileData: any;
@@ -31,8 +31,12 @@ export class HashtaguserprofileComponent implements OnInit {
   user_pincode: any;
   user_address1: any;
   langu: any;
-
-  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService) {
+  bankname: any;
+  acholder: any;
+  acnumber: any;
+  ifsc: any;
+  upiid: any;
+  ngAfterViewInit() {
     $(document).ready(function () {
       $("#stepfunone").click(function () {
         $("#editwo").show();
@@ -43,76 +47,159 @@ export class HashtaguserprofileComponent implements OnInit {
         $("#editwo").hide();
       });
     });
+  }
 
-    this.email_id = this.local_email;
+  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService) {
 
-    this.hashtagProfileGetDetails(this.email_id);
+
+    // this.email_id = this.local_email;
+
+    // this.hashtagProfileGetDetails(this.email_id);
+
+
 
   }
 
   ngOnInit(): void {
 
+    this.UserForm = new FormGroup({
 
+      name: new FormControl(''),
+      // name: controls['name'].setValue(this.name),
+      mobile: new FormControl(''),
+      dob: new FormControl(''),
+      language: new FormControl(''),
+      maritial: new FormControl(''),
+      profession: new FormControl(''),
+      country: new FormControl(''),
+      state: new FormControl(''),
+      city: new FormControl(''),
+      pincode: new FormControl(''),
+      address: new FormControl('')
+
+    })
+
+    this.addUserBankForm = new FormGroup({
+
+      bankname: new FormControl(),
+      acholder: new FormControl(),
+      acnumber: new FormControl(),
+      ifsc: new FormControl(),
+      upiid: new FormControl()
+
+    })
+  
+
+
+    
+
+    // $(document).ready(function () {
+    //   $("#stepfunone").click(function () {
+    //     $("#editwo").show();
+    //     $("#editone").hide();
+    //   });
+    //   $("#stepfuntwo").click(function () {
+    //     $("#editone").show();
+    //     $("#editwo").hide();
+    //   });
+    // });
 
     this.getCountryList.CountryList().subscribe((result) => {
 
       this.countryList = result.data.country_list;
       this.language_list = result.data.language_list;
       this.professions_list = result.data.professions_list;
+
+
+    }),
       this.userid = this.local_email;
 
+    this.profileGet.hashtagProfileGet(this.local_email).subscribe((result) => {
+
+      this.name = result.data.name;
+      this.mob = result.data.user_contact_number;
+      this.dob = result.data.dob;
+      this.langu = result.data.language;
+      this.maritial = result.data.maritial_status;
+      this.profession = result.data.profession;
+      this.user_country = result.data.user_country;
+      this.user_state = result.data.user_state;
+      this.user_city = result.data.user_city;
+      this.user_pincode = result.data.user_pincode;
+      this.user_address1 = result.data.user_address1;
+
+      console.log(this.name);
+
+      this.UserForm = new FormGroup({
+
+
+
+        name: new FormControl(this.name),
+        // name: controls['name'].setValue(this.name),
+        mobile: new FormControl(this.mob),
+        dob: new FormControl(this.dob),
+        language: new FormControl(this.langu),
+        maritial: new FormControl(this.maritial),
+        profession: new FormControl(this.profession),
+        country: new FormControl(this.user_country),
+        state: new FormControl(this.user_state),
+        city: new FormControl(this.user_city),
+        pincode: new FormControl(this.user_pincode),
+        address: new FormControl(this.user_address1)
+
+
+      })
     })
 
 
-    this.UserForm = this.formBuilder.group({
+    /* bank updated  */
 
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      mobile: ['', Validators.required],
-      dob: ['', Validators.required],
-      language: ['', Validators.required],
-      maritial: ['', Validators.required],
-      profession: ['', Validators.required],
-      country: ['', Validators.required],
-      state: ['', Validators.required],
-      city: ['', Validators.required],
-      pincode: ['', Validators.required],
-      address: ['', Validators.required]
+
+    this.UserBankDetails.getaddUserBankDetails(this.local_email).subscribe((result) => {
+
+      this.bankname = result.data.bank_details.bank_name;
+      this.acholder = result.data.bank_details.bank_account_holder;
+      this.acnumber = result.data.bank_details.bank_account_number;
+      this.ifsc = result.data.bank_details.bank_ifsc;
+      this.upiid = result.data.bank_details.upi_id;
+
+     
+
+      this.addUserBankForm = new FormGroup({
+
+        bankname: new FormControl(this.bankname),
+        acholder: new FormControl(this.acholder),
+        acnumber: new FormControl(this.acnumber),
+        ifsc: new FormControl(this.ifsc),
+        upiid: new FormControl(this.upiid),
+
+      })
     })
-
-    this.addUserBankForm = this.formBuilder.group({
-
-      bankname: ['', Validators.required],
-      acholdername: ['', Validators.required],
-      acnumber: ['', Validators.required],
-      ifsc: ['', Validators.required],
-      upiid: ['', Validators.required]
-
-    })
+  }
 
 
 
-
-  };
 
   addUser() {
-    // if (this.UserForm.valid) {
-    this.UserDetails.addUserDetails(this.UserForm.value, this.userid).subscribe({
+    // // if (this.UserForm.valid) {
+    this.UserDetails.addUserDetails(this.UserForm.value, this.local_email).subscribe({
       next: (res) => {
-        alert("User Added SuccessFully !")
+        // alert("User Profile Updated SuccessFully !")
       },
       error: () => {
         alert("Error")
       }
     })
-    // }
+    // // }
   }
+
+
 
   addUserBank() {
     // if (this.UserForm.valid) {
     this.UserBankDetails.addUserBankDetails(this.addUserBankForm.value, this.userid).subscribe({
       next: (res) => {
-        alert("User Bank Added SuccessFully !")
+        //alert("User Bank Added SuccessFully !")
       },
       error: () => {
         alert("Error")
@@ -121,27 +208,7 @@ export class HashtaguserprofileComponent implements OnInit {
     // }
   }
 
-  hashtagProfileGetDetails(userid) {
 
-    this.profileGet.hashtagProfileGet(userid).subscribe((result) => {
-
-
-      this.fullname = result.data[0].name;
-      this.mob = result.data[0].user_contact_number;
-      this.dob = result.data[0].dob;
-      this.langu = result.data[0].language;
-      this.maritial = result.data[0].maritial;
-      this.profession = result.data[0].profession;
-      this.user_country = result.data[0].user_country;
-      this.user_state = result.data[0].user_state;
-      this.user_city = result.data[0].user_city;
-      this.user_pincode = result.data[0].user_pincode;
-      this.user_address1 = result.data[0].user_address1;
-      console.log(this.user_address1);
-
-    })
-
-  }
 
 
 }

@@ -578,6 +578,11 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata, emails });
   }
 
+
+  getaddUserBankDetails(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-bank-details/' + email);
+  }
+
   addUserBankDetails(userdata, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-bank-details-add', { userdata, email });
   }

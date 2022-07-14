@@ -22,13 +22,13 @@ export class CampaignComponent implements OnInit {
   max_participate: number;
   total_apply: number;
   userEmail: any;
+  check: any;
 
-
-  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) { 
+  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) {
 
     this.id = this.activatedRoute.snapshot.params['id'];
 
-   
+
   }
 
   ngOnInit(): void {
@@ -58,20 +58,29 @@ export class CampaignComponent implements OnInit {
 
       this.message = result.data.message;
 
-      this.results=result.data.common_cat;
+      this.results = result.data.common_cat;
+
+      this.check = result.data.key;
 
     })
 
 
   }
 
-  acceptcampaign_before(id:any){
+  acceptcampaign_before(id: any) {
 
-    this._router.navigateByUrl('/acceptcampaignbefore/'+id);
-    
+    if (this.check == "E") {
+      this._router.navigateByUrl('/userprofile');
+
+    } else {
+      this._router.navigateByUrl('/acceptcampaignbefore/' + id);
+    }
+
+
+
   }
 
-  
+
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -22,7 +22,8 @@ export class AcceptcampaignbeforeComponent implements OnInit {
 
   campaign_id: any;
   user_address_all: any;
-  constructor(private activatedRoute: ActivatedRoute, private addapiacceptcampaignbefore: ApiService, private _router: Router,private addapiacceptcampaign: ApiService) {
+ 
+  constructor(private activatedRoute: ActivatedRoute, private addapiacceptcampaignbefore: ApiService, private _router: Router, private addapiacceptcampaign: ApiService) {
 
 
 
@@ -41,8 +42,7 @@ export class AcceptcampaignbeforeComponent implements OnInit {
 
     this.addapiacceptcampaignbefore.addAcceptCampaignBefore(userid, this.campaign_id).subscribe(result => {
 
-
-
+      
       this.name = result.data.user_details.name;
       this.user_contact_number = result.data.user_details.user_contact_number;
       this.user_address1 = result.data.user_details.user_address1;
@@ -50,7 +50,7 @@ export class AcceptcampaignbeforeComponent implements OnInit {
       this.user_city = result.data.user_details.user_city;
       this.user_state = result.data.user_details.user_state;
       this.user_country = result.data.user_details.country_name;
-      this.user_address_all=this.user_address1+','+this.user_pincode+','+this.user_city+','+this.user_state+','+ this.user_country;
+      this.user_address_all = this.user_address1 + ',' + this.user_pincode + ',' + this.user_city + ',' + this.user_state + ',' + this.user_country;
 
       this.acceptBefore = new FormGroup({
 
@@ -72,14 +72,18 @@ export class AcceptcampaignbeforeComponent implements OnInit {
 
   acceptcampaign() {
 
-    this.campaign_id = this.activatedRoute.snapshot.params['id'];
-    this.addapiacceptcampaign.addacceptcampaign(this.acceptBefore.value, this.local_email, this.campaign_id).subscribe(result => {
+  
 
-     if(result.success==true){
-      this._router.navigateByUrl('/mypendingcampaign');
-     }
+      this.campaign_id = this.activatedRoute.snapshot.params['id'];
+      this.addapiacceptcampaign.addacceptcampaign(this.acceptBefore.value, this.local_email, this.campaign_id).subscribe(results => {
+        if (results.success == true) {
+          this._router.navigateByUrl('/mypendingcampaign');
+        }
 
-    })
+      })
+    
+
+
   }
 
 }
