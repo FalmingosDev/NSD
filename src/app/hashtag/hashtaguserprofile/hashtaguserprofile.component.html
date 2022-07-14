@@ -17,7 +17,7 @@
 
         </div>
       </div>
-    </div> 
+    </div>
   </section>
 
   <section class="header-main-new">
@@ -29,9 +29,11 @@
         </div>
         <div class="col-md-8 col-9">
           <div class="eidt-camp2">
-            <span><a routerLink="/myallcampaign" class="btn-primary2">My all Campain</a></span>
-            <span><a routerLink="/mypendingcampaign" class="btn-primary2">Pending Campaigns</a></span>
-          </div> 
+            <span><a routerLink="/myallcampaign" class="btn-primary2">My all
+                Campain</a></span>
+            <span><a routerLink="/mypendingcampaign" class="btn-primary2">Pending
+                Campaigns</a></span>
+          </div>
         </div>
         <!-- <div class="col-md-4 col-4"> 
                 <div class="img-source">
@@ -61,65 +63,69 @@
                   data-parent="#accordionExample">
                   <div class="card-body">
                     <div>
-                      <section class="hastag-user-section"
-                      >
+                      <section class="hastag-user-section">
                         <div class="">
                           <div class="row">
                             <div class="col-12">
                               <div class="edit-form">
-                                <form [formGroup]="UserForm">
+                                <form [formGroup]="UserForm" (ngSubmit)="addUser()"> 
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Name</label>
+                                      <label class="edit-label">Name</label>
                                       <input type="text" class="form-control"
-                                        id="textname" formControlName="name"
-                                        aria-describedby="emailHelp">
+                                        formControlName="name"
+                                        
+                                      >
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Email</label>
+                                      <label class="edit-label">Email</label>
                                       <input type="text" class="form-control"
-                                        id="email-text" formControlName="email"
+                                        id="email-text"
                                         aria-describedby="emailHelp"
                                         value="{{userid}}" readonly disabled>
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Mobile</label>
+                                      <label class="edit-label">Mobile</label>
                                       <input type="text" class="form-control"
-                                        id="phone-text" formControlName="mobile"
-                                        aria-describedby="emailHelp">
+                                        id="phone-text"
+                                        aria-describedby="emailHelp"
+                                        formControlName="mobile">
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Date Of
+                                      <label class="edit-label">Date Of
                                         Birth</label>
                                       <input type="date" class="form-control"
-                                        id="phone-text" formControlName="dob"
-                                        aria-describedby="emailHelp">
+                                        id="phone-text"
+                                        aria-describedby="emailHelp"
+                                        formControlName="dob">
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Language</label>
+                                      <label class="edit-label">Language</label>
                                       <select class="form-control"
                                         id="phone-text"
                                         formControlName="language"
                                         aria-describedby="emailHelp">
                                         <option value="">Select Language</option>
-                                        <option value="{{lang.id}}" *ngFor="let
-                                          lang of language_list">{{lang.language}}
+                                        <option
+                                          *ngFor="let
+                                          lang of language_list"
+                                          value="{{lang.id}}">{{lang.language}}
                                         </option>
                                       </select>
                                     </div>
 
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Maritial
+                                      <label class="edit-label">Maritial
                                         Status</label>
-                                      <select name="" id="" class="form-control"
+                                      <select id="" class="form-control"
                                         formControlName="maritial">
                                         <option value="">Select Maritial Status</option>
                                         <option value="Married">Married</option>
-                                        <option value="UnMarried">UnMarried</option>
+                                        <option value="Unmarried">Unmarried</option>
                                       </select>
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Profession</label>
+                                      <label class="edit-label">Profession</label>
                                       <select name="" id="" class="form-control"
                                         formControlName="profession">
                                         <option value="">Select Profession</option>
@@ -130,19 +136,20 @@
                                       </select>
                                     </div>
                                     <div class="stepsm">
-                                      <button class="btn-primary-next"
+                                      <a class="btn-primary-next"
                                         id="stepfunone">
                                         Next step
-                                      </button>
+                                    </a>
                                     </div>
                                   </div>
                                   <div id="edit-one" id="editwo" style="display:
                                     none;">
 
                                     <div class="form-group">
-                                      <label class="edit-label" for="">Country</label>
+                                      <label class="edit-label">Country</label>
                                       <select name="" class="form-control"
-                                        id="textname" formControlName="country"
+                                        formControlName="country"
+                                        id="textname"
                                         aria-describedby="emailHelp">
                                         <option value="">Select Your Country</option>
                                         <option value="{{country.id}}"
@@ -151,22 +158,25 @@
                                       </select>
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">State</label>
-                                      <input type="email" class="form-control"
-                                        id="textname" formControlName="state"
+                                      <label class="edit-label">State</label>
+                                      <input type="text" class="form-control"
+                                        formControlName="state"
+                                        id="textname"
                                         aria-describedby="emailHelp">
                                     </div>
                                     <div class="form-group">
-                                      <label class="edit-label" for="">City</label>
+                                      <label class="edit-label">City</label>
                                       <input type="email" class="form-control"
-                                        id="textname" formControlName="city"
+                                        formControlName="city"
+                                        id="textname"
                                         aria-describedby="emailHelp">
                                     </div>
 
                                     <div class="form-group">
                                       <label class="edit-label" for="">Pin Code</label>
-                                      <input type="email" class="form-control"
-                                        id="textname" formControlName="pincode"
+                                      <input  class="form-control"
+                                        formControlName="pincode"
+                                        id="textname"
                                         aria-describedby="emailHelp">
                                     </div>
                                     <div class="form-group">
@@ -178,14 +188,14 @@
                                       </textarea>
                                     </div>
                                     <div>
-                                      <button (click)="addUser()" class="
-                                        btn-primary-next">Submit</button>
+                                      <button 
+                                        class="btn-primary-next" (click)="addUser()">Update</button>
                                     </div>
                                     <div class="step">
-                                      <button class="btn-primary-next"
+                                      <a class="btn-primary-next"
                                         id="stepfuntwo">
                                         Previous Step
-                                      </button>
+                                    </a>
                                     </div>
                                   </div>
 
@@ -216,50 +226,54 @@
                   data-parent="#accordionExample">
                   <div class="card-body">
                     <div>
-                      <section class="hastag-user-section"
-                     >
+                      <section class="hastag-user-section">
                         <div class="">
                           <div class="row">
                             <div class="col-12">
                               <div class="edit-form">
-                                <form [formGroup]="addUserBankForm">
+                                <form [formGroup]="addUserBankForm" (ngSubmit)="addUserBank()">
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
                                       <label class="edit-label" for="">Bank Name</label>
                                       <input type="text"
-                                        id="textname" formControlName="bankname"
-                                        aria-describedby="emailHelp" class="form-control">
+                                        id="textname" name="bankname"
+                                        aria-describedby="emailHelp"
+                                        class="form-control" formControlName="bankname">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">A/C
                                         Holder Name</label>
                                       <input type="text"
-                                        id="textname" formControlName="acholdername"
-                                        aria-describedby="emailHelp" class="form-control">
+                                        id="textname"
+                                        aria-describedby="emailHelp"
+                                        class="form-control" formControlName="acholder">
                                     </div>
-                                    
+
                                     <div class="form-group">
                                       <label class="edit-label" for="">Account
                                         Number</label>
                                       <input type="text"
-                                        id="email-text" formControlName="email"
+                                        id="email-text" name="email"
                                         aria-describedby="emailHelp"
-                                        formControlName="acnumber"  class="form-control">
+                                        class="form-control" formControlName="acnumber">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">Ifsc Code</label>
                                       <input type="text"
-                                        id="phone-text" formControlName="ifsc"
-                                        aria-describedby="emailHelp" class="form-control">
+                                        id="phone-text"
+                                        aria-describedby="emailHelp"
+                                        class="form-control" formControlName="ifsc">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">Upi Id</label>
                                       <input type="text"
-                                        id="textname" formControlName="upiid"
-                                        aria-describedby="emailHelp" class="form-control">
+                                        id="textname"
+                                        aria-describedby="emailHelp"
+                                        class="form-control" formControlName="upiid">
                                     </div>
                                     <div>
-                                      <button (click)="addUserBank()" class="btn-primary-next">Submit</button>
+                                      <button
+                                        class="btn-primary-next" (click)="addUserBank()">Update</button>
                                     </div>
                                   </div>
                                 </form>

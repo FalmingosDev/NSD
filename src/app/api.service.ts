@@ -623,8 +623,8 @@ multiplexVideoPlay(multiplex_id)
     return this.httpClient.get<any>(this.env.laravel_api_url + 'campign-details-list/' + id + '/' + userEmail);
   }
 
-  addacceptcampaign(userid, campaignid) {
-    return this.httpClient.post<any>(this.env.laravel_api_url + 'accept-campaign-by-user', { userid, campaignid });
+  addacceptcampaign(formdata,userid, campaignid) {
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'accept-campaign-by-user', { formdata,userid, campaignid });
   }
 
   categoryMasterList() {
@@ -653,6 +653,11 @@ multiplexVideoPlay(multiplex_id)
     return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata, emails });
   }
 
+
+  getaddUserBankDetails(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-bank-details/' + email);
+  }
+
   addUserBankDetails(userdata, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-bank-details-add', { userdata, email });
   }
@@ -670,4 +675,14 @@ multiplexVideoPlay(multiplex_id)
     return this.httpClient.post<any>(this.env.baseUrl + '/recharge_payment.php', { userdata: objUserData });
   }
   /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
+  hashtagProfileGet(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-details/' + email);
+  }
+
+  
+
+  addAcceptCampaignBefore(email,campaign_id) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
+  }
+
 }

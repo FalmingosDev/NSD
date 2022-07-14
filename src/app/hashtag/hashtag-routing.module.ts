@@ -7,6 +7,7 @@ import { CategorymasterComponent } from './categorymaster/categorymaster.compone
 import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component';
 import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
 import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressadd/pendingsocialandaddressadd.component';
+import { AcceptcampaignbeforeComponent } from './acceptcampaignbefore/acceptcampaignbefore.component';
 
 
 const routes: Routes = [
@@ -17,8 +18,8 @@ const routes: Routes = [
   {path:'categorymaster',component:CategorymasterComponent},
   {path:'myallcampaign',component:MyallcampaignComponent},
   {path:'mypendingcampaign',component:MypendingcampaignComponent},
-  {path:'hashtagsocialandaddressadd/:id',component:PendingsocialandaddressaddComponent}
-  
+  {path:'hashtagsocialandaddressadd/:id',component:PendingsocialandaddressaddComponent},
+  {path:'acceptcampaignbefore/:id',component:AcceptcampaignbeforeComponent}
 ];
 
 @NgModule({

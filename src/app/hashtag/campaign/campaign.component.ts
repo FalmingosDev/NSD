@@ -22,9 +22,14 @@ export class CampaignComponent implements OnInit {
   max_participate: number;
   total_apply: number;
   userEmail: any;
+  check: any;
+
+  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) {
+
+    this.id = this.activatedRoute.snapshot.params['id'];
 
 
-  constructor(private activatedRoute: ActivatedRoute, private campaignDetailsList: ApiService, private addapiacceptcampaign: ApiService, private _router: Router) { }
+  }
 
   ngOnInit(): void {
 
@@ -53,31 +58,29 @@ export class CampaignComponent implements OnInit {
 
       this.message = result.data.message;
 
-      this.results=result.data.common_cat;
+      this.results = result.data.common_cat;
+
+      this.check = result.data.key;
 
     })
 
+
   }
 
-  acceptcampaign(id: any) {
-    let campaignid = id;
-    let userid = this.local_email;
-    this.addapiacceptcampaign.addacceptcampaign(userid, campaignid).subscribe(res => {
-      var resp: any = res;
+  acceptcampaign_before(id: any) {
 
-      if (resp.success == true) {
-        var successmsg = ''
+    if (this.check == "E") {
+      this._router.navigateByUrl('/userprofile');
 
-          // '<button type="button" class="hashtag-accept-btn btn btn-primary">Applied</button>'
-          ;
-        this._router.navigateByUrl('/mypendingcampaign');
+    } else {
+      this._router.navigateByUrl('/acceptcampaignbefore/' + id);
+    }
 
-        document.getElementById("applyreplace").innerHTML = successmsg;
-      }
-    }, error => {
 
-    })
+
   }
+
+
 
 
 }

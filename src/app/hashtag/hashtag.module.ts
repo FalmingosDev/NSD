@@ -11,6 +11,7 @@ import { CategorymasterComponent } from './categorymaster/categorymaster.compone
 import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component';
 import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
 import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressadd/pendingsocialandaddressadd.component';
+import { AcceptcampaignbeforeComponent } from './acceptcampaignbefore/acceptcampaignbefore.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressad
     MyallcampaignComponent,
     MypendingcampaignComponent,
     PendingsocialandaddressaddComponent,
+    AcceptcampaignbeforeComponent,
     
   ],
   imports: [
