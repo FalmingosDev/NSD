@@ -9,10 +9,11 @@
                         <ul>
                             <li class="frisr-child"><a routerLink="/multiplexhome"><i class="fa fa-home"
                                         aria-hidden="true"></i></a></li>
-                            <li class="frisr-child"><a href="#" routerLink="/multiplexpurchaseList">Purchase</a></li>
-                            <li><a href="" routerLink="/multiplexnewlist">New</a></li>
+                            <li class="frisr-child"><a href="#" routerLink="/multiplexnewlist">New</a></li>
+                            <li><a href="#" routerLink="/multiplexpurchaseList">Purchase</a></li>
                             <li><a href="#" routerLink="/multiplextending">Trending</a></li>
-                            <!-- <li><a href="#">Genre1</a></li> -->
+
+                            
                         </ul>
                     </div>
 
@@ -31,7 +32,7 @@
     </section>
 
 
-    <section class="second-part" *ngFor="let item of purchaselist">
+    <section class="second-part" *ngFor="let item of newlist">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -48,12 +49,12 @@
                                 <div class="col-9 chat-chati">
                                     <ul>
                                         <li><span class="movie">{{item.name}}</span></li>
-                                        <li><span>{{item.price}}</span><span *ngIf="item.wallet_point>0">+{{item.wallet_point}}</span></li>
-                                        <li><span>{{item.created_ts|date:'medium'}}</span></li>
+                                        <li><span>{{item.duration_time}}</span><span
+                                                class="main-date">{{item.year}}</span></li>
+                                        <li><span>{{item.genere_name}}</span></li>
                                         <li class="star">
-
-                                           <span class="badge badge-danger" *ngIf="item.is_expired=='Y'">Expired</span>
-                                           <span class="badge badge-success" *ngIf="item.is_expired=='N'"><a routerLink="/multiplexvideoview/{{item.id}}">Available</a></span>
+                                            <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                            <span class="date-text">{{item.rating}}/10</span>
                                             <span class="main-whistlist-new">
                                                 <span *ngIf="item.wishlist_status!=1"><a (click)="addWishList(item.id)"><img
                                                             src="assets/logo/wishlist.svg" class="img-fluid"></a>

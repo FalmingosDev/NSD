@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiService {
+  newlist: any;
   multiplex_id() {
     throw new Error('Method not implemented.');
   }
@@ -543,7 +544,7 @@ export class ApiService {
 
   }
 
-                           /*Multiplex*/ 
+              /*...........................Multiplex........................*/ 
  multiplexList(){
   const user_email = localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-list?user_email='+user_email);
@@ -613,6 +614,25 @@ multiplexVideoPlay(multiplex_id)
   return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-video-view-details?user_email='+user_email+'&multiplex_id='+multiplex_id);
 }
 
+
+multiplexTrendingList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-tending-list?user_email='+user_email);
+}
+
+multiplexNewList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-new-list?user_email='+user_email);
+}
+
+
+multiplexPurchaseList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-purchase-list?user_email='+user_email);
+}
 
   /* Hashtag */
   hashtagcampaignList() {

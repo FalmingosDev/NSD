@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-purchase-list',
@@ -7,8 +8,10 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./purchase-list.component.css']
 })
 export class PurchaseListComponent implements OnInit {
-  list: any;
-
+  purchaselist: any;
+  env=environment;
+  recomendedWishListRemove: any;
+  recomendedWishList: any;
   constructor(private api:ApiService) { }
     
   ngOnInit(): void {
@@ -16,15 +19,30 @@ this.purchaseList();
   }
   purchaseList()
   {
-
-    // alert('hii');
-this.api.purchaseList().subscribe((result)=>
+this.api.multiplexPurchaseList().subscribe((result)=>
 {
-this.list=result.purchase_list;
-console.log("list is:",this.list);
+this.purchaselist=result.purchase_list;
+console.log("list is:",this.purchaselist);
 })
 
   }
- 
+  removeWishList(multiplex_id)
+{
+this.api.removeMultiplexWishlist(multiplex_id).subscribe((result)=>
+{
+  this.recomendedWishListRemove=result;
+  this.purchaseList();
+})
+}
+
+addWishList(multiplex_id)
+  {
+    
+    this.api.addMultiplexWishlist(multiplex_id).subscribe((result) => {
+    this.recomendedWishList=result;
+    this.purchaseList();
+     })
+
+}
 
 }

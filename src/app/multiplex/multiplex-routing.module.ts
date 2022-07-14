@@ -10,6 +10,7 @@ import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.comp
 import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
 import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 import { PurchaseListComponent } from './purchase-list/purchase-list.component';
+import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.component';
 
 const routes: Routes = [
   {path:'multiplexhome',component:MultiplexhomeComponent},
@@ -20,8 +21,8 @@ const routes: Routes = [
   {path:'upcomingviewall',component:UpcomingviewallComponent},
   {path: 'multiplex_payment/:multiplex_id/:price/:curr/:coin', component:MultiplexpaymentComponent},
   {path :'multiplexvideoview/:multiplex_id',component:MultiplexvideoviewComponent},
-  {path:'multiplexpurchaseList',component:PurchaseListComponent}
-
+  {path:'multiplexpurchaseList',component:PurchaseListComponent},
+   {path:'multiplexnewlist',component:MultiplexnewlistComponent}
 
 ];
 
