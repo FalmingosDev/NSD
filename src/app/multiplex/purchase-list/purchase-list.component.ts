@@ -17,7 +17,7 @@ this.purchaseList();
   purchaseList()
   {
 
-    alert('hii');
+    // alert('hii');
 this.api.purchaseList().subscribe((result)=>
 {
 this.list=result.purchase_list;

@@ -17,7 +17,7 @@ env=environment;
   collection:any=[];
    coin: any;
   ngOnInit(): void {
-   var d= this.route.snapshot.params['multiplex_id']
+   var d= this.route.snapshot.params['multiplex_id'];
     this.api.multiplexCheckout(d).subscribe((result)=>
     {
       this.collection=result.multiplex_details;
