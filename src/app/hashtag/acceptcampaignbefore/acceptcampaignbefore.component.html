@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-md-4 col-4">
                     <div class="back_btn_div">
-                        <a routerLink="/"><span>Back</span>
+                        <a routerLink="/hashtag"><span>Back</span>
                             <div class="liquid"></div>
                         </a>
                     </div>
@@ -28,77 +28,41 @@
                     <div class="main-text-head">
                         <div class="accordion" id="accordionExample">
                             <div class="card">
-                                <div class="card-header" data-toggle="collapse"
-                                    data-target="#collapseTwo"
-                                    aria-expanded="true"
-                                    aria-controls="collapseTwo">
+                                <div class="card-header" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                     <span class="title">Delivery Address</span>
                                     <span class="accicon"><i class="fa
                                             fa-angle-down rotate-icon"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <div id="collapseTwo" class="collapse show"
-                                    data-parent="#accordionExample">
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div>
-                                            <section class="hastag-user-section"
-                                               >
+                                            <section class="hastag-user-section">
                                                 <div class="">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <div
-                                                                class="edit-form">
-                                                                <form
-                                                               
-                                                                
-                                                                 [formGroup] = "acceptBefore" (ngSubmit)="acceptcampaign()">
-                                                                    <div
-                                                                        id="edit-one"
-                                                                        id="editone">
-                                                                        <div
-                                                                            class="form-group">
-                                                                            <label
-                                                                                class="edit-label"
-                                                                                for="">
+                                                            <div class="edit-form">
+                                                                <form [formGroup]="acceptBefore" (ngSubmit)="acceptcampaign()">
+                                                                    <div id="edit-one" id="editone">
+                                                                        <div class="form-group">
+                                                                            <label class="edit-label" for="">
                                                                                 
                                                                                 Name</label>
-                                                                            <input
-                                                                                type="text"
-                                                                                id="name"
-                                                                               formControlName="name"
-                                                                                aria-describedby="emailHelp" class="form-control" >
+                                                                            <input type="text" id="name" formControlName="name" aria-describedby="emailHelp" class="form-control" value="{{name}}">
                                                                         </div>
-                                                                        <div
-                                                                            class="form-group">
-                                                                            <label
-                                                                                class="edit-label"
-                                                                                for="">Mobile
+                                                                        <div class="form-group">
+                                                                            <label class="edit-label" for="">Mobile
                                                                                 Number</label>
-                                                                            <input
-                                                                                type="text"
-                                                                                id="mob"
-                                                                               formControlName="mob"
-                                                                                aria-describedby="emailHelp"class="form-control" >
+                                                                            <input type="text" id="mob" formControlName="mob" aria-describedby="emailHelp" class="form-control" value="{{user_contact_number}}">
                                                                         </div>
-                                                                        <div
-                                                                            class="form-group">
-                                                                            <label
-                                                                                class="edit-label"
-                                                                                for="">
+                                                                        <div class="form-group">
+                                                                            <label class="edit-label" for="">
                                                                                 Delivery
                                                                                 Address</label>
-                                                                            <textarea
-                                                                               
-                                                                                id="textname"
-                                                                                formControlName="address"
-                                                                                aria-describedby="emailHelp"
-                                                                                cols="30"
-                                                                                rows="5"class="form-control" ></textarea>
+                                                                            <textarea id="textname" formControlName="address" aria-describedby="emailHelp" cols="30" rows="5" class="form-control">{{user_address_all}}</textarea>
                                                                         </div>
                                                                         <div>
-                                                                            <button
-                                                                               
-                                                                              type="submit"  class="btn-primary-next" >Update</button>
+                                                                            <button type="submit" class="btn-primary-next">Update</button>
                                                                         </div>
                                                                     </div>
                                                                 </form>
@@ -119,9 +83,5 @@
             </div>
         </div>
     </section>
-
-
-
 </div>
-
 <app-welcomefooter></app-welcomefooter>
