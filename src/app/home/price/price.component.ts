@@ -16,6 +16,7 @@ export class PriceComponent implements OnInit {
   code: any;
   id: any;
   referrerid: any;
+  countryCode:string;
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private route:Router,private alertService: AlertService) {
     this.angForm = this.fb.group({
@@ -24,7 +25,7 @@ export class PriceComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    this.countryCode = localStorage.getItem('country_code');
   }
 
   codeverification()
@@ -51,7 +52,12 @@ export class PriceComponent implements OnInit {
                   this.id=res.id;
                   this.alertService.success("Referral Code applied");
                   setTimeout(() => {
-                    this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
+                    if(localStorage.getItem('country_code') != 'IN'){
+                      this.route.navigate(['/payment/3/4999/INR/'+this.id+'']);
+                    }
+                    else{
+                      this.route.navigate(['/payment/3/1999/INR/'+this.id+'']);
+                    }
                 }, 2000);
                 }
                 else{
@@ -65,7 +71,12 @@ export class PriceComponent implements OnInit {
           });       
       }
     else{
-      this.route.navigate(['/payment/3/1999/INR/0']);
+      if(localStorage.getItem('country_code') != 'IN'){
+        this.route.navigate(['/payment/3/4999/INR/0']);
+      }
+      else{
+        this.route.navigate(['/payment/3/1999/INR/0']);
+      }
     }
   }
 

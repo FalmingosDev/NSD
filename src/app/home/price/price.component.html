@@ -19,7 +19,10 @@
                     <div class="pricing-img">
                         <img src="/assets/images/pricing-3-ch.jpg" class="img-fluid">
                         <div class="pricing-text">
-                            <p>
+                            <p *ngIf="countryCode != 'IN'">
+                                <span class="pr-span">₹ <span id="subsamt">4999</span></span>
+                            </p>
+                            <p *ngIf="countryCode == 'IN'">
                                 <span class="pr-span">₹ <span id="subsamt">1999</span></span>
                             </p>
                             <div class="input-new-box">
