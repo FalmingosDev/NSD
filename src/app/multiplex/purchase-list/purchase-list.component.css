@@ -157,11 +157,21 @@
 
 
 
-
     
-    
+.img-fluids{
+    width:7%;
+}   
      
-    
+.timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    letter-spacing: -1px;
+  }
+  .timer span {
+    font-size: 2em;
+    margin: 0 3px 0 15px;
+  }  
     
 /* }
 @media (min-width: 320px) and (max-width: 375px) {

@@ -31,7 +31,8 @@ import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.c
     MultiplexpaymentComponent,
     MultiplexvideoviewComponent,
     PurchaseListComponent,
-    MultiplexnewlistComponent
+    MultiplexnewlistComponent,
+  
   ],
   imports: [
     CommonModule,

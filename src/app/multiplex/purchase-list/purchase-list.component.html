@@ -48,19 +48,35 @@
                                 <div class="col-9 chat-chati">
                                     <ul>
                                         <li><span class="movie">{{item.name}}</span></li>
-                                        <li><span>{{item.price}}</span><span *ngIf="item.wallet_point>0">+{{item.wallet_point}}</span></li>
+                                        <li><img src="assets/logo/ruppee.png"
+                                                class="img-fluids">&nbsp;<span>{{item.price}}</span><span
+                                                *ngIf="item.wallet_point>0"> + {{item.wallet_point}} <span
+                                                    id="logo"><img src="assets/logo/coins-img.png"
+                                                        class="img-fluids"></span></span></li>
                                         <li><span>{{item.created_ts|date:'medium'}}</span></li>
                                         <li class="star">
 
-                                           <span class="badge badge-danger" *ngIf="item.is_expired=='Y'">Expired</span>
-                                           <span class="badge badge-success" *ngIf="item.is_expired=='N'"><a routerLink="/multiplexvideoview/{{item.id}}">Available</a></span>
+                                            <span class="badge badge-danger" *ngIf="item.is_expired=='Y'">Expired</span>
+                                            <span class="badge badge-success" *ngIf="item.is_expired=='N'"><a
+                                                    routerLink="/multiplexvideoview/{{item.id}}">Play</a></span>
                                             <span class="main-whistlist-new">
-                                                <span *ngIf="item.wishlist_status!=1"><a (click)="addWishList(item.id)"><img
+                                                <span *ngIf="item.wishlist_status!=1"><a
+                                                        (click)="addWishList(item.id)"><img
                                                             src="assets/logo/wishlist.svg" class="img-fluid"></a>
                                                 </span>
+
                                                 <span *ngIf="item.wishlist_status==1"><a
                                                         (click)="removeWishList(item.id)"><img
                                                             src="assets/logo/wishlisted.svg" class="img-fluid"></a>
+                                                </span>
+
+                                                <span>
+                                                    <div class="timer">
+
+                                                        <span id="hours">{{ item.created_ts |  date:'hh' }}{{ s}}</span>Hrs
+                                                        <span id="minutes">  </span>Min
+                                                        <span id="seconds">  </span>S
+                                                    </div>
                                                 </span>
                                             </span>
                                         </li>
