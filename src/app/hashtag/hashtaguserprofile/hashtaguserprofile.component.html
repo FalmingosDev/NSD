@@ -68,14 +68,13 @@
                           <div class="row">
                             <div class="col-12">
                               <div class="edit-form">
-                                <form [formGroup]="UserForm" (ngSubmit)="addUser()"> 
+                                <form [formGroup]="UserForm"
+                                  (ngSubmit)="addUser()">
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
                                       <label class="edit-label">Name</label>
                                       <input type="text" class="form-control"
-                                        formControlName="name"
-                                        
-                                      >
+                                        formControlName="name">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label">Email</label>
@@ -139,7 +138,7 @@
                                       <a class="btn-primary-next"
                                         id="stepfunone">
                                         Next step
-                                    </a>
+                                      </a>
                                     </div>
                                   </div>
                                   <div id="edit-one" id="editwo" style="display:
@@ -174,7 +173,7 @@
 
                                     <div class="form-group">
                                       <label class="edit-label" for="">Pin Code</label>
-                                      <input  class="form-control"
+                                      <input class="form-control"
                                         formControlName="pincode"
                                         id="textname"
                                         aria-describedby="emailHelp">
@@ -188,14 +187,15 @@
                                       </textarea>
                                     </div>
                                     <div>
-                                      <button 
-                                        class="btn-primary-next" (click)="addUser()">Update</button>
+                                      <button
+                                        class="btn-primary-next"
+                                        (click)="addUser()">Update</button>
                                     </div>
                                     <div class="step">
                                       <a class="btn-primary-next"
                                         id="stepfuntwo">
                                         Previous Step
-                                    </a>
+                                      </a>
                                     </div>
                                   </div>
 
@@ -213,7 +213,7 @@
               </div>
 
             </div>
-            <div class="accordion" id="accordionExample">
+            <div class="accordion pb-2" id="accordionExample">
               <div class="card">
                 <div class="card-header" data-toggle="collapse"
                   data-target="#collapseTwo" aria-expanded="true"
@@ -231,14 +231,16 @@
                           <div class="row">
                             <div class="col-12">
                               <div class="edit-form">
-                                <form [formGroup]="addUserBankForm" (ngSubmit)="addUserBank()">
+                                <form [formGroup]="addUserBankForm"
+                                  (ngSubmit)="addUserBank()">
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
                                       <label class="edit-label" for="">Bank Name</label>
                                       <input type="text"
                                         id="textname" name="bankname"
                                         aria-describedby="emailHelp"
-                                        class="form-control" formControlName="bankname">
+                                        class="form-control"
+                                        formControlName="bankname">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">A/C
@@ -246,7 +248,8 @@
                                       <input type="text"
                                         id="textname"
                                         aria-describedby="emailHelp"
-                                        class="form-control" formControlName="acholder">
+                                        class="form-control"
+                                        formControlName="acholder">
                                     </div>
 
                                     <div class="form-group">
@@ -255,25 +258,29 @@
                                       <input type="text"
                                         id="email-text" name="email"
                                         aria-describedby="emailHelp"
-                                        class="form-control" formControlName="acnumber">
+                                        class="form-control"
+                                        formControlName="acnumber">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">Ifsc Code</label>
                                       <input type="text"
                                         id="phone-text"
                                         aria-describedby="emailHelp"
-                                        class="form-control" formControlName="ifsc">
+                                        class="form-control"
+                                        formControlName="ifsc">
                                     </div>
                                     <div class="form-group">
                                       <label class="edit-label" for="">Upi Id</label>
                                       <input type="text"
                                         id="textname"
                                         aria-describedby="emailHelp"
-                                        class="form-control" formControlName="upiid">
+                                        class="form-control"
+                                        formControlName="upiid">
                                     </div>
                                     <div>
                                       <button
-                                        class="btn-primary-next" (click)="addUserBank()">Update</button>
+                                        class="btn-primary-next"
+                                        (click)="addUserBank()">Update</button>
                                     </div>
                                   </div>
                                 </form>
@@ -288,6 +295,9 @@
                 </div>
               </div>
 
+            </div>
+            <div class="card card-header">
+              <p class="hastag-cl" routerLink="/categorymaster">Hashtag Interest<i aria-hidden="true" class="fa fa-angle-down rotate-icon"></i></p>
             </div>
           </div>
         </div>

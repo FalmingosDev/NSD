@@ -1,5 +1,5 @@
 <div class="category-head-master">
-    
+
     <section class="edit-profile-img">
         <div class="container">
             <div class="row">
@@ -20,11 +20,11 @@
                     </div>
                 </div> -->
             </div>
-        </div>  
+        </div>
     </section>
 
     <div>
-        <form [formGroup]="form" >
+        <form [formGroup]="getInterestandsocialForm">
             <section class="influencer-section">
                 <div class="container">
                     <div class="row">
@@ -34,11 +34,15 @@
 
                                 <ul>
                                     <li *ngFor="let categorymasteritem of allcategorymaster;let i=index">
+
+
                                         <input type="checkbox" id="cb{{categorymasteritem.category_id}}"
-                                            value="{{categorymasteritem.category_id}}" formArrayName="selectedOffer" (change)="onCheckboxofferChange($event)"/>
+                                            value="{{categorymasteritem.category_id}}" (change)="interestChange($event)"
+                                            [checked]="singleInterest.indexOf(categorymasteritem.category_id)!=-1" />
 
                                         <label for="cb{{categorymasteritem.category_id}}">
-                                            <img src="{{env.hashtag_category+ categorymasteritem.category_image}}" class="img-fluid" />
+                                            <img src="{{env.hashtag_category+ categorymasteritem.category_image}}"
+                                                class="img-fluid" />
                                             <p class="ft-p">{{categorymasteritem.category_name}}</p>
                                         </label>
                                     </li>
@@ -49,8 +53,8 @@
                     </div>
                 </div>
             </section>
-        </form>
-        <form [formGroup]="productForm">     
+
+
             <section class="share-interest">
                 <div class="container">
                     <div class="row">
@@ -61,32 +65,32 @@
                                     <span class="input-group-text fb-color"><i class="fa fa-facebook"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" formControlName="facebook" class="form-control input_user fb-in-background" 
-                                    placeholder="Facebook" >
+                                <input type="text" formControlName="facebook"
+                                    class="form-control input_user fb-in-background" placeholder="Facebook">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text insta-color"><i class="fa fa-instagram"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" formControlName="instagram" class="form-control input_user insta-in-background" 
-                                    placeholder="Instagram" >
+                                <input type="text" formControlName="instagram"
+                                    class="form-control input_user insta-in-background" placeholder="Instagram">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text youtube-color"><i class="fa fa-youtube-play"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" formControlName="youtube" class="form-control input_user youtube-in-background"
-                                     placeholder="Youtube" >
+                                <input type="text" formControlName="youtube"
+                                    class="form-control input_user youtube-in-background" placeholder="Youtube">
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text twitter-color"><i class="fa fa-twitter"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" formControlName="twitter" class="form-control input_user fb-in-twiter" 
-                                    placeholder="Twitter" >
+                                <input type="text" formControlName="twitter"
+                                    class="form-control input_user fb-in-twiter" placeholder="Twitter">
                             </div>
 
                             <div class="input-group mb-2">
@@ -94,8 +98,8 @@
                                     <span class="input-group-text amazon-color"><i class="fa fa-amazon"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" formControlName="amazon" class="form-control input_user fb-in-twiter" 
-                                    placeholder="Amazon" >
+                                <input type="text" formControlName="amazon" class="form-control input_user fb-in-twiter"
+                                    placeholder="Amazon">
                             </div>
 
 

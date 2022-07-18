@@ -524,5 +524,11 @@ a .liquid::before {
         width: 100%;
         object-fit: cover;
     }
+    .hastag-cl{
+        margin: 0;
+    }
+    .hastag-cl i{
+        float: right;
+    }
 
 }
