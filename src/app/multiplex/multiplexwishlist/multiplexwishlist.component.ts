@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MultiplexwishlistComponent implements OnInit {
    env=environment;
+  yesterday: any;
   constructor(private api:ApiService,private router:Router) { }
    wishListShow:any=[];
    recomendedWishListRemove :any=[];
@@ -22,6 +23,10 @@ export class MultiplexwishlistComponent implements OnInit {
     this.api.wishList().subscribe((result)=>
     {
       this.wishListShow=result.multiplex_wishlist;
+      this.yesterday=result.yesterday;
+      //console.log(this.yesterday)
+
+
     })
   }
 
@@ -37,9 +42,9 @@ export class MultiplexwishlistComponent implements OnInit {
      
 }
 
-checkSubscribe(multiplex_id,is_subscribe)
+checkSubscribe(multiplex_id,purchase_time,yesterday)
 {
-  if(is_subscribe=='Y')
+  if(purchase_time>yesterday)
   {
     this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
   }

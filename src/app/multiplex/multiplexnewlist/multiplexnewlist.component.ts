@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,8 @@ export class MultiplexnewlistComponent implements OnInit {
 env=environment;
   recomendedWishListRemove: any;
   recomendedWishList: any;
-  constructor( private api:ApiService) { }
+  yesterday: any;
+  constructor(private route:ActivatedRoute,private api: ApiService,private router:Router,) { }
 
   ngOnInit(): void {
     this.multiplexNewList();
@@ -24,6 +26,7 @@ env=environment;
 this.api.multiplexNewList().subscribe((result)=>
 {
 this.newlist=result.new_multiplex_list;
+this.yesterday=result.yesterday;
 console.log(this.newlist);
 
 })
@@ -48,5 +51,21 @@ console.log(this.newlist);
        })
   
   }
-  
+  checkSubscribe(multiplex_id,purchase_time,yesterday)
+{
+
+
+  if(purchase_time>yesterday)
+  {
+    this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
+  }
+  else
+  {
+    this.router.navigate(['/multiplexcheckout/'+multiplex_id]);
+  }
 }
+
+ 
+}
+  
+

@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class RecommendedwishlistComponent implements OnInit {
   env=environment;
   recomendedWishList: any;
+  yesterday: any;
   
   constructor(private api:ApiService,private router:Router) { }
    wishListShow:any=[];
@@ -26,6 +27,7 @@ export class RecommendedwishlistComponent implements OnInit {
     this.api.viewAllWishList().subscribe((result)=>
     {
       this.wishListShow=result.recommended_multiplex_list;
+      this.yesterday=result.yesterday;
     })
 }
 removeWishList(multiplex_id)
@@ -46,9 +48,9 @@ addWishList(multiplex_id)
      })
 
 }
-checkSubscribe(multiplex_id,is_subscribe)
+checkSubscribe(multiplex_id,purchase_time,yesterday)
 {
-  if(is_subscribe=='Y')
+  if(purchase_time>yesterday)
   {
     this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
   }

@@ -547,6 +547,7 @@ export class ApiService {
               /*...........................Multiplex........................*/ 
  multiplexList(){
   const user_email = localStorage.getItem('token');
+  
     return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-list?user_email='+user_email);
    }
   

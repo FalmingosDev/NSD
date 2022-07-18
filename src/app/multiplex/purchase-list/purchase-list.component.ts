@@ -20,7 +20,7 @@ export class PurchaseListComponent implements OnInit, OnDestroy {
 
  
 
- public dDay = new Date('Jul 15 2022 16:13:00');
+ public dDay = new Date('Jul 18 2022 16:13:00');
   //alert()
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
@@ -34,12 +34,12 @@ export class PurchaseListComponent implements OnInit, OnDestroy {
   public daysToDday!: number;
 
   
-  // private getTimeDifference () {
-  //   // alert(this.dDay);
-  //   // alert(this.dateNow);
-  //     this.timeDifference = this.dDay.getTime() - new  Date().getTime();
-  //     this.allocateTimeUnits(this.timeDifference);
-  // }
+  private getTimeDifference () {
+    // alert(this.dDay);
+    // alert(this.dateNow);
+      this.timeDifference = this.dDay.getTime() - new  Date().getTime();
+      this.allocateTimeUnits(this.timeDifference);
+  }
 
 private allocateTimeUnits (timeDifference: any) {
       this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
@@ -64,12 +64,15 @@ private allocateTimeUnits (timeDifference: any) {
 
   ngOnInit(): void {
 
-    // this.subscription = interval(1000)
-    //   .subscribe((x: any) => { this.getTimeDifference(); });
-    //  this.curDate = new Date();
+    this.subscription = interval(1000)
+      .subscribe((x: any) => { this.getTimeDifference(); });
+     this.curDate = new Date();
 
      var time = new Date();
+    // alert(time);
 
+
+    
     this.second=time.toLocaleString('en-US', { hour: 'numeric',minute:'numeric',second:'numeric', hour12: false },
 
 );  
@@ -77,9 +80,9 @@ const [hours, minutes, seconds] = this.second.split(':');
 const totalSeconds = (+hours) * 60 * 60 + (+minutes) * 60 + (+seconds);
 console.log("total second ",totalSeconds);
 var s=totalSeconds;
-alert(s)
+//alert(s)
 
-    // this.getTime(getTime);
+    //this.getTime(getTime);
     this.purchaseList();
   }
   purchaseList() {

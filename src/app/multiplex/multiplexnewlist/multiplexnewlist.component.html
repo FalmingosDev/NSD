@@ -47,11 +47,11 @@
 
                                 </div>
                                 <div class="col-9 chat-chati">
-                                    <ul>
+                                    <ul><a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
                                         <li><span class="movie">{{item.name}}</span></li>
                                         <li><span>{{item.duration_time}}</span><span
                                                 class="main-date">{{item.year}}</span></li>
-                                        <li><span>{{item.genere_name}}</span></li>
+                                        <li><span>{{item.genere_name}}</span></li></a>
                                         <li class="star">
                                             <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
                                             <span class="date-text">{{item.rating}}/10</span>

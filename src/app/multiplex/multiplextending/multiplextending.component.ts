@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +13,8 @@ export class MultiplextendingComponent implements OnInit {
   env=environment;
   recomendedWishListRemove :any;
   recomendedWishList:any;
-  constructor(private api:ApiService) { }
+  yesterday: any;
+  constructor(private api:ApiService,private router:Router) { }
 
   ngOnInit(): void {
 this.trendingList();
@@ -22,7 +24,8 @@ this.trendingList();
   {
     this.api.multiplexTrendingList().subscribe((result)=>{
       this.trendinglist=result.tending_multiplex_list;
-      console.log(this.trendinglist);
+      // console.log(this.trendinglist);
+      this.yesterday=result.yesterday;
     
      })
     
@@ -45,6 +48,19 @@ addWishList(multiplex_id)
     this.trendingList();
      })
 
+}
+checkSubscribe(multiplex_id,purchase_time,yesterday)
+{
+
+
+  if(purchase_time>yesterday)
+  {
+    this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
+  }
+  else
+  {
+    this.router.navigate(['/multiplexcheckout/'+multiplex_id]);
+  }
 }
 
 }
