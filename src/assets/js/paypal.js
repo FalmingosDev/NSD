@@ -7,7 +7,8 @@ paypal.Buttons({
         return actions.order.create({
             purchase_units : [{
                 amount: {
-                    value: $("#holding_amt").html()
+                    value: 1
+                    // value: $("#holding_amt").html()
                 }
             }]
         });
@@ -15,7 +16,7 @@ paypal.Buttons({
     onApprove: function (data, actions) {
         return actions.order.capture().then(function (details) {
             console.log(details)
-			$.ajax({
+			/*$.ajax({
 				type: 'POST',
 				url: '../handler/dashboard.php',
 				data: {actionType:'submit_transaction', transId: details.id},
@@ -34,7 +35,7 @@ paypal.Buttons({
 					jQuery("#paypalcancelmodal").modal('show');
 					holdingdata();
 				}
-			}) 
+			})*/ 
         })
     },
     onCancel: function (data) {
