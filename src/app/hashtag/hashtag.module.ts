@@ -12,6 +12,7 @@ import { MyallcampaignComponent } from './myallcampaign/myallcampaign.component'
 import { MypendingcampaignComponent } from './mypendingcampaign/mypendingcampaign.component';
 import { PendingsocialandaddressaddComponent } from './pendingsocialandaddressadd/pendingsocialandaddressadd.component';
 import { AcceptcampaignbeforeComponent } from './acceptcampaignbefore/acceptcampaignbefore.component';
+import { AlertModule } from 'ngx-alerts';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AcceptcampaignbeforeComponent } from './acceptcampaignbefore/acceptcamp
     HomeModule,
     FormsModule,
     ReactiveFormsModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000})
   ],
   bootstrap: [HashtaghomeComponent]
 })

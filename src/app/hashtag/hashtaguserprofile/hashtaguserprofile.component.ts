@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form, FormControl } from '@angular/forms';
 import * as $ from 'jquery';
 import { ApiService } from 'src/app/api.service';
+import { AlertService } from 'ngx-alerts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hashtaguserprofile',
@@ -36,6 +38,8 @@ export class HashtaguserprofileComponent implements OnInit {
   acnumber: any;
   ifsc: any;
   upiid: any;
+  msg_data: any;
+  msgs: any;
   ngAfterViewInit() {
     $(document).ready(function () {
       $("#stepfunone").click(function () {
@@ -49,16 +53,7 @@ export class HashtaguserprofileComponent implements OnInit {
     });
   }
 
-  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService) {
-
-
-    // this.email_id = this.local_email;
-
-    // this.hashtagProfileGetDetails(this.email_id);
-
-
-
-  }
+  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService, private alertService: AlertService, private _router: Router,private UserBankDetailsOthers:ApiService) { }
 
   ngOnInit(): void {
 
@@ -87,20 +82,7 @@ export class HashtaguserprofileComponent implements OnInit {
       upiid: new FormControl()
 
     })
-  
-  
-    
 
-    // $(document).ready(function () {
-    //   $("#stepfunone").click(function () {
-    //     $("#editwo").show();
-    //     $("#editone").hide();
-    //   });
-    //   $("#stepfuntwo").click(function () {
-    //     $("#editone").show();
-    //     $("#editwo").hide();
-    //   });
-    // });
 
     this.getCountryList.CountryList().subscribe((result) => {
 
@@ -150,7 +132,7 @@ export class HashtaguserprofileComponent implements OnInit {
     /* bank updated  */
 
 
-    this.UserBankDetails.getaddUserBankDetails(this.local_email).subscribe((result) => {
+    this.UserBankDetailsOthers.getaddUserBankDetails(this.local_email).subscribe((result) => {
 
       this.bankname = result.data.bank_details.bank_name;
       this.acholder = result.data.bank_details.bank_account_holder;
@@ -158,7 +140,7 @@ export class HashtaguserprofileComponent implements OnInit {
       this.ifsc = result.data.bank_details.bank_ifsc;
       this.upiid = result.data.bank_details.upi_id;
 
-     
+
 
       this.addUserBankForm = new FormGroup({
 
@@ -195,6 +177,13 @@ export class HashtaguserprofileComponent implements OnInit {
     this.UserBankDetails.addUserBankDetails(this.addUserBankForm.value, this.userid).subscribe({
       next: (res) => {
         //alert("User Bank Added SuccessFully !")
+        this.msg_data = res.data;
+        this.msgs = this.msg_data.msg;
+        this.alertService.success(this.msgs);
+
+        setTimeout(() => {
+          this._router.navigateByUrl('/hashtag');
+        }, 3000);
       },
       error: () => {
         alert("Error")
