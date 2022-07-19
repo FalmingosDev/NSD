@@ -65,7 +65,6 @@ export class HashtaguserprofileComponent implements OnInit {
     this.UserForm = new FormGroup({
 
       name: new FormControl(''),
-      // name: controls['name'].setValue(this.name),
       mobile: new FormControl(''),
       dob: new FormControl(''),
       language: new FormControl(''),
@@ -89,8 +88,7 @@ export class HashtaguserprofileComponent implements OnInit {
 
     })
   
-
-
+  
     
 
     // $(document).ready(function () {
@@ -132,10 +130,7 @@ export class HashtaguserprofileComponent implements OnInit {
 
       this.UserForm = new FormGroup({
 
-
-
         name: new FormControl(this.name),
-        // name: controls['name'].setValue(this.name),
         mobile: new FormControl(this.mob),
         dob: new FormControl(this.dob),
         language: new FormControl(this.langu),

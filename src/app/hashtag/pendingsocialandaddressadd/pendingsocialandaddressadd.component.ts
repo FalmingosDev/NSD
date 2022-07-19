@@ -28,9 +28,7 @@ export class PendingsocialandaddressaddComponent implements OnInit {
     this.addsocialandaddress = this.formBuilder.group({
 
       camp_link: ['', Validators.required],
-      mob: ['', Validators.required],
-      address: ['', Validators.required]
-
+      
     })
 
 
