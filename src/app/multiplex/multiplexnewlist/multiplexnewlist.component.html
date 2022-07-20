@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="col-9 chat-chati">
                                     <ul><a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
-                                        <li><span class="movie">{{item.name}}</span></li>
+                                        <li><span class="movie">{{item.name.slice(0, 20 )}}</span></li>
                                         <li><span>{{item.duration_time}}</span><span
                                                 class="main-date">{{item.year}}</span></li>
                                         <li><span>{{item.genere_name}}</span></li></a>

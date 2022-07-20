@@ -41,7 +41,7 @@ export class MultiplexhomeComponent implements OnInit {
     nav: false
   };
   customOptionsforshowflim: OwlOptions = {
-    autoplay: true,
+    // autoplay: true,
     loop: true,
     mouseDrag: false,
     touchDrag: false,

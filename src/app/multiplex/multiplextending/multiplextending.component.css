@@ -1,14 +1,14 @@
-
-    .body-strucre{margin-bottom: 100px;}
-    .t-b-s-background {
-        background: #4766866b;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
+.body-strucre{margin-bottom: 100px;}
+.t-b-s-background {
+    background: #462aa1;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
     .top-text-sm ul li{
         position: relative;
     }
-   .top-text-sm ul li:nth-child(4):after {
+   /* .top-text-sm ul li:nth-child(4):after {
     position: absolute;
     content: '';
     width: 73px;
@@ -17,7 +17,7 @@
     background: linear-gradient(90deg, rgba(2,0,36,1) 181b3e%, rgba(24,27,62,1) 181b3e%);
     background: rgb(26,28,66);
     background: linear-gradient(277deg, rgba(26,28,66,1) 0%, rgb(26 28 66 / 89%) 100%);
-}
+} */
     
   
     .date-text{font-size: 12px;margin: 0 5px;}
@@ -95,7 +95,7 @@
     margin: -13px 39px;
 }
     .second-part-1{padding: 15px 10px;}
-    .second-part{margin: 10px 10px;}
+    .second-part{margin: 15px 10px;}
     .thirt-part p{color: #fff;font-size: 14px;}
     .thirt-part{margin: 5px 10px;}
     .second-part p{color: #fff; font-size: 14px;}
@@ -107,16 +107,17 @@
     border-radius: 3px;
     }
     .owl-nav{text-align: right !important;}
-    .t-b-s-background{
+    /* .t-b-s-background{
         background: #6850b2;
-}
+} */
     .show-box img{border-radius: 10px;}
     .chat-chati ul li{list-style: none;}
     .chat-chati ul li{color: #fff;line-height:1.5rem;}
    
-    .movie{font-size: 16px;
+    .movie{font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.1rem;}
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;}
     .chat-chati li{font-size: 13px;}
     .bg-f-img1 img {
  width: 6% !important;
@@ -132,7 +133,7 @@
    width: 26% !important;
     position: absolute;
     top: 0px;
-    left: 0px;}
+}
     .chat-chati ul{padding: 10px 16px;
     margin: 0 0px;}
     .frisr-child a{color: #fff!important;font-size: 18px;}
@@ -162,38 +163,16 @@
     
      
     
-    
-/* }
-@media (min-width: 320px) and (max-width: 375px) {
-     .bg-f-img-text p{
-    font-size: 16px;
-    color: #493783;
-    font-weight: 500;   
-    text-align: center
-}
-.book-now {
-    position: relative;
-    top: -35px!important;
-    left: 9px;
-}
-    .bg-f-img-text{font-size: 16px;color: #000; font-weight: 500}
-    
-    .show-box img {
-        width: 27%!important;  
-        position: absolute;
-        top: 2px;
-        left: 0px;
-}
-    .chat-chati ul {
-    padding: 5px 10px !important;
-    margin: 0 0px;
-}
-.chat-chati li{font-size: 11px !important;} 
-.date-text{font-size: 10px !important;margin: 1px 2px 2px 2px;}  
 
-   
+@media (min-width: 320px) and (max-width: 375px) {
+    
+    .show-box img{
+        width: 27% !important;
+         position: absolute;
+         top: 0px;
+       }
     
 }
- */
+
 
    

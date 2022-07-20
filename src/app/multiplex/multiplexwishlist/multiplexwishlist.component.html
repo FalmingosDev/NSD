@@ -1,27 +1,29 @@
 <div class="body-strucre">
-    
+       
     <section class="top-bar-nav">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-7">
+                <div class="col-10">
                     <div class="main-wishlist-1">
-                      <div> <a routerLink="/multiplexhome"><img src="assets/logo/back-btn.webp" class="img-fluid"></a></div>
-                            <h3>My wishlist</h3>
+                        <div> <a routerLink="/multiplexhome"><img src="assets/logo/back-btn.webp" class="img-fluid"></a>
+                        </div>
+                        <h3>My wishlist</h3>
                     </div>
                 </div>
-                <div class="col-md-12 col-5">
+                <div class="col-2">
                     <div class="main-wishlist">
                         <img src=" assets/logo/wishlist.webp" class="img-fluid">
                         
                     </div>
                 </div>
-    
+               
+
             </div>
-    
+
         </div>
     </section>
-    <div *ngFor="let item of wishListShow">
-    <section class="second-part-1">
+  
+    <section class="second-part" *ngFor="let item of wishListShow">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -41,7 +43,7 @@
                                                 <div class="col-9 chat-chati">
                                                 <ul>
                                                     <a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
-                                                    <li><span class="movie">{{item.name}}</span></li>
+                                                    <li><span class="movie">{{item.name.slice(0, 20 )}}</span></li>
                                                     <li><span>{{item.duration_time}}</span><span class="main-date">{{item.year}}</span></li>
                                                     <li><span>{{item.genere_name}}</span></li>
                                                     </a>
@@ -66,7 +68,7 @@
             </div>
         </div>
     </section>
-    </div>
+    
 
     </div>
     
