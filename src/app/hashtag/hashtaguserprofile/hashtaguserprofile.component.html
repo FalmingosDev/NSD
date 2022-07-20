@@ -103,9 +103,9 @@
                                     <div class="form-group">
                                       <label class="edit-label">Language</label>
                                       <select class="form-control"
-                                        id="phone-text"
+                                        id="languageAdd"
                                         formControlName="language"
-                                        aria-describedby="emailHelp">
+                                        aria-describedby="emailHelp" >
                                         <option value="">Select Language</option>
                                         <option
                                           *ngFor="let
@@ -191,7 +191,7 @@
                                     <div>
                                       <button
                                         class="btn-primary-next"
-                                        (click)="addUser()">Update</button>
+                                        (click)="addUser()" id="profileAdd">Update</button>
                                     </div>
                                     <div class="step">
                                       <a class="btn-primary-next"

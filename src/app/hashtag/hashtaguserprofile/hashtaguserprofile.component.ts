@@ -162,6 +162,7 @@ export class HashtaguserprofileComponent implements OnInit {
 
 
   addUser() {
+
     // // if (this.UserForm.valid) {
     this.UserDetails.addUserDetails(this.UserForm.value, this.local_email).subscribe({
       next: (res) => {
@@ -180,6 +181,8 @@ export class HashtaguserprofileComponent implements OnInit {
     })
     // // }
   }
+
+
 
 
 
