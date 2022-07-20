@@ -60,7 +60,6 @@ export class SignupComponent implements OnInit {
   postdata(angForm1) 
   {
     var action_type = 'signup';
-    // console.log(action_type);
     if (this.name.status == 'INVALID') {
       this.alertService.warning('Please Enter Your Name');
       $('#name').focus();
