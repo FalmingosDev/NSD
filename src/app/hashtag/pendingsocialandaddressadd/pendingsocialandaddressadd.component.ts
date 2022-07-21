@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-pendingsocialandaddressadd',
@@ -14,9 +15,11 @@ export class PendingsocialandaddressaddComponent implements OnInit {
   campaign_id: any;
   userid: string;
   addsocialandaddress !: FormGroup;
+  msg_data: any;
+  msgs: any;
 
 
-  constructor(private formBuilder: FormBuilder, private socialandaddress: ApiService, private activatedRoute: ActivatedRoute, private _router: Router) {
+  constructor(private formBuilder: FormBuilder, private socialandaddress: ApiService, private activatedRoute: ActivatedRoute, private _router: Router,private alertService: AlertService) {
 
   }
 
@@ -43,7 +46,14 @@ export class PendingsocialandaddressaddComponent implements OnInit {
 
     this.socialandaddress.hashtagAddSocialAndAdress(this.addsocialandaddress.value, campaign_id, userid).subscribe({
       next: (res) => {
-        this._router.navigateByUrl('/myallcampaign');
+       
+        this.msg_data = res.data;
+        this.msgs = this.msg_data.msg;
+        this.alertService.success(this.msgs);
+
+        setTimeout(() => {
+          this._router.navigateByUrl('/myallcampaign');
+        }, 3000);
       },
       error: () => {
         alert("Error")

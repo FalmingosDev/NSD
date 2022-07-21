@@ -1,3 +1,5 @@
+
+<ngx-alerts></ngx-alerts>
 <div class="campaign-bottom">
   <section class="header-main">
     <div class="container">
@@ -29,8 +31,8 @@
         </div>
         <div class="col-md-8 col-9">
           <div class="eidt-camp2">
-            <span><a routerLink="/myallcampaign" class="btn-primary2">My all
-                Campain</a></span>
+            <span><a routerLink="/myallcampaign" class="btn-primary2">All
+                Campaigns</a></span>
             <span><a routerLink="/mypendingcampaign" class="btn-primary2">Pending
                 Campaigns</a></span>
           </div>
@@ -69,7 +71,7 @@
                             <div class="col-12">
                               <div class="edit-form">
                                 <form [formGroup]="UserForm"
-                                  (ngSubmit)="addUser()">
+                                  >
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
                                       <label class="edit-label">Name</label>
@@ -101,9 +103,9 @@
                                     <div class="form-group">
                                       <label class="edit-label">Language</label>
                                       <select class="form-control"
-                                        id="phone-text"
+                                        id="languageAdd"
                                         formControlName="language"
-                                        aria-describedby="emailHelp">
+                                        aria-describedby="emailHelp" >
                                         <option value="">Select Language</option>
                                         <option
                                           *ngFor="let
@@ -189,7 +191,7 @@
                                     <div>
                                       <button
                                         class="btn-primary-next"
-                                        (click)="addUser()">Update</button>
+                                        (click)="addUser()" id="profileAdd">Update</button>
                                     </div>
                                     <div class="step">
                                       <a class="btn-primary-next"
@@ -232,7 +234,7 @@
                             <div class="col-12">
                               <div class="edit-form">
                                 <form [formGroup]="addUserBankForm"
-                                  (ngSubmit)="addUserBank()">
+                                  >
                                   <div id="edit-one" id="editone">
                                     <div class="form-group">
                                       <label class="edit-label" for="">Bank Name</label>

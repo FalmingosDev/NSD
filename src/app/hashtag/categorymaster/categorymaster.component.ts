@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { AlertService } from 'ngx-alerts';
 
 
 @Component({
@@ -24,9 +25,12 @@ export class CategorymasterComponent implements OnInit {
   resultInterest: any;
   interest_blank: any;
   arr: any;
+  msg_data: any;
+  msgs: any;
 
 
-  constructor(private categorymaster: ApiService, private getInterestAndSocialDetails: ApiService, private hashtagUserRegis: ApiService, private _router: Router) {
+
+  constructor(private categorymaster: ApiService, private getInterestAndSocialDetails: ApiService, private hashtagUserRegis: ApiService, private _router: Router, private alertService: AlertService) {
 
   }
 
@@ -92,15 +96,18 @@ export class CategorymasterComponent implements OnInit {
   }
 
 
-
-
-
   registerhashtaguser() {
     const email = this.local_email;
     this.hashtagUserRegis.hashtagUserRegis(this.getInterestandsocialForm.value, this.data_arr, email).subscribe({
       next: (res) => {
-        //alert("Hashtag Registration SuccessFully !")
-        this._router.navigateByUrl('/hashtag');
+
+        this.msg_data = res.data;
+        this.msgs = this.msg_data.msg;
+        this.alertService.success(this.msgs);
+
+        setTimeout(() => {
+          this._router.navigateByUrl('/hashtag');
+        }, 3000);
       },
       error: () => {
         //alert("Error")

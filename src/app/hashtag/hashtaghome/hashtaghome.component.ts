@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 import { DatePipe } from '@angular/common';
@@ -13,7 +13,10 @@ import * as $ from 'jquery';
   styleUrls: ['./hashtaghome.component.css']
 })
 export class HashtaghomeComponent implements OnInit {
+
+  @ViewChild('closebutton') closebutton;
  
+
   static AllCampaign: any;
   static result: any;
   [x: string]: any;
@@ -52,7 +55,7 @@ export class HashtaghomeComponent implements OnInit {
     this.email = this.local_email;
     this.campaignList.hashtagcampaignList(this.email).subscribe((result) => {
 
-     
+
 
       if (result.data.key === "hashtag_non_user") {
 
@@ -114,6 +117,8 @@ export class HashtaghomeComponent implements OnInit {
 
   submitfilter() {
 
+    this.closebutton.nativeElement.click();
+
     let filterStatusArray = this.forms.value.selectedStatus;
     console.log(filterStatusArray);
     let filterStatusLength = filterStatusArray.length;
@@ -122,7 +127,13 @@ export class HashtaghomeComponent implements OnInit {
     console.log(filterOfferArray);
     let filterOfferLength = filterOfferArray.length;
 
-    if (filterStatusLength == 0) {
+    if (filterStatusLength==0 && filterOfferLength == 0) {
+
+      this.AllcampaignListAll=this.AllCampaign;
+
+    }
+
+    else if (filterStatusLength == 0) {
       let arrayData;
       arrayData = this.AllCampaign.filter(function (singleData: any) {
 
