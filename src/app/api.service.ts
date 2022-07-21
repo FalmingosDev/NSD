@@ -685,4 +685,9 @@ multiplexVideoPlay(multiplex_id)
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
   }
 
+  
+  getUserInterestAndSocial(email) {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
+  }
+
 }

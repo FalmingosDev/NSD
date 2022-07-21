@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { AlertService } from 'ngx-alerts';
 
 
 @Component({
@@ -22,8 +23,10 @@ export class AcceptcampaignbeforeComponent implements OnInit {
 
   campaign_id: any;
   user_address_all: any;
+  msg_data: any;
+  msgs: any;
  
-  constructor(private activatedRoute: ActivatedRoute, private addapiacceptcampaignbefore: ApiService, private _router: Router, private addapiacceptcampaign: ApiService) {
+  constructor(private activatedRoute: ActivatedRoute, private addapiacceptcampaignbefore: ApiService, private _router: Router, private addapiacceptcampaign: ApiService,private alertService: AlertService) {
 
 
 
@@ -77,7 +80,14 @@ export class AcceptcampaignbeforeComponent implements OnInit {
       this.campaign_id = this.activatedRoute.snapshot.params['id'];
       this.addapiacceptcampaign.addacceptcampaign(this.acceptBefore.value, this.local_email, this.campaign_id).subscribe(results => {
         if (results.success == true) {
-          this._router.navigateByUrl('/mypendingcampaign');
+          
+          this.msg_data = results.data;
+          this.msgs = this.msg_data.msg;
+          this.alertService.success(this.msgs);
+  
+          setTimeout(() => {
+            this._router.navigateByUrl('/mypendingcampaign');
+          }, 3000);
         }
 
       })

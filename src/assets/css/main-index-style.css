@@ -2283,12 +2283,13 @@ header {
 
 .ft-p {
     position: absolute;
-    top: 37%;
+    top: 68%;
     left: 0;
-    right: 37%;
+    right: 0;
     text-align: center;
-    color: #fff;
+    color: #d7cfcf;
     font-size: 12px;
+    background: #0000009c;
 }
 
 .influ-ul h5 {
