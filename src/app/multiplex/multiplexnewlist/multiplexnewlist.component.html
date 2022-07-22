@@ -9,10 +9,11 @@
                         <ul>
                             <li class="frisr-child"><a routerLink="/multiplexhome"><i class="fa fa-home"
                                         aria-hidden="true"></i></a></li>
-                            <li class="frisr-child"><a href="#" routerLink="/multiplexpurchaseList">Purchase</a></li>
-                            <li><a href="" routerLink="/multiplexnewlist">New</a></li>
+                            <li class="frisr-child"><a href="#" routerLink="/multiplexnewlist">New</a></li>
+                            <li><a href="#" routerLink="/multiplexpurchaseList">Purchase</a></li>
                             <li><a href="#" routerLink="/multiplextending">Trending</a></li>
-                            <!-- <li><a href="#">Genre1</a></li> -->
+
+                            
                         </ul>
                     </div>
 
@@ -31,7 +32,7 @@
     </section>
 
 
-    <section class="second-part" *ngFor="let item of purchaselist">
+    <section class="second-part" *ngFor="let item of newlist">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -46,46 +47,22 @@
 
                                 </div>
                                 <div class="col-9 chat-chati">
-                                    <ul>
+                                    <ul><a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
                                         <li><span class="movie">{{item.name.slice(0, 20 )}}</span></li>
-                                        <li class="new-price">
-                                            <img src="assets/logo/ruppee.png"class="img-fluids">
-                                            <span>{{item.price}}</span>
-                                            <span *ngIf="item.wallet_point>0"> + {{item.wallet_point}} 
-                                                <span id="logo"><img src="assets/logo/coins-img.png" class="img-fluid">
-                                                </span>
-                                            </span>
-                                        </li>
-                                        <li class="cal">  
-                                            <span>
-                                                <img src="assets/images/calender.png" class="img-fluid">
-                                            </span>
-                                            <span>{{item.created_ts|date:'medium'}}</span>
-                                        </li>
+                                        <li><span>{{item.duration_time}}</span><span
+                                                class="main-date">{{item.year}}</span></li>
+                                        <li><span>{{item.genere_name}}</span></li></a>
                                         <li class="star">
-
-                                            <span class="badge badge-danger" *ngIf="item.is_expired=='Y'">Expired</span>
-                                            <span class="badge badge-success" *ngIf="item.is_expired=='N'"><a
-                                                    routerLink="/multiplexvideoview/{{item.id}}">Play</a></span>
+                                            <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                            <span class="date-text">{{item.rating}}/10</span>
                                             <span class="main-whistlist-new">
-                                                <span *ngIf="item.wishlist_status!=1"><a
-                                                        (click)="addWishList(item.id)"><img
+                                                <span *ngIf="item.wishlist_status!=1"><a (click)="addWishList(item.id)"><img
                                                             src="assets/logo/wishlist.svg" class="img-fluid"></a>
                                                 </span>
-
                                                 <span *ngIf="item.wishlist_status==1"><a
                                                         (click)="removeWishList(item.id)"><img
                                                             src="assets/logo/wishlisted.svg" class="img-fluid"></a>
                                                 </span>
-
-                                                <!-- <span>
-                                                    <div class="timer">
-
-                                                        <span id="hours"> {{hoursToDday}} </span>Hrs 
-                                                    <span id="minutes"> {{minutesToDday}} </span>Min
-                                                 <span id="seconds"> {{secondsToDday}} </span>S
-                                                    </div>
-                                                </span> -->
                                             </span>
                                         </li>
                                     </ul>

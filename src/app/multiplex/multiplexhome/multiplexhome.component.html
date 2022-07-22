@@ -26,7 +26,7 @@
                             <li class="frisr-child"><a routerLink=""><i class="fa fa-home" aria-hidden="true"></i></a>
                             </li>
                             <li class="second"><a routerLink="/multiplextending">Trending</a></li>
-                            <li><a href="">New</a></li>
+                            <li><a href="" routerLink="/multiplexnewlist">New</a></li>
                             <li><a routerLink="/multiplexpurchaseList">Purchase</a></li>
 
                         </ul>
@@ -36,7 +36,7 @@
 
                 <div class="col-md-12 col-12">
                     <div class="search-btn">
-                        <a href=""><img src="assets/images/search.svg" class="img-fluid"></a>
+                        <!-- <a href=""><img src="assets/images/search.svg" class="img-fluid"></a> -->
                     </div>
 
                 </div>
@@ -63,7 +63,7 @@
                                             <div class="block-n-text">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <p>{{item.name}}</p>
+                                                        <p>{{item.name.slice(0, 15 )}}</p>
                                                     </div>
                                                     <div class="col-4 p-0">
                                                         <span class="bg-f-img"><img src="assets/images/rating-fill.svg"
@@ -90,10 +90,10 @@
                                                         <div class="col-8 bg-f-img-text">
                                                             <p>Book Now</p>
                                                         </div>
-                                                        <div class="col-4 p-0">
-                                                            <span class="bg-f-img-text">{{item.price|number}}<img
-                                                                    src="assets/images/ruppee.png"
-                                                                    class="img-fluid"></span>
+                                                        <div class="col-4 p-0 bg-f-img-text">
+                                                            <p class="">{{item.price|number}}<span><img
+                                                                        src="assets/images/ruppee.png"
+                                                                        class="img-fluid"></span></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,8 +139,8 @@
                                         </div>
                                         <div class="col-9 chat-chati">
                                             <ul>
-                                                <a (click)="checkSubscribe(item.id,item.is_subscribe)">
-                                                    <li><span class="movie">{{item.name}}</span></li>
+                                                <a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
+                                                    <li><span class="movie">{{item.name.slice(0, 20 )}}</span></li>
                                                     <li><span>{{item.duration_time}}</span><span
                                                             class="main-date">{{item.year}}</span></li>
                                                     <li><span>{{item.genere_name}}</span></li>
@@ -202,14 +202,18 @@
                                         </div>
                                         <div class="col-9 chat-chati">
                                             <ul>
-                                                <li><span class="movie">{{item.name}}</span></li>
+                                                <li><span class="movie">{{item.name.slice(0, 18)}}</span></li>
                                                 <!-- <li><span>2 hr 02 min</span></li> -->
                                                 <li><span>{{item.genere_name}}</span></li>
                                                 <li class="cal">
                                                     <span><img src="assets/images/calender.png"
                                                             class="img-fluid"></span>
-                                                    <span class="date-text">{{item.start_date|date:'fullDate'}}</span>
+                                                    <span class="date-text">{{item.start_date|date:'EEE, d MMM
+                                                        y'}}</span>
 
+                                                </li>
+                                                <li>
+                                                    <span class="badge badge-warning text-dark">Upcoming</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -250,7 +254,7 @@
                                         </div>
                                         <div class="col-9 chat-chati">
                                             <ul>
-                                                <a (click)="checkSubscribe(item.id,item.is_subscribe)">
+                                                <a (click)="checkSubscribe(item.id,item.purchase_time,yesterday)">
                                                     <li><span class="movie">{{item.name}}</span></li>
                                                     <li><span>{{item.duration_time}}</span><span
                                                             class="main-date">{{item.year}}</span></li>

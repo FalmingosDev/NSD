@@ -17,6 +17,7 @@ import { UpcomingviewallComponent } from './upcomingviewall/upcomingviewall.comp
 import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.component';
 import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 import { PurchaseListComponent } from './purchase-list/purchase-list.component';
+import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.component';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { PurchaseListComponent } from './purchase-list/purchase-list.component';
     UpcomingviewallComponent,
     MultiplexpaymentComponent,
     MultiplexvideoviewComponent,
-    PurchaseListComponent
+    PurchaseListComponent,
+    MultiplexnewlistComponent,
+  
   ],
   imports: [
     CommonModule,

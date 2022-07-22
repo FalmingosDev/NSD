@@ -4,38 +4,39 @@ import { ApiService } from 'src/app/api.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-recommendedwishlist',
-  templateUrl: './recommendedwishlist.component.html',
-  styleUrls: ['./recommendedwishlist.component.css']
+  selector: 'app-multiplextending',
+  templateUrl: './multiplextending.component.html',
+  styleUrls: ['./multiplextending.component.css']
 })
-export class RecommendedwishlistComponent implements OnInit {
+export class MultiplextendingComponent implements OnInit {
+  trendinglist: any;
   env=environment;
-  recomendedWishList: any;
+  recomendedWishListRemove :any;
+  recomendedWishList:any;
   yesterday: any;
-  
   constructor(private api:ApiService,private router:Router) { }
-   wishListShow:any=[];
-   recomendedWishListRemove :any=[];
-   findWishListId:any=[];
-   
+
   ngOnInit(): void {
-   this.viewAllRecommendedList();
+this.trendingList();
   }
 
-  viewAllRecommendedList()
+  trendingList()
   {
-    this.api.viewAllWishList().subscribe((result)=>
-    {
-      this.wishListShow=result.recommended_multiplex_list;
+    this.api.multiplexTrendingList().subscribe((result)=>{
+      this.trendinglist=result.tending_multiplex_list;
+      // console.log(this.trendinglist);
       this.yesterday=result.yesterday;
-    })
-}
-removeWishList(multiplex_id)
+    
+     })
+    
+  }
+
+  removeWishList(multiplex_id)
 {
 this.api.removeMultiplexWishlist(multiplex_id).subscribe((result)=>
 {
   this.recomendedWishListRemove=result;
-  this.viewAllRecommendedList();
+  this.trendingList();
 })
 }
 
@@ -44,12 +45,14 @@ addWishList(multiplex_id)
     
     this.api.addMultiplexWishlist(multiplex_id).subscribe((result) => {
     this.recomendedWishList=result;
-    this.viewAllRecommendedList();
+    this.trendingList();
      })
 
 }
 checkSubscribe(multiplex_id,purchase_time,yesterday)
 {
+
+
   if(purchase_time>yesterday)
   {
     this.router.navigate(['/multiplexvideoview/'+multiplex_id]);
