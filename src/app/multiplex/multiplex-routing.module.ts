@@ -11,6 +11,8 @@ import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.c
 import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 import { PurchaseListComponent } from './purchase-list/purchase-list.component';
 import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.component';
+import { MultiplexpaymentsuccessComponent } from './multiplexpaymentsuccess/multiplexpaymentsuccess.component';
+import { MultiplexpaymentcancelComponent } from './multiplexpaymentcancel/multiplexpaymentcancel.component';
 
 const routes: Routes = [
   {path:'multiplexhome',component:MultiplexhomeComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'multiplex_payment/:multiplex_id/:price/:curr/:coin', component:MultiplexpaymentComponent},
   {path :'multiplexvideoview/:multiplex_id',component:MultiplexvideoviewComponent},
   {path:'multiplexpurchaseList',component:PurchaseListComponent},
-   {path:'multiplexnewlist',component:MultiplexnewlistComponent}
+   {path:'multiplexnewlist',component:MultiplexnewlistComponent},
+   {path:'multiplex_payment_success',component:MultiplexpaymentsuccessComponent},
+   {path:'multiplex_payment_cancel',component:MultiplexpaymentcancelComponent}
 
 ];
 
