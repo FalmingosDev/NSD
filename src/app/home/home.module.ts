@@ -56,8 +56,11 @@ import { AboutReferralComponent } from './about-referral/about-referral.componen
 import { ReferralDetailComponent } from './referral-detail/referral-detail.component';
 import { ProfileDetailComponent } from './profile-detail/profile-detail.component';
 import { EditphoneComponent } from './editphone/editphone.component';
-import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
+import { ReferralinviteComponent } from './referralinvite/referralinvite.component';
 import { RedeemComponent } from './redeem/redeem.component';
+import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component';
+import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
+import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
 
 
 
@@ -111,7 +114,10 @@ import { RedeemComponent } from './redeem/redeem.component';
     ProfileDetailComponent,
     EditphoneComponent,
     ReferralinviteComponent,
-    RedeemComponent
+    RedeemComponent,
+    PaypalpaymentComponent,
+    RechargewalletComponent,
+    RechargepaymentComponent
   ],
   imports: [
     CommonModule,
