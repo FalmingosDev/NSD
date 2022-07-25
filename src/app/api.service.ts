@@ -711,4 +711,9 @@ multiplexPurchaseList()
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
   }
 
+  public spinPayment() {
+    const user_email = localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'spin-transaction', {user_email});
+  }
+
 }

@@ -407,6 +407,9 @@
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1.webp" class="img-fluid">
                                 </div>
+                                <div class="wheel-spin">
+                                    <a href="#">Spin Now</a>
+                                </div>
                                 <div class="spin-date">
                                     <p>Spin on 15th August</p>
                                 </div>
@@ -583,7 +586,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_modal">
             <span aria-hidden="true">&times;</span>
           </button>
             </div>
@@ -596,7 +599,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Spin Now</button>
+                <button type="button" class="btn btn-primary" (click)="payForSpin()">Spin Now</button>
             </div>
         </div>
     </div>

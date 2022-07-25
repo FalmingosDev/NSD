@@ -12,6 +12,9 @@ import { environment } from '../../../environments/environment';
 export class SpinWheelComponent implements OnInit {
 
   sanitizer:any;
+
+  primaryUrl:string="https://newoapp.app/SPIN/?prize=";
+
   // OOPS! MAY BE NEXT TIME
   primaryUrl_1:string="https://newoapp.app/SPIN/?prize=b29wczE";
   // MOTOR CYCLE
@@ -32,7 +35,8 @@ export class SpinWheelComponent implements OnInit {
   primaryUrl_9:string="https://newoapp.app/SPIN/?prize=bGFraA";
 
   baseGameUrl:string;
-  data:string;
+  prize:any;
+  transaction:any;
   final_url:string;
 
   constructor(sanitizer: DomSanitizer,private activatedRoute:ActivatedRoute,private dataService: ApiService,private router:Router) { 
@@ -40,11 +44,16 @@ export class SpinWheelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.prize=this.activatedRoute.snapshot.params['prize'];
+    this.transaction=this.activatedRoute.snapshot.params['transection_id'];
+    this.final_url=this.getSafeUrl(this.primaryUrl+this.transaction+this.prize);
+    console.log(this.final_url);
     // this.generateUrl();
     // this.final_url=this.getSafeUrl(this.primaryUrl_1);
     // this.final_url=this.getSafeUrl(this.primaryUrl_2);
     // this.final_url=this.getSafeUrl(this.primaryUrl_3);
-    this.final_url=this.getSafeUrl(this.primaryUrl_4);
+    // this.final_url=this.getSafeUrl(this.primaryUrl_4);
     // this.final_url=this.getSafeUrl(this.primaryUrl_5);
     // this.final_url=this.getSafeUrl(this.primaryUrl_6);
     // this.final_url=this.getSafeUrl(this.primaryUrl_7);
@@ -56,10 +65,21 @@ export class SpinWheelComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
-  generateUrl(){
-    // this.data=this.router.snapshot.params['data'];
-    // this.baseGameUrl=this.primaryUrl+this.data;
-    // return this.baseGameUrl;
-  }
+  // generateUrl(){
+  //   // this.data=this.router.snapshot.params['data'];
+  //   this.prize=this.activatedRoute.snapshot.params['prize'];
+  //   // this.final_url=this.primaryUrl_1+this.data;
+  //   // return this.baseGameUrl;
+  // }
   
+
+  // game(){
+  //   this.prize=this.activatedRoute.snapshot.params['prize'];
+  //   // this.game_id = localStorage.setItem('gameId', this.gameId);
+  //   this.dataService.getGameUrl(this.gameId).subscribe((result) =>{
+  //     this.spinUrl=this.primaryUrl_1+this.prize;
+  //     // this.final_url=this.getSafeUrl(this.gameUrl);
+  //     this.final_url=this.sanitizer.bypassSecurityTrustResourceUrl(this.spinUrl);
+  //   });
+  // }
 }

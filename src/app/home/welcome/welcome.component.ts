@@ -6,9 +6,7 @@ import { ApiService } from 'src/app/api.service';
 import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
 import { environment } from '../../../environments/environment';
-
 import { DatePipe } from '@angular/common';
-
 
 // import { AlertService } from 'ngx-alerts';
 
@@ -33,7 +31,8 @@ export class WelcomeComponent implements OnInit {
   isSubscribe:boolean=false;
   isNotSubscribe:boolean=false;
 
-
+  prize: any;
+  transaction: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -307,6 +306,18 @@ export class WelcomeComponent implements OnInit {
         //this.router.navigate(['/']);
       }
       
+    })
+  }
+
+  payForSpin(){    
+    this.dataService.spinPayment().subscribe((result)=>{ 
+      if(result.success==true){    
+        this.prize=result.prize;
+        this.transaction=result.transection_id;
+        // console.log(result.prize);
+        $("#close_modal").click();
+        this.router.navigate(['/spin_wheel/'+this.transaction+'/'+this.prize+'']);
+      }
     })
   }
 
