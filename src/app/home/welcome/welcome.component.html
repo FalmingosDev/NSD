@@ -403,7 +403,7 @@
                     </div>
                     <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide>
-                            <div class="drm-item">
+                            <div class="drm-item" data-toggle="modal" data-target="#independen-modal">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1.webp" class="img-fluid">
                                 </div>
@@ -575,6 +575,28 @@
                         <button type="button" class="btn btn-primary" (click)="leadBonusModalApply()">Apply</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="modal fade" id="independen-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="box">
+                    <div class="game">
+                        <!-- <p>You have to use {{price}} NEWO coin to play this game.</p> -->
+                        <p>You have to use NEWO coin to Spin the Wheel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Spin Now</button>
             </div>
         </div>
     </div>

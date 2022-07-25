@@ -1,0 +1,167 @@
+
+.back_btn_div{
+    float: right;
+    position: relative;
+    right: 0;
+}
+.back_btn_div a {
+    position: relative;
+    padding: 2px 13px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 186px;
+    overflow: hidden;
+    border-radius: 59px;
+    text-align: center;
+}
+
+.back_btn_div a span {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial;
+    letter-spacing: 8px;
+    z-index: 1;
+}
+
+.back_btn_div a .liquid {
+    position: absolute;
+    top: 0;
+    right: -48.5%;
+    width: 181px;
+    height: 211px;
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.back_btn_div a .liquid::after,
+.back_btn_div a .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+}
+
+.back_btn_div a .liquid::before {
+    border-radius: 45%;
+    /* max-width:320px;
+    min-width:0px; */
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+}
+
+.back_btn_div a .liquid::after {
+    border-radius: 45%;
+    /* max-width:320px;
+    min-width:0px; */
+    background: #00ff00;
+    /* background: rgba(20, 20, 20, .5); */
+    animation: animate 10s linear infinite;
+}
+
+.back_btn_div a:hover .back_btn_div .liquid {
+    top: -120px;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+/* spin-wh */
+/* inde-modal */
+.box {
+    border-radius: 30px;
+    height: inherit;
+    background: #ff8100;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0px 20px;
+}
+
+#spinwheel-modal .modal-title-new {
+    font-family: open sans-serif;
+    text-align: center;
+    padding: 5px 11px;
+    color: #fff;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.game {
+    background: #f2b671;
+    border-radius: 30px;
+    padding: 10px 14px;
+    margin: -4px 10px;
+    min-height: inherit;
+}
+#spinwheel-modal .close{
+    position: relative;
+    top: 0;
+    right: 1px;
+    font-size: 36px;
+    opacity: 16 !important;
+    color: #000;
+    font-weight: 100;
+}
+.game p {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Comic Sans MS;
+}
+#spinwheel-modal .modal-footer {
+    padding: 0px 10px 5px;
+    border: none;
+}
+
+#spinwheel-modal .modal-content {
+    /* background-color: #efb812; */
+    background-image: url('/assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#spinwheel-modal .modal-dialog {
+    position: relative;
+    width: auto;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 66px;
+}
+
+#spinwheel-modal .modal-title {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: justify;
+    font-style: italic;
+}
+
+#spinwheel-modal .modal-header {
+    border: none;
+    padding: 0 13px;
+}
+#spinwheel-modal .modal-header {
+    display: flex;
+    justify-content: end;
+}
+.btn-no{
+    float: right;
+}
+.close-div-btn{
+    padding: 0px 10px;
+}
+/* inde-modal */

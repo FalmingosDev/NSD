@@ -61,6 +61,7 @@ import { RedeemComponent } from './redeem/redeem.component';
 import { PaypalpaymentComponent } from './paypalpayment/paypalpayment.component';
 import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
 import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
+import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 
 
 
@@ -117,7 +118,8 @@ import { RechargepaymentComponent } from './rechargepayment/rechargepayment.comp
     RedeemComponent,
     PaypalpaymentComponent,
     RechargewalletComponent,
-    RechargepaymentComponent
+    RechargepaymentComponent,
+    SpinWheelComponent
   ],
   imports: [
     CommonModule,
