@@ -526,21 +526,39 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'savegamescore', { userEmail, game_id, score });
   }
 
-  public updatePflForm(user_name) {
+  // public updatePflForm(user_name,profile_pic) {
 
-    let action_type = 'updateProfile';
-    const useremail = localStorage.getItem('token');
+  //   let action_type = 'updateProfile';
+  //   const useremail = localStorage.getItem('token');
+  //   const profileData: FormData = new FormData();
+  //   profileData.append('action_type', action_type);
+  //   profileData.append('user_name', user_name);
+  //   profileData.append('email', useremail);
+  //   profileData.append('img',profile_pic);
+
+  //   // profileData.append('file',profile_pic);
+  //   // profileData.append('action_type',action_type);
+
+  //   return this.httpClient.post<any>(this.env.baseUrl+'/profile_update.php',profileData);
+  //   // return this.httpClient.post<any>(this.env.baseUrl+'/profile.php', {email,user_name,profile_pic});
+  //   // return this.httpClient.post<any>(this.env.baseUrl + '/profile.php', { action_type, user_name, useremail,profile_pic });
+
+  // }
+
+  public updatePflForm(user_name,imgFile){
+
+    let action_type='updateProfile';
+    const useremail=localStorage.getItem('token');
     const profileData: FormData = new FormData();
-    profileData.append('action_type', action_type);
-    profileData.append('user_name', user_name);
-    profileData.append('email', useremail);
-    //profileData.append('img',imgFile);
+    profileData.append('action_type',action_type);
+    profileData.append('user_name',user_name);
+    profileData.append('email',useremail);
+    profileData.append('img',imgFile);
 
     //formData.append('file',profile_pic, profile_pic.name);profileData.append('action_type',action_type);
 
-    // return this.httpClient.post<any>(this.env.baseUrl+'/profile_update.php',profileData);
-    // return this.httpClient.post<any>(this.env.baseUrl+'/profile.php', {email,user_name,profile_pic});
-    return this.httpClient.post<any>(this.env.baseUrl + '/profile.php', { action_type, user_name, useremail });
+  return this.httpClient.post<any>(this.env.baseUrl+'/profile_update.php',profileData);
+  // return this.httpClient.post<any>(this.env.baseUrl+'/profile.php', {email,user_name,profile_pic});
 
   }
 
@@ -717,3 +735,7 @@ multiplexPurchaseList()
   }
 
 }
+function imgFile(arg0: string, imgFile: any) {
+  throw new Error('Function not implemented.');
+}
+

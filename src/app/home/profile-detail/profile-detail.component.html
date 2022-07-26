@@ -25,19 +25,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <form> -->
-                    <!-- <div class="upload-img-profile">
+                    <!-- <form>
+                    <div class="upload-img-profile">
                         <div class="small-12 medium-2 large-2 columns" id="firstImage">
                             <div class="circle">
                                 <img class="profile-pic" src={{url}}> 
                               </div>
                             <div class="p-image">
                               <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
-                              <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)"/>
+                              <input class="file-upload" type="file" accept="image/*" formControlName="imgFile" (change)="onFileChanged($event)"/>
                             </div>
                           </div>
-                    </div> -->
-                    <!-- </form> -->
+                    </div>
+                    </form> -->
                 </div>
             </div>
         </div>
@@ -52,16 +52,16 @@
                             <form [formGroup]="pflForm" (ngSubmit)="pfldata(pflForm.value)">
                                 <div class="upload-img-profile">
                                     <div class="small-12 medium-2 large-2 columns" id="firstImage">
-                                        <!-- <div class="circle">
-                                             <img class="profile-pic" src={{url}} *ngIf="profile_img != ''">
-                                            <img class="profile-pic" src={{url}} *ngIf="profile_img == ''"> 
+                                        <div class="circle">
+                                             <!-- <img class="profile-pic" src={{url}} *ngIf="profile_img != ''">
+                                            <img class="profile-pic" src={{url}} *ngIf="profile_img == ''">  -->
                                             <img class="profile-pic" src={{url}}>
-                                        </div> -->
-                                        <!-- <div class="p-image">
+                                        </div>
+                                        <div class="p-image">
                                             <i class="fa fa-pencil upload-button" aria-hidden="true"></i>
                                             <input class="file-upload" type="file" accept="image/*" formControlName="profile_pic" (change)="onFileChanged($event)" />
                                             <p>{{email}}</p>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">

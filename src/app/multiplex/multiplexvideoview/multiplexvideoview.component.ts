@@ -38,6 +38,8 @@ export class MultiplexvideoviewComponent implements OnInit {
     this.api.multiplexVideoPlay(d).subscribe((result)=>
     {
       this.vidUrl = this.env.multiplex_video_url+result.multiplex_details.media;
+      // this.vidUrl = "http://d1ejsqmvjt3i0n.cloudfront.net/M1657882710.mp4";
+
       this.vidPoster = this.env.multiplex_poster_url+result.multiplex_details.image;
       this.videoplay=result.multiplex_details;
 

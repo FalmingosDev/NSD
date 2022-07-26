@@ -260,7 +260,7 @@
 .box {
     border-radius: 30px;
     height: inherit;
-    background: #ff8100;
+    background: #a900ff;
     display: block;
     margin: 0 auto;
     padding: 10px 0px 20px;
@@ -277,7 +277,7 @@
 }
 
 .game {
-    background: #f2b671;
+    background: #fbfd6b;
     border-radius: 30px;
     padding: 10px 14px;
     margin: -4px 10px;
@@ -305,7 +305,7 @@
 
 #independen-modal .modal-content {
     /* background-color: #efb812; */
-    background-image: url('/assets/images/bg.jpg');
+    background-image: url('/assets/images/modal.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

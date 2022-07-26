@@ -71,12 +71,12 @@ export class ProfileDetailComponent implements OnInit {
         
         this.profile_img = res.data.profile_pic;
         this.profile_pic_url = this.profile_pic_base+res.data.profile_pic;
-        /*if(this.profile_img){
+        if(this.profile_img){
           this.url = this.profile_pic_url;
         }
         else{
           this.url = 'assets/images/defaul-profile-image.png';
-        }*/
+        }
       }
      });
 
@@ -87,23 +87,6 @@ export class ProfileDetailComponent implements OnInit {
   
     })
   }
-  
-
-  pfldata(pflForm) {
-      console.log(pflForm.user_name);
-      this.dataService.updatePflForm(pflForm.user_name).subscribe((res) => {
-        if(res.status){
-          this.alertService.success(res.msg);
-          setTimeout(() => {
-            this.router.navigate(['/profile']);
-          }, 2000);
-        }
-        else{
-          this.alertService.danger(res.msg);
-        }
-      });
-  }
-
   onFileChanged(event) {
     const files = event.target.files;   
     if (files.length === 0)
@@ -127,7 +110,20 @@ export class ProfileDetailComponent implements OnInit {
     console.log(this.imgFile);
 
   }
-
+  pfldata(pflForm) {
+    console.log(pflForm.user_name);
+    this.dataService.updatePflForm(pflForm.user_name,this.imgFile).subscribe((res) => {
+      if(res.status){
+        this.alertService.success(res.msg);
+        setTimeout(() => {
+          this.router.navigate(['/profile']);
+        }, 2000);
+      }
+      else{
+        this.alertService.danger(res.msg);
+      }
+    });
+}
   showphn() {     
     this.dataService.otpGenerate(this.local_email).subscribe((res)=>{
       if (res.status){
@@ -165,13 +161,9 @@ export class ProfileDetailComponent implements OnInit {
         }
       });
     }
-  }
-
-
-  
+  }  
   get user_name() { return this.pflForm.get('user_name') }
   get profile_pic() { return this.pflForm.get('profile_pic') }
   get new_phone() { return this.phnChangeForm.get('new_phone')}
   get otp(){ return this.phnChangeForm.get('otp')}
-
 }
