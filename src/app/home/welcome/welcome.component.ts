@@ -32,7 +32,7 @@ export class WelcomeComponent implements OnInit {
   isNotSubscribe:boolean=false;
 
   prize: any;
-  transaction: any;
+  transaction_id: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -313,10 +313,9 @@ export class WelcomeComponent implements OnInit {
     this.dataService.spinPayment().subscribe((result)=>{ 
       if(result.success==true){    
         this.prize=result.prize;
-        this.transaction=result.transection_id;
-        // console.log(result.prize);
+        this.transaction_id=result.transaction_id;
         $("#close_modal").click();
-        this.router.navigate(['/spin_wheel/'+this.transaction+'/'+this.prize+'']);
+        this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
       }
     })
   }

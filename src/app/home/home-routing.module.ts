@@ -97,7 +97,8 @@ const routes: Routes = [
   {path: 'rechargewallet',component:RechargewalletComponent},
   {path: 'rechargepayment/:recharge_id/:recharge_price/:curr/:recharge_coins', component: RechargepaymentComponent},
   // {path: 'spin_wheel',component:SpinWheelComponent}play/:id
-  {path: 'spin_wheel/:transection_id/:prize',component:SpinWheelComponent}
+  {path: 'spin_wheel/:prize/:transaction_id',component:SpinWheelComponent}
+
 
 ];
 

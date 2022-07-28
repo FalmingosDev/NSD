@@ -13,32 +13,34 @@ export class SpinWheelComponent implements OnInit {
 
   sanitizer:any;
 
-  primaryUrl:string="https://newoapp.app/SPIN/?prize=";
+  // primaryUrl:string="https://newoapp.app/SPIN/?prize=";
+  primaryUrl:string="https://newoapp.app/SPIN/?";
+
 
   // OOPS! MAY BE NEXT TIME
-  primaryUrl_1:string="https://newoapp.app/SPIN/?prize=b29wczE";
-  // MOTOR CYCLE
-  primaryUrl_2:string="https://newoapp.app/SPIN/?prize=bW90b3JjeWNsZQ";
-  // 10K NEWOCOIN
-  primaryUrl_3:string="https://newoapp.app/SPIN/?prize=bmV3b2NvaW4";
-  // 10 THOUSANDS
-  primaryUrl_4:string="https://newoapp.app/SPIN/?prize=dGhvdXNhbmRz";
-   // MOBILE
-   primaryUrl_5:string="https://newoapp.app/SPIN/?prize=bW9iaWxl";
-   // OOPS! MAY BE NEXT TIME
-   primaryUrl_6:string="https://newoapp.app/SPIN/?prize=b29wczI";
-   // CAR
-   primaryUrl_7:string="https://newoapp.app/SPIN/?prize=Y2Fy";
-   // BANGKOK 3N-4D
-   primaryUrl_8:string="https://newoapp.app/SPIN/?prize=YmFuZ2tvaw";
-  // ONE LAKH
-  primaryUrl_9:string="https://newoapp.app/SPIN/?prize=bGFraA";
+  // primaryUrl_1:string="https://newoapp.app/SPIN/?prize=b29wczE";
+  // // MOTOR CYCLE
+  // primaryUrl_2:string="https://newoapp.app/SPIN/?prize=bW90b3JjeWNsZQ";
+  // // 10K NEWOCOIN
+  // primaryUrl_3:string="https://newoapp.app/SPIN/?prize=bmV3b2NvaW4";
+  // // 10 THOUSANDS
+  // primaryUrl_4:string="https://newoapp.app/SPIN/?prize=dGhvdXNhbmRz";
+  //  // MOBILE
+  //  primaryUrl_5:string="https://newoapp.app/SPIN/?prize=bW9iaWxl";
+  //  // OOPS! MAY BE NEXT TIME
+  //  primaryUrl_6:string="https://newoapp.app/SPIN/?prize=b29wczI";
+  //  // CAR
+  //  primaryUrl_7:string="https://newoapp.app/SPIN/?prize=Y2Fy";
+  //  // BANGKOK 3N-4D
+  //  primaryUrl_8:string="https://newoapp.app/SPIN/?prize=YmFuZ2tvaw";
+  // // ONE LAKH
+  // primaryUrl_9:string="https://newoapp.app/SPIN/?prize=bGFraA";
 
   baseGameUrl:string;
   prize:any;
   transaction:any;
   final_url:string;
-
+  user_email: any;
   constructor(sanitizer: DomSanitizer,private activatedRoute:ActivatedRoute,private dataService: ApiService,private router:Router) { 
     this.sanitizer=sanitizer;
   }
@@ -46,40 +48,16 @@ export class SpinWheelComponent implements OnInit {
   ngOnInit(): void {
 
     this.prize=this.activatedRoute.snapshot.params['prize'];
-    this.transaction=this.activatedRoute.snapshot.params['transection_id'];
-    this.final_url=this.getSafeUrl(this.primaryUrl+this.transaction+this.prize);
+    this.transaction=this.activatedRoute.snapshot.params['transaction_id'];
+    this.user_email=localStorage.getItem('token');
+    // this.final_url=this.getSafeUrl(this.primaryUrl+this.prize);
+    this.final_url=this.getSafeUrl(this.primaryUrl+'user_email='+this.user_email+'&transaction_id='+this.transaction+'&prize='+this.prize);
     console.log(this.final_url);
-    // this.generateUrl();
-    // this.final_url=this.getSafeUrl(this.primaryUrl_1);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_2);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_3);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_4);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_5);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_6);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_7);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_8);
-    // this.final_url=this.getSafeUrl(this.primaryUrl_9);
   }
   //sanitize url--------
   getSafeUrl(url) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
-  // generateUrl(){
-  //   // this.data=this.router.snapshot.params['data'];
-  //   this.prize=this.activatedRoute.snapshot.params['prize'];
-  //   // this.final_url=this.primaryUrl_1+this.data;
-  //   // return this.baseGameUrl;
-  // }
   
-
-  // game(){
-  //   this.prize=this.activatedRoute.snapshot.params['prize'];
-  //   // this.game_id = localStorage.setItem('gameId', this.gameId);
-  //   this.dataService.getGameUrl(this.gameId).subscribe((result) =>{
-  //     this.spinUrl=this.primaryUrl_1+this.prize;
-  //     // this.final_url=this.getSafeUrl(this.gameUrl);
-  //     this.final_url=this.sanitizer.bypassSecurityTrustResourceUrl(this.spinUrl);
-  //   });
-  // }
 }

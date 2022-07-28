@@ -686,12 +686,9 @@ multiplexPurchaseList()
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-my-all-campaign/' + email);
   }
 
-
-
   addSocialDetails(userdata, emails) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata, emails });
   }
-
 
   getaddUserBankDetails(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-bank-details/' + email);
@@ -700,7 +697,6 @@ multiplexPurchaseList()
   addUserBankDetails(userdata, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-bank-details-add', { userdata, email });
   }
-
 
   hashtagAddSocialAndAdress(userdata,campaign_id, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-social-address-add', { userdata,campaign_id,email });
@@ -716,14 +712,11 @@ multiplexPurchaseList()
   /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
   hashtagProfileGet(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-details/' + email);
-  }
-
-  
+  }  
 
   addAcceptCampaignBefore(email,campaign_id) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
   }
-
   
   getUserInterestAndSocial(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
