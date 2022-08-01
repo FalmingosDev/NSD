@@ -8,7 +8,7 @@ import { PlyrComponent, PlyrModule } from 'ngx-plyr';
 import { environment } from '../../../environments/environment';
 import { DatePipe } from '@angular/common';
 
-// import { AlertService } from 'ngx-alerts';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-welcome',
@@ -33,6 +33,7 @@ export class WelcomeComponent implements OnInit {
 
   prize: any;
   transaction_id: any;
+  msg: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -148,7 +149,7 @@ export class WelcomeComponent implements OnInit {
   };
  
 
-  constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe) { 
+  constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe,private alertService: AlertService) { 
  
 
     if(localStorage.getItem('token')){
@@ -316,6 +317,11 @@ export class WelcomeComponent implements OnInit {
         this.transaction_id=result.transaction_id;
         $("#close_modal").click();
         this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
+      }
+      else{
+        this.msg=result.error;
+        $("#close_modal").click();
+        this.alertService.danger(this.msg);
       }
     })
   }
