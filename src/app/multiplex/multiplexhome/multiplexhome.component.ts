@@ -23,13 +23,15 @@ export class MultiplexhomeComponent implements OnInit {
     margin: 10,
     navSpeed: 700,
     navText: ['', ''],
-    stagePadding: 20,
+   
     responsive: {
       0: {
-        items: 1
+        items: 1,
+        stagePadding: 20
       },
       400: {
-        items: 1
+        items: 1,
+        stagePadding: 20,
       },
       740: {
         items: 1

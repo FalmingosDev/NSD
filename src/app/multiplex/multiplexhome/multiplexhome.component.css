@@ -55,10 +55,10 @@
     margin-left: 20px;
     margin-right: 20px;
 }
-    .bottom-img img{
+    /* .bottom-img img{
         border-radius: 20px;
       
-    }
+    } */
     .block-n-text p{
         font-size: 16px;
     font-weight: 500;
@@ -80,10 +80,10 @@
         font-size: 12px;
     }
     .text-bg p{font-size: 12px;}
-    .bg-f-img-text p{font-size: 18px;
+    .bg-f-img-text span{font-size: 18px;
     color: #000000;
     font-weight: 500;
-   padding: 0 9px;
+   /* padding: 0 9px; */
 }
     .book-now{
     position: relative;
@@ -171,7 +171,9 @@
 .view-all a:hover{color: #05fffb;}
 .book-m-new img{border-radius: 0;}
 
+@media only screen and (max-width: 767px){
 
+}
 
     
     
