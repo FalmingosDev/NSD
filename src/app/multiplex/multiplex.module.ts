@@ -18,6 +18,8 @@ import { MultiplexpaymentComponent } from './multiplexpayment/multiplexpayment.c
 import { MultiplexvideoviewComponent } from './multiplexvideoview/multiplexvideoview.component';
 import { PurchaseListComponent } from './purchase-list/purchase-list.component';
 import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.component';
+import { MultiplexpaymentsuccessComponent } from './multiplexpaymentsuccess/multiplexpaymentsuccess.component';
+import { MultiplexpaymentcancelComponent } from './multiplexpaymentcancel/multiplexpaymentcancel.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { MultiplexnewlistComponent } from './multiplexnewlist/multiplexnewlist.c
     MultiplexvideoviewComponent,
     PurchaseListComponent,
     MultiplexnewlistComponent,
+    MultiplexpaymentsuccessComponent,
+    MultiplexpaymentcancelComponent,
   
   ],
   imports: [

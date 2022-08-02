@@ -117,9 +117,16 @@
 
 .bg-f-img-text p {
     font-size: 18px;
+    }
+    .rating-text{
+        color: #fff;
+        font-size: 12px;
+    }
+    .text-bg p{font-size: 12px;}
+    .bg-f-img-text span{font-size: 18px;
     color: #000000;
     font-weight: 500;
-   padding: 0 9px;
+   /* padding: 0 9px; */
 }
 
 .book-now {
@@ -274,6 +281,9 @@
 
 .book-m-new img {
     border-radius: 0;
+}
+@media only screen and (max-width: 767px){
+
 }
 
 
