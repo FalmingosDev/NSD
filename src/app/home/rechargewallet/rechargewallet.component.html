@@ -1,0 +1,47 @@
+<div class="margin-div">
+    <div class="ref-log-div">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="profile-header-details">
+                        <a href="javascript:void(0)" routerLink="/profile">
+                            <img src="assets/images/back-btn.png" class="img-fluid" style="width: 40%;">  
+                        </a>
+                        <h6><span class="profile-user-name">Recharge Wallet</span><span class="profile-email"></span></h6>
+                        <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->  
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div> 
+  <div class="redeem-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="reddem-div" *ngFor="let recharge of rechargelist">
+                    <div class="redeem-text">
+                        <div class="con">
+                            <div class="row">
+                                <div class="col-4">
+                                   <h2>Coins</h2>
+                                    <h3>{{recharge.coins}}</h3> 
+                                </div>
+                                <div class="col-4 p-0">
+                                    <h2>Price</h2>
+                                    <h4>Rs. {{recharge.price}}</h4>
+                                </div>
+                                <div class="col-4">
+                                    <div class="buy-btn-div">
+                                        <a href="javascript:void(0)" (click)="rechargePayment(recharge.id,recharge.coins,recharge.price)" class="buy-btn">Buy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<app-welcomefooter></app-welcomefooter>

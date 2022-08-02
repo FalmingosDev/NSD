@@ -43,6 +43,10 @@ import { EditphoneComponent } from './editphone/editphone.component';
 import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
 import { RedeemComponent } from './redeem/redeem.component';
 import { HashtaghomeComponent } from '../hashtag/hashtaghome/hashtaghome.component';
+import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
+import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
+import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
+import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
 
 
 
@@ -89,7 +93,11 @@ const routes: Routes = [
   {path: 'profile_detail', component:ProfileDetailComponent},
   {path: 'edit_phone/:phone', component:EditphoneComponent},
   {path: 'referralinvite', component:ReferralinviteComponent},
-  {path: 'redeem', component: RedeemComponent}
+  {path: 'redeem', component: RedeemComponent},
+  {path: 'rechargewallet',component:RechargewalletComponent},
+  {path: 'rechargepayment/:recharge_id/:recharge_price/:curr/:recharge_coins', component: RechargepaymentComponent},
+  {path: 'recharge_success', component:RechargePaymentSuccessComponent},
+  {path: 'recharge_cancel', component:RechargePaymentCancelComponent}
 ];
 
 @NgModule({

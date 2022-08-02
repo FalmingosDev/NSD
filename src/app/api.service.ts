@@ -607,4 +607,14 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
   }
 
+  rechagewallet(){
+    return this.httpClient.get<any>(this.env.laravel_api_url+'recharge-wallet-list');
+  }
+
+  /*------------------------------------------------- Recharge Payment Start------------------------------------------------*/
+  handelRechargeCreateEncryption(objUserData){
+    return this.httpClient.post<any>(this.env.baseUrl + '/recharge_payment.php', { userdata: objUserData });
+  }
+  /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
+
 }

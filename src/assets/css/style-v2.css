@@ -540,6 +540,12 @@ height: 30px;
     border-radius: 12px;
     margin-bottom: 15px;
 }
+.my-newo-bx img {
+    width: 59%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
 .my-newo-count h3 {
     color: #fff;
     font-size: 18px;

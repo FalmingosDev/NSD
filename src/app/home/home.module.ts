@@ -58,6 +58,10 @@ import { ProfileDetailComponent } from './profile-detail/profile-detail.componen
 import { EditphoneComponent } from './editphone/editphone.component';
 import { ReferralinviteComponent } from './referralinvite/referralinvite.component'
 import { RedeemComponent } from './redeem/redeem.component';
+import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
+import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
+import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
+import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
 
 
 
@@ -111,7 +115,11 @@ import { RedeemComponent } from './redeem/redeem.component';
     ProfileDetailComponent,
     EditphoneComponent,
     ReferralinviteComponent,
-    RedeemComponent
+    RedeemComponent,
+    RechargewalletComponent,
+    RechargepaymentComponent,
+    RechargePaymentSuccessComponent,
+    RechargePaymentCancelComponent
   ],
   imports: [
     CommonModule,
