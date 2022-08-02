@@ -312,6 +312,7 @@ export class WelcomeComponent implements OnInit {
 
   payForSpin(){    
     this.dataService.spinPayment().subscribe((result)=>{ 
+      (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
       if(result.success==true){    
         this.prize=result.prize;
         this.transaction_id=result.transaction_id;
