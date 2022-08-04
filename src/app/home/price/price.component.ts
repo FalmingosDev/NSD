@@ -34,6 +34,7 @@ export class PriceComponent implements OnInit {
       if(this.code){
         this.dataService.verifycoupon(this.code).subscribe((result)=>{
           if(result.status){
+            (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
             this.alertService.success("Coupon Code applied");
             this.dataService.couponsubscription().subscribe((result)=>{
               if(result.status){
