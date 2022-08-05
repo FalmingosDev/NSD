@@ -1,0 +1,47 @@
+<div class="margin-div">
+    <div class="profile-name">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <div class="profile-header-details">
+                        <a routerLink="/" href="javascript:void(0)">
+                            <img src="assets/images/back-btn.png" style="width: 40%;" class="img-fluid">
+                        </a>
+                        <h6><span class="profile-user-name">Notification</span><span class="profile-email"></span></h6>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="profile-header-details">
+                        <div class="face-round-profile">
+                            <!-- <img src="assets/images/notification.gif" class="img-fluid"> -->
+                            <span class="bell fa fa-bell"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class="new-from mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12" *ngFor="let notification of notificationData | keyvalue; let i=index;">
+                <div class="main-text-head">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" data-toggle="collapse" [attr.data-target]="'#collapse'+i"aria-expanded="true" aria-controls="collapseOne">
+                                <span class="title">{{notification.value.notification_title}}</span>
+                                <span class="accicon"><i class="fa fa-angle-down rotate-icon" aria-hidden="true"></i></span>
+                            </div>
+                            <div [attr.id]="'collapse'+i" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <p>{{notification.value.notification_desc}}</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-welcomefooter></app-welcomefooter>

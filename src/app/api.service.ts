@@ -712,21 +712,29 @@ multiplexPurchaseList()
   /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
   hashtagProfileGet(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-details/' + email);
-  }  
-
+  }
   addAcceptCampaignBefore(email,campaign_id) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
-  }
-  
+  }  
   getUserInterestAndSocial(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
   }
-
   public spinPayment() {
     const user_email = localStorage.getItem('token');
     return this.httpClient.post<any>(this.env.laravel_api_url + 'spin-transaction', {user_email});
   }
+  public priceToSpin() {
+    const user_email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'spin-use-coin/' + user_email);
+  }
 
+  public notificationList() {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList');
+  }
+
+  public notificationCount() {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount');
+  }
 }
 function imgFile(arg0: string, imgFile: any) {
   throw new Error('Function not implemented.');

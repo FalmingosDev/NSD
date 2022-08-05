@@ -45,6 +45,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { AlertModule } from 'ngx-alerts';
+
 import { HastagComponent } from './hastag/hastag.component';
 import { StarsComponent } from './stars/stars.component';
 import { NewsdetailComponent } from './newsdetail/newsdetail.component';
@@ -64,8 +65,7 @@ import { RechargepaymentComponent } from './rechargepayment/rechargepayment.comp
 import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
 import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
-
-
+import { NotificationComponent } from './notification/notification.component';
 
 
 @NgModule({
@@ -123,7 +123,8 @@ import { RechargePaymentCancelComponent } from './recharge-payment-cancel/rechar
     RechargepaymentComponent,
     SpinWheelComponent,
     RechargePaymentSuccessComponent,
-    RechargePaymentCancelComponent
+    RechargePaymentCancelComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,

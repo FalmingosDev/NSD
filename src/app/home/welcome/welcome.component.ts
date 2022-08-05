@@ -34,6 +34,7 @@ export class WelcomeComponent implements OnInit {
   prize: any;
   transaction_id: any;
   msg: any;
+  price: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -182,7 +183,9 @@ export class WelcomeComponent implements OnInit {
    
     this.getCurrentLocation();
     this.homePosterLatest();
-    this.leadBonusModal();    
+    this.leadBonusModal();  
+    
+    this.spinPrice();
   }
 
   homePosterLatest(){   
@@ -266,8 +269,8 @@ export class WelcomeComponent implements OnInit {
                  
       });
     }
-    else{      
-      this.router.navigate(['/about_newoclan']);   
+    else{ 
+      this.router.navigate(['/about_newoclan']);         
     }
   }
 
@@ -310,21 +313,69 @@ export class WelcomeComponent implements OnInit {
     })
   }
 
-  payForSpin(){    
-    this.dataService.spinPayment().subscribe((result)=>{ 
-      (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
-      if(result.success==true){    
-        this.prize=result.prize;
-        this.transaction_id=result.transaction_id;
-        $("#close_modal").click();
-        this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
-      }
-      else{
-        this.msg=result.error;
-        $("#close_modal").click();
-        this.alertService.danger(this.msg);
-      }
+  spinPrice(){  
+    $("#insuff_balance").hide();
+    $("#recharge_btn").hide(); 
+    $("#subscribe_btn").hide();
+    $("#notSubscribed").hide(); 
+    $("#notLogin").hide(); 
+    $("#login_btn").hide();   
+    this.dataService.priceToSpin().subscribe((result)=>{ 
+      this.price=result.use_coin;
     })
   }
 
+  payForSpin(){
+    if(localStorage.getItem('token')){
+      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+        if(res.cnt ==1){
+          this.dataService.spinPayment().subscribe((result)=>{ 
+          (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
+            if(result.success==true){    
+              this.prize=result.prize;
+              this.transaction_id=result.transaction_id;
+              $("#close_modal").click();
+              this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
+            }
+            else{
+              this.msg=result.error;
+              $("#insuff_balance").show();
+              $("#recharge_btn").show(); 
+              $("#balance").hide();
+              $("#active_btn").hide();
+            }
+          })
+        }
+        else{
+          $("#balance").hide();
+          $("#active_btn").hide();
+          $("#notSubscribed").show(); 
+          $("#subscribe_btn").show(); 
+        }
+      })
+    }
+    else{
+      $("#balance").hide();
+      $("#active_btn").hide();
+      $("#notSubscribed").hide(); 
+      $("#subscribe_btn").hide(); 
+      $("#recharge_btn").hide(); 
+      $("#notLogin").show(); 
+      $("#login_btn").show();
+    }  
+  }
+
+  notSubscribed(){
+    $("#close_modal").click();
+    this.router.navigate(['/pricing']);
+  }
+
+  notLogin(){
+    $("#close_modal").click();
+    this.router.navigate(['/login']);
+  }
+  noBalance(){
+    $("#close_modal").click();
+    this.router.navigate(['/rechargewallet']);
+  }
 }

@@ -9,11 +9,24 @@ import { WelcomeComponent } from '../welcome/welcome.component';
   styleUrls: ['./welcomefooter.component.css']
 })
 export class WelcomefooterComponent implements OnInit {
+
+  cnt: any;
   constructor(private router:Router,private dataService: ApiService) {
     
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.notificationCount();
+  }
+
+   notificationCount(){
+    this.dataService.notificationCount().subscribe((result)=>{
+      this.cnt=result;
+      console.log(this.cnt);
+    })
+   }
+
 
   checkAuth(value='newoclan'){
     if(localStorage.getItem('token')){

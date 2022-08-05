@@ -49,6 +49,8 @@ import { RechargepaymentComponent } from './rechargepayment/rechargepayment.comp
 import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
 import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
+import { NotificationComponent } from './notification/notification.component';
+
 
 
 
@@ -101,7 +103,8 @@ const routes: Routes = [
   // {path: 'spin_wheel',component:SpinWheelComponent}play/:id
   {path: 'spin_wheel/:prize/:transaction_id',component:SpinWheelComponent},
   {path: 'recharge_success', component:RechargePaymentSuccessComponent},
-  {path: 'recharge_cancel', component:RechargePaymentCancelComponent}
+  {path: 'recharge_cancel', component:RechargePaymentCancelComponent},
+  {path: 'notification', component:NotificationComponent}
 
 
 ];
