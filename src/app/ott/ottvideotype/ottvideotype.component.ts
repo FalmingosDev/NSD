@@ -13,6 +13,9 @@ export class OttvideotypeComponent implements OnInit {
   ottEpisodeData: any;
   id: string;
   episode: string;
+  type:string;
+  season:string;
+  name: string;
 
   constructor(private dataService: ApiService,private route:Router,private activatedRoute: ActivatedRoute) { }
 
@@ -22,8 +25,12 @@ export class OttvideotypeComponent implements OnInit {
 
   episodeDetail(){
     this.id= this.activatedRoute.snapshot.params['episode']; 
-    this.dataService.ottepisodeDetail(this.id).subscribe((result) => {
+    this.type= this.activatedRoute.snapshot.params['type']; 
+    this.season= this.activatedRoute.snapshot.params['season']; 
+    // alert(this.id+' '+this.type+' '+this.season)
+    this.dataService.ottepisodeDetail(this.id,this.type,this.season).subscribe((result) => {
     this.ottEpisodeData = result;
+    this.name = this.ottEpisodeData[0].name;
     this.episode = this.ottEpisodeData[0].episode;
     }); 
   }

@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="vdya-div">
-                        <h3 *ngIf="!video_aud">{{video_name}}</h3>
-                        <h3 *ngIf="video_aud">{{video_name}} ({{video_aud}})</h3>
+                        <h3 *ngIf="!video_aud">{{video_name}}<span *ngIf="episode_name">: {{episode_name}}</span></h3>
+                        <h3 *ngIf="video_aud">{{video_name}} ({{video_aud}})<span *ngIf="episode_name">: {{episode_name}}</span></h3>
                         <ul>
                             <li>
                                 <button type="button" class="btn btn-lv" data-toggle="modal" data-target="#heart-md">

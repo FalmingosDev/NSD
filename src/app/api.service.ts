@@ -398,14 +398,23 @@ export class ApiService {
   public ottMusicList() {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'showmusic');
   }
+  
+  public ottWEBList() {
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'showwebs');
+  }
 
   public ottVideoDetail(id) {
     const userEmail = localStorage.getItem('token');
     return this.httpClient.get<any>(this.env.laravel_api_url + 'showvideodetail/' + id + '/' + userEmail);
   }
 
-  public ottepisodeDetail(epId) {
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'showcnepisode/' + epId);
+  public ottepisodeDetail(epId,typeId,seasonId) {
+    if(typeId == 1){
+      return this.httpClient.get<any>(this.env.laravel_api_url + 'showwebswpisode/' + seasonId);
+    }
+    else{
+      return this.httpClient.get<any>(this.env.laravel_api_url + 'showcnepisode/' + epId);
+    } 
   }
 
   public walletAdd(vId, category, action, userEmail) {

@@ -82,6 +82,7 @@ export class OtthomeComponent implements OnInit {
   videoId:any =[];
   CNEData:any =[];
   wmdData: any=[];
+  webData: any=[];
   quickyData: any=[];
   latestData: any=[];
   musicData: any=[];
@@ -102,6 +103,7 @@ export class OtthomeComponent implements OnInit {
     this.ottWmd();
     this.ottResume();
     this.ottMusicList();
+    this.ottWeb();
   }
 
   ottBanner(){   
@@ -140,6 +142,12 @@ export class OtthomeComponent implements OnInit {
     });
   }
 
+  ottWeb(){   
+    this.dataService.ottWEBList().subscribe((result) => {
+      this.webData = result;
+    });
+  }
+
 
   ottResume(){   
     this.dataService.resumeList().subscribe((result) => {
@@ -166,9 +174,9 @@ export class OtthomeComponent implements OnInit {
     this.route.navigate(["/ottvideodetail/"+id]);
   }
 
-  episodeDetail(event,epId){
+  episodeDetail(event,type,epId,seasonId){
     event.preventDefault();
-    this.route.navigate(["/ottvideotype/"+epId]);
+    this.route.navigate(["/ottvideotype/"+type+"/"+epId+"/"+seasonId]);
   }
   
 
