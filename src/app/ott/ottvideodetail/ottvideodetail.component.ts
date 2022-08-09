@@ -76,7 +76,7 @@ export class OttvideodetailComponent implements OnInit  {
       this.video_thumb = this.ottVideoData[0].thumb;
       this.episode_name = this.ottVideoData[0].episode_name;
       if(this.ottVideoData[0].type_name == 'Web Series'){
-        this.thumb=this.env.CLOUDFRONT_OTT_THUMB_URL+''+this.video_thumb;
+        this.thumb=this.env.CLOUDFRONT_OTT_THUMB_URL+this.video_thumb;
         this.final_video_url = this.env.CLOUDFRONT_OTT_VIDEO_URL+this.video_link;
       }
       else{

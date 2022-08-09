@@ -20,7 +20,10 @@ export const environment = {
   hashtag_category:'https://newouploads.s3.ap-southeast-1.amazonaws.com/hashtag_category/',
 
   CLOUDFRONT_OTT_THUMB_URL:'https://d3364iafsj330v.cloudfront.net/newoott/thumb/',
+  CLOUDFRONT_OTT_POSTER_URL:'https://d3364iafsj330v.cloudfront.net/newoott/poster/',
   CLOUDFRONT_OTT_VIDEO_URL:'https://d3364iafsj330v.cloudfront.net/newoott/video/',
+  CLOUDFRONT_BLOG_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog/',
+  CLOUDFRONT_BLOG_AUTHOR_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog_author/',
 };
 
 
