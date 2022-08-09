@@ -19,6 +19,8 @@ export const environment = {
   hashtag_campaign_social:'https://www.newoapp.app/assets/images/hashtag_social/',
   hashtag_category:'https://newouploads.s3.ap-southeast-1.amazonaws.com/hashtag_category/',
 
+  CLOUDFRONT_OTT_THUMB_URL:'https://d3364iafsj330v.cloudfront.net/newoott/thumb/',
+  CLOUDFRONT_OTT_VIDEO_URL:'https://d3364iafsj330v.cloudfront.net/newoott/video/',
 };
 
 
