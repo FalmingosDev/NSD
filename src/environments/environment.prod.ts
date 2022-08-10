@@ -18,6 +18,11 @@ export const environment = {
   CLOUDFRONT_OTT_THUMB_URL:'https://d3364iafsj330v.cloudfront.net/newoott/thumb/',
   CLOUDFRONT_OTT_POSTER_URL:'https://d3364iafsj330v.cloudfront.net/newoott/poster/',
   CLOUDFRONT_OTT_VIDEO_URL:'https://d3364iafsj330v.cloudfront.net/newoott/video/',
+
+  CLOUDFRONT_MULTIPLEX_VIDEO_URL: 'https://d3364iafsj330v.cloudfront.net/creator-multiplex/media_file/',
+  CLOUDFRONT_MULTIPLEX_IMAGE_URL: 'https://d3364iafsj330v.cloudfront.net/creator-multiplex/media_image/',
+  CLOUDFRONT_MULTIPLEX_TRAILER_URL: 'https://d3364iafsj330v.cloudfront.net/creator-multiplex/media_trailer/',
+
   CLOUDFRONT_BLOG_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog/',
   CLOUDFRONT_BLOG_AUTHOR_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog_author/',
 }; 
