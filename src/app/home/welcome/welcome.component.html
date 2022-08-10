@@ -402,13 +402,24 @@
                         <img src="assets/images/dream-spin-title.webp" class="img-fluid">
                     </div>
                     <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
-                        <ng-template carouselSlide>
+                        <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
                             <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1.webp" class="img-fluid">
                                 </div>
                                 <div class="wheel-spin">
                                     <a href="javascript:void(0)">Spin Now</a>
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 15th August</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <!-- lock spin -->
+                        <ng-template carouselSlide *ngIf="transform_date!='2022-08-15'">
+                            <div class="drm-item">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-1-2.webp" class="img-fluid">
                                 </div>
                                 <div class="spin-date">
                                     <p>Spin on 15th August</p>
@@ -546,7 +557,7 @@
             <div class="modal-body">
                 <div class="box">
                     <div class="game" id="balance">
-                        <p>You have to use {{price}} NEWO coin to Spin the Wheel.</p>
+                        <p>You have to use {{price}} NEWO Coin to Spin the Wheel.</p>
                     </div>
                     <div class="game" id="insuff_balance">
 						<p>You do not have Sufficient Balance to Spin the Wheel.</p>

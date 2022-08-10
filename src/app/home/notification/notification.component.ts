@@ -25,4 +25,5 @@ export class NotificationComponent implements OnInit {
       // console.log(this.notificationData); 
     });
   }
+  
 }

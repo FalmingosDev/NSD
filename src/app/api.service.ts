@@ -469,9 +469,10 @@ export class ApiService {
     return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email=' + email + '&referral=' + code);
   }
 
-  public couponsubscription() {
+  public couponsubscription(code) {
     const email = localStorage.getItem('token');
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email);
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email);
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email + '/' + code);
   }
 
 
