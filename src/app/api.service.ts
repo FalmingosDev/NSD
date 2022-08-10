@@ -730,11 +730,15 @@ multiplexPurchaseList()
   }
 
   public notificationList() {
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList');
+    const email = localStorage.getItem('token');
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList');
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList/' + email);
   }
 
   public notificationCount() {
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount');
+    const email = localStorage.getItem('token');
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount');
+     return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount/' + email);
   }
 }
 function imgFile(arg0: string, imgFile: any) {
