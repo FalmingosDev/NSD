@@ -10,5 +10,6 @@ export const environment = {
   laravel_api_url: 'https://newocoin.app/newoadmin/api/',
   baseUrl: 'https://newocoin.app/php',
   gameUrl: 'https://newocoin.app/Game/game/',
+  spinUrl: 'https://newocoin.app/SPIN/?',
   multiplex_poster_url:'https://creator-multiplex.s3.ap-southeast-1.amazonaws.com/media_image/'
 }; 

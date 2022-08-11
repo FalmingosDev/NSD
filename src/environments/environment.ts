@@ -14,6 +14,8 @@ export const environment = {
   laravel_api_url: 'https://newoapp.app/newoadmin/api/',
   baseUrl: 'https://newoapp.app/php',
   gameUrl: 'https://newoapp.app/Game/game/',
+  spinUrl: 'https://newoapp.app/SPIN/?',
+
   multiplex_poster_url:'https://creator-multiplex.s3.ap-southeast-1.amazonaws.com/media_image/',
   multiplex_video_url:'https://creator-multiplex.s3.ap-southeast-1.amazonaws.com/media_file/',
   hashtag_campaign:'https://newouploads.s3.ap-southeast-1.amazonaws.com/hashtag_campaign/',

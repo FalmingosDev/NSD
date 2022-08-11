@@ -12,9 +12,10 @@ import { environment } from '../../../environments/environment';
 export class SpinWheelComponent implements OnInit {
 
   sanitizer:any;
-
+  env=environment;
   // primaryUrl:string="https://newoapp.app/SPIN/?prize=";
-  primaryUrl:string="https://newoapp.app/SPIN/?";
+  // primaryUrl:string="https://newoapp.app/SPIN/?";
+  primaryUrl:string=this.env.spinUrl;
 
 
   // OOPS! MAY BE NEXT TIME
