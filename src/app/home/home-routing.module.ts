@@ -47,7 +47,8 @@ import { RechargewalletComponent } from './rechargewallet/rechargewallet.compone
 import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
 import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
 import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
-
+import { NotificationComponent } from './notification/notification.component';
+import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 
 
 
@@ -97,7 +98,9 @@ const routes: Routes = [
   {path: 'rechargewallet',component:RechargewalletComponent},
   {path: 'rechargepayment/:recharge_id/:recharge_price/:curr/:recharge_coins', component: RechargepaymentComponent},
   {path: 'recharge_success', component:RechargePaymentSuccessComponent},
-  {path: 'recharge_cancel', component:RechargePaymentCancelComponent}
+  {path: 'recharge_cancel', component:RechargePaymentCancelComponent},
+  {path: 'notification', component:NotificationComponent},
+  {path: 'spin_wheel/:prize/:transaction_id',component:SpinWheelComponent}
 ];
 
 @NgModule({

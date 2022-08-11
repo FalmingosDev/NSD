@@ -1,0 +1,212 @@
+<div class="body-strucre">
+
+    <section class="top-bar-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="top-text-sm">
+
+                        <ul>
+                            <li class="frisr-child"><a routerLink="/multiplexhome"><i class="fa fa-home"
+                                        aria-hidden="true"></i></a></li>
+                            <li class="frisr-child"><a href="#" routerLink="/multiplexpurchaseList">Purchase</a></li>
+                            <li><a href="" routerLink="/multiplexnewlist">New</a></li>
+                            <li><a href="#" routerLink="/multiplextending">Trending</a></li>
+                            <!-- <li><a href="#">Genre1</a></li> -->
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-12">
+                    <div class="search-btn">
+                        <!-- <a href=""><img src="assets/images/search.svg" class="img-fluid"></a> -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="second-part" *ngFor="let item of purchaselist">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="t-b-s-background">
+
+                        <div class="show-box new-box">
+                            <img src="{{env.CLOUDFRONT_MULTIPLEX_IMAGE_URL+item.image}}" class="img-fluid">
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3">
+
+                                </div>
+                                <div class="col-9 chat-chati">
+                                    <ul>
+                                        <li><span class="movie">{{item.name.slice(0, 20 )}}</span></li>
+                                        <li class="new-price">
+                                            <img src="assets/logo/ruppee.png"class="img-fluids">
+                                            <span>{{item.price}}</span>
+                                            <span *ngIf="item.wallet_point>0"> + {{item.wallet_point}} 
+                                                <span id="logo"><img src="assets/logo/coins-img.png" class="img-fluid">
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="cal">  
+                                            <span>
+                                                <img src="assets/images/calender.png" class="img-fluid">
+                                            </span>
+                                            <span>{{item.created_ts|date:'medium'}}</span>
+                                        </li>
+                                        <li class="star">
+
+                                            <span class="badge badge-danger" *ngIf="item.is_expired=='Y'">Expired</span>
+                                            <span class="badge badge-success" *ngIf="item.is_expired=='N'"><a
+                                                    routerLink="/multiplexvideoview/{{item.id}}">Play</a></span>
+                                            <span class="main-whistlist-new">
+                                                <span *ngIf="item.wishlist_status!=1"><a
+                                                        (click)="addWishList(item.id)"><img
+                                                            src="assets/logo/wishlist.svg" class="img-fluid"></a>
+                                                </span>
+
+                                                <span *ngIf="item.wishlist_status==1"><a
+                                                        (click)="removeWishList(item.id)"><img
+                                                            src="assets/logo/wishlisted.svg" class="img-fluid"></a>
+                                                </span>
+
+                                                <!-- <span>
+                                                    <div class="timer">
+
+                                                        <span id="hours"> {{hoursToDday}} </span>Hrs 
+                                                    <span id="minutes"> {{minutesToDday}} </span>Min
+                                                 <span id="seconds"> {{secondsToDday}} </span>S
+                                                    </div>
+                                                </span> -->
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="second-part-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                        <div class="t-b-s-background"> 
+                                                        
+                                                    <div class="show-box new-box">
+                                                        <img src="assets/images/poster3.webp" class="img-fluid">
+                                                    </div> 
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                
+                                                </div>
+                                                <div class="col-9 chat-chati">
+                                                <ul>
+                                                    <li><span class="movie">The Common Mind</span></li>
+                                                    <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
+                                                    <li><span>Romance, Muisc</span></li>
+                                                <li class="star">
+                                                        <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                                        <span class="date-text">8.5/10</span>
+                                                        <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </section>
+           
+    <section class="second-part-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                        <div class="t-b-s-background"> 
+                                                        
+                                                    <div class="show-box new-box">
+                                                        <img src="assets/images/poster4.webp" class="img-fluid">
+                                                    </div> 
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                
+                                                </div>
+                                                <div class="col-9 chat-chati">
+                                                <ul>
+                                                    <li><span class="movie">The Common Mind</span></li>
+                                                    <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
+                                                    <li><span>Romance, Muisc</span></li>
+                                                <li class="star">
+                                                        <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                                        <span class="date-text">8.5/10</span>
+                                                        <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="second-part-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                        <div class="t-b-s-background"> 
+                                                        
+                                                    <div class="show-box new-box">
+                                                        <img src="assets/images/poster5.webp" class="img-fluid">
+                                                    </div> 
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                
+                                                </div>
+                                                <div class="col-9 chat-chati">
+                                                <ul>
+                                                    <li><span class="movie">The Common Mind</span></li>
+                                                    <li><span>2 hr 02 min</span><span class="main-date">2022</span></li>
+                                                    <li><span>Romance, Muisc</span></li>
+                                                <li class="star">
+                                                        <span><img src="assets/images/rating-fill.svg" class="img-fluid"></span>
+                                                        <span class="date-text">8.5/10</span>
+                                                        <span class="main-whistlist-new"><img src="assets/logo/wishlist.svg" class="img-fluid"></span>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+</div>
+
+<app-welcomefooter></app-welcomefooter>

@@ -1,0 +1,11 @@
+.count-no {
+    
+    color: #070707;
+    font-size: 14px;
+    background-color: #ff8700;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+}

@@ -15,6 +15,8 @@ export class RewardsComponent implements OnInit {
   rewardData_desc:String="";
   rewardData_val_date:String="";
   rewardData_coin:String="";
+  spinprize:any=[];
+
 
   constructor(private service:ApiService,private route:Router) { }
   
@@ -26,6 +28,8 @@ export class RewardsComponent implements OnInit {
     this.service.rewardList().subscribe((result)=>{
       this.rewardlist = result.reward_list;
       //console.log(this.rewardlist);
+      this.spinprize = result.spin_prize;
+      
     })
   }
 

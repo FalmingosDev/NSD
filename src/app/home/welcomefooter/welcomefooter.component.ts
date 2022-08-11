@@ -9,11 +9,24 @@ import { WelcomeComponent } from '../welcome/welcome.component';
   styleUrls: ['./welcomefooter.component.css']
 })
 export class WelcomefooterComponent implements OnInit {
+  
+  cnt: any;
   constructor(private router:Router,private dataService: ApiService) {
     
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  this.notificationCount();
+}
+
+ notificationCount(){
+  this.dataService.notificationCount().subscribe((result)=>{
+    this.cnt=result;
+    console.log(this.cnt);
+  })
+ }
+
 
   checkAuth(value='newoclan'){
     if(localStorage.getItem('token')){
@@ -53,6 +66,14 @@ export class WelcomefooterComponent implements OnInit {
         else if(value=='game'){
           if(res.cnt ==1){
             this.router.navigate(['/game']);
+          }
+          else{
+            this.router.navigate(['/about_newoclan']);
+          }
+        }
+        else if(value=='multiplex'){
+          if(res.cnt ==1){
+            this.router.navigate(['/multiplexhome']);
           }
           else{
             this.router.navigate(['/about_newoclan']);

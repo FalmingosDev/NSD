@@ -1,0 +1,106 @@
+<div class="body-strucre">
+<section class="top-bar-nav">  
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="top-text-sm">
+
+                        <ul>
+                            <li class="frisr-child"><a  routerLink="/multiplexhome"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                            <li class="second"><a routerLink="/multiplextending">Trending</a></li>
+                            <li><a href="">New</a></li>
+                            <li><a href="#"  routerLink="/multiplexpurchaseList">Purchase</a></li>
+                           
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-12">
+                    <div class="search-btn">
+                        <!-- <a href=""><img src="assets/images/search.svg" class="img-fluid"></a> -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="page-video-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pg-h4-box">
+                     <h4 class="pag-h4-nm">{{videoplay.name}}<span>&nbsp;({{videoplay.year}})</span></h4>
+                        <ul class="page-vd-ul"> 
+                            <li>{{videoplay.certification}}</li>
+                            <li>{{videoplay.duration_time}}</li>     
+                            <li>Movie</li>
+                        </ul> 
+                    </div>
+                </div>
+                </div>
+            <div class="row mt-15">
+                <div class="col-md-4 col-6">
+                    <ul class="page-video-rate">
+                        <li>
+                            <div class="star-vd-icon">
+                                <img src="assets/images/rating-fill.svg" class="img-fluid">
+                            </div>
+                            <div class="star-vd-no">
+                                <p>{{videoplay.rating}}<span class="st-vd-1-span">/10</span><span class="st-vd-2-span">{{videoplay.views}}</span></p>
+                            </div>
+                        </li>
+               
+                       
+                    </ul>
+                </div>
+                <div class="col-md-8 col-6 star-vd-icon-1">
+                    <h1>Rating</h1>  
+                    <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="rating-video">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="rt-video-div">
+                        <video width="100%" height="100%" controls id="multiplexVid">
+                             <source [src]="vidUrl" type="video/mp4"> 
+                        </video>
+                    </div>
+                </div>
+            </div>  
+        </div>
+      </section>
+      <section class="movie-description">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="movie-des-text">
+                        <h6>{{videoplay.synopsis}} </h6>  
+                        <!-- <p>Language : <span>Bengali</span></p> -->
+                        <p>Genre : <span>{{videoplay.genere_name}}</span></p>
+                        <p>Year : <span>{{videoplay.year}}</span></p>
+                        <p>Cast : <span>{{videoplay.stars}}</span></p>
+                        <!-- <p>Director : <span>Saibal Mitra</span></p> -->
+                    </div>
+                </div>
+            </div>  
+        </div>
+      </section>
+    
+</div>
+
+
+<app-welcomefooter></app-welcomefooter>

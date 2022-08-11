@@ -60,9 +60,11 @@ import { ReferralinviteComponent } from './referralinvite/referralinvite.compone
 import { RedeemComponent } from './redeem/redeem.component';
 import { RechargewalletComponent } from './rechargewallet/rechargewallet.component';
 import { RechargepaymentComponent } from './rechargepayment/rechargepayment.component';
+
 import { RechargePaymentSuccessComponent } from './recharge-payment-success/recharge-payment-success.component';
 import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
-
+import { NotificationComponent } from './notification/notification.component';
+import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 
 
 
@@ -118,8 +120,10 @@ import { RechargePaymentCancelComponent } from './recharge-payment-cancel/rechar
     RedeemComponent,
     RechargewalletComponent,
     RechargepaymentComponent,
+    SpinWheelComponent,
     RechargePaymentSuccessComponent,
-    RechargePaymentCancelComponent
+    RechargePaymentCancelComponent,
+    NotificationComponent
   ],
   imports: [
     CommonModule,

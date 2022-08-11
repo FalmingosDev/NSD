@@ -10,6 +10,16 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ApiService {
+  newlist: any;
+  multiplex_id() {
+    throw new Error('Method not implemented.');
+  }
+  removeWishList() {
+    throw new Error('Method not implemented.');
+  }
+  recomendedWishList() {
+    throw new Error('Method not implemented.');
+  }
   redirectUrl: string;
   // env.env.baseUrl:string = "https://newocoin.app/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
@@ -468,9 +478,15 @@ export class ApiService {
     return this.httpClient.get<any>('https://dreamnewo.com/api/get-member-status?email=' + email + '&referral=' + code);
   }
 
-  public couponsubscription() {
+  // public couponsubscription() {
+  //   const email = localStorage.getItem('token');
+  //   return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email);
+  // }
+
+  public couponsubscription(code) {
     const email = localStorage.getItem('token');
-    return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email);
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email);
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'couponsubscription/' + email + '/' + code);
   }
 
 
@@ -541,12 +557,98 @@ export class ApiService {
     // return this.httpClient.post<any>(this.env.baseUrl+'/profile.php', {email,user_name,profile_pic});
     return this.httpClient.post<any>(this.env.baseUrl + '/profile.php', { action_type, user_name, useremail });
 
+    
+
   }
+
+  /*...........................Multiplex........................*/ 
+  multiplexList(){
+    const user_email = localStorage.getItem('token');
+    
+      return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-list?user_email='+user_email);
+     }
+    public addMultiplexWishlist(multiplex_id:any){
+      //  alert(multiplex_id);
+            const user_email = localStorage.getItem('token');
+            // alert(user_email);
+            return this.httpClient.post<any>(this.env.laravel_api_url+'add-multiplex-wishlist',{multiplex_id,user_email});
+        }
+public removeMultiplexWishlist(multiplex_id:any){
+    //  alert(multiplex_id);
+          const user_email = localStorage.getItem('token');
+          // alert(user_email);
+          return this.httpClient.post<any>(this.env.laravel_api_url+'remove-multiplex-wishlist',{multiplex_id,user_email});
+      }
+
+      wishList(){
+        const user_email = localStorage.getItem('token');
+        return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-wishlist?user_email='+user_email);
+       } 
+
+      
+        multiplexCheckout(multiplex_id){
+
+         const user_email = localStorage.getItem('token');
+         return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-checkout?multiplex_id='+multiplex_id+'&user_email='+user_email);
+
+        }
+
+
+        viewAllWishList(){
+          const user_email = localStorage.getItem('token');
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-recommended-view-all-list?user_email='+user_email);
+         } 
+  
+         upcomingViewAllList()
+         {
+         
+          return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-upcoming-view-all-list');
+         }
+
+
+  public multiplexCreateEncryption(objUserData) {
+      return this.httpClient.post<any>(this.env.baseUrl + '/multiplex_payment.php', { userdata: objUserData });
+  }
+
+
 
   public activateLeadBonus(leadCoupon) {
     const userEmail = localStorage.getItem('token');
     return this.httpClient.post<any>(this.env.laravel_api_url + 'saveleadcoupon', { userEmail, leadCoupon });
   }
+
+  purchaseList(){
+    const user_email = localStorage.getItem('token');
+    // alert(user_email);
+      return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-purchase-list?user_email='+user_email);
+     }
+
+multiplexVideoPlay(multiplex_id)
+{
+ 
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-video-view-details?user_email='+user_email+'&multiplex_id='+multiplex_id);
+}
+
+
+multiplexTrendingList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-tending-list?user_email='+user_email);
+}
+
+multiplexNewList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-new-list?user_email='+user_email);
+}
+
+
+multiplexPurchaseList()
+{
+  const user_email = localStorage.getItem('token');
+  return this.httpClient.get<any>(this.env.laravel_api_url+'multiplex-purchase-list?user_email='+user_email);
+}
 
   /* Hashtag */
   hashtagcampaignList(email) {
@@ -581,12 +683,9 @@ export class ApiService {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-my-all-campaign/' + email);
   }
 
-
-
   addSocialDetails(userdata, emails) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'add-hashtag-campaign-social-link', { userdata, emails });
   }
-
 
   getaddUserBankDetails(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-bank-details/' + email);
@@ -596,7 +695,6 @@ export class ApiService {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-user-bank-details-add', { userdata, email });
   }
 
-
   hashtagAddSocialAndAdress(userdata,campaign_id, email) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'hashtag-social-address-add', { userdata,campaign_id,email });
   }
@@ -604,16 +702,19 @@ export class ApiService {
   hashtagProfileGet(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'get-hashtag-user-details/' + email);
   }
-
-  
-
   addAcceptCampaignBefore(email,campaign_id) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-accept-campaign-before/' + email + '/' + campaign_id);
-  }
-
-  
+  }  
   getUserInterestAndSocial(email) {
     return this.httpClient.get<any>(this.env.laravel_api_url + 'hashtag-user-interest-social-get/' + email);
+  }
+    public spinPayment() {
+    const user_email = localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'spin-transaction', {user_email});
+  }
+  public priceToSpin() {
+    const user_email = localStorage.getItem('token');
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'spin-use-coin/' + user_email);
   }
 
   rechagewallet(){
@@ -626,4 +727,19 @@ export class ApiService {
   }
   /*-------------------------------------------------- Recharge Payment End ------------------------------------------------*/
 
+  public notificationList() {
+    const email = localStorage.getItem('token');
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList');
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationList/' + email);
+  }
+
+  public notificationCount() {
+    const email = localStorage.getItem('token');
+    // return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount');
+     return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount/' + email);
+  }
 }
+function imgFile(arg0: string, imgFile: any) {
+  throw new Error('Function not implemented.');
+}
+

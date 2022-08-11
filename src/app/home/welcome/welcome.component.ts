@@ -6,11 +6,9 @@ import { ApiService } from 'src/app/api.service';
 import * as $ from 'jquery';
 import { PlyrComponent, PlyrModule } from 'ngx-plyr';
 import { environment } from '../../../environments/environment';
-
 import { DatePipe } from '@angular/common';
 
-
-// import { AlertService } from 'ngx-alerts';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-welcome',
@@ -33,7 +31,10 @@ export class WelcomeComponent implements OnInit {
   isSubscribe:boolean=false;
   isNotSubscribe:boolean=false;
 
-
+  prize: any;
+  transaction_id: any;
+  msg: any;
+  price: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -149,7 +150,7 @@ export class WelcomeComponent implements OnInit {
   };
  
 
-  constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe) { 
+  constructor(private router:Router,private dataService: ApiService,private datePipe: DatePipe,private alertService: AlertService) { 
  
 
     if(localStorage.getItem('token')){
@@ -176,13 +177,19 @@ export class WelcomeComponent implements OnInit {
     
     this.myDate = new Date();
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+    // console.log(this.transform_date);
+    // if(this.transform_date=='2022-08-15'){
+    //   // console.log("today is 10th August");
+    // }
     if(localStorage.getItem('token')){ 
     this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
     }
    
     this.getCurrentLocation();
     this.homePosterLatest();
-    this.leadBonusModal();    
+    this.leadBonusModal();  
+    
+    this.spinPrice();
   }
 
   homePosterLatest(){   
@@ -251,6 +258,14 @@ export class WelcomeComponent implements OnInit {
           else{
             this.router.navigate(['/about_newoclan']);
           }
+        }
+        else if(value=='multiplex'){
+          if(res.cnt ==1){
+            this.router.navigate(['/multiplexhome']);
+          }
+          else{
+            this.router.navigate(['/about_newoclan']);
+          }
         } 
         else if(value=='profile'){
           this.router.navigate(['/profile']);
@@ -258,8 +273,8 @@ export class WelcomeComponent implements OnInit {
                  
       });
     }
-    else{      
-      this.router.navigate(['/about_newoclan']);   
+    else{ 
+      this.router.navigate(['/about_newoclan']);         
     }
   }
 
@@ -302,4 +317,69 @@ export class WelcomeComponent implements OnInit {
     })
   }
 
+  spinPrice(){  
+    $("#insuff_balance").hide();
+    $("#recharge_btn").hide(); 
+    $("#subscribe_btn").hide();
+    $("#notSubscribed").hide(); 
+    $("#notLogin").hide(); 
+    $("#login_btn").hide();   
+    this.dataService.priceToSpin().subscribe((result)=>{ 
+      this.price=result.use_coin;
+    })
+  }
+
+  payForSpin(){
+    if(localStorage.getItem('token')){
+      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+        if(res.cnt ==1){
+          this.dataService.spinPayment().subscribe((result)=>{ 
+          (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
+            if(result.success==true){    
+              this.prize=result.prize;
+              this.transaction_id=result.transaction_id;
+              $("#close_modal").click();
+              this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
+            }
+            else{
+              this.msg=result.error;
+              $("#insuff_balance").show();
+              $("#recharge_btn").show(); 
+              $("#balance").hide();
+              $("#active_btn").hide();
+            }
+          })
+        }
+        else{
+          $("#balance").hide();
+          $("#active_btn").hide();
+          $("#notSubscribed").show(); 
+          $("#subscribe_btn").show(); 
+        }
+      })
+    }
+    else{
+      $("#balance").hide();
+      $("#active_btn").hide();
+      $("#notSubscribed").hide(); 
+      $("#subscribe_btn").hide(); 
+      $("#recharge_btn").hide(); 
+      $("#notLogin").show(); 
+      $("#login_btn").show();
+    }  
+  }
+
+  notSubscribed(){
+    $("#close_modal").click();
+    this.router.navigate(['/pricing']);
+  }
+
+  notLogin(){
+    $("#close_modal").click();
+    this.router.navigate(['/login']);
+  }
+  noBalance(){
+    $("#close_modal").click();
+    this.router.navigate(['/rechargewallet']);
+  }
 }

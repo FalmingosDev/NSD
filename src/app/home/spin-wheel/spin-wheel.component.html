@@ -1,0 +1,29 @@
+<div class="back_btn_div">
+    <a href="javascript:void(0)"  data-toggle="modal" data-target="#spinwheel-modal">
+        <span>Back</span>
+        <div class="liquid"></div>
+    </a>
+</div>
+<div class="play-dv" > 
+    <iframe [src]="final_url" style="height: 700px;
+    width: -webkit-fill-available;" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<div class="modal fade" id="spinwheel-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="box">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    <h5 class="modal-title-new">Are You Sure Want to Back?</h5>
+                    <div class="close-div-btn">
+                        <a href="javascript:void(0)" routerLink="/"><button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button></a>
+                        <button type="button" class="close" data-dismiss="modal" class="btn btn-primary btn-no">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
