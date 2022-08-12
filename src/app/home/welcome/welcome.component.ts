@@ -37,7 +37,7 @@ export class WelcomeComponent implements OnInit {
   price: any;
   // isBD:boolean;
   // isNotBD:boolean;
-
+  email: any;
 
   customOptionsforNew: OwlOptions  = {
     loop: true,
@@ -177,10 +177,8 @@ export class WelcomeComponent implements OnInit {
     
     this.myDate = new Date();
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    // console.log(this.transform_date);
-    // if(this.transform_date=='2022-08-15'){
-    //   // console.log("today is 10th August");
-    // }
+    this.email = localStorage.getItem('token');
+
     if(localStorage.getItem('token')){ 
     this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
     }

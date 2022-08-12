@@ -416,7 +416,7 @@
                                 </div>
                             </div>
                         </ng-template>
-                        <!-- lock spin -->
+                        <!-- lock spin till 15th August Start-->
                         <ng-template carouselSlide *ngIf="transform_date!='2022-08-15'">
                             <div class="drm-item">
                                 <div class="dream-spin-main">
@@ -427,6 +427,22 @@
                                 </div>
                             </div>
                         </ng-template>
+                        <!-- lock spin till 15th August End-->
+                        <!-- Durba and Jayanta can spin start-->
+                        <ng-template carouselSlide *ngIf="email=='durba@gmail.com'||email=='jayanta.flamingostech@gmail.com'">
+                            <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-1.webp" class="img-fluid">
+                                </div>
+                                <div class="wheel-spin">
+                                    <a href="javascript:void(0)">Spin Now</a>
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 15th August</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <!-- Durba and Jayanta can spin End -->
                         <ng-template carouselSlide>
                             <div class="drm-item">
                                 <div class="dream-spin-main">

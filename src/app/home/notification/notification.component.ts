@@ -13,6 +13,9 @@ import { AlertService } from 'ngx-alerts';
 export class NotificationComponent implements OnInit {
 
   notificationData: any;
+  cnt: any;
+  count: any;
+
   constructor(private activatedRoute:ActivatedRoute,private dataService: ApiService,private router:Router,private alertService: AlertService) { }
 
   ngOnInit(): void {
@@ -22,8 +25,9 @@ export class NotificationComponent implements OnInit {
   notificationList(){   
     this.dataService.notificationList().subscribe((result) => {
       this.notificationData = result;
-      // console.log(this.notificationData); 
+      console.log(this.notificationData); 
     });
   }
+
   
 }

@@ -11,12 +11,14 @@ import { WelcomeComponent } from '../welcome/welcome.component';
 export class WelcomefooterComponent implements OnInit {
   
   cnt: any;
+  email: any;
+
   constructor(private router:Router,private dataService: ApiService) {
     
    }
 
   ngOnInit(): void {
-
+  this.email = localStorage.getItem('token');
   this.notificationCount();
 }
 

@@ -47,6 +47,7 @@
 <section class="new-from">
 <div class="container">
      <div class="row">
+        <div *ngIf="!notificationData || notificationData==''" style="text-align:center; color:aliceblue;">No Data Found</div>
             <div class="col-md-12 col-12" *ngFor="let notification of notificationData | keyvalue; let i=index;">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
