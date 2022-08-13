@@ -23,10 +23,10 @@ export class ProfileComponent implements OnInit {
   email: string | undefined;
   phone: any=[];
   password: any=[];
-  wallet: any=[];
+  total_point: any=[];
   referrer_point: any=[];
   active_date: any=[];
-  wallet_point: any=[];
+  reward_point: any=[];
   profile_pic : string;
   profile_pic_base : string = this.env.appUrl+'profile_pic/';
   profile_pic_url : string;
@@ -54,9 +54,9 @@ export class ProfileComponent implements OnInit {
         this.email=res.data.email;
         this.phone=res.data.phone;
         this.password=res.data.password;
-        this.wallet=res.data.point;
+        this.total_point=res.data.total_point;
         this.referrer_point=res.data.referrer_point;
-        this.wallet_point=res.data.wallet_point;
+        this.reward_point=res.data.reward_point;
         this.active_date=res.data.active_date;
 
         this.transform_date =this.datePipe.transform(this.active_date,'dd.MM.yyyy');
