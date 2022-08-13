@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appUrl: 'https://www.newoapp.app/',
+  appUrl: 'https://newoapp.app/',
   AWS_VIDEO_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/video/',
   AWS_THUMB_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/thumb/',
   AWS_POSTER_URL: 'https://newoott.s3.ap-southeast-1.amazonaws.com/poster/',
