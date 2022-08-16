@@ -402,7 +402,7 @@
                         <img src="assets/images/dream-spin-title.webp" class="img-fluid">
                     </div>
                     <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
-                        <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
+                        <!-- <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
                             <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1.webp" class="img-fluid">
@@ -414,9 +414,9 @@
                                     <p>Spin on 15th August</p>
                                 </div>
                             </div>
-                        </ng-template>
+                        </ng-template> -->
                         <!-- lock spin -->
-                        <ng-template carouselSlide *ngIf="transform_date!='2022-08-15'">
+                        <!-- <ng-template carouselSlide *ngIf="transform_date!='2022-08-15'">
                             <div class="drm-item">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1-2.webp" class="img-fluid">
@@ -425,7 +425,7 @@
                                     <p>Spin on 15th August</p>
                                 </div>
                             </div>
-                        </ng-template>
+                        </ng-template> -->
                         <ng-template carouselSlide>
                             <div class="drm-item">
                                 <div class="dream-spin-main">
@@ -554,7 +554,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <!-- <div class="modal-body">
                 <div class="box">
                     <div class="game" id="balance">
                         <p>You have to use {{price}} NEWO Coin to Spin the Wheel.</p>
@@ -569,13 +569,13 @@
 						<p>You Need to Subscribe to Spin the Wheel.</p>
 				  	</div> 
                 </div>
-            </div>
-            <div class="modal-footer">
+            </div> -->
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="active_btn" (click)="payForSpin()">Spin Now</button>
                 <button type="button" class="btn btn-primary" id="subscribe_btn" (click)="notSubscribed()">Subscribe Now</button>
                 <button type="button" class="btn btn-primary" id="login_btn" (click)="notLogin()">Login Now</button>
                 <button type="button" class="btn btn-primary" id="recharge_btn" (click)="noBalance()">Recharge Now</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

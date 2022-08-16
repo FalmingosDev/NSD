@@ -177,10 +177,7 @@ export class WelcomeComponent implements OnInit {
     
     this.myDate = new Date();
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    // console.log(this.transform_date);
-    // if(this.transform_date=='2022-08-15'){
-    //   // console.log("today is 10th August");
-    // }
+    
     if(localStorage.getItem('token')){ 
     this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
     }
@@ -189,7 +186,7 @@ export class WelcomeComponent implements OnInit {
     this.homePosterLatest();
     this.leadBonusModal();  
     
-    this.spinPrice();
+    // this.spinPrice();
   }
 
   homePosterLatest(){   
@@ -317,69 +314,69 @@ export class WelcomeComponent implements OnInit {
     })
   }
 
-  spinPrice(){  
-    $("#insuff_balance").hide();
-    $("#recharge_btn").hide(); 
-    $("#subscribe_btn").hide();
-    $("#notSubscribed").hide(); 
-    $("#notLogin").hide(); 
-    $("#login_btn").hide();   
-    this.dataService.priceToSpin().subscribe((result)=>{ 
-      this.price=result.use_coin;
-    })
-  }
+  // spinPrice(){  
+  //   $("#insuff_balance").hide();
+  //   $("#recharge_btn").hide(); 
+  //   $("#subscribe_btn").hide();
+  //   $("#notSubscribed").hide(); 
+  //   $("#notLogin").hide(); 
+  //   $("#login_btn").hide();   
+  //   this.dataService.priceToSpin().subscribe((result)=>{ 
+  //     this.price=result.use_coin;
+  //   })
+  // }
 
-  payForSpin(){
-    if(localStorage.getItem('token')){
-      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
-        if(res.cnt ==1){
-          this.dataService.spinPayment().subscribe((result)=>{ 
-          (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
-            if(result.success==true){    
-              this.prize=result.prize;
-              this.transaction_id=result.transaction_id;
-              $("#close_modal").click();
-              this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
-            }
-            else{
-              this.msg=result.error;
-              $("#insuff_balance").show();
-              $("#recharge_btn").show(); 
-              $("#balance").hide();
-              $("#active_btn").hide();
-            }
-          })
-        }
-        else{
-          $("#balance").hide();
-          $("#active_btn").hide();
-          $("#notSubscribed").show(); 
-          $("#subscribe_btn").show(); 
-        }
-      })
-    }
-    else{
-      $("#balance").hide();
-      $("#active_btn").hide();
-      $("#notSubscribed").hide(); 
-      $("#subscribe_btn").hide(); 
-      $("#recharge_btn").hide(); 
-      $("#notLogin").show(); 
-      $("#login_btn").show();
-    }  
-  }
+  // payForSpin(){
+  //   if(localStorage.getItem('token')){
+  //     this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+  //       if(res.cnt ==1){
+  //         this.dataService.spinPayment().subscribe((result)=>{ 
+  //         (<HTMLFormElement>document.getElementById('active_btn')).disabled  = true;
+  //           if(result.success==true){    
+  //             this.prize=result.prize;
+  //             this.transaction_id=result.transaction_id;
+  //             $("#close_modal").click();
+  //             this.router.navigate(['/spin_wheel/'+this.prize+'/'+this.transaction_id]);
+  //           }
+  //           else{
+  //             this.msg=result.error;
+  //             $("#insuff_balance").show();
+  //             $("#recharge_btn").show(); 
+  //             $("#balance").hide();
+  //             $("#active_btn").hide();
+  //           }
+  //         })
+  //       }
+  //       else{
+  //         $("#balance").hide();
+  //         $("#active_btn").hide();
+  //         $("#notSubscribed").show(); 
+  //         $("#subscribe_btn").show(); 
+  //       }
+  //     })
+  //   }
+  //   else{
+  //     $("#balance").hide();
+  //     $("#active_btn").hide();
+  //     $("#notSubscribed").hide(); 
+  //     $("#subscribe_btn").hide(); 
+  //     $("#recharge_btn").hide(); 
+  //     $("#notLogin").show(); 
+  //     $("#login_btn").show();
+  //   }  
+  // }
 
-  notSubscribed(){
-    $("#close_modal").click();
-    this.router.navigate(['/pricing']);
-  }
+  // notSubscribed(){
+  //   $("#close_modal").click();
+  //   this.router.navigate(['/pricing']);
+  // }
 
-  notLogin(){
-    $("#close_modal").click();
-    this.router.navigate(['/login']);
-  }
-  noBalance(){
-    $("#close_modal").click();
-    this.router.navigate(['/rechargewallet']);
-  }
+  // notLogin(){
+  //   $("#close_modal").click();
+  //   this.router.navigate(['/login']);
+  // }
+  // noBalance(){
+  //   $("#close_modal").click();
+  //   this.router.navigate(['/rechargewallet']);
+  // }
 }
