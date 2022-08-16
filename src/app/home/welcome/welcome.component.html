@@ -403,46 +403,6 @@
                         <img src="assets/images/dream-spin-title.webp" class="img-fluid">
                     </div>
                     <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
-                        <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
-                            <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
-                                <div class="dream-spin-main">
-                                    <img src="/assets/images/spiner-1.webp" class="img-fluid">
-                                </div>
-                                <div class="wheel-spin">
-                                    <a href="javascript:void(0)">Spin Now</a>
-                                </div>
-                                <div class="spin-date">
-                                    <p>Spin on 15th August</p>
-                                </div>
-                            </div>
-                        </ng-template>
-                        <!-- lock spin till 15th August Start-->
-                        <ng-template carouselSlide *ngIf="transform_date!='2022-08-15'">
-                            <div class="drm-item">
-                                <div class="dream-spin-main">
-                                    <img src="/assets/images/spiner-1-2.webp" class="img-fluid">
-                                </div>
-                                <div class="spin-date">
-                                    <p>Spin on 15th August</p>
-                                </div>
-                            </div>
-                        </ng-template>
-                        <!-- lock spin till 15th August End-->
-                        <!-- Durba and Jayanta can spin start-->
-                        <ng-template carouselSlide *ngIf="email=='durba@gmail.com'||email=='jayanta.flamingostech@gmail.com'">
-                            <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
-                                <div class="dream-spin-main">
-                                    <img src="/assets/images/spiner-1.webp" class="img-fluid">
-                                </div>
-                                <div class="wheel-spin">
-                                    <a href="javascript:void(0)">Spin Now</a>
-                                </div>
-                                <div class="spin-date">
-                                    <p>Spin on 15th August</p>
-                                </div>
-                            </div>
-                        </ng-template>
-                        <!-- Durba and Jayanta can spin End -->
                         <ng-template carouselSlide>
                             <div class="drm-item">
                                 <div class="dream-spin-main">
@@ -570,28 +530,6 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
-                <div class="box">
-                    <div class="game" id="balance">
-                        <p>You have to use {{price}} NEWO Coin to Spin the Wheel.</p>
-                    </div>
-                    <div class="game" id="insuff_balance">
-						<p>You do not have Sufficient Balance to Spin the Wheel.</p>
-				  	</div>
-                    <div class="game" id="notLogin">
-                        <p>You Need to Login First.</p>
-                    </div>
-                    <div class="game" id="notSubscribed">
-						<p>You Need to Subscribe to Spin the Wheel.</p>
-				  	</div> 
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="active_btn" (click)="payForSpin()">Spin Now</button>
-                <button type="button" class="btn btn-primary" id="subscribe_btn" (click)="notSubscribed()">Subscribe Now</button>
-                <button type="button" class="btn btn-primary" id="login_btn" (click)="notLogin()">Login Now</button>
-                <button type="button" class="btn btn-primary" id="recharge_btn" (click)="noBalance()">Recharge Now</button>
             </div>
         </div>
     </div>
