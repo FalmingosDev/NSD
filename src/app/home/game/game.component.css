@@ -8,6 +8,11 @@ section {
 a:hover {
     text-decoration: none;
 }
+.gm-img img{
+    border-radius: 10px;
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 2px #ffffff;
+}
 
 .mt-bt {
     margin-bottom: 127px;
