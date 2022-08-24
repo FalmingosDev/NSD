@@ -56,12 +56,15 @@ export class CampaignComponent implements OnInit {
 
       this.campaign_spl_note = result.data.campaign_details_list.campaign_spl_note;
 
+      this.campaign_description_link = result.data.campaign_details_list.campaign_description_link;
+
       this.message = result.data.message;
 
       this.results = result.data.common_cat;
 
       this.check = result.data.key;
 
+     console.log(this.campaign_description_link);
     })
 
 

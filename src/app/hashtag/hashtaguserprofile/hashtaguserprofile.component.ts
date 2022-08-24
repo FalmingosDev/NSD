@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, Form, FormControl } from '@angular/forms';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
+declare var $: any;
 import { ApiService } from 'src/app/api.service';
 import { AlertService } from 'ngx-alerts';
 import { Router } from '@angular/router';
@@ -40,6 +41,7 @@ export class HashtaguserprofileComponent implements OnInit {
   upiid: any;
   msg_data: any;
   msgs: any;
+
   ngAfterViewInit() {
     $(document).ready(function () {
       $("#stepfunone").click(function () {
@@ -51,15 +53,18 @@ export class HashtaguserprofileComponent implements OnInit {
         $("#editwo").hide();
       });
     });
+
   }
 
-  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService, private alertService: AlertService, private _router: Router, private UserBankDetailsOthers: ApiService) { }
+  constructor(private getCountryList: ApiService, private formBuilder: FormBuilder, private UserDetails: ApiService, private UserBankDetails: ApiService, private profileGet: ApiService, private alertService: AlertService, private _router: Router, private UserBankDetailsOthers: ApiService) {
+
+  }
 
   ngOnInit(): void {
 
     this.UserForm = new FormGroup({
 
-      name: new FormControl(''),
+      name: new FormControl('',Validators.required),
       mobile: new FormControl(''),
       dob: new FormControl(''),
       language: new FormControl(''),
@@ -113,7 +118,7 @@ export class HashtaguserprofileComponent implements OnInit {
 
         this.UserForm = new FormGroup({
 
-          name: new FormControl(this.name),
+          name: new FormControl(this.name,Validators.required),
           mobile: new FormControl(this.mob),
           dob: new FormControl(this.dob),
           language: new FormControl(this.langu),

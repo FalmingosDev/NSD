@@ -19,6 +19,7 @@ export class ApiService {
   data: any;
   env = environment;
   sanitizer: any;
+  invalid: any;
 
   constructor(private httpClient: HttpClient, private route: Router, sanitizer: DomSanitizer) {
     this.sanitizer = sanitizer;
