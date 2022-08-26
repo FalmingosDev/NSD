@@ -7,6 +7,12 @@ export const environment = {
   AWS_BLOG_URL: 'https://newouploads.s3.ap-southeast-1.amazonaws.com/blog/',
   AWS_BLOG_AUTHOR_URL: 'https://newouploads.s3.ap-southeast-1.amazonaws.com/blog_author/',
   AWS_GAME_URL:'https://newouploads.s3.ap-southeast-1.amazonaws.com/game/',
+
+  AWS_OTT_VIDEO_URL: 'https://d3364iafsj330v.cloudfront.net/newoott/video/',
+  AWS_OTT_THUMB_URL: 'https://d3364iafsj330v.cloudfront.net/newoott/thumb/',
+  AWS_OTT_POSTER_URL: 'https://d3364iafsj330v.cloudfront.net/newoott/poster/',
+
+
   laravel_api_url: 'https://newocoin.app/newoadmin/api/',
   baseUrl: 'https://newocoin.app/php',
   gameUrl: 'https://newocoin.app/Game/game/',
@@ -26,4 +32,9 @@ export const environment = {
 
   CLOUDFRONT_BLOG_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog/',
   CLOUDFRONT_BLOG_AUTHOR_URL: 'https://d3364iafsj330v.cloudfront.net/newouploads/blog_author/',
+
+  dev_video_url: 'https://d3364iafsj330v.cloudfront.net/newouploads/uploads/dev.mp4',
+  johnty_video_url: 'https://d3364iafsj330v.cloudfront.net/newouploads/uploads/johnty-rodes.mp4',
+  lara_video_url: 'https://d3364iafsj330v.cloudfront.net/newouploads/uploads/lara-dutta.mp4',
+  sunil_video_url: 'https://d3364iafsj330v.cloudfront.net/newouploads/uploads/sunil-grover.mp4',
 }; 

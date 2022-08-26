@@ -5,7 +5,7 @@
             <ng-template carouselSlide *ngFor="let bData of bannerData | keyvalue">
                 <a (click)="videoDetail($event,bData.value.id)">
                     <div class="slide">
-                        <img src="{{env.AWS_POSTER_URL+bData.value.poster}}" class="img-fluid">
+                        <img src="{{env.AWS_OTT_POSTER_URL+bData.value.poster}}" class="img-fluid">
                     </div>
                 </a>
             </ng-template>
@@ -26,7 +26,7 @@
                         <ng-template carouselSlide *ngFor="let pData of pauseData | keyvalue">
                             <a (click)="videoDetail($event,pData.value.id)">
                                 <div class="slide">
-                                    <img src="{{env.AWS_THUMB_URL+pData.value.thumb}}" class="img-fluid">
+                                    <img src="{{env.AWS_OTT_THUMB_URL+pData.value.thumb}}" class="img-fluid">
                                 </div>
                             </a>
                         </ng-template>
@@ -47,8 +47,8 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let lData of latestData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,lData.value.id)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='0'"></a>
-                                <a (click)="episodeDetail($event,lData.value.episode)"><img src="{{env.AWS_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='1'"></a>
+                                <a (click)="videoDetail($event,lData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='0'"></a>
+                                <a (click)="episodeDetail($event,lData.value.episode)"><img src="{{env.AWS_OTT_THUMB_URL+lData.value.thumb}}" class="img-fluid" *ngIf="lData.value.grp=='1'"></a>
                             </div>
                             <!-- <div class="earn" >Watch & Win 100 NEWO                        
                                <span class="coin-size"><img src="/assets/images/newocoin-ft.png" ></span>                                
@@ -73,7 +73,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let wData of webData | keyvalue">
                             <div class="slide">
-                                <a (click)="episodeDetail($event,wData.value.type,wData.value.episode,wData.value.season)"><img src="{{env.AWS_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="episodeDetail($event,wData.value.type,wData.value.episode,wData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>
@@ -95,7 +95,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let qData of quickyData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,qData.value.id)"><img src="{{env.AWS_THUMB_URL+qData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="videoDetail($event,qData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+qData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>
@@ -117,7 +117,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let sData of shortsData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,sData.value.id)"><img src="{{env.AWS_THUMB_URL+sData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="videoDetail($event,sData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+sData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>
@@ -139,7 +139,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let mData of CNEData | keyvalue">
                             <div class="slide">
-                                <a (click)="episodeDetail($event,mData.value.type,mData.value.episode,mData.value.season)"><img src="{{env.AWS_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="episodeDetail($event,mData.value.type,mData.value.episode,mData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>
@@ -161,7 +161,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let wData of wmdData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,wData.value.id)"><img src="{{env.AWS_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="videoDetail($event,wData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>
@@ -183,7 +183,7 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let music of musicData | keyvalue">
                             <div class="slide">
-                                <a (click)="videoDetail($event,music.value.id)"><img src="{{env.AWS_THUMB_URL+music.value.thumb}}" class="img-fluid"></a>
+                                <a (click)="videoDetail($event,music.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+music.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
                             </div>

@@ -84,6 +84,28 @@ export class CampaignComponent implements OnInit {
   }
 
 
+  downloadImage() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/video/newoanimated.mp4', true);
+    xhr.responseType = 'blob';
+    xhr.onload = function() {
+      var urlCreator = window.URL || window.webkitURL;
+      var imageUrl = urlCreator.createObjectURL(this.response);
+      var tag = document.createElement('a');
+      tag.href = imageUrl;
+      tag.target = '_blank';
+      tag.download = 'newoanimated.mp4';
+      document.body.appendChild(tag);
+      tag.click();
+      document.body.removeChild(tag);
+    };
+    xhr.onerror = err => {
+      alert('Failed to download picture');
+    };
+    xhr.send();
+  }
+
+
 
 
 }

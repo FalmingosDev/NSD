@@ -80,8 +80,8 @@ export class OttvideodetailComponent implements OnInit  {
         this.final_video_url = this.env.CLOUDFRONT_OTT_VIDEO_URL+this.video_link;
       }
       else{
-        this.thumb=this.env.AWS_THUMB_URL+this.video_thumb;
-        this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;
+        this.thumb=this.env.AWS_OTT_THUMB_URL+this.video_thumb;
+        this.final_video_url = this.env.AWS_OTT_THUMB_URL+this.video_link;
       }     
       
       const video = <HTMLVideoElement>(document.querySelector('#vidId'));
