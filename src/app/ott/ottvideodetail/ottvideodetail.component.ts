@@ -73,8 +73,8 @@ export class OttvideodetailComponent implements OnInit  {
       this.video_synopsis = this.ottVideoData[0].synopsis;
       this.video_aud = this.ottVideoData[0].certification;
       this.video_thumb = this.ottVideoData[0].thumb;      
-      this.thumb=this.env.AWS_THUMB_URL+this.video_thumb;
-      this.final_video_url = this.env.AWS_VIDEO_URL+this.video_link;
+      this.thumb=this.env.AWS_OTT_THUMB_URL+this.video_thumb;
+      this.final_video_url = this.env.AWS_OTT_VIDEO_URL+this.video_link;
       const video = <HTMLVideoElement>(document.querySelector('#vidId'));
       video.poster=this.thumb;
       video.src = this.final_video_url;
