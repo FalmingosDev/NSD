@@ -8,14 +8,14 @@
     text-align: center;
 }
 
-.form-control:disabled,
+.form-control,
 .form-control[readonly] {
     background-color: #353a60 !important;
     opacity: 1;
 }
 
-.btn-primary.disabled,
-.btn-primary:disabled {
+.btn-primary,
+.btn-primary {
     color: #fff;
     background-color: #17a2b8;
     border-color: #17a2b8;
