@@ -75,7 +75,7 @@ export class WelcomefooterComponent implements OnInit {
         }
         else if(value=='multiplex'){
           if(res.cnt ==1){
-            this.router.navigate(['/about_multiplex']);
+            this.router.navigate(['/multiplexhome']);
           }
           else{
             this.router.navigate(['/about_newoclan']);
