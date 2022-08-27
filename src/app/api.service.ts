@@ -740,6 +740,11 @@ multiplexPurchaseList()
     // return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount');
      return this.httpClient.get<any>(this.env.laravel_api_url + 'notificationCount/' + email);
   }
+
+  public redeemCoin(wallet,metamask,trust_wallet){
+    const email = localStorage.getItem('token');
+    return this.httpClient.post<any>(this.env.laravel_api_url + 'redeem_coin', {email,wallet,metamask,trust_wallet});
+  }
 }
 function imgFile(arg0: string, imgFile: any) {
   throw new Error('Function not implemented.');
