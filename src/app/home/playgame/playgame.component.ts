@@ -17,11 +17,6 @@ import { environment } from '../../../environments/environment';
 export class PlaygameComponent implements OnInit {
   
   env=environment;
-  // primaryUrl:string="https://newoapp.app/Whack_a_mole/game/index.html";
-  // primaryUrl:string="https://newoapp.app/WheelGame/game/index.html";
-  // primaryUrl:string="https://www.gamezop.com/g/";
-  // primaryUrl:string="https://www.gamezop.com/g/SyXuN7W1F?id=cfuucl7YgA&lang=en";
-  // primaryUrl:string="https://newoapp.app/";
 
   primaryUrl:string=this.env.appUrl;
   baseGameUrl:string;
