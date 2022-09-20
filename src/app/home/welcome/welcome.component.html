@@ -203,7 +203,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <owl-carousel-o [options]="customOptionsforcelibraty" (translated)="getPassedData()" class="sl-im-pd" id="celb">
+                    <!-- <owl-carousel-o [options]="customOptionsforcelibraty" (translated)="getPassedData()" class="sl-im-pd" id="celb"> -->
+                        <owl-carousel-o [options]="customOptionsforcelibraty" class="sl-im-pd" id="celb">
                         <ng-template carouselSlide>
                             <a href="#">
                                 <div class="celibraty-main-div">
@@ -401,7 +402,8 @@
                     <div class="dream-spin-img mb-3">
                         <img src="assets/images/dream-spin-title.webp" class="img-fluid">
                     </div>
-                    <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb">
+                    <!-- <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb"> -->
+                        <owl-carousel-o [options]="customOptionsfordrmowl" class="sl-im-pd" id="celb">
                         <!-- <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
                             <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
@@ -453,7 +455,7 @@
     </section>
 </div>
 
-<div class="modal fade" id="cricketer-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cricketer-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -472,7 +474,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="lara-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="lara-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -509,7 +511,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="dev-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="dev-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -554,7 +556,7 @@
         </div>
     </div>
 </div> 
-<div class="modal fade" id="independen-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="independen-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
