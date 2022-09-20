@@ -79,7 +79,9 @@ export class ApiService {
   public handelCreateEncryption(objUserData) {
     return this.httpClient.post<any>(this.env.baseUrl + '/payment.php', { userdata: objUserData });
   }
-
+  public BDSubscription(objUserData) {
+    return this.httpClient.post<any>(this.env.appUrl + 'CityBank/sample_create_order.php', { userdata: objUserData });
+  }
   public usersubscribe(netwood_email, games_email, starhunt_email) {
 
     var primary: string = this.getToken();

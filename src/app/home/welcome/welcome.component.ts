@@ -18,7 +18,7 @@ import { AlertService } from 'ngx-alerts';
 export class WelcomeComponent implements OnInit {
 
   env=environment;
-  
+  johnty_video_url: any;
   latestPosterData: any=[];
 
   public lat: any;
@@ -174,6 +174,8 @@ export class WelcomeComponent implements OnInit {
   
 
   ngOnInit(): void {
+
+    // this.johnty_video_url=this.env.johnty_video_url;
     
     this.myDate = new Date();
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
