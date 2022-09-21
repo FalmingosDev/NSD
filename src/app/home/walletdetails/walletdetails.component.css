@@ -111,3 +111,8 @@ table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
 .dataTables_length label{
     color: #fff !important;
 }
+thead tr th{color: rgb(255, 208, 0);}
+tbody tr td{color: #fff;}
+.card-footer{margin-bottom:15px;}
+
+.pagination ul li a{background-color: #84bcf9 !important;}

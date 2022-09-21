@@ -54,7 +54,6 @@ import { NotificationComponent } from './notification/notification.component';
 
 
 
-
 const routes: Routes = [
   {path:'', component:WelcomeComponent},
   {path:'newoclan', component:HomepageComponent},
@@ -105,6 +104,7 @@ const routes: Routes = [
   {path: 'recharge_success', component:RechargePaymentSuccessComponent},
   {path: 'recharge_cancel', component:RechargePaymentCancelComponent},
   {path: 'notification', component:NotificationComponent}
+
 
 
 ];

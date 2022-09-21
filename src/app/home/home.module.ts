@@ -67,6 +67,9 @@ import { RechargePaymentSuccessComponent } from './recharge-payment-success/rech
 import { RechargePaymentCancelComponent } from './recharge-payment-cancel/recharge-payment-cancel.component';
 import { NotificationComponent } from './notification/notification.component';
 
+import { JwPaginationModule } from 'jw-angular-pagination';
+
+
 
 @NgModule({
   declarations: [
@@ -135,7 +138,8 @@ import { NotificationComponent } from './notification/notification.component';
     ReactiveFormsModule,
     PlyrModule,
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'}),
-    NgImageFullscreenViewModule
+    NgImageFullscreenViewModule,
+    JwPaginationModule
   ],
   exports:[
     WelcomefooterComponent
