@@ -29,7 +29,7 @@ export class WalletdetailsComponent implements OnInit {
 
   onChangePage(pageOfItems: Array<any>) {
     this.pageOfItems = pageOfItems;
-    console.log(this.pageOfItems);
+    // console.log(this.pageOfItems);
   }
 
   walletList(){  

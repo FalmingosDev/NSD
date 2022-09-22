@@ -8,6 +8,7 @@
                     <a routerLink="/profile"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>&nbsp;Back</a>
                 </div>
                 <div class="card-body">
+                    <div class="table-responsive">
                         <table class="display" style="width:100%">
                             <thead>
                                 <tr>
@@ -28,10 +29,14 @@
                             </tbody>
 
                         </table>
+                        <div class="card-footer pb-0 pt-3">
+                   
+                        <jw-pagination [items]="pages" (changePage)="onChangePage($event)"></jw-pagination>
+                        
+                    </div>
+                    </div>
                 </div>
-                <div class="card-footer pb-0 pt-3">
-                    <jw-pagination [items]="pages" (changePage)="onChangePage($event)"></jw-pagination>
-                </div>
+              
             </div>
         </div>
     </section>

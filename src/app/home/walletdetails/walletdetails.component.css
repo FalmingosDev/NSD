@@ -77,6 +77,7 @@ table.dataTable tfoot th {
 
 #walletTable_length {
     color: #fff !important;
+    
 }
 
 table.dataTable.display tbody tr.even>.sorting_1,
@@ -112,7 +113,19 @@ table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
     color: #fff !important;
 }
 thead tr th{color: rgb(255, 208, 0);}
-tbody tr td{color: #fff;}
-.card-footer{margin-bottom:15px;}
+tbody tr td{
+    color: #fff;
+    font-size: 15px;}
+.card-footer{margin:0 0 15px -10px;}
 
 .pagination ul li a{background-color: #84bcf9 !important;}
+.card-footer .pagination {
+    justify-content: center;
+    flex-wrap: wrap;  
+}
+
+.pagination ul {
+    display: flex;
+    justify-content: center !important; 
+    flex-wrap: wrap !important;
+  }

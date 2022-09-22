@@ -55,10 +55,12 @@ export class PlaygameComponent implements OnInit {
   }
 
   gamescore(){
+    (<HTMLFormElement>document.getElementById('back_btn')).disabled  = true;
     this.score = localStorage.getItem('score');
     this.game_id = localStorage.getItem('gameId');
     console.log(this.game_id);
     console.log(this.score);
+    // (<HTMLFormElement>document.getElementById('back_btn')).disabled  = true;
     this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{       
         this.router.navigate(['/game']);  
         localStorage.removeItem('score');

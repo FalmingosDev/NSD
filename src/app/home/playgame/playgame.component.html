@@ -1,30 +1,12 @@
-    <!-- <a routerLink="/game"><img src="assets/images/backImg.png" alt=""></a> -->
-    <!-- <a routerLink="/game" style="font-size: 30px; float: right; padding-right: 10px;"><i class="fa fa-gamepad"></i></a> -->
-    <!-- <a routerLink="/newoclan" style="font-size: 30px; float: right; padding-right: 10px; margin: 10px 0px;"><i (click)="gamescore()" class="lg-rt">Back</i></a> -->
-
     <div class="back_btn_div">
      <a href="javascript:void(0)">
-         <span (click)="gamescore()">Back</span>
-         <!-- <i (click)="gamescore()">Back</i> -->
+         <button type="button" id="back_btn" (click)="gamescore()" class="new-btn-1">Back</button> 
          <div class="liquid"></div>
+         <!-- <span id="back_btn" (click)="gamescore()">Back</span> -->
+
+         
      </a>
  </div>
-
-    <!-- oldcode -->
-    <!-- <div class="play-dv" > 
-        <iframe [src]="final_url" style="height: 700px;
-        width: -webkit-fill-available;" frameborder="0" scrolling="no"></iframe>
-   </div>  --> 
-   <!-- WheelGame   -->
-    <!-- <div class="play-dv"> 
-        <iframe src="https://newoapp.app/WheelGame/game/index.html" style="height: 700px; width: -webkit-fill-available;" frameborder="0" scrolling="no"></iframe>
-   </div> -->
-   <!-- Whack_a_mole -->
-   <!-- <div class="play-dv" > 
-        <iframe src="https://newoapp.app/Whack_a_mole/game/index.html" style="height: 700px;
-        width: -webkit-fill-available;" frameborder="0" scrolling="no"></iframe>
-   </div>  -->
-     <!-- test -->
    <div class="play-dv"> 
         <iframe [src]="final_url" style="height: 400px; width: -webkit-fill-available;" frameborder="0" scrolling="no"></iframe>
    </div>
