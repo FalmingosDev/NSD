@@ -66,6 +66,8 @@ import { RechargePaymentCancelComponent } from './recharge-payment-cancel/rechar
 import { NotificationComponent } from './notification/notification.component';
 import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
 
+import { JwPaginationModule } from 'jw-angular-pagination';
+
 
 
 @NgModule({
@@ -134,7 +136,8 @@ import { SpinWheelComponent } from './spin-wheel/spin-wheel.component';
     ReactiveFormsModule,
     PlyrModule,
     AlertModule.forRoot({maxMessages: 5, timeout: 5000, positionX: 'right', positionY:'top'}),
-    NgImageFullscreenViewModule
+    NgImageFullscreenViewModule,
+    JwPaginationModule
   ],
   exports:[
     WelcomefooterComponent

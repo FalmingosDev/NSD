@@ -17,41 +17,29 @@ export class WalletdetailsComponent implements OnInit {
   //$:any =[];
   walletData:any =[];
   env=environment;
-
+  pageOfItems: Array<any>;
+  pages = [];
 
   constructor(private dataService: ApiService,private route:Router) { }
 
   ngOnInit(): void {
+    
     this.walletList();
   }
 
-  walletList(){   
-    this.dataService.walletList().subscribe((result) => {
-      this.walletData = result;
-      setTimeout(function() { $('#walletTable').dataTable() }, 1000);
-    });
+  onChangePage(pageOfItems: Array<any>) {
+    this.pageOfItems = pageOfItems;
+    // console.log(this.pageOfItems);
   }
 
-  // walletList(){   
-  //   this.dataService.walletList().subscribe((result) => {
-  //     this.walletData = result;
-  //     setTimeout(function() { $('#walletTable').dataTable({
-  //       'columns': [
-  //         { data: 'Action' }, /* index - 0 */
-  //         { data: 'Name' }, /* index - 1 */
-  //         { data: 'NEWO Coin' }, /* index - 2 */
-  //         { data: 'CR/DR' } /* index - 3 */
-  //      ],
-  //      'columnDefs': [ {
-  //         'targets': [3,4], /* column index */
-  //         'orderable': false, /* true or false */
-  //      }]
-  //   }) }, 1000);
-  //     // console.log(this.walletData);
-  //     // $('#example').DataTable({
-  //     //   "ordering": false
-  //   // });
-  //   });
-  // }
+  walletList(){  
+    this.dataService.walletList().subscribe((result) => {
+      this.walletData = result;
+      this.pages = Array(result.length)
+      .fill(0)
+      .map((x, i) => ({ id: i + 1, name: this.walletData[i] }));
+    });
+  }
+  
 
 }

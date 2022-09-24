@@ -9,10 +9,9 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="walletTable" class="display" style="width:100%">
+                        <table class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <!-- <th>Type</th> -->
                                     <th>Action</th>
                                     <th>Name</th>
                                     <th>NEWO Coin</th>
@@ -20,19 +19,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let data of walletData | keyvalue">
-                                    <!-- <td>{{data.value.category}}</td> -->
-                                    <td>{{data.value.wallet_action}}</td>
-                                    <td>{{data.value.category_name}}</td>
-                                    <td>{{data.value.wallet_point}}</td>
-                                    <td style="color:rgb(245, 0, 0)" *ngIf="data.value.credit_debit=='Debit'">{{data.value.credit_debit_short}}</td>
-                                    <td style="color:rgb(14, 255, 14)" *ngIf="data.value.credit_debit=='Credit'">{{data.value.credit_debit_short}}</td>
+                                <tr *ngFor="let data of pageOfItems">
+                                    <td>{{data.name.wallet_action}}</td>
+                                    <td>{{data.name.category_name}}</td>
+                                    <td>{{data.name.wallet_point}}</td>
+                                    <td style="color:rgb(245, 0, 0)" *ngIf="data.name.credit_debit=='Debit'">{{data.name.credit_debit_short}}</td>
+                                    <td style="color:rgb(14, 255, 14)" *ngIf="data.name.credit_debit=='Credit'">{{data.name.credit_debit_short}}</td>
                                 </tr>
                             </tbody>
 
                         </table>
+                        <div class="card-footer pb-0 pt-3">
+                   
+                        <jw-pagination [items]="pages" (changePage)="onChangePage($event)"></jw-pagination>
+                        
+                    </div>
                     </div>
                 </div>
+              
             </div>
         </div>
     </section>
