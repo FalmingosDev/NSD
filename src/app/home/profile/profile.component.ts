@@ -175,6 +175,24 @@ export class ProfileComponent implements OnInit {
     window.location.href = '';
   }
 
+
+  // handleSignOut() {
+  //   const dialogData = new ConfirmationDialogModel('Confirm', 'Are you sure you want to logout?');
+  //   const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+  //       maxWidth: '400px',
+  //       closeOnNavigation: true,
+  //       data: dialogData
+  //   })
+
+  //   dialogRef.afterClosed().subscribe(dialogResult => {
+  //       if (dialogResult) {
+  //           this.dataService.deleteToken();
+  //       }
+  //   });
+  // }
+
+
+
   checkProfile(){
     if(localStorage.getItem('token')){
       this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{

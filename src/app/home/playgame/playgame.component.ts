@@ -60,34 +60,11 @@ export class PlaygameComponent implements OnInit {
     this.game_id = localStorage.getItem('gameId');
     console.log(this.game_id);
     console.log(this.score);
-    // (<HTMLFormElement>document.getElementById('back_btn')).disabled  = true;
     this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{       
         this.router.navigate(['/game']);  
         localStorage.removeItem('score');
         localStorage.removeItem('gameId');      
       });            
-
-    // if(this.game_id == 6){
-    //   this.score='100';
-    //   console.log(this.score);      
-    //   this.game_id = localStorage.getItem('gameId');
-    //   this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
-    //   localStorage.removeItem('score');
-    //   localStorage.removeItem('gameId');
-    //     this.router.navigate(['/game']);        
-    //   });            
-    // }
-    // else{
-    //   this.score = localStorage.getItem('score');
-    //   this.game_id = localStorage.getItem('gameId');
-    //   console.log(this.score);
-    //   this.dataService.insertgamescore(this.game_id,this.score).subscribe((result) =>{
-    //     localStorage.removeItem('score');
-    //     localStorage.removeItem('gameId');
-    //     this.router.navigate(['/game']);
-    //   });
-    // }
-    
   }
 
 }

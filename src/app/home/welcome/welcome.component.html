@@ -404,7 +404,7 @@
                     </div>
                     <!-- <owl-carousel-o [options]="customOptionsfordrmowl" (translated)="getPassedData()" class="sl-im-pd" id="celb"> -->
                         <owl-carousel-o [options]="customOptionsfordrmowl" class="sl-im-pd" id="celb">
-                        <!-- <ng-template carouselSlide *ngIf="transform_date=='2022-08-15'">
+                        <!-- <ng-template carouselSlide *ngIf="transform_date=='2022-10-10'">
                             <div class="drm-item" data-toggle="modal" data-target="#independen-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-1.webp" class="img-fluid">
@@ -428,10 +428,13 @@
                                 </div>
                             </div>
                         </ng-template> -->
-                        <ng-template carouselSlide>
-                            <div class="drm-item">
+                        <ng-template carouselSlide *ngIf="transform_date=='2022-10-11'">
+                            <div class="drm-item" data-toggle="modal" data-target="#diwali-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
-                                    <img src="/assets/images/spiner-2.webp" class="img-fluid">
+                                    <img src="/assets/images/spiner-2-2.webp" class="img-fluid">
+                                </div>
+                                <div class="wheel-spin">
+                                    <a href="javascript:void(0)">Spin Now</a>
                                 </div>
                                 <div class="spin-date">
                                     <p>Spin on 24th October</p>
@@ -486,7 +489,6 @@
                 <video id="vid4" poster="assets/images/lara-modal.webp" width="100%" height="240" controls playsinline>
                 <!-- <source src="/assets/video/lara-dutta.mp4" type="video/mp4" /> -->
                 <source src="{{env.lara_video_url}}" type="video/mp4"/>
-
                 </video>
             </div>
         </div>
@@ -556,7 +558,7 @@
         </div>
     </div>
 </div> 
-<div class="modal fade" id="independen-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
+<div class="modal fade" id="diwali-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -564,7 +566,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <!-- <div class="modal-body">
+            <div class="modal-body">
                 <div class="box">
                     <div class="game" id="balance">
                         <p>You have to use {{price}} NEWO Coin to Spin the Wheel.</p>
@@ -579,13 +581,13 @@
 						<p>You Need to Subscribe to Spin the Wheel.</p>
 				  	</div> 
                 </div>
-            </div> -->
-            <!-- <div class="modal-footer">
+            </div>
+            <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="active_btn" (click)="payForSpin()">Spin Now</button>
                 <button type="button" class="btn btn-primary" id="subscribe_btn" (click)="notSubscribed()">Subscribe Now</button>
                 <button type="button" class="btn btn-primary" id="login_btn" (click)="notLogin()">Login Now</button>
                 <button type="button" class="btn btn-primary" id="recharge_btn" (click)="noBalance()">Recharge Now</button>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
