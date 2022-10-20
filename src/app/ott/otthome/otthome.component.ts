@@ -115,6 +115,8 @@ export class OtthomeComponent implements OnInit {
   ottLatest(){   
     this.dataService.ottLatestList().subscribe((result) => {
       this.latestData = result;
+      console.log(this.latestData);
+
     });
   }
 
@@ -133,6 +135,7 @@ export class OtthomeComponent implements OnInit {
   ottCNE(){   
     this.dataService.ottCNEList().subscribe((result) => {
       this.CNEData = result;
+
     });
   }
 

@@ -53,7 +53,7 @@
                             <!-- <div class="earn" >Watch & Win 100 NEWO                        
                                <span class="coin-size"><img src="/assets/images/newocoin-ft.png" ></span>                                
                             </div>-->
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{lData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -75,7 +75,7 @@
                             <div class="slide">
                                 <a (click)="episodeDetail($event,wData.value.type,wData.value.episode,wData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{wData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -97,7 +97,7 @@
                             <div class="slide">
                                 <a (click)="videoDetail($event,qData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+qData.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{qData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -119,7 +119,7 @@
                             <div class="slide">
                                 <a (click)="videoDetail($event,sData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+sData.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{sData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -141,7 +141,7 @@
                             <div class="slide">
                                 <a (click)="episodeDetail($event,mData.value.type,mData.value.episode,mData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+mData.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{mData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -163,7 +163,7 @@
                             <div class="slide">
                                 <a (click)="videoDetail($event,wData.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{wData.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
@@ -185,7 +185,7 @@
                             <div class="slide">
                                 <a (click)="videoDetail($event,music.value.id)"><img src="{{env.AWS_OTT_THUMB_URL+music.value.thumb}}" class="img-fluid"></a>
                             </div>
-                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win 100 NEWO</span>
+                            <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{music.value.watch_coin}} NEWO</span>
                             </div>
                         </ng-template>
                     </owl-carousel-o>
