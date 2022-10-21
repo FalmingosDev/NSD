@@ -107,6 +107,32 @@ export class ProfileComponent implements OnInit {
     
   }
 
+  checkAuth(value='newoclan'){
+    if(localStorage.getItem('token')){
+      this.dataService.userInSubcription(localStorage.getItem('token')).subscribe((res)=>{
+        if(value=='rewards'){
+          if(res.cnt ==1){
+            this.route.navigate(['/rewards']);
+          }
+          else{
+            this.route.navigate(['/pricing']);
+          }
+        }
+        else if(value=='referral'){
+          if(res.cnt ==1){
+            this.route.navigate(['/referral']);
+          }
+          else{
+            this.route.navigate(['/about_referral']);
+          }
+        } 
+      });
+    }
+  }      
+
+
+
+
   // phoneUpdate(phnChangeForm: { new_phone: any; otp: any; }) {
   //   if (this.new_phone.status == 'INVALID') {
   //     this.alertService.warning('Please Enter Valid Phone');
