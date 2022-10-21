@@ -35,6 +35,7 @@ export class WelcomeComponent implements OnInit {
   transaction_id: any;
   msg: any;
   price: any;
+  email: any;
   // isBD:boolean;
   // isNotBD:boolean;
 
@@ -179,7 +180,7 @@ export class WelcomeComponent implements OnInit {
     
     this.myDate = new Date();
     this.transform_date =this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    
+    this.email=localStorage.getItem('token');
     if(localStorage.getItem('token')){ 
     this.dataService.activeDateUpdate(this.transform_date).subscribe((result) => {});
     }

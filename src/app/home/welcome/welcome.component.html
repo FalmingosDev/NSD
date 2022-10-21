@@ -428,7 +428,7 @@
                                 </div>
                             </div>
                         </ng-template> -->
-                        <ng-template carouselSlide >
+                        <ng-template carouselSlide *ngIf="transform_date=='2022-10-24'|| email=='jayanta.flamingostech@gmail.com' || email== 'durba@gmail.com'">
                             <div class="drm-item" data-toggle="modal" data-target="#diwali-modal" (click)="spinPrice()">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-2-2.webp" class="img-fluid">
@@ -441,6 +441,19 @@
                                 </div>
                             </div>
                         </ng-template>
+
+                        <ng-template carouselSlide *ngIf="transform_date <'2022-10-24'">
+                            <div class="drm-item">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-2.webp" class="img-fluid">
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 24th October</p>
+                                </div>
+                            </div>
+                        </ng-template>
+
+
                         <ng-template carouselSlide>
                             <div class="drm-item">
                                 <div class="dream-spin-main">
