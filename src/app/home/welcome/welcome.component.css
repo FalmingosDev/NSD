@@ -266,7 +266,7 @@
     padding: 10px 0px 20px;
 }
 
-#independen-modal .modal-title-new {
+#diwali-modal .modal-title-new {
     font-family: open sans-serif;
     text-align: center;
     padding: 5px 11px;
@@ -283,7 +283,7 @@
     margin: -4px 10px;
     min-height: inherit;
 }
-#independen-modal .close{
+#diwali-modal .close{
     position: relative;
     top: 0;
     right: 1px;
@@ -298,19 +298,19 @@
     font-weight: 700;
     font-family: Comic Sans MS;
 }
-#independen-modal .modal-footer {
+#diwali-modal .modal-footer {
     padding: 0px 10px 5px;
     border: none;
 }
 
-#independen-modal .modal-content {
+#diwali-modal .modal-content {
     /* background-color: #efb812; */
     background-image: url('/assets/images/modal.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#independen-modal .modal-dialog {
+#diwali-modal .modal-dialog {
     position: relative;
     width: auto;
     pointer-events: none;
@@ -320,7 +320,7 @@
     padding: 66px;
 }
 
-#independen-modal .modal-title {
+#diwali-modal .modal-title {
     margin-bottom: 15px;
     line-height: 1.5;
     font-size: 16px;
@@ -328,11 +328,11 @@
     font-style: italic;
 }
 
-#independen-modal .modal-header {
+#diwali-modal .modal-header {
     border: none;
     padding: 0 13px;
 }
-#independen-modal .modal-header {
+#diwali-modal .modal-header {
     display: flex;
     justify-content: end;
 }

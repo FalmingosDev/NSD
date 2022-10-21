@@ -138,7 +138,6 @@
             <div class="row">
                 <div class="col-4">
                     <a herf="javascript:void(0)" (click)="checkAuth('multiplex')">
-                        <!-- <a herf="javascript:void(0)" routerLink="/about_multiplex"> -->
                         <div class="main-ml">
                             <div class="main-ml-img">
                                 <img src="assets/images/multiplex.webp" class="img-fluid">
@@ -403,7 +402,21 @@
                         <img src="assets/images/dream-spin-title.webp" class="img-fluid">
                     </div>
                     <owl-carousel-o [options]="customOptionsfordrmowl" class="sl-im-pd" id="celb">
-                        <ng-template carouselSlide>
+                        <ng-template carouselSlide *ngIf="transform_date=='2022-10-24'|| email=='jayanta.flamingostech@gmail.com' || email== 'durba@gmail.com'">
+                            <div class="drm-item" data-toggle="modal" data-target="#diwali-modal" (click)="spinPrice()">
+                                <div class="dream-spin-main">
+                                    <img src="/assets/images/spiner-2-2.webp" class="img-fluid">
+                                </div>
+                                <div class="wheel-spin">
+                                    <a href="javascript:void(0)">Spin Now</a>
+                                </div>
+                                <div class="spin-date">
+                                    <p>Spin on 24th October</p>
+                                </div>
+                            </div>
+                        </ng-template>
+
+                        <ng-template carouselSlide *ngIf="transform_date <'2022-10-24'">
                             <div class="drm-item">
                                 <div class="dream-spin-main">
                                     <img src="/assets/images/spiner-2.webp" class="img-fluid">
@@ -413,6 +426,8 @@
                                 </div>
                             </div>
                         </ng-template>
+
+
                         <ng-template carouselSlide>
                             <div class="drm-item">
                                 <div class="dream-spin-main">
@@ -460,7 +475,6 @@
                 <video id="vid4" poster="assets/images/lara-modal.webp" width="100%" height="240" controls playsinline>
                 <!-- <source src="/assets/video/lara-dutta.mp4" type="video/mp4" /> -->
                 <source src="{{env.lara_video_url}}" type="video/mp4"/>
-
                 </video>
             </div>
         </div>
@@ -529,13 +543,35 @@
         </div>
     </div>
 </div> 
-<div class="modal fade" id="independen-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
+<div class="modal fade" id="diwali-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (blur)="getPassedData()">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close_modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            </div>
+            <div class="modal-body">
+                <div class="box">
+                    <div class="game" id="balance">
+                        <p>You have to use {{price}} NEWO Coin to Spin the Wheel.</p>
+                    </div>
+                    <div class="game" id="insuff_balance">
+						<p>You do not have Sufficient Balance to Spin the Wheel.</p>
+				  	</div>
+                    <div class="game" id="notLogin">
+                        <p>You Need to Login First.</p>
+                    </div>
+                    <div class="game" id="notSubscribed">
+						<p>You Need to Subscribe to Spin the Wheel.</p>
+				  	</div> 
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="active_btn" (click)="payForSpin()">Spin Now</button>
+                <button type="button" class="btn btn-primary" id="subscribe_btn" (click)="notSubscribed()">Subscribe Now</button>
+                <button type="button" class="btn btn-primary" id="login_btn" (click)="notLogin()">Login Now</button>
+                <button type="button" class="btn btn-primary" id="recharge_btn" (click)="noBalance()">Recharge Now</button>
             </div>
         </div>
     </div>
