@@ -73,7 +73,8 @@
                     <owl-carousel-o [options]="resumeOptions">
                         <ng-template carouselSlide *ngFor="let wData of webData | keyvalue">
                             <div class="slide">
-                                <a (click)="episodeDetail($event,wData.value.type,wData.value.episode,wData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
+                                <!-- <a (click)="episodeDetail($event,wData.value.type,wData.value.episode,wData.value.season)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a> -->
+                                <a (click)="seriesDetail($event,wData.value.type,wData.value.episode,wData.value.season,wData.value.series)"><img src="{{env.AWS_OTT_THUMB_URL+wData.value.thumb}}" class="img-fluid"></a>
                             </div>
                             <div class="super_ott_coin"><span class="ott_coin">Watch & Win {{wData.value.watch_coin}} NEWO</span>
                             </div>

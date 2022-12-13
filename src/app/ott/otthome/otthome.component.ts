@@ -148,6 +148,7 @@ export class OtthomeComponent implements OnInit {
   ottWeb(){   
     this.dataService.ottWEBList().subscribe((result) => {
       this.webData = result;
+      // console.log(this.webData);
     });
   }
 
@@ -180,6 +181,11 @@ export class OtthomeComponent implements OnInit {
   episodeDetail(event,type,epId,seasonId){
     event.preventDefault();
     this.route.navigate(["/ottvideotype/"+type+"/"+epId+"/"+seasonId]);
+  }
+
+  seriesDetail(event,type,epId,seasonId,seriesId){
+    event.preventDefault();
+    this.route.navigate(["/ottvideotype1/"+type+"/"+epId+"/"+seasonId+"/"+seriesId]);
   }
   
 

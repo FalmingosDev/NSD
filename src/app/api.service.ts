@@ -427,6 +427,16 @@ export class ApiService {
     } 
   }
 
+  public ottseriesDetail(epId,typeId,seasonId,seriesId) {    
+      return this.httpClient.get<any>(this.env.laravel_api_url + 'showwebsseries/' + seriesId);
+  }
+
+  public ottseriesSeasonDetail(seasonId,seriesId) {    
+    return this.httpClient.get<any>(this.env.laravel_api_url + 'showwebsseriesseason/' + seasonId+ '/' + seriesId);
+}
+
+  
+
   public walletAdd(vId, category, action, userEmail) {
     return this.httpClient.post<any>(this.env.laravel_api_url + 'addtowallet', { vId, category, action, userEmail });
   }

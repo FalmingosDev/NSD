@@ -1,75 +1,30 @@
 <app-ottheader></app-ottheader>
+<div class="mt-bt">
       <section class="brow-child-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-10">
-                    <h2 class="cf-h2"><span><a routerLink="/ottcne"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>  Cafe Netwood Episode</h2>  
+                
+                <div class="col-md-6 col-10" >
+                    <h2 class="cf-h2" ><span><a routerLink="/otthome"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span> {{name}} : Season</h2> 
+                    <!-- <h2 class="cf-h2" *ngIf="type=='7'"><span><a routerLink="/otthome"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span> Web Series Episode</h2>   -->
                 </div>
                 <div class="col-md-6 col-2">
-                    <p class="mp-p">5</p>
+                    <p class="mp-p" >{{season}}</p>
+                    <!-- <p class="mp-p" *ngIf="type=='7'">{{episode}}</p> -->
                 </div>
             </div>  
             <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
+                <div class="col-md-4 col-4 p-0" *ngFor="let epData of ottEpisodeData | keyvalue">
                     <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/asthir-ayena-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1881.jpg" class="img-fluid">Asthir Ayena by An...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/bela-shudhu-jane-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1880.jpg" class="img-fluid">Bela Shudhu Jane b...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/bhalo-lagey-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1879.jpg" class="img-fluid">Bhalo Lagey by Ani...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
-                <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/cholo-jai-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1878.jpg" class="img-fluid">Cholo Jai by Anind...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/icchedana-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1877.jpg" class="img-fluid">Icchedana by Anind...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/jokhun-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1876.jpg" class="img-fluid">Jokhun by Anindya </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-p-row">
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/koto-ki-korar-ache-baki-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1875.jpg" class="img-fluid">Koto Ki Korar Ache...</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/shudhu-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1874.jpg" class="img-fluid">Shudhu by Anindya </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-4 p-0">
-                    <div class="cf-img">
-                         
-                        <a routerLink="/ottvideodetail/tomaye-dilam-by-anindya" class="cf-txt-a-tag"><img src="assets/images/netwood/1873.jpg" class="img-fluid">Tomaye Dilam by An...</a>
+                        <a (click)="videoDetail($event,epData.value.id)" class="cf-txt-a-tag">
+                        <img src="{{env.AWS_THUMB_URL+epData.value.thumb}}" class="img-fluid"> 
+                        {{epData.value.name}}: <span *ngIf="type=='1'">Episode-{{epData.value.episode}}</span></a>
+                        <!-- <a (click)="episodeDetail($event,epData.value.type,epData.value.episode,epData.value.season,epData.value.series)"><img src="{{env.AWS_OTT_THUMB_URL+epData.value.thumb}}" class="img-fluid"></a> -->
                     </div>
                 </div>
             </div>
         </div>
       </section>
+    </div>
 <!-- <app-ottfooter></app-ottfooter> -->
 <app-welcomefooter></app-welcomefooter>
