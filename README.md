@@ -15,5 +15,8 @@ npm i ng-image-fullscreen-view
 npm i ng-image-fullscreen-view --force
 ## Popper.js Install Command
 npm i popper.js
+## jw-angular-pagination Install Command
+npm i jw-angular-pagination
+npm i jw-angular-pagination --force
 ## Module Create
 ng g m [module-name] --routing
