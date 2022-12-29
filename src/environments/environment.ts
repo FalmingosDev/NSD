@@ -16,10 +16,10 @@ export const environment = {
   AWS_OTT_THUMB_URL: 'https://d3364iafsj330v.cloudfront.net/newoott/thumb/',
   AWS_OTT_POSTER_URL: 'https://d3364iafsj330v.cloudfront.net/newoott/poster/',
   
-  laravel_api_url: 'https://newoapp.app/newoadmin/api/',
-  baseUrl: 'https://newoapp.app/php',
-  // laravel_api_url: 'https://newocoin.app/newoadmin/api/',
-  // baseUrl: 'https://newocoin.app/php',
+  // laravel_api_url: 'https://newoapp.app/newoadmin/api/',
+  // baseUrl: 'https://newoapp.app/php',
+  laravel_api_url: 'https://newocoin.app/newoadmin/api/',
+  baseUrl: 'https://newocoin.app/php',
   
   gameUrl: 'https://newoapp.app/Game/game/',
   spinUrl: 'https://newoapp.app/SPIN/?',

@@ -17,7 +17,7 @@
                 <div class="col-md-4 col-4 p-0" *ngFor="let epData of ottSeriesData | keyvalue">
                     <div class="cf-img">
                         <a (click)="videoDetail($event,epData.value.id)" class="cf-txt-a-tag">
-                        <img src="{{env.AWS_THUMB_URL+epData.value.thumb}}" class="img-fluid"> 
+                        <img src="{{env.AWS_OTT_THUMB_URL+epData.value.thumb}}" class="img-fluid"> 
                         {{epData.value.name}}: <span *ngIf="type=='1'">Episode-{{epData.value.episode}}</span></a>
                         <!-- <a (click)="episodeDetail($event,epData.value.type,epData.value.episode,epData.value.season,epData.value.series)"><img src="{{env.AWS_OTT_THUMB_URL+epData.value.thumb}}" class="img-fluid"></a> -->
                     </div>
